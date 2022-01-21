@@ -31,7 +31,7 @@
                 <!-- <li id="switchingTheme"><i class="fas fa-exchange-alt"></i>테마 변경</a></li>-->
                    <li id="switchingTheme"><a href="#"><i class="xi-exchange"></i>테마 변경</a></li>
                   <li><a href="#"><i class="xi-mail-o"></i> 관리자 메일함</a></li>
-                  <li><a href="${pageContext.request.contextPath}/admin//admin/user"><i class="xi-user-address"></i> 회원 정보 관리</a></li>
+                  <li><a href="${pageContext.request.contextPath}/admin/user"><i class="xi-user-address"></i> 회원 정보 관리</a></li>
                   <li><a href="#"><i class="xi-box"></i> 회원 주문 조회</a></li>
                   <li><a href="#"><i class="xi-document"></i> 리뷰게시판 수정/삭제</a></li>
                   <li><a href="#"><i class="xi-calendar-list"></i>FAQ게시판 생성/수정</a></li>
