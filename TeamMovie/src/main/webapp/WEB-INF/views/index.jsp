@@ -16,9 +16,6 @@
 	<a href="${pageContext.request.contextPath}/member/myPage">유저 페이지로 이동</a>	
 	<a href="${pageContext.request.contextPath}/member/signin">유저 페이지로 이동</a>	
 	<a href="${pageContext.request.contextPath}/goods/goodsDetail">굿즈디테일페이지</a>
-		<%@ include file="include/header.jsp" %>
-		<h1>이영주 push커밋테스트</h1>
-		<h1>김근형 커밋 테스트</h1>
-		<h1>이영주 커밋 테스트</h1>
+	<%@ include file="include/footer.jsp" %>
 </body>
 </html>
