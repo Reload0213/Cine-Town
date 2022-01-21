@@ -98,7 +98,8 @@ transition:all 2s ease-in-out;
     visibility: visible;
     opacity: 1;
     width:100%;
-    
+    overflow: hidden;
+    white-space: nowrap;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -133,7 +134,7 @@ transition:all 2s ease-in-out;
     width: 100%;
     height: auto;
     margin:0 auto;
-    font-size: 5vh;
+    font-size: 1.5rem;
     text-align: center;
     padding:0.8rem 1.2rem
     /* background-color:#dd2026; */
@@ -148,118 +149,38 @@ transition:all 2s ease-in-out;
 }
 
 .mainCon .adminMenus li i{
-    font-size: 3.5vh;
+    font-size: 1.3rem;
     text-align: center;
     margin-right:1rem;
     /* background-color:#dd2026; */
 }
 
 
-.searchBox.active{
-    visibility: visible;
-    opacity: 1;
-    transition: all 1s ease-in-out;
-}
-
-
-.searchBox{
-    top:0;
-    right:0;
-    z-index: 999;
-    height: 40vh;
-    visibility: hidden;
-    opacity: 0;
-    position:absolute;
-    padding-top:2rem;
-    background-color: #fff;
-    width:100%;
-    
-    
-    
-    
-    justify-content: center;
-    display: flex;
-}
-.searchCon{
-    
-    width:50%;
-   justify-content: center;
-    display: flex;
-    align-items: center;
-    background-color: #fff;
-   border-bottom:3px solid #141414;
-   height:7vh;
-}
-.xbtn{
-    width:3rem;
-    height:3rem;
-    font-size: 3.0rem;
-    color:#141414;
-     font-weight: bold;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-}
-
-.searchBtn>i{
-    text-align: center;
-    font-size: 3.0rem;
-    color:#141414;
-
-    
-
-}
-.searchCon input{
-    outline: none;
-    border:none;
-    color:#141414;
-    text-align: center;
-    font-weight: bold;
-    width:100%;
-    font-size: 1.3rem;
-    padding:0 0.5rem 0.2rem 0.5rem;
-}
-
-@media (max-width:768px) {
-    *{
-        font-size:48%;
-    }
-    .hideMenu>.adminMenus>li>a{
-        font-size: 1.5rem;
-        padding: 0.8rem 0.8rem 0.8rem 0.8rem;
-
-    }
-    table{
-        font-size: 1.5rem;
-       
-    }
-    
-    
-}
-
-
 @media (max-width:1024px) {
     *{
-        font-size:50%;
-    }
-    .hideMenu>.adminMenus>li>a{
-        font-size: 1.5rem;
-        padding: 0.8rem 0.8rem 0.8rem 0.8rem;
-
-    }
-    table{
-        font-size: 1.5rem;
-       
+        font-size: 50%;
     }
     
+    .mainCon .adminMenus{
+        margin-top:0;
+    }
+
+    .mainHomeBtn{
+        font-size: 2.5rem;
+        position:absolute;
+        top:1%;
+        right:5%;
+    }
 }
 
+
+
+
 @media (max-width:768px) {
-    
-    .mainCon .adminMenus li a{
-        font-size: 4vh;
-        padding:1.7rem 12rem;
+    *{
+        font-size: 45%;
     }
+    
     .mainCon .adminMenus{
         margin-top:0;
     }
@@ -274,11 +195,16 @@ transition:all 2s ease-in-out;
 
 
 @media (max-width:480px) {
+
+    *{
+        font-size: 50%;
+    }
     
-    .mainCon .adminMenus li a{
+    
+    /* .mainCon .adminMenus li a{
         font-size: 2vh;
         padding:1.4rem 0.8rem;
-    }
+    } */
     .mainCon .adminMenus{
         margin-top:0;
     }
