@@ -1,0 +1,293 @@
+
+/* 기본설정 초기화 */
+*{
+
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+
+    font-family: 'Noto Sans KR', 'Roboto', sans-serif;
+    color: #fff;
+    font-size: 62.5%;
+    letter-spacing: 1%;
+  /* 폰트 초기화 */
+  
+}
+
+
+
+body{
+    width:100%;
+    background-color: #333;
+
+}
+
+ul,li,ol{
+    list-style: none;
+    margin:0;
+    padding:0;
+}
+
+a{
+    text-decoration: none;
+    
+ 
+}
+
+.mainCon{
+width:100%;
+margin: 0 auto;
+
+}
+
+.mintTheme{
+
+background-color:#00b894;
+transition:all 2s ease-in-out;
+
+}
+
+.blueTheme{
+
+    background-color: #74b9ff;
+    transition:all 2s ease-in-out;
+}
+.pinkTheme{
+
+    background-color: #fd79a8;
+    transition:all 2s ease-in-out;
+}
+
+.mainHomeBtn{
+  
+    
+    position:absolute;
+    top:0.8%;
+    right:1.5%;
+    transition:all 1s ease-in-out;
+    
+}
+
+.mainHomeBtn i{
+    font-size: 4.0rem;
+}
+
+
+.mainCon nav{
+    padding:0.2rem;
+}
+.mainCon nav h3{
+    font-size: 3rem;
+    
+   
+}
+
+.mainCon nav>div{
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.mainCon nav>div>span{
+    font-size:2.5vh;
+    color:#dd2026;
+
+}
+.adminMenus{
+    margin-top: 0.2rem;
+    visibility: visible;
+    opacity: 1;
+    width:100%;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding:1rem;
+   
+}
+
+
+
+.adminMenus.on {
+    visibility: hidden;
+    opacity: 0;
+    width:100%;
+    transition:all 2s ease-in-out
+    }
+
+
+.mainCon.adminMenus li{
+    display: block;
+    padding:1.2rem 1.5rem;
+    width:100%;
+    height: 9vh;
+    text-align: center;
+    margin:0 auto;
+}
+
+
+.mainCon .adminMenus li a{
+   
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    margin:0 auto;
+    font-size: 5vh;
+    text-align: center;
+    padding:0.8rem 1.2rem
+    /* background-color:#dd2026; */
+}
+
+.mainCon .adminMenus li:hover{
+   
+    width: 100%;
+    height: 100%;
+    margin:0 auto;
+    background-color:#dd2026;
+}
+
+.mainCon .adminMenus li i{
+    font-size: 3.5vh;
+    text-align: center;
+    margin-right:1rem;
+    /* background-color:#dd2026; */
+}
+
+
+.searchBox.active{
+    visibility: visible;
+    opacity: 1;
+    transition: all 1s ease-in-out;
+}
+
+
+.searchBox{
+    top:0;
+    right:0;
+    z-index: 999;
+    height: 40vh;
+    visibility: hidden;
+    opacity: 0;
+    position:absolute;
+    padding-top:2rem;
+    background-color: #fff;
+    width:100%;
+    
+    
+    
+    
+    justify-content: center;
+    display: flex;
+}
+.searchCon{
+    
+    width:50%;
+   justify-content: center;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+   border-bottom:3px solid #141414;
+   height:7vh;
+}
+.xbtn{
+    width:3rem;
+    height:3rem;
+    font-size: 3.0rem;
+    color:#141414;
+     font-weight: bold;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+
+.searchBtn>i{
+    text-align: center;
+    font-size: 3.0rem;
+    color:#141414;
+
+    
+
+}
+.searchCon input{
+    outline: none;
+    border:none;
+    color:#141414;
+    text-align: center;
+    font-weight: bold;
+    width:100%;
+    font-size: 1.3rem;
+    padding:0 0.5rem 0.2rem 0.5rem;
+}
+
+@media (max-width:768px) {
+    *{
+        font-size:48%;
+    }
+    .hideMenu>.adminMenus>li>a{
+        font-size: 1.5rem;
+        padding: 0.8rem 0.8rem 0.8rem 0.8rem;
+
+    }
+    table{
+        font-size: 1.5rem;
+       
+    }
+    
+    
+}
+
+
+@media (max-width:1024px) {
+    *{
+        font-size:50%;
+    }
+    .hideMenu>.adminMenus>li>a{
+        font-size: 1.5rem;
+        padding: 0.8rem 0.8rem 0.8rem 0.8rem;
+
+    }
+    table{
+        font-size: 1.5rem;
+       
+    }
+    
+}
+
+@media (max-width:768px) {
+    
+    .mainCon .adminMenus li a{
+        font-size: 4vh;
+        padding:1.7rem 12rem;
+    }
+    .mainCon .adminMenus{
+        margin-top:0;
+    }
+
+    .mainHomeBtn{
+        font-size: 2.5rem;
+        position:absolute;
+        top:1%;
+        right:5%;
+    }
+}
+
+
+@media (max-width:480px) {
+    
+    .mainCon .adminMenus li a{
+        font-size: 2vh;
+        padding:1.4rem 0.8rem;
+    }
+    .mainCon .adminMenus{
+        margin-top:0;
+    }
+
+    .mainHomeBtn{
+        font-size: 1.8rem;
+        position:absolute;
+        top:1%;
+        right:5%;
+    }
+
+}

@@ -1,0 +1,178 @@
+body{
+	background-color: #ededed;
+	font-family: 'Oswald';
+	position: relative;
+	margin-top: 0;
+}
+
+/*======================================================================
+##		Global Settings
+=======================================================================*/
+.btn-robot, p{
+	font-family: 'Roboto';
+	line-height: 1.5;
+	letter-spacing: 1px;
+	font-weight: 300;
+}
+.mt0{
+	margin-top: 0;
+}
+.thin{
+	font-weight: 300;
+}
+.c-table{
+	display: table;
+	height: 100%;
+	width: 100%;
+}
+.c-cell{
+	display: table-cell;
+	vertical-align: middle;
+}
+.title-box{
+	text-align: center;
+	padding: 100px 0 50px;
+	text-transform: uppercase;
+}
+.title-box p{
+	margin-bottom: 0;
+}
+.title{
+	font-weight: 300;
+	color: #999;
+	font-size: 36px;
+	letter-spacing: 2px;
+}
+.title.mt0{
+	text-transform: capitalize;
+	font-weight: 400;
+	color: #444;
+}
+.title span{
+	color: #444;
+}
+.btn-robot{
+	border-radius: 0;
+	background-color: #fabe12;
+	color: #fff;
+	text-transform: uppercase;
+	border-color: transparent;
+	padding: 5px 15px;
+	transition: all 0.4s ease-in-out;
+	letter-spacing: 1px;
+	font-weight: 300;
+	margin-top: 15px;
+}
+.btn-robot:hover{
+	background-color: transparent;
+	color: #fabe12;
+	border-color: #fabe12;
+}
+
+
+
+
+/*======================================================================
+##		Header Section
+=======================================================================*/
+.site-header-bg{
+	width: 100%;
+	background-color: #111;
+	z-index: 1;
+	padding: 30px 0;
+	color: #fff;
+	text-transform: uppercase;
+	font-family: 'Roboto';
+}
+.site-header-bg .input-group{
+	padding-top: 10px;
+}
+.site-header-bg .form-control{
+	border-radius: 0;
+	background-color: transparent;
+}
+.site-header-bg .input-group .btn{
+	text-transform: uppercase;
+	border-radius: 0;
+}
+.site-header-bg .btn-robot{
+	margin-top: 0;
+	padding-bottom: 6px;
+}
+
+
+
+
+
+
+/*======================================================================
+##		FAQ
+=======================================================================*/
+.panel-heading {
+  padding: 0;
+  border-radius: 0;
+}
+.panel-heading h4.panel-title {
+  position: relative;
+  text-transform: capitalize;
+}
+.panel-heading a {
+  display: block;
+  padding: 15px 0 15px 40px;
+  line-height: 1;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.panel-heading a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+.panel-heading a:focus {
+  text-decoration: none;
+  color: #111;
+}
+.panel-heading a:active {
+  color: #111;
+}
+@media (min-width:768px) {
+  .panel-heading a:after,a.collapsed:after {
+    font-family: 'ionicons';
+    content: "\f126";
+    position: absolute;
+    right: 15px;
+    font-size: 18px;
+    color: #111;
+  }
+
+  a.collapsed:after {
+    content: "\f123";
+  }
+}
+.panel-body {
+  padding: 20px;
+  color: #999;
+  line-height: 1.7;
+}
+.panel-default {
+  border: 1px solid #111;
+}
+.panel-default>.panel-heading {
+  background-color: transparent;
+  transition: all 0.4s ease-in-out;
+}
+.panel-default>.panel-heading:hover{
+	background-color: #fabe12;
+}
+.panel-default>.panel-heading+.panel-collapse>.panel-body {
+  border-top: 2px solid rgba(0,0,0,.1);
+}
+
+.panel-group .panel {
+  border-radius: 0;
+  margin-bottom: -5px;
+  border-bottom: none;
+}
+.panel-group .panel:last-child{
+	border-bottom: 1px solid #111;
+}
