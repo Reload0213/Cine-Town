@@ -1,0 +1,214 @@
+-- --------------------------------------------------------
+-- 호스트:                          127.0.0.1
+-- 서버 버전:                        10.6.5-MariaDB - mariadb.org binary distribution
+-- 서버 OS:                        Win64
+-- HeidiSQL 버전:                  11.3.0.6295
+-- --------------------------------------------------------
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET NAMES utf8 */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+
+-- cgv 데이터베이스 구조 내보내기
+CREATE DATABASE IF NOT EXISTS `cgv` /*!40100 DEFAULT CHARACTER SET utf8mb3 */;
+USE `cgv`;
+
+-- 테이블 cgv.admin 구조 내보내기
+CREATE TABLE IF NOT EXISTS `admin` (
+  `adNum` int(11) NOT NULL AUTO_INCREMENT,
+  `adId` varchar(255) DEFAULT NULL,
+  `adPw` varchar(255) DEFAULT NULL,
+  `adName` varchar(255) DEFAULT NULL,
+  `verify` int(11) DEFAULT 9,
+  PRIMARY KEY (`adNum`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='관리자 데이터';
+
+-- 테이블 데이터 cgv.admin:~0 rows (대략적) 내보내기
+DELETE FROM `admin`;
+/*!40000 ALTER TABLE `admin` DISABLE KEYS */;
+/*!40000 ALTER TABLE `admin` ENABLE KEYS */;
+
+-- 테이블 cgv.cart 구조 내보내기
+CREATE TABLE IF NOT EXISTS `cart` (
+  `cartNum` int(11) NOT NULL AUTO_INCREMENT,
+  `cartAmount` int(11) DEFAULT NULL,
+  `cartTotal` int(11) DEFAULT NULL,
+  `cartIsdelete` varchar(255) DEFAULT 'n',
+  PRIMARY KEY (`cartNum`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='장바구니';
+
+-- 테이블 데이터 cgv.cart:~0 rows (대략적) 내보내기
+DELETE FROM `cart`;
+/*!40000 ALTER TABLE `cart` DISABLE KEYS */;
+/*!40000 ALTER TABLE `cart` ENABLE KEYS */;
+
+-- 테이블 cgv.goods 구조 내보내기
+CREATE TABLE IF NOT EXISTS `goods` (
+  `gdsNum` int(11) NOT NULL AUTO_INCREMENT,
+  `gdsName` int(11) DEFAULT NULL,
+  `gdsPrice` int(11) DEFAULT NULL,
+  `gdsDetail` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
+  `gdsStock` int(11) DEFAULT NULL,
+  `gdsRegdate` varchar(255) DEFAULT NULL,
+  `gdsViewcnt` int(11) DEFAULT NULL,
+  `gdsUUID` int(11) DEFAULT NULL,
+  `gdsIsdelete` varchar(255) DEFAULT 'n',
+  `gdsBrand` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`gdsNum`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='굿즈 gds';
+
+-- 테이블 데이터 cgv.goods:~0 rows (대략적) 내보내기
+DELETE FROM `goods`;
+/*!40000 ALTER TABLE `goods` DISABLE KEYS */;
+/*!40000 ALTER TABLE `goods` ENABLE KEYS */;
+
+-- 테이블 cgv.goodsreview 구조 내보내기
+CREATE TABLE IF NOT EXISTS `goodsreview` (
+  `grNum` int(11) NOT NULL AUTO_INCREMENT,
+  `grDate` varchar(255) DEFAULT NULL,
+  `grComment` longtext DEFAULT NULL,
+  `grLike` varchar(255) DEFAULT 'n',
+  `grIsdelete` varchar(255) DEFAULT 'n',
+  PRIMARY KEY (`grNum`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='굿즈리뷰 gr';
+
+-- 테이블 데이터 cgv.goodsreview:~0 rows (대략적) 내보내기
+DELETE FROM `goodsreview`;
+/*!40000 ALTER TABLE `goodsreview` DISABLE KEYS */;
+/*!40000 ALTER TABLE `goodsreview` ENABLE KEYS */;
+
+-- 테이블 cgv.movie 구조 내보내기
+CREATE TABLE IF NOT EXISTS `movie` (
+  `mvNum` int(11) NOT NULL AUTO_INCREMENT,
+  `mvTitle` varchar(255) DEFAULT NULL,
+  `mvDirector` varchar(255) DEFAULT NULL,
+  `mvDetail` longtext DEFAULT NULL,
+  `mvGenre` varchar(255) DEFAULT NULL,
+  `mvYear` varchar(255) DEFAULT NULL,
+  `mvAge` int(11) DEFAULT NULL,
+  `mvRuntime` int(11) DEFAULT NULL,
+  `mvProducer` varchar(255) DEFAULT NULL,
+  `mvAvgRate` decimal(20,6) DEFAULT NULL COMMENT '개인평점합산해서산출, 별점으로 주면 수식을 다르게 줘야 함',
+  `mvIsdelete` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`mvNum`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='영화 데이터베이스';
+
+-- 테이블 데이터 cgv.movie:~0 rows (대략적) 내보내기
+DELETE FROM `movie`;
+/*!40000 ALTER TABLE `movie` DISABLE KEYS */;
+/*!40000 ALTER TABLE `movie` ENABLE KEYS */;
+
+-- 테이블 cgv.moviewishlist 구조 내보내기
+CREATE TABLE IF NOT EXISTS `moviewishlist` (
+  `mvwishNum` int(11) NOT NULL AUTO_INCREMENT,
+  `mvWishYN` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`mvwishNum`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='영화 찜';
+
+-- 테이블 데이터 cgv.moviewishlist:~0 rows (대략적) 내보내기
+DELETE FROM `moviewishlist`;
+/*!40000 ALTER TABLE `moviewishlist` DISABLE KEYS */;
+/*!40000 ALTER TABLE `moviewishlist` ENABLE KEYS */;
+
+-- 테이블 cgv.orderdetail 구조 내보내기
+CREATE TABLE IF NOT EXISTS `orderdetail` (
+  `orderNum` int(11) NOT NULL AUTO_INCREMENT,
+  `orderDate` varchar(255) DEFAULT NULL,
+  `orderShipnum` int(11) DEFAULT NULL COMMENT '랜덤으로',
+  `orderIsdelete` varchar(255) DEFAULT 'n',
+  PRIMARY KEY (`orderNum`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='영화 굿즈 주문 상세저보';
+
+-- 테이블 데이터 cgv.orderdetail:~0 rows (대략적) 내보내기
+DELETE FROM `orderdetail`;
+/*!40000 ALTER TABLE `orderdetail` DISABLE KEYS */;
+/*!40000 ALTER TABLE `orderdetail` ENABLE KEYS */;
+
+-- 테이블 cgv.productwishlist 구조 내보내기
+CREATE TABLE IF NOT EXISTS `productwishlist` (
+  `pwishNum` int(11) NOT NULL AUTO_INCREMENT,
+  `pwishYN` varchar(255) DEFAULT 'n',
+  PRIMARY KEY (`pwishNum`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='굿즈 찜';
+
+-- 테이블 데이터 cgv.productwishlist:~0 rows (대략적) 내보내기
+DELETE FROM `productwishlist`;
+/*!40000 ALTER TABLE `productwishlist` DISABLE KEYS */;
+/*!40000 ALTER TABLE `productwishlist` ENABLE KEYS */;
+
+-- 테이블 cgv.qna 구조 내보내기
+CREATE TABLE IF NOT EXISTS `qna` (
+  `qnaNum` int(11) NOT NULL AUTO_INCREMENT,
+  `qnaCategory` varchar(255) DEFAULT NULL,
+  `qnaTitle` varchar(255) DEFAULT NULL,
+  `qnaComment` varchar(255) DEFAULT NULL,
+  `qnaRegdate` varchar(255) DEFAULT NULL,
+  `qnaIsdelete` varchar(255) DEFAULT 'n',
+  PRIMARY KEY (`qnaNum`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='문의사항(게시판 형태)';
+
+-- 테이블 데이터 cgv.qna:~0 rows (대략적) 내보내기
+DELETE FROM `qna`;
+/*!40000 ALTER TABLE `qna` DISABLE KEYS */;
+/*!40000 ALTER TABLE `qna` ENABLE KEYS */;
+
+-- 테이블 cgv.reviewreply 구조 내보내기
+CREATE TABLE IF NOT EXISTS `reviewreply` (
+  `rpNum` int(11) NOT NULL AUTO_INCREMENT,
+  `rpDate` varchar(255) DEFAULT NULL,
+  `rpComment` longtext DEFAULT NULL,
+  `rpIsdelete` varchar(255) DEFAULT 'n',
+  `rpLike` varchar(255) DEFAULT 'n',
+  PRIMARY KEY (`rpNum`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='리뷰댓글\r\n';
+
+-- 테이블 데이터 cgv.reviewreply:~0 rows (대략적) 내보내기
+DELETE FROM `reviewreply`;
+/*!40000 ALTER TABLE `reviewreply` DISABLE KEYS */;
+/*!40000 ALTER TABLE `reviewreply` ENABLE KEYS */;
+
+-- 테이블 cgv.uesermvreview 구조 내보내기
+CREATE TABLE IF NOT EXISTS `uesermvreview` (
+  `rvNum` int(11) NOT NULL AUTO_INCREMENT,
+  `rvRate` decimal(20,6) DEFAULT NULL,
+  `rvComment` longtext DEFAULT NULL,
+  `rvLike` varchar(255) DEFAULT NULL,
+  `rvDate` varchar(255) DEFAULT NULL,
+  `rvIsdelete` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`rvNum`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='영화 평점(개인)';
+
+-- 테이블 데이터 cgv.uesermvreview:~0 rows (대략적) 내보내기
+DELETE FROM `uesermvreview`;
+/*!40000 ALTER TABLE `uesermvreview` DISABLE KEYS */;
+/*!40000 ALTER TABLE `uesermvreview` ENABLE KEYS */;
+
+-- 테이블 cgv.user 구조 내보내기
+CREATE TABLE IF NOT EXISTS `user` (
+  `userNum` int(11) NOT NULL AUTO_INCREMENT,
+  `userId` varchar(255) DEFAULT NULL,
+  `userPw` varchar(255) DEFAULT NULL,
+  `userName` varchar(255) DEFAULT NULL,
+  `userPhone` varchar(255) DEFAULT NULL,
+  `userEmail` varchar(255) DEFAULT NULL,
+  `userRegdate` varchar(255) DEFAULT NULL,
+  `userAddr1` varchar(255) DEFAULT NULL,
+  `userAddr2` varchar(255) DEFAULT NULL,
+  `userIsdelete` varchar(255) DEFAULT NULL,
+  `verify` int(11) DEFAULT 0,
+  PRIMARY KEY (`userNum`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='회원 정보';
+
+-- 테이블 데이터 cgv.user:~0 rows (대략적) 내보내기
+DELETE FROM `user`;
+/*!40000 ALTER TABLE `user` DISABLE KEYS */;
+/*!40000 ALTER TABLE `user` ENABLE KEYS */;
+
+/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40111 SET SQL_NOTES=IFNULL(@OLD_SQL_NOTES, 1) */;
