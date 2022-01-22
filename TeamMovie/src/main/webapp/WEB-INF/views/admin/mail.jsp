@@ -240,7 +240,7 @@
             
          </div>
          
-<script src="assets/js/adminMainPage/adminUserPage/adminUserPage.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/adminMainPage/adminUserPage/adminUserPage.js"></script>
 
 
 

@@ -16,7 +16,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 <!--  관리자페이지 폰트추가 끝 -->
 <!-- 메인 css 추가 -->
-<link href="${pageContext.request.contextPath}/assets/css/adminMainPage/adminMainPage.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/adminMainPage/adminUserPage/adminUserPage.css">
 <!-- 메인 css 끝 -->
 <!-- fontawesome LINK 추가 -->
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
@@ -88,7 +88,7 @@
             
          </div>
          
-<script src="${pageContext.request.contextPath}/assets/js/adminMainPage/adminMainPage.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/adminMainPage/adminUserPage/adminUserPage.js"></script>
 	
 	
 </body>
