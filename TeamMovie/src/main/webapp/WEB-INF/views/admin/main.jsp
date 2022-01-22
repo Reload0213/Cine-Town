@@ -23,24 +23,59 @@
 <!-- fontawesome 끝 -->
 </head>
 <body>
-	 <!-- 임승혁 관리자페이지 메인시작 -->
-         <div class="mainCon">
-             <span class="mainHomeBtn"><a href="#"><i class="xi-home-o"></i></a></i></span>
-            <nav><div><h3>관리자 페이지</h3><span>SessionScope.admin.name님</span></div></nav>
-              <ul class="adminMenus">
+	  <div class="hideMenu">
+            <ul class="adminMenus">
+                <li><a onclick="exitSideBar()" class="exitHideMenu"href="#">&times;</a></li>
                 <!-- <li id="switchingTheme"><i class="fas fa-exchange-alt"></i>테마 변경</a></li>-->
-                   <li id="switchingTheme"><a href="#"><i class="xi-exchange"></i>테마 변경</a></li>
-                  <li><a href="#"><i class="xi-mail-o"></i> 관리자 메일함</a></li>
-                  <li><a href="${pageContext.request.contextPath}/admin/user"><i class="xi-user-address"></i> 회원 정보 관리</a></li>
-                  <li><a href="#"><i class="xi-box"></i> 회원 주문 조회</a></li>
-                  <li><a href="#"><i class="xi-document"></i> 리뷰게시판 수정/삭제</a></li>
-                  <li><a href="#"><i class="xi-calendar-list"></i>FAQ게시판 생성/수정</a></li>
-                  <li><a href="#"><i class="xi-market"></i> 상품 등록</a></li>
-                  <li><a href="#"><i class="xi-eraser"></i> 상품 수정</a></li>
-                  <li><a href="#"><i class="xi-trash"></i> 상품 삭제</a></li>
-                  <li><a href="#"><i class="xi-log-out"></i> 로그아웃</a></li>
+               
+                   
+                  <li><div class="userCon"><i class="xi-profile"></i><span class="username">임승혁 님</span></div><span class="logoutBtnM">로그아웃</span></li>
                   
               </ul> 
+
+          </div>
+
+          <div class="searchBox">
+            
+            <div class="searchCon">
+                <span class="searchBtn"><i class="xi-search"></i></span><input type="text" name="" id=""><span class="xbtn">&times;</span></div>
+                
+          </div>
+  
+          <div class="mainCon">
+            <nav>
+            <div class="top">
+                <div class="topCon">
+                    <span class="hambugerBtn" onclick="viewSideBar()"><i class="xi-bars"></i> </span>
+                     <h3 class="panel">관리자 페이지</h3>
+                     <div class="rightCon"> <div class="userForm"><span class="userId">관리자 님</span><span class="logoutBtn">로그아웃</span></div><span class="search"><i class="xi-search"></i></span></div></div>
+                    
+                    </div>
+            <div class="bottom">
+                <ul class="navmenus">
+                    <li><a href="#">홈</a></li>
+                    <li><a href="#">메일</a></li>
+                    <li><a href="#">회원</a></li>
+                    <li><a href="#">게시판</a></li>
+                    <li><a href="#">주문</a></li>
+                    <li><a href="#">상품</a></li>
+                   
+                </ul>
+            </div>
+            </nav> 
+            <!-- <aside><input type="text" name="name" id="name" placeholder="이름을 검색해주세요"></aside> -->
+            <div class="resultTitle">
+             
+                
+
+
+
+
+
+            </div>
+               
+           
+              
           
 
 
@@ -53,8 +88,7 @@
             
          </div>
          
-<script src="assets/js/adminMainPage/adminMainPage.js"></script>
-	
+<script src="assets/js/adminMainPage/adminUserPage/adminUserPage.js"></script>
 	
 	
 </body>
