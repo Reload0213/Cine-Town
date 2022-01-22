@@ -54,7 +54,7 @@
             <div class="bottom">
                 <ul class="navmenus">
                     <li><a href="${pageContext.request.contextPath}/admin/main">홈</a></li>
-                    <li><a href="#">메일</a></li>
+                    <li><a href="${pageContext.request.contextPath}/admin/mail">메일</a></li>
                     <li><a href="${pageContext.request.contextPath}/admin/user">회원</a></li>
                     <li><a href="#">게시판</a></li>
                     <li><a href="#">주문</a></li>
@@ -88,7 +88,7 @@
             
          </div>
          
-<script src="assets/js/adminMainPage/adminUserPage/adminUserPage.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/adminMainPage.js"></script>
 	
 	
 </body>
