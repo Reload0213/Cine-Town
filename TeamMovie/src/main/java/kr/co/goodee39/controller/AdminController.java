@@ -19,5 +19,11 @@ public class AdminController {
 		return "admin/user";
 	}
 	
+	@GetMapping("/mail")
+	public String mail() {
+
+		return "admin/mail";
+	}
+	
 	
 }
