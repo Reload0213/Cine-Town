@@ -24,23 +24,15 @@
 </head>
 <body>
     
-    <!-- 임승혁 관리자페이지 메인시작 -->
+     <!-- 임승혁 관리자페이지 메인시작 -->
           <div class="hideMenu">
             <ul class="adminMenus">
-                <li class="hoverNot"><a onclick="exitSideBar()" class="exitHideMenu"href="#">&times;</a></li>
+                <li><a onclick="exitSideBar()" class="exitHideMenu"href="#">&times;</a></li>
                 <!-- <li id="switchingTheme"><i class="fas fa-exchange-alt"></i>테마 변경</a></li>-->
-                <li><a href="#"><i class="xi-profile"></i> 4443919님 </a></li>
-                   <li id="switchingTheme"><a href="#">테마 변경</a></li>
-                  <li><a href="#">관리자 메일함</a></li>
-                  <li><a href="#">회원 정보 관리</a></li>
-                  <li><a href="#">회원 주문 조회</a></li>
-                  <li><a href="#"> 리뷰게시판 수정/삭제</a></li>
-                  <li><a href="#">FAQ게시판 생성/수정</a></li>
-
-                  <li><a href="#">상품 등록</a></li>
-                  <li><a href="#"> 상품 수정</a></li>
-                  <li><a href="#"> 상품 삭제</a></li>
-                  <li><a href="#"> 로그아웃</a></li>
+               
+                   
+                  <li><div class="userCon"><i class="xi-profile"></i><span class="username">임승혁 님</span></div><span class="logoutBtnM">로그아웃</span></li>
+                  
               </ul> 
 
           </div>
@@ -49,29 +41,38 @@
             
             <div class="searchCon">
                 <span class="searchBtn"><i class="xi-search"></i></span><input type="text" name="" id=""><span class="xbtn">&times;</span></div>
-                    
+                
           </div>
   
           <div class="mainCon">
             <nav>
-            <span class="hambugerBtn" onclick="viewSideBar()"><i class="xi-bars"></i> </span>
-                <h3 class="panel">관리자 페이지</h3>
-            <span class="search"><i class="xi-search"></i></span>
+            <div class="top">
+                <div class="topCon">
+                    <span class="hambugerBtn" onclick="viewSideBar()"><i class="xi-bars"></i> </span>
+                     <h3 class="panel">관리자 페이지</h3>
+                     <div class="rightCon"> <div class="userForm"><span class="userId">관리자 님</span><span class="logoutBtn">로그아웃</span></div><span class="search"><i class="xi-search"></i></span></div></div>
+                    
+                    </div>
+            <div class="bottom">
+                <ul class="navmenus">
+                    <li><a href="#">홈</a></li>
+                    <li><a href="#">메일</a></li>
+                    <li><a href="#">회원</a></li>
+                    <li><a href="#">게시판</a></li>
+                    <li><a href="#">주문</a></li>
+                    <li><a href="#">상품</a></li>
+                   
+                </ul>
+            </div>
             </nav> 
             <!-- <aside><input type="text" name="name" id="name" placeholder="이름을 검색해주세요"></aside> -->
             <div class="resultTitle">
-                <span>검색결과</span>
+                <h3>검색결과</h3>
             </div>   
             <div class="userTable">
-             
+               
               <table>
-                  <colgroup>
-                  <col style="width:10%">
-                  <col style="width:15%">
-                  <col style="width:20%">
-                  <col style="width:20%">
-                  <col style="width:30%">
-                </colgroup>
+              
                   <thead>
                       <tr>
                       <th>번호</th>
@@ -79,6 +80,7 @@
                       <th>비밀번호</th>
                       <th>휴대폰번호</th>
                       <th>이메일</th>
+                      <th>삭제</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -88,6 +90,7 @@
                         <td>123456789</td>
                         <td>01034891328</td>
                         <td>kikaio77@naver.com</td>
+                        <td><button>삭제하기</button></td>
                     </tr>
                     <tr>
                         <td>2</td>
@@ -95,6 +98,7 @@
                         <td>asdfasdf</td>
                         <td>010123456789</td>
                         <td>ccc1234@naver.com</td>
+                        <td><button>삭제하기</button></td>
                     </tr>
                     <tr>
                         <td>3</td>
@@ -102,6 +106,7 @@
                         <td>asdfasdf</td>
                         <td>010123456789</td>
                         <td>ccc1234@naver.com</td>
+                        <td><button>삭제하기</button></td>
                     </tr>
                     <tr>
                         <td>4</td>
@@ -109,6 +114,7 @@
                         <td>asdfasdf</td>
                         <td>010123456789</td>
                         <td>ccc1234@naver.com</td>
+                        <td><button>삭제하기</button></td>
                     </tr>
                     <tr>
                         <td>5</td>
@@ -116,6 +122,7 @@
                         <td>asdfasdf</td>
                         <td>010123456789</td>
                         <td>ccc1234@naver.com</td>
+                        <td><button>삭제하기</button></td>
                     </tr>
                     <tr>
                         <td>6</td>
@@ -123,6 +130,7 @@
                         <td>asdfasdf</td>
                         <td>010123456789</td>
                         <td>ccc1234@naver.com</td>
+                        <td><button>삭제하기</button></td>
                     </tr>
 
                     <tr>
@@ -131,6 +139,7 @@
                         <td>asdfasdf</td>
                         <td>010123456789</td>
                         <td>ccc1234@naver.com</td>
+                        <td><button>삭제하기</button></td>
                     </tr>
 
                     <tr>
@@ -139,6 +148,7 @@
                         <td>asdfasdf</td>
                         <td>010123456789</td>
                         <td>ccc1234@naver.com</td>
+                        <td><button>삭제하기</button></td>
                     </tr>
 
                     <tr>
@@ -147,6 +157,7 @@
                         <td>asdfasdf</td>
                         <td>010123456789</td>
                         <td>ccc1234@naver.com</td>
+                        <td><button>삭제하기</button></td>
                     </tr>
 
                     <tr>
@@ -155,6 +166,7 @@
                         <td>asdfasdf</td>
                         <td>010123456789</td>
                         <td>ccc1234@naver.com</td>
+                        <td><button>삭제하기</button></td>
                     </tr>
 
                     
@@ -220,8 +232,7 @@
             
          </div>
          
-<script src="${pageContext.request.contextPath}/assets/js/adminMainPage/adminUserPage/adminUserPage.js"></script>
-
+<script src="assets/js/adminMainPage/adminUserPage/adminUserPage.js"></script>
 
 
 </body>
