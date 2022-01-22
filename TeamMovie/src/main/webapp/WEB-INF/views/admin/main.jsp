@@ -88,7 +88,7 @@
             
          </div>
          
-<script src="${pageContext.request.contextPath}/assets/js/adminMainPage.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/adminMainPage/adminMainPage.js"></script>
 	
 	
 </body>
