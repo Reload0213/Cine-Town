@@ -20,11 +20,7 @@ public class previewController {
 			return "preview/detailPage1";
 		}
 		
-		@GetMapping("/detail/page1")
-		public String detailPage1() {
-
-			return "preview/detailPage1";
-		}
+	
 		
 		@GetMapping("/detail/page2")
 		public String detailPage2() {
