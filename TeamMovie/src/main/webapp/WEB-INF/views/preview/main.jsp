@@ -9,6 +9,22 @@
 
   <!-- 임승혁 게시판 폰트 링크 끝 -->
   
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/css/index/indexCSS/bootstrap.css" />
+
+  <!--owl slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <!-- nice select  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ==" crossorigin="anonymous" />
+  <!-- font awesome style -->
+  <link href="${pageContext.request.contextPath}/assets/fonts/index/font-awesome.min.css" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="${pageContext.request.contextPath}/assets/css/index/indexCSS/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="${pageContext.request.contextPath}/assets/css/index/indexCSS/responsive.css" rel="stylesheet" />
+  <!-- 인덱스 기존 템플릿 영역 끝입니다. -->
+  
   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/premiereMain/premiereMain.css">
 </head>
 <body>
