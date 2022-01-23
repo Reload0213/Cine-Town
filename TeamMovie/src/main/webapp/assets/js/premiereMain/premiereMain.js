@@ -1,7 +1,6 @@
 // 임승혁 시사회 스크립트입니다.
 
 
-
 filterSelection("all");
 
 function filterSelection(c){
@@ -27,6 +26,7 @@ function filterAddClass(element, name){
     for( i=0; i<arr2.length; i++){
         if(arr1.indexOf(arr2[i])== -1)
         element.className += " "+arr2[i];
+        element.style.display="block";
     }
 }
 
@@ -39,6 +39,7 @@ function filterRemoveClass(element, name){
     for( i=0; i<arr2.length; i++){
         while(arr1.indexOf(arr2[i])>-1){
        arr1.splice(arr1.indexOf(arr2[i]),1);
+       element.style.display="none";
 
         }
     }
