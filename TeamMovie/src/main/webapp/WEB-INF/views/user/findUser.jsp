@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html> 
 <!-- 페이지 작성자 김정민 -->
 <head>
 <!--현 페이지 소스-->
