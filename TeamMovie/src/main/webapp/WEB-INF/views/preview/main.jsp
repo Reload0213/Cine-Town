@@ -13,7 +13,7 @@
   <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/css/index/indexCSS/bootstrap.css" />
 
  
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/premiereDetail/premiereDetail-page1.css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/premiereMain/premiereMain.css">
     <!-- header & footer css-->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/headerFooter/headerFooter.css">
     <link href="favicon.ico" rel="icon">
