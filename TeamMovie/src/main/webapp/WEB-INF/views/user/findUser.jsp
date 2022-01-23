@@ -22,51 +22,30 @@
 
 <body>
 	<%@ include file="../include/header.jsp"%>
-
-	<!-- Login Section Begin -->
-	<section class="login spad">
+<!-- Login Section Begin-->
+<section class="login spad">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6">
 					<div class="login__form">
-						<h3>로그인</h3>
+						<h3>비밀번호 찾기</h3>
 						<form action="#">
 							<div class="input__item">
 								<input type="text" placeholder="아이디를 입력해주세요" required> <span><i
 									class="xi-user-o"></i></span>
 							</div>
 							<div class="input__item">
-								<input type="text" placeholder="비밀번호를 입력해주세요" required>
+								<input type="text" placeholder="이메일을 입력해주세요" required>
 								<span><i class="xi-lock-o"></i></span>
 							</div>
-							<a href="${pageContext.request.contextPath}/user/findUser" class="forget_pass"
-								style="font-size: 1vh; font-style: italic;">아이디/비밀번호 찾기</a>
-							<button type="submit" class="site-btn">로그인</button>
+							<button type="submit" class="site-btn">비밀번호 찾기</button>
 						</form>
 
 					</div>
 				</div>
-				<div class="col-lg-6" style="text-align: center;">
-					<div class="login__register">
-						<h3>계정이 없으신가요?</h3>
-						<p style="color: white;">지금 가입하시고 다른 사용자들과 함께 영화를 공유해보세요</p>
-						<a href="signup.html" class="primary-btn">회원가입</a>
-					</div>
-				</div>
+			
 			</div>
-			<div class="login__social">
-				<div class="row d-flex justify-content-center">
-					<div class="col-lg-6">
-						<div class="login__social__links">
-							<span>or</span>
-							<ul>
-								<li><a href="#" class="google">카카오톡으로 로그인</a></li>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
+	
 		</div>
 	</section>
 	<!-- Login Section End -->

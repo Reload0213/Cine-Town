@@ -29,7 +29,7 @@
 			<div class="row">
 				<div class="col-lg-6">
 					<div class="login__form">
-						<h3>로그인</h3>
+						<h3>고객님의 비밀번호는 다음과 같습니다.</h3>
 						<form action="#">
 							<div class="input__item">
 								<input type="text" placeholder="아이디를 입력해주세요" required> <span><i
@@ -39,7 +39,7 @@
 								<input type="text" placeholder="비밀번호를 입력해주세요" required>
 								<span><i class="xi-lock-o"></i></span>
 							</div>
-							<a href="${pageContext.request.contextPath}/user/findUser" class="forget_pass"
+							<a href="#" class="forget_pass"
 								style="font-size: 1vh; font-style: italic;">아이디/비밀번호 찾기</a>
 							<button type="submit" class="site-btn">로그인</button>
 						</form>
