@@ -52,7 +52,7 @@
 					<ul class="navbar-nav  mx-auto ">
 						<li class="nav-item"><a class="nav-link cinema"
 							href="index.html">영화 </a></li>
-						<li class="nav-item"><a class="nav-link" href="menu.html">굿즈</a>
+						<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/goods/goodsMain">굿즈</a>
 						</li>
 						<li class="nav-item"><a class="nav-link"
 							href="${pageContext.request.contextPath}/aboutUs/aboutUsMain">회사
