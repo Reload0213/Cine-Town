@@ -405,7 +405,7 @@
 
 <!-- contents End -->
 </main>
-
+<%@ include file="/WEB-INF/views/include/footer.jsp" %>
 <script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/aboutUs/au_js/jquery.js"></script>
 <!-- Bootstrap jQuery -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/aboutUs/au_js/bootstrap.min.js"></script>
@@ -438,5 +438,5 @@
 <script type="text/javascript" src='https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js'></script>
 <script type="text/javascript" src='https://cdn.datatables.net/responsive/2.1.0/js/dataTables.responsive.min.js'></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/aboutUs/table_script.js"></script>
-<%@ include file="/WEB-INF/views/include/footer.jsp" %>
+
 </html>

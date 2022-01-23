@@ -17,8 +17,6 @@
         <link href="${pageContext.request.contextPath}/assets/css/faq/faq_css/ionicons.css" rel="stylesheet">
         <link href="${pageContext.request.contextPath}/assets/css/faq/faq_css/main.css" rel="stylesheet">
         
-
-
 <%@ include file="/WEB-INF/views/include/header.jsp" %>
 
 <title>Insert title here</title>
@@ -285,11 +283,8 @@
 
 
 </body>
-<script src="${pageContext.request.contextPath}/assets/js/faq/faq_js/jquery-1.12.3.min.js"></script>
-<script src="${pageContext.request.contextPath}/assets/js/faq/faq_js/bootstrap.min.js"></script>
+<%@ include file="/WEB-INF/views/include/footer.jsp" %>
 <script src="${pageContext.request.contextPath}/assets/js/faq/faq_js/jquery.magnific-popup.min.js"></script>
 <script src="${pageContext.request.contextPath}/assets/js/faq/faq_js/owl.carousel.min.js"></script>
 <script src="${pageContext.request.contextPath}/assets/js/faq/faq_js/script.js"></script>
-
-<%@ include file="/WEB-INF/views/include/footer.jsp" %>
 </html>
