@@ -2,45 +2,42 @@
 
 //임승혁 관리자페이지 자바스크립트단
 
-//테마 변경
 
-let switchingTheme = document.getElementById("switchingTheme");
 
-let value=0;
 
-switchingTheme.addEventListener("click",function(){
+function viewSideBar(){
 
-    if(value==0){
-        document.body.classList.add("mintTheme");
-        value++;
+    document.querySelector(".hideMenu").classList.add("on");
+    // document.querySelector(".hideMenu").style.width="250px";
+   
+   
     }
-    
-    else if(value==1){
+
+
+    function exitSideBar(){
+        document.querySelector(".hideMenu").classList.remove("on");
+        // document.querySelector(".hideMenu").style.width="0px";
+      
         
-        document.body.classList.remove("mintTheme");
-        document.body.classList.remove("pinkTheme");
-        document.body.classList.add("blueTheme");
-        value++;
     }
-    else if(value==2){
-        document.body.classList.remove("blueTheme");
-        document.body.classList.remove("mintTheme");
-        document.body.classList.add("pinkTheme");
-        value++;
-    }
-    else{
-        document.body.classList.remove("blueTheme");
-        document.body.classList.remove("mintTheme");
-        document.body.classList.remove("pinkTheme");
-
-        value=0;
-    }
+//   document.querySelector(".searchBox").classList.toggle("active");
+    
+document.querySelector(".search").addEventListener("click",function(){
+ 
+    document.querySelector(".searchBox").classList.toggle("active");
+      
+  
 
 
+    document.querySelector(".xbtn").addEventListener("click",function(){
+
+        document.querySelector(".searchBox").classList.remove("active");
+    });
 
 
    
-  
+
 });
 
-
+    
+    

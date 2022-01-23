@@ -7,10 +7,31 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/admin")
 public class AdminController {
-	@GetMapping("/admin")
-	public String getTest() {
+	@GetMapping("/main")
+	public String main() {
 
-		return "admin/admin";
+		return "admin/main";
 	}
+	
+	@GetMapping("/user")
+	public String user() {
+
+		return "admin/user";
+	}
+	
+	@GetMapping("/mail")
+	public String mail() {
+
+		return "admin/mail";
+	}
+	
+	
+	@GetMapping("/order")
+	public String order() {
+
+		return "admin/order";
+	}
+	
+	
 	
 }
