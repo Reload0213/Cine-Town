@@ -33,7 +33,10 @@
 </head>
 
 <body>
-  <header class="header_section">
+
+<%@ include file="../include/header.jsp" %>
+
+  <%-- <header class="header_section">
         <div class="container">
             <nav class="navbar navbar-expand-lg custom_nav-container ">
                 <a class="navbar-brand" href="${pageContext.request.contextPath}/">
@@ -86,7 +89,7 @@
             </nav>
         </div>
     </header>
-<!-- end header section -->
+<!-- end header section --> --%>
  
 
 
@@ -163,9 +166,9 @@
 
 
 
+<!-- 
 
-
-<!-- footer section start -->
+footer section start
 <footer class="footer_section">
 	<div class="container">
 		<div class="row">
@@ -212,7 +215,8 @@
 		</div>
 	</div>
 </footer>
-<!-- footer section end -->
+<%@ include file="../include/footer.jsp" %>
+footer section end -->
 
 
 
@@ -226,10 +230,10 @@
 
 
 
-<!--header&footer script-->
+<%-- <!--header&footer script-->
 <script src="${pageContext.request.contextPath}/assets/js/GoodsMainjs/vendor/jquery-3.3.1.min.js"></script>
 <script src="${pageContext.request.contextPath}/assets/js/GoodsMainjs/bootstrap.min.js"></script>
-
+ --%>
 <!--현 페이지 스크립트-->
 
 <!-- 임승혁 게시판 body 스크립트 -->
