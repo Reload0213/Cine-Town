@@ -170,6 +170,7 @@
 
 
   <a href="premiereDetail-page1.html" class="column romance">
+  
     <div class="content">
       <div class="moviePosterCon item1"><img src="${pageContext.request.contextPath}/assets/images/premiereMain/movieposter/mannyunijinado.jpg" alt=""></div>
       <p class="movieName">만 년이 지나도 변하지 않는게 ... </p>
