@@ -26,7 +26,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="x-ua-compatible" content="ie=edge">
-<title>Belle Multipurpose Bootstrap 4 Html Template</title>
 <meta name="description" content="description">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Favicon -->
@@ -34,9 +33,9 @@
 <!-- Plugins CSS -->
 <link rel="stylesheet" href="${pageContext.request.contextPath }/assets/css/GoodsMaincss/plugins.css">
 <!-- Bootstap CSS -->
-<link rel="stylesheet" href="${pageContext.request.contextPath }/assets/css/GoodsMaincss/bootstrap.min.css">
+ <link rel="stylesheet" href="${pageContext.request.contextPath }/assets/css/GoodsMaincss/bootstrap.min.css"> 
 <!-- Main Style CSS -->
-<link rel="stylesheet" href="${pageContext.request.contextPath }/assets/css/GoodsMaincss/style.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath }/assets/css/GoodsMaincss/style.css"> 
 <link rel="stylesheet" href="${pageContext.request.contextPath }/assets/css/GoodsMaincss/responsive.css">
 <!--폰트어썸 사용 키-->
  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"> 
@@ -462,7 +461,7 @@
     <div id="page-content">
     	<!--Home slider-->
     	<div class="slideshow slideshow-wrapper pb-section sliderFull">
-        	<div class="home-slideshow">
+        	<div class="home-slideshow" style="padding: 0;">
             	<div class="slide"  >
                 	<div  class="blur-up lazyload bg-size">
                         <img  class="blur-up lazyload bg-img" data-src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/slideshow-banners/belle-banner1.jpg" src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/slideshow-banners/belle-banner1.jpg" alt="Shop Our New Collection" title="Shop Our New Collection" />
