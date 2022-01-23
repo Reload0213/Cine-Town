@@ -1,6 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<head>
+ 
+    <!-- 이영주 영화 메뉴 페이지 css 시작 -->
+
+    <!-- main css -->
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/movieMain/style.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/movieMain/responsive.css">
+
+
+    <!-- 영화 메뉴 페이지 css 종료 -->
+
+</head>
+
 <%@ include file="../include/header.jsp"%>
 <main>
 	<!-- 영화 메뉴 페이지 html 시작 -->
@@ -389,5 +402,37 @@
 
 </main>
 <%@ include file="../include/footer.jsp"%>
+
+
+<!-- 이영주 영화 메뉴 페이지 js 시작 -->
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script
+	src="${pageContext.request.contextPath}/assets/js/movieMenu/popper.js"></script>
+<script
+	src="${pageContext.request.contextPath}/assets/js/movieMenu/stellar.js"></script>
+<script
+	src="${pageContext.request.contextPath}/assets/js/movieMenu/jquery.ajaxchimp.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/assets/js/movieMenu/waypoints.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/assets/js/movieMenu/mail-script.js"></script>
+<script
+	src="${pageContext.request.contextPath}/assets/js/movieMenu/contact.js"></script>
+<script
+	src="${pageContext.request.contextPath}/assets/js/movieMenu/jquery.form.js"></script>
+<script
+	src="${pageContext.request.contextPath}/assets/js/movieMenu/jquery.validate.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/assets/js/movieMenu/mail-script.js"></script>
+<script
+	src="${pageContext.request.contextPath}/assets/js/movieMenu/theme.js"></script>
+
+
+<!-- 영화 메뉴 페이지 js 끝 -->
+
+
+
 </body>
 </html>
