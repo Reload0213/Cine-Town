@@ -21,9 +21,14 @@
     <!-- XEICON 링크 -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
     <!-- header & footer css-->
+    
+    
+    
+    
+    <!-- 페이지별 css 추가 공간 -->
 
     
-    <!-- 영화 메뉴 페이지 css 시작 -->
+    <!-- 이영주 영화 메뉴 페이지 css 시작 -->
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/movieMain/bootstrap.css">
@@ -38,6 +43,36 @@
 
 
     <!-- 영화 메뉴 페이지 css 종료 -->
+
+
+
+
+
+
+	
+    <!-- 이영주 영화 상세 페이지 통합 css 파트 시작  -->
+    
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    
+    <!-- ElegantFonts CSS -->
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/movieDetail/elegant-fonts.css">
+
+    <!-- themify-icons CSS -->
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/movieDetail/themify-icons.css">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/movieDetail/swiper.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/movieDetail/style.css">
+
+    <!-- 영화 상세 페이지 통합 css 파트 종료  -->
+	
+
 
 
 

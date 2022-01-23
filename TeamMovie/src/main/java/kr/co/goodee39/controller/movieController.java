@@ -13,4 +13,10 @@ public class movieController {
 
 			return "movie/movieMenu";
 		}
+		
+		@GetMapping("/movieDetail")
+		public String goMovieDetail() {
+
+			return "movie/movieDetail";
+		}
 }

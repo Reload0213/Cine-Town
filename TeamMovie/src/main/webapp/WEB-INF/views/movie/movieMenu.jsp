@@ -34,15 +34,17 @@
 				<div class="col-md-6 col-lg-4">
 					<div class="single-category">
 						<div class="thumb">
+						<a href="${pageContext.request.contextPath}/movie/movieDetail">
 							<img class="img-fluid"
 								src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSo4lgN-zUMerbr5Zin2NJb-My3SnXnQf2Qgw&usqp=CAU"
 								alt="">
+						</a>
 						</div>
 						<div class="short_details">
 							<div class="meta-top d-flex">
-								<a href="#">shoes </a>/ <a href="#"> March 15, 2019</a>
+								<a href="${pageContext.request.contextPath}/movie/movieDetail">movieDetail Test 이동 </a>/ <a href="#"> March 15, 2019</a>
 							</div>
-							<a class="d-block" href="single-blog.html">
+							<a class="d-block" href="${pageContext.request.contextPath}/movie/movieDetail">
 								<h4>Shall for rule whose toge one may heaven to dat</h4>
 							</a>
 							<div class="meta-bottom d-flex">
