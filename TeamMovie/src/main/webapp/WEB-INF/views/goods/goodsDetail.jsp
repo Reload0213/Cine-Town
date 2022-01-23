@@ -27,6 +27,54 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400&display=swap" rel="stylesheet">
 
 
+
+
+
+
+
+
+
+
+
+
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cine Town</title>
+
+<!-- header & footer css-->
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/assets/css/headerFooter/bootstrap.min.css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/assets/css/headerFooter/headerFooter.css">
+<link href="favicon.ico" rel="icon">
+<!-- 글씨 폰트 Noto, Roboto -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap"
+	rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap"
+	rel="stylesheet">
+<!-- XEICON 링크 -->
+<link rel="stylesheet"
+	href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+
+<!-- header & footer css-->
+
+
+
+
+
+
+
+
+
+
+
+
 <style>
 
     .korean {
@@ -76,7 +124,7 @@
 
 <!-- 헤더 시작입니다 -->
  <!-- header section strats -->
- <header class="header_section" style="background-color: #232830;" >
+ <!-- <header class="header_section" style="background-color: #232830;" >
     <div class="container">
       <nav class="navbar navbar-expand-lg custom_nav-container ">
         <a class="navbar-brand" href="index.html">
@@ -174,10 +222,61 @@
         </div>
       </nav>
     </div>
-  </header>
+  </header> -->
   <!-- end header section -->
   <!-- slider section -->
   <!-- 헤더 종료입니다 -->
+  
+  <!-- header section strats -->
+	<header class="header_section">
+		<div class="container">
+			<nav class="navbar navbar-expand-lg custom_nav-container ">
+				<a class="navbar-brand" href="${pageContext.request.contextPath}/">
+					<span> Cine Town </span>
+				</a>
+
+				<button class="navbar-toggler" type="button" data-toggle="collapse"
+					data-target="#navbarSupportedContent"
+					aria-controls="navbarSupportedContent" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class=""> </span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav  mx-auto ">
+						<li class="nav-item"><a class="nav-link cinema"
+							href="index.html">영화 </a></li>
+						<li class="nav-item"><a class="nav-link" href="menu.html">굿즈</a>
+						</li>
+						<li class="nav-item"><a class="nav-link"
+							href="${pageContext.request.contextPath}/aboutUs/aboutUsMain">회사
+								소개</a></li>
+						<li class="nav-item"><a class="nav-link"
+							href="${pageContext.request.contextPath}/preview/main">시사회 /
+								이벤트</a></li>
+						<li class="nav-item"><a class="nav-link"
+							href="${pageContext.request.contextPath}/faq/faqMain">고객 센터</a></li>
+					</ul>
+					<div class="user_option">
+						<a href="${pageContext.request.contextPath}/goods/wishlist"
+							class="user_link" style="font-size: 1.7em;"> <i
+							class="xi-heart" aria-hidden="true"></i>
+						</a> <a href="${pageContext.request.contextPath}/goods/cart"
+							class="user_link" style="font-size: 1.7em;"> <i
+							class="xi-cart" aria-hidden="true"></i>
+						</a> <a href="${pageContext.request.contextPath}/user/signup"
+							class="user_link" style="font-size: 1.7em;"> <i
+							class="xi-user-plus" aria-hidden="true"></i>
+						</a> <a href="${pageContext.request.contextPath}/user/signin"
+							class="order_online"
+							style="border: 1px solid #fff; background-color: #232830; padding: 5px 20px;">
+							로그인 </a>
+					</div>
+				</div>
+			</nav>
+		</div>
+	</header>
+	<!-- end header section -->
 
 
 
@@ -829,7 +928,7 @@
                     
                     <!--Related Product Slider-->
                     <div class="related-product grid-products">
-                        <header class="section-header">
+                        <header class="section-header" style="background-color: white">
                             <h2 class="section-header__title text-center h2"><span class="korean">연관 상품들</span></h2>
                             <p class="sub-heading korean">다양한 영화의 굿즈를 만나보세요</p>
                         </header>
@@ -1281,7 +1380,7 @@
                     
                     <!--Recently Product Slider-->
                     <div class="related-product grid-products">
-                            <header class="section-header">
+                            <header class="section-header" style="background-color: white">
                                 <h2 class="section-header__title text-center h2"><span class="korean">최근 본 상품들</span></h2>
                                 <p class="sub-heading korean">You can manage this section from store admin as describe in above section</p>
                             </header>
@@ -1730,7 +1829,7 @@
 
 <!-- 푸터 시작입니다. -->
 <!-- footer section -->
-<footer class="footer_section">
+<!-- <footer class="footer_section">
     <div class="container">
       <div class="row">
         <div class="col-md-4 footer-col">
@@ -1808,10 +1907,123 @@
         </p>
       </div>
     </div>
-  </footer>
+  </footer> -->
   <!-- footer section -->
 <!-- 푸터 종료입니다 -->
 
+<!-- footer section start -->
+<footer class="footer_section">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4 footer-col">
+				<div class="footer_contact">
+					<h4 style="color: #fff;">Contact Us</h4>
+					<div class="contact_link_box">
+						<a href=""> <i class="fa fa-map-marker" aria-hidden="true"></i>
+							<span> 서울특별시 금천구 가산동 가산디지털2로 115 대륭테크노타운3차 1109-1호 </span>
+						</a> <a href=""> <i class="fa fa-phone" aria-hidden="true"></i> <span>
+								Call 02-2108-5900 </span>
+						</a> <a href=""> <i class="fa fa-envelope" aria-hidden="true"></i>
+							<span> goodee39@gmail.com </span>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 footer-col">
+				<div class="footer_detail">
+					<a href="" class="footer-logo"> Cine Town </a>
+					<p>
+						구디39기 3조에서 제작 팀프로젝트 <br>영화 리뷰와 굿즈 판매를 하는 웹사이트 입니다.
+					</p>
+					<div class="footer_social">
+						<a href=""> <i class="xi-instagram" aria-hidden="true"></i>
+						</a> <a href=""> <i class="xi-twitter" aria-hidden="true"></i>
+						</a> <a href=""> <i class="xi-facebook" aria-hidden="true"></i>
+						</a> <a href=""> <i class="xi-youtube" aria-hidden="true"></i>
+						</a> <a href=""> <i class="xi-naver" aria-hidden="true"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 footer-col">
+				<h4 style="color: #fff;">Opening Hours</h4>
+				<p>10.00 Am -16.00 Pm</p>
+			</div>
+		</div>
+		<div class="footer-info">
+			<p>
+				&copy; 구디 3조 : 이영주, 김용현, 강혜수, 김정민, 임승혁 <br> <br> &copy; <a
+					href="#" target="_blank">by goodee39</a>
+			</p>
+		</div>
+	</div>
+</footer>
+<!-- footer section end -->
+
+
+
+
+<!--header&footer script-->
+<script
+	src="${pageContext.request.contextPath}/assets/js/headerFooter/jquery-3.3.1.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/assets/js/headerFooter/bootstrap.min.js"></script>
+<!--header&footer script-->
+
+
+
+
+<!-- 페이지별 js 추가 공간 -->
+
+
+
+
+<!-- 이영주 영화 메뉴 페이지 js 시작 -->
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script
+	src="${pageContext.request.contextPath}/assets/js/movieMenu/popper.js"></script>
+<script
+	src="${pageContext.request.contextPath}/assets/js/movieMenu/stellar.js"></script>
+<script
+	src="${pageContext.request.contextPath}/assets/js/movieMenu/jquery.ajaxchimp.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/assets/js/movieMenu/waypoints.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/assets/js/movieMenu/mail-script.js"></script>
+<script
+	src="${pageContext.request.contextPath}/assets/js/movieMenu/contact.js"></script>
+<script
+	src="${pageContext.request.contextPath}/assets/js/movieMenu/jquery.form.js"></script>
+<script
+	src="${pageContext.request.contextPath}/assets/js/movieMenu/jquery.validate.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/assets/js/movieMenu/mail-script.js"></script>
+<script
+	src="${pageContext.request.contextPath}/assets/js/movieMenu/theme.js"></script>
+
+
+<!-- 영화 메뉴 페이지 js 끝 -->
+
+
+
+
+
+
+
+
+<!-- 이영주 영화 상세 페이지 통합 js 파트 시작  -->
+
+<script type='text/javascript' src='${pageContext.request.contextPath}/assets/js/movieDetail/swiper.min.js'></script>
+<script type='text/javascript'
+	src='${pageContext.request.contextPath}/assets/js/movieDetail/masonry.pkgd.min.js'></script>
+<script type='text/javascript'
+	src='${pageContext.request.contextPath}/assets/js/movieDetail/jquery.collapsible.min.js'></script>
+<script type='text/javascript' src='${pageContext.request.contextPath}/assets/js/movieDetail/custom.js'></script>
+
+
+<!-- 영화 상세 페이지 통합 js 파트 종료  -->
 
 
 
