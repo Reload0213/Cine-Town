@@ -1,6 +1,26 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<head>
+
+ <!-- 이영주 영화 상세 페이지 통합 css 파트 시작  -->    
+
+   
+    <!-- ElegantFonts CSS -->
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/movieDetail/elegant-fonts.css">
+
+    <!-- themify-icons CSS -->
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/movieDetail/themify-icons.css">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/movieDetail/swiper.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/movieDetail/style.css">
+
+    <!-- 영화 상세 페이지 통합 css 파트 종료  -->
+	
+</head>
 <%@ include file="../include/header.jsp"%>
 <main>
 
@@ -733,5 +753,19 @@
 		
 </main>
 <%@ include file="../include/footer.jsp"%>
+
+
+<!-- 이영주 영화 상세 페이지 통합 js 파트 시작  -->
+
+<script type='text/javascript' src='${pageContext.request.contextPath}/assets/js/movieDetail/swiper.min.js'></script>
+<script type='text/javascript'
+	src='${pageContext.request.contextPath}/assets/js/movieDetail/masonry.pkgd.min.js'></script>
+<script type='text/javascript'
+	src='${pageContext.request.contextPath}/assets/js/movieDetail/jquery.collapsible.min.js'></script>
+<script type='text/javascript' src='${pageContext.request.contextPath}/assets/js/movieDetail/custom.js'></script>
+
+
+<!-- 영화 상세 페이지 통합 js 파트 종료  -->
+
 </body>
 </html>
