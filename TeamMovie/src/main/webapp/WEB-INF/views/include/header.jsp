@@ -110,7 +110,7 @@
                             <a class="nav-link" href="${pageContext.request.contextPath}/preview/main">시사회 / 이벤트</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="book.html">고객 센터</a>
+                            <a class="nav-link" href="${pageContext.request.contextPath}/faq/faqMain">고객 센터</a>
                         </li>
                     </ul>
                     <div class="user_option">
