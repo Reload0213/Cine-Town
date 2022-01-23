@@ -114,14 +114,14 @@
                         </li>
                     </ul>
                     <div class="user_option">
-                        <a href="" class="user_link" style="font-size: 1.7em;">
+                        <a href="${pageContext.request.contextPath}/goods/wishlist" class="user_link" style="font-size: 1.7em;">
                             <i class="xi-heart" aria-hidden="true"></i>
                         </a>
-                        <a href="" class="user_link" style="font-size: 1.7em;">
+                        <a href="${pageContext.request.contextPath}/goods/cart" class="user_link" style="font-size: 1.7em;">
                             <i class="xi-cart" aria-hidden="true"></i>
                         </a>
 
-                        <a href="" class="user_link" style="font-size: 1.7em;">
+                        <a href="${pageContext.request.contextPath}/user/signup" class="user_link" style="font-size: 1.7em;">
                             <i class="xi-user-plus" aria-hidden="true"></i>
                         </a>
                         <a href="${pageContext.request.contextPath}/user/signin" class="order_online"
@@ -135,21 +135,3 @@
     </header>
     <!-- end header section -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!--현 페이지 스크립트-->
-
-    <!--현 페이지 스크립트-->
