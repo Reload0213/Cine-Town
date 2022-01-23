@@ -3,17 +3,17 @@
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
-		<typeAlias type="kr.co.goodee39.vo.AdminVO" alias="adminVO"/>
-		<typeAlias type="kr.co.goodee39.vo.CartVO" alias="cartVO"/>
-		<typeAlias type="kr.co.goodee39.vo.GoodsReviewVO" alias="goodsReviewVO"/> 
-		<typeAlias type="kr.co.goodee39.vo.GoodsVO" alias="goodsVO"/>
-		<typeAlias type="kr.co.goodee39.vo.MovieVO" alias="movieVO"/>
-		<typeAlias type="kr.co.goodee39.vo.MovieWishlistVO" alias="movieWishlistVO"/>
-		<typeAlias type="kr.co.goodee39.vo.OrderDetailVO" alias="orderDetailVO"/>
-		<typeAlias type="kr.co.goodee39.vo.ProductWishlistVO" alias="productWishlistVO"/>
-		<typeAlias type="kr.co.goodee39.vo.QnaVO" alias="qnaVO"/>
-		<typeAlias type="kr.co.goodee39.vo.ReviewReplyVO" alias="reviewReplyVO"/>
-		<typeAlias type="kr.co.goodee39.vo.UserMvreviewVO" alias="userMvreviewVO"/>
-		<typeAlias type="kr.co.goodee39.vo.UserVO" alias="userVO"/>
+		<!-- <typeAlias type="kr.co.goodee39.admin.vo.AdminVO" alias="adminVO"/>
+		<typeAlias type="kr.co.goodee39.admin.vo.QnaVO" alias="qnaVO"/>
+		<typeAlias type="kr.co.goodee39.cart.vo.CartVO" alias="cartVO"/>
+		<typeAlias type="kr.co.goodee39.goods.vo.GoodsReviewVO" alias="goodsReviewVO"/> 
+		<typeAlias type="kr.co.goodee39.goods.vo.GoodsVO" alias="goodsVO"/>
+		<typeAlias type="kr.co.goodee39.movie.vo.MovieVO" alias="movieVO"/>
+		<typeAlias type="kr.co.goodee39.movie.vo.MovieWishlistVO" alias="movieWishlistVO"/>
+		<typeAlias type="kr.co.goodee39.user.vo.UserMvreviewVO" alias="userMvreviewVO"/>
+		<typeAlias type="kr.co.goodee39.user.vo.UserVO" alias="userVO"/>
+		<typeAlias type="kr.co.goodee39.user.vo.ProductWishlistVO" alias="productWishlistVO"/>
+		<typeAlias type="kr.co.goodee39.order.vo.OrderDetailVO" alias="orderDetailVO"/>
+		<typeAlias type="kr.co.goodee39.review.vo.ReviewReplyVO" alias="reviewReplyVO"/> -->
 	</typeAliases>
 </configuration>
