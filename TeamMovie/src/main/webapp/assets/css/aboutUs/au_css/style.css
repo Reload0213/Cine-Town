@@ -38,11 +38,11 @@
 
 @font-face {
   	font-family: 'JaapokkiRegular';
-	src: url('/assets/fonts/aboutUs/au_fonts/jaapokki/jaapokki-regular.eot');
-    src: url('/assets/fonts/aboutUs/au_fonts/jaapokki/jaapokki-regular.eot?#iefix') format('embedded-opentype'),
-         url('/assets/fonts/aboutUs/au_fonts/jaapokki/jaapokki-regular.woff') format('woff'),
-         url('/assets/fonts/aboutUs/au_fonts/jaapokki/jaapokki-regular.ttf') format('truetype'),
-         url('/assets/fonts/aboutUs/au_fonts/jaapokki/jaapokki-regular.svg#JaapokkiRegular') format('svg');
+	src: url('/TeamMovie/assets/fonts/aboutUs/au_fonts/jaapokki/jaapokki-regular.eot');
+    src: url('/TeamMovie/assets/fonts/aboutUs/au_fonts/jaapokki/jaapokki-regular.eot?#iefix') format('embedded-opentype'),
+         url('/TeamMovie/assets/fonts/aboutUs/au_fonts/jaapokki/jaapokki-regular.woff') format('woff'),
+         url('/TeamMovie/assets/fonts/aboutUs/au_fonts/jaapokki/jaapokki-regular.ttf') format('truetype'),
+         url('/TeamMovie/assets/fonts/aboutUs/au_fonts/jaapokki/jaapokki-regular.svg#JaapokkiRegular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -352,7 +352,7 @@ blockquote {
 	top: 0;
 	width: 100%;
 	height: 100%;
-	background: url(/assets/images/aboutUs/au_images/overaly.png);
+	background: url(/TeamMovie/assets/images/aboutUs/au_images/overaly.png);
 }
 
 .parallax h3{
@@ -360,19 +360,19 @@ blockquote {
 }
 
 .parallax1{
-	background: url(/assets/images/aboutUs/au_images/parallax/parallax1.jpg) no-repeat;
+	background: url(/TeamMovie/assets/images/aboutUs/au_images/parallax/parallax1.jpg) no-repeat;
 }
 
 .parallax2{
-	background: url(/assets/images/aboutUs/au_images/parallax/parallax2.jpg) no-repeat;
+	background: url(/TeamMovie/assets/images/aboutUs/au_images/parallax/parallax2.jpg) no-repeat;
 }
 
 .parallax3{
-	background: url(/assets/images/aboutUs/au_images/parallax/parallax3.jpg) no-repeat;
+	background: url(/TeamMovie/assets/images/aboutUs/au_images/parallax/parallax3.jpg) no-repeat;
 }
 
 .parallax4{
-	background: url(/assets/images/aboutUs/au_images/parallax/parallax4.jpg) no-repeat;
+	background: url(/TeamMovie/assets/images/aboutUs/au_images/parallax/parallax4.jpg) no-repeat;
 }
 
 .parallax .btn.solid {
@@ -891,7 +891,7 @@ ul.navbar-nav > li > a i{
 	bottom: 0;
 	left: 0;
 	right: 0;
-	background-image: url(/assets/images/aboutUs/au_images/overaly.png);
+	background-image: url(/TeamMovie/assets/images/aboutUs/au_images/overaly.png);
 }
 
 #main-slide .item img{
@@ -1135,7 +1135,7 @@ ul.navbar-nav > li > a i{
     bottom: 0;
     left: 0;
     right: 0;
-    background-image: url(/assets/images/aboutUs/au_images/overaly.png);
+    background-image: url(/TeamMovie/assets/images/aboutUs/au_images/overaly.png);
 }
 
 .ts-flex-slider .flexslider .slides{
@@ -2315,7 +2315,7 @@ figure.effect-oscar:hover img {
 
 .footer{
 	padding: 60px 0 100px;
-	background: #2e2e2e url(/assets/images/aboutUs/au_images/footer-bg.jpg) no-repeat center 0;
+	background: #2e2e2e url(/TeamMovie/assets/images/aboutUs/au_images/footer-bg.jpg) no-repeat center 0;
 	background-size: cover;
 	color: #fff;
 	font-size: 14px;  
@@ -3076,7 +3076,7 @@ h4.panel-title a.collapsed:before {
 
 .hero-section {
 	height: 100%;
-	background-image: url(/assets/images/aboutUs/au_images/landing/main-bg.jpg);
+	background-image: url(/TeamMovie/assets/images/aboutUs/au_images/landing/main-bg.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
