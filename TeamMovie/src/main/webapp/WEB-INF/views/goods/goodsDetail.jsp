@@ -54,20 +54,20 @@
   <title>CGV</title>
 
   <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="assets/css/indexCSS/bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/assets/css/indexCSS/bootstrap.css" />
 
   <!--owl slider stylesheet -->
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
   <!-- nice select  -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ==" crossorigin="anonymous" />
   <!-- font awesome style -->
-  <link href="assets/fonts/font-awesome.min.css" rel="stylesheet" />
+  <link href="${pageContext.request.contextPath }/assets/fonts/font-awesome.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
 
   <!-- Custom styles for this template -->
-  <link href="assets/css/index/indexCSS/style.css" rel="stylesheet" />
+  <link href="${pageContext.request.contextPath }/assets/css/index/indexCSS/style.css" rel="stylesheet" />
   <!-- responsive style -->
-  <link href="assets/css/index/indexCSS/responsive.css" rel="stylesheet" />
+  <link href="${pageContext.request.contextPath }/assets/css/index/indexCSS/responsive.css" rel="stylesheet" />
   <!-- 인덱스 기존 템플릿 영역 끝입니다. -->
   <!-- 기존의 헤더영역 종료입니다 -->
 
@@ -412,7 +412,7 @@
                                
                                     <div class="zoompro-wrap product-zoom-right pl-20">
                                         <div class="zoompro-span">
-                                            <img class="zoompro blur-up lazyload" data-zoom-image="assets/images/GoodsMainimages/product-detail-page/cape-dress-1.jpg" alt="" src="assets/images/GoodsMainimages/product-detail-page/cape-dress-1.jpg" />
+                                            <img class="zoompro blur-up lazyload" data-zoom-image="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-detail-page/cape-dress-1.jpg" alt="" src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-detail-page/cape-dress-1.jpg" />
                                         </div>
                                         <div class="product-labels"><span class="lbl on-sale">Sale</span><span class="lbl pr-label1">new</span></div>
                                         <div class="product-buttons">
@@ -421,13 +421,13 @@
                                         </div>
                                     </div>
                                     <div class="lightboximages">
-                                        <a href="assets/images/GoodsMainimages/product-detail-page/cape-dress-1.jpg" data-size="1462x2048"></a>
-                                        <a href="assets/images/GoodsMainimages/product-detail-page/cape-dress-2.jpg" data-size="1462x2048"></a>
-                                        <a href="assets/images/GoodsMainimages/product-detail-page/cape-dress-3.jpg" data-size="1462x2048"></a>
-                                        <a href="assets/images/GoodsMainimages/product-detail-page/cape-dress-4.jpg" data-size="1462x2048"></a>
-                                        <a href="assets/images/GoodsMainimages/product-detail-page/cape-dress-5.jpg" data-size="1462x2048"></a>
-                                        <a href="assets/images/GoodsMainimages/product-detail-page/cape-dress-6.jpg" data-size="1462x2048"></a>
-                                        <a href="assets/images/GoodsMainimages/product-detail-page/cape-dress-7.jpg" data-size="731x1024"></a>
+                                        <a href="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-detail-page/cape-dress-1.jpg" data-size="1462x2048"></a>
+                                        <a href="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-detail-page/cape-dress-2.jpg" data-size="1462x2048"></a>
+                                        <a href="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-detail-page/cape-dress-3.jpg" data-size="1462x2048"></a>
+                                        <a href="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-detail-page/cape-dress-4.jpg" data-size="1462x2048"></a>
+                                        <a href="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-detail-page/cape-dress-5.jpg" data-size="1462x2048"></a>
+                                        <a href="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-detail-page/cape-dress-6.jpg" data-size="1462x2048"></a>
+                                        <a href="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-detail-page/cape-dress-7.jpg" data-size="731x1024"></a>
                                     </div>
         
                                 </div>
@@ -458,7 +458,7 @@
                                             </span>  
                                         </p>
                                         <div class="orderMsg" data-user="23" data-time="24">
-                                            <img src="assets/images/GoodsMainimages/order-icon.jpg" alt="" /> <strong class="items">5</strong> sold in last <strong class="time">26</strong> hours</div>
+                                            <img src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/order-icon.jpg" alt="" /> <strong class="items">5</strong> sold in last <strong class="time">26</strong> hours</div>
                                         </div>
                                     <div class="product-single__description rte">
                                         <ul>
@@ -570,19 +570,19 @@
                     <div class="prFeatures">
                         <div class="row">
                             <div class="col-12 col-sm-6 col-md-3 col-lg-3 feature">
-                                <img src="assets/images/GoodsMainimages/credit-card.png" alt="Safe Payment" title="Safe Payment" />
+                                <img src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/credit-card.png" alt="Safe Payment" title="Safe Payment" />
                                 <div class="details korean"><h3 class="korean">안전 결제</h3>안전 결제 수단을 제공합니다.</div>
                             </div>
                             <div class="col-12 col-sm-6 col-md-3 col-lg-3 feature">
-                                <img src="assets/images/GoodsMainimages/shield.png" alt="Confidence" title="Confidence" />
+                                <img src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/shield.png" alt="Confidence" title="Confidence" />
                                 <div class="details korean"><h3 class="korean">개인정보 보호</h3>검증된 개인정보 보호 기술을 사용합니다.</div>
                             </div>
                             <div class="col-12 col-sm-6 col-md-3 col-lg-3 feature">
-                                <img src="assets/images/GoodsMainimages/worldwide.png" alt="Worldwide Delivery" title="Worldwide Delivery" />
+                                <img src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/worldwide.png" alt="Worldwide Delivery" title="Worldwide Delivery" />
                                 <div class="details korean"><h3 class="korean">국제 배송</h3>무료 &amp; 신속정확 &amp; 전지역 가능.</div>
                             </div>
                             <div class="col-12 col-sm-6 col-md-3 col-lg-3 feature">
-                                <img src="assets/images/GoodsMainimages/phone-call.png" alt="Hotline" title="Hotline" />
+                                <img src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/phone-call.png" alt="Hotline" title="Hotline" />
                                 <div class="details korean"><h3 class="korean">핫 라인</h3>언제든지 문의하세요 4141 456 789, 4125 666 888</div>
                             </div>
                         </div>
@@ -812,7 +812,7 @@
                                   </tbody>
                                 </table>
                                 <div class="text-center">
-                                    <img src="assets/images/GoodsMainimages/size.jpg" alt="" />
+                                    <img src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/size.jpg" alt="" />
                                 </div>
                           </div>
                             
@@ -840,10 +840,10 @@
                                     <!-- start product image -->
                                     <a href="#">
                                         <!-- image -->
-                                        <img class="primary blur-up lazyload" data-src="assets/images/GoodsMainimages/product-images/product-image1.jpg" src="assets/images/GoodsMainimages/product-images/product-image1.jpg" alt="image" title="product">
+                                        <img class="primary blur-up lazyload" data-src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image1.jpg" src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image1.jpg" alt="image" title="product">
                                         <!-- End image -->
                                         <!-- Hover image -->
-                                        <img class="hover blur-up lazyload" data-src="assets/images/GoodsMainimages/product-images/product-image1-1.jpg" src="assets/images/GoodsMainimages/product-images/product-image1-1.jpg" alt="image" title="product">
+                                        <img class="hover blur-up lazyload" data-src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image1-1.jpg" src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image1-1.jpg" alt="image" title="product">
                                         <!-- End hover image -->
                                         <!-- product label -->
                                         <div class="product-labels rectangular"><span class="lbl on-sale">-16%</span> <span class="lbl pr-label1">new</span></div>
@@ -891,12 +891,12 @@
                                     </div>
                                     <!-- Variant -->
                                     <ul class="swatches">
-                                        <li class="swatch medium rounded"><img src="assets/images/GoodsMainimages/product-images/variant1.jpg" alt="image" /></li>
-                                        <li class="swatch medium rounded"><img src="assets/images/GoodsMainimages/product-images/variant2.jpg" alt="image" /></li>
-                                        <li class="swatch medium rounded"><img src="assets/images/GoodsMainimages/product-images/variant3.jpg" alt="image" /></li>
-                                        <li class="swatch medium rounded"><img src="assets/images/GoodsMainimages/product-images/variant4.jpg" alt="image" /></li>
-                                        <li class="swatch medium rounded"><img src="assets/images/GoodsMainimages/product-images/variant5.jpg" alt="image" /></li>
-                                        <li class="swatch medium rounded"><img src="assets/images/GoodsMainimages/product-images/variant6.jpg" alt="image" /></li>
+                                        <li class="swatch medium rounded"><img src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/variant1.jpg" alt="image" /></li>
+                                        <li class="swatch medium rounded"><img src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/variant2.jpg" alt="image" /></li>
+                                        <li class="swatch medium rounded"><img src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/variant3.jpg" alt="image" /></li>
+                                        <li class="swatch medium rounded"><img src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/variant4.jpg" alt="image" /></li>
+                                        <li class="swatch medium rounded"><img src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/variant5.jpg" alt="image" /></li>
+                                        <li class="swatch medium rounded"><img src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/variant6.jpg" alt="image" /></li>
                                     </ul>
                                     <!-- End Variant -->
                                 </div>
@@ -908,10 +908,10 @@
                                     <!-- start product image -->
                                     <a href="#">
                                         <!-- image -->
-                                        <img class="primary blur-up lazyload" data-src="assets/images/GoodsMainimages/product-images/product-image2.jpg" src="assets/images/GoodsMainimages/product-images/product-image2.jpg" alt="image" title="product">
+                                        <img class="primary blur-up lazyload" data-src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image2.jpg" src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image2.jpg" alt="image" title="product">
                                         <!-- End image -->
                                         <!-- Hover image -->
-                                        <img class="hover blur-up lazyload" data-src="assets/images/GoodsMainimages/product-images/product-image2-1.jpg" src="assets/images/GoodsMainimages/product-images/product-image2-1.jpg" alt="image" title="product">
+                                        <img class="hover blur-up lazyload" data-src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image2-1.jpg" src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image2-1.jpg" alt="image" title="product">
                                         <!-- End hover image -->
                                     </a>
                                     <!-- end product image -->
@@ -955,10 +955,10 @@
                                     </div>
                                     <!-- Variant -->
                                     <ul class="swatches">
-                                        <li class="swatch medium rounded"><img src="assets/images/GoodsMainimages/product-images/variant2-1.jpg" alt="image" /></li>
-                                        <li class="swatch medium rounded"><img src="assets/images/GoodsMainimages/product-images/variant2-2.jpg" alt="image" /></li>
-                                        <li class="swatch medium rounded"><img src="assets/images/GoodsMainimages/product-images/variant2-3.jpg" alt="image" /></li>
-                                        <li class="swatch medium rounded"><img src="assets/images/GoodsMainimages/product-images/variant2-4.jpg" alt="image" /></li>
+                                        <li class="swatch medium rounded"><img src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/variant2-1.jpg" alt="image" /></li>
+                                        <li class="swatch medium rounded"><img src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/variant2-2.jpg" alt="image" /></li>
+                                        <li class="swatch medium rounded"><img src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/variant2-3.jpg" alt="image" /></li>
+                                        <li class="swatch medium rounded"><img src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/variant2-4.jpg" alt="image" /></li>
                                     </ul>
                                     <!-- End Variant -->
                                 </div>
@@ -970,10 +970,10 @@
                                     <!-- start product image -->
                                     <a href="#">
                                         <!-- image -->
-                                        <img class="primary blur-up lazyload" data-src="assets/images/GoodsMainimages/product-images/product-image3.jpg" src="assets/images/GoodsMainimages/product-images/product-image3.jpg" alt="image" title="product">
+                                        <img class="primary blur-up lazyload" data-src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image3.jpg" src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image3.jpg" alt="image" title="product">
                                         <!-- End image -->
                                         <!-- Hover image -->
-                                        <img class="hover blur-up lazyload" data-src="assets/images/GoodsMainimages/product-images/product-image3-1.jpg" src="assets/images/GoodsMainimages/product-images/product-image3-1.jpg" alt="image" title="product">
+                                        <img class="hover blur-up lazyload" data-src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image3-1.jpg" src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image3-1.jpg" alt="image" title="product">
                                         <!-- End hover image -->
                                         <!-- product label -->
                                         <div class="product-labels rectangular"><span class="lbl pr-label2">Hot</span></div>
@@ -1021,10 +1021,10 @@
                                     </div>
                                     <!-- Variant -->
                                     <ul class="swatches">
-                                        <li class="swatch medium rounded"><img src="assets/images/GoodsMainimages/product-images/variant3-1.jpg" alt="image" /></li>
-                                        <li class="swatch medium rounded"><img src="assets/images/GoodsMainimages/product-images/variant3-2.jpg" alt="image" /></li>
-                                        <li class="swatch medium rounded"><img src="assets/images/GoodsMainimages/product-images/variant3-3.jpg" alt="image" /></li>
-                                        <li class="swatch medium rounded"><img src="assets/images/GoodsMainimages/product-images/variant3-4.jpg" alt="image" /></li>
+                                        <li class="swatch medium rounded"><img src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/variant3-1.jpg" alt="image" /></li>
+                                        <li class="swatch medium rounded"><img src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/variant3-2.jpg" alt="image" /></li>
+                                        <li class="swatch medium rounded"><img src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/variant3-3.jpg" alt="image" /></li>
+                                        <li class="swatch medium rounded"><img src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/variant3-4.jpg" alt="image" /></li>
                                     </ul>
                                     <!-- End Variant -->
                                 </div>
@@ -1036,10 +1036,10 @@
                                     <!-- start product image -->
                                     <a href="#">
                                         <!-- image -->
-                                        <img class="primary blur-up lazyload" data-src="assets/images/GoodsMainimages/product-images/product-image4.jpg" src="assets/images/GoodsMainimages/product-images/product-image4.jpg" alt="image" title="product" />
+                                        <img class="primary blur-up lazyload" data-src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image4.jpg" src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image4.jpg" alt="image" title="product" />
                                         <!-- End image -->
                                         <!-- Hover image -->
-                                        <img class="hover blur-up lazyload" data-src="assets/images/GoodsMainimages/product-images/product-image4-1.jpg" src="assets/images/GoodsMainimages/product-images/product-image4-1.jpg" alt="image" title="product" />
+                                        <img class="hover blur-up lazyload" data-src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image4-1.jpg" src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image4-1.jpg" alt="image" title="product" />
                                         <!-- End hover image -->
                                         <!-- product label -->
                                         <div class="product-labels"><span class="lbl on-sale">Sale</span></div>
@@ -1088,10 +1088,10 @@
                                     </div>
                                     <!-- Variant -->
                                     <ul class="swatches">
-                                        <li class="swatch medium rounded"><img src="assets/images/GoodsMainimages/product-images/variant4-1.jpg" alt="image" /></li>
-                                        <li class="swatch medium rounded"><img src="assets/images/GoodsMainimages/product-images/variant4-2.jpg" alt="image" /></li>
-                                        <li class="swatch medium rounded"><img src="assets/images/GoodsMainimages/product-images/variant4-3.jpg" alt="image" /></li>
-                                        <li class="swatch medium rounded"><img src="assets/images/GoodsMainimages/product-images/variant4-4.jpg" alt="image" /></li>
+                                        <li class="swatch medium rounded"><img src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/variant4-1.jpg" alt="image" /></li>
+                                        <li class="swatch medium rounded"><img src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/variant4-2.jpg" alt="image" /></li>
+                                        <li class="swatch medium rounded"><img src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/variant4-3.jpg" alt="image" /></li>
+                                        <li class="swatch medium rounded"><img src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/variant4-4.jpg" alt="image" /></li>
                                     </ul>
                                     <!-- End Variant -->
                                 </div>
@@ -1103,10 +1103,10 @@
                                     <!-- start product image -->
                                     <a href="#">
                                         <!-- image -->
-                                        <img class="primary blur-up lazyload" data-src="assets/images/GoodsMainimages/product-images/product-image5.jpg" src="assets/images/GoodsMainimages/product-images/product-image5.jpg" alt="image" title="product" />
+                                        <img class="primary blur-up lazyload" data-src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image5.jpg" src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image5.jpg" alt="image" title="product" />
                                         <!-- End image -->
                                         <!-- Hover image -->
-                                        <img class="hover blur-up lazyload" data-src="assets/images/GoodsMainimages/product-images/product-image5-1.jpg" src="assets/images/GoodsMainimages/product-images/product-image5-1.jpg" alt="image" title="product" />
+                                        <img class="hover blur-up lazyload" data-src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image5-1.jpg" src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image5-1.jpg" alt="image" title="product" />
                                         <!-- End hover image -->
                                         <!-- product label -->
                                         <div class="product-labels"><span class="lbl on-sale">Sale</span></div>
@@ -1154,10 +1154,10 @@
                                     </div>
                                     <!-- Variant -->
                                     <ul class="swatches">
-                                        <li class="swatch medium rounded"><img src="assets/images/GoodsMainimages/product-images/variant3-1.jpg" alt="image" /></li>
-                                        <li class="swatch medium rounded"><img src="assets/images/GoodsMainimages/product-images/variant3-2.jpg" alt="image" /></li>
-                                        <li class="swatch medium rounded"><img src="assets/images/GoodsMainimages/product-images/variant3-3.jpg" alt="image" /></li>
-                                        <li class="swatch medium rounded"><img src="assets/images/GoodsMainimages/product-images/variant3-4.jpg" alt="image" /></li>
+                                        <li class="swatch medium rounded"><img src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/variant3-1.jpg" alt="image" /></li>
+                                        <li class="swatch medium rounded"><img src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/variant3-2.jpg" alt="image" /></li>
+                                        <li class="swatch medium rounded"><img src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/variant3-3.jpg" alt="image" /></li>
+                                        <li class="swatch medium rounded"><img src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/variant3-4.jpg" alt="image" /></li>
                                     </ul>
                                     <!-- End Variant -->
                                 </div>
@@ -1169,10 +1169,10 @@
                                                     <!-- start product image -->
                                                     <a href="#">
                                                         <!-- image -->
-                                                        <img class="primary blur-up lazyload" data-src="assets/images/GoodsMainimages/product-images/product-image6.jpg" src="assets/images/GoodsMainimages/product-images/product-image6.jpg" alt="image" title="product">
+                                                        <img class="primary blur-up lazyload" data-src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image6.jpg" src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image6.jpg" alt="image" title="product">
                                                         <!-- End image -->
                                                         <!-- Hover image -->
-                                                        <img class="hover blur-up lazyload" data-src="assets/images/GoodsMainimages/product-images/product-image6-1.jpg" src="assets/images/GoodsMainimages/product-images/product-image6-1.jpg" alt="image" title="product">
+                                                        <img class="hover blur-up lazyload" data-src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image6-1.jpg" src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image6-1.jpg" alt="image" title="product">
                                                         <!-- End hover image -->
                                                         <!-- product label -->
                                                         <div class="product-labels rectangular"><span class="lbl on-sale">-16%</span> <span class="lbl pr-label1">new</span></div>
@@ -1227,10 +1227,10 @@
                                                     <!-- start product image -->
                                                     <a href="#">
                                                         <!-- image -->
-                                                        <img class="primary blur-up lazyload" data-src="assets/images/GoodsMainimages/product-images/product-image7.jpg" src="assets/images/GoodsMainimages/product-images/product-image7.jpg" alt="image" title="product">
+                                                        <img class="primary blur-up lazyload" data-src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image7.jpg" src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image7.jpg" alt="image" title="product">
                                                         <!-- End image -->
                                                         <!-- Hover image -->
-                                                        <img class="hover blur-up lazyload" data-src="assets/images/GoodsMainimages/product-images/product-image7-1.jpg" src="assets/images/GoodsMainimages/product-images/product-image7-1.jpg" alt="image" title="product">
+                                                        <img class="hover blur-up lazyload" data-src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image7-1.jpg" src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image7-1.jpg" alt="image" title="product">
                                                         <!-- End hover image -->
                                                     </a>
                                                     <!-- end product image -->
@@ -1292,10 +1292,10 @@
                                         <!-- start product image -->
                                         <a href="#">
                                             <!-- image -->
-                                            <img class="primary blur-up lazyload" data-src="assets/images/GoodsMainimages/product-images/product-image6.jpg" src="assets/images/GoodsMainimages/product-images/product-image6.jpg" alt="image" title="product">
+                                            <img class="primary blur-up lazyload" data-src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image6.jpg" src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image6.jpg" alt="image" title="product">
                                             <!-- End image -->
                                             <!-- Hover image -->
-                                            <img class="hover blur-up lazyload" data-src="assets/images/GoodsMainimages/product-images/product-image6-1.jpg" src="assets/images/GoodsMainimages/product-images/product-image6-1.jpg" alt="image" title="product">
+                                            <img class="hover blur-up lazyload" data-src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image6-1.jpg" src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image6-1.jpg" alt="image" title="product">
                                             <!-- End hover image -->
                                             <!-- product label -->
                                             <div class="product-labels rectangular"><span class="lbl on-sale">-16%</span> <span class="lbl pr-label1">new</span></div>
@@ -1321,10 +1321,10 @@
                                         <!-- start product image -->
                                         <a href="#">
                                             <!-- image -->
-                                            <img class="primary blur-up lazyload" data-src="assets/images/GoodsMainimages/product-images/product-image7.jpg" src="assets/images/GoodsMainimages/product-images/product-image7.jpg" alt="image" title="product">
+                                            <img class="primary blur-up lazyload" data-src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image7.jpg" src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image7.jpg" alt="image" title="product">
                                             <!-- End image -->
                                             <!-- Hover image -->
-                                            <img class="hover blur-up lazyload" data-src="assets/images/GoodsMainimages/product-images/product-image7-1.jpg" src="assets/images/GoodsMainimages/product-images/product-image7-1.jpg" alt="image" title="product">
+                                            <img class="hover blur-up lazyload" data-src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image7-1.jpg" src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image7-1.jpg" alt="image" title="product">
                                             <!-- End hover image -->
                                         </a>
                                         <!-- end product image -->
@@ -1347,10 +1347,10 @@
                                         <!-- start product image -->
                                         <a href="#">
                                             <!-- image -->
-                                            <img class="primary blur-up lazyload" data-src="assets/images/GoodsMainimages/product-images/product-image8.jpg" src="assets/images/GoodsMainimages/product-images/product-image8.jpg" alt="image" title="product">
+                                            <img class="primary blur-up lazyload" data-src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image8.jpg" src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image8.jpg" alt="image" title="product">
                                             <!-- End image -->
                                             <!-- Hover image -->
-                                            <img class="hover blur-up lazyload" data-src="assets/images/GoodsMainimages/product-images/product-image8-1.jpg" src="assets/images/GoodsMainimages/product-images/product-image8-1.jpg" alt="image" title="product">
+                                            <img class="hover blur-up lazyload" data-src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image8-1.jpg" src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image8-1.jpg" alt="image" title="product">
                                             <!-- End hover image -->
                                         </a>
                                         <!-- end product image -->
@@ -1374,10 +1374,10 @@
                                         <!-- start product image -->
                                         <a href="#">
                                             <!-- image -->
-                                            <img class="primary blur-up lazyload" data-src="assets/images/GoodsMainimages/product-images/product-image9.jpg" src="assets/images/GoodsMainimages/product-images/product-image9.jpg" alt="image" title="product">
+                                            <img class="primary blur-up lazyload" data-src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image9.jpg" src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image9.jpg" alt="image" title="product">
                                             <!-- End image -->
                                             <!-- Hover image -->
-                                            <img class="hover blur-up lazyload" data-src="assets/images/GoodsMainimages/product-images/product-image9-1.jpg" src="assets/images/GoodsMainimages/product-images/product-image9-1.jpg" alt="image" title="product">
+                                            <img class="hover blur-up lazyload" data-src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image9-1.jpg" src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image9-1.jpg" alt="image" title="product">
                                             <!-- End hover image -->
                                         </a>
                                         <!-- end product image -->
@@ -1400,10 +1400,10 @@
                                         <!-- start product image -->
                                         <a href="#">
                                             <!-- image -->
-                                            <img class="primary blur-up lazyload" data-src="assets/images/GoodsMainimages/product-images/product-image10.jpg" src="assets/images/GoodsMainimages/product-images/product-image10.jpg" alt="image" title="product">
+                                            <img class="primary blur-up lazyload" data-src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image10.jpg" src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image10.jpg" alt="image" title="product">
                                             <!-- End image -->
                                             <!-- Hover image -->
-                                            <img class="hover blur-up lazyload" data-src="assets/images/GoodsMainimages/product-images/product-image10-1.jpg" src="assets/images/GoodsMainimages/product-images/product-image10-1.jpg" alt="image" title="product">
+                                            <img class="hover blur-up lazyload" data-src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image10-1.jpg" src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image10-1.jpg" alt="image" title="product">
                                             <!-- End hover image -->
                                         </a>
                                         <!-- end product image -->
@@ -1426,10 +1426,10 @@
                                         <!-- start product image -->
                                         <a href="#">
                                             <!-- image -->
-                                            <img class="primary blur-up lazyload" data-src="assets/images/GoodsMainimages/product-images/product-image13.jpg" src="assets/images/GoodsMainimages/product-images/product-image13.jpg" alt="image" title="product">
+                                            <img class="primary blur-up lazyload" data-src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image13.jpg" src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image13.jpg" alt="image" title="product">
                                             <!-- End image -->
                                             <!-- Hover image -->
-                                            <img class="hover blur-up lazyload" data-src="assets/images/GoodsMainimages/product-images/product-image13-1.jpg" src="assets/images/GoodsMainimages/product-images/product-image13-1.jpg" alt="image" title="product">
+                                            <img class="hover blur-up lazyload" data-src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image13-1.jpg" src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image13-1.jpg" alt="image" title="product">
                                             <!-- End hover image -->
                                         </a>
                                         <!-- end product image -->
@@ -1453,10 +1453,10 @@
                                         <!-- start product image -->
                                         <a href="#">
                                             <!-- image -->
-                                            <img class="primary blur-up lazyload" data-src="assets/images/GoodsMainimages/product-images/product-image14.jpg" src="assets/images/GoodsMainimages/product-images/product-image14.jpg" alt="image" title="product">
+                                            <img class="primary blur-up lazyload" data-src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image14.jpg" src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image14.jpg" alt="image" title="product">
                                             <!-- End image -->
                                             <!-- Hover image -->
-                                            <img class="hover blur-up lazyload" data-src="assets/images/GoodsMainimages/product-images/product-image14-1.jpg" src="assets/images/GoodsMainimages/product-images/product-image14-1.jpg" alt="image" title="product">
+                                            <img class="hover blur-up lazyload" data-src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image14-1.jpg" src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image14-1.jpg" alt="image" title="product">
                                             <!-- End hover image -->
                                         </a>
                                         <!-- end product image -->
@@ -1479,10 +1479,10 @@
                                         <!-- start product image -->
                                         <a href="#">
                                             <!-- image -->
-                                            <img class="primary blur-up lazyload" data-src="assets/images/GoodsMainimages/product-images/product-image15.jpg" src="assets/images/GoodsMainimages/product-images/product-image15.jpg" alt="image" title="product">
+                                            <img class="primary blur-up lazyload" data-src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image15.jpg" src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image15.jpg" alt="image" title="product">
                                             <!-- End image -->
                                             <!-- Hover image -->
-                                            <img class="hover blur-up lazyload" data-src="assets/images/GoodsMainimages/product-images/product-image15-1.jpg" src="assets/images/GoodsMainimages/product-images/product-image15-1.jpg" alt="image" title="product">
+                                            <img class="hover blur-up lazyload" data-src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image15-1.jpg" src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image15-1.jpg" alt="image" title="product">
                                             <!-- End hover image -->
                                         </a>
                                         <!-- end product image -->
@@ -1650,7 +1650,7 @@
             </tr>
           </tbody>
         </table>
-        <div style="padding-left: 30px;"><img src="assets/images/GoodsMainimages/size.jpg" alt=""></div>
+        <div style="padding-left: 30px;"><img src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/size.jpg" alt=""></div>
       </div>
 	</div>
     <div class="hide">
@@ -1848,19 +1848,19 @@
     
         <!-- 제이쿼리, 자바스크립트 시작입니다 -->
      <!-- Including Jquery -->
-     <script src="assets/js/GoodsMainjs/vendor/jquery-3.3.1.min.js"></script>
-     <script src="assets/js/GoodsMainjs/vendor/jquery.cookie.js"></script>
-     <script src="assets/js/GoodsMainjs/vendor/modernizr-3.6.0.min.js"></script>
-     <script src="assets/js/GoodsMainjs/vendor/wow.min.js"></script>
+     <script src="${pageContext.request.contextPath }/assets/js/GoodsMainjs/vendor/jquery-3.3.1.min.js"></script>
+     <script src="${pageContext.request.contextPath }/assets/js/GoodsMainjs/vendor/jquery.cookie.js"></script>
+     <script src="${pageContext.request.contextPath }/assets/js/GoodsMainjs/vendor/modernizr-3.6.0.min.js"></script>
+     <script src="${pageContext.request.contextPath }/assets/js/GoodsMainjs/vendor/wow.min.js"></script>
      <!-- Including Javascript -->
-     <script src="assets/js/GoodsMainjs/bootstrap.min.js"></script>
-     <script src="assets/js/GoodsMainjs/plugins.js"></script>
-     <script src="assets/js/GoodsMainjs/popper.min.js"></script>
-     <script src="assets/js/GoodsMainjs/lazysizes.js"></script>
-     <script src="assets/js/GoodsMainjs/main.js"></script>
+     <script src="${pageContext.request.contextPath }/assets/js/GoodsMainjs/bootstrap.min.js"></script>
+     <script src="${pageContext.request.contextPath }/assets/js/GoodsMainjs/plugins.js"></script>
+     <script src="${pageContext.request.contextPath }/assets/js/GoodsMainjs/popper.min.js"></script>
+     <script src="${pageContext.request.contextPath }/assets/js/GoodsMainjs/lazysizes.js"></script>
+     <script src="${pageContext.request.contextPath }/assets/js/GoodsMainjs/main.js"></script>
      <!-- Photoswipe Gallery -->
-     <script src="assets/js/GoodsMainjs/vendor/photoswipe.min.js"></script>
-     <script src="assets/js/GoodsMainjs/vendor/photoswipe-ui-default.min.js"></script>
+     <script src="${pageContext.request.contextPath }/assets/js/GoodsMainjs/vendor/photoswipe.min.js"></script>
+     <script src="${pageContext.request.contextPath }/assets/js/GoodsMainjs/vendor/photoswipe-ui-default.min.js"></script>
      <!-- 제이쿼리, 자바스크립트 종료입니다 -->
 
 
