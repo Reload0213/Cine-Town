@@ -1,16 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
- <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/premiereMain/premiereMain.css">
- 
- <body>
- <%@ include file="${pageContext.request.contextPath}/include/header.jsp" %>
- 
- <div class="mainCon" >
+	<%@ include file="../include/header.jsp" %>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+	  <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/premiereMain/premiereMain.css">
+	<body>
+	<main>
+	
+	<!-- 임승혁 시사회 페이지 바디메인 시작입니다. -->
+
+
+
+<!-- 임승혁 시사회 -->
+<div class="mainCon" >
     <!-- <div class="headerMoviePoster on">
       <img src="img/movieHeaderPoster/jangminhodrama.jpg" alt=""></div>
    -->
@@ -57,7 +61,7 @@
 
   <a href="premiereDetail-page2.html" class="column action">
     <div class="content">
-      <div class="moviePosterCon item1"><img src="assets/images/premiereMain/movieposter/imsinhannamuwa.jpg" alt=""></div>
+      <div class="moviePosterCon item1"><img src="${pageContext.request.contextPath}/assets/images/premiereMain/movieposter/imsinhannamuwa.jpg" alt=""></div>
       <p class="movieName">임신한 나무와 도깨비 </p>
       <p class="hashtags">#2019 #판타지 #다큐멘터리 #한국</p>
 
@@ -72,7 +76,7 @@
 
   <a href="premiereDetail-page3.html" class="column action">
     <div class="content">
-      <div class="moviePosterCon item1"><img src="assets/images/premiereMain/movieposter/haejuk.jpg" alt=""></div>
+      <div class="moviePosterCon item1"><img src="${pageContext.request.contextPath}/assets/images/premiereMain/movieposter/haejuk.jpg" alt=""></div>
       <p class="movieName">해적:도깨비 깃발 </p>
       <p class="hashtags">#2021 #액션 #모험 #코미디 #한국</p>
 
@@ -87,7 +91,7 @@
 
   <a href="premiereDetail-page4.html" class="column drama">
     <div class="content">
-      <div class="moviePosterCon item1"><img src="assets/images/premiereMain/movieposter/kingmaker.jpg" alt=""></div>
+      <div class="moviePosterCon item1"><img src="${pageContext.request.contextPath}/assets/images/premiereMain/movieposter/kingmaker.jpg" alt=""></div>
       <p class="movieName">킹메이커 </p>
       <p class="hashtags">#2021 #드라마 #한국</p>
 
@@ -103,7 +107,7 @@
   
   <a href="premiereDetail-page5.html" class="column drama">
     <div class="content">
-      <div class="moviePosterCon item1"><img src="assets/images/premiereMain/movieposter/france.jpg" alt=""></div>
+      <div class="moviePosterCon item1"><img src="${pageContext.request.contextPath}/assets/images/premiereMain/movieposter/france.jpg" alt=""></div>
       <p class="movieName">프랑스 </p>
       <p class="hashtags">#2021 #코미디 #드라마 #프랑스</p>
 
@@ -115,7 +119,7 @@
 
   <a href="premiereDetail-page6.html" class="column action">
     <div class="content">
-      <div class="moviePosterCon item1"><img src="assets/images/premiereMain/movieposter/kingsman.jpg" alt=""></div>
+      <div class="moviePosterCon item1"><img src="${pageContext.request.contextPath}/assets/images/premiereMain/movieposter/kingsman.jpg" alt=""></div>
       <p class="movieName">킹스맨:퍼스트 에이전트 </p>
       <p class="hashtags">#2021 #액션 #모험 #코미디 #영국 #미국</p>
 
@@ -129,7 +133,7 @@
 
   <a href="premiereDetail-page7.html" class="column romance">
     <div class="content">
-      <div class="moviePosterCon item1"><img src="assets/images/premiereMain/movieposter/chungchoonjukni.jpg" alt=""></div>
+      <div class="moviePosterCon item1"><img src="${pageContext.request.contextPath}/assets/images/premiereMain/movieposter/chungchoonjukni.jpg" alt=""></div>
       <p class="movieName">청춘적니 </p>
       <p class="hashtags">#2021 #로맨스 #드라마 #중국</p>
 
@@ -144,7 +148,7 @@
 
   <a href="premiereDetail-page8.html" class="column romance">
     <div class="content">
-      <div class="moviePosterCon item1"><img src="assets/images/premiereMain/movieposter/sil.jpg" alt=""></div>
+      <div class="moviePosterCon item1"><img src="${pageContext.request.contextPath}/assets/images/premiereMain/movieposter/sil.jpg" alt=""></div>
       <p class="movieName">실:인연의 시작 </p>
       <p class="hashtags">#2020 #드라마 #로맨스 #일본</p>
 
@@ -169,51 +173,9 @@
 
 
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
- 
- 
- 
- 
- 
- 
- <%@ include file="${pageContext.request.contextPath}/include/footer.jsp" %>
+	</main>
+	<%@ include file="../include/footer.jsp" %>
+	
+	<script src="${pageContext.request.contextPath}/${pageContext.request.contextPath}/assets/js/premiereMain/premiereMain.js"></script>
 </body>
 </html>
