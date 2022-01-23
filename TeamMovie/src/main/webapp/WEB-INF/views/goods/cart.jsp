@@ -2,10 +2,10 @@
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-
-<head>
-<!-- 페이지 작성자 김정민.
+<!--페이지 작성자 김정민
 굿즈에 상품 추가, 배송비, 쿠폰 -->
+<head>
+
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">

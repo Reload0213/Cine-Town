@@ -3,7 +3,7 @@
 
 <!DOCTYPE html>
 <html class="no-js">
-
+<!-- 페이지 작성자 김정민 -->
 <head>
 <!--현 페이지 소스-->
 <link rel="stylesheet"
