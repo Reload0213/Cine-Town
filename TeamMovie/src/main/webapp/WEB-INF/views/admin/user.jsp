@@ -55,11 +55,11 @@
                     </div>
             <div class="bottom">
                 <ul class="navmenus">
-                    <li><a href="#">홈</a></li>
-                    <li><a href="#">메일</a></li>
-                    <li><a href="#">회원</a></li>
+                   <li><a href="${pageContext.request.contextPath}/admin/main">홈</a></li>
+                    <li><a href="${pageContext.request.contextPath}/admin/mail">메일</a></li>
+                    <li><a href="${pageContext.request.contextPath}/admin/user">회원</a></li>
                     <li><a href="#">게시판</a></li>
-                    <li><a href="#">주문</a></li>
+                    <li><a href="${pageContext.request.contextPath}/admin/order">주문</a></li>
                     <li><a href="#">상품</a></li>
                    
                 </ul>

@@ -55,13 +55,12 @@
                     </div>
             <div class="bottom">
                 <ul class="navmenus">
-                   <li><a href="${pageContext.request.contextPath}/admin/main">홈</a></li>
+                  <li><a href="${pageContext.request.contextPath}/admin/main">홈</a></li>
                     <li><a href="${pageContext.request.contextPath}/admin/mail">메일</a></li>
                     <li><a href="${pageContext.request.contextPath}/admin/user">회원</a></li>
                     <li><a href="#">게시판</a></li>
                     <li><a href="${pageContext.request.contextPath}/admin/order">주문</a></li>
                     <li><a href="#">상품</a></li>
-                   
                 </ul>
             </div>
             </nav> 
@@ -72,110 +71,107 @@
             <div class="userTable">
                
                
-                <table>
+               <table>
+                    <!-- <colgroup>
+                    <col style="width:20%">
+                    <col style="width:10%">
+                    <col style="width:10%">
+                    <col style="width:10%">
+                    <col style="width:10%">
+                    <col style="width:40%">
+                  
                     
+                  </colgroup> -->
                     <thead>
                         <tr>
-                        <th>보낸날짜</th>
-                        <th>번호</th>
-                        <th>보낸사람</th>
-                        <th>내용</th>
-                        <th>삭제</th>
+                        <th>주문번호</th>
+                        <th>주문상태</th>
+                        <th>주문자</th>
+                        <th>아이디</th>
+                        <th>총금액</th>
+                         <th>비고</th>
                         
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                          <td>2022-01-20 09:38</td>
-                          <td>1</td>
-                          <td>귀신잡는해병대</td>
-                          <td>부서진걸 보내오고있어 뒤질래?</td>
-                          <td><button>삭제하기</button></td>
-                          
+                          <td>20220120-189</td>
+                          <td>결제대기중</td>
+                          <td>강경원</td>
+                          <td>kyungwon12</td>
+                          <td>120,000원</td>
+                          <td>우체국 11234-33415 </td>
                       </tr>
                       <tr>
-                        <td>2022-01-20 09:38</td>
-                        <td>1</td>
-                        <td>귀신잡는해병대</td>
-                        <td>부서진걸 보내오고있어 뒤질래?</td>
-                        <td><button>삭제하기</button></td>
-                        
+                          <td>20220120-188</td>
+                          <td>배송완료</td>
+                          <td>황철순</td>
+                          <td>chulsun33</td>
+                          <td>123,000원</td>
+                          <td>우체국 11234-33415 </td>
                       </tr>
                       <tr>
-                        <td>2022-01-20 09:38</td>
-                        <td>1</td>
-                        <td>귀신잡는해병대</td>
-                        <td>부서진걸 보내오고있어 뒤질래?</td>
-                        <td><button>삭제하기</button></td>
-                        
-                         
+                          <td>20220120-189</td>
+                          <td>결제대기중</td>
+                          <td>강경원</td>
+                          <td>kyungwon12</td>
+                          <td>120,000원</td>
+                          <td>우체국 11234-33415 </td>
                       </tr>
                       <tr>
-                        <td>2022-01-20 09:38</td>
-                        <td>1</td>
-                        <td>귀신잡는해병대</td>
-                        <td>부서진걸 보내오고있어 뒤질래?</td>
-                        <td><button>삭제하기</button></td>
-                        
-                         
-                      <tr>
-                        <td>2022-01-20 09:38</td>
-                        <td>1</td>
-                        <td>귀신잡는해병대</td>
-                        <td>부서진걸 보내오고있어 뒤질래?</td>
-                        <td><button>삭제하기</button></td>
-                        
-                         
+                          <td>20220120-189</td>
+                          <td>결제대기중</td>
+                          <td>강경원</td>
+                          <td>kyungwon12</td>
+                          <td>120,000원</td>
+                          <td>우체국 11234-33415 </td>
                       </tr>
-                      <tr>  <td>2022-01-20 09:38</td>
-                        <td>1</td>
-                        <td>귀신잡는해병대</td>
-                        <td>부서진걸 보내오고있어 뒤질래?</td>
-                        <td><button>삭제하기</button></td>
-                        
-                         
+                      
+                      <tr>
+                          <td>20220120-189</td>
+                          <td>결제대기중</td>
+                          <td>강경원</td>
+                          <td>kyungwon12</td>
+                          <td>120,000원</td>
+                          <td>우체국 11234-33415 </td>
                       </tr>
   
                       <tr>
-                        <td>2022-01-20 09:38</td>
-                        <td>1</td>
-                        <td>귀신잡는해병대</td>
-                        <td>부서진걸 보내오고있어 뒤질래?</td>
-                        <td><button>삭제하기</button></td>
-                        
-                         
+                          <td>20220120-189</td>
+                          <td>결제대기중</td>
+                          <td>강경원</td>
+                          <td>kyungwon12</td>
+                          <td>120,000원</td>
+                          <td>우체국 11234-33415 </td>
                       </tr>
   
                       <tr>
-                        <td>2022-01-20 09:38</td>
-                        <td>1</td>
-                        <td>귀신잡는해병대</td>
-                        <td>부서진걸 보내오고있어 뒤질래?</td>
-                        <td><button>삭제하기</button></td>
-                        
-                         
+                          <td>20220120-189</td>
+                          <td>결제대기중</td>
+                          <td>강경원</td>
+                          <td>kyungwon12</td>
+                          <td>120,000원</td>
+                          <td>우체국 11234-33415 </td>
                       </tr>
   
                       <tr>
-                        <td>2022-01-20 09:38</td>
-                        <td>1</td>
-                        <td>귀신잡는해병대</td>
-                        <td>부서진걸 보내오고있어 뒤질래?</td>
-                        <td><button>삭제하기</button></td>
-                        
-                         
+                          <td>20220120-189</td>
+                          <td>결제대기중</td>
+                          <td>강경원</td>
+                          <td>kyungwon12</td>
+                          <td>120,000원</td>
+                          <td>우체국 11234-33415 </td>
                       </tr>
   
                       <tr>
-                        <td>2022-01-20 09:38</td>
-                        <td>1</td>
-                        <td>귀신잡는해병대</td>
-                        <td>부서진걸 보내오고있어 뒤질래?</td>
-                        <td><button>삭제하기</button></td>
-                        
-                         
+                          <td>20220120-189</td>
+                          <td>결제대기중</td>
+                          <td>강경원</td>
+                          <td>kyungwon12</td>
+                          <td>120,000원</td>
+                          <td>우체국 11234-33415 </td>
                       </tr>
-  
+                      
                       
   
                      
@@ -191,6 +187,7 @@
   
                     </tbody>
                 </table>
+  
   
 
 
