@@ -1,120 +1,114 @@
-*{
-
+*{     
+    margin:0;
+    padding:0;
     font-family: 'Noto Sans KR', sans-serif;
+    box-sizing: border-box;
+    font-size: 62.5%;
 }
-
-
+ul,li,ol{
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+}
 .show{
-    display: block;
+    display:block;
 }
 .mainCon{
-    padding: 80px 40px 40px 80px;
-    width: 100%;
+    padding:8rem 4rem;
+    width:100%;
     margin:0 auto;
-    /* padding:120px 0px 30px 0px; */
-    font-family: 'Noto Sans KR', sans-serif;
-  
 }
 
-.headerMoviePoster{
-    width:100%;
-    height: 30%;
-    
-    
+.mainTitle{
+   font-size: 3.5rem;
+    text-align: center;
+    font-weight: 500;                                                            
 }
-.headerMoviePoster img{
-    width:100%;
+.mainCon p{
+    margin:3rem 0rem;                                           
+ text-align: center; 
+ font-size: 1.5rem;
 
-   
-
+ color:#777777;
 }
 
-
-.mainCon>.mainTitle{
-
-    margin:30px 0;
-text-align: center;
-font-weight: bold;
-font-family: 'Noto Sans KR', sans-serif;
-}
 .btnCon{
     width:60%;
     margin:0 auto;
-    margin-bottom:20px;
+    margin-bottom: 2rem;
 }
-
 .filterBtns{
     display: flex;
     width:100%;
+    padding:2.1rem;
     justify-content: center;
-    border-bottom: 1px solid #777777;
-    
-
+    border-bottom: 0.1rem solid #777777;
 }
 
-
-
 .btn{
-width:10vw;
-padding: 25px 5px;
-border-radius: 0;
-font-size: 16px;
+    
+    
+    padding:2.0rem 5.0rem;
+    font-size: 1.6rem;
+    
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
 }
 
 .btn.select{
-width:10vw;
-border-bottom: 2px solid #ec4b40;
-color:#ec4b40;
-    }
-
-.mainCon p{
-    width: 100%;
-    font-size: 16px;
-    color:#777777;
-    text-align: center;
-    font-weight: bold;
+    width:25vw;
+    border-bottom: 0.2rem solid #ec4b40;
+    color:#ec4b40;
+        
 }
-
-
-
-.rowMain{
-    width: 100%;
-    margin-top:40px;
-    max-width: 132rem;
+.row{
+    
     margin:0 auto;
-    /* display: flex;
-    justify-content: center;
-    flex-wrap: wrap; */
+    margin-top:4.0rem;
+    width:100%;
+    display: flex;
+    flex-wrap: wrap;
+   place-content: center;
+}
+
+.content{
+    
+    
+    padding:1.3rem;
+    overflow: hidden;
+    white-space: nowrap;
+    
+  
+}
+
+.moviePosterCon{
+    width:100%;
 }
 
 
-
-
-
+.moviePosterCon img{
+    width:100%;
+    height: 100%;
+   
+}
 .column{
-    padding:15px;
-    width:25%;
-    margin:8px;
-    margin:0 auto;
     display: none;
+    width:20%;
+    margin:2rem;
     transition: background-color 0.5s linear ;
-
-    float: left;
 }
-.column:hover {
+.column:hover{
     background-color:#ec4b40 ;
     transition: background-color 0.5s linear ;
     
-
 }
 .column:hover .movieName,.column:hover .hashtags{
     color:#f1f1f1;
     transition: background-color 0.5s linear ;
     
-
 }
-
-
 .content.moviePosterCon{
     /* width:100%;
     position: relative;
@@ -129,50 +123,81 @@ color:#ec4b40;
    
     width:100%;
     /* width:100%;
-    height: 100%;
-    position: absolute; */
+    /* height: 100%;
+    position: absolute; */ 
    
 }
 
 
 .content>.movieName{
-     font-size: 1.8vh;
+     font-size: 1.5rem;
     text-align: center;
     color:black;
-    padding: 30px 5px 5px 5px; ;
+    margin:1.5rem auto;
     overflow: hidden;
     white-space: nowrap;
-    margin:0;
+ 
 }
 
 .content>.hashtags{
     text-align: center;
-    font-size: 1.5vh;
+   font-size: 1.2rem;
     color:#ec4b40;
     font-weight: normal;
-    margin:0;
-}
-
-
-@media (max-width:480px) {
-    .column{
-      width: 80%;
- }
- 
-
-}
-
-
-@media (max-width:1280px) {
-
-    .column{
-        width: 50%;
-   }
+    margin: 1rem auto;
    
 
-
-
-
-
 }
 
+@media (max-width:1024px) {
+   *{
+       font-size: 55%;
+   }
+   .btnCon{
+    width:80%;
+   }
+   .column{
+       width:35%;
+   }
+
+    
+    
+}
+
+@media (max-width:768px) {
+    *{
+        font-size:55%;
+    }
+
+    .btnCon{
+        width:100%;
+       }
+    
+    .column{
+        width:50%;
+    }
+    .btn{
+        padding:2rem 3rem;
+        font-weight: bold;
+    }
+     
+ }
+
+
+ @media (max-width:480px) {
+    *{
+        font-size: 50%;
+    }
+    .btnCon{
+        width:100%;
+       }
+   
+    .column{
+        width:70%;
+    }
+    .btn{
+        padding:2rem 1rem;
+        font-weight: bold;
+    }
+     
+ }
