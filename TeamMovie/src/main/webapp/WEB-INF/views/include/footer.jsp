@@ -65,57 +65,6 @@
 
 
 
-<!-- 페이지별 js 추가 공간 -->
-
-
-
-
-<!-- 이영주 영화 메뉴 페이지 js 시작 -->
-
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script
-	src="${pageContext.request.contextPath}/assets/js/movieMenu/popper.js"></script>
-<script
-	src="${pageContext.request.contextPath}/assets/js/movieMenu/stellar.js"></script>
-<script
-	src="${pageContext.request.contextPath}/assets/js/movieMenu/jquery.ajaxchimp.min.js"></script>
-<script
-	src="${pageContext.request.contextPath}/assets/js/movieMenu/waypoints.min.js"></script>
-<script
-	src="${pageContext.request.contextPath}/assets/js/movieMenu/mail-script.js"></script>
-<script
-	src="${pageContext.request.contextPath}/assets/js/movieMenu/contact.js"></script>
-<script
-	src="${pageContext.request.contextPath}/assets/js/movieMenu/jquery.form.js"></script>
-<script
-	src="${pageContext.request.contextPath}/assets/js/movieMenu/jquery.validate.min.js"></script>
-<script
-	src="${pageContext.request.contextPath}/assets/js/movieMenu/mail-script.js"></script>
-<script
-	src="${pageContext.request.contextPath}/assets/js/movieMenu/theme.js"></script>
-
-
-<!-- 영화 메뉴 페이지 js 끝 -->
-
-
-
-
-
-
-
-
-<!-- 이영주 영화 상세 페이지 통합 js 파트 시작  -->
-
-<script type='text/javascript' src='${pageContext.request.contextPath}/assets/js/movieDetail/swiper.min.js'></script>
-<script type='text/javascript'
-	src='${pageContext.request.contextPath}/assets/js/movieDetail/masonry.pkgd.min.js'></script>
-<script type='text/javascript'
-	src='${pageContext.request.contextPath}/assets/js/movieDetail/jquery.collapsible.min.js'></script>
-<script type='text/javascript' src='${pageContext.request.contextPath}/assets/js/movieDetail/custom.js'></script>
-
-
-<!-- 영화 상세 페이지 통합 js 파트 종료  -->
 
 
 </body>
