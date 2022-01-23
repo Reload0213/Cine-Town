@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<%@ include file="/WEB-INF/views/include/header.jsp" %>
+
 <head>
 <meta charset="UTF-8">
   <!-- google fonts -->
@@ -17,21 +17,10 @@
         <link href="${pageContext.request.contextPath}/assets/css/faq/faq_css/ionicons.css" rel="stylesheet">
         <link href="${pageContext.request.contextPath}/assets/css/faq/faq_css/main.css" rel="stylesheet">
         
-<!-- 강혜수 게시판 CSS 시작 -->
-
-<!-- Bootstrap -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-
-<!-- Font-Awesome -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
 
+<%@ include file="/WEB-INF/views/include/header.jsp" %>
 
-<!-- BBS-style -->
-<link rel="stylesheet" href="style.css">
-
-
-<!-- 강혜수 게시판 CSS 끝 -->
 <title>Insert title here</title>
 </head>
 <body>
