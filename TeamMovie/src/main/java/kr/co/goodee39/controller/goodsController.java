@@ -29,5 +29,23 @@ public class goodsController {
 		System.out.println("goodsMenu여기로 타나-------------------------------");
 		return "goods/goodsMenu";
 	}
+	
+	//정민
+	@GetMapping("/cart")
+	public String getCart() {
+		return "goods/cart";
+	}
+	@GetMapping("/goodsCheckout")
+	public String getGoodsCheckout() {
+		return "goods/goodsCheckout";
+	}
+	@GetMapping("/orderFinish")
+	public String getOrderFinish() {
+		return "goods/orderFinish";
+	}
+	@GetMapping("/wishlist")
+	public String getWishList() {
+		return "goods/wishlist";
+	}
 
 }

@@ -78,12 +78,12 @@
 
 </head>
 
-<body class="">
+<body>
     <!-- header section strats -->
     <header class="header_section">
         <div class="container">
             <nav class="navbar navbar-expand-lg custom_nav-container ">
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="${pageContext.request.contextPath}/">
                     <span>
                         Cine Town
                     </span>
@@ -124,7 +124,7 @@
                         <a href="" class="user_link" style="font-size: 1.7em;">
                             <i class="xi-user-plus" aria-hidden="true"></i>
                         </a>
-                        <a href="" class="order_online"
+                        <a href="${pageContext.request.contextPath}/user/signin" class="order_online"
                             style="border: 1px solid #fff; background-color: #232830; padding: 5px 20px; ">
                             로그인
                         </a>
