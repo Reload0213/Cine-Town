@@ -10,8 +10,7 @@
     <title>Cine Town</title>
 
     <!-- header & footer css-->
-    <link rel="stylesheet" href="assets/css/headerFooter/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/headerFooter/headerFooter.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/headerFooter/headerFooter.css">
     <link href="favicon.ico" rel="icon">
     <!-- 글씨 폰트 Noto, Roboto -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,11 +22,22 @@
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
     <!-- header & footer css-->
 
-    <!--현 페이지 소스-->
-    <style>
+    
+    <!-- 영화 메뉴 페이지 css 시작 -->
 
-    </style>
-    <!--현 페이지 소스-->
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/movieMain/bootstrap.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/movieMain/themify-icons.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/movieMain/flaticon.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/vendors/movieMain/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/vendors/movieMain/animate-css/animate.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/vendors/movieMain/popup/magnific-popup.css">
+    <!-- main css -->
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/movieMain/style.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/movieMain/responsive.css">
+
+
+    <!-- 영화 메뉴 페이지 css 종료 -->
 
 
 
@@ -105,10 +115,6 @@
 
 
 
-    <!--header&footer script-->
-    <script src="assets/js/headerFooter/jquery-3.3.1.min.js"></script>
-    <script src="assets/js/headerFooter/bootstrap.min.js"></script>
-    <!--header&footer script-->
     <!--현 페이지 스크립트-->
 
     <!--현 페이지 스크립트-->

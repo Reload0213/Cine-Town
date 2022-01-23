@@ -3,7 +3,7 @@
 	
 
 
-    <!-- footer section -->
+    <!-- footer section start -->
     <footer class="footer_section">
         <div class="container">
             <div class="row">
@@ -83,8 +83,36 @@
             </div>
         </div>
     </footer>
-    <!-- footer section -->
+    <!-- footer section end -->
 
+
+<!-- js 추가 공간 -->
+
+
+<!--header&footer script-->
+<script src="${pageContext.request.contextPath}/assets/js/headerFooter/jquery-3.3.1.min.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/headerFooter/bootstrap.min.js"></script>
+<!--header&footer script-->
+
+
+<!-- 영화 메뉴 페이지 js 시작 -->
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="${pageContext.request.contextPath}/assets/js/movieMenu/popper.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/movieMenu/stellar.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/movieMenu/jquery.ajaxchimp.min.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/movieMenu/waypoints.min.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/movieMenu/mail-script.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/movieMenu/contact.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/movieMenu/jquery.form.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/movieMenu/jquery.validate.min.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/movieMenu/mail-script.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/movieMenu/theme.js"></script>
+
+
+<!-- 영화 메뉴 페이지 js 끝 -->
+ 
 
 
 
