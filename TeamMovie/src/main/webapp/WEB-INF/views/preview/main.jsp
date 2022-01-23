@@ -1,15 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+ <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- 임승혁 게시판 폰트 링크 끝 -->
+  
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/premiereMain/premiereMain.css">
+</head>
+<body>
 	<%@ include file="../include/header.jsp" %>
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-	  <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/premiereMain/premiereMain.css">
-	<body>
-	<main>
-	
-	<!-- 임승혁 시사회 페이지 바디메인 시작입니다. -->
+<!-- 임승혁 시사회 페이지 바디메인 시작입니다. -->
 
 
 
@@ -173,9 +177,12 @@
 
 
 </div>
-	</main>
-	<%@ include file="../include/footer.jsp" %>
-	
-	<script src="${pageContext.request.contextPath}/${pageContext.request.contextPath}/assets/js/premiereMain/premiereMain.js"></script>
+<%@ include file="../include/footer.jsp" %>
+
+<script src="${pageContext.request.contextPath}/assets/js/premiereMain/premiereMain.js"></script>
+
+
+
+
 </body>
 </html>
