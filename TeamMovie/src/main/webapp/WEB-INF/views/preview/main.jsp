@@ -27,7 +27,7 @@
   
   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/premiereMain/premiereMain.css">
 </head>
-<body>
+
 <body class="template-index ">
   <!-- header section strats -->
   <header class="header_section" style="background-color: #232830;">
@@ -176,9 +176,8 @@
       <p class="hashtags">#2021 #판타지 #로맨스 #코미디 #대만</p>
 
 
-      
     </div>
-  
+   
     </a>
 
 
