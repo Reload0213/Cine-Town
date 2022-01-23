@@ -29,15 +29,22 @@ public class userController {
 
 		return "user/signup";
 	}
+	
+	//회원가입 성공 시 보여질 페이지. 회원가입 성공했으니 다시 로그인 하라고 하기
+	//post로 바꿔야함.
+	@GetMapping("/signupSuccess")
+	public String getSingupSuccess() {
+
+		return "user/signupSuccess";
+	}
+	
+	
 	//아이디/비번찾기 페이지로 이동
 	@GetMapping("/findUser")
 	public String getFinduser() {
 
 		return "user/findUser";
 	}
-	
-	
-	
 	
 	//아이디/비번찾기 페이지로 이동
 	//데이터 넣어서 post로 바꿔야 함
@@ -46,24 +53,7 @@ public class userController {
 
 		return "user/findUserSuccess";
 	}
-	//post로 바꿔야함
-	@GetMapping("/signupSuccess")
-	public String getSingupSuccess() {
 
-		return "user/signupSuccess";
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 //	// 로그인 post
 //	@PostMapping("/signin")
 //	public String postSignin(UserVO vo, HttpServletRequest req, RedirectAttributes rttr) throws Exception {
@@ -71,7 +61,7 @@ public class userController {
 //		UserVO login = service.signin(vo); // MemverVO형 변수 login에 로그인 정보를 저장
 //		HttpSession session = req.getSession(); // 현재 세션 정보를 가져옴
 //
-//		if (login != null) { // ㅑd가 null이 아니면
+//		if (login != null) { // id가 null이 아니면
 //			session.setAttribute("user", login);  // user 세션에 로그인 정보를 부여
 //
 //		} else { // 아이디가 존재하지 않고, 비밀번호가 틀리면
