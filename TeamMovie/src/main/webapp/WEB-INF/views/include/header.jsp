@@ -14,7 +14,7 @@
 	href="${pageContext.request.contextPath}/assets/css/headerFooter/bootstrap.min.css">
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/assets/css/headerFooter/headerFooter.css">
-<link href="favicon.ico" rel="icon">
+<!-- <link href="favicon.ico" rel="icon"> -->
 <!-- 글씨 폰트 Noto, Roboto -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -51,8 +51,9 @@
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav  mx-auto ">
 						<li class="nav-item"><a class="nav-link cinema"
-							href="index.html">영화 </a></li>
-						<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/goods/goodsMain">굿즈</a>
+							href="${pageContext.request.contextPath}/movie/movieMenu">영화 </a></li>
+						<li class="nav-item"><a class="nav-link"
+							href="${pageContext.request.contextPath}/goods/goodsMain">굿즈</a>
 						</li>
 						<li class="nav-item"><a class="nav-link"
 							href="${pageContext.request.contextPath}/aboutUs/aboutUsMain">회사
@@ -62,6 +63,9 @@
 								이벤트</a></li>
 						<li class="nav-item"><a class="nav-link"
 							href="${pageContext.request.contextPath}/faq/faqMain">고객 센터</a></li>
+						<li class="nav-item"><a class="nav-link"
+							href="${pageContext.request.contextPath}/admin/main">임시 관리자
+								페이지 링크</a></li>
 					</ul>
 					<div class="user_option">
 						<a href="${pageContext.request.contextPath}/goods/wishlist"
