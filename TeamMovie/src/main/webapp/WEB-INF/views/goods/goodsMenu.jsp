@@ -245,59 +245,7 @@
   
   
   
-  <!-- header section strats -->
-	<header class="header_section">
-		<div class="container">
-			<nav class="navbar navbar-expand-lg custom_nav-container ">
-				<a class="navbar-brand" href="${pageContext.request.contextPath}/">
-					<span> Cine Town </span>
-				</a>
-
-				<button class="navbar-toggler" type="button" data-toggle="collapse"
-					data-target="#navbarSupportedContent"
-					aria-controls="navbarSupportedContent" aria-expanded="false"
-					aria-label="Toggle navigation">
-					<span class=""> </span>
-				</button>
-
-				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul class="navbar-nav  mx-auto ">
-						<li class="nav-item"><a class="nav-link cinema"
-							href="index.html">영화 </a></li>
-						<li class="nav-item"><a class="nav-link" href="menu.html">굿즈</a>
-						</li>
-						<li class="nav-item"><a class="nav-link"
-							href="${pageContext.request.contextPath}/aboutUs/aboutUsMain">회사
-								소개</a></li>
-						<li class="nav-item"><a class="nav-link"
-							href="${pageContext.request.contextPath}/preview/main">시사회 /
-								이벤트</a></li>
-						<li class="nav-item"><a class="nav-link"
-							href="${pageContext.request.contextPath}/faq/faqMain">고객 센터</a></li>
-					</ul>
-					<div class="user_option">
-						<a href="${pageContext.request.contextPath}/goods/wishlist"
-							class="user_link" style="font-size: 1.7em;"> <i
-							class="xi-heart" aria-hidden="true"></i>
-						</a> <a href="${pageContext.request.contextPath}/goods/cart"
-							class="user_link" style="font-size: 1.7em;"> <i
-							class="xi-cart" aria-hidden="true"></i>
-						</a> <a href="${pageContext.request.contextPath}/user/signup"
-							class="user_link" style="font-size: 1.7em;"> <i
-							class="xi-user-plus" aria-hidden="true"></i>
-						</a> <a href="${pageContext.request.contextPath}/user/signin"
-							class="order_online"
-							style="border: 1px solid #fff; background-color: #232830; padding: 5px 20px;">
-							로그인 </a>
-					</div>
-				</div>
-			</nav>
-		</div>
-	</header>
-	<!-- end header section -->
-  <!-- end header section -->
-  <!-- slider section -->
-<!-- 헤더 종료입니다 -->
+    <%@ include file="../include/header.jsp"%>
 
 
 
@@ -2488,7 +2436,7 @@
   
   
   <!-- footer section start -->
-<footer class="footer_section">
+<!-- <footer class="footer_section">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-4 footer-col">
@@ -2533,10 +2481,10 @@
 			</p>
 		</div>
 	</div>
-</footer>
+</footer> -->
 <!-- footer section end -->
 <!-- 페이지별 js 추가 공간 -->
-
+  	<%@ include file="../include/footer.jsp"%>
 
 
 
@@ -2622,12 +2570,12 @@
 
   <!-- 제이쿼리, 자바스크립트 시작입니다. -->
      <!-- Including Jquery -->
-     <script src="${pageContext.request.contextPath }/assets/js/GoodsMainjs/vendor/jquery-3.3.1.min.js"></script>
+<%--      <script src="${pageContext.request.contextPath }/assets/js/GoodsMainjs/vendor/jquery-3.3.1.min.js"></script> --%>
      <script src="${pageContext.request.contextPath }/assets/js/GoodsMainjs/vendor/jquery.cookie.js"></script>
      <script src="${pageContext.request.contextPath }/assets/js/GoodsMainjs/vendor/modernizr-3.6.0.min.js"></script>
      <script src="${pageContext.request.contextPath }/assets/js/GoodsMainjs/vendor/wow.min.js"></script>
      <!-- Including Javascript -->
-     <script src="${pageContext.request.contextPath }/assets/js/GoodsMainjs/bootstrap.min.js"></script>
+<%--      <script src="${pageContext.request.contextPath }/assets/js/GoodsMainjs/bootstrap.min.js"></script> --%>
      <script src="${pageContext.request.contextPath }/assets/js/GoodsMainjs/plugins.js"></script>
      <script src="${pageContext.request.contextPath }/assets/js/GoodsMainjs/popper.min.js"></script>
      <script src="${pageContext.request.contextPath }/assets/js/GoodsMainjs/lazysizes.js"></script>
