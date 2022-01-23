@@ -7,9 +7,9 @@
 
 
 
-<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/premiereMain/premiereMain.css" />
-<head>
 
+<head>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/premiereMain/premiereMain.css" />
 
 </head>
 <%@ include file="../include/header.jsp" %>
@@ -61,10 +61,7 @@
     <div class="content">
       <div class="moviePosterCon item1"><img src="${pageContext.request.contextPath}/assets/images/premiereMain/movieposter/mannyunijinado.jpg" alt=""></div>
       <p class="movieName">만 년이 지나도 변하지 않는게 ... </p>
-      <p class="hashtags">#2021 #판타지 #로맨스 #코미디 #대만</p>
-
-
-      
+      <p class="hashtags">#2021 #판타지 #로맨스 #코미디 #대만</p>   
     </div>
   
     </a>
