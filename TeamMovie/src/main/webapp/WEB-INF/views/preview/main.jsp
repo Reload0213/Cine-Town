@@ -8,12 +8,12 @@
 
 
 
+
+<%@ include file="../include/header.jsp" %>
 <head>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/premiereMain/premiereMain.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/premiereMain/premiereMain.css"/>
 
 </head>
-<%@ include file="../include/header.jsp" %>
-
 <main>
 
 <!-- 임승혁 시사회 페이지 바디메인 시작입니다. -->
