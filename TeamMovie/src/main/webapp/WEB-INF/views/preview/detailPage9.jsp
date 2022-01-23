@@ -25,7 +25,7 @@
   <link href="${pageContext.request.contextPath}/assets/css/index/indexCSS/responsive.css" rel="stylesheet" />
   <!-- 인덱스 기존 템플릿 영역 끝입니다. -->
   
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/premiereDetail/premiereDetail-page1.css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/premiereMain/premiereMain.css">
 </head>
 
 <body class="template-index ">
@@ -140,76 +140,166 @@
 
 
 
-<!-- 임승혁 시사회 페이지 디테일 영화해적 바디시작  시작 -->
+<!-- 임승혁 시사회 -->
+<div class="mainCon" >
+    <!-- <div class="headerMoviePoster on">
+      <img src="img/movieHeaderPoster/jangminhodrama.jpg" alt=""></div>
+   -->
+     <h2 class="mainTitle" style="text-align: center;">시사회 소식</h2>
+       
+     <p>영화와 스타를 만나는 시사회 소식을 알려드립니다.</p>
+     <div class="btnCon">
+      <ul class="filterBtns">
+        <li><span class="btn select" onclick='filterSelection("all")'>ALL</span></li>
+        <li><span class="btn" onclick='filterSelection("action")'>액션</span></li>
+        <li><span class="btn" onclick='filterSelection("romance")'>로맨스</span></li>
+        <li><span class="btn" onclick='filterSelection("drama")'>드라마</span></li>
+      </ul>
 
 
 
-<div class="mainCon">
-    <nav>
-     <h5>영화 [만년이 지나도 변하지 않는게 있어] 응모 이벤트</h5>
-      <p class="date">2022.01.18 ~ 2022.02.09</p>
-  </nav>
-     <div class="contentCon item1">
-       <img src="${pageContext.request.contextPath}/assets/images/premiereDetail/movieDetailPoster/mannyuniginado1.jpg" alt="">
-      </div>
-
-      <div class="contentCon item2">
-        <img src="${pageContext.request.contextPath}/assets/images/premiereDetail/movieDetailPoster/mannyuniginado2.jpg" alt="">
-       </div>
+     </div>
 
 
 
-    <div class="iframeCon">
-        <iframe src="https://www.youtube.com/embed/bnVfkDSNg4M?controls=0&mute=0&autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<div class="row">
+  <h5 id="eventNum"></h5>
+
+
+
+
+  <a href="premiereDetail-page1.html" class="column romance">
+  
+    <div class="content">
+      <div class="moviePosterCon item1"><img src="${pageContext.request.contextPath}/assets/images/premiereMain/movieposter/mannyunijinado.jpg" alt=""></div>
+      <p class="movieName">만 년이 지나도 변하지 않는게 ... </p>
+      <p class="hashtags">#2021 #판타지 #로맨스 #코미디 #대만</p>
 
 
     </div>
+   
+    </a>
 
-    <div class="contentCon item3">
-      <img src="${pageContext.request.contextPath}/assets/images/premiereDetail/movieDetailPoster/mannyuniginado3.jpg" alt="">
-     </div>
+
+
+
+
+
+  <a href="premiereDetail-page2.html" class="column action">
+    <div class="content">
+      <div class="moviePosterCon item1"><img src="${pageContext.request.contextPath}/assets/images/premiereMain/movieposter/imsinhannamuwa.jpg" alt=""></div>
+      <p class="movieName">임신한 나무와 도깨비 </p>
+      <p class="hashtags">#2019 #판타지 #다큐멘터리 #한국</p>
+
+
+      
+    </div>
   
-     <div class="contentCon item4">
-      <img src="${pageContext.request.contextPath}/assets/images/premiereDetail/movieDetailPoster/mannyuniginado4.jpg" alt="">
-     </div>
+    </a>
+  
+
+ 
+
+  <a href="premiereDetail-page3.html" class="column action">
+    <div class="content">
+      <div class="moviePosterCon item1"><img src="${pageContext.request.contextPath}/assets/images/premiereMain/movieposter/haejuk.jpg" alt=""></div>
+      <p class="movieName">해적:도깨비 깃발 </p>
+      <p class="hashtags">#2021 #액션 #모험 #코미디 #한국</p>
+
+
+      
+    </div>
+ 
+  </a>
+
+
+
+
+  <a href="premiereDetail-page4.html" class="column drama">
+    <div class="content">
+      <div class="moviePosterCon item1"><img src="${pageContext.request.contextPath}/assets/images/premiereMain/movieposter/kingmaker.jpg" alt=""></div>
+      <p class="movieName">킹메이커 </p>
+      <p class="hashtags">#2021 #드라마 #한국</p>
+
+
+      
+    </div>
+ 
+  </a>
+
+
+  
+
+  
+  <a href="premiereDetail-page5.html" class="column drama">
+    <div class="content">
+      <div class="moviePosterCon item1"><img src="${pageContext.request.contextPath}/assets/images/premiereMain/movieposter/france.jpg" alt=""></div>
+      <p class="movieName">프랑스 </p>
+      <p class="hashtags">#2021 #코미디 #드라마 #프랑스</p>
+
+
+      
+    </div>
+ 
+  </a>
+
+  <a href="premiereDetail-page6.html" class="column action">
+    <div class="content">
+      <div class="moviePosterCon item1"><img src="${pageContext.request.contextPath}/assets/images/premiereMain/movieposter/kingsman.jpg" alt=""></div>
+      <p class="movieName">킹스맨:퍼스트 에이전트 </p>
+      <p class="hashtags">#2021 #액션 #모험 #코미디 #영국 #미국</p>
+
+
+      
+    </div>
+ 
+  </a>
+
+
+
+  <a href="premiereDetail-page7.html" class="column romance">
+    <div class="content">
+      <div class="moviePosterCon item1"><img src="${pageContext.request.contextPath}/assets/images/premiereMain/movieposter/chungchoonjukni.jpg" alt=""></div>
+      <p class="movieName">청춘적니 </p>
+      <p class="hashtags">#2021 #로맨스 #드라마 #중국</p>
+
+
+      
+    </div>
+ 
+  </a>
+
+  
+
+
+  <a href="premiereDetail-page8.html" class="column romance">
+    <div class="content">
+      <div class="moviePosterCon item1"><img src="${pageContext.request.contextPath}/assets/images/premiereMain/movieposter/sil.jpg" alt=""></div>
+      <p class="movieName">실:인연의 시작 </p>
+      <p class="hashtags">#2020 #드라마 #로맨스 #일본</p>
+
+
+      
+    </div>
+ 
+  </a>
+
+ 
+
+ 
+
+ 
+  
 
 
 </div>
- <div class="voteBtnCon"><a href="#" class="voteBtn">응모하기</a></div>
+
+
+
 
 
 </div>
-
-
-
-
-
-
-<!-- 임승혁 게시판 디테일 영화해적 바디끝 -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <!-- footer section -->
   <footer class="footer_section">
