@@ -1,6 +1,7 @@
 // 임승혁 시사회 스크립트입니다.
 
 
+
 filterSelection("all");
 
 function filterSelection(c){

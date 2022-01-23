@@ -77,7 +77,7 @@ color:#ec4b40;
 
 
 
-.row{
+.rowMain{
     width: 100%;
     margin-top:40px;
     max-width: 132rem;
@@ -88,11 +88,7 @@ color:#ec4b40;
 }
 
 
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
+
 
 
 .column{

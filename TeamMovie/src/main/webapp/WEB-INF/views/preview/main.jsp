@@ -51,8 +51,8 @@
 
 
 
-<div class="row">
-  <h5 id="eventNum"></h5>
+<div class="rowMain">
+ 
 
 
 
@@ -134,9 +134,6 @@
       <div class="moviePosterCon item1"><img src="${pageContext.request.contextPath}/assets/images/premiereMain/movieposter/kingsman.jpg" alt=""></div>
       <p class="movieName">킹스맨:퍼스트 에이전트 </p>
       <p class="hashtags">#2021 #액션 #모험 #코미디 #영국 #미국</p>
-
-
-      
     </div>
  
   </a>
