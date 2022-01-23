@@ -22,6 +22,11 @@
 <title>Insert title here</title>
 </head>
 <body>
+<div class="body-inner">
+    <div id="banner-area">
+      <img src="${pageContext.request.contextPath}/assets/images/aboutUs/au_images/banner/banner1_origin.jpg" alt ="" style="width: 100%;
+      height: 100%;"/>
+    </div><!-- Banner area end -->
 <section class="faq">
     <div class="container page-bgc">
         <div class="row">
