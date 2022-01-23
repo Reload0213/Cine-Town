@@ -101,33 +101,35 @@
 
 
 
+<!-- 임승혁 시사회 페이지 디테일 영화해적 바디시작  시작 -->
+
+
+
 <div class="mainCon">
     <nav>
-     <h5>영화 [만년이 지나도 변하지 않는게 있어] 응모 이벤트</h5>
-      <p class="date">2022.01.18 ~ 2022.02.09</p>
+     <h5>영화 [킹메이커] 응모 이벤트</h5>
+      <p class="date">2022.12.27 ~ 2022.01.03</p>
   </nav>
      <div class="contentCon item1">
-       <img src="${pageContext.request.contextPath}/assets/images/premiereDetail/movieDetailPoster/mannyuniginado1.jpg" alt="">
+       <img src="assets/images/premiereDetail/movieDetailPoster/kingmaker1.jpg" alt="">
       </div>
-
       <div class="contentCon item2">
-        <img src="${pageContext.request.contextPath}/assets/images/premiereDetail/movieDetailPoster/mannyuniginado2.jpg" alt="">
+        <img src="assets/images/premiereDetail/movieDetailPoster/kingmaker2.jpg" alt="">
        </div>
 
 
-
     <div class="iframeCon">
-        <iframe src="https://www.youtube.com/embed/bnVfkDSNg4M?controls=0&mute=0&autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/LWMUUYk5MfE?controls=0&mute=0&autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
     </div>
 
     <div class="contentCon item3">
-      <img src="${pageContext.request.contextPath}/assets/images/premiereDetail/movieDetailPoster/mannyuniginado3.jpg" alt="">
+      <img src="assets/images/premiereDetail/movieDetailPoster/kingmaker3.jpg" alt="">
      </div>
-  
-     <div class="contentCon item4">
-      <img src="${pageContext.request.contextPath}/assets/images/premiereDetail/movieDetailPoster/mannyuniginado4.jpg" alt="">
+     
+    <div class="contentCon item4">
+      <img src="assets/images/premiereDetail/movieDetailPoster/kingmaker4.jpg" alt="">
      </div>
 
 
@@ -143,6 +145,14 @@
 
 
 <!-- 임승혁 게시판 디테일 영화해적 바디끝 -->
+
+
+
+
+
+
+
+
 
 
 
