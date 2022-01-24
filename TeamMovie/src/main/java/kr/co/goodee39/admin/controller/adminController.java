@@ -39,6 +39,18 @@ public class adminController {
 		return "/aboutUs/aboutUsMain";
 	}
 	
+	@GetMapping("/noticeView")
+	public String noticeView(Model model) {
+		model.addAttribute("testKey", "testVal");
+		return "/aboutUs/noticeView";
+	}
+	
+	@GetMapping("/noticeWrite")
+	public String noticeWrite(Model model) {
+		model.addAttribute("testKey", "testVal");
+		return "/aboutUs/noticeWrite";
+	}
+	
 	@GetMapping("/faqMain")
 	public String faqMain(Model model) {
 		model.addAttribute("testKey", "testVal");
