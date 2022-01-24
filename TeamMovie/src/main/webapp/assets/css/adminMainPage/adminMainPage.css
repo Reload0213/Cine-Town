@@ -1,3 +1,226 @@
+/* 기본설정 초기화 */
+* {
+
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+    font-family: 'Noto Sans KR', 'Roboto', sans-serif;
+    color: #fff;
+    font-size: 62.5%;
+    letter-spacing: 1%;
+    /* 폰트 초기화 */
+
+}
+
+
+
+body {
+    width: 100%;
+    background-color: #fff;
+
+}
+
+ul,
+li,
+ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+
+
+}
+
+
+
+.hideMenu {
+    padding-top: 1.0rem;
+
+    width: 0;
+    background-color: #141414;
+    height: 20%;
+    z-index: 999;
+    position: fixed;
+
+    overflow: hidden;
+    white-space: nowrap;
+    top: 0;
+    left: 0;
+    transition: width 0.3s linear;
+
+}
+a.exitHideMenu{
+    width:100%;
+    font-size: 2.5rem;
+    text-align: right;
+}
+
+.hideMenu.on {
+
+    width: 50%;
+    transition: width 0.3s linear;
+
+}
+.hideMenu .adminMenus li{
+    display: flex;
+    justify-content: space-between;
+}
+.userCon {
+    display: flex;
+}
+
+.userCon i{
+    margin-right: 0.3rem;
+    font-size: 3.0rem;
+}
+.username{
+    font-size: 2.0rem;
+}
+.hideMenu>.adminMenus>li{
+    padding: 0.5rem 1rem;
+}
+.hideMenu>.adminMenus>li:first-child {
+    text-align: right;
+
+}
+.logoutBtnM{
+    font-size: 1.7rem;
+    margin-left:0.5rem;
+    border:1.5px solid #fff;
+    border-radius: 2rem;
+    padding:0.5rem 1rem;
+}
+
+
+
+.mainCon {
+    width: 100%;
+    margin: 0 auto;
+
+}
+
+nav {
+
+
+    padding: 0.10rem 0.5rem;
+    margin-bottom: 3rem;
+    background-color: #141414;
+}
+
+nav .hambugerBtn {
+    display: none;
+}
+
+
+nav .hambugerBtn i {
+
+    font-size: 3.0rem;
+
+}
+
+nav h3 {
+    font-size: 3.0rem;
+    display: inline;
+}
+
+nav .search i {
+    font-size: 3.0rem;
+}
+
+.search {
+    cursor: pointer;
+}
+
+nav .top {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+
+nav .top .topCon {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+
+}
+
+.userForm{
+    display: flex;
+    align-items: center;
+    margin-right:1.5rem;
+}
+
+.userId{
+
+    font-size: 1.4rem;
+
+}
+.logoutBtn{
+    font-size: 1.4rem;
+    margin-left:0.5rem;
+    border:1.5px solid #fff;
+    border-radius: 2rem;
+    padding:0.5rem 1rem;
+}
+
+.userForm .logoutBtn:hover{
+    background-color: #dd2026;
+    border:1.5px solid #dd2026;
+
+}
+.rightCon{
+    display: flex;
+}
+nav .bottom {
+
+    padding: 0rem 1.2rem;
+
+
+}
+
+nav .bottom .navmenus {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+
+}
+
+nav .bottom .navmenus li {
+    width: 8%;
+    overflow: hidden;
+    white-space: no-wrap;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 0.8rem 0rem;
+    /* border-bottom:3.8px solid #fff; */
+
+}
+
+nav .bottom .navmenus li:hover {
+    border-bottom: 3.8px solid #fff;
+}
+
+nav .bottom .navmenus li a {
+    display: block;
+    text-align: center;
+    font-size: 1.5rem;
+   
+}
+nav .bottom .navmenus li a i {
+    font-size: 2.0rem;
+   
+}
+
+
+
 aside {
     width: 100%;
     display: flex;
@@ -15,6 +238,26 @@ aside input {
     font-size: 1.5rem;
 }
 
+.selCon{
+    width:80%;
+    margin:0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:#141414;
+   
+}
+
+.selCon button{
+    padding:0.5rem 0.7rem;
+    background-color: #141414;
+    border:none;
+    
+}
+.selCon select{
+    font-size: 1.5rem;
+    color:#141414;
+}
 
 
 
@@ -38,11 +281,20 @@ aside input {
     border-bottom: 0.25rem solid #141414;
 }
 
-.userTable {
-
+.userTable{
+   display: none;
     width: 100%;
     margin: 0 auto;
 
+
+}
+
+.delete{
+    padding:0.5rem 0.7rem;
+    background-color: #141414;
+    border:none;
+    color:#fff;
+    
 
 }
 
@@ -57,7 +309,7 @@ table {
     border-radius: 0.8rem;
     margin-bottom: 3rem;
     border-collapse: collapse;
-    
+  
 }
 
 
@@ -278,7 +530,9 @@ td>button{
     * {
         font-size: 48%;
     }
-
+    
+   
+   
     .hideMenu>.adminMenus>li>a {
         font-size: 1.5rem;
         padding: 0.8rem 0.8rem 0.8rem 0.8rem;
@@ -288,7 +542,7 @@ td>button{
 
     nav .top .topCon {
        width: 100%;
-
+     
 
       
     }

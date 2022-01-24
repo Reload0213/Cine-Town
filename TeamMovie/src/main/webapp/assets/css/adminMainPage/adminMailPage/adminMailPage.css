@@ -132,6 +132,18 @@ nav .search i{
     font-size: 3.0rem;
 }
 
+
+nav .bottom .navmenus li a {
+    display: block;
+    text-align: center;
+    font-size: 1.5rem;
+   
+}
+nav .bottom .navmenus li a i {
+    font-size: 2.0rem;
+   
+}
+
 .search{
 cursor: pointer;
 }
