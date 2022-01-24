@@ -83,6 +83,7 @@
                       <th>비밀번호</th>
                       <th>휴대폰번호</th>
                       <th>이메일</th>
+                      <th>가입일자</th>
                       <th>삭제</th>
                     </tr>
                   </thead>
@@ -92,9 +93,10 @@
                      
                         <td>${userVO.userNum}</td>
                         <td>${userVO.userId}</td>
-                        <td>${userVO.usserPw}</td>
+                        <td>${userVO.userPw}</td>
                         <td>${userVO.userPhone}</td>
                         <td>${userVO.userEmail}</td>
+                         <td>${userVO.userRegdate}</td>
                         <td><button class="delete">삭제하기</button></td>
                      
                     </tr>
