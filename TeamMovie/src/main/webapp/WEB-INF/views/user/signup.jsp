@@ -519,7 +519,7 @@
 												<span class="final_addr_ck">주소를 입력해주세요.</span>
 											</div>
 											<div class="join_button_wrap">
-												<form:button type="submit">가입하기</form:button>
+												<form:button class="join_button">가입하기</form:button>
 											</div>
 										</div>
 									</form:form>
@@ -546,7 +546,7 @@
 	<script
 		src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 	<script>
-		var code = ""; //이메일전송 인증번호 저장위한 코드
+		/* var code = ""; //이메일전송 인증번호 저장위한 코드 */
 
 		/* 유효성 검사 통과유무 변수 */
 		var idCheck = false; // 아이디
