@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <head>
  
@@ -44,21 +45,22 @@
 	<section class="category-page area-padding">
 		<div class="container">
 			<div class="row">
+			<c:forEach var="item" items="${list}">
 				<div class="col-md-6 col-lg-4">
 					<div class="single-category">
 						<div class="thumb">
 						<a href="${pageContext.request.contextPath}/movie/movieDetail">
 							<img class="img-fluid"
-								src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSo4lgN-zUMerbr5Zin2NJb-My3SnXnQf2Qgw&usqp=CAU"
+								src="${item.mvImgPath}"
 								alt="">
 						</a>
 						</div>
 						<div class="short_details">
 							<div class="meta-top d-flex">
-								<a href="${pageContext.request.contextPath}/movie/movieDetail">movieDetail Test 이동 </a>/ <a href="#"> March 15, 2019</a>
+								<a href="${pageContext.request.contextPath}/movie/movieDetail">${item.mvTitle} </a>/ <a href="#">개봉일자 : ${item.mvYear}</a>
 							</div>
 							<a class="d-block" href="${pageContext.request.contextPath}/movie/movieDetail">
-								<h4>Shall for rule whose toge one may heaven to dat</h4>
+								<p>${item.mvDetail}</p>
 							</a>
 							<div class="meta-bottom d-flex">
 								<a href="#"><i class="xi-message-o"></i>05 comment</a> <a
@@ -67,6 +69,7 @@
 						</div>
 					</div>
 				</div>
+				</c:forEach>
 				<div class="col-md-6 col-lg-4">
 					<div class="single-category">
 						<div class="thumb">
