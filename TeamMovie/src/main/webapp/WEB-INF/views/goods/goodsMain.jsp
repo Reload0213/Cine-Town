@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -407,17 +408,18 @@
                             <div class="tab_container">
                                 <div id="tab1" class="tab_content grid-products">
                                     <div class="productSlider">
-                                    
+                                    <!-- 슬라이드 카드 영역 시작 -->
+                                    <c:forEach var="goods" items="${goodsList }">
                                         <div class="col-12 item">
                                             <!-- start product image -->
                                             <div class="product-image">
                                                 <!-- start product image -->
                                                 <a href="short-description.html">
                                                     <!-- image -->
-                                                    <img class="primary blur-up lazyload" data-src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image1.jpg" src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image1.jpg" alt="image" title="product">
+                                                    <img class="primary blur-up lazyload" data-src="${goods.gdsImage1 }" src="${goods.gdsImage1 }" alt="image" title="product">
                                                     <!-- End image -->
                                                     <!-- Hover image -->
-                                                    <img class="hover blur-up lazyload" data-src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image1-1.jpg" src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image1-1.jpg" alt="image" title="product">
+                                                    <img class="hover blur-up lazyload" data-src="${goods.gdsImage2 }" src="${goods.gdsImage2 }" alt="image" title="product">
                                                     <!-- End hover image -->
                                                     <!-- product label -->
                                                     <div class="product-labels rectangular"><span class="lbl on-sale">-16%</span> <span class="lbl pr-label1">new</span></div>
@@ -455,13 +457,13 @@
                                             <div class="product-details text-center">
                                                 <!-- product name -->
                                                 <div class="product-name">
-                                                    <a href="short-description.html" class="korean" >기생충 뱃지</a>
+                                                    <a href="short-description.html" class="korean" >${goods.gdsName }</a>
                                                 </div>
                                                 <!-- End product name -->
                                                 <!-- product price -->
                                                 <div class="product-price">
                                                     <span class="old-price">$500.00</span>
-                                                    <span class="price">$600.00</span>
+                                                    <span class="price">${goods.gdsPrice }원</span>
                                                 </div>
                                                 <!-- End product price -->
                                                 
@@ -473,18 +475,19 @@
                                                     <i class="font-13 fa fa-star-o"></i>
                                                 </div>
                                                 <!-- Variant -->
-                                                <ul class="swatches">
+                                         <%--        <ul class="swatches">
                                                     <li class="swatch medium rounded"><img src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/variant1.jpg" alt="image" /></li>
                                                     <li class="swatch medium rounded"><img src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/variant2.jpg" alt="image" /></li>
                                                     <li class="swatch medium rounded"><img src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/variant3.jpg" alt="image" /></li>
                                                     <li class="swatch medium rounded"><img src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/variant4.jpg" alt="image" /></li>
                                                     <li class="swatch medium rounded"><img src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/variant5.jpg" alt="image" /></li>
                                                     <li class="swatch medium rounded"><img src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/variant6.jpg" alt="image" /></li>
-                                                </ul>
+                                                </ul> --%>
                                                 <!-- End Variant -->
                                             </div>
                                             <!-- End product details -->
                                         </div>
+                                        </c:forEach>
                                         
                                         
                                     <%--     <div class="col-12 item">
@@ -1505,15 +1508,17 @@
                 </div>
                 <div class="grid-products">
 	                <div class="row">
+	                <!-- 그리드 상품영역 시작 -->
+	                <c:forEach var="goods" items="${goodsList }">
                         <div class="col-6 col-sm-6 col-md-4 col-lg-4 item grid-view-item style2">
                         	<div class="grid-view_image">
                                 <!-- start product image -->
                                 <a href="product-accordion.html" class="grid-view-item__link">
                                     <!-- image -->
-                                    <img class="grid-view-item__image primary blur-up lazyload" data-src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image1.jpg" src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image1.jpg" alt="image" title="product">
+                                    <img class="grid-view-item__image primary blur-up lazyload" data-src="${goods.gdsImage1 }" src="${goods.gdsImage1 }" alt="image" title="product">
                                     <!-- End image -->
                                     <!-- Hover image -->
-                                    <img class="grid-view-item__image hover blur-up lazyload" data-src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image1-1.jpg" src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image1-1.jpg" alt="image" title="product">
+                                    <img class="grid-view-item__image hover blur-up lazyload" data-src="${goods.gdsImage2 }" src="${goods.gdsImage2 }" alt="image" title="product">
                                     <!-- End hover image -->
                                     <!-- product label -->
                                     <div class="product-labels rectangular"><span class="lbl on-sale">-16%</span> <span class="lbl pr-label1">new</span></div>
@@ -1524,13 +1529,13 @@
                                 <div class="product-details hoverDetails text-center mobile">
                                     <!-- product name -->
                                     <div class="product-name">
-                                        <a href="product-accordion.html">Edna Dress</a>
+                                        <a href="product-accordion.html">${goods.gdsName }</a>
                                     </div>
                                     <!-- End product name -->
                                     <!-- product price -->
                                     <div class="product-price">
                                         <span class="old-price">$500.00</span>
-                                        <span class="price">$600.00</span>
+                                        <span class="price">${goods.gdsPrice }원</span>
                                     </div>
                                     <!-- End product price -->
                                     
@@ -1557,8 +1562,8 @@
                                     <!-- end product button -->
                                 </div>
                                 <!-- Variant -->
-                                <h2 class="h2 korean">New Goods </h2>
-                                <h2 class="h2 korean" style="font-size: 15px;">가격: 00000원 </h2>
+                                <h2 class="h2 korean">${goods.gdsName } </h2>
+                                <h2 class="h2 korean" style="font-size: 15px;">가격: ${goods.gdsPrice }원 </h2>
                                 <div class="product-review">
                                     <i class="font-13 fa fa-star"></i>
                                     <i class="font-13 fa fa-star"></i>
@@ -1570,7 +1575,20 @@
                                 <!-- End product details -->
                             </div>
                         </div>
-                        <div class="col-6 col-sm-6 col-md-4 col-lg-4 item grid-view-item style2">
+                        </c:forEach>
+                        	                <!-- 그리드 상품영역 종료 -->
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                 <%--        <div class="col-6 col-sm-6 col-md-4 col-lg-4 item grid-view-item style2">
                         	<div class="grid-view_image">
                                 <!-- start product image -->
                                 <a href="product-accordion.html" class="grid-view-item__link">
@@ -1630,6 +1648,15 @@
                                 <!-- End product details -->
                             </div>
                         </div>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
                         <div class="col-6 col-sm-6 col-md-4 col-lg-4 item grid-view-item style2">
                         	<div class="grid-view_image">
                                 <!-- start product image -->
@@ -1690,6 +1717,15 @@
                                 <!-- End product details -->
                             </div>
                         </div>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
                         <div class="col-6 col-sm-6 col-md-4 col-lg-4 item grid-view-item style2">
                         	<div class="grid-view_image">
                                 <!-- start product image -->
@@ -1751,6 +1787,14 @@
                                 <!-- End product details -->
                             </div>
                         </div>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
                         <div class="col-6 col-sm-6 col-md-4 col-lg-4 item grid-view-item style2">
                         	<div class="grid-view_image">
                                 <!-- start product image -->
@@ -1812,6 +1856,16 @@
                                 <!-- End product details -->
                             </div>
                         </div>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
                         <div class="col-6 col-sm-6 col-md-4 col-lg-4 item grid-view-item style2">
                         	<div class="grid-view_image">
                                 <!-- start product image -->
@@ -1869,7 +1923,15 @@
                                 </div>
 
                             </div>
-                        </div>
+                        </div> --%>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
                 	</div>
                 </div>
            </div>

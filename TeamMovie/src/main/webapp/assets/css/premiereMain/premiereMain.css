@@ -36,12 +36,12 @@ a{
 .btnCon{
     width:60%;
     margin:0 auto;
-    margin-bottom: 2rem;
+    
 }
 .filterBtns{
     display: flex;
     width:100%;
-    padding:0rem;
+   
     justify-content: center;
     border-bottom: 0.1rem solid #777777;
 }
@@ -49,18 +49,21 @@ a{
 .btn{
     
     
-    padding:1.3rem 5.0rem;
+    padding:2.0rem 5.0rem;
     font-size: 1.6rem;
     
     overflow: hidden;
     white-space: nowrap;
     cursor: pointer;
+    text-align:center;
+     transition: width 0.5s linear;
 }
 
 .btn.select{
-  
+    width:10vw;
     border-bottom: 0.23rem solid #ec4b40;
     color:#ec4b40;
+    transition: width 0.5s linear;
         
 }
 .rowMain{
@@ -149,6 +152,22 @@ a{
 
 }
 
+@media (max-width:1280px) {
+   
+   .btnCon{
+    width:80%;
+   }
+   .column{
+       width:35%;
+   }
+  .btn.select{
+    width:13vw;
+    }
+    
+    
+}
+
+
 @media (max-width:1024px) {
    *{
        font-size: 55%;
@@ -159,7 +178,9 @@ a{
    .column{
        width:35%;
    }
-
+  .btn.select{
+        width:13vw;
+    }
     
     
 }
@@ -180,8 +201,9 @@ a{
         padding:2rem 3rem;
         font-weight: bold;
     }
-    
-     
+    .btn.select{
+    width:18vw;
+    }
  }
 
 
@@ -200,7 +222,7 @@ a{
         padding:2rem 1rem;
         font-weight: bold;
     }
-        
-
-     
+      .btn.select{
+    width:18vw;
+    }
  }
