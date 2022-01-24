@@ -69,10 +69,10 @@
 								페이지 링크</a></li>
 					</ul>
 					<div class="user_option">
-						<a href="${pageContext.request.contextPath}/goods/wishlist"
+						<a href="${pageContext.request.contextPath}/cart/wishlist"
 							class="user_link" style="font-size: 1.7em;"> <i
 							class="xi-heart" aria-hidden="true"></i>
-						</a> <a href="${pageContext.request.contextPath}/goods/cart"
+						</a> <a href="${pageContext.request.contextPath}/cart/cart"
 							class="user_link" style="font-size: 1.7em;"> <i
 							class="xi-cart" aria-hidden="true"></i>
 						</a> <a href="${pageContext.request.contextPath}/user/signup"

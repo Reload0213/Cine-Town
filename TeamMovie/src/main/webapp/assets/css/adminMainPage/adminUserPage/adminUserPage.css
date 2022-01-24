@@ -194,9 +194,11 @@ nav .bottom .navmenus {
 }
 
 nav .bottom .navmenus li {
-    width: 10%;
+    width: 8%;
     overflow: hidden;
     white-space: no-wrap;
+    overflow: hidden;
+    white-space: nowrap;
     padding: 0.8rem 0rem;
     /* border-bottom:3.8px solid #fff; */
 
@@ -208,8 +210,13 @@ nav .bottom .navmenus li:hover {
 
 nav .bottom .navmenus li a {
     display: block;
-    font-size: 1.8rem;
     text-align: center;
+    font-size: 1.5rem;
+   
+}
+nav .bottom .navmenus li a i {
+    font-size: 2.0rem;
+   
 }
 
 
@@ -231,6 +238,26 @@ aside input {
     font-size: 1.5rem;
 }
 
+.selCon{
+    width:80%;
+    margin:0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:#141414;
+   
+}
+
+.selCon button{
+    padding:0.5rem 0.7rem;
+    background-color: #141414;
+    border:none;
+    
+}
+.selCon select{
+    font-size: 1.5rem;
+    color:#141414;
+}
 
 
 
@@ -254,11 +281,20 @@ aside input {
     border-bottom: 0.25rem solid #141414;
 }
 
-.userTable {
-
+.userTable{
+  
     width: 100%;
     margin: 0 auto;
 
+
+}
+
+.delete{
+    padding:0.5rem 0.7rem;
+    background-color: #141414;
+    border:none;
+    color:#fff;
+    
 
 }
 
@@ -273,7 +309,7 @@ table {
     border-radius: 0.8rem;
     margin-bottom: 3rem;
     border-collapse: collapse;
-    
+  
 }
 
 
@@ -494,7 +530,9 @@ td>button{
     * {
         font-size: 48%;
     }
-
+    
+   
+   
     .hideMenu>.adminMenus>li>a {
         font-size: 1.5rem;
         padding: 0.8rem 0.8rem 0.8rem 0.8rem;
@@ -504,7 +542,7 @@ td>button{
 
     nav .top .topCon {
        width: 100%;
-
+     
 
       
     }

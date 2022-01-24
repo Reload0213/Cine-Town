@@ -14,13 +14,13 @@ public class cartController {
 	//장바구니
 	@GetMapping("/cart")
 	public String getCart() {
-		return "goods/cart";
+		return "cart/cart";
 	}
 	
 	// 찜
 	@GetMapping("/wishlist")
 	public String getWishList() {
-		return "goods/wishlist";
+		return "cart/wishlist";
 	}
 
 }
