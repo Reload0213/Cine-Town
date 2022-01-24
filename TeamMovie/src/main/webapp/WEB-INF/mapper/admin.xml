@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="admin">
+  
+  
+  <!-- 회원 정보 리스트 불러오기 -->
+  <select id="showUserInfoList" parameterType="userVO"	resultType="userVO">
+  select userNum,userId,userPw,userName,userPhone,userEmail,userRegdate,userAddr1,userAdd2,userIsdelete,verify,userAddr3
+  from user
+  where verify = '0'
+  </select>
+  
+  <select id="showGoodsItem" parameterType="goodsVO" resultType="goodsVO">
+  select gdsNum, gdsPrice, gdsStock, gdsViewcnt, gdsUUID, gdsName, gdsDetail, gdsRegdate, gdsIsdelete, gdsBrand, gdsImage1, gdsImage2
+  from goods
+  where gdsNum = #{gdsNum}
+  </select>
+  </mapper>

@@ -1,22 +1,34 @@
 package kr.co.goodee39.admin.controller;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import kr.co.goodee39.admin.service.noticeService;
+import kr.co.goodee39.admin.vo.NoticeVO;
+import kr.co.goodee39.goods.vo.GoodsVO;
+
 @Controller
 @RequestMapping("/admin")
 public class adminController {
+	
+	@Autowired
+	noticeService noticeService;
+	
 	@GetMapping("/main")
 	public String main() {
 
 		return "admin/main";
 	}
 	
+	
 	@GetMapping("/user")
 	public String user() {
-
+	
 		return "admin/user";
 	}
 	
@@ -64,6 +76,7 @@ public class adminController {
 	}
 	
 	
+
 	
 	/*
 	 * 컨트롤러 담당: 김용현 
