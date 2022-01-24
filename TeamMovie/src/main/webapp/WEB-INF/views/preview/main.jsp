@@ -9,7 +9,7 @@
 
 
 
-<%@ include file="../include/header.jsp" %>
+<%@ include file="../include2/header.jsp" %>
 <head>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/premiereMain/premiereMain.css"/>
 
@@ -208,7 +208,7 @@
 
 </main>
 
-<%@ include file="../include/footer.jsp" %>
+<%@ include file="../include2/footer.jsp" %>
 
 
 
