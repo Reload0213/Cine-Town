@@ -10,6 +10,7 @@
 <link
 	href="${pageContext.request.contextPath}/assets/css/loginRegister/admin.min.css"
 	rel="stylesheet">
+
 <style>
 @media screen and (min-width:800px) {
 	.cardcenter {
@@ -37,7 +38,7 @@
 	padding: 10px 15px 8px;
 	background-color: #000;
 	color: #fff;
-	font-family: Poppins, Helvetica, Tahoma, Arial, sans-serif;
+	/* font-family: Poppins, Helvetica, Tahoma, Arial, sans-serif; */
 	font-weight: 400;
 	text-transform: uppercase;
 	letter-spacing: 1px;
@@ -61,14 +62,14 @@
 /* 페이지 제목 */
 .subjecet {
 	width: 100%;
-	height: 120px;
+	/* height: 120px; */
 	background-color: #8EC0E4;
 }
 
 .subjecet span {
 	margin-left: 31px;
-	font-size: 80px;
-	font-weight: 900;
+	font-size: 30px;
+	/* font-weight: 900; */
 	color: white;
 }
 
@@ -79,7 +80,7 @@
 }
 
 .id_name {
-	font-size: 25px;
+	/* font-size: 25px; */
 	font-weight: bold;
 }
 
@@ -93,7 +94,7 @@
 	width: 100%;
 	height: 100%;
 	border: none;
-	font-size: 28px;
+	/* font-size: 28px; */
 }
 /* 중복아이디 존재하지 않는경우 */
 .id_input_re_1 {
@@ -113,7 +114,7 @@
 }
 
 .pw_name {
-	font-size: 25px;
+	/* font-size: 25px; */
 	font-weight: bold;
 }
 
@@ -127,7 +128,7 @@
 	width: 100%;
 	height: 100%;
 	border: none;
-	font-size: 28px;
+	/* font-size: 28px; */
 }
 
 /* 비밀번호 확인 영역 */
@@ -137,7 +138,7 @@
 }
 
 .pwck_name {
-	font-size: 25px;
+	/* font-size: 25px; */
 	font-weight: bold;
 }
 
@@ -151,7 +152,7 @@
 	width: 100%;
 	height: 100%;
 	border: none;
-	font-size: 28px;
+	/* font-size: 28px; */
 }
 
 /* 이름 영역 */
@@ -161,7 +162,7 @@
 }
 
 .user_name {
-	font-size: 25px;
+	/* font-size: 25px; */
 	font-weight: bold;
 }
 
@@ -175,7 +176,7 @@
 	width: 100%;
 	height: 100%;
 	border: none;
-	font-size: 28px;
+	/* font-size: 28px; */
 }
 /* 전화번호 영역 */
 .phone_wrap {
@@ -184,7 +185,7 @@
 }
 
 .phone_name {
-	font-size: 25px;
+	/* font-size: 25px; */
 	font-weight: bold;
 }
 
@@ -198,7 +199,7 @@
 	width: 100%;
 	height: 100%;
 	border: none;
-	font-size: 28px;
+	/* font-size: 28px; */
 }
 /* 메일 영역 */
 .mail_wrap {
@@ -207,7 +208,7 @@
 }
 
 .mail_name {
-	font-size: 25px;
+	/* font-size: 25px; */
 	font-weight: bold;
 }
 
@@ -222,7 +223,7 @@
 	width: 100%;
 	/* 	height: 100%;
 	border: none; */
-	font-size: 20px;
+	/* font-size: 20px; */
 }
 
 .mail_check_wrap {
@@ -281,7 +282,7 @@
 }
 
 .address_name {
-	font-size: 25px;
+	/* font-size: 25px; */
 	font-weight: bold;
 }
 
@@ -297,15 +298,16 @@
 	width: 100%;
 	height: 100%;
 	border: none;
-	font-size: 20px;
+	/* font-size: 20px; */
 }
 
 .address_button {
 	border: 1px solid black;
-	height: 51px;
+	/* height: 51px; */
+	height:37.6px;
 	width: 30%;
 	float: right;
-	line-height: 50px;
+	line-height: 37.6px;
 	text-align: center;
 	/* font-size: 30px; */
 	/* font-weight: 900; */
@@ -327,7 +329,7 @@
 	width: 100%;
 	height: 100%;
 	border: none;
-	font-size: 20px;
+	/* font-size: 20px; */
 }
 
 .address_input_3_wrap {
@@ -344,7 +346,7 @@
 	width: 100%;
 	height: 100%;
 	border: none;
-	font-size: 20px;
+	/* font-size: 20px; */
 }
 
 /* 가입하기 버튼 */
@@ -355,10 +357,10 @@
 
 .join_button {
 	width: 100%;
-	height: 60px;
+	height: 30px;
 	background-color: #6AAFE6;
-	font-size: 30px;
-	font-weight: 900;
+	/* font-size: 30px; */
+	/* font-weight: 900; */
 	color: white;
 }
 
@@ -496,7 +498,7 @@
 												<div class="address_input_1_wrap">
 													<div class="address_input_1_box">
 														<form:input path="userAddr1" class="address_input_1"
-															readonly="readonly" />
+															readonly="readonly" placeholder="우편번호" />
 													</div>
 													<div class="address_button"
 														onclick="execution_daum_address()">
@@ -507,19 +509,19 @@
 												<div class="address_input_2_wrap">
 													<div class="address_input_2_box">
 														<form:input path="userAddr2" class="address_input_2"
-															readonly="readonly" />
+															readonly="readonly" placeholder="도로명 주소"/>
 													</div>
 												</div>
 												<div class="address_input_3_wrap">
 													<div class="address_input_3_box">
 														<form:input path="userAddr3" class="address_input_3"
-															readonly="readonly" />
+															readonly="readonly" placeholder="상세 주소" />
 													</div>
 												</div>
 												<span class="final_addr_ck">주소를 입력해주세요.</span>
 											</div>
 											<div class="join_button_wrap">
-												<form:button class="join_button">가입하기</form:button>
+												<form:button  class="join_button">가입하기</form:button>
 											</div>
 										</div>
 									</form:form>
@@ -545,7 +547,12 @@
 
 	<script
 		src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+			<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
 	<script>
+	
 		/* var code = ""; //이메일전송 인증번호 저장위한 코드 */
 
 		/* 유효성 검사 통과유무 변수 */
@@ -646,7 +653,8 @@
 												}
 
 												/* 최종 유효성 검사 */
-												if (idCheck && idckCheck
+												if (idCheck && 
+														/* idckCheck */
 														&& pwCheck && pwckCheck
 														&& pwckcorCheck
 														&& nameCheck
