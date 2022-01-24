@@ -53,7 +53,8 @@ public class adminController {
 	
 	@GetMapping("/aboutUsMain")
 	public String aboutUsMain(Model model) {
-		model.addAttribute("testKey", "testVal");
+		List<NoticeVO> noticeList = noticeService.noticeList();
+		model.addAttribute("noticeList", noticeList);
 		return "/aboutUs/aboutUsMain";
 	}
 	

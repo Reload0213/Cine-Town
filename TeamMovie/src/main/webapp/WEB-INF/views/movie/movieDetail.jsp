@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <head>
 
@@ -63,11 +64,11 @@
 
 		<div class="container">
 			<div class="row">
-				<div class="col-12 offset-lg-1 col-lg-10">
+				<div class="col-12 offset-lg-1 col-lg-10" style="width: 100%;">
 					<div class="featured-image">
 						<img
 							src="https://an2-img.amz.wtchn.net/image/v2/u8Lhz7pkQwEfSZmUNTA3TA.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk1qZ3dlRFF3TUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpFMk16a3dNemN3T0RNek1USTFPRGN6TVRnaWZRLlRGdlpXVDdJZXhKb2FxM1djZ2VnS2JneHpKOUthSDFVQlVEeHRWRUtrMFE"
-							alt="" style="width:70%; margin-top: -15%; margin-bottom: 2em">
+							alt="" style="width:100%;">
 
 						<div class="posted-date position-absolute">
 							<div class="day">23</div>
