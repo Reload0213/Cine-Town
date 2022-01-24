@@ -24,37 +24,37 @@
 
 
 <div class="mainCon">
-    <nav>
-     <h5>영화 [실:인연의 시작] 시사회 응모 이벤트</h5>
+    <nav class="nav2">
+     <h5>영화 [청춘적니] 시사회 응모 이벤트</h5>
       <p class="date">2022.11.23 ~ 2022.11.28</p>
   </nav>
      <div class="contentCon item1">
-       <img src="${pageContext.request.contextPath}/assets/images/premiereDetail/movieDetailPoster/sil1.jpg" alt="">
+       <img src="${pageContext.request.contextPath}/assets/images/premiereDetail/movieDetailPoster/chungchunjukni1.jpg" alt="">
       </div>
 
       <div class="contentCon item2">
-        <img src="${pageContext.request.contextPath}/assets/images/premiereDetail/movieDetailPoster/sil2" alt="">
+        <img src="${pageContext.request.contextPath}/assets/images/premiereDetail/movieDetailPoster/chungchunjukni2.jpg" alt="">
        </div>
     
      
 
     <div class="iframeCon">
-        <iframe src="https://www.youtube.com/embed/jec5qfItqEc?controls=0&mute=0&autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/h0Wq58ehXAM?controls=0&mute=0&autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
     </div>
 
     <div class="contentCon item3">
-      <img src="${pageContext.request.contextPath}/assets/images/premiereDetail/movieDetailPoster/sil3.jpg" alt="">
+      <img src="${pageContext.request.contextPath}/assets/images/premiereDetail/movieDetailPoster/chungchunjukni3.jpg" alt="">
      </div>
 
      <div class="contentCon item4">
-      <img src="${pageContext.request.contextPath}/assets/images/premiereDetail/movieDetailPoster/sil4.jpg" alt="">
+      <img src="${pageContext.request.contextPath}/assets/images/premiereDetail/movieDetailPoster/chungchunjukni4.jpg" alt="">
      </div>
 
 
      <div class="contentCon item4">
-      <img src="${pageContext.request.contextPath}/assets/images/premiereDetail/movieDetailPoster/sil5.jpg" alt="">
+      <img src="assets/images/premiereDetail/movieDetailPoster/chungchunjukni5.jpg" alt="">
      </div>
 
 
@@ -75,11 +75,6 @@
 
 
 <!-- 임승혁 게시판 디테일 영화해적 바디끝 -->
-
-
-
-
-
 
 
 

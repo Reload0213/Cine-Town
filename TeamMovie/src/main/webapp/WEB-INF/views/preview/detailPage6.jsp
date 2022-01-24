@@ -24,7 +24,7 @@
 
 
 <div class="mainCon">
-    <nav>
+     <nav class="nav2">
      <h5>영화 [킹스맨:퍼스트 에이전트] 시사회 응모 이벤트</h5>
       <p class="date">2022.12.14 ~ 2022.12.19</p>
   </nav>
@@ -35,7 +35,7 @@
      
 
     <div class="iframeCon">
-        <iframe src="${pageContext.request.contextPath}/https://www.youtube.com/embed/qmplEPm3RUI?controls=0&mute=0&autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/qmplEPm3RUI?controls=0&mute=0&autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
     </div>

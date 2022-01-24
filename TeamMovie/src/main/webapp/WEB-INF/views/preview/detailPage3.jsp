@@ -24,7 +24,7 @@
 
 
 <div class="mainCon">
-    <nav>
+    <nav class="nav2">
      <h5>영화 [해적:도깨비 깃발] 응모 이벤트</h5>
       <p class="date">2022.12.30 ~ 2022.01.06</p>
   </nav>

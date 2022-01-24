@@ -27,7 +27,7 @@
 
 
 <div class="mainCon">
-    <nav>
+     <nav class="nav2">
      <h5>영화 [킹메이커] 응모 이벤트</h5>
       <p class="date">2022.12.27 ~ 2022.01.03</p>
   </nav>

@@ -28,7 +28,7 @@
 
 
 <div class="mainCon">
-    <nav class="nav">
+    <nav class="nav2">
      <h5>영화 [임신한 나무와 도깨비] 응모 이벤트</h5>
       <p class="date">2022.01.07 ~ 2022.01.17</p>
   </nav>

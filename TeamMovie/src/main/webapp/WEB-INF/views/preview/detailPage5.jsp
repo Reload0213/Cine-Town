@@ -20,7 +20,7 @@
 
 
 <div class="mainCon">
-    <nav>
+   <nav class="nav2">
      <h5>영화 [프랑스] 시사회 응모 이벤트</h5>
       <p class="date">2022.12.22 ~ 2022.01.03</p>
   </nav>
