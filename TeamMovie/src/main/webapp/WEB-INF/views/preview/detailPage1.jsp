@@ -2,18 +2,27 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
+ 
 
+  <!-- 임승혁 게시판 폰트 링크 끝 -->
+  
+  <!-- bootstrap core css -->
+ 
 <head>
+ 
   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/premiereDetail/premiereDetail-page1.css">
+
+  
+  
+    
     <!-- header & footer css-->
-   
+
 
 </head>
+
+<body>
+
 <%@ include file="../include/header.jsp" %>
-
-<main>
-
-
 
   
 
@@ -23,6 +32,7 @@
 
 
 <!-- 임승혁 시사회 페이지 디테일 영화해적 바디시작  시작 -->
+
 
 
 
@@ -67,6 +77,15 @@
 
 
 
+
+<!-- 임승혁 게시판 디테일 영화해적 바디끝 -->
+
+
+
+
+
+
+
 <!-- 임승혁 게시판 디테일 영화해적 바디끝 -->
 
 
@@ -77,7 +96,7 @@
 
 
 
-</main>
+
 
 
 
@@ -109,8 +128,14 @@
 
 
 
-
+<%-- <!--header&footer script-->
+<script src="${pageContext.request.contextPath}/assets/js/GoodsMainjs/vendor/jquery-3.3.1.min.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/GoodsMainjs/bootstrap.min.js"></script>
+ --%>
 <!--현 페이지 스크립트-->
+
+<!-- 임승혁 게시판 body 스크립트 -->
+<script src="${pageContext.request.contextPath}/assets/js/premiereMain/premiereMain.js"></script>
 
 
 
