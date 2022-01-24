@@ -8,13 +8,18 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import kr.co.goodee39.admin.service.AdminService;
 import kr.co.goodee39.admin.service.noticeService;
 import kr.co.goodee39.admin.vo.NoticeVO;
 import kr.co.goodee39.goods.vo.GoodsVO;
+import kr.co.goodee39.user.vo.UserVO;
 
 @Controller
 @RequestMapping("/admin")
 public class adminController {
+	
+	@Autowired
+	AdminService service;
 	
 	@Autowired
 	noticeService noticeService;
@@ -27,8 +32,8 @@ public class adminController {
 	
 	
 	@GetMapping("/user")
-	public String user() {
-	
+	public String user(Model model) {
+	   service.showUserInfo(model);
 		return "admin/user";
 	}
 	

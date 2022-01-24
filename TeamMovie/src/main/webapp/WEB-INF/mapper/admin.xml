@@ -7,7 +7,7 @@
   
   <!-- 회원 정보 리스트 불러오기 -->
   <select id="showUserInfoList" parameterType="userVO"	resultType="userVO">
-  select userNum,userId,userPw,userName,userPhone,userEmail,userRegdate,userAddr1,userAdd2,userIsdelete,verify,userAddr3
+  select userNum,userId,userPw,userName,userPhone,userEmail,userRegdate,userAddr1,userAddr2,userIsdelete,verify
   from user
   where verify = '0'
   </select>

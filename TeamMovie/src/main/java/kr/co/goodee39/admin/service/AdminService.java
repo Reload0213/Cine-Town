@@ -17,15 +17,16 @@ public class AdminService {
 	
 	
 
-	public void  showUserInfo(UserVO vo,Model model){
+	public void  showUserInfo(Model model){
 		
 	
-	model.addAttribute("list", sqlSessionTemplate.selectList("admin.showUserInfoList",vo));
-		
-		
+model.addAttribute("list",sqlSessionTemplate.selectList("admin.showUserInfoList"));
+	
 		
 		
 	}
+	
+	
 	
 	
 	

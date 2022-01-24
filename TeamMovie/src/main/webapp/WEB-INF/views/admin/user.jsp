@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -86,15 +87,19 @@
                     </tr>
                   </thead>
                   <tbody>
+                    <c:forEach var="userVO" items="${list}">
                     <tr>
-                        <td>1</td>
-                        <td>shim1030</td>
-                        <td>123456789</td>
-                        <td>01034891328</td>
-                        <td>kikaio77@naver.com</td>
-                        <td><button>삭제하기</button></td>
+                     
+                        <td>${userVO.userNum}</td>
+                        <td>${userVO.userId}</td>
+                        <td>${userVO.usserPw}</td>
+                        <td>${userVO.userPhone}</td>
+                        <td>${userVO.userEmail}</td>
+                        <td><button class="delete">삭제하기</button></td>
+                     
                     </tr>
-                    <tr>
+                       </c:forEach>
+                   <!--  <tr>
                         <td>2</td>
                         <td>ccc1234</td>
                         <td>asdfasdf</td>
@@ -170,7 +175,7 @@
                         <td>ccc1234@naver.com</td>
                         <td><button>삭제하기</button></td>
                     </tr>
-
+ -->
                     
 
                    
