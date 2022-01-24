@@ -1,4 +1,4 @@
-업데이트일: 0124 15:46분 김정민
+업데이트일: 0124 16:07분 김정민
 -- --------------------------------------------------------
 -- 호스트:                          127.0.0.1
 -- 서버 버전:                        10.6.5-MariaDB - mariadb.org binary distribution
@@ -29,6 +29,8 @@ CREATE TABLE IF NOT EXISTS `admin` (
 -- 테이블 데이터 cgv.admin:~0 rows (대략적) 내보내기
 DELETE FROM `admin`;
 /*!40000 ALTER TABLE `admin` DISABLE KEYS */;
+INSERT INTO `admin` (`adId`, `adPw`, `adName`, `verify`) VALUES
+	('aaa', '111', '홍길동', 9);
 /*!40000 ALTER TABLE `admin` ENABLE KEYS */;
 
 -- 테이블 cgv.cart 구조 내보내기
@@ -178,17 +180,11 @@ CREATE TABLE IF NOT EXISTS `qna` (
   `qnaRegdate` varchar(50) NOT NULL,
   `qnaIsdelete` varchar(50) NOT NULL DEFAULT 'n',
   PRIMARY KEY (`qnaNum`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3 COMMENT='문의사항(게시판 형태)';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='문의사항(게시판 형태)';
 
--- 테이블 데이터 cgv.qna:~5 rows (대략적) 내보내기
+-- 테이블 데이터 cgv.qna:~0 rows (대략적) 내보내기
 DELETE FROM `qna`;
 /*!40000 ALTER TABLE `qna` DISABLE KEYS */;
-INSERT INTO `qna` (`qnaNum`, `qnaCategory`, `qnaTitle`, `qnaComment`, `qnaRegdate`, `qnaIsdelete`) VALUES
-	(1, '문의사항', '로그인이 안돼요.', '로그인이 안된다고 나옵니다.', '2022-01-24', 'n'),
-	(2, '문의사항', '배송은 언제 오나요?', '주문한 지 1주일이 지났는데 아직도 안옵니다.', '2022-01-24', 'n'),
-	(3, '문의사항', '리뷰를 남겼는데 등록이 안돼요.', '리뷰 등록이 안됩니다.', '2022-01-24', 'n'),
-	(4, '문의사항', '404오류가 뭔가요?', '클릭을 했더니 404오류가 뜹니다.', '2022-01-24', 'n'),
-	(5, '문의사항', '500오류가 뭔가요?', '500오류가 뜨면서 실행이 안됩니다.', '2022-01-24', 'n');
 /*!40000 ALTER TABLE `qna` ENABLE KEYS */;
 
 -- 테이블 cgv.reviewreply 구조 내보내기
@@ -243,7 +239,8 @@ CREATE TABLE IF NOT EXISTS `user` (
 DELETE FROM `user`;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 INSERT INTO `user` (`userNum`, `userId`, `userPw`, `userName`, `userPhone`, `userEmail`, `userRegdate`, `userAddr1`, `userAddr2`, `userIsdelete`, `verify`, `userAddr3`) VALUES
-	(2, '미니', 'alsl', 'alsl', '010-2626-2626', 'ju@hot.com', '2022-01-24', '07710', '서울 강서구 강서로41길 70 (화곡동, 시그니엘6)', NULL, 0, '2525층');
+	(1, 'aaa', '111', '홍길동', '01011111111', NULL, '2021-01-24', '가가가', '나나나', 'N', 9, NULL),
+	(2, 'bbb', '222', '김용현', '01022222222', NULL, '2021-01-24', '가가가', '나나나', 'N', 0, NULL);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
