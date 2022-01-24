@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <!--  스타일추가 -->
- <link rel="stylesheet" href="test1.css">
+   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/premiereDetail/premiereDetail-page1.css">
  
  <!-- header & footer css-->
 <link rel="stylesheet"
