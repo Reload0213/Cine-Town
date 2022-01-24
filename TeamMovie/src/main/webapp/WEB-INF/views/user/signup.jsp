@@ -304,7 +304,7 @@
 .address_button {
 	border: 1px solid black;
 	/* height: 51px; */
-	height:37.6px;
+	height: 37.6px;
 	width: 30%;
 	float: right;
 	line-height: 37.6px;
@@ -428,9 +428,9 @@
 						<div class="row">
 							<div class="col-lg-12">
 								<div class="login-form">
-									<form:form modelAttribute="userVO"
-										action="${pageContext.request.contextPath}/user/signupSuccess"
-										id="join_form">
+									<form:form modelAttribute="userVO" id="join_form">
+										<%-- action="${pageContext.request.contextPath}/user/signupSuccess" --%>
+										
 										<div class="wrap">
 											<div class="subjecet">
 												<span>회원가입</span>
@@ -498,7 +498,7 @@
 												<div class="address_input_1_wrap">
 													<div class="address_input_1_box">
 														<form:input path="userAddr1" class="address_input_1"
-															readonly="readonly" placeholder="우편번호" />
+															readonly="readonly" placeholder="우편번호"/>
 													</div>
 													<div class="address_button"
 														onclick="execution_daum_address()">
@@ -509,19 +509,19 @@
 												<div class="address_input_2_wrap">
 													<div class="address_input_2_box">
 														<form:input path="userAddr2" class="address_input_2"
-															readonly="readonly" placeholder="도로명 주소"/>
+															readonly="readonly" placeholder="도로명주소"/>
 													</div>
 												</div>
 												<div class="address_input_3_wrap">
 													<div class="address_input_3_box">
 														<form:input path="userAddr3" class="address_input_3"
-															readonly="readonly" placeholder="상세 주소" />
+															readonly="readonly" placeholder="상세주소"/>
 													</div>
 												</div>
 												<span class="final_addr_ck">주소를 입력해주세요.</span>
 											</div>
 											<div class="join_button_wrap">
-												<form:button  class="join_button">가입하기</form:button>
+												<form:button class="join_button">가입하기</form:button>
 											</div>
 										</div>
 									</form:form>
@@ -547,12 +547,7 @@
 
 	<script
 		src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-			<script
-  src="https://code.jquery.com/jquery-3.4.1.js"
-  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-  crossorigin="anonymous"></script>
 	<script>
-	
 		/* var code = ""; //이메일전송 인증번호 저장위한 코드 */
 
 		/* 유효성 검사 통과유무 변수 */
@@ -563,7 +558,7 @@
 		var pwckcorCheck = false; // 비번 확인 일치 확인
 		var nameCheck = false; // 이름
 		var mailCheck = false; // 이메일
-		var mailnumCheck = false; // 이메일 인증번호 확인
+		/* var mailnumCheck = false; // 이메일 인증번호 확인 */
 		var addressCheck = false // 주소
 
 		$(document)
@@ -581,6 +576,8 @@
 														.val(); // 비밀번호 확인 입력란
 												var name = $('.user_input')
 														.val(); // 이름 입력란
+														var phone = $('phone_input')
+														.val(); // 전화번호 입력란
 												var mail = $('.mail_input')
 														.val(); // 이메일 입력란
 												var addr = $('.address_input_3')
@@ -629,6 +626,16 @@
 															'display', 'none');
 													nameCheck = true;
 												}
+												/* 전화번호 유효성 검사 */
+												if (phone == "") {
+													$('.final_phone_ck').css(
+															'display', 'block');
+													phoneCheck = false;
+												} else {
+													$('.final_phone_ck').css(
+															'display', 'none');
+													phoneCheck = true;
+												}
 
 												/* 이메일 유효성 검사 */
 												if (mail == "") {
@@ -653,18 +660,19 @@
 												}
 
 												/* 최종 유효성 검사 */
-												if (idCheck && 
-														/* idckCheck */
+												if (idCheck 
+														/* && idckCheck */
 														&& pwCheck && pwckCheck
 														&& pwckcorCheck
 														&& nameCheck
 														&& mailCheck
-														&& mailnumCheck
+														&& phoneCheck
+														/* && mailnumCheck */
 														&& addressCheck) {
 
 													$("#join_form").attr(
 															"action",
-															"/user/signup");
+															"${pageContext.request.contextPath}/user/signupSuccess");
 													$("#join_form").submit();
 
 												}
@@ -850,5 +858,4 @@
 	</script>
 
 </body>
-
 </html>

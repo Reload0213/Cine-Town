@@ -50,7 +50,7 @@ public class userController {
 	
 	//회원가입 post
 	@PostMapping("/signupSuccess")
-	public String signupResult(UserVO vo) {
+	public String signupResult(@ModelAttribute("userVO") UserVO vo) {
 		userService.setUser(vo);
 		
 		
