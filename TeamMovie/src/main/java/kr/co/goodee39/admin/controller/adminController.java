@@ -1,6 +1,7 @@
 package kr.co.goodee39.admin.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -32,6 +33,16 @@ public class adminController {
 		return "admin/order";
 	}
 	
+	@GetMapping("/aboutUsMain")
+	public String aboutUsMain(Model model) {
+		model.addAttribute("testKey", "testVal");
+		return "/aboutUs/aboutUsMain";
+	}
 	
+	@GetMapping("/faqMain")
+	public String faqMain(Model model) {
+		model.addAttribute("testKey", "testVal");
+		return "/faq/faqMain";
+	}
 	
 }

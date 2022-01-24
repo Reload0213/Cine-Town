@@ -56,13 +56,13 @@
 							href="${pageContext.request.contextPath}/goods/goodsMain">굿즈</a>
 						</li>
 						<li class="nav-item"><a class="nav-link"
-							href="${pageContext.request.contextPath}/aboutUs/aboutUsMain">회사
+							href="${pageContext.request.contextPath}/admin/aboutUsMain">회사
 								소개</a></li>
 						<li class="nav-item"><a class="nav-link"
 							href="${pageContext.request.contextPath}/preview/main">시사회 /
 								이벤트</a></li>
 						<li class="nav-item"><a class="nav-link"
-							href="${pageContext.request.contextPath}/faq/faqMain">고객 센터</a></li>
+							href="${pageContext.request.contextPath}/admin/faqMain">고객 센터</a></li>
 						<li class="nav-item"><a class="nav-link"
 							href="${pageContext.request.contextPath}/admin/main">임시 관리자
 								페이지 링크</a></li>
