@@ -71,13 +71,13 @@
 					</ul>
 					<div class="user_option">
 						<a href="${pageContext.request.contextPath}/goods/wishlist"
-							class="user_link" style="font-size: 1.7em;"> <i
+							class="user_link" style="font-size: 22.1px;"> <i
 							class="xi-heart" aria-hidden="true"></i>
 						</a> <a href="${pageContext.request.contextPath}/goods/cart"
-							class="user_link" style="font-size: 1.7em;"> <i
+							class="user_link" style="font-size: 22.1px;"> <i
 							class="xi-cart" aria-hidden="true"></i>
 						</a> <a href="${pageContext.request.contextPath}/user/signup"
-							class="user_link" style="font-size: 1.7em;"> <i
+							class="user_link" style="font-size: 22.1px;"> <i
 							class="xi-user-plus" aria-hidden="true"></i>
 						</a> <a href="${pageContext.request.contextPath}/user/signin"
 							class="order_online"
