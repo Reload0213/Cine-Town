@@ -17,19 +17,19 @@
 
  }
  
- nav{
+ .nav{
      
      padding:2.0rem;
      border-bottom:1px solid #e0e0e0;
      
  }
 
- nav h5{
+ .nav h5{
      text-align: center;
      font-size: 2.2rem;
      padding:2rem 0rem;
  }
- nav p{
+ .nav p{
     text-align: center;
     font-size: 1.5rem;
     padding:1rem 0rem;

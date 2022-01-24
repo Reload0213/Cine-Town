@@ -23,7 +23,7 @@
 
 
 <div class="mainCon">
-    <nav>
+    <nav class="nav">
      <h5>영화 [만년이 지나도 변하지 않는게 있어] 응모 이벤트</h5>
       <p class="date">2022.01.18 ~ 2022.02.09</p>
   </nav>
