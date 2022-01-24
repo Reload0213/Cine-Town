@@ -79,7 +79,7 @@ padding-left: 0;
 
 @media (max-width: 376px) {
   .slider_section .detail-box h1 {
-    font-size: 3rem;
+    font-size: 48px;
   }
 }
 
@@ -157,7 +157,7 @@ h2 {
 .heading_container h2 {
   position: relative;
   margin-bottom: 0;
-  font-size: 2.5rem;
+  font-size: 40px;
   font-weight: bold;
 }
 
@@ -463,7 +463,7 @@ footer h4 {
 }
 
 .slider_section .detail-box h1 {
-  font-size: 3.5rem;
+  font-size: 56px;
   font-weight: bold;
   margin-bottom: 15px;
 }
