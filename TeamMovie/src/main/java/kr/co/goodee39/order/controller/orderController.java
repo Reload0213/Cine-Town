@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 
 @Controller
-@RequestMapping("/cart")
+@RequestMapping("/order")
 public class orderController {
 	
 	//정민
@@ -14,13 +14,13 @@ public class orderController {
 	//주문 결제 정보 입력
 	@GetMapping("/goodsCheckout")
 	public String getGoodsCheckout() {
-		return "goods/goodsCheckout";
+		return "order/goodsCheckout";
 	}
 	
 	//주문 완료 페이지
 	@GetMapping("/orderFinish")
 	public String getOrderFinish() {
-		return "goods/orderFinish";
+		return "order/orderFinish";
 	}
 	
 
