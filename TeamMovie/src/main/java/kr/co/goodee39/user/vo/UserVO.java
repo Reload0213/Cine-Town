@@ -14,9 +14,16 @@ public class UserVO {
 	private String userRegdate;
 	private String userAddr1;
 	private String userAddr2;
+	private String userAddr3;
 	private String userIsdelete;
 	private int verify;
 	
+	public String getUserAddr3() {
+		return userAddr3;
+	}
+	public void setUserAddr3(String userAddr3) {
+		this.userAddr3 = userAddr3;
+	}
 	public int getUserNum() {
 		return userNum;
 	}

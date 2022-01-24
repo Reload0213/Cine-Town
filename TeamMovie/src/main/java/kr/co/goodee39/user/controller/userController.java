@@ -1,14 +1,25 @@
 package kr.co.goodee39.user.controller;
 
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import kr.co.goodee39.user.service.UserService;
+import kr.co.goodee39.user.vo.UserVO;
 
 @Controller
 @RequestMapping("/user")
 
 
 public class userController {
+	@Autowired
+	UserService userService;
+	
 	@GetMapping("/myPage")
 	public String getTest() {
 
@@ -18,7 +29,7 @@ public class userController {
 	//김정민 작업 중
 	//로그인 페이지로 이동
 	@GetMapping("/signin")
-	public String getSingin() {
+	public String getSingin(@ModelAttribute("userVO") UserVO vo) {
 
 		return "user/signin";
 	}
@@ -53,6 +64,19 @@ public class userController {
 
 		return "user/findUserSuccess";
 	}
+	
+	
+	
+	@PostMapping("/loginComplete")
+	public String loginComplete(@ModelAttribute("userVO") UserVO vo, HttpSession session) {
+		System.out.println("loginComplete실행");
+		return userService.goLogin(vo, session);
+		
+		
+	}
+	
+	
+	
 
 //	// 로그인 post
 //	@PostMapping("/signin")
