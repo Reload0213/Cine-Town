@@ -56,7 +56,7 @@
             <div class="bottom">
                 <ul class="navmenus">
         
-  <li><a href="${pageContext.request.contextPath}/admin/main">홈</a></li>
+     <li><a href="${pageContext.request.contextPath}/admin/main">홈</a></li>
                     <li><a href="${pageContext.request.contextPath}/admin/mail">메일</a></li>
                     <li><a href="${pageContext.request.contextPath}/admin/user">회원</a></li>
                     <li><a href="${pageContext.request.contextPath}/admin/board"">게시판</a></li>
