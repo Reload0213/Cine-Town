@@ -1,3 +1,4 @@
+업데이트일: 0124 15:46분 김정민
 -- --------------------------------------------------------
 -- 호스트:                          127.0.0.1
 -- 서버 버전:                        10.6.5-MariaDB - mariadb.org binary distribution
@@ -19,12 +20,10 @@ USE `cgv`;
 
 -- 테이블 cgv.admin 구조 내보내기
 CREATE TABLE IF NOT EXISTS `admin` (
-  `adNum` int(11) NOT NULL AUTO_INCREMENT,
-  `adId` varchar(255) DEFAULT NULL,
-  `adPw` varchar(255) DEFAULT NULL,
-  `adName` varchar(255) DEFAULT NULL,
-  `verify` int(11) DEFAULT 9,
-  PRIMARY KEY (`adNum`)
+  `adId` varchar(50) NOT NULL COMMENT 'code 0',
+  `adPw` varchar(50) NOT NULL,
+  `adName` varchar(50) NOT NULL,
+  `verify` int(2) DEFAULT 9
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='관리자 데이터';
 
 -- 테이블 데이터 cgv.admin:~0 rows (대략적) 내보내기
@@ -37,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `cart` (
   `cartNum` int(11) NOT NULL AUTO_INCREMENT,
   `cartAmount` int(11) DEFAULT NULL,
   `cartTotal` int(11) DEFAULT NULL,
-  `cartIsdelete` varchar(255) DEFAULT 'n',
+  `cartIsdelete` varchar(50) DEFAULT 'n',
   PRIMARY KEY (`cartNum`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='장바구니';
 
@@ -47,40 +46,40 @@ DELETE FROM `cart`;
 /*!40000 ALTER TABLE `cart` ENABLE KEYS */;
 
 -- 테이블 cgv.goods 구조 내보내기
-CREATE TABLE `goods` (
-	`gdsNum` INT(11) NOT NULL AUTO_INCREMENT,
-	`gdsPrice` INT(11) NULL DEFAULT NULL,
-	`gdsStock` INT(11) NULL DEFAULT NULL,
-	`gdsViewcnt` INT(11) NULL DEFAULT NULL,
-	`gdsUUID` INT(11) NULL DEFAULT NULL,
-	`gdsName` VARCHAR(50) NULL DEFAULT NULL COLLATE 'utf8mb3_general_ci',
-	`gdsDetail` VARCHAR(255) NULL DEFAULT NULL COLLATE 'utf8mb4_bin',
-	`gdsRegdate` VARCHAR(50) NULL DEFAULT curdate() COLLATE 'utf8mb3_general_ci',
-	`gdsIsdelete` VARCHAR(50) NULL DEFAULT 'n' COLLATE 'utf8mb3_general_ci',
-	`gdsBrand` VARCHAR(50) NULL DEFAULT NULL COLLATE 'utf8mb3_general_ci',
-	`gdsImage1` VARCHAR(50) NULL DEFAULT NULL COLLATE 'utf8mb3_general_ci',
-	`gdsImage2` VARCHAR(50) NULL DEFAULT NULL COLLATE 'utf8mb3_general_ci',
-	PRIMARY KEY (`gdsNum`) USING BTREE
-)
-COMMENT='굿즈 gds'
-COLLATE='utf8mb3_general_ci'
-ENGINE=InnoDB
-AUTO_INCREMENT=2
-;
+CREATE TABLE IF NOT EXISTS `goods` (
+  `gdsNum` int(11) NOT NULL AUTO_INCREMENT,
+  `gdsPrice` int(11) DEFAULT NULL,
+  `gdsStock` int(11) DEFAULT NULL,
+  `gdsViewcnt` int(11) DEFAULT NULL,
+  `gdsUUID` int(11) DEFAULT NULL,
+  `gdsName` varchar(50) DEFAULT NULL,
+  `gdsDetail` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
+  `gdsRegdate` varchar(50) DEFAULT curdate(),
+  `gdsIsdelete` varchar(50) DEFAULT 'N',
+  `gdsBrand` varchar(50) DEFAULT NULL,
+  `gdsImage1` varchar(255) DEFAULT NULL,
+  `gdsImage2` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`gdsNum`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3 COMMENT='굿즈 gds';
 
-
--- 테이블 데이터 cgv.goods:~0 rows (대략적) 내보내기
+-- 테이블 데이터 cgv.goods:~5 rows (대략적) 내보내기
 DELETE FROM `goods`;
 /*!40000 ALTER TABLE `goods` DISABLE KEYS */;
+INSERT INTO `goods` (`gdsNum`, `gdsPrice`, `gdsStock`, `gdsViewcnt`, `gdsUUID`, `gdsName`, `gdsDetail`, `gdsRegdate`, `gdsIsdelete`, `gdsBrand`, `gdsImage1`, `gdsImage2`) VALUES
+	(1, 10000, 100, NULL, NULL, '기생충 뱃지', '기생충 뱃지입니다. 세계적인 명작으로 거듭난 명화의 뱃지를 굿즈로 만나보세요.', '2022-01-24', 'n', NULL, '/TeamMovie/assets/images/GoodsMainimages/product-images/product-image1.jpg', '/TeamMovie/assets/images/GoodsMainimages/product-images/product-image1-1.jpg'),
+	(2, 11000, 90, NULL, NULL, '호텔 부다페스트 굿즈', '호텔 부다페스트 굿즈 선물세트 입니다. 설 선물로 아이들이 좋아해요.', '2022-01-24', 'n', NULL, '/TeamMovie/assets/images/GoodsMainimages/product-images/product-image2.jpg', '/TeamMovie/assets/images/GoodsMainimages/product-images/product-image2-1.jpg'),
+	(3, 12000, 80, NULL, NULL, '해리포터 굿즈', '해리포터 굿즈입니다. 굿즈 중의 근본이죠.', '2022-01-24', 'n', NULL, '/TeamMovie/assets/images/GoodsMainimages/product-images/product-image3.jpg', '/TeamMovie/assets/images/GoodsMainimages/product-images/product-image3-1.jpg'),
+	(4, 13000, 70, NULL, NULL, '오징어게임 굿즈', '오징어게임 굿즈입니다. 세계적으로 핫한 제품! 수량이 얼마 남지 않았습니다!', '2022-01-24', 'n', NULL, '/TeamMovie/assets/images/GoodsMainimages/product-images/product-image4.jpg', '/TeamMovie/assets/images/GoodsMainimages/product-images/product-image4-1.jpg'),
+	(5, 14000, 60, NULL, NULL, '종이의 집 굿즈', '종이의 집 굿즈입니다. 넷플릭스 인기 드라마의 굿즈! 할로윈에도 잘 어울려요', '2022-01-24', 'n', NULL, '/TeamMovie/assets/images/GoodsMainimages/product-images/product-image5.jpg', '/TeamMovie/assets/images/GoodsMainimages/product-images/product-image5-1.jpg');
 /*!40000 ALTER TABLE `goods` ENABLE KEYS */;
 
 -- 테이블 cgv.goodsreview 구조 내보내기
 CREATE TABLE IF NOT EXISTS `goodsreview` (
   `grNum` int(11) NOT NULL AUTO_INCREMENT,
-  `grDate` varchar(255) DEFAULT NULL,
+  `grDate` varchar(50) DEFAULT NULL,
   `grComment` longtext DEFAULT NULL,
-  `grLike` varchar(255) DEFAULT 'n',
-  `grIsdelete` varchar(255) DEFAULT 'n',
+  `grLike` varchar(50) DEFAULT 'n',
+  `grIsdelete` varchar(50) DEFAULT 'n',
   PRIMARY KEY (`grNum`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='굿즈리뷰 gr';
 
@@ -92,16 +91,16 @@ DELETE FROM `goodsreview`;
 -- 테이블 cgv.movie 구조 내보내기
 CREATE TABLE IF NOT EXISTS `movie` (
   `mvNum` int(11) NOT NULL AUTO_INCREMENT,
-  `mvTitle` varchar(255) DEFAULT NULL,
-  `mvDirector` varchar(255) DEFAULT NULL,
-  `mvDetail` longtext DEFAULT NULL,
-  `mvGenre` varchar(255) DEFAULT NULL,
-  `mvYear` varchar(255) DEFAULT NULL,
+  `mvTitle` varchar(50) DEFAULT NULL,
+  `mvDirector` varchar(50) DEFAULT NULL,
+  `mvDetail` int(11) DEFAULT NULL,
+  `mvGenre` varchar(50) DEFAULT NULL,
+  `mvYear` varchar(50) DEFAULT NULL,
   `mvAge` int(11) DEFAULT NULL,
   `mvRuntime` int(11) DEFAULT NULL,
-  `mvProducer` varchar(255) DEFAULT NULL,
-  `mvAvgRate` decimal(20,6) DEFAULT NULL COMMENT '개인평점합산해서산출, 별점으로 주면 수식을 다르게 줘야 함',
-  `mvIsdelete` varchar(255) DEFAULT NULL,
+  `mvProducer` varchar(50) DEFAULT NULL,
+  `mvAvgRate` decimal(20,6) DEFAULT NULL COMMENT '영화 개인평점 합산',
+  `mvIsdelete` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`mvNum`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='영화 데이터베이스';
 
@@ -113,7 +112,7 @@ DELETE FROM `movie`;
 -- 테이블 cgv.moviewishlist 구조 내보내기
 CREATE TABLE IF NOT EXISTS `moviewishlist` (
   `mvwishNum` int(11) NOT NULL AUTO_INCREMENT,
-  `mvWishYN` varchar(255) DEFAULT NULL,
+  `mvWishYN` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`mvwishNum`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='영화 찜';
 
@@ -122,12 +121,34 @@ DELETE FROM `moviewishlist`;
 /*!40000 ALTER TABLE `moviewishlist` DISABLE KEYS */;
 /*!40000 ALTER TABLE `moviewishlist` ENABLE KEYS */;
 
+-- 테이블 cgv.notice 구조 내보내기
+CREATE TABLE IF NOT EXISTS `notice` (
+  `noticeNum` int(11) NOT NULL AUTO_INCREMENT,
+  `noticeCategory` varchar(50) NOT NULL,
+  `noticeTitle` varchar(50) NOT NULL,
+  `noticeComment` varchar(50) NOT NULL,
+  `noticeIsdelete` varchar(50) NOT NULL,
+  `noticeRegdate` varchar(50) NOT NULL DEFAULT 'n',
+  PRIMARY KEY (`noticeNum`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3 COMMENT='공지사항 게시판';
+
+-- 테이블 데이터 cgv.notice:~5 rows (대략적) 내보내기
+DELETE FROM `notice`;
+/*!40000 ALTER TABLE `notice` DISABLE KEYS */;
+INSERT INTO `notice` (`noticeNum`, `noticeCategory`, `noticeTitle`, `noticeComment`, `noticeIsdelete`, `noticeRegdate`) VALUES
+	(1, '공지사항', 'Cine Town 오픈 이벤트', '안녕하세요, Cine Town 관리자입니다.', 'n', '2022-01-24'),
+	(2, '공지사항', 'Cine Town 오픈 이벤트', '안녕하세요, Cine Town 관리자입니다.', 'n', '2022-01-24'),
+	(3, '공지사항', 'Cine Town 설 연휴 배송 관련 공지사항', '안녕하세요, Cine Town 관리자입니다.', 'n', '2022-01-24'),
+	(4, '공지사항', 'Cine Town 베스트 리뷰 이벤트', '안녕하세요, Cine Town 관리자입니다.', 'n', '2022-01-24'),
+	(5, '공지사항', 'Cine Town 로고 공모전 이벤트', '안녕하세요, Cine Town 관리자입니다.', 'n', '2022-01-24');
+/*!40000 ALTER TABLE `notice` ENABLE KEYS */;
+
 -- 테이블 cgv.orderdetail 구조 내보내기
 CREATE TABLE IF NOT EXISTS `orderdetail` (
   `orderNum` int(11) NOT NULL AUTO_INCREMENT,
-  `orderDate` varchar(255) DEFAULT NULL,
-  `orderShipnum` int(11) DEFAULT NULL COMMENT '랜덤으로',
-  `orderIsdelete` varchar(255) DEFAULT 'n',
+  `orderDate` varchar(50) DEFAULT NULL,
+  `orderShipnum` int(11) DEFAULT NULL,
+  `orderIsdelete` varchar(1) DEFAULT 'n',
   PRIMARY KEY (`orderNum`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='영화 굿즈 주문 상세저보';
 
@@ -139,7 +160,7 @@ DELETE FROM `orderdetail`;
 -- 테이블 cgv.productwishlist 구조 내보내기
 CREATE TABLE IF NOT EXISTS `productwishlist` (
   `pwishNum` int(11) NOT NULL AUTO_INCREMENT,
-  `pwishYN` varchar(255) DEFAULT 'n',
+  `pwishYN` varchar(50) DEFAULT 'n',
   PRIMARY KEY (`pwishNum`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='굿즈 찜';
 
@@ -151,26 +172,32 @@ DELETE FROM `productwishlist`;
 -- 테이블 cgv.qna 구조 내보내기
 CREATE TABLE IF NOT EXISTS `qna` (
   `qnaNum` int(11) NOT NULL AUTO_INCREMENT,
-  `qnaCategory` varchar(255) DEFAULT NULL,
-  `qnaTitle` varchar(255) DEFAULT NULL,
-  `qnaComment` varchar(255) DEFAULT NULL,
-  `qnaRegdate` varchar(255) DEFAULT NULL,
-  `qnaIsdelete` varchar(255) DEFAULT 'n',
+  `qnaCategory` varchar(50) NOT NULL,
+  `qnaTitle` varchar(50) NOT NULL,
+  `qnaComment` varchar(50) NOT NULL,
+  `qnaRegdate` varchar(50) NOT NULL,
+  `qnaIsdelete` varchar(50) NOT NULL DEFAULT 'n',
   PRIMARY KEY (`qnaNum`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='문의사항(게시판 형태)';
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3 COMMENT='문의사항(게시판 형태)';
 
--- 테이블 데이터 cgv.qna:~0 rows (대략적) 내보내기
+-- 테이블 데이터 cgv.qna:~5 rows (대략적) 내보내기
 DELETE FROM `qna`;
 /*!40000 ALTER TABLE `qna` DISABLE KEYS */;
+INSERT INTO `qna` (`qnaNum`, `qnaCategory`, `qnaTitle`, `qnaComment`, `qnaRegdate`, `qnaIsdelete`) VALUES
+	(1, '문의사항', '로그인이 안돼요.', '로그인이 안된다고 나옵니다.', '2022-01-24', 'n'),
+	(2, '문의사항', '배송은 언제 오나요?', '주문한 지 1주일이 지났는데 아직도 안옵니다.', '2022-01-24', 'n'),
+	(3, '문의사항', '리뷰를 남겼는데 등록이 안돼요.', '리뷰 등록이 안됩니다.', '2022-01-24', 'n'),
+	(4, '문의사항', '404오류가 뭔가요?', '클릭을 했더니 404오류가 뜹니다.', '2022-01-24', 'n'),
+	(5, '문의사항', '500오류가 뭔가요?', '500오류가 뜨면서 실행이 안됩니다.', '2022-01-24', 'n');
 /*!40000 ALTER TABLE `qna` ENABLE KEYS */;
 
 -- 테이블 cgv.reviewreply 구조 내보내기
 CREATE TABLE IF NOT EXISTS `reviewreply` (
   `rpNum` int(11) NOT NULL AUTO_INCREMENT,
-  `rpDate` varchar(255) DEFAULT NULL,
+  `rpDate` varchar(50) DEFAULT NULL,
   `rpComment` longtext DEFAULT NULL,
-  `rpIsdelete` varchar(255) DEFAULT 'n',
-  `rpLike` varchar(255) DEFAULT 'n',
+  `rpIsdelete` varchar(50) DEFAULT NULL,
+  `rpLike` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`rpNum`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='리뷰댓글\r\n';
 
@@ -184,9 +211,9 @@ CREATE TABLE IF NOT EXISTS `uesermvreview` (
   `rvNum` int(11) NOT NULL AUTO_INCREMENT,
   `rvRate` decimal(20,6) DEFAULT NULL,
   `rvComment` longtext DEFAULT NULL,
-  `rvLike` varchar(255) DEFAULT NULL,
-  `rvDate` varchar(255) DEFAULT NULL,
-  `rvIsdelete` varchar(255) DEFAULT NULL,
+  `rvLike` varchar(50) DEFAULT NULL,
+  `rvDate` varchar(50) DEFAULT NULL,
+  `rvIsdelete` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`rvNum`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='영화 평점(개인)';
 
@@ -198,23 +225,25 @@ DELETE FROM `uesermvreview`;
 -- 테이블 cgv.user 구조 내보내기
 CREATE TABLE IF NOT EXISTS `user` (
   `userNum` int(11) NOT NULL AUTO_INCREMENT,
-  `userId` varchar(255) DEFAULT NULL,
-  `userPw` varchar(255) DEFAULT NULL,
-  `userName` varchar(255) DEFAULT NULL,
-  `userPhone` varchar(255) DEFAULT NULL,
-  `userEmail` varchar(255) DEFAULT NULL,
-  `userRegdate` varchar(255) DEFAULT NULL,
-  `userAddr1` varchar(255) DEFAULT NULL,
-  `userAddr2` varchar(255) DEFAULT NULL,
-  `userAddr3` varchar(255) DEFAULT NULL,
-  `userIsdelete` varchar(255) DEFAULT NULL,
-  `verify` int(11) DEFAULT 0,
+  `userId` varchar(50) NOT NULL COMMENT 'code 0',
+  `userPw` varchar(50) NOT NULL,
+  `userName` varchar(50) NOT NULL,
+  `userPhone` varchar(50) NOT NULL,
+  `userEmail` varchar(50) DEFAULT NULL,
+  `userRegdate` varchar(50) NOT NULL,
+  `userAddr1` varchar(50) NOT NULL,
+  `userAddr2` varchar(50) NOT NULL,
+  `userIsdelete` varchar(50) DEFAULT 'N',
+  `verify` int(2) DEFAULT 0,
+  `userAddr3` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`userNum`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='회원 정보';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3 COMMENT='회원 정보';
 
--- 테이블 데이터 cgv.user:~0 rows (대략적) 내보내기
+-- 테이블 데이터 cgv.user:~2 rows (대략적) 내보내기
 DELETE FROM `user`;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
+INSERT INTO `user` (`userNum`, `userId`, `userPw`, `userName`, `userPhone`, `userEmail`, `userRegdate`, `userAddr1`, `userAddr2`, `userIsdelete`, `verify`, `userAddr3`) VALUES
+	(2, '미니', 'alsl', 'alsl', '010-2626-2626', 'ju@hot.com', '2022-01-24', '07710', '서울 강서구 강서로41길 70 (화곡동, 시그니엘6)', NULL, 0, '2525층');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

@@ -15,15 +15,6 @@ public class UserVO {
 	private String userAddr1;
 	private String userAddr2;
 	private String userAddr3;
-
-	public String getUserAddr3() {
-		return userAddr3;
-	}
-
-	public void setUserAddr3(String userAddr3) {
-		this.userAddr3 = userAddr3;
-	}
-
 	private String userIsdelete;
 	private int verify;
 
@@ -97,6 +88,14 @@ public class UserVO {
 
 	public void setUserAddr2(String userAddr2) {
 		this.userAddr2 = userAddr2;
+	}
+
+	public String getUserAddr3() {
+		return userAddr3;
+	}
+
+	public void setUserAddr3(String userAddr3) {
+		this.userAddr3 = userAddr3;
 	}
 
 	public String getUserIsdelete() {

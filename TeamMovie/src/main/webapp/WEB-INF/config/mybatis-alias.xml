@@ -15,6 +15,7 @@
 		<typeAlias type="kr.co.goodee39.user.vo.ProductWishlistVO" alias="productWishlistVO"/>
 		<typeAlias type="kr.co.goodee39.order.vo.OrderDetailVO" alias="orderDetailVO"/>
 		<typeAlias type="kr.co.goodee39.review.vo.ReviewReplyVO" alias="reviewReplyVO"/> -->
+		<typeAlias type="kr.co.goodee39.user.vo.UserVO" alias="userVO"/>
 		<typeAlias type="kr.co.goodee39.goods.vo.GoodsVO" alias="goodsVO"/>
 		<typeAlias type="kr.co.goodee39.user.vo.UserVO" alias="userVO"/>
 	</typeAliases>

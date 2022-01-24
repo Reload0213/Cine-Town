@@ -1,13 +1,11 @@
 package kr.co.goodee39.user.controller;
 
 import javax.servlet.http.HttpSession;
-
-
-
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -19,8 +17,7 @@ import kr.co.goodee39.user.vo.UserVO;
 public class userController {
 
 	@Autowired
-	private UserService userService;
-
+	UserService userService;
 
 	@GetMapping("/myPage")
 	public String getTest() {
@@ -28,50 +25,22 @@ public class userController {
 		return "user/myPage";
 	}
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	//정민
-	// 김정민 작업 중
 	// 로그인 페이지로 이동
 	@GetMapping("/signin")
-	public String getSingin() {
+	public String getSingin(@ModelAttribute("userVO") UserVO vo) {
 
 		return "user/signin";
 	}
 
+	//로그인 post
+		@PostMapping("/loginComplete")
+		public String loginComplete(@ModelAttribute("userVO") UserVO vo, HttpSession session) {
+			System.out.println("loginComplete실행");
+			return userService.goLogin(vo, session);
+			
+			
+		}
+		
 	// 회원가입 페이지로 이동
 	@GetMapping("/signup")
 	public String getSingup(UserVO vo) {
@@ -95,19 +64,14 @@ public class userController {
 		return "user/findUser";
 	}
 
-	// 아이디/비번찾기 페이지로 이동
-	// 데이터 넣어서 post로 바꿔야 함
-	@GetMapping("/findUserSuccess")
+	// 아이디/비번찾기 성공
+/*	@GetMapping("/findUserSuccess")
 	public String getFindUserSuccess() {
 
 		return "user/findUserSuccess";
-	}
+	}*/
+	
+	
+	
 
-//	// 로그아웃
-	/*
-	 * @GetMapping("/signout") public String signout(HttpSession session) throws
-	 * Exception { service.signout(session); // 세션 정보를 제거
-	 * 
-	 * return "redirect:/"; }
-	 */
 }
