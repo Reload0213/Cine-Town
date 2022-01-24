@@ -9,10 +9,32 @@ public class GoodsVO {
 	private int gdsStock;
 	private String gdsRegdate;
 	private int gdsViewcnt;
-	private String gdsImgUUID;
+	private int gdsImgUUID;
 	private String gdsIsdelete;
 	private String gdsBrand;
+	private String gdsImage1;
+	private String gdsImage2;
 	
+	
+	
+	public int getGdsImgUUID() {
+		return gdsImgUUID;
+	}
+	public void setGdsImgUUID(int gdsImgUUID) {
+		this.gdsImgUUID = gdsImgUUID;
+	}
+	public String getGdsImage1() {
+		return gdsImage1;
+	}
+	public void setGdsImage1(String gdsImage1) {
+		this.gdsImage1 = gdsImage1;
+	}
+	public String getGdsImage2() {
+		return gdsImage2;
+	}
+	public void setGdsImage2(String gdsImage2) {
+		this.gdsImage2 = gdsImage2;
+	}
 	public int getGdsNum() {
 		return gdsNum;
 	}
@@ -34,9 +56,7 @@ public class GoodsVO {
 	public int getGdsViewcnt() {
 		return gdsViewcnt;
 	}
-	public String getGdsImgUUID() {
-		return gdsImgUUID;
-	}
+	
 	public String getGdsIsdelete() {
 		return gdsIsdelete;
 	}
@@ -64,9 +84,7 @@ public class GoodsVO {
 	public void setGdsViewcnt(int gdsViewcnt) {
 		this.gdsViewcnt = gdsViewcnt;
 	}
-	public void setGdsImgUUID(String gdsImgUUID) {
-		this.gdsImgUUID = gdsImgUUID;
-	}
+	
 	public void setGdsIsdelete(String gdsIsdelete) {
 		this.gdsIsdelete = gdsIsdelete;
 	}

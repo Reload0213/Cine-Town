@@ -47,19 +47,27 @@ DELETE FROM `cart`;
 /*!40000 ALTER TABLE `cart` ENABLE KEYS */;
 
 -- 테이블 cgv.goods 구조 내보내기
-CREATE TABLE IF NOT EXISTS `goods` (
-  `gdsNum` int(11) NOT NULL AUTO_INCREMENT,
-  `gdsName` int(11) DEFAULT NULL,
-  `gdsPrice` int(11) DEFAULT NULL,
-  `gdsDetail` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
-  `gdsStock` int(11) DEFAULT NULL,
-  `gdsRegdate` varchar(255) DEFAULT NULL,
-  `gdsViewcnt` int(11) DEFAULT NULL,
-  `gdsUUID` int(11) DEFAULT NULL,
-  `gdsIsdelete` varchar(255) DEFAULT 'n',
-  `gdsBrand` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`gdsNum`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='굿즈 gds';
+CREATE TABLE `goods` (
+	`gdsNum` INT(11) NOT NULL AUTO_INCREMENT,
+	`gdsPrice` INT(11) NULL DEFAULT NULL,
+	`gdsStock` INT(11) NULL DEFAULT NULL,
+	`gdsViewcnt` INT(11) NULL DEFAULT NULL,
+	`gdsUUID` INT(11) NULL DEFAULT NULL,
+	`gdsName` VARCHAR(50) NULL DEFAULT NULL COLLATE 'utf8mb3_general_ci',
+	`gdsDetail` VARCHAR(255) NULL DEFAULT NULL COLLATE 'utf8mb4_bin',
+	`gdsRegdate` VARCHAR(50) NULL DEFAULT curdate() COLLATE 'utf8mb3_general_ci',
+	`gdsIsdelete` VARCHAR(50) NULL DEFAULT 'n' COLLATE 'utf8mb3_general_ci',
+	`gdsBrand` VARCHAR(50) NULL DEFAULT NULL COLLATE 'utf8mb3_general_ci',
+	`gdsImage1` VARCHAR(50) NULL DEFAULT NULL COLLATE 'utf8mb3_general_ci',
+	`gdsImage2` VARCHAR(50) NULL DEFAULT NULL COLLATE 'utf8mb3_general_ci',
+	PRIMARY KEY (`gdsNum`) USING BTREE
+)
+COMMENT='굿즈 gds'
+COLLATE='utf8mb3_general_ci'
+ENGINE=InnoDB
+AUTO_INCREMENT=2
+;
+
 
 -- 테이블 데이터 cgv.goods:~0 rows (대략적) 내보내기
 DELETE FROM `goods`;

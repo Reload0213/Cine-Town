@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="goodsVO">
+  <select id="showGoodsList">
+  select gdsNum, gdsPrice, gdsStock, gdsViewcnt, gdsUUID, gdsName, gdsDetail, gdsRegdate, gdsIsdelete, gdsBrand, gdsImage1, gdsImage2
+  from goods
+  where gdsIsdelete = n
+  </select>
+  </mapper>
