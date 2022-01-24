@@ -16,7 +16,7 @@
 
 <!--  관리자페이지 폰트추가 끝 -->
 <!-- 메인 css 추가 -->
-<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/adminMainPage/adminUserPage/adminUserPage.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/adminMainPage/adminMainPage.css">
 <!-- 메인 css 끝 -->
 <!-- fontawesome LINK 추가 -->
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
@@ -55,13 +55,13 @@
                     </div>
             <div class="bottom">
                 <ul class="navmenus">
-                   <li><a href="${pageContext.request.contextPath}/admin/main">홈</a></li>
+                      <li><a href="${pageContext.request.contextPath}/admin/main">홈</a></li>
                     <li><a href="${pageContext.request.contextPath}/admin/mail">메일</a></li>
                     <li><a href="${pageContext.request.contextPath}/admin/user">회원</a></li>
-                    <li><a href="${pageContext.request.contextPath}/admin/board"">게시판</a></li>
+                    <li><a href="${pageContext.request.contextPath}/admin/board">게시판</a></li>
                     <li><a href="${pageContext.request.contextPath}/admin/order">주문</a></li>
                     <li><a href="#">상품</a></li>
-                   <li><a href="#"><i class="xi-home"></i></a></li>
+                    <li><a href="${pageContext.request.contextPath}/"><i class="xi-home"></i></a></li>
 
                    
                 </ul>
