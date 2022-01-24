@@ -26,9 +26,23 @@ public class UserService {
 		} else if(vo1.getVerify() == 1) {
 			System.out.println("admin 유저 로그인");
 			session.setAttribute("account", vo1);
-			path = "redirect:/admin_main";
+			path = "redirect:/admin/main";
 		}
 		return path;
 	}
+	
+	// 회원가입
+	public void setUser(UserVO vo) {
+
+		sqlSessionTemplate.insert("user.insertUser", vo);
+
+	}
+
+	// 아이디 중복 검사
+	public int idCheck(String userId) {
+				
+		return sqlSessionTemplate.selectOne("user.idCheck", userId);
+	}
+
 	
 }
