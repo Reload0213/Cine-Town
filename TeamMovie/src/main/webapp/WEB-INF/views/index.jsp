@@ -69,8 +69,8 @@
 	<a href="${pageContext.request.contextPath}/goods/goodsDetail">굿즈디테일페이지</a>
 	<a href="${pageContext.request.contextPath}/goods/goodsMain">굿즈메인페이지</a>
 	<a href="${pageContext.request.contextPath}/goods/goodsMenu">굿즈메뉴페이지</a>
-	<a href="${pageContext.request.contextPath}/adminShop/adminShopCreatePage">관리자 상품생성 페이지</a>
-	<a href="${pageContext.request.contextPath}/adminShop/adminShopCRUDPage">관리자 상품CRUD 페이지</a>
+	<a href="${pageContext.request.contextPath}/admin/adminShopCreatePage">관리자 상품생성 페이지</a>
+	<a href="${pageContext.request.contextPath}/admin/adminShopCRUDPage">관리자 상품CRUD 페이지</a>
 	<a href="${pageContext.request.contextPath}/movie/movieMenu">무비메뉴 페이지 이동</a>
 	
 	<!-- 강혜수 바디 -->
