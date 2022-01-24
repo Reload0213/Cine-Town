@@ -1,13 +1,24 @@
 package kr.co.goodee39.admin.controller;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import kr.co.goodee39.admin.service.noticeService;
+import kr.co.goodee39.admin.vo.NoticeVO;
+import kr.co.goodee39.goods.vo.GoodsVO;
+
 @Controller
 @RequestMapping("/admin")
 public class adminController {
+	
+	@Autowired
+	noticeService noticeService;
+	
 	@GetMapping("/main")
 	public String main() {
 
@@ -41,7 +52,8 @@ public class adminController {
 	
 	@GetMapping("/aboutUsMain")
 	public String aboutUsMain(Model model) {
-		model.addAttribute("testKey", "testVal");
+		List<NoticeVO> noticeList = noticeService.noticeList();
+		model.addAttribute("noticeList", noticeList);
 		return "/aboutUs/aboutUsMain";
 	}
 	

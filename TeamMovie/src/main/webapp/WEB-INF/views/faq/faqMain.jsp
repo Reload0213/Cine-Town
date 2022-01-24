@@ -43,96 +43,96 @@
                     <div class="panel panel-default">
                         <div id="headingOne" role="tab" class="panel-heading">
                             <h4 class="panel-title">
-                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne" class="collapsed">How do I become an author?</a>
+                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne" class="collapsed">비회원도 주문이 가능한가요?</a>
                             </h4>
                         </div>
                         <div id="collapseOne" style="overflow: hidden;"role="tabpanel" aria-labelledby="headingOne" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
                             <div class="panel-body">
-                                <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon.</p>
+                                <p>CINE TOWN 에서는 회원의 경우에만 주문하실 수 있도록 하고 있습니다. 회원가입은 무료이며, CINE TOWN 회원이 되시면 각종 이벤트 참여, 포인트 적립 등 다양한 혜택이 제공됩니다.</p>
                             </div>
                         </div>
                     </div>
                     <div class="panel panel-default">
                         <div id="headingTwo" role="tab" class="panel-heading">
                             <h4 class="panel-title">
-                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" class="">Helpful Resources for Authors &amp; for marketers</a>
+                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" class="">주문 후 배송지를 변경하고 싶어요.</a>
                             </h4>
                         </div>
                         <div id="collapseTwo" style="overflow: hidden;" role="tabpanel" aria-labelledby="headingTwo" class="panel-collapse collapse in" aria-expanded="true">
                             <div class="panel-body">
-                                <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.</p>
+                                <p>[상품 준비 중] 상태까지는 고객센터(1577-1577)를 통해 배송지 변경이 가능합니다.</p>
                             </div>
                         </div>
                     </div>
                     <div class="panel panel-default">
                         <div id="headingThree"  role="tab" class="panel-heading">
                             <h4 class="panel-title">
-                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree" class="collapsed">How much money can I make?</a>
+                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree" class="collapsed">상품 출고 후 배송 기간이 어떻게 되나요?</a>
                             </h4>
                         </div>
                         <div id="collapseThree" style="overflow: hidden;" role="tabpanel" aria-labelledby="headingThree" class="panel-collapse collapse" aria-expanded="false">
                             <div class="panel-body">
-                                <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.</p>
+                                <p>택배사로 상품 출고 후 영업일 기준 1~2일 이내 수령 가능합니다. <br> 단, 도서 산간 지역 및 해당 지역의 택배사 물량에 따라 기간이 좀 더 소요될 수 있습니다.</p>
                             </div>
                         </div>
                     </div>
                     <div class="panel panel-default">
                         <div id="headingFour" role="tab" class="panel-heading">
                             <h4 class="panel-title">
-                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour" class="collapsed">Can I offer my items for free on a promotional basis?</a>
+                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour" class="collapsed">주문 취소를 하고 싶어요.</a>
                             </h4>
                         </div>
                         <div id="collapseFour" style="overflow: hidden;" role="tabpanel" aria-labelledby="headingFour" class="panel-collapse collapse" aria-expanded="false">
                             <div class="panel-body">
-                                <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.</p>
+                                <p>[상품 준비 중] 상태까지는 주문취소가 가능하지만, 배송이 시작되는 [배송 중] 이후에는 주문 취소가 불가능합니다. <br>CINE TOWN 웹사이트의 주문내역 또는 1:1 상담 및 카톡, 고객센터(1577-1577)를 통해 주문 취소가 가능합니다.</p>
                             </div>
                         </div>
                     </div>
                     <div class="panel panel-default">
                         <div id="headingFive" role="tab" class="panel-heading">
                             <h4 class="panel-title">
-                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive" class="collapsed">Can I offer my items for free on a promotional basis?</a>
+                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive" class="collapsed">작성한 리뷰를 삭제하는 방법이 궁금합니다.</a>
                             </h4>
                         </div>
                         <div id="collapseFive" style="overflow: hidden;" role="tabpanel" aria-labelledby="headingFive" class="panel-collapse collapse" aria-expanded="false">
                             <div class="panel-body">
-                                <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.</p>
+                                <p>작성한 리뷰는 영화 페이지의 직접 수정, 삭제할 수 있습니다. <br>리뷰는 최소 5자 이상, 최대 400자 이하로 작성이 가능합니다.</p>
                             </div>
                         </div>
                     </div>
                     <div class="panel panel-default">
                         <div id="headingSix" role="tab" class="panel-heading">
                             <h4 class="panel-title">
-                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix" class="collapsed">Can I offer my items for free on a promotional basis?</a>
+                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix" class="collapsed">리뷰 평점은 어떻게 계산되나요?</a>
                             </h4>
                         </div>
                         <div id="collapseSix" style="overflow: hidden;" role="tabpanel" aria-labelledby="headingSix" class="panel-collapse collapse" aria-expanded="false">
                             <div class="panel-body">
-                                <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.</p>
+                                <p>리뷰 평점은 1부터 10까지의 점수를 기준으로 개인 리뷰어가 평가한 점수의 평균입니다. 별점은 1에서 10 사이의 숫라고 변환된 다음, 그 숫자들의 평균으로 구해집니다.</p>
                             </div>
                         </div>
                     </div>
                     <div class="panel panel-default">
                         <div id="headingSeven" role="tab" class="panel-heading">
                             <h4 class="panel-title">
-                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven" class="collapsed">Can I offer my items for free on a promotional basis?</a>
+                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven" class="collapsed">리뷰를 남기려면 어떻게 하나요?</a>
                             </h4>
                         </div>
                         <div id="collapseSeven" style="overflow: hidden;" role="tabpanel" aria-labelledby="headingSeven" class="panel-collapse collapse" aria-expanded="false">
                             <div class="panel-body">
-                                <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.</p>
+                                <p>로그인한 경우 영화 페이지의 별점 시스템을 사용하여 별점을 매기거나 댓글란에 리뷰를 남길 수 있습니다.</p>
                             </div>
                         </div>
                     </div>
                     <div class="panel panel-default">
                         <div id="headingEight" role="tab" class="panel-heading">
                             <h4 class="panel-title">
-                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseEight" aria-expanded="false" aria-controls="collapseEight" class="collapsed">Can I offer my items for free on a promotional basis?</a>
+                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseEight" aria-expanded="false" aria-controls="collapseEight" class="collapsed">리뷰가 등록되지 않습니다.</a>
                             </h4>
                         </div>
                         <div id="collapseEight" style="overflow: hidden;" role="tabpanel" aria-labelledby="headingEight" class="panel-collapse collapse" aria-expanded="false">
                             <div class="panel-body">
-                                <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.</p>
+                                <p>깊이 있는 토론의 장을 마련하기 위해 CINE TOWN에서는 리뷰가 최소 20자 이상의 길이가 될 경우 등록될 수 있도록 하고 있습니다. 문제가 지속적으로 발생 시 고객센터(1577-1577)에 문의해주세요.</p>
                             </div>
                         </div>
                     </div>

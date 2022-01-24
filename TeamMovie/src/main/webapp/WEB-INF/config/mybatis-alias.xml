@@ -18,5 +18,7 @@
 		<typeAlias type="kr.co.goodee39.user.vo.UserVO" alias="userVO"/>
 		<typeAlias type="kr.co.goodee39.goods.vo.GoodsVO" alias="goodsVO"/>
 		<typeAlias type="kr.co.goodee39.user.vo.UserVO" alias="userVO"/>
+		<typeAlias type="kr.co.goodee39.admin.vo.NoticeVO" alias="noticeVO"/>
+		
 	</typeAliases>
 </configuration>
