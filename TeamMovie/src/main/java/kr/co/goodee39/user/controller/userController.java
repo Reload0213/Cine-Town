@@ -1,97 +1,105 @@
 package kr.co.goodee39.user.controller;
 
+import javax.servlet.http.HttpSession;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import kr.co.goodee39.user.service.UserService;
+import kr.co.goodee39.user.vo.UserVO;
 
 @Controller
 @RequestMapping("/user")
-
-
 public class userController {
+
+	@Autowired
+	UserService userService;	
+
 	@GetMapping("/myPage")
 	public String getTest() {
 
 		return "user/myPage";
 	}
-	
-	//김정민 작업 중
-	//로그인 페이지로 이동
+
+	// 로그인 페이지로 이동
 	@GetMapping("/signin")
-	public String getSingin() {
+	public String getSingin(@ModelAttribute("userVO") UserVO vo) {
 
 		return "user/signin";
 	}
-	
-	//회원가입 페이지로 이동
+
+	//로그인 post
+		@PostMapping("/loginComplete")
+		public String loginComplete(@ModelAttribute("userVO") UserVO vo, HttpSession session) {
+			System.out.println("loginComplete실행");
+			return userService.goLogin(vo, session);
+			
+			
+		}
+		
+	// 회원가입 페이지로 이동
 	@GetMapping("/signup")
-	public String getSingup() {
+	public String getSingup(UserVO vo) {
 
 		return "user/signup";
 	}
 	
-	//회원가입 성공 시 보여질 페이지. 회원가입 성공했으니 다시 로그인 하라고 하기
-	//post로 바꿔야함.
-	@GetMapping("/signupSuccess")
-	public String getSingupSuccess() {
-
+	//회원가입 post
+	@PostMapping("/signupSuccess")
+	public String signupResult(UserVO vo) {
+		userService.setUser(vo);
+		
+		
 		return "user/signupSuccess";
 	}
 	
-	
-	//아이디/비번찾기 페이지로 이동
+	// 아이디/비번찾기 페이지로 이동
 	@GetMapping("/findUser")
 	public String getFinduser() {
 
 		return "user/findUser";
 	}
-	
-	//아이디/비번찾기 페이지로 이동
-	//데이터 넣어서 post로 바꿔야 함
-	@GetMapping("/findUserSuccess")
+
+	// 아이디/비번찾기 성공
+/*	@GetMapping("/findUserSuccess")
 	public String getFindUserSuccess() {
 
 		return "user/findUserSuccess";
-	}
+	}*/
+	
+	
 
-//	// 로그인 post
-//	@PostMapping("/signin")
-//	public String postSignin(UserVO vo, HttpServletRequest req, RedirectAttributes rttr) throws Exception {
-//
-//		UserVO login = service.signin(vo); // MemverVO형 변수 login에 로그인 정보를 저장
-//		HttpSession session = req.getSession(); // 현재 세션 정보를 가져옴
-//
-//		if (login != null) { // id가 null이 아니면
-//			session.setAttribute("user", login);  // user 세션에 로그인 정보를 부여
-//
-//		} else { // 아이디가 존재하지 않고, 비밀번호가 틀리면
-//			session.setAttribute("user", null); // user 세션에 null 부여
-//			System.out.println("user : " + session.getAttribute("user"));
-//			rttr.addFlashAttribute("msg", false); // 1회성인 변수인 msg에 false 부여
-//			return "redirect:/user/signin"; // 로그인 화면 유지
-//		}
-//
-//		return "redirect:/"; // 홈으로 이동
-//	}
-//
-//	// 회원 가입 post
-//	@PostMapping("/signup")
-//	public String postSignup(userVO vo) throws Exception {
-//
-//		String inputPass = vo.getUserPass(); //
-//		
-//		vo.setUserPass(inputPass);
-//		service.signup(vo);
-//
-//		return "user/signupSuccess"; 
-//	}
-//
-//
-//	// 로그아웃
-//	@GetMapping("/signout")
-//	public String signout(HttpSession session) throws Exception {
-//		service.signout(session); // 세션 정보를 제거
-//
-//		return "redirect:/";
-//	}
+	// 아이디 중복 검사
+		@PostMapping("/memberIdChk")
+		@ResponseBody
+		public String memberIdChkPOST(String userId) throws Exception{
+			
+			
+			int result = userService.idCheck(userId);
+			
+			
+			if(result != 0) {
+				
+				return "fail";	// 중복 아이디가 존재
+				
+			} else {
+				
+				return "success";	// 중복 아이디 x
+				
+			}		
+			
+		} 
+		
+		//로그아웃 컨트롤러
+		@GetMapping("/signout")
+		public String signout(HttpSession session) {
+			System.out.println("signout(로그아웃)실행");
+			session.invalidate();
+			return "redirect:/";
+		}
+
 }

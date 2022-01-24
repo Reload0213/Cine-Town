@@ -33,6 +33,12 @@ public class adminController {
 		return "admin/order";
 	}
 	
+	@GetMapping("/board")
+	public String board() {
+
+		return "admin/board";
+	}
+	
 	@GetMapping("/aboutUsMain")
 	public String aboutUsMain(Model model) {
 		model.addAttribute("testKey", "testVal");

@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html>
 <!-- 페이지 작성자 김정민 -->
@@ -8,6 +10,7 @@
 <link
 	href="${pageContext.request.contextPath}/assets/css/loginRegister/admin.min.css"
 	rel="stylesheet">
+
 <style>
 @media screen and (min-width:800px) {
 	.cardcenter {
@@ -35,7 +38,7 @@
 	padding: 10px 15px 8px;
 	background-color: #000;
 	color: #fff;
-	font-family: Poppins, Helvetica, Tahoma, Arial, sans-serif;
+	/* font-family: Poppins, Helvetica, Tahoma, Arial, sans-serif; */
 	font-weight: 400;
 	text-transform: uppercase;
 	letter-spacing: 1px;
@@ -59,14 +62,14 @@
 /* 페이지 제목 */
 .subjecet {
 	width: 100%;
-	height: 120px;
+	/* height: 120px; */
 	background-color: #8EC0E4;
 }
 
 .subjecet span {
 	margin-left: 31px;
-	font-size: 80px;
-	font-weight: 900;
+	font-size: 30px;
+	/* font-weight: 900; */
 	color: white;
 }
 
@@ -77,7 +80,7 @@
 }
 
 .id_name {
-	font-size: 25px;
+	/* font-size: 25px; */
 	font-weight: bold;
 }
 
@@ -91,7 +94,7 @@
 	width: 100%;
 	height: 100%;
 	border: none;
-	font-size: 28px;
+	/* font-size: 28px; */
 }
 /* 중복아이디 존재하지 않는경우 */
 .id_input_re_1 {
@@ -111,13 +114,13 @@
 }
 
 .pw_name {
-	font-size: 25px;
+	/* font-size: 25px; */
 	font-weight: bold;
 }
 
 .pw_input_box {
 	border: 1px solid black;
-/* 	height: 31px;
+	/* 	height: 31px;
 	padding: 10px 14px; */
 }
 
@@ -125,7 +128,7 @@
 	width: 100%;
 	height: 100%;
 	border: none;
-	font-size: 28px;
+	/* font-size: 28px; */
 }
 
 /* 비밀번호 확인 영역 */
@@ -135,7 +138,7 @@
 }
 
 .pwck_name {
-	font-size: 25px;
+	/* font-size: 25px; */
 	font-weight: bold;
 }
 
@@ -149,7 +152,7 @@
 	width: 100%;
 	height: 100%;
 	border: none;
-	font-size: 28px;
+	/* font-size: 28px; */
 }
 
 /* 이름 영역 */
@@ -159,13 +162,13 @@
 }
 
 .user_name {
-	font-size: 25px;
+	/* font-size: 25px; */
 	font-weight: bold;
 }
 
 .user_input_box {
 	border: 1px solid black;
-/* 	height: 31px;
+	/* 	height: 31px;
 	padding: 10px 14px; */
 }
 
@@ -173,9 +176,31 @@
 	width: 100%;
 	height: 100%;
 	border: none;
-	font-size: 28px;
+	/* font-size: 28px; */
+}
+/* 전화번호 영역 */
+.phone_wrap {
+	width: 100%;
+	margin-top: 20px;
 }
 
+.phone_name {
+	/* font-size: 25px; */
+	font-weight: bold;
+}
+
+.phone_input_box {
+	border: 1px solid black;
+	/* 	height: 31px;
+	padding: 10px 14px; */
+}
+
+.phone_input {
+	width: 100%;
+	height: 100%;
+	border: none;
+	/* font-size: 28px; */
+}
 /* 메일 영역 */
 .mail_wrap {
 	width: 100%;
@@ -183,21 +208,22 @@
 }
 
 .mail_name {
-	font-size: 25px;
+	/* font-size: 25px; */
 	font-weight: bold;
 }
 
 .mail_input_box {
-/* 	border: 1px solid black;
+	/* 	border: 1px solid black;
 	height: 31px;
 	padding: 10px 14px; */
+	
 }
 
 .mail_input {
 	width: 100%;
-/* 	height: 100%;
+	/* 	height: 100%;
 	border: none; */
-	font-size: 20px;
+	/* font-size: 20px; */
 }
 
 .mail_check_wrap {
@@ -207,7 +233,7 @@
 .mail_check_input_box {
 	border: 1px solid black;
 	/* height: 31px; */
-	height:100%;
+	height: 100%;
 	/* padding: 10px 14px; */
 	width: 61%;
 	float: left;
@@ -235,7 +261,7 @@
 	float: right;
 	line-height: 50px;
 	text-align: center;
-/* 	font-size: 30px; */
+	/* 	font-size: 30px; */
 	/* font-weight: 900; */
 	background-color: #ececf7;
 	cursor: pointer;
@@ -256,13 +282,13 @@
 }
 
 .address_name {
-	font-size: 25px;
+	/* font-size: 25px; */
 	font-weight: bold;
 }
 
 .address_input_1_box {
 	border: 1px solid black;
-/* 	height: 31px;
+	/* 	height: 31px;
 	padding: 10px 14px; */
 	width: 61%;
 	float: left;
@@ -272,15 +298,16 @@
 	width: 100%;
 	height: 100%;
 	border: none;
-	font-size: 20px;
+	/* font-size: 20px; */
 }
 
 .address_button {
 	border: 1px solid black;
-	height: 51px;
+	/* height: 51px; */
+	height:37.6px;
 	width: 30%;
 	float: right;
-	line-height: 50px;
+	line-height: 37.6px;
 	text-align: center;
 	/* font-size: 30px; */
 	/* font-weight: 900; */
@@ -302,7 +329,7 @@
 	width: 100%;
 	height: 100%;
 	border: none;
-	font-size: 20px;
+	/* font-size: 20px; */
 }
 
 .address_input_3_wrap {
@@ -311,7 +338,7 @@
 
 .address_input_3_box {
 	border: 1px solid black;
-/* 	height: 31px;
+	/* 	height: 31px;
 	padding: 10px 14px; */
 }
 
@@ -319,7 +346,7 @@
 	width: 100%;
 	height: 100%;
 	border: none;
-	font-size: 20px;
+	/* font-size: 20px; */
 }
 
 /* 가입하기 버튼 */
@@ -330,10 +357,10 @@
 
 .join_button {
 	width: 100%;
-	height: 60px;
+	height: 30px;
 	background-color: #6AAFE6;
-	font-size: 30px;
-	font-weight: 900;
+	/* font-size: 30px; */
+	/* font-weight: 900; */
 	color: white;
 }
 
@@ -351,6 +378,10 @@
 }
 
 .final_name_ck {
+	display: none;
+}
+
+.final_phone_ck {
 	display: none;
 }
 
@@ -397,12 +428,9 @@
 						<div class="row">
 							<div class="col-lg-12">
 								<div class="login-form">
-									<!-- <div class="text-center">
-										<h1 class="h4 text-gray-900 mb-4">회원가입</h1>
-									</div> -->
-
-
-									<form id="join_form" method="post">
+									<form:form modelAttribute="userVO"
+										action="${pageContext.request.contextPath}/user/signupSuccess"
+										id="join_form">
 										<div class="wrap">
 											<div class="subjecet">
 												<span>회원가입</span>
@@ -410,7 +438,7 @@
 											<div class="id_wrap">
 												<div class="id_name">아이디</div>
 												<div class="id_input_box">
-													<input class="id_input" name="userId">
+													<form:input path="userId" class="id_input" />
 												</div>
 												<span class="id_input_re_1">사용 가능한 아이디입니다.</span> <span
 													class="id_input_re_2">아이디가 이미 존재합니다.</span> <span
@@ -419,14 +447,14 @@
 											<div class="pw_wrap">
 												<div class="pw_name">비밀번호</div>
 												<div class="pw_input_box">
-													<input class="pw_input" name="userPw">
+													<form:password path="userPw" class="pw_input" />
 												</div>
 												<span class="final_pw_ck">비밀번호를 입력해주세요.</span>
 											</div>
 											<div class="pwck_wrap">
 												<div class="pwck_name">비밀번호 확인</div>
 												<div class="pwck_input_box">
-													<input class="pwck_input">
+													<input type="password" class="pwck_input">
 												</div>
 												<span class="final_pwck_ck">비밀번호 확인을 입력해주세요.</span> <span
 													class="pwck_input_re_1">비밀번호가 일치합니다.</span> <span
@@ -435,18 +463,25 @@
 											<div class="user_wrap">
 												<div class="user_name">이름</div>
 												<div class="user_input_box">
-													<input class="user_input" name="userName">
+													<form:input path="userName" class="user_input" />
 												</div>
 												<span class="final_name_ck">이름을 입력해주세요.</span>
+											</div>
+											<div class="phone_wrap">
+												<div class="phone_name">전화번호</div>
+												<div class="phone_input_box">
+													<form:input path="userPhone" class="phone_input" />
+												</div>
+												<span class="final_phone_ck">전화번호를 입력해주세요.</span>
 											</div>
 											<div class="mail_wrap">
 												<div class="mail_name">이메일</div>
 												<div class="mail_input_box">
-													<input class="mail_input" name="userMail">
+													<form:input path="userEmail" class="mail_input" />
 												</div>
 												<span class="final_mail_ck">이메일을 입력해주세요.</span>
 												<sapn class="mail_input_box_warn"></sapn>
-												<div class="mail_check_wrap">
+												<!-- 	<div class="mail_check_wrap">
 													<div class="mail_check_input_box"
 														id="mail_check_input_box_false">
 														<input class="mail_check_input" disabled="disabled">
@@ -456,14 +491,14 @@
 													</div>
 													<div class="clearfix"></div>
 													<span id="mail_check_input_box_warn"></span>
-												</div>
+												</div> -->
 											</div>
 											<div class="address_wrap">
 												<div class="address_name">주소</div>
 												<div class="address_input_1_wrap">
 													<div class="address_input_1_box">
-														<input class="address_input_1" name="userAddr1"
-															readonly="readonly">
+														<form:input path="userAddr1" class="address_input_1"
+															readonly="readonly" placeholder="우편번호" />
 													</div>
 													<div class="address_button"
 														onclick="execution_daum_address()">
@@ -473,104 +508,30 @@
 												</div>
 												<div class="address_input_2_wrap">
 													<div class="address_input_2_box">
-														<input class="address_input_2" name="userAddr2"
-															readonly="readonly">
+														<form:input path="userAddr2" class="address_input_2"
+															readonly="readonly" placeholder="도로명 주소"/>
 													</div>
 												</div>
 												<div class="address_input_3_wrap">
 													<div class="address_input_3_box">
-														<input class="address_input_3" name="userAddr3"
-															readonly="readonly">
+														<form:input path="userAddr3" class="address_input_3"
+															readonly="readonly" placeholder="상세 주소" />
 													</div>
 												</div>
 												<span class="final_addr_ck">주소를 입력해주세요.</span>
 											</div>
 											<div class="join_button_wrap">
-												<input type="button" class="join_button" value="가입하기">
+												<form:button  class="join_button">가입하기</form:button>
 											</div>
 										</div>
-									</form>
+									</form:form>
+
 									<hr>
 									<div class="text-center">
 										<a href="${pageContext.request.contextPath}/user/signin"
 											class="haveid">아이디가 있으신가요?</a>
 									</div>
 									<div class="text-center"></div>
-									<%-- <!-- post로 변경 -->
-									<form id="join_form" method="post" autocomplete="off">
-										<div class="form-group">
-											<label for="userid">아이디</label>
-											<div style="display: flex; justify-content: space-between;">
-												<input type="text" class="form-control" name="userid"
-													id="userid" style="width: 70%;" minlength="5"
-													maxlength="20" autofocus> <input type="button"
-													class="form-control" value="중복확인" id="overlay"
-													onclick="overlay()" style="width: 20%; font-size: 0.9rem;">
-											</div>
-											<p id="idch" class="check"></p>
-										</div>
-
-										<div class="form-group">
-											<label for="userPw">비밀번호</label> <input type="password"
-												class="form-control" id="userPw" name="userPw">
-											<p id="pw2ch" class="check"></p>
-										</div>
-										<div class="form-group">
-											<label for="userPw">비밀번호 확인</label> <input type="password"
-												class="form-control" id="userPw2">
-											<p id="pwch" class="check"></p>
-										</div>
-										<div class="form-group">
-											<label for="userName">이름</label> <input type="text"
-												class="form-control" id="userName">
-											<p id="namech" class="check"></p>
-										</div>
-										<div class="form-group">
-											<label>이메일</label> <input type="email" class="form-control"
-												id="userEmail" name="userEmail">
-										</div>
-										<div class="form-group">
-											<labe for="userPhone">전화번호</label> <input type="tel"
-												class="form-control" id="userPhone" name="userPhone"
-												placeholder="010-1234-5678 형식으로 입력해주세요">
-											<p id="phonech" class="check"></p>
-										</div>
-										<div class="form-group">
-											<label>주소</label>
-											<div style="display: flex; justify-content: space-between;">
-												<input type="text" class="form-control"
-													id="sample4_postcode" placeholder="우편번호"
-													readonly="readonly" style="width: 60%;"> <input
-													type="button" class="form-control"
-													onclick="sample4_execDaumPostcode()" value="우편번호 찾기"
-													style="width: 30%; font-size: 0.9rem">
-											</div>
-											<input class="form-control" id="sample4_roadAddress"
-												type="text" placeholder="도로명 주소" readonly="readonly" /> <span
-												id="guide" style="color: #999; display: none"></span> <input
-												class="form-control" name="userAddr1"
-												id="sample4_jibunAddress" type="text" placeholder="도로명 주소"
-												style="margin-top: 1rem; margin-bottom: 1rem;" /> <span
-												id="guide" style="color: #999; display: none"></span> <input
-												class="form-control" type="text" name="userAddr2"
-												id="sample4_detailAddress" placeholder="상세주소" size="60"><br>
-											<!-- <input type="hidden" name="userAddr2" id="sample4_extraAddress"
-                                                placeholder="참고항목" size="60"> -->
-											<!-- <input type="text" class="form-control"> -->
-										</div>
-										<div class="form-group">
-											<button type="submit" class="btn btn-primary btn-block">회원가입</button>
-											<a
-												href="${pageContext.request.contextPath}/user/signupSuccess">회원가입.
-												폼 아직 안태워서</a>
-										</div>
-									</form>
-									<hr>
-									<div class="text-center">
-										<a href="${pageContext.request.contextPath}/user/signin"
-											class="haveid">아이디가 있으신가요?</a>
-									</div>
-									<div class="text-center"></div> --%>
 								</div>
 							</div>
 						</div>
@@ -586,8 +547,13 @@
 
 	<script
 		src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+			<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
 	<script>
-		var code = ""; //이메일전송 인증번호 저장위한 코드
+	
+		/* var code = ""; //이메일전송 인증번호 저장위한 코드 */
 
 		/* 유효성 검사 통과유무 변수 */
 		var idCheck = false; // 아이디
@@ -687,7 +653,8 @@
 												}
 
 												/* 최종 유효성 검사 */
-												if (idCheck && idckCheck
+												if (idCheck && 
+														/* idckCheck */
 														&& pwCheck && pwckCheck
 														&& pwckcorCheck
 														&& nameCheck
@@ -697,7 +664,7 @@
 
 													$("#join_form").attr(
 															"action",
-															"/user/signin");
+															"/user/signup");
 													$("#join_form").submit();
 
 												}
@@ -716,7 +683,7 @@
 
 					var userId = $('.id_input').val(); // .id_input에 입력되는 값
 					var data = {
-							userId : userId
+						userId : userId
 					} // '컨트롤에 넘길 데이터 이름' : '데이터(.id_input에 입력되는 값)'
 
 					$.ajax({
@@ -882,235 +849,6 @@
 		}
 	</script>
 
-
-	<%-- <!--현 페이지 스크립트-->
-	<!-- <script src="assets/js/login/jquery.min.js"></script> -->
-	<script
-		src="${pageContext.request.contextPath}/assets/js/login/bootstrap.bundle.min.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/assets/js/login/jquery.easing.min.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/assets/js/login/ruang-admin.min.js"></script>
-	<script>
-		var overChk = false;
-		$("#overlay").click(function() {
-			var userid = $("#userid").val();
-			$.ajax({
-				type : 'post',
-				url : 'overlay',
-				data : {
-					'userid' : userid
-				},
-				dataType : 'JSON',
-				success : function(obj) {
-					console.log(obj);
-					if (obj.use != 1) {
-						alert('사용할 수 있는 아이디 입니다.');
-						overChk = true;
-					} else {
-						alert('이미 사용중인 아이디 입니다.');
-
-					}
-				},
-				error : function(e) {
-					console.log(e);
-				}
-			});
-		});
-
-		var idc = false;
-		var pwc = false;
-		var pwc2 = false;
-		var phonec = false;
-		var namec = false;
-		var emailc = false;
-		var birthJ = false;
-
-		//모든 공백 체크 정규식
-		var empJ = /\s/g;
-		//아이디 정규식
-		var idJ = /^[a-z0-9]{5,20}$/;
-		// 비밀번호 정규식
-		var pwJ = /^[a-z0-9]{6,20}$/;
-		// 이름 정규식
-		var nameJ = /^[가-힣]{2,6}$/;
-		// 휴대폰 번호 정규식
-		var phoneJ = /^01([0|1|6|7|8|9]?)-([0-9]{3,4})-([0-9]{4})$/;
-
-		$("#userid").focusout(function() {
-			if ($('#userId').val() == "") {
-
-				$('#idch').text('*필수 정보입니다.');
-				$('#idch').css('color', 'red');
-				$(this).focus();
-				return false;
-
-			} else if (!idJ.test($(this).val())) {
-				$('#idch').text('5~20자의 영문 소문자, 숫자만 사용가능합니다')
-				$('#idch').css('color', 'red')
-				$(this).focus();
-				return false;
-
-			} else if ($(this).val().indexOf("admin") != -1) {
-				$('#idch').text('admin이 포함된 아이디는 사용할 수 없습니다.')
-				$('#idch').css('color', 'red')
-				$(this).focus();
-				return false;
-			} else {
-				idc = true;
-				$("#idch").hide();
-				return true;
-			}
-		});
-
-		$("#userPw").focusout(function() {
-			if ($('#userPw').val() == "") {
-
-				$('#pw2ch').text('*필수 정보입니다.');
-				$('#pw2ch').css('color', 'red');
-				$(this).focus();
-				return false;
-
-			} else if (!pwJ.test($(this).val())) {
-				$('#pw2ch').text('6~20자의 영문 소문자, 숫자만 사용가능합니다')
-				$('#pw2ch').css('color', 'red')
-				$(this).focus();
-				return false;
-			} else {
-				pwc2 = true;
-				$('#pw2ch').hide();
-				return true;
-			}
-		});
-
-		$("#userPw2").keyup(function() {
-
-			if ($(this).val() != $("#pw").val()) {
-				$("#userPw").html("비밀번호가 다릅니다");
-				$("#userPw").css("color", 'red');
-				pwc = false;
-
-			} else {
-				$("#userPw").html("비밀번호가 일치합니다");
-				$("#userPw").css("color", 'blue');
-				pwc = true;
-			}
-		});
-
-		$("#userPw").keyup(function() {
-
-			if ($(this).val() != $("#userPw2").val()) {
-				$("#pwch").html("비밀번호가 다릅니다");
-				$("#pwch").css("color", 'red');
-				pwc = false;
-
-			} else {
-				$("#pwch").html("비밀번호가 일치합니다");
-				$("#pwch").css("color", 'blue');
-				pwc = true;
-			}
-		});
-
-		$("#userName").focusout(function() {
-			if ($('#userName').val() == "") {
-
-				$('#namech').text('*필수 정보입니다.');
-				$('#namech').css('color', 'red');
-
-			} else {
-				namec = true;
-			}
-		});
-
-		$("#userEmail").focusout(function() {
-			if ($('#userEmail').val() == "") {
-
-				$('#emch').text('*필수 정보입니다.');
-				$('#emch').css('color', 'red');
-				$(this).focus();
-				return false;
-			} else {
-				emailc = true;
-				return true;
-			}
-		});
-
-		$("#userPhone").focusout(function() {
-			if ($('#userPhone').val() == "") {
-				$('#phonech').text('*필수 정보입니다.');
-				$('#phonech').css('color', 'red');
-
-			} else {
-				phonec = true;
-			}
-		});
-	</script>
-	<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
-	<script>
-		//본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
-		function sample4_execDaumPostcode() {
-			new daum.Postcode(
-					{
-						oncomplete : function(data) {
-							// 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
-
-							// 도로명 주소의 노출 규칙에 따라 주소를 표시한다.
-							// 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
-							var roadAddr = data.roadAddress; // 도로명 주소 변수
-							var extraRoadAddr = ''; // 참고 항목 변수
-
-							// 법정동명이 있을 경우 추가한다. (법정리는 제외)
-							// 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
-							if (data.bname !== ''
-									&& /[동|로|가]$/g.test(data.bname)) {
-								extraRoadAddr += data.bname;
-							}
-							// 건물명이 있고, 공동주택일 경우 추가한다.
-							if (data.buildingName !== ''
-									&& data.apartment === 'Y') {
-								extraRoadAddr += (extraRoadAddr !== '' ? ', '
-										+ data.buildingName : data.buildingName);
-							}
-							// 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
-							if (extraRoadAddr !== '') {
-								extraRoadAddr = ' (' + extraRoadAddr + ')';
-							}
-
-							// 우편번호와 주소 정보를 해당 필드에 넣는다.
-							document.getElementById('sample4_postcode').value = data.zonecode;
-							document.getElementById("sample4_roadAddress").value = roadAddr;
-							document.getElementById("sample4_jibunAddress").value = data.jibunAddress;
-
-							// 참고항목 문자열이 있을 경우 해당 필드에 넣는다.
-							if (roadAddr !== '') {
-								document.getElementById("sample4_extraAddress").value = extraRoadAddr;
-							} else {
-								document.getElementById("sample4_extraAddress").value = '';
-							}
-
-							var guideTextBox = document.getElementById("guide");
-							// 사용자가 '선택 안함'을 클릭한 경우, 예상 주소라는 표시를 해준다.
-							if (data.autoRoadAddress) {
-								var expRoadAddr = data.autoRoadAddress
-										+ extraRoadAddr;
-								guideTextBox.innerHTML = '(예상 도로명 주소 : '
-										+ expRoadAddr + ')';
-								guideTextBox.style.display = 'block';
-
-							} else if (data.autoJibunAddress) {
-								var expJibunAddr = data.autoJibunAddress;
-								guideTextBox.innerHTML = '(예상 지번 주소 : '
-										+ expJibunAddr + ')';
-								guideTextBox.style.display = 'block';
-							} else {
-								guideTextBox.innerHTML = '';
-								guideTextBox.style.display = 'none';
-							}
-						}
-					}).open();
-		}
-	</script>
-	<!--현 페이지 스크립트--> --%>
 </body>
 
 </html>

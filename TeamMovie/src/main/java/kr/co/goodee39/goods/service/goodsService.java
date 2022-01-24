@@ -19,5 +19,22 @@ public class goodsService {
 	
  	return sqlSessionTemplate.selectList("goods.showGoodsList");
 	}
+	
+	
+	public void showGoodsItem(GoodsVO vo) {
+		GoodsVO vo1 = sqlSessionTemplate.selectOne("goods.showGoodsItem", vo);
+		vo.setGdsNum(vo1.getGdsNum());
+		vo.setGdsPrice(vo1.getGdsPrice());
+		vo.setGdsStock(vo1.getGdsStock());
+		vo.setGdsViewcnt(vo1.getGdsViewcnt());
+		vo.setGdsUUID(vo1.getGdsUUID());
+		vo.setGdsName(vo1.getGdsName());
+		vo.setGdsDetail(vo1.getGdsDetail());
+		vo.setGdsRegdate(vo1.getGdsRegdate());
+		vo.setGdsIsdelete(vo1.getGdsIsdelete());
+		vo.setGdsBrand(vo1.getGdsBrand());
+		vo.setGdsImage1(vo1.getGdsImage1());
+		vo.setGdsImage2(vo1.getGdsImage2());
+	}
 
 }
