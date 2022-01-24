@@ -3,19 +3,33 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="user">
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	<!-- 회원 가입 -->
-	<insert id="signup">
-		insert into user(userId, userPw, userName, userEmail, userPhone, userAddr1, userAddr2, userAddr3)
-		values(#{userId}, #{userPass}, #{userName}, #{userEmail}, #{userPhone}, #{userAddr1}, #{userAddr2}, #{userAddr3})
+	<insert id="insertUser" parameterType="userVO">
+		insert into user(userId, userPw, userRegdate, userName, userEmail, userPhone, userAddr1, userAddr2, userAddr3)
+		values(#{userId}, #{userPw}, curdate(), #{userName}, #{userEmail}, #{userPhone}, #{userAddr1}, #{userAddr2}, #{userAddr3})
 	</insert>
-
-
-
-
-	<!-- 로그인 -->
-	<!-- <select id="signin" parameterType="memberVO" resultType="MemberVO"> 
-		select userId, userName, userPass, userPhone, userAddr1, userAddr2, userAddr3, 
-		regiDate, verify from tbl_member where userId = #{userId} </select> -->
-
 
 </mapper>
