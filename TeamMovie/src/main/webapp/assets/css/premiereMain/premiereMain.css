@@ -56,12 +56,14 @@ a{
     white-space: nowrap;
     cursor: pointer;
     text-align:center;
+     transition: width 0.5s linear;
 }
 
 .btn.select{
     width:10vw;
     border-bottom: 0.23rem solid #ec4b40;
     color:#ec4b40;
+    transition: width 0.5s linear;
         
 }
 .rowMain{
@@ -200,7 +202,7 @@ a{
         font-weight: bold;
     }
     .btn.select{
-    width:19vw;
+    width:18vw;
     }
  }
 
@@ -221,6 +223,6 @@ a{
         font-weight: bold;
     }
       .btn.select{
-    width:19vw;
+    width:18vw;
     }
  }
