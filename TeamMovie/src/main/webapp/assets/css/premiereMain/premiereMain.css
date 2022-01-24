@@ -58,7 +58,7 @@ a{
 }
 
 .btn.select{
-    width:8vw;
+  
     border-bottom: 0.23rem solid #ec4b40;
     color:#ec4b40;
         
@@ -180,6 +180,7 @@ a{
         padding:2rem 3rem;
         font-weight: bold;
     }
+    
      
  }
 
@@ -199,5 +200,7 @@ a{
         padding:2rem 1rem;
         font-weight: bold;
     }
+        
+
      
  }

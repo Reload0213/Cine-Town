@@ -155,6 +155,10 @@
 <table id="fantasyTable" class="display responsive no-wrap order-column">
   <div class="text-center">
   <h3>공지사항</h3>
+  <a href="${pageContext.request.contextPath}/admin/noticeView">글보기 확인용</a>
+  <a href="${pageContext.request.contextPath}/admin/noticeWrite">글작성 확인용</a>
+  
+  
 </div>
 <thead>
   <tr>
