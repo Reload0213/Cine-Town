@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -98,110 +100,7 @@
 </head>
 <body class="template-product belle">
 
-<!-- 헤더 시작입니다 -->
- <!-- header section strats -->
- <!-- <header class="header_section" style="background-color: #232830;" >
-    <div class="container">
-      <nav class="navbar navbar-expand-lg custom_nav-container ">
-        <a class="navbar-brand" href="index.html">
-          <span>
-            Feane
-          </span>
-        </a>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class=""> </span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav  mx-auto ">
-            <li class="nav-item active">
-              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="menu.html">Menu</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about.html">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="book.html">Book Table</a>
-            </li>
-          </ul>
-          <div class="user_option">
-            <a href="" class="user_link">
-              <i class="fa fa-user" aria-hidden="true"></i>
-            </a>
-            <a class="cart_link" href="#">
-              <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
-                <g>
-                  <g>
-                    <path d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248
-                 c29.184,0,53.248-23.552,53.248-53.248C398.336,362.926,374.784,338.862,345.6,338.862z" />
-                  </g>
-                </g>
-                <g>
-                  <g>
-                    <path d="M439.296,84.91c-1.024,0-2.56-0.512-4.096-0.512H112.64l-5.12-34.304C104.448,27.566,84.992,10.67,61.952,10.67H20.48
-                 C9.216,10.67,0,19.886,0,31.15c0,11.264,9.216,20.48,20.48,20.48h41.472c2.56,0,4.608,2.048,5.12,4.608l31.744,216.064
-                 c4.096,27.136,27.648,47.616,55.296,47.616h212.992c26.624,0,49.664-18.944,55.296-45.056l33.28-166.4
-                 C457.728,97.71,450.56,86.958,439.296,84.91z" />
-                  </g>
-                </g>
-                <g>
-                  <g>
-                    <path d="M215.04,389.55c-1.024-28.16-24.576-50.688-52.736-50.688c-29.696,1.536-52.224,26.112-51.2,55.296
-                 c1.024,28.16,24.064,50.688,52.224,50.688h1.024C193.536,443.31,216.576,418.734,215.04,389.55z" />
-                  </g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-              </svg>
-            </a>
-            <form class="form-inline">
-              <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
-                <i class="fa fa-search" aria-hidden="true"></i>
-              </button>
-            </form>
-            <a href="" class="order_online">
-              Order Online
-            </a>
-          </div>
-        </div>
-      </nav>
-    </div>
-  </header> -->
-  <!-- end header section -->
-  <!-- slider section -->
-  <!-- 헤더 종료입니다 -->
   <%@ include file="../include/header.jsp"%>
 
 
@@ -431,12 +330,14 @@
                     <!--product-single-->
                     <div class="product-single">
                         <div class="row">
+                        
+                        <!-- 상품 좌측 이미지영역 -->
                             <div class="col-lg-6 col-md-6 col-sm-12 col-12">
                                 <div class="product-details-img">
                                
                                     <div class="zoompro-wrap product-zoom-right pl-20">
                                         <div class="zoompro-span">
-                                            <img class="zoompro blur-up lazyload" data-zoom-image="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-detail-page/cape-dress-1.jpg" alt="" src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-detail-page/cape-dress-1.jpg" />
+                                            <img class="zoompro blur-up lazyload" data-zoom-image="${goods.gdsImage1 }" alt="" src="${goods.gdsImage1 }" />
                                         </div>
                                         <div class="product-labels"><span class="lbl on-sale">Sale</span><span class="lbl pr-label1">new</span></div>
                                         <div class="product-buttons">
@@ -456,9 +357,14 @@
         
                                 </div>
                             </div>
+                            <!-- 상품 좌측 이미지영역 종료 -->
+                            
+                            
+                            
+                            <!-- 상품 주문영역 시작 -->
                             <div class="col-lg-6 col-md-6 col-sm-12 col-12">
                                     <div class="product-single__meta">
-                                        <h1 class="product-single__title korean">상품 명</h1>
+                                        <h1 class="product-single__title korean">${goods.gdsName }</h1>
                                         <div class="product-nav clearfix">					
                                             <a href="#" class="next" title="Next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
                                         </div>
@@ -471,7 +377,7 @@
                                             <span class="visually-hidden">Regular price</span>
                                             <s id="ComparePrice-product-template"><span class="money korean">600.00원</span></s>
                                             <span class="product-price__price product-price__price-product-template product-price__sale product-price__sale--single">
-                                                <span id="ProductPrice-product-template"><span class="money korean">500.00원</span></span>
+                                                <span id="ProductPrice-product-template"><span class="money korean">${goods.gdsPrice }원</span></span>
                                             </span>
                                             <span class="discount-badge"> <span class="devider">|</span>&nbsp;
                                                 <span class="korean">할인</span>
@@ -486,15 +392,20 @@
                                         </div>
                                     <div class="product-single__description rte">
                                         <ul>
-                                            <li>1. 상품 상세 설명입니다 </li>
+                                            <li>${goods.gdsDetail }</li>
                                             <li>Sed ut perspiciatis unde omnis iste natus error sit</li>
                                             <li>Neque porro quisquam est qui dolorem ipsum quia dolor</li>
                                             <li>Lorem Ipsum is not simply random text.</li>
                                         </ul>
                                         <p>2. 상품 상세 설명입니다</p>
                                     </div>
-                                    <div id="quantity_message">서두르세요! 재고가  <span class="items">4</span>  개 남았습니다.</div>
-                                    <form method="post" action="http://annimexweb.com/cart/add" id="product_form_10508262282" accept-charset="UTF-8" class="product-form product-form-product-template hidedropdown" enctype="multipart/form-data">
+                                    <div id="quantity_message">서두르세요! 재고가  <span class="items">${goods.gdsStock }</span>  개 남았습니다.</div>
+                                    
+                                    
+                                    
+                                    <!-- 주문 / 위시리스트 폼 양식 -->
+                                 <%--    <form method="post" action="http://annimexweb.com/cart/add" id="product_form_10508262282" accept-charset="UTF-8" class="product-form product-form-product-template hidedropdown" enctype="multipart/form-data"> --%>
+                                    <form:form action="${pageContext.request.contextPath }/cart/insertCartItem" modelAttribute="cartVO" id="product_form_10508262282" accept-charset="UTF-8" class="product-form product-form-product-template hidedropdown" enctype="multipart/form-data">
                                         <div class="swatch clearfix swatch-0 option1" data-option-index="0">
                                             <div class="product-form__item">
                                               <label class="header">Color: <span class="slVariant">Red</span></label>
@@ -540,22 +451,33 @@
                                                 <div class="wrapQtyBtn">
                                                     <div class="qtyField">
                                                         <a class="qtyBtn minus" href="javascript:void(0);"><i class="fa anm xi-minus" aria-hidden="true"></i></a>
-                                                        <input type="text" id="Quantity" name="quantity" value="1" class="product-form__input qty">
+                                                        <form:input path="cartAmount" type="text" id="Quantity" name="quantity" value="1" class="product-form__input qty"/>
+                                                       <!--  <input type="text" id="Quantity" name="quantity" value="1" class="product-form__input qty"> -->
                                                         <a class="qtyBtn plus" href="javascript:void(0);"><i class="fa anm xi-plus" aria-hidden="true"></i></a>
                                                     </div>
                                                 </div>
                                             </div>                                
                                             <div class="product-form__item--submit">
-                                                <button type="button" name="add" class="btn product-form__cart-submit">
+                                             <!--    <button type="button" name="add" class="btn product-form__cart-submit"> -->
+                                                <form:button type="submit" name="add" class="btn product-form__cart-submit">
                                                     <span>장바구니에 담기</span>
-                                                </button>
+                                                    </form:button>
+                                        <!--         </button> -->
                                             </div>
                                             <div class="shopify-payment-button" data-shopify="payment-button">
-                                                <button type="button" class="shopify-payment-button__button shopify-payment-button__button--unbranded">바로 구매하기</button>
+                                               <!--  <button type="button" class="shopify-payment-button__button shopify-payment-button__button--unbranded">바로 구매하기</button> -->
+                                                <form:button type="submit" class="shopify-payment-button__button shopify-payment-button__button--unbranded">바로 구매하기</form:button>
                                             </div>
                                         </div>
                                         <!-- End Product Action -->
-                                    </form>
+                                        </form:form>
+                              <%--       </form> --%>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                     <div class="display-table shareRow">
                                             <div class="display-table-cell medium-up--one-third">
                                                 <div class="wishlist-btn">
@@ -587,6 +509,12 @@
                                     <p class="shippingMsg"><i class="fa fa-clock-o" aria-hidden="true"></i> ESTIMATED DELIVERY BETWEEN <b id="fromDate">Wed. May 1</b> and <b id="toDate">Tue. May 7</b>.</p>
                                     <div class="userViewMsg" data-user="20" data-time="11000"><i class="fa fa-users" aria-hidden="true"></i> <strong class="uersView">14</strong> PEOPLE ARE LOOKING FOR THIS PRODUCT</div>
                                 </div>
+                                <!-- 상품 주문영역 종료 -->
+                                
+                                
+                                
+                                
+                                
                         </div>
                     </div>
                     <!--End-product-single-->
@@ -1752,89 +1680,7 @@
 
 
 
-<!-- 푸터 시작입니다. -->
-<!-- footer section -->
-<!-- <footer class="footer_section">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4 footer-col">
-          <div class="footer_contact">
-            <h4>
-              Contact Us
-            </h4>
-            <div class="contact_link_box">
-              <a href="">
-                <i class="fa fa-map-marker" aria-hidden="true"></i>
-                <span>
-                  Location
-                </span>
-              </a>
-              <a href="">
-                <i class="fa fa-phone" aria-hidden="true"></i>
-                <span>
-                  Call +01 1234567890
-                </span>
-              </a>
-              <a href="">
-                <i class="fa fa-envelope" aria-hidden="true"></i>
-                <span>
-                  demo@gmail.com
-                </span>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 footer-col">
-          <div class="footer_detail">
-            <a href="" class="footer-logo">
-              Feane
-            </a>
-            <p>
-              Necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with
-            </p>
-            <div class="footer_social">
-              <a href="">
-                <i class="fa fa-facebook" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-twitter" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-linkedin" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-instagram" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-pinterest" aria-hidden="true"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 footer-col">
-          <h4>
-            Opening Hours
-          </h4>
-          <p>
-            Everyday
-          </p>
-          <p>
-            10.00 Am -10.00 Pm
-          </p>
-        </div>
-      </div>
-      <div class="footer-info">
-        <p>
-          &copy; <span id="displayYear"></span> All Rights Reserved By
-          <a href="https://html.design/">Free Html Templates</a><br><br>
-          &copy; <span id="displayYear"></span> Distributed By
-          <a href="https://themewagon.com/" target="_blank">ThemeWagon</a>
-        </p>
-      </div>
-    </div>
-  </footer> -->
-  <!-- footer section -->
-<!-- 푸터 종료입니다 -->
+
 	<%@ include file="../include/footer.jsp"%>
 
 

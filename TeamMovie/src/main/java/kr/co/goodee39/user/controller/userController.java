@@ -2,12 +2,12 @@ package kr.co.goodee39.user.controller;
 
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import kr.co.goodee39.user.service.UserService;
 import kr.co.goodee39.user.vo.UserVO;
@@ -17,7 +17,7 @@ import kr.co.goodee39.user.vo.UserVO;
 public class userController {
 
 	@Autowired
-	UserService userService;
+	UserService userService;	
 
 	@GetMapping("/myPage")
 	public String getTest() {
@@ -72,6 +72,34 @@ public class userController {
 	}*/
 	
 	
-	
+
+	// 아이디 중복 검사
+		@PostMapping("/memberIdChk")
+		@ResponseBody
+		public String memberIdChkPOST(String userId) throws Exception{
+			
+			
+			int result = userService.idCheck(userId);
+			
+			
+			if(result != 0) {
+				
+				return "fail";	// 중복 아이디가 존재
+				
+			} else {
+				
+				return "success";	// 중복 아이디 x
+				
+			}		
+			
+		} 
+		
+		//로그아웃 컨트롤러
+		@GetMapping("/signout")
+		public String signout(HttpSession session) {
+			System.out.println("signout(로그아웃)실행");
+			session.invalidate();
+			return "redirect:/";
+		}
 
 }

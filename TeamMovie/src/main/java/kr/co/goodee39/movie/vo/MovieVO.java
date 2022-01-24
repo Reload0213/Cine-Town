@@ -15,7 +15,16 @@ public class MovieVO {
 	private String mvProducer;
 	private int mvAvgRate;
 	private String mvIsdelete;
+	private String mvImgPath;
 	
+	
+	
+	public String getMvImgPath() {
+		return mvImgPath;
+	}
+	public void setMvImgPath(String mvImgPath) {
+		this.mvImgPath = mvImgPath;
+	}
 	public int getMvNum() {
 		return mvNum;
 	}
