@@ -206,6 +206,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `userRegdate` varchar(255) DEFAULT NULL,
   `userAddr1` varchar(255) DEFAULT NULL,
   `userAddr2` varchar(255) DEFAULT NULL,
+  `userAddr3` varchar(255) DEFAULT NULL,
   `userIsdelete` varchar(255) DEFAULT NULL,
   `verify` int(11) DEFAULT 0,
   PRIMARY KEY (`userNum`)
