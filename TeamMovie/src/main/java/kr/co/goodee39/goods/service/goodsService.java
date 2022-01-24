@@ -5,6 +5,7 @@ import java.util.List;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 
 import kr.co.goodee39.goods.vo.GoodsVO;
 
@@ -14,7 +15,9 @@ public class goodsService {
 	SqlSessionTemplate sqlSessionTemplate;
 	
 	public List<GoodsVO> showGoodsList(){
-		return sqlSessionTemplate.selectList("goodsVO.showGoodsList");
+		System.out.println("showGoodsList메소드 실행");
+	
+ 	return sqlSessionTemplate.selectList("goods.showGoodsList");
 	}
 
 }

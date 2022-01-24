@@ -9,7 +9,7 @@ public class GoodsVO {
 	private int gdsStock;
 	private String gdsRegdate;
 	private int gdsViewcnt;
-	private int gdsImgUUID;
+	private int gdsUUID;
 	private String gdsIsdelete;
 	private String gdsBrand;
 	private String gdsImage1;
@@ -17,11 +17,12 @@ public class GoodsVO {
 	
 	
 	
-	public int getGdsImgUUID() {
-		return gdsImgUUID;
+
+	public int getGdsUUID() {
+		return gdsUUID;
 	}
-	public void setGdsImgUUID(int gdsImgUUID) {
-		this.gdsImgUUID = gdsImgUUID;
+	public void setGdsUUID(int gdsUUID) {
+		this.gdsUUID = gdsUUID;
 	}
 	public String getGdsImage1() {
 		return gdsImage1;
