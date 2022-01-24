@@ -1,4 +1,4 @@
-kr.co.goodee39.admin.service;
+package kr.co.goodee39.admin.service;
 
 import java.util.List;
 
