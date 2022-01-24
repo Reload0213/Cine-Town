@@ -117,7 +117,7 @@
 
 .pw_input_box {
 	border: 1px solid black;
-/* 	height: 31px;
+	/* 	height: 31px;
 	padding: 10px 14px; */
 }
 
@@ -165,7 +165,7 @@
 
 .user_input_box {
 	border: 1px solid black;
-/* 	height: 31px;
+	/* 	height: 31px;
 	padding: 10px 14px; */
 }
 
@@ -175,7 +175,29 @@
 	border: none;
 	font-size: 28px;
 }
+/* 전화번호 영역 */
+.phone_wrap {
+	width: 100%;
+	margin-top: 20px;
+}
 
+.phone_name {
+	font-size: 25px;
+	font-weight: bold;
+}
+
+.phone_input_box {
+	border: 1px solid black;
+	/* 	height: 31px;
+	padding: 10px 14px; */
+}
+
+.phone_input {
+	width: 100%;
+	height: 100%;
+	border: none;
+	font-size: 28px;
+}
 /* 메일 영역 */
 .mail_wrap {
 	width: 100%;
@@ -188,14 +210,15 @@
 }
 
 .mail_input_box {
-/* 	border: 1px solid black;
+	/* 	border: 1px solid black;
 	height: 31px;
 	padding: 10px 14px; */
+	
 }
 
 .mail_input {
 	width: 100%;
-/* 	height: 100%;
+	/* 	height: 100%;
 	border: none; */
 	font-size: 20px;
 }
@@ -207,7 +230,7 @@
 .mail_check_input_box {
 	border: 1px solid black;
 	/* height: 31px; */
-	height:100%;
+	height: 100%;
 	/* padding: 10px 14px; */
 	width: 61%;
 	float: left;
@@ -235,7 +258,7 @@
 	float: right;
 	line-height: 50px;
 	text-align: center;
-/* 	font-size: 30px; */
+	/* 	font-size: 30px; */
 	/* font-weight: 900; */
 	background-color: #ececf7;
 	cursor: pointer;
@@ -262,7 +285,7 @@
 
 .address_input_1_box {
 	border: 1px solid black;
-/* 	height: 31px;
+	/* 	height: 31px;
 	padding: 10px 14px; */
 	width: 61%;
 	float: left;
@@ -311,7 +334,7 @@
 
 .address_input_3_box {
 	border: 1px solid black;
-/* 	height: 31px;
+	/* 	height: 31px;
 	padding: 10px 14px; */
 }
 
@@ -351,6 +374,9 @@
 }
 
 .final_name_ck {
+	display: none;
+}
+.final_phone_ck {
 	display: none;
 }
 
@@ -438,6 +464,13 @@
 													<input class="user_input" name="userName">
 												</div>
 												<span class="final_name_ck">이름을 입력해주세요.</span>
+											</div>
+											<div class="phone_wrap">
+												<div class="phone_name">전화번호</div>
+												<div class="phone_input_box">
+													<input class="phone_input" name="userPhone">
+												</div>
+												<span class="final_phone_ck">전화번호을 입력해주세요.</span>
 											</div>
 											<div class="mail_wrap">
 												<div class="mail_name">이메일</div>
@@ -596,6 +629,7 @@
 		var pwckCheck = false; // 비번 확인
 		var pwckcorCheck = false; // 비번 확인 일치 확인
 		var nameCheck = false; // 이름
+		var phoneCheck = false; // 전화번호
 		var mailCheck = false; // 이메일
 		var mailnumCheck = false; // 이메일 인증번호 확인
 		var addressCheck = false // 주소
@@ -663,6 +697,17 @@
 															'display', 'none');
 													nameCheck = true;
 												}
+												
+												/* 전화번호 유효성 검사 */
+												if (name == "") {
+													$('.final_phone_ck').css(
+															'display', 'block');
+													phoneCheck = false;
+												} else {
+													$('.final_phone_ck').css(
+															'display', 'none');
+													phoneCheck = true;
+												}
 
 												/* 이메일 유효성 검사 */
 												if (mail == "") {
@@ -691,6 +736,7 @@
 														&& pwCheck && pwckCheck
 														&& pwckcorCheck
 														&& nameCheck
+														$$ phoneCheck
 														&& mailCheck
 														&& mailnumCheck
 														&& addressCheck) {
@@ -716,7 +762,7 @@
 
 					var userId = $('.id_input').val(); // .id_input에 입력되는 값
 					var data = {
-							userId : userId
+						userId : userId
 					} // '컨트롤에 넘길 데이터 이름' : '데이터(.id_input에 입력되는 값)'
 
 					$.ajax({
