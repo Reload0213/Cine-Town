@@ -180,6 +180,7 @@ a{
         padding:2rem 3rem;
         font-weight: bold;
     }
+    
      
  }
 
@@ -198,6 +199,10 @@ a{
     .btn{
         padding:2rem 1rem;
         font-weight: bold;
-    }
+    }.btn.select{
+    width:5vw;
+    
+        
+}
      
  }
