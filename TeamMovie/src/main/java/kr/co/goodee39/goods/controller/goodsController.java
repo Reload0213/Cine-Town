@@ -56,7 +56,7 @@ public class goodsController {
 		System.out.println("goGoods1/id="+id+"실행");
 	    vo.setGdsNum(id);
 	    goodsService.showGoodsItem(vo);
-	    System.out.println("vo잘 가져오는지 확인:"+vo.getGdsName());
+	    System.out.println("goGoods1 / vo잘 가져오는지 확인:"+vo.getGdsName());
 	    model.addAttribute("goods", vo);
 	
 		return "goods/goodsDetail";
@@ -68,7 +68,7 @@ public class goodsController {
 		System.out.println("goGoods1/id="+id+"실행");
 	    vo.setGdsNum(id);
 	    goodsService.showGoodsItem(vo);
-	    System.out.println("vo잘 가져오는지 확인:"+vo.getGdsName());
+	    System.out.println("goGoods2 / vo잘 가져오는지 확인:"+vo.getGdsName());
 	    model.addAttribute("goods", vo);
 	
 		return "goods/goodsDetail";
@@ -80,7 +80,7 @@ public class goodsController {
 		System.out.println("goGoods1/id="+id+"실행");
 	    vo.setGdsNum(id);
 	    goodsService.showGoodsItem(vo);
-	    System.out.println("vo잘 가져오는지 확인:"+vo.getGdsName());
+	    System.out.println("goGoods3 / vo잘 가져오는지 확인:"+vo.getGdsName());
 	    model.addAttribute("goods", vo);
 	    
 	
@@ -93,7 +93,7 @@ public class goodsController {
 		System.out.println("goGoods1/id="+id+"실행");
 	    vo.setGdsNum(id);
 	    goodsService.showGoodsItem(vo);
-	    System.out.println("vo잘 가져오는지 확인:"+vo.getGdsName());
+	    System.out.println("goGoods4 / vo잘 가져오는지 확인:"+vo.getGdsName());
 	    model.addAttribute("goods", vo);
 	
 		return "goods/goodsDetail";
@@ -105,7 +105,7 @@ public class goodsController {
 		System.out.println("goGoods1/id="+id+"실행");
 	    vo.setGdsNum(id);
 	    goodsService.showGoodsItem(vo);
-	    System.out.println("vo잘 가져오는지 확인:"+vo.getGdsName());
+	    System.out.println("goGoods5 / vo잘 가져오는지 확인:"+vo.getGdsName());
 	    model.addAttribute("goods", vo);
 	
 		return "goods/goodsDetail";

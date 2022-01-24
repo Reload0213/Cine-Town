@@ -414,7 +414,7 @@
                                             <!-- start product image -->
                                             <div class="product-image">
                                                 <!-- start product image -->
-                                                <a href="short-description.html">
+                                                <a href="${pageContext.request.contextPath }/goods/${goods.gdsNum}?id=${goods.gdsNum}">
                                                     <!-- image -->
                                                     <img class="primary blur-up lazyload" data-src="${goods.gdsImage1 }" src="${goods.gdsImage1 }" alt="image" title="product">
                                                     <!-- End image -->
@@ -1227,7 +1227,7 @@
                         <div class="col-6 col-sm-6 col-md-4 col-lg-4 item grid-view-item style2">
                         	<div class="grid-view_image">
                                 <!-- start product image -->
-                                <a href="product-accordion.html" class="grid-view-item__link">
+                                <a href="${pageContext.request.contextPath }/goods/${goods.gdsNum}?id=${goods.gdsNum}" class="grid-view-item__link">
                                     <!-- image -->
                                     <img class="grid-view-item__image primary blur-up lazyload" data-src="${goods.gdsImage1 }" src="${goods.gdsImage1 }" alt="image" title="product">
                                     <!-- End image -->
