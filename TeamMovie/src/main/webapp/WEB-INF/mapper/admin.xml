@@ -14,6 +14,12 @@
   
   </select>
   
+  <select id="selectUserCount" parameterType="userVO" resultType="int">
+  select count(*)
+  from user
+  where verify = '0'
+  </select>
+  
   <select id="showGoodsItem" parameterType="goodsVO" resultType="goodsVO">
   select gdsNum, gdsPrice, gdsStock, gdsViewcnt, gdsUUID, gdsName, gdsDetail, gdsRegdate, gdsIsdelete, gdsBrand, gdsImage1, gdsImage2
   from goods

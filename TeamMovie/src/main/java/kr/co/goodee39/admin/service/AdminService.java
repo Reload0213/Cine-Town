@@ -22,10 +22,14 @@ public class AdminService {
 	UserVO vo = new UserVO();
 	vo.setStart((num-1)*vo.getCount()); //인덱스시작
    model.addAttribute("list",sqlSessionTemplate.selectList("admin.showUserInfoList",vo));
-		
+	
+   model.addAttribute("count",sqlSessionTemplate.selectOne("admin.selectUserCount",vo));
+   
+   
    model.addAttribute("num",num);
 		
 	}
+	
 	public void deleteUser(UserVO vo) {
 		
 		sqlSessionTemplate.delete("admin.deleteUser",vo);

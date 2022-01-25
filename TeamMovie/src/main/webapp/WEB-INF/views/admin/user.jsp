@@ -5,6 +5,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<style>
+.quickview{
+
+color:black;
+}
+
+</style>
 <title>Insert title here</title>
    <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -219,7 +226,7 @@ pageContext.setAttribute("maxBlock",maxBlock);
      </div>
      
      
-     
+     <div class="quickview">
      <c:choose>
  <c:when test="${(minBlock-1)<1}">
    <span>◀◀</span>
@@ -275,7 +282,7 @@ pageContext.setAttribute("maxBlock",maxBlock);
    </c:otherwise>
 
 </c:choose>
-
+</div>
               <!--      <div class="pagingBtnCon">
 
 
