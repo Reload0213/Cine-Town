@@ -4,7 +4,7 @@
 <configuration>
 	<typeAliases>
 		<!-- <typeAlias type="kr.co.goodee39.admin.vo.AdminVO" alias="adminVO"/>
-		<typeAlias type="kr.co.goodee39.admin.vo.QnaVO" alias="qnaVO"/>
+		
 		<typeAlias type="kr.co.goodee39.cart.vo.CartVO" alias="cartVO"/>
 		<typeAlias type="kr.co.goodee39.goods.vo.GoodsReviewVO" alias="goodsReviewVO"/> 
 		<typeAlias type="kr.co.goodee39.goods.vo.GoodsVO" alias="goodsVO"/>
@@ -17,9 +17,9 @@
 		<typeAlias type="kr.co.goodee39.cart.vo.CartVO" alias="cartVO"/>
 		<typeAlias type="kr.co.goodee39.user.vo.UserVO" alias="userVO"/>
 		<typeAlias type="kr.co.goodee39.goods.vo.GoodsVO" alias="goodsVO"/>
-		<typeAlias type="kr.co.goodee39.user.vo.UserVO" alias="userVO"/>
 		<typeAlias type="kr.co.goodee39.admin.vo.NoticeVO" alias="noticeVO"/>
 		<typeAlias type="kr.co.goodee39.movie.vo.MovieVO" alias="movieVO"/>
+		<typeAlias type="kr.co.goodee39.admin.vo.QnaVO" alias="qnaVO"/>
 
 	</typeAliases>
 </configuration>
