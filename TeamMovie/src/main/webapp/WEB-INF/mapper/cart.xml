@@ -18,7 +18,7 @@
 		(cartAmount * g.gdsPrice) cartMoney
 		from user u, cart c, goods g
 		where u.userNum = c.userNum and g.gdsNum = c.gdsNum and c.userNum =
-		#{userNum}
+		#{userNum} and cartIsdelete = 'N'
 	</select>
 
 	<!-- cart페이지에 장바구니에 담긴 목록들의 총액을 구하는 쿼리 -->
@@ -27,4 +27,13 @@
 		from cart c, goods g
 		where c.gdsNum = g.gdsNum and c.userNum = #{userNum}
 	</select>
+	
+	<!-- cart페이지 장바구니에 담긴 목록 삭제 -->
+	<update id="deleteCartItem">
+	update cart
+	set cartIsdelete = 'Y'
+	where cartNum = #{cartNum}
+	</update>
+	
+	
 </mapper>

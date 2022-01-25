@@ -39,6 +39,12 @@ public class cartService {
 		
 	}
 	
+	//cart페이지에 장바구니에 담긴 수량을 삭제하는 로직
+	public void deleteCartItem(int cartNum) {
+		System.out.println("deleteCartItem 서비스 메소드 실행 / userNum:"+cartNum);
+		sqlSessionTemplate.delete("cart.deleteCartItem", cartNum);
+	}
+	
 	
 
 }

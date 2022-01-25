@@ -9,7 +9,7 @@ public class CartVO {
 	private int userNum;
 	private int gdsNum;
 	private int gdsPrice;
-	private String gdsNams;
+	private String gdsName;
 	
 	
 	public int getCartMoney() {
@@ -36,11 +36,12 @@ public class CartVO {
 	public void setGdsPrice(int gdsPrice) {
 		this.gdsPrice = gdsPrice;
 	}
-	public String getGdsNams() {
-		return gdsNams;
+
+	public String getGdsName() {
+		return gdsName;
 	}
-	public void setGdsNams(String gdsNams) {
-		this.gdsNams = gdsNams;
+	public void setGdsName(String gdsName) {
+		this.gdsName = gdsName;
 	}
 	public int getCartNum() {
 		return cartNum;
