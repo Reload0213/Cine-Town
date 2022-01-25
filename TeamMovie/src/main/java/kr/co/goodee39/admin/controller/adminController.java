@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import kr.co.goodee39.admin.service.AdminService;
 import kr.co.goodee39.admin.service.noticeService;
@@ -32,8 +33,8 @@ public class adminController {
 	
 	
 	@GetMapping("/user")
-	public String user(Model model) {
-	   service.showUserInfo(model);
+	public String user(Model model,@RequestParam(defaultValue = "1")int num) {
+	   service.showUserInfo(model, num);
 		return "admin/user";
 	}
 	
