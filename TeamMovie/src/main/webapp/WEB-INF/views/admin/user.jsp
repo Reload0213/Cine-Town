@@ -223,8 +223,9 @@ pageContext.setAttribute("maxBlock",maxBlock);
           
      </div>
      
-     
-<%--      <div class="quickview">
+     <div class="quickViewCon">
+   <div class="quickView">
+   
      <c:choose>
  <c:when test="${(minBlock-1)<1}">
    <span>◀◀</span>
@@ -280,78 +281,10 @@ pageContext.setAttribute("maxBlock",maxBlock);
    </c:otherwise>
 
 </c:choose>
-</div> --%>
+</div> 
 
+</div>
 
-
- <div class="pagingBtnCon">
- 
- 
-     <div class="btns">
-     
-     
-     <c:choose>
- <c:when test="${(minBlock-1)<1}">
-       <span class="highDown"><i class="xi-angle-left-min"></i><i class="xi-angle-left-min"></i></span>
- </c:when>
- 
- <c:otherwise>
-    <a href="${pageContext.request.contextPath}/admin/user?num=${minBlock-1}"><span class="highDown"><i class="xi-angle-left-min"></i><i class="xi-angle-left-min"></i></span></a>
- </c:otherwise>
- 
-</c:choose>
-&nbsp;&nbsp;
-<c:choose>
-   <c:when test="${num==1}">
-       <span><i class="xi-angle-left-min"></i></span>
-   </c:when>
-   <c:otherwise>
-   <a href="${pageContext.request.contextPath}/admin/user?num=${num-1}">◀</a>
-   </c:otherwise>
-
-</c:choose>
-
- <ul class="indexNum">
-<c:forEach begin="${minBlock}" end="${(total<maxBlock)?total:maxBlock}" step="1" var="i">
-
-
-<c:choose>
- 
- <c:when test="${num==i}">
- <li><span>${i}</span></li>
- </c:when>
- <c:otherwise>
-  <li><a href="${pageContext.request.contextPath}/admin/user?num=${i}">${i}</a></li>
- </c:otherwise>
-</c:choose>
-</c:forEach>
-   </ul>
- <c:choose>
- <c:when test="${num == total}">
-   <span><i class="xi-angle-right-min"></i></span>
- </c:when>
- 
- <c:otherwise>
-    <a href="${pageContext.request.contextPath}/admin/user?num=${minBlock-1}"><i class="xi-angle-right-min"></i></a>
- </c:otherwise>
- 
-</c:choose>
-&nbsp;&nbsp;
-
-<c:choose>
-   <c:when test="${maxBlock>total}">
-       <span><span class="highUp"><i class="xi-angle-right-min"></i><i class="xi-angle-right-min"></i></span>
-                     </span>
-   </c:when>
-   <c:otherwise>
-   <a href="${pageContext.request.contextPath}/admin/user?num=${maxBlock+1}"><span class="highUp"><i class="xi-angle-right-min"></i><i class="xi-angle-right-min"></i></span>
-                     </a>
-   </c:otherwise>
-
-</c:choose>
-
-     </div>
-           
 
 
                  
