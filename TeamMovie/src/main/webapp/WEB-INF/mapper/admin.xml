@@ -10,6 +10,8 @@
   select userNum,userId,userPw,userName,userPhone,userEmail,userRegdate,userAddr1,userAddr2,userIsdelete,verify
   from user
   where verify = '0'
+  limit #{start},#{count}
+  
   </select>
   
   <select id="showGoodsItem" parameterType="goodsVO" resultType="goodsVO">
@@ -17,4 +19,23 @@
   from goods
   where gdsNum = #{gdsNum}
   </select>
+  
+  
+  
+  <!-- 관리자에서 회원삭제 쿼리  -->
+  <delete id="deleteUser" parameterType="userVO" >
+  delete from user
+  where userid=#{userid}
+
+  </delete>
+  
+  
+  
+  
+  
+  
+  
   </mapper>
+  
+  
+  

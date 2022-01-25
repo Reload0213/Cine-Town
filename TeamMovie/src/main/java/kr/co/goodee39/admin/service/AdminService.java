@@ -21,11 +21,14 @@ public class AdminService {
 		
 	
 model.addAttribute("list",sqlSessionTemplate.selectList("admin.showUserInfoList"));
-	
 		
 		
 	}
-	
+	public void deleteUser(UserVO vo) {
+		
+		sqlSessionTemplate.delete("admin.deleteUser",vo);
+		
+	}
 	
 	
 	

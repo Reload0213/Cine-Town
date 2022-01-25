@@ -17,6 +17,15 @@ public class UserVO {
 	private String userAddr3;
 	private String userIsdelete;
 	private int verify;
+	
+//	어드민 회원출력을 게시판 형식으로하기때문에 start,count 선언
+	private int start;
+	private int count;
+  
+	public UserVO() {
+	 this.start=0;
+	 this.count=10;
+	}
 
 	public int getUserNum() {
 		return userNum;
@@ -113,4 +122,23 @@ public class UserVO {
 	public void setVerify(int verify) {
 		this.verify = verify;
 	}
+
+	public int getStart() {
+		return start;
+	}
+
+	public void setStart(int start) {
+		this.start = start;
+	}
+
+	public int getCount() {
+		return count;
+	}
+
+	public void setCount(int count) {
+		this.count = count;
+	}
+	
+	//start, setcount만 따로 추가하였습니다.
+	
 }
