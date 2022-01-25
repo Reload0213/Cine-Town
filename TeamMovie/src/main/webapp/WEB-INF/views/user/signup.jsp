@@ -676,42 +676,52 @@
 													$("#join_form").submit();
 
 												}
-
 												return false;
+												
 
 											});
 						});
 
 		//아이디 중복검사
-		$('.id_input').on(
-				"propertychange change keyup paste input",
+		//이벤트가 일어나는 시점?
+		//flag 값-동작이 완료되면 flag=true로 준다..
+		$('.id_input').focusout(
+			/* 	"propertychange change keyup paste input", */
 				function() {
 
-					/* console.log("keyup 테스트"); */
+					console.log("들어오니? 테스트"); 
 
 					var userId = $('.id_input').val(); // .id_input에 입력되는 값
 					var data = {
 						userId : userId
 					} // '컨트롤에 넘길 데이터 이름' : '데이터(.id_input에 입력되는 값)'
-
+					
 					$.ajax({
 						type : "post",
-						url : "/user/memberIdChk",
-						data : data,
+						url : "${pageContext.request.contextPath}/user/memberIdChk",
+						data : JSON.stringify(data),
+						contentType : "application/json; charset=utf-8",
+						dataType:"text",
 						success : function(result) {
-							// console.log("성공 여부" + result);
-							if (result != 'fail') {
+							console.log("성공 여부" + result);
+							console.log(data);
+							if (result != 1 ) { //1은 아이디가 존재한다
 								$('.id_input_re_1').css("display",
 										"inline-block");
 								$('.id_input_re_2').css("display", "none");
 								idckCheck = true;
-							} else {
+							} else { // 0은 아이디가 없다. 가입 가능
 								$('.id_input_re_2').css("display",
 										"inline-block");
 								$('.id_input_re_1').css("display", "none");
 								idckCheck = false;
 							}
-						}// success 종료
+						},// success 종료
+						error : function(){
+							console.log("실패");
+							console.log(data);
+						}
+						/* console.log(data); */
 					}); // ajax 종료	
 
 				});// function 종료
@@ -855,6 +865,7 @@
 			var form = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
 			return form.test(email);
 		}
+		
 	</script>
 
 </body>

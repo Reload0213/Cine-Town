@@ -26,6 +26,7 @@ public class UserService {
 	public int idCheck(String userId) {
 				
 		return sqlSessionTemplate.selectOne("user.idCheck", userId);
+		
 	}
 
 	// 로그인
