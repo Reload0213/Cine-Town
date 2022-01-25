@@ -405,7 +405,9 @@
                                     
                                     <!-- 주문 / 위시리스트 폼 양식 -->
                                  <%--    <form method="post" action="http://annimexweb.com/cart/add" id="product_form_10508262282" accept-charset="UTF-8" class="product-form product-form-product-template hidedropdown" enctype="multipart/form-data"> --%>
-                                    <form:form action="${pageContext.request.contextPath }/cart/insertCartItem" modelAttribute="cartVO" id="product_form_10508262282" accept-charset="UTF-8" class="product-form product-form-product-template hidedropdown" enctype="multipart/form-data">
+                                    <form:form action="${pageContext.request.contextPath }/cart/insertCartItem" modelAttribute="cartVO" id="product_form_10508262282"  class="product-form product-form-product-template hidedropdown">
+                                    <form:hidden path="userNum" value="${sessionScope.account.userNum }"/>
+                                    <form:hidden path="gdsNum" value="${goods.gdsNum }"/>
                                         <div class="swatch clearfix swatch-0 option1" data-option-index="0">
                                             <div class="product-form__item">
                                               <label class="header">Color: <span class="slVariant">Red</span></label>
