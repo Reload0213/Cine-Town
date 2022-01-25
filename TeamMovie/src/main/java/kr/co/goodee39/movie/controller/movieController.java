@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import kr.co.goodee39.movie.service.movieService;
+import kr.co.goodee39.movie.vo.MovieVO;
 
 @Controller
 @RequestMapping("/movie")
@@ -24,8 +25,8 @@ public class movieController {
 		}
 		
 		@GetMapping("/movieDetail")
-		public String goMovieDetail() {
-			
+		public String goMovieDetail(MovieVO vo, Model model) {
+			mService.getMovieDetail(model, vo);
 			
 			return "movie/movieDetail";
 		}

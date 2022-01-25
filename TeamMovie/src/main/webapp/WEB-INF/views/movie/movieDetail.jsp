@@ -35,8 +35,7 @@
 					<div class="row">
 						<div class="col-12">
 							<div class="entry-header">
-								<h1 class="entry-title">The Unreal Engine Developer Course
-									Learn C++ & Make Games</h1>
+								<h1 class="entry-title">${movieVO.mvTitle}</h1>
 
 								<div
 									class="entry-meta flex justify-content-center align-items-center">
@@ -67,12 +66,11 @@
 				<div class="col-12 offset-lg-1 col-lg-10" style="width: 100%;">
 					<div class="featured-image">
 						<img
-							src="https://an2-img.amz.wtchn.net/image/v2/u8Lhz7pkQwEfSZmUNTA3TA.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk1qZ3dlRFF3TUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpFMk16a3dNemN3T0RNek1USTFPRGN6TVRnaWZRLlRGdlpXVDdJZXhKb2FxM1djZ2VnS2JneHpKOUthSDFVQlVEeHRWRUtrMFE"
+							src="${movieVO.mvImgPath}"
 							alt="" style="width:100%;">
 
 						<div class="posted-date position-absolute">
-							<div class="day">23</div>
-							<div class="month">mar</div>
+							<div class="day">${movieVO.mvYear}</div>
 						</div>
 						<!-- .posted-date -->
 					</div>
@@ -142,13 +140,7 @@
 
 						<h3 class="mb-3">Immediate Dividends</h3>
 
-						<p>Some part of the benefit is purely financial. There are
-							experiences and lessons you learn on the road that can be
-							directly applied to business and investment. You witness
-							firsthand new trends, or the way old trends have shown up in new
-							places, or the way some trends seem nearly universal. You see for
-							yourself new styles of clothing, where young professionals are
-							shopping, which brands are popular in different places.</p>
+						<p>${movieVO.mvDetail}</p>
 
 						<p>In some countries, you need only to scan a busy street to
 							get a clear sense of what might soon be popular in the U.S., and

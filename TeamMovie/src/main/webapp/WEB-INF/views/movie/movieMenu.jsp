@@ -49,7 +49,7 @@
 				<div class="col-md-6 col-lg-4">
 					<div class="single-category">
 						<div class="thumb">
-						<a href="${pageContext.request.contextPath}/movie/movieDetail">
+						<a href="${pageContext.request.contextPath}/movie/movieDetail?mvNum=${item.mvNum}">
 							<img class="img-fluid"
 								src="${item.mvImgPath}"
 								alt="">
@@ -57,9 +57,9 @@
 						</div>
 						<div class="short_details">
 							<div class="meta-top d-flex">
-								<a href="${pageContext.request.contextPath}/movie/movieDetail">${item.mvTitle} </a>/ <a href="#">개봉일자 : ${item.mvYear}</a>
+								<a href="${pageContext.request.contextPath}/movie/movieDetail?mvNum=${item.mvNum}">${item.mvTitle} </a>/ <a href="#">개봉일자 : ${item.mvYear}</a>
 							</div>
-							<a class="d-block" href="${pageContext.request.contextPath}/movie/movieDetail">
+							<a class="d-block" href="${pageContext.request.contextPath}/movie/movieDetail?mvNum=${item.mvNum}">
 								<p>${item.mvDetail}</p>
 							</a>
 							<div class="meta-bottom d-flex">

@@ -3,9 +3,16 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   <mapper namespace="movie">
-  <select id="getMovieList" parameterType="movieVO" resultType="movieVO">
-	  select mvNum, mvTitle, mvDirector, mvGenre, mvYear, mvAge, mvRuntime, mvProducer, mvAvgRate, mvIsdelete, mvImgPath
-	  from movie
-	  where mvIsdelete = 'N'
-  </select>
+	  <select id="getMovieList" parameterType="movieVO" resultType="movieVO">
+		  select mvNum, mvTitle, mvDirector, mvGenre, mvYear, mvAge, mvRuntime, mvProducer, mvAvgRate, mvIsdelete, mvImgPath
+		 	 from movie
+		  where mvIsdelete = 'N'
+	  </select>
+	  
+	  <select id="getMovieDetail" parameterType="movieVO" resultType="movieVO">
+		  select mvNum, mvTitle, mvDirector, mvGenre, mvYear, mvAge, mvRuntime, mvProducer, mvAvgRate, mvIsdelete, mvImgPath
+		 	 from movie
+		  where mvIsdelete = 'N'
+		  and mvNum=#{mvNum}
+	  </select>
   </mapper>
