@@ -470,6 +470,20 @@ td>button{
     padding: 0 0.5rem 0.2rem 0.5rem;
 }
 
+.quickview{
+
+	width:100%;
+
+margin:0 auto;	
+
+}
+
+.quickview a,span{
+	
+	font-size:3.0rem;
+	color:black;
+	
+}
 
 
 

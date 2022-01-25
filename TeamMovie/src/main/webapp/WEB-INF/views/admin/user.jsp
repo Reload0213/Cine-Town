@@ -5,13 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<style>
-.quickview{
 
-color:black;
-}
-
-</style>
 <title>Insert title here</title>
    <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,11 +18,15 @@ color:black;
 
 <!--  관리자페이지 폰트추가 끝 -->
 <!-- 메인 css 추가 -->
-<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/adminMainPage/adminMainPage.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/adminMainPage/adminUserPage/adminUserPage.css">
 <!-- 메인 css 끝 -->
 <!-- fontawesome LINK 추가 -->
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
 <!-- fontawesome 끝 -->
+<style>
+
+
+</style>
 </head>
 <body>
     
@@ -226,7 +224,7 @@ pageContext.setAttribute("maxBlock",maxBlock);
      </div>
      
      
-     <div class="quickview">
+<%--      <div class="quickview">
      <c:choose>
  <c:when test="${(minBlock-1)<1}">
    <span>◀◀</span>
@@ -282,45 +280,84 @@ pageContext.setAttribute("maxBlock",maxBlock);
    </c:otherwise>
 
 </c:choose>
-</div>
-              <!--      <div class="pagingBtnCon">
-
-
-                     <div class="btns">
-
-                       <i class="xi-angle-left-min"></i>
-
-                       
-                      <ul class="indexNum">
-                          <li><a href="#">1</a></li>
-                          <li><a href="#">2</a></li>
-                          <li><a href="#">3</a></li>
-                          <li><a href="#">4</a></li>
-                          <li><a href="#">5</a></li>
-                      </ul>
-
-                       <i class="xi-angle-right-min"></i> <span class="highUp"><i class="xi-angle-right-min"></i><i class="xi-angle-right-min"></i></span>
-                     
-                    </div>
-
-                   </div>
-                -->
-                
+</div> --%>
 
 
 
+ <div class="pagingBtnCon">
+ 
+ 
+     <div class="btns">
+     
+     
+     <c:choose>
+ <c:when test="${(minBlock-1)<1}">
+       <span class="highDown"><i class="xi-angle-left-min"></i><i class="xi-angle-left-min"></i></span>
+ </c:when>
+ 
+ <c:otherwise>
+    <a href="${pageContext.request.contextPath}/admin/user?num=${minBlock-1}"><span class="highDown"><i class="xi-angle-left-min"></i><i class="xi-angle-left-min"></i></span></a>
+ </c:otherwise>
+ 
+</c:choose>
+&nbsp;&nbsp;
+<c:choose>
+   <c:when test="${num==1}">
+       <span><i class="xi-angle-left-min"></i></span>
+   </c:when>
+   <c:otherwise>
+   <a href="${pageContext.request.contextPath}/admin/user?num=${num-1}">◀</a>
+   </c:otherwise>
+
+</c:choose>
+
+ <ul class="indexNum">
+<c:forEach begin="${minBlock}" end="${(total<maxBlock)?total:maxBlock}" step="1" var="i">
 
 
-            </div>
-               
+<c:choose>
+ 
+ <c:when test="${num==i}">
+ <li><span>${i}</span></li>
+ </c:when>
+ <c:otherwise>
+  <li><a href="${pageContext.request.contextPath}/admin/user?num=${i}">${i}</a></li>
+ </c:otherwise>
+</c:choose>
+</c:forEach>
+   </ul>
+ <c:choose>
+ <c:when test="${num == total}">
+   <span><i class="xi-angle-right-min"></i></span>
+ </c:when>
+ 
+ <c:otherwise>
+    <a href="${pageContext.request.contextPath}/admin/user?num=${minBlock-1}"><i class="xi-angle-right-min"></i></a>
+ </c:otherwise>
+ 
+</c:choose>
+&nbsp;&nbsp;
+
+<c:choose>
+   <c:when test="${maxBlock>total}">
+       <span><span class="highUp"><i class="xi-angle-right-min"></i><i class="xi-angle-right-min"></i></span>
+                     </span>
+   </c:when>
+   <c:otherwise>
+   <a href="${pageContext.request.contextPath}/admin/user?num=${maxBlock+1}"><span class="highUp"><i class="xi-angle-right-min"></i><i class="xi-angle-right-min"></i></span>
+                     </a>
+   </c:otherwise>
+
+</c:choose>
+
+     </div>
            
+
+
+                 
+
               
-          
-
-
-
-
-
+       
 
 
 
