@@ -72,7 +72,7 @@
 						<a href="${pageContext.request.contextPath}/cart/wishlist"
 							class="user_link" style="font-size: 1.7em;"> <i
 							class="xi-heart" aria-hidden="true"></i>
-						</a> <a href="${pageContext.request.contextPath}/cart/cart"
+						</a> <a href="${pageContext.request.contextPath}/cart/showCartList"
 							class="user_link" style="font-size: 1.7em;"> <i
 							class="xi-cart" aria-hidden="true"></i>
 						</a> <a href="${pageContext.request.contextPath}/user/signup"

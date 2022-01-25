@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html>
 <!--페이지 작성자 김정민
@@ -24,14 +26,16 @@
 	<section class="ftco-section ftco-cart">
 		<div class="container">
 			<h5 style="font-family: Verdana, Geneva, Tahoma, sans-serif">
-				<span style="font-weight: bold;">${sessionScope}</span>님의 장바구니
+				<span style="font-weight: bold;">${sessionScope.account.userName}</span>님의 장바구니
 			</h5>
-			<p>영화가 마음에 드셨나요? 저희 CGV에서 관련 굿즈를 구매해 보세요</p>
+			<p>영화가 마음에 드셨나요? 저희 CGV에서 관련 굿즈를 구매해 보세요 </p>
 			<form name="orderform" id="orderform" method="post" class="orderform"
-				action="/Page" onsubmit="return false;">
+				 >
 
 				<input type="hidden" name="cmd" value="order">
 				<div class="basketdiv " id="basket">
+				
+				
 					<div class="row head">
 						<div class="subdiv text-center">
 							<div class="check">선택</div>
@@ -48,7 +52,11 @@
 						</div>
 						<div class="split"></div>
 					</div>
-					<div class="row head ">
+					
+					<!-- 장바구니 행 시작 -->
+					<c:choose>
+					<c:when test="${map.count == 0}">
+						<div class="row head ">
 						<div class="subdiv">
 							<div class="check">
 								<input type="checkbox" name="buy" value="260" checked=""
@@ -56,7 +64,7 @@
 							</div>
 							<!-- <div class="img"><img src="assets/images/cart/about.jpg" width="60"></div> -->
 							<div class="pname">
-								<a href="goods/GoodsMain"><span>스타워즈 광선검</span></a>
+								<a href="goods/GoodsMain"><span>비어있음</span></a>
 							</div>
 						</div>
 						<div class="subdiv">
@@ -85,7 +93,54 @@
 							</div>
 						</div>
 					</div>
+					</c:when>
+					
+					<c:otherwise>
+					<c:forEach var="row" items="${map.list }">
 					<div class="row head ">
+						<div class="subdiv">
+							<div class="check">
+								<input type="checkbox" name="buy" value="260" checked=""
+									onclick="javascript:basket.checkItem();">&nbsp;
+							</div>
+							<!-- <div class="img"><img src="assets/images/cart/about.jpg" width="60"></div> -->
+							<div class="pname">
+								<a href="goods/GoodsMain"><span>스타워즈 광선검</span></a>
+							</div>
+						</div>
+						<div class="subdiv">
+							<div class="basketprice">
+								<input type="hidden" name="p_price" id="p_price1"
+									class="p_price" value="20000">${row.gdsPrice }원
+							</div>
+							<div class="num">
+								<div class="updown">
+									<span onclick="javascript:basket.changePNum(1);"><i
+										class="xi-caret-down-circle-o down"></i></span> <input type="text"
+										name="p_num1" id="p_num1" size="2" maxlength="4"
+										class="p_num " value="${row.cartAmount }"
+										onkeyup="javascript:basket.changePNum(1);"> <span
+										onclick="javascript:basket.changePNum(1);"><i
+										class="xi-caret-up-circle-o up"></i></span>
+
+								</div>
+							</div>
+							<div class="sum">${row.cartMoney }원</div>
+						</div>
+						<div class="subdiv">
+							<div class="basketcmd">
+								<a href="javascript:void(0)" class="abutton"
+									onclick="javascript:basket.delItem();">삭제</a>
+							</div>
+						</div>
+					</div>
+					</c:forEach>
+					</c:otherwise>
+					</c:choose>
+				
+					<!-- 행 종료 -->
+					
+					<!-- <div class="row head ">
 						<div class="subdiv">
 							<div class="check">
 								<input type="checkbox" name="buy" value="261" checked=""
@@ -121,6 +176,8 @@
 							</div>
 						</div>
 					</div>
+					
+					
 					<div class="row head ">
 						<div class="subdiv">
 							<div class="check">
@@ -157,7 +214,7 @@
 									onclick="javascript:basket.delItem();">삭제</a>
 							</div>
 						</div>
-					</div>
+					</div> -->
 
 				</div>
 				<div class="right-align basketrowcmd">
