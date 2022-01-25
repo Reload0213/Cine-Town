@@ -207,7 +207,7 @@ int minBlock = (((num-1)/10)*10)+1;
 
 int maxBlock = (((num-1)/10)*1)+10;
 
-pageContext.setAttribute("total",total);
+
 
 pageContext.setAttribute("total",total);
 pageContext.setAttribute("minBlock",minBlock);

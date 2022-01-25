@@ -21,7 +21,7 @@ public class AdminService {
 		
 	UserVO vo = new UserVO();
 	vo.setStart((num-1)*vo.getCount()); //인덱스시작
-model.addAttribute("list",sqlSessionTemplate.selectList("admin.showUserInfoList",vo));
+   model.addAttribute("list",sqlSessionTemplate.selectList("admin.showUserInfoList",vo));
 		
    model.addAttribute("num",num);
 		
