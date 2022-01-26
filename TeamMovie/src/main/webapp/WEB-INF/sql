@@ -77,7 +77,9 @@ INSERT INTO `cart` (`cartNum`, `cartAmount`, `cartMoney`, `cartIsdelete`, `userN
 	(30, 4, NULL, 'Y', 2, 2, NULL, NULL, NULL),
 	(31, 3, NULL, 'Y', 2, 3, NULL, NULL, NULL),
 
+
 	(32, 3, NULL, 'N', 2, 4, NULL, NULL, NULL);
+
 
 /*!40000 ALTER TABLE `cart` ENABLE KEYS */;
 
