@@ -30,11 +30,18 @@ public class AdminService {
 		
 	}
 	
-	public void deleteUser(UserVO vo) {
-		
-		sqlSessionTemplate.delete("admin.deleteUser",vo);
-		
-	}
+public List<UserVO> setUserList(UserVO vo){
+	
+	return sqlSessionTemplate.selectList("admin.showUserInfoList",vo);
+	
+}
+
+public void deleteUser(UserVO vo) {
+	
+	sqlSessionTemplate.delete("admin.deleteUser",vo);
+	
+}
+	
 	
 	
 	

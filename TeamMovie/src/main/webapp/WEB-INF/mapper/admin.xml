@@ -31,7 +31,7 @@
   <!-- 관리자에서 회원삭제 쿼리  -->
   <delete id="deleteUser" parameterType="userVO" >
   delete from user
-  where userid=#{userid}
+  where userNum=#{userNum}
 
   </delete>
   
