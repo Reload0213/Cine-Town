@@ -303,7 +303,7 @@
                                         </p>
 
                                     <div class="business_btn">
-                                        <a href="https://bootstrapthemes.co" class="btn btn-default m-top-20">interview 더 보기</a>
+                                        <a href="${pageContext.request.contextPath}/interviewDetail" class="btn btn-default m-top-20">interview 더 보기</a>
                                     </div>
 
                                 </div>
