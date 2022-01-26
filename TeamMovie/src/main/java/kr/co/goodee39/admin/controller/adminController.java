@@ -3,9 +3,14 @@ package kr.co.goodee39.admin.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -32,10 +37,28 @@ public class adminController {
 	}
 	
 	
+	//게시판 출력컨트롤러
 	@GetMapping("/user")
 	public String user(Model model,@RequestParam(defaultValue = "1")int num) {
 	   service.showUserInfo(model, num);
 		return "admin/user";
+	}
+	
+	@DeleteMapping("/delete")
+	public ResponseEntity<String>deleteUser(@RequestBody UserVO vo,@RequestParam int num){
+		
+		vo.setUserNum(num);
+		
+		service.deleteUser(vo);
+		
+		System.out.println("받았니?");
+		String str="삭제되었습니다.";
+		
+		ResponseEntity<String> entity = new ResponseEntity<String>(str,HttpStatus.OK);
+		
+		return entity;
+		
+		
 	}
 	
 	@GetMapping("/mail")

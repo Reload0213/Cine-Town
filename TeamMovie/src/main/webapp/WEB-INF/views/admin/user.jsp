@@ -96,14 +96,14 @@
                     <c:forEach var="userVO" items="${list}">
                     <tr>
                      
-                        <td>${userVO.userNum}</td>
+                        <td class="userNum">${userVO.userNum}</td>
                         <td>${userVO.userId}</td>
                         <td>${userVO.userPw}</td>
                         <td>${userVO.userPhone}</td>
                         <td>${userVO.userEmail}</td>
                          <td>${userVO.userRegdate}</td>
                         <td><button class="delete">삭제하기</button></td>
-                     
+                    
                     </tr>
                        </c:forEach>
                    <!--  <tr>
@@ -296,9 +296,60 @@ pageContext.setAttribute("maxBlock",maxBlock);
 
             
          </div>
-
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="${pageContext.request.contextPath}/assets/js/adminMainPage/adminUserPage/adminUserPage.js"></script>
+  <script>
+  let deleteBtns =document.querySelectorAll(".delete");
+  let userNum= document.querySelectorAll(".userNum");
+  let userNumber=[];
+  for(let i=0; i<deleteBtns.length; i++){
+	  
+	  userNumber.push({num: parseInt(userNum[i].innerText)});
+	  
+	  console.log(userNumber[i]);
+	  deleteBtns[i].addEventListener("click",function(){
+		 
+		  let yn = confirm("해당 회원의 정보를 삭제하시겠습니까?");
+		  
+		  if(yn) {
+			  
+			  $.ajax({
+				  url:"${pageContext.request.contextPath}/admin/delete?num="+2,
+				  type:"DELETE",
+				  
+				  data:JSON.stringify(userNumber[i].num),
+				  dataType:"json",
+				   contentType : "application/json; charset=utf-8",
+				   success:function(data){
+					   console.log(data);
+					   
+				   } 
+				   
+				  
+			  });
+			   
+			  
+			  
+			  
+		  }
+		  
+		
+		  
+		  
+	  });
+	  
+	  
+	  
+	  
+	  
+	  
+  }
+  
+  
 
+  
+  
+  </script> 
 
 </body>
 </html>
