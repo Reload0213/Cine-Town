@@ -522,6 +522,30 @@ td>button{
     span.hambugerBtn{
         display: block;
     }
+    .quickViewCon{
+
+width:100%;
+
+display:flex;
+
+justify-content:center;
+align-items:center;
+
+
+
+}
+
+.quickView ,span{
+	
+	font-size:1.5rem;
+	color:#141414;
+	margin:0.3rem;
+}
+.quickView a{
+	color:blue;
+}
+
+    
 
   
 
