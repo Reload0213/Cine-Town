@@ -28,8 +28,6 @@
 
 </head>
 <%@ include file="../include/header.jsp"%>
-<!-- <main> -->
-
 	<!-- 영화상세 페이지 영화파트 html 시작 -->
 	<body class="single-blog-post">
 		<div class="page-header">
@@ -910,6 +908,7 @@
 		
 		
 <!-- </main> -->
+>>>>>>> branch 'develop1' of https://github.com/Reload0213/Cine-Town.git
 <%@ include file="../include/footer.jsp"%>
 
 
