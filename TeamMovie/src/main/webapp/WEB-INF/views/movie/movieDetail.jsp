@@ -27,7 +27,7 @@
 
 </head>
 <%@ include file="../include/header.jsp"%>
-<main>
+<!-- <main> -->
 
 	<!-- 영화상세 페이지 영화파트 html 시작 -->
 	<body class="single-blog-post">
@@ -753,12 +753,167 @@
 
 
 		<!-- 영화상세 페이지 굿즈파트 html 종료 -->
-</main>
+		
+		<!-- 강사님 소스 들고 와 봄... reviewReply 서비스/ 컨트롤러/ vo / mapper-->
+		<hr />
+	<div id="comment-list">
+		
+	</div>
+	<hr />
+	<div>
+		<textarea name="comment" id="comment" cols="200" rows="5"></textarea>
+		<button id="set-comment">추가</button>
+	</div>
+	<hr />
+	
+	
+	<script type="text/javascript">
+		$(function(){
+			$.ajax({
+				url:"${pageContext.request.contextPath}/ReviewReply/get/${movieVO.mvNum}",
+				type:"GET",
+				dataType : "json",
+				success : function(data){
+					//console.log(data);
+					for(const item of data){
+						//$("#comment-list").append("<div><h3>"+item.writername+"</h3><p>"+item.comment
+						//		+"</p></div><button class='comment-delete'>삭제</button>");
+						
+						/* let usernum = ${sessionScope.account.num}; */
+						let usernum = ${userVO.account.userNum};
+						
+						const commentList = document.querySelector("#comment-list");
+						
+						const div = document.createElement("div");
+						const h3 = document.createElement("h3");
+						h3.innerText = item.rpWritername;
+						const p = document.createElement("p");
+						p.innerText = item.rpComment;
+						
+						if(usernum == item.rpWriternum){
+							const button = document.createElement("button");
+							button.innerText = "삭제";
+						
+							button.addEventListener("click", function(){
+								//alert("삭제되었습니다");
+								let yn = confirm("삭제하시겠습니까?");
+								//console.log(yn);
+								if(yn){
+									let comment_data = {rpNum:item.rpNum};
+									
+									$.ajax({
+										url:"${pageContext.request.contextPath}/ReviewReply/delete",
+										type:"DELETE",
+										data:JSON.stringify(comment_data),
+										contentType : "application/json; charset=utf-8",
+										dataType : "html",
+										success:function(data){
+											div.remove();
+										}
+									});
+								}
+							});
+							
+							div.append(button);
+						}
+						
+						div.prepend(p);
+						div.prepend(h3);
+						
+						
+						commentList.append(div);
+					}
+				}
+			});
+			
+			//$(document).on("click",".comment-delete",function(){
+			//	alert("삭제되었습니다");
+			//});
+			
+		/* 	$("#delete").click(function(){
+				if(confirm("정말로 삭제하시겠습니까")){
+					location.href = "${pageContext.request.contextPath}/bbs/delete_bbs?num=${bbsVO.num}";
+				}
+			});
+			$("#modify").click(function(){
+				location.href ="${pageContext.request.contextPath}/bbs/modify_bbs?num=${bbsVO.num}";
+			}); */
+			$("#set-comment").click(function(){
+				let comment = $("#comment").val();
+				console.log("hello");
+				console.log(comment);
+				//console.log(comment.length);
+				
+		 		if(comment.length > 0){
+					let comment_data = {rpComment, mvNum :"${movieVO.mvNum}"};
+					
+					$.ajax({
+						url:"${pageContext.request.contextPath}/ReviewReply/set",
+						type:"POST",
+						data:JSON.stringify(comment_data),
+						contentType : "application/json; charset=utf-8",
+						dataType : "json",
+						success:function(data){
+							let usernum = data.rpWriternum;
+							
+							const commentList = document.querySelector("#comment-list");
+							
+							const div = document.createElement("div");
+							const h3 = document.createElement("h3");
+							h3.innerText = data.rpWritername;
+							const p = document.createElement("p");
+							p.innerText = data.rpComment;
+							
+							
+							const button = document.createElement("button");
+							button.innerText = "삭제";
+							
+							button.addEventListener("click", function(){
+								//alert("삭제되었습니다");
+								let yn = confirm("삭제하시겠습니까?");
+								//console.log(yn);
+								if(yn){
+									let comment_data = {rpNum:data.rpNum};
+										
+									$.ajax({
+										url:"${pageContext.request.contextPath}/ReviewReply/delete",
+										type:"DELETE",
+										data:JSON.stringify(comment_data),
+										contentType : "application/json; charset=utf-8",
+										dataType : "html",
+										success:function(data){
+											div.remove();
+										}
+									});
+								}
+							});
+								
+							div.append(button);
+														
+							div.prepend(p);
+							div.prepend(h3);
+														
+							commentList.append(div);
+						}
+					});
+				}else{
+					alert("댓굴을 달아주세요");
+				}
+			});
+		});
+	</script>
+	
+	
+	
+		
+		
+		
+<!-- </main> -->
 <%@ include file="../include/footer.jsp"%>
 
 
 <!-- 이영주 영화 상세 페이지 통합 js 파트 시작  -->
-
+<script src="${pageContext.request.contextPath}/assets/js/headerFooter/jquery-3.3.1.min.js"></script>
 <script type='text/javascript'
 	src='${pageContext.request.contextPath}/assets/js/movieDetail/swiper.min.js'></script>
 <script type='text/javascript'
@@ -770,6 +925,9 @@
 
 
 <!-- 영화 상세 페이지 통합 js 파트 종료  -->
+
+
+
 
 </body>
 </html>
