@@ -76,19 +76,9 @@ INSERT INTO `cart` (`cartNum`, `cartAmount`, `cartMoney`, `cartIsdelete`, `userN
 	(29, 4, NULL, 'Y', 2, 1, NULL, NULL, NULL),
 	(30, 4, NULL, 'Y', 2, 2, NULL, NULL, NULL),
 	(31, 3, NULL, 'Y', 2, 3, NULL, NULL, NULL),
-<<<<<<< HEAD
-	(32, 20, NULL, 'Y', 2, 4, NULL, NULL, NULL),
-	(33, 10, NULL, 'Y', 2, 1, NULL, NULL, NULL),
-	(34, 3, NULL, 'N', 2, 1, NULL, NULL, NULL),
-	(35, 1, NULL, 'Y', 2, 2, NULL, NULL, NULL),
-	(36, 1, NULL, 'Y', 2, 5, NULL, NULL, NULL),
-	(37, 1, NULL, 'N', 2, 1, NULL, NULL, NULL),
-	(38, 3, NULL, 'N', 2, 4, NULL, NULL, NULL),
-	(39, 3, NULL, 'N', 2, 4, NULL, NULL, NULL),
-	(40, 1, NULL, 'N', 2, 2, NULL, NULL, NULL);
-=======
+
 	(32, 3, NULL, 'N', 2, 4, NULL, NULL, NULL);
->>>>>>> branch 'develop1' of https://github.com/Reload0213/Cine-Town.git
+
 /*!40000 ALTER TABLE `cart` ENABLE KEYS */;
 
 -- 테이블 cgv.goods 구조 내보내기
@@ -149,15 +139,11 @@ CREATE TABLE IF NOT EXISTS `movie` (
   `mvRuntime` int(11) DEFAULT NULL,
   `mvProducer` varchar(50) DEFAULT NULL,
   `mvAvgRate` decimal(20,6) DEFAULT NULL COMMENT '영화 개인평점 합산',
-<<<<<<< HEAD
-  `mvIsdelete` varchar(50) DEFAULT NULL,
-  `mvImgPath` varchar(255) DEFAULT NULL,
-=======
   `mvIsdelete` varchar(50) DEFAULT 'N',
   `mvPosterPath` varchar(255) DEFAULT NULL,
   `mvBgPath` varchar(255) DEFAULT NULL,
   `mvTrailer` varchar(255) DEFAULT NULL,
->>>>>>> branch 'develop1' of https://github.com/Reload0213/Cine-Town.git
+
   PRIMARY KEY (`mvNum`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb3 COMMENT='영화 데이터베이스';
 
