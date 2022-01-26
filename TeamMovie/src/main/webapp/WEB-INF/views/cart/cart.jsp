@@ -234,7 +234,7 @@
                                 <td>주문가능</td>
                                 <td class="tdFlexCon">
                            <%--      <input class="form-control" type="number" data-amount="${row.cartAmount }" value="${row.cartAmount }" /> --%>
-                                <form:input path="cartAmount" class="form-control" type="number" data-amount="${row.cartAmount }" value="${row.cartAmount }"/>
+                                <form:input path="cartAmount" class="form-control" type="text" data-amount="${row.cartAmount }" value="${row.cartAmount }"/>
                                 <span
                                         class="contrlBtn"><img class="quantityUpBtn" src="${pageContext.request.contextPath}/assets/images/cart/btn_count_up.gif"
                                             alt=""><img class="quantityDownBtn" src="${pageContext.request.contextPath}/assets/images/cart/btn_count_down.gif"

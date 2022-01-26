@@ -1,6 +1,8 @@
 package kr.co.goodee39.cart.service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +29,7 @@ public class cartService {
 		System.out.println("showCartList 서비스 메소드 실행 / userNum:"+userNum);
 		return sqlSessionTemplate.selectList("cart.showCartList", userNum);
 	}
-	
+//	<!-- cart페이지에 장바구니에 담긴 목록들의 총액을 구하는 쿼리 (총액)-->
 	public int sumCartItem(int userNum) {
 		System.out.println("sumCartItem 서비스 메소드 실행 / userNum:"+userNum);
 		if(sqlSessionTemplate.selectOne("cart.sumCartItem", userNum) == null) {
@@ -50,6 +52,22 @@ public class cartService {
 		System.out.println("updateCartItem 서비스 메소드 실행 / cartNum , cartAmount:"+vo.getCartNum()+","+vo.getCartAmount());
 		sqlSessionTemplate.update("cart.updateCartItem", vo);
 		
+	}
+	
+//	cart페이지에 장바구니에 이미 담긴 수량이 있는지 확인하는 로직 
+	public int countCartItem(int userNum, int gdsNum) {
+		System.out.println("countCartItem 서비스 메소드 실행 / userNum , gdsNum:"+userNum+","+gdsNum);
+		Map<String , Object> map = new HashMap<String, Object>();
+		map.put("userNum", userNum);
+		map.put("gdsNum", gdsNum);
+		return sqlSessionTemplate.selectOne("cart.countCartItem", map);
+		
+	}
+	
+//	cart페이지에 장바구니에 담긴 수량이 있다면, 추가로 수량을 더해주는 로직
+	public void sumAmountCartItem(CartVO vo) {
+		System.out.println("sumCartItem 서비스 메소드 실행 / userNum, gdsNum, cartAmount:"+vo.getUserNum()+","+vo.getGdsNum()+","+vo.getCartAmount());
+		sqlSessionTemplate.update("cart.sumAmountCartItem", vo);
 	}
 	
 	

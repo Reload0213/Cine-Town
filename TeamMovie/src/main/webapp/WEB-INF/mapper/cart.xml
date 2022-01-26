@@ -41,6 +41,25 @@
 	set cartAmount = #{cartAmount}
 	where cartNum = #{cartNum}
 	</update>
+	
+	<!-- 장바구니에 동일한 상품 레코드 확인 -->
+	<select id="countCartItem" resultType="int">
+	SELECT COUNT(*)
+	FROM cart
+	WHERE userNum = #{userNum}
+	AND gdsNum = #{gdsNum}
+	AND cartIsdelete = 'N'
+	</select>
+	
+	<!-- 장바구니에 상품이 존재하면 amount를 추가해주는 로직 -->
+	<update id="sumAmountCartItem">
+	update cart
+	set cartAmount = cartAmount + #{cartAmount}
+	where userNum = #{userNum}
+	and gdsNum = #{gdsNum}
+	AND cartIsdelete = 'N'
+	</update>
+	
 
 	
 
