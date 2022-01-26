@@ -4,9 +4,10 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   <mapper namespace="movie">
 	  <select id="getMovieList" parameterType="movieVO" resultType="movieVO">
-		  select mvNum, mvTitle, mvActor, mvGenre, mvYear, mvAge, mvRuntime, mvProducer, mvAvgRate, mvIsdelete, mvPosterPath
+		  select mvNum, mvTitle, mvActor, mvGenre, mvContent1, mvYear, mvAge, mvRuntime, mvProducer, mvAvgRate, mvIsdelete, mvPosterPath
 		 	 from movie
 		  where mvIsdelete = 'N'
+		  order by mvNum desc
 	  </select>
 	  
 	  <select id="getMovieDetail" parameterType="movieVO" resultType="movieVO">
