@@ -27,7 +27,6 @@
 
 </head>
 <%@ include file="../include/header.jsp"%>
-<main>
 
 	<!-- 영화상세 페이지 영화파트 html 시작 -->
 	<body class="single-blog-post">
@@ -753,7 +752,6 @@
 
 
 		<!-- 영화상세 페이지 굿즈파트 html 종료 -->
-</main>
 <%@ include file="../include/footer.jsp"%>
 
 
