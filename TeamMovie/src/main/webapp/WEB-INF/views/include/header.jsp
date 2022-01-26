@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html class="no-js">
 
@@ -52,7 +52,8 @@
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav  mx-auto ">
 						<li class="nav-item"><a class="nav-link cinema"
-							href="${pageContext.request.contextPath}/movie/movieMenu">영화 </a></li>
+							href="${pageContext.request.contextPath}/movie/movieMenu">영화
+						</a></li>
 						<li class="nav-item"><a class="nav-link"
 							href="${pageContext.request.contextPath}/goods/goodsMain">굿즈</a>
 						</li>
@@ -64,9 +65,14 @@
 								이벤트</a></li>
 						<li class="nav-item"><a class="nav-link"
 							href="${pageContext.request.contextPath}/admin/faqMain">고객 센터</a></li>
-						<li class="nav-item"><a class="nav-link"
-							href="${pageContext.request.contextPath}/admin/main">임시 관리자
-								페이지 링크</a></li>
+						
+						
+						<c:if test="${sessionScope.account.userId != null}">
+							<c:if test="${sessionScope.account.verify == 9}">
+								<li class="nav-item"><a class="nav-link"
+									href="${pageContext.request.contextPath}/admin/main">관리자 페이지</a></li>
+							</c:if>
+						</c:if>
 					</ul>
 					<div class="user_option">
 						<a href="${pageContext.request.contextPath}/cart/wishlist"
@@ -80,18 +86,18 @@
 							class="xi-user-plus" aria-hidden="true"></i>
 						</a>
 						<c:choose>
-						<c:when test="${sessionScope.account.userNum == null }">
-							 <a href="${pageContext.request.contextPath}/user/signin"
-							class="order_online"
-							style="border: 1px solid #fff; background-color: #232830; padding: 5px 20px;">
-							로그인 </a>
-						</c:when>
-						<c:otherwise>
-						 <a href="${pageContext.request.contextPath}/user/signout"
-							class="order_online"
-							style="border: 1px solid #fff; background-color: #232830; padding: 5px 20px;">
-							로그아웃 </a>
-						</c:otherwise>
+							<c:when test="${sessionScope.account.userNum == null }">
+								<a href="${pageContext.request.contextPath}/user/signin"
+									class="order_online"
+									style="border: 1px solid #fff; background-color: #232830; padding: 5px 20px;">
+									로그인 </a>
+							</c:when>
+							<c:otherwise>
+								<a href="${pageContext.request.contextPath}/user/signout"
+									class="order_online"
+									style="border: 1px solid #fff; background-color: #232830; padding: 5px 20px;">
+									로그아웃 </a>
+							</c:otherwise>
 						</c:choose>
 						<%--  <a href="${pageContext.request.contextPath}/user/signin"
 							class="order_online"

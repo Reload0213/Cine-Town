@@ -39,10 +39,10 @@ public class UserService {
 			System.out.println("일반 유저 로그인");
 			session.setAttribute("account", vo1);
 			path = "redirect:/";
-		} else if (vo1.getVerify() == 1) {
+		} else if (vo1.getVerify() == 9) {
 			System.out.println("admin 유저 로그인");
 			session.setAttribute("account", vo1);
-			path = "redirect:/admin/main";
+			path = "redirect:/";
 		}
 		return path;
 	}
