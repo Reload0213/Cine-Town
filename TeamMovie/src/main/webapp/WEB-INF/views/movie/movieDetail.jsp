@@ -164,7 +164,7 @@
 							class="entry-heading flex flex-wrap justify-content-between align-items-center">
 							<h2 class="entry-title">같은 장르 영화 추천</h2>
 
-							<a href="#">영화 전체 보러가기</a>
+							<a href="${pageContext.request.contextPath}/movie/movieMenu">영화 전체 보러가기</a>
 						</div>
 						<!-- .entry-heading -->
 
