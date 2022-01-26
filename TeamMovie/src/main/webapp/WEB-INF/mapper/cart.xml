@@ -35,6 +35,14 @@
 	where cartNum = #{cartNum}
 	</update>
 	
+	<!-- 장바구니 수량 수정 -->
+	<update id="updateCartItem" parameterType="cartVO">
+	update cart
+	set cartAmount = #{cartAmount}
+	where cartNum = #{cartNum}
+	</update>
+
+	
 
 	
 	

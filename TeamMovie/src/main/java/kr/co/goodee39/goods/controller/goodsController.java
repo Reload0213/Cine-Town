@@ -33,7 +33,7 @@ public class goodsController {
 	
 	//goodsMain페이지로 이동
 	@GetMapping("/goodsMain")
-	public String goMain(Model model) {
+	public String goMain(Model model, @ModelAttribute("cartVO")CartVO vo) {
 		System.out.println("goodsMain 페이지로 이동");
 		List<GoodsVO> goodsList = goodsService.showGoodsList();
 		model.addAttribute("goodsList", goodsList);
@@ -43,7 +43,7 @@ public class goodsController {
 	
 	//goodsManu페이지로 이동
 	@GetMapping("/goodsMenu")
-	public String goMenu(Model model) {
+	public String goMenu(Model model, @ModelAttribute("cartVO")CartVO vo) {
 		System.out.println("goodsMenu 페이지로 이동");
 		List<GoodsVO> goodsList = goodsService.showGoodsList();
 		model.addAttribute("goodsList", goodsList);

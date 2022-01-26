@@ -13,36 +13,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
       <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
-   <!--  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cine Town</title>
-
-    header & footer css
-    <link rel="stylesheet" href="assets/css/headerFooter/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/headerFooter/headerFooter.css">
-    <link href="favicon.ico" rel="icon">
-    글씨 폰트 Noto, Roboto
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
-    XEICON 링크
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"> -->
-    <style>
-        /*
-** Style Simple Ecommerce Theme for Bootstrap 4
-** Created by T-PHP https://t-php.fr/43-theme-ecommerce-bootstrap-4.html
-*/        
-
-       
+    <style>     
         .bloc_left_price {
             color: #c01508;
             text-align: center;
@@ -236,6 +208,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="table-responsive">
+                <form:form modelAttribute="cartVO" action="${pageContext.request.contextPath }/cart/updateCartItem">
                     <table class="table table-striped">
                         <thead>
                             <tr>
@@ -248,29 +221,49 @@
                             </tr>
                         </thead>
                         <tbody>
+                           		
                         <c:forEach var="row"  items="${map.list }">
                      		<c:if test="${row.cartIsdelete == N }">
+                  
                             <tr class="goodsTr" data-price="${row.gdsPrice }">
-                                <td><img src="${row.gdsImage1 }" width="70px" /> </td>
+                                <td><img src="${row.gdsImage1 }" width="70px" /> 
+                                <form:hidden path="gdsNum" value="${row.gdsNum }"/>
+                                <form:hidden path="cartNum" value="${row.cartNum }"/>
+                                </td>
                                 <td>${row.gdsName}</td>
                                 <td>주문가능</td>
-                                <td class="tdFlexCon"><input class="form-control" type="number" data-amount="${row.cartAmount }" value="${row.cartAmount }" /><span
+                                <td class="tdFlexCon">
+                           <%--      <input class="form-control" type="number" data-amount="${row.cartAmount }" value="${row.cartAmount }" /> --%>
+                                <form:input path="cartAmount" class="form-control" type="number" data-amount="${row.cartAmount }" value="${row.cartAmount }"/>
+                                <span
                                         class="contrlBtn"><img class="quantityUpBtn" src="${pageContext.request.contextPath}/assets/images/cart/btn_count_up.gif"
                                             alt=""><img class="quantityDownBtn" src="${pageContext.request.contextPath}/assets/images/cart/btn_count_down.gif"
                                             alt=""></span></td>
                                 <td class="text-right"> <span class="goodsTotalVw"></span> 
                                </td>
                                 <td class="text-right">
-                                <form:form modelAttribute="cartVO" action="${pageContext.request.contextPath }/cart/deleteCartItem">
-                                <form:hidden path="cartNum" value="${row.cartNum }"/>
-                                <form:button type="submit" class="btn btn-sm btn-danger deleteGoods"><i class="xi-trash"></i></form:button>
-                                </form:form>
+                        
+                               <a class="btn btn-sm btn-danger deleteGoods" href="${pageContext.request.contextPath }/cart/deleteCartItem?cartNum=${row.cartNum}"><i class="xi-trash"></i> </a> 
+                   
                                 
                                 </td>
                             </tr>
+                       
                             </c:if>
                          </c:forEach>
-                    
+                           <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                <form:button type="submit" class="btn btn-lg btn-block btn-success text-uppercase">
+                                수량 수정
+                                </form:button>
+                                </td>
+                            </tr>
+                     
                             <tr>
                                 <td></td>
                                 <td></td>
@@ -297,6 +290,8 @@
                             </tr>
                         </tbody>
                     </table>
+                    </form:form>
+                    
                 </div>
             </div>
             <div class="col mb-2">

@@ -3,6 +3,7 @@
 -- 서버 버전:                        10.6.5-MariaDB - mariadb.org binary distribution
 -- 서버 OS:                        Win64
 -- HeidiSQL 버전:                  11.3.0.6295
+-- 김용현 0126 17:30 DB
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -42,16 +43,46 @@ CREATE TABLE IF NOT EXISTS `cart` (
   `gdsNum` int(11) DEFAULT NULL,
   `gdsPrice` int(11) DEFAULT NULL,
   `gdsName` varchar(50) DEFAULT NULL,
+  `gdsImage1` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`cartNum`),
   KEY `FK1_userNum` (`userNum`),
   KEY `FK2_gdsNum` (`gdsNum`),
   CONSTRAINT `FK1_userNum` FOREIGN KEY (`userNum`) REFERENCES `user` (`userNum`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `FK2_gdsNum` FOREIGN KEY (`gdsNum`) REFERENCES `goods` (`gdsNum`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='장바구니';
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb3 COMMENT='장바구니';
 
--- 테이블 데이터 cgv.cart:~0 rows (대략적) 내보내기
+-- 테이블 데이터 cgv.cart:~20 rows (대략적) 내보내기
 DELETE FROM `cart`;
 /*!40000 ALTER TABLE `cart` DISABLE KEYS */;
+INSERT INTO `cart` (`cartNum`, `cartAmount`, `cartMoney`, `cartIsdelete`, `userNum`, `gdsNum`, `gdsPrice`, `gdsName`, `gdsImage1`) VALUES
+	(13, 3, NULL, 'Y', 2, 1, NULL, NULL, NULL),
+	(14, 5, NULL, 'Y', 2, 2, NULL, NULL, NULL),
+	(15, 10, NULL, 'Y', 2, 2, NULL, NULL, NULL),
+	(16, 4, NULL, 'Y', 2, 1, NULL, NULL, NULL),
+	(17, 5, NULL, 'Y', 2, 3, NULL, NULL, NULL),
+	(18, 10, NULL, 'Y', 2, 3, NULL, NULL, NULL),
+	(19, 5, NULL, 'Y', 2, 5, NULL, NULL, NULL),
+	(20, 4, NULL, 'Y', 2, 3, NULL, NULL, NULL),
+	(21, 4, NULL, 'Y', 2, 2, NULL, NULL, NULL),
+	(22, 11, NULL, 'Y', 2, 2, NULL, NULL, NULL),
+	(23, 3, NULL, 'Y', 2, 1, NULL, NULL, NULL),
+	(24, 6, NULL, 'Y', 2, 5, NULL, NULL, NULL),
+	(25, 18, NULL, 'Y', 2, 1, NULL, NULL, NULL),
+	(26, 1, NULL, 'Y', 2, 1, NULL, NULL, NULL),
+	(27, 10, NULL, 'Y', 2, 2, NULL, NULL, NULL),
+	(28, 3, NULL, 'Y', 2, 1, NULL, NULL, NULL),
+	(29, 4, NULL, 'Y', 2, 1, NULL, NULL, NULL),
+	(30, 4, NULL, 'Y', 2, 2, NULL, NULL, NULL),
+	(31, 3, NULL, 'Y', 2, 3, NULL, NULL, NULL),
+	(32, 20, NULL, 'Y', 2, 4, NULL, NULL, NULL),
+	(33, 10, NULL, 'Y', 2, 1, NULL, NULL, NULL),
+	(34, 3, NULL, 'N', 2, 1, NULL, NULL, NULL),
+	(35, 1, NULL, 'Y', 2, 2, NULL, NULL, NULL),
+	(36, 1, NULL, 'Y', 2, 5, NULL, NULL, NULL),
+	(37, 1, NULL, 'N', 2, 1, NULL, NULL, NULL),
+	(38, 3, NULL, 'N', 2, 4, NULL, NULL, NULL),
+	(39, 3, NULL, 'N', 2, 4, NULL, NULL, NULL),
+	(40, 1, NULL, 'N', 2, 2, NULL, NULL, NULL);
 /*!40000 ALTER TABLE `cart` ENABLE KEYS */;
 
 -- 테이블 cgv.goods 구조 내보내기
@@ -110,6 +141,7 @@ CREATE TABLE IF NOT EXISTS `movie` (
   `mvProducer` varchar(50) DEFAULT NULL,
   `mvAvgRate` decimal(20,6) DEFAULT NULL COMMENT '영화 개인평점 합산',
   `mvIsdelete` varchar(50) DEFAULT NULL,
+  `mvImgPath` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`mvNum`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='영화 데이터베이스';
 
@@ -254,4 +286,3 @@ INSERT INTO `user` (`userNum`, `userId`, `userPw`, `userName`, `userPhone`, `use
 /*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40111 SET SQL_NOTES=IFNULL(@OLD_SQL_NOTES, 1) */;
-

@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -432,9 +433,16 @@
                                         		<!-- countdown end -->
         
                                                 <!-- Start product button -->
-                                                <form class="variants add" action="#" onclick="window.location.href='cart.html'"method="post">
+                                               <%--  <form class="variants add" action="#" onclick="window.location.href='cart.html'"method="post">
                                                     <button class="btn btn-addto-cart" type="button" tabindex="0">Add To Cart</button>
-                                                </form>
+                                                </form> --%>
+                                                   <form:form modelAttribute="cartVO" class="variants add" action="${pageContext.request.contextPath }/cart/insertCartItem" >
+                                        <form:hidden path="gdsNum" value="${goods.gdsNum }"/>
+                                          <form:hidden path="cartAmount" value="1"/>
+                                            <form:hidden path="userNum" value="${sessionScope.account.userNum }"/>
+                                            <form:button class="btn btn-addto-cart" type="submit">Add To Cart</form:button>
+                                          
+                                        </form:form>
                                                 <div class="button-set">
                                                     <a href="javascript:void(0)" title="Quick View" class="quick-view-popup quick-view" data-toggle="modal" data-target="#content_quickview">
                                                         <i class="xi-zoom-in"></i>
@@ -1259,9 +1267,15 @@
                                             <i class="xi-zoom-in"></i>
                                         </a>
                                         <!-- Start product button -->
-                                        <form class="variants add" action="#" onclick="window.location.href='cart.html'"method="post">
-                                            <button class="btn cartIcon btn-addto-cart" type="button" tabindex="0"><i class="xi-cart-add"></i></button>
-                                        </form>
+                              
+                                        
+                                                 <form:form modelAttribute="cartVO" class="variants add" action="${pageContext.request.contextPath }/cart/insertCartItem" >
+                                        <form:hidden path="gdsNum" value="${goods.gdsNum }"/>
+                                          <form:hidden path="cartAmount" value="1"/>
+                                            <form:hidden path="userNum" value="${sessionScope.account.userNum }"/>
+                                            <form:button class="btn cartIcon btn-addto-cart" type="submit"><i class="xi-cart-add"></i></form:button>
+                                          
+                                        </form:form>
                                         <div class="wishlist-btn">
                                             <a class="wishlist add-to-wishlist" href="wishlist.html">
                                                 <i class="xi-heart-o"></i>

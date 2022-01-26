@@ -45,6 +45,13 @@ public class cartService {
 		sqlSessionTemplate.delete("cart.deleteCartItem", cartNum);
 	}
 	
+//	cart페이지에 장바구니에 담긴 수량을 수정하는 로직
+	public void updateCartItem(CartVO vo) {
+		System.out.println("updateCartItem 서비스 메소드 실행 / cartNum , cartAmount:"+vo.getCartNum()+","+vo.getCartAmount());
+		sqlSessionTemplate.update("cart.updateCartItem", vo);
+		
+	}
+	
 	
 
 }

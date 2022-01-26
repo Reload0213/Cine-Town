@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+    
     <!-- belle/shop-right-sidebar.html   11 Nov 2019 12:38:59 GMT -->
 <!-- GoodsMenu 페이지 -->
 <!-- body의 한글화 부분은 폰트를 별개의 클래스로 만들었습니다. 
@@ -434,9 +436,21 @@
                                         <!-- end product image -->
     
                                         <!-- Start product button -->
-                                        <form class="variants add" action="#" onclick="window.location.href='cart.html'"method="post">
-                                            <button class="btn btn-addto-cart" type="button">Add To Cart</button>
-                                        </form>
+                                        
+                                        <!-- hover시 ADD TO CART -->
+                                        
+                                       
+                                        <form:form modelAttribute="cartVO" class="variants add" action="${pageContext.request.contextPath }/cart/insertCartItem" >
+                                        <form:hidden path="gdsNum" value="${goods.gdsNum }"/>
+                                          <form:hidden path="cartAmount" value="1"/>
+                                            <form:hidden path="userNum" value="${sessionScope.account.userNum }"/>
+                                            <form:button class="btn btn-addto-cart" type="submit">Add To Cart</form:button>
+                                          
+                                        </form:form>
+                                  
+                                        
+                                        
+                                        
                                         <div class="button-set">
                                             <a href="javascript:void(0)" title="Quick View" class="quick-view-popup quick-view" data-toggle="modal" data-target="#content_quickview">
                                             	<i class="icon anm xi-zoom-in"></i>

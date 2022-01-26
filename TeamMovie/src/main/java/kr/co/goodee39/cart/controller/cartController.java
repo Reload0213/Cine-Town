@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import kr.co.goodee39.cart.service.cartService;
@@ -82,10 +83,28 @@ public class cartController {
 	 * ); // cartService.deleteCartItem(0); return "redirect:/cart/showCartList"; }
 	 */
 
-	@PostMapping("/deleteCartItem")
-	public String deleteCartItem(@ModelAttribute("cartVO")CartVO vo) {
-		System.out.println("deleteCartItem 컨트롤러 메소드 실행 / vo.cartNum:"+vo.getCartNum());
-		cartService.deleteCartItem(vo.getCartNum());
+	@GetMapping("/deleteCartItem")
+	public String deleteCartItem(@RequestParam int cartNum) {
+		System.out.println("deleteCartItem 컨트롤러 메소드 실행 / vo.cartNum:"+cartNum);
+		cartService.deleteCartItem(cartNum);
+		return "redirect:/cart/showCartList";
+	}
+	
+	@PostMapping("/updateCartItem")
+	public String updateCartItem(@ModelAttribute("cartVO")CartVO vo, HttpSession session, @RequestParam int[] cartAmount, @RequestParam int[] cartNum) {
+		System.out.println("updateCartItem 컨트롤러 메소드 실행");
+		UserVO uvo = (UserVO)session.getAttribute("account");
+		for(int i = 0; i < cartAmount.length; i++) {
+			CartVO cvo = new CartVO();
+			cvo.setCartNum(cartNum[i]);
+			cvo.setCartAmount(cartAmount[i]);
+			cartService.updateCartItem(cvo);
+			System.out.println("updateCartItem--------------------------------------------------------");
+			System.out.println("업데이트하는 장바구니 번호:"+cartNum[i]);
+			System.out.println("업데이트하는 장바구니 수량:"+cartAmount[i]);
+			System.out.println(cartNum[i]+"번째 장바구니 수정 완료---------------------------------------------------");
+		}
+		
 		return "redirect:/cart/showCartList";
 	}
 
