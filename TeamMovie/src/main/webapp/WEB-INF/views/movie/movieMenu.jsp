@@ -16,7 +16,6 @@
 </head>
 
 <%@ include file="../include/header.jsp"%>
-<main>
 	<!-- 영화 메뉴 페이지 html 시작 -->
 
 
@@ -106,8 +105,6 @@
 	<!-- ================ 예고편 area End ================= -->
 
 	<!-- 영화 메뉴 페이지 html 종료 -->
-
-</main>
 <%@ include file="../include/footer.jsp"%>
 
 
