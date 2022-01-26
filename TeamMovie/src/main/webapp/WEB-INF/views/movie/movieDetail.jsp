@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
+<html>
 <head>
 
 <!-- 이영주 영화 상세 페이지 통합 css 파트 시작  -->
@@ -863,10 +864,96 @@
 				console.log(comment);
 				//console.log(comment.length);
 				
+<<<<<<< HEAD
+=======
+		 		if(comment.length > 0){
+					let comment_data = {rpComment, mvNum :"${movieVO.mvNum}"};
+					
+					$.ajax({
+						url:"${pageContext.request.contextPath}/ReviewReply/set",
+						type:"POST",
+						data:JSON.stringify(comment_data),
+						contentType : "application/json; charset=utf-8",
+						dataType : "json",
+						success:function(data){
+							let usernum = data.rpWriternum;
+							
+							const commentList = document.querySelector("#comment-list");
+							
+							const div = document.createElement("div");
+							const h3 = document.createElement("h3");
+							h3.innerText = data.rpWritername;
+							const p = document.createElement("p");
+							p.innerText = data.rpComment;
+							
+							
+							const button = document.createElement("button");
+							button.innerText = "삭제";
+							
+							button.addEventListener("click", function(){
+								//alert("삭제되었습니다");
+								let yn = confirm("삭제하시겠습니까?");
+								//console.log(yn);
+								if(yn){
+									let comment_data = {rpNum:data.rpNum};
+										
+									$              .ajax({
+										url:"${pageContext.request.contextPath}/ReviewReply/delete",
+										type:"DELETE",
+										data:JSON.stringify(comment_data),
+										contentType : "application/json; charset=utf-8",
+										dataType : "html",
+										success:function(data){
+											div.remove();
+										}
+									});
+								}
+							});
+								
+							div.append(button);
+														
+							div.prepend(p);
+							div.prepend(h3);
+														
+							commentList.append(div);
+						}
+					});
+				}else{
+					alert("댓굴을 달아주세요");
+				}
+>>>>>>> branch 'develop1' of https://github.com/Reload0213/Cine-Town.git
 			});
 		});
 	</script>
 	
+<<<<<<< HEAD
+=======
+	
+	
+		
+		
+		
+<!-- </main> -->
+>>>>>>> branch 'develop1' of https://github.com/Reload0213/Cine-Town.git
+<%@ include file="../include/footer.jsp"%>
+
+
+<!-- 이영주 영화 상세 페이지 통합 js 파트 시작  -->
+<%-- <script src="${pageContext.request.contextPath}/assets/js/headerFooter/jquery-3.3.1.min.js"></script> --%>
+<script type='text/javascript'
+	src='${pageContext.request.contextPath}/assets/js/movieDetail/swiper.min.js'></script>
+<script type='text/javascript'
+	src='${pageContext.request.contextPath}/assets/js/movieDetail/masonry.pkgd.min.js'></script>
+<script type='text/javascript'
+	src='${pageContext.request.contextPath}/assets/js/movieDetail/jquery.collapsible.min.js'></script>
+<script type='text/javascript'
+	src='${pageContext.request.contextPath}/assets/js/movieDetail/custom.js'></script>
+
+
+<!-- 영화 상세 페이지 통합 js 파트 종료  -->
+
+
+>>>>>>> branch 'develop1' of https://github.com/Reload0213/Cine-Town.git
 
 
 </body>
