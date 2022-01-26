@@ -36,9 +36,10 @@ public List<UserVO> setUserList(UserVO vo){
 	
 }
 
-public void deleteUser(UserVO vo) {
+//지우지않고 업데이트로 isdelete를 바꿈
+public void updateDeleteUser(UserVO vo) {
 	
-	sqlSessionTemplate.delete("admin.deleteUser",vo);
+	sqlSessionTemplate.delete("admin.updateDeleteUser",vo);
 	
 }
 	

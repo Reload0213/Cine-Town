@@ -9,7 +9,7 @@
   <select id="showUserInfoList" parameterType="userVO"	resultType="userVO">
   select userNum,userId,userPw,userName,userPhone,userEmail,userRegdate,userAddr1,userAddr2,userIsdelete,verify
   from user
-  where verify = '0'
+  where verify = '0' and userIsdelete = 'N'
   limit #{start},#{count}
   
   </select>
@@ -29,11 +29,12 @@
   
   
   <!-- 관리자에서 회원삭제 쿼리  -->
-  <delete id="deleteUser" parameterType="userVO" >
-  delete from user
+  <update id="updateDeleteUser" parameterType="userVO" >
+ update user
+ set userIsdelete='Y'
   where userNum=#{userNum}
 
-  </delete>
+  </update>
   
   
   

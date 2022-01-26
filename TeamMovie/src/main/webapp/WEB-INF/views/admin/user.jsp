@@ -381,7 +381,7 @@
                                                 
                                               
                                                 let result_data={userNum};                       
-										        
+										        let thisobj=this;
                                                
 												$.ajax({
 
@@ -392,7 +392,7 @@
 													
 													success : function(data) {
 														console.log(data);
-
+														 thisobj.parentElement.parentElement.remove();
 													}
 												});
 									}

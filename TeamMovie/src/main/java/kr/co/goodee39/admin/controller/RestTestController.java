@@ -24,7 +24,7 @@ public class RestTestController {
 		
 		System.out.println(vo.getUserNum());
 		
-		service.deleteUser(vo);
+		service.updateDeleteUser(vo);
 
 		System.out.println("받았니?");
 		String str="삭제되었습니다.";
