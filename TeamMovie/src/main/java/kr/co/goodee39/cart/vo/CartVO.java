@@ -10,8 +10,16 @@ public class CartVO {
 	private int gdsNum;
 	private int gdsPrice;
 	private String gdsName;
+	private String gdsImage1;
 	
 	
+	
+	public String getGdsImage1() {
+		return gdsImage1;
+	}
+	public void setGdsImage1(String gdsImage1) {
+		this.gdsImage1 = gdsImage1;
+	}
 	public int getCartMoney() {
 		return cartMoney;
 	}

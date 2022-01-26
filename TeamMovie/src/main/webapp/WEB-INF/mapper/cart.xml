@@ -14,7 +14,7 @@
 	<!-- cart페이지에 장바구니에 담긴 값을 뿌려주는 쿼리 -->
 	<select id="showCartList" parameterType="cartVO"
 		resultType="cartVO">
-		select c.cartNum, g.gdsName AS gdsName, cartAmount, g.gdsPrice AS gdsPrice,
+		select c.cartNum, g.gdsName AS gdsName, cartAmount, g.gdsPrice AS gdsPrice, g.gdsImage1 AS gdsImage1,
 		(cartAmount * g.gdsPrice) cartMoney
 		from user u, cart c, goods g
 		where u.userNum = c.userNum and g.gdsNum = c.gdsNum and c.userNum =
