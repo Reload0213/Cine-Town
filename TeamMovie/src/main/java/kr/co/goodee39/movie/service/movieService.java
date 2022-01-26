@@ -19,20 +19,24 @@ public class movieService {
 	
 	
 	public void getMovieDetail(Model model, MovieVO vo) {
-		MovieVO vo2 = sqlSessionTemplate.selectOne("movie.getMovieDetail", vo);
-		System.out.println("무비 서비스 작동");
-		vo.setMvNum(vo2.getMvNum());
-		System.out.println(vo2.getMvNum());
-		vo.setMvTitle(vo2.getMvTitle());
-		vo.setMvDirector(vo2.getMvDirector());
-		vo.setMvDetail(vo2.getMvDetail());
-		vo.setMvGenre(vo2.getMvGenre());
-		vo.setMvYear(vo2.getMvYear());
-		vo.setMvAge(vo2.getMvNum());
-		vo.setMvRuntime(vo2.getMvNum());
-		vo.setMvProducer(vo2.getMvProducer());
-		vo.setMvAvgRate(vo2.getMvNum());
-		vo.setMvImgPath(vo2.getMvImgPath());
+		MovieVO mvo = sqlSessionTemplate.selectOne("movie.getMovieDetail", vo);
+		vo.setMvNum(mvo.getMvNum());
+		vo.setMvTitle(mvo.getMvTitle());
+		vo.setMvActor(mvo.getMvActor());
+		vo.setMvContent1(mvo.getMvContent1());
+		vo.setMvContent2(mvo.getMvContent2());
+		vo.setMvContent3(mvo.getMvContent3());
+		vo.setMvContent4(mvo.getMvContent4());
+		vo.setMvGenre(mvo.getMvGenre());
+		vo.setMvYear(mvo.getMvYear());
+		vo.setMvAge(mvo.getMvAge());
+		vo.setMvRuntime(mvo.getMvRuntime());
+		vo.setMvProducer(mvo.getMvProducer());
+		vo.setMvAvgRate(mvo.getMvAvgRate());
+		vo.setMvPosterPath(mvo.getMvPosterPath());
+		vo.setMvBgPath(mvo.getMvBgPath());
+		vo.setMvTrailer(mvo.getMvTrailer());
+		
 		
 	}
 	
