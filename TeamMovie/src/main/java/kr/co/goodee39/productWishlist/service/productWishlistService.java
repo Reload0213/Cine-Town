@@ -39,5 +39,12 @@ public class productWishlistService {
 		
 	}
 	
+//	위시리스트의 선택 항목을 삭제하는 서비스 메소드
+	public void deleteProductWishlistItem(int pwishNum) {
+		System.out.println("deleteProductWishlistItem 서비스 메소드 실행 / pwishNum :"+pwishNum);
+		sqlSessionTemplate.update("productWithlist.deleteProductWishlistItem", pwishNum);
+		
+	}
+	
 
 }

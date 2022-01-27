@@ -1,14 +1,23 @@
 package kr.co.goodee39.productWishlist.controller;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import kr.co.goodee39.productWishlist.service.productWishlistService;
 import kr.co.goodee39.productWishlist.vo.productWishlistVO;
+import kr.co.goodee39.user.vo.UserVO;
 
 @Controller
 @RequestMapping("/productWishlist")
@@ -32,9 +41,25 @@ public class productWishlistController {
 	}
 	
 	@GetMapping("/productWishlist")
-	public String productWishlist() {
-		System.out.println("확인중");
+	public String productWishlist(@ModelAttribute("productWishlistVO")productWishlistVO vo, UserVO uvo, HttpSession session, Model model) {
+		System.out.println("productWishlist 컨트롤러 메소드 실행");
+		UserVO uvo1 = (UserVO)session.getAttribute("account");
+		int userNum = uvo1.getUserNum();
+		System.out.println("userNum값 확인:"+userNum+"--------------------------------------------------");
+		List<productWishlistVO> list = productWishService.showProductWishlist(userNum);
+		Map<String, Object> map = new HashMap<String, Object>();
+		/* map.put("list", list); */
+		model.addAttribute("list", list);
+		
 		return "productWishlist/wishlist";
+	}
+	
+	@GetMapping("/deleteProductWishlistItem")
+	public String deleteProductWishlistItem(@RequestParam int pwishNum) {
+		System.out.println("deleteProductWishlistItem 컨트롤러 메소드 실행 / pwishNum :"+pwishNum);
+		productWishService.deleteProductWishlistItem(pwishNum);
+		
+		return "redirect:/productWishlist/productWishlist";
 	}
 
 }

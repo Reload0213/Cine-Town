@@ -4,7 +4,21 @@ public class productWishlistVO {
 	private int pwishNum;
 	private int gdsNum;
 	private int userNum;
+	private int gdsPrice;
 	private String pwishYN;
+	private String gdsName;
+	public int getGdsPrice() {
+		return gdsPrice;
+	}
+	public void setGdsPrice(int gdsPrice) {
+		this.gdsPrice = gdsPrice;
+	}
+	public String getGdsName() {
+		return gdsName;
+	}
+	public void setGdsName(String gdsName) {
+		this.gdsName = gdsName;
+	}
 	public int getPwishNum() {
 		return pwishNum;
 	}

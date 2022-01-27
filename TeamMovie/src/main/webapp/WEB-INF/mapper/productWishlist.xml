@@ -20,9 +20,17 @@
   
   <!-- 위시리스트에 물건이 담겨있다면 해당 쿼리로 조회 -->
   <select id="showProductWishlist" parameterType="productWishlistVO" resultType="productWishlistVO">
-  select pwishNum, pwishYN, gdsNum, userNum
-  from  productwishlist
+  select pwishNum, pwishYN, p.gdsNum AS gdsNum, p.userNum AS userNum, g.gdsName AS gdsName, g.gdsPrice AS gdsPrice
+  from  productwishlist p, goods g
   where pwishYN = 'N'
   and userNum = #{userNum}
+  and p.gdsNum = g.gdsNum
   </select>
+
+<!-- 위시리스트 품목 삭제 -->
+<update id="deleteProductWishlistItem">
+update productwishlist
+set pwishYN = 'Y'
+where pwishNum = #{pwishNum}
+</update>
   </mapper>
