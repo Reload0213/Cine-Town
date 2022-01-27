@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 /* 기본설정 초기화 */
 * {
 
@@ -169,6 +171,7 @@ nav .top .topCon {
     border:1.5px solid #fff;
     border-radius: 2rem;
     padding:0.5rem 1rem;
+    color:#fff;
 }
 
 .userForm .logoutBtn:hover{
@@ -282,7 +285,7 @@ aside input {
 }
 
 .userTable{
-  
+   display: none;
     width: 100%;
     margin: 0 auto;
 
@@ -520,6 +523,30 @@ td>button{
     span.hambugerBtn{
         display: block;
     }
+    .quickViewCon{
+
+width:100%;
+
+display:flex;
+
+justify-content:center;
+align-items:center;
+
+
+
+}
+
+.quickView ,span{
+	
+	font-size:1.5rem;
+	color:#141414;
+	margin:0.3rem;
+}
+.quickView a{
+	color:blue;
+}
+
+    
 
   
 

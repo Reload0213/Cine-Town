@@ -30,11 +30,19 @@ public class AdminService {
 		
 	}
 	
-	public void deleteUser(UserVO vo) {
-		
-		sqlSessionTemplate.delete("admin.deleteUser",vo);
-		
-	}
+public List<UserVO> setUserList(UserVO vo){
+	
+	return sqlSessionTemplate.selectList("admin.showUserInfoList",vo);
+	
+}
+
+//지우지않고 업데이트로 isdelete를 바꿈
+public void updateDeleteUser(UserVO vo) {
+	
+	sqlSessionTemplate.delete("admin.updateDeleteUser",vo);
+	
+}
+	
 	
 	
 	

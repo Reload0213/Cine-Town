@@ -766,6 +766,27 @@
 	<hr />
 	
 	
+
+	
+	
+
+<%@ include file="../include/footer.jsp"%>
+
+
+<!-- 이영주 영화 상세 페이지 통합 js 파트 시작  -->
+<script src="${pageContext.request.contextPath}/assets/js/headerFooter/jquery-3.3.1.min.js"></script>
+<script type='text/javascript'
+	src='${pageContext.request.contextPath}/assets/js/movieDetail/swiper.min.js'></script>
+<script type='text/javascript'
+	src='${pageContext.request.contextPath}/assets/js/movieDetail/masonry.pkgd.min.js'></script>
+<script type='text/javascript'
+	src='${pageContext.request.contextPath}/assets/js/movieDetail/jquery.collapsible.min.js'></script>
+<script type='text/javascript'
+	src='${pageContext.request.contextPath}/assets/js/movieDetail/custom.js'></script>
+
+
+<!-- 영화 상세 페이지 통합 js 파트 종료  -->
+
 	<script type="text/javascript">
 		$(function(){
 			$.ajax({
@@ -808,21 +829,21 @@
 										dataType : "html",
 										success:function(data){
 											div.remove();
-										}
+										};
 									});
-								}
+								};
 							});
 							
 							div.append(button);
-						}
+						};
 						
 						div.prepend(p);
 						div.prepend(h3);
 						
 						
 						commentList.append(div);
-					}
-				}
+					};
+				};
 			});
 			
 			//$(document).on("click",".comment-delete",function(){
@@ -843,6 +864,8 @@
 				console.log(comment);
 				//console.log(comment.length);
 				
+<<<<<<< HEAD
+=======
 		 		if(comment.length > 0){
 					let comment_data = {rpComment, mvNum :"${movieVO.mvNum}"};
 					
@@ -898,10 +921,13 @@
 				}else{
 					alert("댓굴을 달아주세요");
 				}
+>>>>>>> branch 'develop1' of https://github.com/Reload0213/Cine-Town.git
 			});
 		});
 	</script>
 	
+<<<<<<< HEAD
+=======
 	
 	
 		
@@ -927,6 +953,7 @@
 <!-- 영화 상세 페이지 통합 js 파트 종료  -->
 
 
+>>>>>>> branch 'develop1' of https://github.com/Reload0213/Cine-Town.git
 
 
 </body>
