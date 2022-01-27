@@ -90,97 +90,15 @@
                	<c:forEach var="adminMailBoxVO" items="${list}">
                       <tr>
                           <td>${adminMailBoxVO.sendDate}</td>
-                          <td>${adminMailBoxVO.userNum}</td>
-                          <td>${adminMailBoxVO.userId}</td>
+                          <td>${adminMailBoxVO.mailNum}</td>
+                            <td>${adminMailBoxVO.userId}</td>
                           <td>${adminMailBoxVO.content}</td>
                           <td><button class="delete">삭제하기</button></td>
                           
                       </tr>
                       
                       </c:forEach>
-                      <tr>
-                        <td>2022-01-20 09:38</td>
-                        <td>1</td>
-                        <td>귀신잡는해병대</td>
-                        <td>부서진걸 보내오고있어 뒤질래?</td>
-                        <td><button class="delete">삭제하기</button></td>
-                        
-                      </tr>
-                      <tr>
-                        <td>2022-01-20 09:38</td>
-                        <td>1</td>
-                        <td>귀신잡는해병대</td>
-                        <td>부서진걸 보내오고있어 뒤질래?</td>
-                        <td><button class="delete">삭제하기</button></td>
-                        
-                         
-                      </tr>
-                      <tr>
-                        <td>2022-01-20 09:38</td>
-                        <td>1</td>
-                        <td>귀신잡는해병대</td>
-                        <td>부서진걸 보내오고있어 뒤질래?</td>
-                        <td><button class="delete" >삭제하기</button></td>
-                        
-                         
-                      <tr>
-                        <td>2022-01-20 09:38</td>
-                        <td>1</td>
-                        <td>귀신잡는해병대</td>
-                        <td>부서진걸 보내오고있어 뒤질래?</td>
-                        <td><button class="delete" >삭제하기</button></td>
-                        
-                         
-                      </tr>
-                      <tr>  <td>2022-01-20 09:38</td>
-                        <td>1</td>
-                        <td>귀신잡는해병대</td>
-                        <td>부서진걸 보내오고있어 뒤질래?</td>
-                        <td><button class="delete" >삭제하기</button></td>
-                        
-                         
-                      </tr>
-  
-                      <tr>
-                        <td>2022-01-20 09:38</td>
-                        <td>1</td>
-                        <td>귀신잡는해병대</td>
-                        <td>부서진걸 보내오고있어 뒤질래?</td>
-                        <td><button class="delete" >삭제하기</button></td>
-                        
-                         
-                      </tr>
-  
-                      <tr>
-                        <td>2022-01-20 09:38</td>
-                        <td>1</td>
-                        <td>귀신잡는해병대</td>
-                        <td>부서진걸 보내오고있어 뒤질래?</td>
-                        <td><button class="delete" >삭제하기</button></td>
-                        
-                         
-                      </tr>
-  
-                      <tr>
-                        <td>2022-01-20 09:38</td>
-                        <td>1</td>
-                        <td>귀신잡는해병대</td>
-                        <td>부서진걸 보내오고있어 뒤질래?</td>
-                        <td><button class="delete" >삭제하기</button></td>
-                        
-                         
-                      </tr>
-  
-                      <tr>
-                        <td>2022-01-20 09:38</td>
-                        <td>1</td>
-                        <td>귀신잡는해병대</td>
-                        <td>부서진걸 보내오고있어 뒤질래?</td>
-                        <td><button class="delete" >삭제하기</button></td>
-                        
-                         
-                      </tr>
-  
+                  
                       
   
                      

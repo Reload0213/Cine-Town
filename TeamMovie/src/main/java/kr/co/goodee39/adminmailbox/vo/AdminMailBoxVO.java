@@ -7,6 +7,8 @@ public class AdminMailBoxVO {
 	private String userNum;
 	private String content;
 	private String isDelete;
+	private String userId;
+
 	
 	
 	public int getMailNum() {
@@ -38,6 +40,12 @@ public class AdminMailBoxVO {
 	}
 	public void setIsDelete(String isDelete) {
 		this.isDelete = isDelete;
+	}
+	public String getUserId() {
+		return userId;
+	}
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
 	
 	
