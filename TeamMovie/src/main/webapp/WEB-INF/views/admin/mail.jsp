@@ -91,7 +91,7 @@
                           <td>1</td>
                           <td>귀신잡는해병대</td>
                           <td>부서진걸 보내오고있어 뒤질래?</td>
-                          <td><button>삭제하기</button></td>
+                          <td><button class="delete">삭제하기</button></td>
                           
                       </tr>
                       <tr>
@@ -99,7 +99,7 @@
                         <td>1</td>
                         <td>귀신잡는해병대</td>
                         <td>부서진걸 보내오고있어 뒤질래?</td>
-                        <td><button>삭제하기</button></td>
+                        <td><button class="delete">삭제하기</button></td>
                         
                       </tr>
                       <tr>
@@ -107,7 +107,7 @@
                         <td>1</td>
                         <td>귀신잡는해병대</td>
                         <td>부서진걸 보내오고있어 뒤질래?</td>
-                        <td><button>삭제하기</button></td>
+                        <td><button class="delete">삭제하기</button></td>
                         
                          
                       </tr>
@@ -116,7 +116,7 @@
                         <td>1</td>
                         <td>귀신잡는해병대</td>
                         <td>부서진걸 보내오고있어 뒤질래?</td>
-                        <td><button>삭제하기</button></td>
+                        <td><button class="delete" >삭제하기</button></td>
                         
                          
                       <tr>
@@ -124,7 +124,7 @@
                         <td>1</td>
                         <td>귀신잡는해병대</td>
                         <td>부서진걸 보내오고있어 뒤질래?</td>
-                        <td><button>삭제하기</button></td>
+                        <td><button class="delete" >삭제하기</button></td>
                         
                          
                       </tr>
@@ -132,7 +132,7 @@
                         <td>1</td>
                         <td>귀신잡는해병대</td>
                         <td>부서진걸 보내오고있어 뒤질래?</td>
-                        <td><button>삭제하기</button></td>
+                        <td><button class="delete" >삭제하기</button></td>
                         
                          
                       </tr>
@@ -142,7 +142,7 @@
                         <td>1</td>
                         <td>귀신잡는해병대</td>
                         <td>부서진걸 보내오고있어 뒤질래?</td>
-                        <td><button>삭제하기</button></td>
+                        <td><button class="delete" >삭제하기</button></td>
                         
                          
                       </tr>
@@ -152,7 +152,7 @@
                         <td>1</td>
                         <td>귀신잡는해병대</td>
                         <td>부서진걸 보내오고있어 뒤질래?</td>
-                        <td><button>삭제하기</button></td>
+                        <td><button class="delete" >삭제하기</button></td>
                         
                          
                       </tr>
@@ -162,7 +162,7 @@
                         <td>1</td>
                         <td>귀신잡는해병대</td>
                         <td>부서진걸 보내오고있어 뒤질래?</td>
-                        <td><button>삭제하기</button></td>
+                        <td><button class="delete" >삭제하기</button></td>
                         
                          
                       </tr>
@@ -172,7 +172,7 @@
                         <td>1</td>
                         <td>귀신잡는해병대</td>
                         <td>부서진걸 보내오고있어 뒤질래?</td>
-                        <td><button>삭제하기</button></td>
+                        <td><button class="delete" >삭제하기</button></td>
                         
                          
                       </tr>

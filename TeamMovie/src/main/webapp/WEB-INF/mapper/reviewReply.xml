@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="reviewReply">
+	<select id="selectCommentList" parameterType="reviewReplyVO" resultType="reviewReplyVO">
+		select rpNum, rpComment, rpWritername, rpWriternum, mvNum, rpDate, rpLike
+		from rpComment
+		where mvNum = #{mvNum}
+	</select>
+	
+	<select id="selectUserComment" parameterType="reviewReplyVO" resultType="reviewReplyVO">
+		select rpNum, rpComment, rpWritername, rpWriternum, mvNum, rpDate, rpLike
+		from rpComment
+		where rpWriternum = #{rpWriternum}
+	</select>
+	
+	<insert id="insertComment" parameterType="reviewReplyVO"
+	useGeneratedKeys="true" keyProperty="rpNum">
+		insert into rpComment(rpComment, rpWritername, rpWriternum, rpNum, rpDate, rpLike)
+		values(#{rpComment}, #{rpWritername}, #{rpWriternum}, #{rpNum}, #{rpDate}, #{rpLike})
+	</insert>
+	
+	<update id="updateComment" parameterType="reviewReplyVO">
+		update rpComment set rpComment = #{rpComment}
+		where rpNum = #{rpNum}
+	</update>
+	
+	<delete id="deleteComment" parameterType="reviewReplyVO">
+		delete from rpComment 
+		where rpNum = #{rpNum}
+		and rpWriternum = #{rpWriternum}
+	</delete>
+</mapper>

@@ -169,8 +169,8 @@ nav .top .topCon {
     border:1.5px solid #fff;
     border-radius: 2rem;
     padding:0.5rem 1rem;
+    color:#fff;
 }
-
 .userForm .logoutBtn:hover{
     background-color: #dd2026;
     border:1.5px solid #dd2026;
@@ -336,8 +336,11 @@ td {
     padding:0.9rem 0.8rem;
     font-size: 1.5rem;
 }
-td>button{
-    color:#141414;
+.delete{
+    padding:0.5rem 0.7rem;
+    background-color: #141414;
+    border:none;
+    color:#fff;
 }
 
 .pagingBtnCon {
@@ -472,26 +475,26 @@ td>button{
 
 .quickViewCon{
 
-width:100%;
-
-display:flex;
-
-justify-content:center;
-align-items:center;
-
-
-
-}
-
-.quickView ,span{
-	
-	font-size:1.5rem;
-	color:#141414;
-	margin:0.3rem;
-}
-.quickView a{
-	color:blue;
-}
+    width:100%;
+    
+    display:flex;
+    
+    justify-content:center;
+    align-items:center;
+    
+    
+    
+    }
+    
+    .quickView ,span{
+        
+        font-size:1.5rem;
+        color:#141414;
+        margin:0.3rem;
+    }
+    .quickView a{
+        color:blue;
+    }
 
 
 

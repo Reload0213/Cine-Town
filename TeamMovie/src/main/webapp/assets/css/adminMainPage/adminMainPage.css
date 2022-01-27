@@ -87,14 +87,15 @@ a.exitHideMenu{
     text-align: right;
 
 }
-.logoutBtnM{
-    font-size: 1.7rem;
+
+.logoutBtn{
+    font-size: 1.4rem;
     margin-left:0.5rem;
     border:1.5px solid #fff;
     border-radius: 2rem;
     padding:0.5rem 1rem;
+    color:#fff;
 }
-
 
 
 .mainCon {
@@ -336,8 +337,11 @@ td {
     padding:0.9rem 0.8rem;
     font-size: 1.5rem;
 }
-td>button{
-    color:#141414;
+.delete{
+    padding:0.5rem 0.7rem;
+    background-color: #141414;
+    border:none;
+    color:#fff;
 }
 
 .pagingBtnCon {
@@ -470,6 +474,28 @@ td>button{
     padding: 0 0.5rem 0.2rem 0.5rem;
 }
 
+.quickViewCon{
+
+    width:100%;
+    
+    display:flex;
+    
+    justify-content:center;
+    align-items:center;
+    
+    
+    
+    }
+    
+    .quickView ,span{
+        
+        font-size:1.5rem;
+        color:#141414;
+        margin:0.3rem;
+    }
+    .quickView a{
+        color:blue;
+    }
 
 
 

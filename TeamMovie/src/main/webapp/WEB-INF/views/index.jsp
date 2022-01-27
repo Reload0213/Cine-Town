@@ -71,8 +71,6 @@
 	<a href="${pageContext.request.contextPath}/goods/goodsMenu">굿즈메뉴페이지</a>
 	<a href="${pageContext.request.contextPath}/admin/adminShopCreatePage">관리자 상품생성 페이지</a>
 	<a href="${pageContext.request.contextPath}/admin/adminShopCRUDPage">관리자 상품CRUD 페이지</a>
-	<a href="${pageContext.request.contextPath}/movie/movieMenu">무비메뉴 페이지 이동</a>
-	
 	<!-- 강혜수 바디 -->
 	<section class="hero-section">
 		<div class="hero-slider owl-carousel">
@@ -120,106 +118,32 @@
 		<div class="container">
 			<div class="section-title">
 				<div class="cata new">new</div>
-				<h2>Recent Movies</h2>
+				<h2>최신 개봉 영화</h2>
 			</div>
 			<div class="row">
-				<div class="col-lg-4 col-md-6">
+			<c:forEach var="item" items="${list}" begin="0" end="5">
+				<div class="col-lg-4 col-md-6" style="margin-bottom: 1em;">
+				<a href="${pageContext.request.contextPath}/movie/movieDetail?mvNum=${item.mvNum}">
 					<div class="recent-game-item">
-						<div class="rgi-thumb set-bg" data-setbg="assets/images/index/gs_img/movie-1.jpg">
+						<div class="rgi-thumb set-bg" data-setbg="${item.mvPosterPath}">
 							<div class="cata new">new</div>
 						</div>
 						<div class="rgi-content">
-							<h5>Suspendisse ut justo tem por, rutrum</h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit amet, consectetur elit. </p>
+							<h5>${item.mvTitle}</h5>
+							<p style="height:250px; text-overflow: ellipsis;">${item.mvContent1} </p>
 							<a href="#" class="comment">3 Comments</a>
-							<div class="rgi-extra">
-								<div class="rgi-star"><img src="assets/images/index/gs_img/icons/star.png" alt=""></div>
+							<div class="rgi-extra" style="width:100px; height:3em; color: #fff; padding: 0 2em 3em 0">
+								<div class="rgi-star" style="text-align: center;"><i class="xi-star"></i>${item.mvAvgRate}</div>
 								<div class="rgi-heart"><img src="assets/images/index/gs_img/icons/heart.png" alt=""></div>
 							</div>
 						</div>
 					</div>	
+				</a>
 				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="recent-game-item">
-						<div class="rgi-thumb set-bg" data-setbg="assets/images/index/gs_img/movie-2.jpg">
-							<div class="cata racing">racing</div>
-						</div>
-						<div class="rgi-content">
-							<h5>Susce pulvinar metus nulla, vel  facilisis sem </h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit amet, consectetur elit. </p>
-							<a href="#" class="comment">3 Comments</a>
-							<div class="rgi-extra">
-								<div class="rgi-star"><img src="assets/images/index/gs_img/icons/star.png" alt=""></div>
-								<div class="rgi-heart"><img src="assets/images/index/gs_img/icons/heart.png" alt=""></div>
-							</div>
-						</div>
-					</div>	
-				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="recent-game-item">
-						<div class="rgi-thumb set-bg" data-setbg="assets/images/index/gs_img/movie-3.jpg">
-							<div class="cata adventure">Adventure</div>
-						</div>
-						<div class="rgi-content">
-							<h5>Suspendisse ut justo tem por, rutrum</h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit amet, consectetur elit. </p>
-							<a href="#" class="comment">3 Comments</a>
-							<div class="rgi-extra">
-								<div class="rgi-star"><img src="assets/images/index/gs_img/icons/star.png" alt=""></div>
-								<div class="rgi-heart"><img src="assets/images/index/gs_img/icons/heart.png" alt=""></div>
-							</div>
-						</div>
-					</div>	
-				</div>
-
-				<div class="col-lg-4 col-md-6">
-					<div class="recent-game-item">
-						<div class="rgi-thumb set-bg" data-setbg="assets/images/index/gs_img/movie-3.jpg">
-							<div class="cata adventure">Adventure</div>
-						</div>
-						<div class="rgi-content">
-							<h5>Suspendisse ut justo tem por, rutrum</h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit amet, consectetur elit. </p>
-							<a href="#" class="comment">3 Comments</a>
-							<div class="rgi-extra">
-								<div class="rgi-star"><img src="assets/images/index/gs_img/icons/star.png" alt=""></div>
-								<div class="rgi-heart"><img src="assets/images/index/gs_img/icons/heart.png" alt=""></div>
-							</div>
-						</div>
-					</div>	
-				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="recent-game-item">
-						<div class="rgi-thumb set-bg" data-setbg="assets/images/index/gs_img/movie-2.jpg">
-							<div class="cata adventure">Adventure</div>
-						</div>
-						<div class="rgi-content">
-							<h5>Suspendisse ut justo tem por, rutrum</h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit amet, consectetur elit. </p>
-							<a href="#" class="comment">3 Comments</a>
-							<div class="rgi-extra">
-								<div class="rgi-star"><img src="assets/images/index/gs_img/icons/star.png" alt=""></div>
-								<div class="rgi-heart"><img src="assets/images/index/gs_img/icons/heart.png" alt=""></div>
-							</div>
-						</div>
-					</div>	
-				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="recent-game-item">
-						<div class="rgi-thumb set-bg" data-setbg="assets/images/index/gs_img/movie-1.jpg">
-							<div class="cata adventure">Adventure</div>
-						</div>
-						<div class="rgi-content">
-							<h5>Suspendisse ut justo tem por, rutrum</h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit amet, consectetur elit. </p>
-							<a href="#" class="comment">3 Comments</a>
-							<div class="rgi-extra">
-								<div class="rgi-star"><img src="assets/images/index/gs_img/icons/star.png" alt=""></div>
-								<div class="rgi-heart"><img src="assets/images/index/gs_img/icons/heart.png" alt=""></div>
-							</div>
-						</div>
-					</div>	
-				</div>
+				</c:forEach>
+			</div>
+			<div style=" text-align: right; margin-top: 1em">
+			<a href="${pageContext.request.contextPath}/movie/movieMenu" style="font-size: 1.5em;">전체 영화 보러가기 <i class="xi-angle-right-min"></i></a>
 			</div>
 		</div>
 	</section>
