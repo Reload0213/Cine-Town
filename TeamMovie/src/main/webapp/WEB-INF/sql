@@ -3,7 +3,6 @@
 -- 서버 버전:                        10.6.5-MariaDB - mariadb.org binary distribution
 -- 서버 OS:                        Win64
 -- HeidiSQL 버전:                  11.3.0.6295
--- 김용현 0126 17:30 DB
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -49,11 +48,9 @@ CREATE TABLE IF NOT EXISTS `cart` (
   KEY `FK2_gdsNum` (`gdsNum`),
   CONSTRAINT `FK1_userNum` FOREIGN KEY (`userNum`) REFERENCES `user` (`userNum`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `FK2_gdsNum` FOREIGN KEY (`gdsNum`) REFERENCES `goods` (`gdsNum`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8mb3 COMMENT='장바구니';
 
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb3 COMMENT='장바구니';
-
-
--- 테이블 데이터 cgv.cart:~20 rows (대략적) 내보내기
+-- 테이블 데이터 cgv.cart:~30 rows (대략적) 내보내기
 DELETE FROM `cart`;
 /*!40000 ALTER TABLE `cart` DISABLE KEYS */;
 INSERT INTO `cart` (`cartNum`, `cartAmount`, `cartMoney`, `cartIsdelete`, `userNum`, `gdsNum`, `gdsPrice`, `gdsName`, `gdsImage1`) VALUES
@@ -76,11 +73,17 @@ INSERT INTO `cart` (`cartNum`, `cartAmount`, `cartMoney`, `cartIsdelete`, `userN
 	(29, 4, NULL, 'Y', 2, 1, NULL, NULL, NULL),
 	(30, 4, NULL, 'Y', 2, 2, NULL, NULL, NULL),
 	(31, 3, NULL, 'Y', 2, 3, NULL, NULL, NULL),
-
-
-	(32, 3, NULL, 'N', 2, 4, NULL, NULL, NULL);
-
-
+	(32, 5, NULL, 'Y', 2, 4, NULL, NULL, NULL),
+	(33, 4, NULL, 'Y', 2, 2, NULL, NULL, NULL),
+	(34, 1, NULL, 'Y', 2, 5, NULL, NULL, NULL),
+	(35, 1, NULL, 'Y', 2, 1, NULL, NULL, NULL),
+	(36, 1, NULL, 'Y', 2, 1, NULL, NULL, NULL),
+	(37, 1, NULL, 'Y', 2, 1, NULL, NULL, NULL),
+	(38, 1, NULL, 'Y', 2, 1, NULL, NULL, NULL),
+	(39, 1, NULL, 'Y', 2, 1, NULL, NULL, NULL),
+	(40, 11, NULL, 'Y', 2, 1, NULL, NULL, NULL),
+	(41, 2, NULL, 'Y', 2, 3, NULL, NULL, NULL),
+	(42, 2, NULL, 'Y', 2, 2, NULL, NULL, NULL);
 /*!40000 ALTER TABLE `cart` ENABLE KEYS */;
 
 -- 테이블 cgv.goods 구조 내보내기
@@ -145,11 +148,10 @@ CREATE TABLE IF NOT EXISTS `movie` (
   `mvPosterPath` varchar(255) DEFAULT NULL,
   `mvBgPath` varchar(255) DEFAULT NULL,
   `mvTrailer` varchar(255) DEFAULT NULL,
-
   PRIMARY KEY (`mvNum`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb3 COMMENT='영화 데이터베이스';
 
--- 테이블 데이터 cgv.movie:~9 rows (대략적) 내보내기
+-- 테이블 데이터 cgv.movie:~5 rows (대략적) 내보내기
 DELETE FROM `movie`;
 /*!40000 ALTER TABLE `movie` DISABLE KEYS */;
 INSERT INTO `movie` (`mvNum`, `mvTitle`, `mvActor`, `mvContent1`, `mvContent2`, `mvContent3`, `mvContent4`, `mvGenre`, `mvYear`, `mvAge`, `mvRuntime`, `mvProducer`, `mvAvgRate`, `mvIsdelete`, `mvPosterPath`, `mvBgPath`, `mvTrailer`) VALUES
@@ -215,13 +217,21 @@ DELETE FROM `orderdetail`;
 -- 테이블 cgv.productwishlist 구조 내보내기
 CREATE TABLE IF NOT EXISTS `productwishlist` (
   `pwishNum` int(11) NOT NULL AUTO_INCREMENT,
-  `pwishYN` varchar(50) DEFAULT 'n',
-  PRIMARY KEY (`pwishNum`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='굿즈 찜';
+  `pwishYN` varchar(50) DEFAULT 'N',
+  `gdsNum` int(11) DEFAULT NULL,
+  `userNum` int(11) DEFAULT NULL,
+  PRIMARY KEY (`pwishNum`),
+  KEY `FK2_wishgdsNum` (`gdsNum`),
+  KEY `FK1_wishUserNum` (`userNum`),
+  CONSTRAINT `FK1_wishUserNum` FOREIGN KEY (`userNum`) REFERENCES `user` (`userNum`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `FK2_wishgdsNum` FOREIGN KEY (`gdsNum`) REFERENCES `goods` (`gdsNum`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3 COMMENT='굿즈 찜';
 
 -- 테이블 데이터 cgv.productwishlist:~0 rows (대략적) 내보내기
 DELETE FROM `productwishlist`;
 /*!40000 ALTER TABLE `productwishlist` DISABLE KEYS */;
+INSERT INTO `productwishlist` (`pwishNum`, `pwishYN`, `gdsNum`, `userNum`) VALUES
+	(5, 'N', 1, 2);
 /*!40000 ALTER TABLE `productwishlist` ENABLE KEYS */;
 
 -- 테이블 cgv.qna 구조 내보내기
@@ -290,53 +300,11 @@ CREATE TABLE IF NOT EXISTS `user` (
 
 -- 테이블 데이터 cgv.user:~2 rows (대략적) 내보내기
 DELETE FROM `user`;
--- 테이블 데이터 cgv.user:~25 rows (대략적) 내보내기
-/*!40000 ALTER TABLE `user` DISABLE KEYS */;
-
-/* 유저테이블 업데이트 */
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 INSERT INTO `user` (`userNum`, `userId`, `userPw`, `userName`, `userPhone`, `userEmail`, `userRegdate`, `userAddr1`, `userAddr2`, `userIsdelete`, `verify`, `userAddr3`) VALUES
 	(1, 'aaa', '111', '홍길동', '01011111111', NULL, '2021-01-24', '가가가', '나나나', 'N', 9, NULL),
 	(2, 'bbb', '222', '김용현', '01022222222', NULL, '2021-01-24', '가가가', '나나나', 'N', 0, NULL);
-	
-
-
--- 김정민 movie review 테이블 수정(강사님 comment참조)
--- --------------------------------------------------------
--- 호스트:                          127.0.0.1
--- 서버 버전:                        10.6.5-MariaDB - mariadb.org binary distribution
--- 서버 OS:                        Win64
--- HeidiSQL 버전:                  11.3.0.6295
--- --------------------------------------------------------
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET NAMES utf8 */;
-/*!50503 SET NAMES utf8mb4 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
--- 테이블 cgv.reviewreply 구조 내보내기
-DROP TABLE IF EXISTS `reviewreply`;
-CREATE TABLE IF NOT EXISTS `reviewreply` (
-  `rpNum` int(11) NOT NULL AUTO_INCREMENT,
-  `rpDate` varchar(50) DEFAULT NULL,
-  `rpComment` longtext DEFAULT NULL,
-  `rpWritername` varchar(50) DEFAULT NULL,
-  `rpLike` int(11) DEFAULT NULL,
-  `rpWriternum` int(11) DEFAULT NULL,
-  `mvNum` int(11) DEFAULT NULL,
-  PRIMARY KEY (`rpNum`),
-  KEY `mvNum` (`mvNum`),
-  CONSTRAINT `FK_mv` FOREIGN KEY (`mvNum`) REFERENCES `movie` (`mvNum`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3 COMMENT='리뷰댓글\r\n';
-
--- 테이블 데이터 cgv.reviewreply:~1 rows (대략적) 내보내기
-DELETE FROM `reviewreply`;
-/*!40000 ALTER TABLE `reviewreply` DISABLE KEYS */;
-INSERT INTO `reviewreply` (`rpNum`, `rpDate`, `rpComment`, `rpWritername`, `rpLike`, `rpWriternum`, `mvNum`) VALUES
-	(1, '222', '안녕', '홍길동', 1, 1, 1);
-/*!40000 ALTER TABLE `reviewreply` ENABLE KEYS */;
+/*!40000 ALTER TABLE `user` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
