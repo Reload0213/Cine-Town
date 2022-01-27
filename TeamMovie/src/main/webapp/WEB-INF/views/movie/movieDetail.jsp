@@ -385,7 +385,6 @@
 								<h3 class="comment-reply-title">댓글 남기기</h3>
 
 								<form class="comment-form">
-									<input type="text" placeholder="닉네임">
 									<textarea rows="4" placeholder="하고 싶은말을 나눠보세요"></textarea>
 									<input type="submit" value="댓글 남기기">
 								</form>
@@ -864,8 +863,7 @@
 				console.log(comment);
 				//console.log(comment.length);
 				
-<<<<<<< HEAD
-=======
+
 		 		if(comment.length > 0){
 					let comment_data = {rpComment, mvNum :"${movieVO.mvNum}"};
 					
@@ -921,39 +919,12 @@
 				}else{
 					alert("댓굴을 달아주세요");
 				}
->>>>>>> branch 'develop1' of https://github.com/Reload0213/Cine-Town.git
 			});
 		});
 	</script>
 	
-<<<<<<< HEAD
-=======
-	
-	
-		
-		
-		
-<!-- </main> -->
->>>>>>> branch 'develop1' of https://github.com/Reload0213/Cine-Town.git
-<%@ include file="../include/footer.jsp"%>
 
 
-<!-- 이영주 영화 상세 페이지 통합 js 파트 시작  -->
-<%-- <script src="${pageContext.request.contextPath}/assets/js/headerFooter/jquery-3.3.1.min.js"></script> --%>
-<script type='text/javascript'
-	src='${pageContext.request.contextPath}/assets/js/movieDetail/swiper.min.js'></script>
-<script type='text/javascript'
-	src='${pageContext.request.contextPath}/assets/js/movieDetail/masonry.pkgd.min.js'></script>
-<script type='text/javascript'
-	src='${pageContext.request.contextPath}/assets/js/movieDetail/jquery.collapsible.min.js'></script>
-<script type='text/javascript'
-	src='${pageContext.request.contextPath}/assets/js/movieDetail/custom.js'></script>
-
-
-<!-- 영화 상세 페이지 통합 js 파트 종료  -->
-
-
->>>>>>> branch 'develop1' of https://github.com/Reload0213/Cine-Town.git
 
 
 </body>
