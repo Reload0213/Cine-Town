@@ -87,14 +87,15 @@ a.exitHideMenu{
     text-align: right;
 
 }
-.logoutBtnM{
-    font-size: 1.7rem;
+
+.logoutBtn{
+    font-size: 1.4rem;
     margin-left:0.5rem;
     border:1.5px solid #fff;
     border-radius: 2rem;
     padding:0.5rem 1rem;
+    color:#fff;
 }
-
 
 
 .mainCon {

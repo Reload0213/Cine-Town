@@ -169,8 +169,8 @@ nav .top .topCon {
     border:1.5px solid #fff;
     border-radius: 2rem;
     padding:0.5rem 1rem;
+    color:#fff;
 }
-
 .userForm .logoutBtn:hover{
     background-color: #dd2026;
     border:1.5px solid #dd2026;
