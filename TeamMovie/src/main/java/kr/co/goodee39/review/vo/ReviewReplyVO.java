@@ -9,6 +9,17 @@ public class ReviewReplyVO {
 	private int rpWriternum;
 	private int mvNum;
 	private int rpLike;
+	private int rpStar;
+	
+	
+
+	public int getRpStar() {
+		return rpStar;
+	}
+
+	public void setRpStar(int rpStar) {
+		this.rpStar = rpStar;
+	}
 
 	public int getRpNum() {
 		return rpNum;

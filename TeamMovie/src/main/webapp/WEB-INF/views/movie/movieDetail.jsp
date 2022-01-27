@@ -12,7 +12,7 @@
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/assets/css/movieDetail/elegant-fonts.css">
 
-<!-- themify-icons CSS -->
+<!-- themify-icons CSS --> 
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/assets/css/movieDetail/themify-icons.css">
 
@@ -791,17 +791,44 @@
 						let usernum = ${sessionScope.account.userNum};
 						
 						const rpCommentList = document.querySelector(".comment-list");
-						
 						const li = document.createElement("li");
 						const div = document.createElement("div");
-						const h3 = document.createElement("h3");
-						h3.innerText = item.rpWritername;
-						const p = document.createElement("p");
-						p.innerText = item.rpComment;
+						const writername = document.createElement("h3");
+						const date = document.createElement("span");
+						const comment = document.createElement("p");
+
+											
+						const like_button = document.createElement("button");
+						/* like_button.type="checkbox"; //하트를 누르고 취소하고 */
+						const heart = document.createElement("span");//하트 그림
 						
-						li.prepend(p);
-						li.prepend(h3);
+						const star = document.createElement("span");
+						const rpStar = document.createElement("span");
+						
+						writername.innerText = item.rpWritername;
+						comment.innerText = item.rpComment;
+						date.innerText = item.rpDate;
+						like_button.innerText = item.rpLike;
+						heart.classList.add("xi-heart-o");
+						
+						like_button.prepend(heart);
+						
+						//xi-heart xi-heart-o
+						
+						//if.hear가 checked 되면 class name을 변경할 수 있는가? -> heart 색상 변경 QQQQQQQ 
+								//xi-heart-o 를 클릭하면 이건 display none이 되고 색 있는게 block 되고..
+								
+						rpStar.innerText=item.rpStar;//별 숫자
+						star.classList.add("xi-star"); //별 그림
+						/* star_rate.append(star); */
+												
+						li.prepend(comment);
+						li.prepend(writername);
+						li.prepend(date);
 						li.prepend(div);
+						li.prepend(like_button);
+						li.prepend(rpStar);
+						li.prepend(star);
 						
 						
 						rpCommentList.append(li);
@@ -815,20 +842,19 @@
 					console.log(rpComment);
 				
 				if(rpComment.length > 0){
-					let comment_data = {rpComment, mvNum :"${movieVO.mvNum}"};
+					let comment_data = {rpComment, mvNum:"${movieVO.mvNum}"};
 													
 						console.log(comment_data);
 					$.ajax({
 						url:"${pageContext.request.contextPath}/ReviewReply/set",
 						type:"POST",
-						data:JSON.stringify(comment_data),
+						data:JSON.stringify(comment_data), //보내는 형태
 						contentType : "application/json; charset=utf-8",
-						dataType : "json",
+						dataType : "json", //받는 형태
 						success:function(data){
 							let usernum = data.rpWriternum;
 							
 							const rpCommentList = document.querySelector(".comment-list");
-							
 							const li = document.createElement("li");
 							const div = document.createElement("div");
 							const h3 = document.createElement("h3");
@@ -838,7 +864,8 @@
 							// 삭제 버튼
 							const delete_button = document.createElement("button");
 							delete_button.innerText = "삭제";
-							
+							const like_button = document.createElement("button");
+							like_button.innerText = "좋아요";
 							
 								
 							rpCommentList.append(li);
