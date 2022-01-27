@@ -75,7 +75,7 @@
 						</c:if>
 					</ul>
 					<div class="user_option">
-						<a href="${pageContext.request.contextPath}/cart/wishlist"
+						<a href="${pageContext.request.contextPath}/productWishlist/productWishlist"
 							class="user_link" style="font-size: 1.7em;"> <i
 							class="xi-heart" aria-hidden="true"></i>
 						</a> <a href="${pageContext.request.contextPath}/cart/showCartList"

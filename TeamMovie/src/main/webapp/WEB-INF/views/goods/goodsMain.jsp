@@ -447,11 +447,24 @@
                                                     <a href="javascript:void(0)" title="Quick View" class="quick-view-popup quick-view" data-toggle="modal" data-target="#content_quickview">
                                                         <i class="xi-zoom-in"></i>
                                                     </a>
-                                                    <div class="wishlist-btn">
+                                                    <!-- 위시리스트 폼 -->
+                                                <!--     <div class="wishlist-btn">
                                                         <a class="wishlist add-to-wishlist" href="wishlist.html">
                                                             <i class="xi-heart-o"></i>
                                                         </a>
+                                                    </div> -->
+                                                    <div class="wishlist-btn">
+                                                    <form:form modelAttribute="productWishlistVO" action="${pageContext.request.contextPath }/productWishlist/insertProductWishlist" >
+                                                    <form:hidden path="userNum" value="${sessionScope.account.userNum }"/>
+                                                    <form:hidden path="gdsNum" value="${goods.gdsNum }"/>
+                                                    <a class="wishlist add-to-wishlist">
+                                                    <form:button type="submit" style="border: none">
+                                                      <i class="xi-heart-o"></i>
+                                                    </form:button>
+                                                    </a>
+                                                    </form:form>
                                                     </div>
+                                                    
                                                     <div class="compare-btn">
                                                         <a class="compare add-to-compare" href="compare.html" title="Add to Compare">
                                                             <i class="xi-shuffle"></i>
@@ -1276,11 +1289,23 @@
                                             <form:button class="btn cartIcon btn-addto-cart" type="submit"><i class="xi-cart-add"></i></form:button>
                                           
                                         </form:form>
-                                        <div class="wishlist-btn">
+                                    <!--     <div class="wishlist-btn">
                                             <a class="wishlist add-to-wishlist" href="wishlist.html">
                                                 <i class="xi-heart-o"></i>
                                             </a>
-                                        </div>
+                                        </div> -->
+                                        
+                                              <div class="wishlist-btn">
+                                                    <form:form modelAttribute="productWishlistVO" action="${pageContext.request.contextPath }/productWishlist/insertProductWishlist" >
+                                                    <form:hidden path="userNum" value="${sessionScope.account.userNum }"/>
+                                                    <form:hidden path="gdsNum" value="${goods.gdsNum }"/>
+                                                    <a class="wishlist add-to-wishlist">
+                                                    <form:button type="submit" style="border: none">
+                                                      <i class="xi-heart-o"></i>
+                                                    </form:button>
+                                                    </a>
+                                                    </form:form>
+                                                    </div>
                                         <div class="compare-btn">
                                             <a class="compare add-to-compare" href="compare.html" title="Add to Compare">
                                                 <i class="xi-shuffle"></i>

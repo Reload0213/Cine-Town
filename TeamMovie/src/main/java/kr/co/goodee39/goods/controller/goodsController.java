@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import kr.co.goodee39.cart.vo.CartVO;
 import kr.co.goodee39.goods.service.goodsService;
 import kr.co.goodee39.goods.vo.GoodsVO;
+import kr.co.goodee39.productWishlist.vo.productWishlistVO;
 
 /*
  * 컨트롤러 담당: 김용현 
@@ -33,7 +34,7 @@ public class goodsController {
 	
 	//goodsMain페이지로 이동
 	@GetMapping("/goodsMain")
-	public String goMain(Model model, @ModelAttribute("cartVO")CartVO vo) {
+	public String goMain(Model model, @ModelAttribute("cartVO")CartVO vo, @ModelAttribute("productWishlistVO")productWishlistVO pvo) {
 		System.out.println("goodsMain 페이지로 이동");
 		List<GoodsVO> goodsList = goodsService.showGoodsList();
 		model.addAttribute("goodsList", goodsList);
@@ -43,7 +44,7 @@ public class goodsController {
 	
 	//goodsManu페이지로 이동
 	@GetMapping("/goodsMenu")
-	public String goMenu(Model model, @ModelAttribute("cartVO")CartVO vo) {
+	public String goMenu(Model model, @ModelAttribute("cartVO")CartVO vo, @ModelAttribute("productWishlistVO")productWishlistVO pvo) {
 		System.out.println("goodsMenu 페이지로 이동");
 		List<GoodsVO> goodsList = goodsService.showGoodsList();
 		model.addAttribute("goodsList", goodsList);
@@ -52,7 +53,7 @@ public class goodsController {
 	
 	//gdsNum = 1인 상품 상세 페이지 
 	@GetMapping("/1")
-	public String goGoods1(@RequestParam int id, Model model, GoodsVO vo , @ModelAttribute("cartVO") CartVO cvo) {
+	public String goGoods1(@RequestParam int id, Model model, GoodsVO vo , @ModelAttribute("cartVO") CartVO cvo, @ModelAttribute("productWishlistVO")productWishlistVO pvo) {
 		System.out.println("goGoods1/id="+id+"실행");
 	    vo.setGdsNum(id);
 	    goodsService.showGoodsItem(vo);
@@ -64,8 +65,8 @@ public class goodsController {
 	
 	//gdsNum = 2인 상품 상세 페이지
 	@GetMapping("/2")
-	public String goGoods2(@RequestParam int id, Model model, GoodsVO vo , @ModelAttribute("cartVO") CartVO cvo) {
-		System.out.println("goGoods1/id="+id+"실행");
+	public String goGoods2(@RequestParam int id, Model model, GoodsVO vo , @ModelAttribute("cartVO") CartVO cvo, @ModelAttribute("productWishlistVO")productWishlistVO pvo) {
+		System.out.println("goGoods2/id="+id+"실행");
 	    vo.setGdsNum(id);
 	    goodsService.showGoodsItem(vo);
 	    System.out.println("goGoods2 / vo잘 가져오는지 확인:"+vo.getGdsName());
@@ -76,8 +77,8 @@ public class goodsController {
 	
 	//gdsNum = 3인 상품 상세 페이지
 	@GetMapping("/3")
-	public String goGoods3(@RequestParam int id, Model model, GoodsVO vo , @ModelAttribute("cartVO") CartVO cvo) {
-		System.out.println("goGoods1/id="+id+"실행");
+	public String goGoods3(@RequestParam int id, Model model, GoodsVO vo , @ModelAttribute("cartVO") CartVO cvo, @ModelAttribute("productWishlistVO")productWishlistVO pvo) {
+		System.out.println("goGoods3/id="+id+"실행");
 	    vo.setGdsNum(id);
 	    goodsService.showGoodsItem(vo);
 	    System.out.println("goGoods3 / vo잘 가져오는지 확인:"+vo.getGdsName());
@@ -89,8 +90,8 @@ public class goodsController {
 	
 	//gdsNum = 4인 상품 상세 페이지
 	@GetMapping("/4")
-	public String goGoods4(@RequestParam int id, Model model, GoodsVO vo , @ModelAttribute("cartVO") CartVO cvo) {
-		System.out.println("goGoods1/id="+id+"실행");
+	public String goGoods4(@RequestParam int id, Model model, GoodsVO vo , @ModelAttribute("cartVO") CartVO cvo, @ModelAttribute("productWishlistVO")productWishlistVO pvo) {
+		System.out.println("goGoods4/id="+id+"실행");
 	    vo.setGdsNum(id);
 	    goodsService.showGoodsItem(vo);
 	    System.out.println("goGoods4 / vo잘 가져오는지 확인:"+vo.getGdsName());
@@ -101,8 +102,8 @@ public class goodsController {
 	
 	//gdsNum = 5인 상품 상세 페이지
 	@GetMapping("/5")
-	public String goGoods5(@RequestParam int id, Model model, GoodsVO vo , @ModelAttribute("cartVO") CartVO cvo) {
-		System.out.println("goGoods1/id="+id+"실행");
+	public String goGoods5(@RequestParam int id, Model model, GoodsVO vo , @ModelAttribute("cartVO") CartVO cvo, @ModelAttribute("productWishlistVO")productWishlistVO pvo) {
+		System.out.println("goGoods5/id="+id+"실행");
 	    vo.setGdsNum(id);
 	    goodsService.showGoodsItem(vo);
 	    System.out.println("goGoods5 / vo잘 가져오는지 확인:"+vo.getGdsName());

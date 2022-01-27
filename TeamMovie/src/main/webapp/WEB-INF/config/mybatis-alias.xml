@@ -14,12 +14,14 @@
 		<typeAlias type="kr.co.goodee39.user.vo.ProductWishlistVO" alias="productWishlistVO"/>
 		<typeAlias type="kr.co.goodee39.order.vo.OrderDetailVO" alias="orderDetailVO"/>
 		<typeAlias type="kr.co.goodee39.review.vo.ReviewReplyVO" alias="reviewReplyVO"/> -->
+			<typeAlias type="kr.co.goodee39.productWishlist.vo.productWishlistVO" alias="productWishlistVO"/>
 		<typeAlias type="kr.co.goodee39.cart.vo.CartVO" alias="cartVO"/>
 		<typeAlias type="kr.co.goodee39.user.vo.UserVO" alias="userVO"/>
 		<typeAlias type="kr.co.goodee39.goods.vo.GoodsVO" alias="goodsVO"/>
 		<typeAlias type="kr.co.goodee39.admin.vo.NoticeVO" alias="noticeVO"/>
 		<typeAlias type="kr.co.goodee39.movie.vo.MovieVO" alias="movieVO"/>
 		<typeAlias type="kr.co.goodee39.admin.vo.QnaVO" alias="qnaVO"/>
+		<typeAlias type="kr.co.goodee39.review.vo.ReviewReplyVO" alias="reviewReplyVO"/>
 
 	</typeAliases>
 </configuration>
