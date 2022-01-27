@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-  
+ 
  <mapper namespace="admin">
   
   <!-- 회원 정보 리스트 게시판 형식으로 불러오기 -->
@@ -39,7 +39,16 @@
   
   <!-- 어드민메일과 이너조인해서 가져오는 쿼리-->
   
-  <select id="selectAdminMail" ></select>
+  <select id="selectAdminMail" parameterType="adminMailBoxVO" resultType="adminMailBoxVO" >
+
+ select b.sendDate,b.mailNum,a.userId,b.content
+FROM user a inner JOIN  b
+on a.userNum = b.userNum;
+	
+  
+
+  
+  </select>
   
   
   

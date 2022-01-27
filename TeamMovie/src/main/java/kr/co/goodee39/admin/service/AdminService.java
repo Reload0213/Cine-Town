@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
+import kr.co.goodee39.adminmailbox.vo.AdminMailBoxVO;
 import kr.co.goodee39.user.vo.UserVO;
 
 @Service
@@ -42,9 +43,18 @@ public void updateDeleteUser(UserVO vo) {
 	sqlSessionTemplate.delete("admin.updateDeleteUser",vo);
 	
 }
+
+public void showAdminMailBoxList(Model model) {
+	
+	AdminMailBoxVO vo = new AdminMailBoxVO();
+	
+	model.addAttribute("list",sqlSessionTemplate.selectList("admin.selectAdminMail",vo));
 	
 	
+}
 	
+	
+
 	
 	
 	

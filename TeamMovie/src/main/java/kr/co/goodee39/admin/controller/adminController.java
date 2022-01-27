@@ -47,9 +47,11 @@ public class adminController {
 	}
 	
 
-	@GetMapping("/mail")
-	public String mail() {
+	
 
+	@GetMapping("/mail")
+	public String mail(Model model) {
+   service.showAdminMailBoxList(model);
 		return "admin/mail";
 	}
 	
