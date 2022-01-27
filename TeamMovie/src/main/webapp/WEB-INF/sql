@@ -290,23 +290,15 @@ CREATE TABLE IF NOT EXISTS `user` (
 
 -- 테이블 데이터 cgv.user:~2 rows (대략적) 내보내기
 DELETE FROM `user`;
+-- 테이블 데이터 cgv.user:~25 rows (대략적) 내보내기
+/*!40000 ALTER TABLE `user` DISABLE KEYS */;
+
+/* 유저테이블 업데이트 */
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 INSERT INTO `user` (`userNum`, `userId`, `userPw`, `userName`, `userPhone`, `userEmail`, `userRegdate`, `userAddr1`, `userAddr2`, `userIsdelete`, `verify`, `userAddr3`) VALUES
 	(1, 'aaa', '111', '홍길동', '01011111111', NULL, '2021-01-24', '가가가', '나나나', 'N', 9, NULL),
 	(2, 'bbb', '222', '김용현', '01022222222', NULL, '2021-01-24', '가가가', '나나나', 'N', 0, NULL);
-/*!40000 ALTER TABLE `user` ENABLE KEYS */;
-
-/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
-/*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40111 SET SQL_NOTES=IFNULL(@OLD_SQL_NOTES, 1) */;
-
-
-
-
-
-
-
+	
 
 
 -- 김정민 movie review 테이블 수정(강사님 comment참조)

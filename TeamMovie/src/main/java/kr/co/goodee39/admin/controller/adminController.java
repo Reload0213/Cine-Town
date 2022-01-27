@@ -2,6 +2,8 @@ package kr.co.goodee39.admin.controller;
 
 import java.util.List;
 
+import javax.net.ssl.SSLEngineResult.Status;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -44,23 +46,7 @@ public class adminController {
 		return "admin/user";
 	}
 	
-	@DeleteMapping("/delete")
-	public ResponseEntity<String>deleteUser(@RequestBody UserVO vo,@RequestParam int num){
-		
-		vo.setUserNum(num);
-		
-		service.deleteUser(vo);
-		
-		System.out.println("받았니?");
-		String str="삭제되었습니다.";
-		
-		ResponseEntity<String> entity = new ResponseEntity<String>(str,HttpStatus.OK);
-		
-		return entity;
-		
-		
-	}
-	
+
 	@GetMapping("/mail")
 	public String mail() {
 
