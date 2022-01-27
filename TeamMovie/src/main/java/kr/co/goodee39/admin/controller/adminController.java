@@ -50,8 +50,8 @@ public class adminController {
 	
 
 	@GetMapping("/mail")
-	public String mail(Model model) {
-   service.showAdminMailBoxList(model);
+	public String mail(Model model,@RequestParam(defaultValue = "1")int num) {
+   service.showAdminMailBoxList(model,num);
 		return "admin/mail";
 	}
 	

@@ -8,6 +8,10 @@ public class AdminMailBoxVO {
 	private String content;
 	private String isDelete;
 	private String userId;
+	
+	//어드민 메일함 게시판 형식으로 하기위해 추가
+	private int start;
+	private int count;
 
 	
 	
@@ -46,6 +50,18 @@ public class AdminMailBoxVO {
 	}
 	public void setUserId(String userId) {
 		this.userId = userId;
+	}
+	public int getStart() {
+		return start;
+	}
+	public void setStart(int start) {
+		this.start = start;
+	}
+	public int getCount() {
+		return count;
+	}
+	public void setCount(int count) {
+		this.count = count;
 	}
 	
 	

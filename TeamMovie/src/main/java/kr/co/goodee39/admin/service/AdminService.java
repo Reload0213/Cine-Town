@@ -44,12 +44,15 @@ public void updateDeleteUser(UserVO vo) {
 	
 }
 
-public void showAdminMailBoxList(Model model) {
+public void showAdminMailBoxList(Model model,int num) {
 	
 	AdminMailBoxVO vo = new AdminMailBoxVO();
+	vo.setStart((num-1)*vo.getCount());
 	
 	model.addAttribute("list",sqlSessionTemplate.selectList("admin.selectAdminMail",vo));
+	model.addAttribute("count",sqlSessionTemplate.selectOne("admin.selectAdminMailCount",vo));
 	
+	model.addAttribute("num",num);
 	
 }
 	

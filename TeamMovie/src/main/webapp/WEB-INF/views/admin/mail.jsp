@@ -119,28 +119,92 @@
 
              </div>
 
-                   <div class="pagingBtnCon">
+                 
+			<%
+			int num = (Integer) request.getAttribute("num");
+
+			int count = (Integer) request.getAttribute("count");
+
+			int total = count / 10 + ((count % 10 == 0) ? 0 : 1);
+
+			int minBlock = (((num - 1) / 10) * 10) + 1;
+
+			int maxBlock = (((num - 1) / 10) * 1) + 10;
+
+			pageContext.setAttribute("total", total);
+			pageContext.setAttribute("minBlock", minBlock);
+			pageContext.setAttribute("maxBlock", maxBlock);
+			%>
 
 
-                     <div class="btns">
 
-                      <span class="highDown"><i class="xi-angle-left-min"></i><i class="xi-angle-left-min"></i></span> <i class="xi-angle-left-min"></i>
+		</div>
 
-                       
-                      <ul class="indexNum">
-                          <li><a href="#">1</a></li>
-                          <li><a href="#">2</a></li>
-                          <li><a href="#">3</a></li>
-                          <li><a href="#">4</a></li>
-                          <li><a href="#">5</a></li>
-                      </ul>
+		<div class="quickViewCon">
+			<div class="quickView">
 
-                       <i class="xi-angle-right-min"></i> <span class="highUp"><i class="xi-angle-right-min"></i><i class="xi-angle-right-min"></i></span>
-                     
-                    </div>
+				<c:choose>
+					<c:when test="${(minBlock-1)<1}">
+						<span>◀◀</span>
+					</c:when>
 
-                   </div>
-               
+					<c:otherwise>
+						<a
+							href="${pageContext.request.contextPath}/admin/user?num=${minBlock-1}">◀◀</a>
+					</c:otherwise>
+
+				</c:choose>
+				&nbsp;&nbsp;
+				<c:choose>
+					<c:when test="${num==1}">
+						<span>◀</span>
+					</c:when>
+					<c:otherwise>
+						<a
+							href="${pageContext.request.contextPath}/admin/user?num=${num-1}">◀</a>
+					</c:otherwise>
+
+				</c:choose>
+
+				<c:forEach begin="${minBlock}"
+					end="${(total<maxBlock)?total:maxBlock}" step="1" var="i">
+
+					<c:choose>
+
+						<c:when test="${num==i}">
+							<span>${i}</span>
+						</c:when>
+						<c:otherwise>
+							<a href="${pageContext.request.contextPath}/admin/user?num=${i}">${i}</a>
+						</c:otherwise>
+					</c:choose>
+				</c:forEach>
+
+				<c:choose>
+					<c:when test="${num == total}">
+						<span>▶</span>
+					</c:when>
+
+					<c:otherwise>
+						<a
+							href="${pageContext.request.contextPath}/admin/user?num=${minBlock-1}">▶</a>
+					</c:otherwise>
+
+				</c:choose>
+				&nbsp;&nbsp;
+
+				<c:choose>
+					<c:when test="${maxBlock>total}">
+						<span>▶▶</span>
+					</c:when>
+					<c:otherwise>
+						<a
+							href="${pageContext.request.contextPath}/admin/user?num=${maxBlock+1}">▶▶</a>
+					</c:otherwise>
+
+				</c:choose>
+			</div>
+
                 
 
 

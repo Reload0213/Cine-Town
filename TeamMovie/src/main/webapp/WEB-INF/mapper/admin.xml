@@ -43,13 +43,18 @@
 
  select b.sendDate,b.mailNum,a.userId,b.content
 FROM user a inner JOIN  adminmailbox b
-on a.userNum = b.userNum;
-	
+on a.userNum = b.userNum
+limit #{start},#{count}	
   
 
   
   </select>
   
+    <select id="selectAdminMailCount" parameterType="adminMailBoxVO" resultType="int">
+select count(*)
+ FROM user a inner JOIN  adminmailbox b
+on a.userNum = b.userNum
+  </select>
   
   
   
