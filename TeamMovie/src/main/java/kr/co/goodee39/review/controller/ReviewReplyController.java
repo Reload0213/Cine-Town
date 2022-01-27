@@ -45,10 +45,10 @@ public class ReviewReplyController {
 		return entity;
 	}
 	
-	@GetMapping("/get/{num}")
-	public ResponseEntity<List<ReviewReplyVO>> getCommentList(@PathVariable int num){
+	@GetMapping("/get/{mvNum}")
+	public ResponseEntity<List<ReviewReplyVO>> getCommentList(@PathVariable int mvNum){
 		ReviewReplyVO vo = new ReviewReplyVO();
-		vo.setMvNum(num);
+		vo.setMvNum(mvNum);
 		
 		List<ReviewReplyVO> list = reviewReplyService.selectCommentList(vo);
 		

@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
+<html>
 <head>
  
     <!-- 이영주 영화 메뉴 페이지 css 시작 -->
@@ -14,7 +15,7 @@
     <!-- 영화 메뉴 페이지 css 종료 -->
 
 </head>
-
+<body>
 <%@ include file="../include/header.jsp"%>
 	<!-- 영화 메뉴 페이지 html 시작 -->
 

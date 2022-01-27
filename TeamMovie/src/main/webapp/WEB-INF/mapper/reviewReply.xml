@@ -6,29 +6,29 @@
 <mapper namespace="reviewReply">
 	<select id="selectCommentList" parameterType="reviewReplyVO" resultType="reviewReplyVO">
 		select rpNum, rpComment, rpWritername, rpWriternum, mvNum, rpDate, rpLike
-		from rpComment
+		from reviewreply
 		where mvNum = #{mvNum}
 	</select>
 	
 	<select id="selectUserComment" parameterType="reviewReplyVO" resultType="reviewReplyVO">
 		select rpNum, rpComment, rpWritername, rpWriternum, mvNum, rpDate, rpLike
-		from rpComment
+		from reviewreply
 		where rpWriternum = #{rpWriternum}
 	</select>
 	
 	<insert id="insertComment" parameterType="reviewReplyVO"
 	useGeneratedKeys="true" keyProperty="rpNum">
-		insert into rpComment(rpComment, rpWritername, rpWriternum, rpNum, rpDate, rpLike)
+		insert into reviewreply(rpComment, rpWritername, rpWriternum, rpNum, rpDate, rpLike)
 		values(#{rpComment}, #{rpWritername}, #{rpWriternum}, #{rpNum}, #{rpDate}, #{rpLike})
 	</insert>
 	
 	<update id="updateComment" parameterType="reviewReplyVO">
-		update rpComment set rpComment = #{rpComment}
+		update reviewreply set rpComment = #{rpComment}
 		where rpNum = #{rpNum}
 	</update>
 	
 	<delete id="deleteComment" parameterType="reviewReplyVO">
-		delete from rpComment 
+		delete from reviewreply 
 		where rpNum = #{rpNum}
 		and rpWriternum = #{rpWriternum}
 	</delete>
