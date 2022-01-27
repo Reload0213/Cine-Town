@@ -70,14 +70,19 @@ public class adminController {
 	
 	@GetMapping("/aboutUsMain")
 	public String aboutUsMain(Model model) {
-		List<NoticeVO> noticeList = noticeService.noticeList();
+		NoticeVO vo = new NoticeVO();
+		List<NoticeVO> noticeList = noticeService.noticeList(vo);
+
 		model.addAttribute("noticeList", noticeList);
+
 		return "/aboutUs/aboutUsMain";
 	}
 	
 	@GetMapping("/noticeView")
-	public String noticeView(Model model) {
-		model.addAttribute("testKey", "testVal");
+	public String noticeView(@RequestParam("noticeNum") int noticeNum, Model model) {
+		
+		NoticeVO noticeDetail = noticeService.getNoticeContents(noticeNum);
+		model.addAttribute("notice", noticeDetail);
 		return "/aboutUs/noticeView";
 	}
 	

@@ -2,10 +2,14 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-  <mapper namespace="notice">
-  <select id="noticeList" parameterType="noticeVO" resultType="noticeVO">
-  select noticeNum, noticeCategory, noticeTitle, noticeComment, noticeIsdelete, noticeRegdate
-  from notice
-  where noticeIsdelete = 'N'
-  </select>
-  </mapper>
+<mapper namespace="notice">
+	<select id="noticeList" parameterType="noticeVO"
+		resultType="noticeVO">
+		select noticeNum, noticeCategory, noticeTitle, noticeComment,
+		noticeIsdelete, noticeRegdate
+		from notice
+		where noticeIsdelete = 'N'
+	</select>
+	<select id="getNoticeContents" parameterType="int"
+		resultType="noticeVO"> select * from notice where noticeNum = #{value} </select>
+</mapper>

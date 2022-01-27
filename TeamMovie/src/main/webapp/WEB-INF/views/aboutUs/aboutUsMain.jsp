@@ -156,7 +156,6 @@
 <table id="fantasyTable" class="display responsive no-wrap order-column">
   <div class="text-center">
   <h3>공지사항</h3>
-  <a href="${pageContext.request.contextPath}/admin/noticeView">글보기 확인용</a>
   <a href="${pageContext.request.contextPath}/admin/noticeWrite">글작성 확인용</a>
   
   
@@ -171,7 +170,7 @@
  <c:forEach var="notice" items="${noticeList }">
   <tr>
     <td>${notice.noticeNum }</td>
-    <td>${notice.noticeTitle }</td>
+    <td><a href="/TeamMovie/admin/noticeView?noticeNum=${notice.noticeNum }">${notice.noticeTitle }</a></td>
     <td>${notice.noticeRegdate }</td>
   </tr>
   </c:forEach>
