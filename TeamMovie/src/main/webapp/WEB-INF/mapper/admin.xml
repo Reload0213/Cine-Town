@@ -49,7 +49,7 @@ limit #{start},#{count}
 
   
   </select>
-  
+ 
     <select id="selectAdminMailCount" parameterType="adminMailBoxVO" resultType="int">
 select count(*)
  FROM user a inner JOIN  adminmailbox b
@@ -57,6 +57,11 @@ on a.userNum = b.userNum
   </select>
   
   
+  <update id="updateDeleteAdminMail" parameterType="adminMailBoxVO" >
+update adminmailbox
+set isDelete='Y'
+where userNum=#{userNum}
+  </update>
   
   
   </mapper>

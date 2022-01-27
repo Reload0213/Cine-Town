@@ -40,7 +40,7 @@ public List<UserVO> setUserList(UserVO vo){
 //지우지않고 업데이트로 isdelete를 바꿈
 public void updateDeleteUser(UserVO vo) {
 	
-	sqlSessionTemplate.delete("admin.updateDeleteUser",vo);
+	sqlSessionTemplate.update("admin.updateDeleteUser",vo);
 	
 }
 
@@ -54,6 +54,11 @@ public void showAdminMailBoxList(Model model,int num) {
 	
 	model.addAttribute("num",num);
 	
+}
+
+public void updateDeleteAdminMailBox(AdminMailBoxVO vo) {
+	
+	sqlSessionTemplate.update("admin.updateDeleteAdminMail",vo);
 }
 	
 	
