@@ -33,6 +33,7 @@ public class productWishlistController {
 	
 	@GetMapping("/productWishlist")
 	public String productWishlist() {
+		System.out.println("확인중");
 		return "productWishlist/wishlist";
 	}
 
