@@ -44,6 +44,7 @@
  select b.sendDate,b.mailNum,a.userId,b.content
 FROM user a inner JOIN  adminmailbox b
 on a.userNum = b.userNum
+where isDelete="N"
 limit #{start},#{count}	
   
 
@@ -60,7 +61,7 @@ on a.userNum = b.userNum
   <update id="updateDeleteAdminMail" parameterType="adminMailBoxVO" >
 update adminmailbox
 set isDelete='Y'
-where userNum=#{userNum}
+where mailNum=#{mailNum} and isDelete='N'
   </update>
   
   

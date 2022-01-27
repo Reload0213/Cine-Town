@@ -93,7 +93,7 @@
                           <td>${adminMailBoxVO.mailNum}</td>
                             <td>${adminMailBoxVO.userId}</td>
                           <td>${adminMailBoxVO.content}</td>
-                          <td><button class="delete">삭제하기</button></td>
+                          <td><button class="delete" data-num="${adminMailBoxVO.mailNum}">삭제하기</button></td>
                           
                       </tr>
                       
@@ -228,6 +228,62 @@
          </div>
          
 <script src="${pageContext.request.contextPath}/assets/js/adminMainPage/adminUserPage/adminUserPage.js"></script>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+let deleteBtn = document.querySelectorAll(".delete");
+
+/* deleteBtn[i].addEventListener("click",function(){
+
+}) */
+$(function(){ 
+	
+	
+
+
+for(let i=0; i<deleteBtn.length; i++){
+
+	
+	deleteBtn[i].addEventListener("click",function(){
+
+		alert("야");	
+	 	let mailNum=parseInt(this.dataset.num);
+		let data={mailNum};
+		let thisDelBtn= this;
+		
+	let yn= confirm("정말 삭제하시겠습니까?");
+	
+	if(yn){
+		
+		$.ajax({
+			
+			url:"${pageContext.request.contextPath}/admin/maildelete",
+			data:JSON.stringify(data),
+			type:"DELETE",
+			contentType : "application/json; charset=utf-8",
+			success:function(a){
+				console.log(a);
+				thisDelBtn.parentElement.parentElement.remove();
+			}
+			
+			
+			
+		});
+		
+		
+	}
+		 
+		
+		
+	});
+	
+	
+	
+}
+
+});
+
+</script>
+
 
 
 

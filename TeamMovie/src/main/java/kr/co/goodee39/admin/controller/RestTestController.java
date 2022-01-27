@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import kr.co.goodee39.admin.service.AdminService;
+import kr.co.goodee39.adminmailbox.vo.AdminMailBoxVO;
 import kr.co.goodee39.user.vo.UserVO;
 
 @RestController
@@ -20,7 +21,7 @@ public class RestTestController {
 	AdminService service;
 	
 	@DeleteMapping("/delete")
-	public ResponseEntity<String>deleteUser(@RequestBody UserVO vo){
+	public ResponseEntity<String>updateDeleteUser(@RequestBody UserVO vo){
 		
 		System.out.println(vo.getUserNum());
 		
@@ -33,6 +34,23 @@ public class RestTestController {
 		
 		return entity;
 
+}
+	
+	@DeleteMapping("/maildelete")
+	public ResponseEntity<String>updateDeleteMail(@RequestBody AdminMailBoxVO vo){
+		
+		System.out.println(vo.getMailNum());
+		
+		service.updateDeleteAdminMailBox(vo);
+		
+		
+		String str ="잘 받았니?";
+		
+		ResponseEntity<String> entity = new ResponseEntity<String>(str,HttpStatus.OK);
+		
+		return entity;
+		
+		
 }
 	
 }
