@@ -2,24 +2,28 @@ package kr.co.goodee39.admin.service;
 
 import java.util.List;
 
-
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import kr.co.goodee39.admin.vo.NoticeVO;
 
-
-
 @Service
 public class noticeService {
 	@Autowired
 	SqlSessionTemplate sqlSessionTemplate;
-	
-	public List<NoticeVO> noticeList(){
+
+	public List<NoticeVO> noticeList(NoticeVO vo) {
 		System.out.println("noticeList메소드 실행");
-		
-		return sqlSessionTemplate.selectList("notice.noticeList");
+
+		return sqlSessionTemplate.selectList("notice.noticeList", vo);
+	}
+
+	public NoticeVO getNoticeContents(int noticeNum) {
+
+		NoticeVO vo = sqlSessionTemplate.selectOne("notice.getNoticeContents", noticeNum);
+
+		return vo;
+
 	}
 }
-
