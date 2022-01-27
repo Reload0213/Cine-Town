@@ -908,7 +908,7 @@
 		
 		
 <!-- </main> -->
->>>>>>> branch 'develop1' of https://github.com/Reload0213/Cine-Town.git
+
 <%@ include file="../include/footer.jsp"%>
 
 
