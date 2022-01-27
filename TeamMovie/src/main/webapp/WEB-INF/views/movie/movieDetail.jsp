@@ -750,7 +750,7 @@
 		<!-- .container -->
 	</section>
 	<!-- .courses-wrap -->
-
+	<!-- 영화상세 페이지 굿즈파트 html 종료 -->
 
 	<%@ include file="../include/footer.jsp"%>
 
@@ -769,10 +769,27 @@
 
 
 
-	<!-- 영화 상세 페이지 통합 js 파트 종료  -->
 
 
-	<!-- 영화상세 페이지 굿즈파트 html 종료 -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	<!-- 강사님 소스 들고 와 봄... reviewReply 서비스/ 컨트롤러/ vo / mapper-->
 	<hr />
@@ -784,11 +801,19 @@
 	</div>
 	<hr />
 
-
-
-	<!-- 영화 상세 페이지 통합 js 파트 종료  -->
-
+	<script>
+	$("#set-comment").click(function(){ 
+		let comment = $("#comment").val();
+	console.log("hello"); 
+	console.log(comment); });
+	</script>
+	
 	<script type="text/javascript">
+	
+	</script>
+
+
+	<!-- <script type="text/javascript">
 		$(function(){
 			$.ajax({
 				url:"${pageContext.request.contextPath}/ReviewReply/get/${movieVO.mvNum}",
@@ -802,7 +827,7 @@
 						
 						/* let usernum = ${sessionScope.account.num}; */
 						let usernum = ${userVO.account.userNum};
-						
+					
 						const commentList = document.querySelector("#comment-list");
 						
 						const div = document.createElement("div");
@@ -923,8 +948,8 @@
 			});
 		});
 	</script>
-	정민
 
+ -->
 
 
 
