@@ -15,6 +15,12 @@ public class AdminMailBoxVO {
 
 	
 	
+	
+	public AdminMailBoxVO() {
+	
+		this.start = 0;
+		this.count = 10;
+	}
 	public int getMailNum() {
 		return mailNum;
 	}

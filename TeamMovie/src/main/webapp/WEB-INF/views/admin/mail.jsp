@@ -150,7 +150,7 @@
 
 					<c:otherwise>
 						<a
-							href="${pageContext.request.contextPath}/admin/user?num=${minBlock-1}">◀◀</a>
+							href="${pageContext.request.contextPath}/admin/mail?num=${minBlock-1}">◀◀</a>
 					</c:otherwise>
 
 				</c:choose>
@@ -161,7 +161,7 @@
 					</c:when>
 					<c:otherwise>
 						<a
-							href="${pageContext.request.contextPath}/admin/user?num=${num-1}">◀</a>
+							href="${pageContext.request.contextPath}/admin/mail?num=${num-1}">◀</a>
 					</c:otherwise>
 
 				</c:choose>
@@ -175,7 +175,7 @@
 							<span>${i}</span>
 						</c:when>
 						<c:otherwise>
-							<a href="${pageContext.request.contextPath}/admin/user?num=${i}">${i}</a>
+							<a href="${pageContext.request.contextPath}/admin/mail?num=${i}">${i}</a>
 						</c:otherwise>
 					</c:choose>
 				</c:forEach>
@@ -187,7 +187,7 @@
 
 					<c:otherwise>
 						<a
-							href="${pageContext.request.contextPath}/admin/user?num=${minBlock-1}">▶</a>
+							href="${pageContext.request.contextPath}/admin/mail?num=${minBlock-1}">▶</a>
 					</c:otherwise>
 
 				</c:choose>
@@ -199,7 +199,7 @@
 					</c:when>
 					<c:otherwise>
 						<a
-							href="${pageContext.request.contextPath}/admin/user?num=${maxBlock+1}">▶▶</a>
+							href="${pageContext.request.contextPath}/admin/mail?num=${maxBlock+1}">▶▶</a>
 					</c:otherwise>
 
 				</c:choose>
