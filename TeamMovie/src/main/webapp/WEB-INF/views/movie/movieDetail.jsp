@@ -384,10 +384,11 @@
 							<div class="comment-respond">
 								<h3 class="comment-reply-title">댓글 남기기</h3>
 
-								<form class="comment-form">
-									<textarea rows="4" placeholder="하고 싶은말을 나눠보세요"></textarea>
-									<input type="submit" value="댓글 남기기">
-								</form>
+								<div class="comment-form">
+									<textarea class="rp-comment" rows="4" placeholder="하고 싶은말을 나눠보세요"></textarea>
+									<input class="set-comment" type="submit" value="댓글 남기기">
+								</div>
+
 								<!-- .comment-form -->
 							</div>
 							<!-- .comment-respond -->
@@ -779,6 +780,7 @@
 
  <script type="text/javascript">
 		$(function(){
+			// 글 번호에 맞는 댓글 들고오기
 			$.ajax({
 				url:"${pageContext.request.contextPath}/ReviewReply/get/${movieVO.mvNum}",
 				type:"GET",
@@ -804,6 +806,60 @@
 						
 						rpCommentList.append(li);
 					}
+				}
+			});
+			
+			//댓글 DB에 등록하기
+			$(".set-comment").click(function(){
+				let rpComment = $(".rp-comment").val();
+					console.log(rpComment);
+				
+				if(rpComment.length > 0){
+					let comment_data = {rpComment, mvNum :"${movieVO.mvNum}"};
+													
+						console.log(comment_data);
+					$.ajax({
+						url:"${pageContext.request.contextPath}/ReviewReply/set",
+						type:"POST",
+						data:JSON.stringify(comment_data),
+						contentType : "application/json; charset=utf-8",
+						dataType : "json",
+						success:function(data){
+							let usernum = data.rpWriternum;
+							
+							const rpCommentList = document.querySelector(".comment-list");
+							
+							const li = document.createElement("li");
+							const div = document.createElement("div");
+							const h3 = document.createElement("h3");
+							h3.innerText = data.rpWritername;
+							const p = document.createElement("p");
+							p.innerText = data.rpComment;
+							// 삭제 버튼
+							const delete_button = document.createElement("button");
+							delete_button.innerText = "삭제";
+							
+							
+								
+							rpCommentList.append(li);
+							
+							// 수정 버튼
+							const modify_button = document.createElement("button");
+							modify_button.innerText = "수정";
+							
+						
+							
+							div.append(modify_button);
+							div.append(delete_button);
+														
+							div.prepend(p);
+							div.prepend(h3);
+														
+							rpCommentList.append(div);
+						}
+					});
+				}else{
+					alert("댓굴을 달아주세요");
 				}
 			});
 		});

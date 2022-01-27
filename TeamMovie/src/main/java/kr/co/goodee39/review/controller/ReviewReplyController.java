@@ -32,8 +32,7 @@ public class ReviewReplyController {
 	@PostMapping("/set")
 	public ResponseEntity<ReviewReplyVO> setComment(@RequestBody ReviewReplyVO vo, HttpSession session){
 		
-		System.out.println(vo.getRpComment());
-		System.out.println(vo.getMvNum());
+		
 		UserVO mvo = (UserVO)session.getAttribute("account");
 		vo.setRpWriternum(mvo.getUserNum());
 		vo.setRpWritername(mvo.getUserName());

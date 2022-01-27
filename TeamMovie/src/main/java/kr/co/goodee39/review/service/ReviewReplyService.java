@@ -17,6 +17,7 @@ public class ReviewReplyService {
 	
 	public void insertComment(ReviewReplyVO vo) {
 		sqlSessionTemplate.insert("reviewReply.insertComment", vo);
+		System.out.println(vo.getRpComment());
 	}
 	
 	public List<ReviewReplyVO> selectCommentList(ReviewReplyVO vo){
