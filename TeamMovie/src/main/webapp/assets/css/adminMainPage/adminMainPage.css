@@ -1,5 +1,3 @@
-@charset "UTF-8";
-
 /* 기본설정 초기화 */
 * {
 
@@ -284,7 +282,7 @@ aside input {
 }
 
 .userTable{
- 
+  
     width: 100%;
     margin: 0 auto;
 
@@ -338,8 +336,11 @@ td {
     padding:0.9rem 0.8rem;
     font-size: 1.5rem;
 }
-td>button{
-    color:#141414;
+.delete{
+    padding:0.5rem 0.7rem;
+    background-color: #141414;
+    border:none;
+    color:#fff;
 }
 
 .pagingBtnCon {
@@ -472,6 +473,28 @@ td>button{
     padding: 0 0.5rem 0.2rem 0.5rem;
 }
 
+.quickViewCon{
+
+    width:100%;
+    
+    display:flex;
+    
+    justify-content:center;
+    align-items:center;
+    
+    
+    
+    }
+    
+    .quickView ,span{
+        
+        font-size:1.5rem;
+        color:#141414;
+        margin:0.3rem;
+    }
+    .quickView a{
+        color:blue;
+    }
 
 
 
@@ -522,30 +545,6 @@ td>button{
     span.hambugerBtn{
         display: block;
     }
-    .quickViewCon{
-
-width:100%;
-
-display:flex;
-
-justify-content:center;
-align-items:center;
-
-
-
-}
-
-.quickView ,span{
-	
-	font-size:1.5rem;
-	color:#141414;
-	margin:0.3rem;
-}
-.quickView a{
-	color:blue;
-}
-
-    
 
   
 

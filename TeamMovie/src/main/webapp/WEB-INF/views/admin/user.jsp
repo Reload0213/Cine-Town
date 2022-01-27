@@ -23,7 +23,7 @@
 <!--  관리자페이지 폰트추가 끝 -->
 <!-- 메인 css 추가 -->
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/assets/css/adminMainPage/adminUserPage/adminUserPage.css">
+	href="${pageContext.request.contextPath}/assets/css/adminMainPage/adminMainPage.css">
 <!-- 메인 css 끝 -->
 <!-- fontawesome LINK 추가 -->
 <link rel="stylesheet"
