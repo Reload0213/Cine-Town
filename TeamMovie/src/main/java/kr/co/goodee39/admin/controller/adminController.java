@@ -46,46 +46,7 @@ public class adminController {
 		return "admin/user";
 	}
 	
-	
-//	@GetMapping("/user/get/{num}")
-//	public ResponseEntity<List<UserVO>>getUserList (@PathVariable int num){
-//	   service.showUserInfo(model, num);
-//		return "admin/user";
-//	}
-//	@DeleteMapping("/delete")
-//	public ResponseEntity<String>deleteUser(@RequestBody UserVO vo){
-//		
-//		System.out.println(vo.getUserNum());
-//		
-//		service.deleteUser(vo);
-//
-//		System.out.println("받았니?");
-//		String str="삭제되었습니다.";
-//		
-//		ResponseEntity<String> entity = new ResponseEntity<String>(str,HttpStatus.OK);
-//		
-//		return entity;
-//		
-		
-	
-//	@GetMapping("/get/{userNum}")
-//	ResponseEntity<List<UserVO>> getUserList(@PathVariable String userNum){
-//		System.out.println("컨트롤러 넘어갔니?");
-//		 int num=Integer.parseInt(userNum);
-//		UserVO vo = new UserVO();
-//		vo.setUserNum(num);
-//		
-//		List<UserVO> list = service.setUserList(vo);
-//		
-//		ResponseEntity<List<UserVO>> entity =  new ResponseEntity<List<UserVO>>(list,HttpStatus.OK);
-//		
-//		
-//		
-//		
-//		return entity;
-//	}
-	
-	
+
 	@GetMapping("/mail")
 	public String mail() {
 
