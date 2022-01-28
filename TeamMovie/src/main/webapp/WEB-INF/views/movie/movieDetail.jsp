@@ -12,7 +12,7 @@
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/assets/css/movieDetail/elegant-fonts.css">
 
-<!-- themify-icons CSS --> 
+<!-- themify-icons CSS -->
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/assets/css/movieDetail/themify-icons.css">
 
@@ -33,385 +33,238 @@
 	<div class="page-header">
 
 
-			<div class="page-header-overlay"
-				style="height: 1000px; background-image: url('${movieVO.mvBgPath}');">
-				<div class="container">
-					<div class="row">
-						<div class="col-12">
-							<div class="entry-header" style="text-shadow: 3px 5px 5px #000; line-height: 2em; font-size: 2em">
-								<h1 class="entry-title">${movieVO.mvTitle}</h1>
+		<div class="page-header-overlay"
+			style="height: 1000px; background-image: url('${movieVO.mvBgPath}');">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<div class="entry-header"
+							style="text-shadow: 3px 5px 5px #000; line-height: 2em; font-size: 2em">
+							<h1 class="entry-title">${movieVO.mvTitle}</h1>
 
-								<div
-									class="entry-meta flex justify-content-center align-items-center">
-									<div class="post-author" style="color:#FEDD6A;">
-										<span>주연</span>
-									</div>
-
-									<div class="post-comments">
-										<span style="color:white">${movieVO.mvActor}</span>
-									</div>
+							<div
+								class="entry-meta flex justify-content-center align-items-center">
+								<div class="post-author" style="color: #FEDD6A;">
+									<span>주연</span>
 								</div>
-								<div
-									class="entry-meta flex justify-content-center align-items-center">
-									<div class="post-author" style="color:#FEDD6A;">
-										<span>시청 가능 연령</span>
-									</div>
 
-									<div class="post-comments">
-										<span style="color:white">${movieVO.mvAge} 이용가</span>
-									</div>
+								<div class="post-comments">
+									<a href="#">${movieVO.mvActor}</a>
 								</div>
-								<div
-									class="entry-meta flex justify-content-center align-items-center">
-									<div class="post-author" style="color:#FEDD6A;">
-										<span>개봉일</span>
-									</div>
-
-									<div class="post-comments">
-										<span style="color:white">${movieVO.mvYear} 개봉</span>
-									</div>
-								</div>
-								<div
-									class="entry-meta flex justify-content-center align-items-center">
-									<div class="post-author" style="color:#FEDD6A;">
-										<span>평점</span>
-									</div>
-
-									<div class="post-comments">
-										<span style="color:#FEDD6A" class="xi-star checked"></span><span style="color:white">${movieVO.mvAvgRate}</span>
-									</div>
-								</div>
-								<div
-									class="entry-meta flex justify-content-center align-items-center">
-									<div class="post-author" style="color:#FEDD6A;">
-										<span>장르</span>
-									</div>
-
-									<div class="post-comments">
-										<span style="color:white">${movieVO.mvGenre}</span>
-									</div>
-								</div>
-								<div
-									class="entry-meta flex justify-content-center align-items-center">
-									<div class="post-author" style="color:#FEDD6A;">
-										<span>러닝 타임</span>
-									</div>
-
-									<div class="post-comments">
-										<span style="color:white">${movieVO.mvRuntime} 분</span>
-									</div>
-								</div>
-								<div
-									class="entry-meta flex justify-content-center align-items-center">
-									<div class="post-author" style="color:#FEDD6A;">
-										<span>배급사</span>
-									</div>
-
-									<div class="post-comments">
-										<span style="color:white">${movieVO.mvProducer}</span>
-									</div>
-								</div>
-								<!-- .entry-meta -->
 							</div>
-							<!-- .entry-header -->
+							<div
+								class="entry-meta flex justify-content-center align-items-center">
+								<div class="post-author" style="color: #FEDD6A;">
+									<span>시청 가능 연령</span>
+								</div>
+
+								<div class="post-comments">
+									<a href="#">${movieVO.mvAge} 이용가</a>
+								</div>
+							</div>
+							<div
+								class="entry-meta flex justify-content-center align-items-center">
+								<div class="post-author" style="color: #FEDD6A;">
+									<span>장르</span>
+								</div>
+
+								<div class="post-comments">
+									<a href="#">${movieVO.mvGenre}</a>
+								</div>
+							</div>
+							<div
+								class="entry-meta flex justify-content-center align-items-center">
+								<div class="post-author" style="color: #FEDD6A;">
+									<span>러닝 타임</span>
+								</div>
+
+								<div class="post-comments">
+									<a href="#">${movieVO.mvRuntime} 분</a>
+								</div>
+							</div>
+							<!-- .entry-meta -->
+						</div>
+						<!-- .entry-header -->
+					</div>
+					<!-- .col -->
+				</div>
+				<!-- .row -->
+			</div>
+			<!-- .container -->
+		</div>
+		<!-- .page-header-overlay -->
+	</div>
+	<!-- .page-header -->
+
+	<div class="container">
+		<div class="row">
+			<div class="col-12 offset-lg-1 col-lg-10" style="width: 100%;">
+				<div class="featured-image">
+					<img src="${movieVO.mvPosterPath}" alt="" style="width: 100%;">
+
+					<div class="posted-date position-absolute">
+						<div class="day">⭐ ${movieVO.mvAvgRate}</div>
+					</div>
+					<!-- .posted-date -->
+				</div>
+				<!-- .featured-image -->
+			</div>
+			<!-- .col -->
+		</div>
+		<!-- .row -->
+
+		<div class="row">
+			<div class="col-12 offset-lg-1 col-lg-1"
+				style="font-size: 2.5em; text-align: right;">
+				<div class="post-share">
+					<h3>share</h3>
+
+					<ul class="flex flex-wrap align-items-center p-0 m-0">
+						<li><a href="#"><i class="xi-facebook-official""></i></a></li>
+						<li><a href="#"><i class="xi-twitter"></i></a></li>
+						<li><a href="#"><i class="xi-instagram"></i></a></li>
+						<li><a href="#"><i class="xi-youtube"></i></a></li>
+						<li><a href="#"><i class="xi-naver"></i></a></li>
+					</ul>
+				</div>
+				<!-- .post-share -->
+			</div>
+			<!-- .col -->
+
+			<div class="col-12 col-lg-8">
+				<div class="single-post-wrap">
+					<p>${movieVO.mvContent1}</p>
+
+
+					<p>${movieVO.mvContent2}</p>
+
+
+
+					${movieVO.mvTrailer}
+
+					<h3 class="mb-3">관람 포인트</h3>
+
+					<p>${movieVO.mvContent3}</p>
+
+					<p>${movieVO.mvContent4}</p>
+				</div>
+				<!-- .single-post-wrap -->
+
+				<div class="tags-links mt-4">
+					<ul class="d-flex flex-wrap align-items-center p-0 m-0">
+						<li><a href="#">action</a></li>
+						<li><a href="#">comic</a></li>
+						<li><a href="#">mavel</a></li>
+					</ul>
+				</div>
+				<!-- .tags-links -->
+
+				<div class="related-blog-posts">
+					<div
+						class="entry-heading flex flex-wrap justify-content-between align-items-center">
+						<h2 class="entry-title">같은 장르 영화 추천</h2>
+
+						<a href="${pageContext.request.contextPath}/movie/movieMenu">영화
+							전체 보러가기</a>
+					</div>
+					<!-- .entry-heading -->
+
+					<div class="row mx-m-25">
+						<div class="col-12 col-lg-6 px-25">
+							<div class="blog-post-content">
+								<figure class="blog-post-thumbnail position-relative m-0">
+									<a href="#"><img
+										src="${pageContext.request.contextPath}/assets/images/movieDetail/b-5.jpg"
+										alt=""></a>
+
+									<div class="posted-date position-absolute">
+										<div class="day">23</div>
+										<div class="month">mar</div>
+									</div>
+								</figure>
+								<!-- .blog-post-thumbnail -->
+
+								<div class="blog-post-content-wrap">
+									<div class="entry-header">
+										<h2 class="entry-title">
+											<a href="#">Which investment project should my company
+												choose?</a>
+										</h2>
+
+										<div class="entry-meta flex flex-wrap align-items-center">
+											<div class="post-author">
+												<a href="#">Ms. Lara Croft </a>
+											</div>
+
+											<div class="post-comments">
+												<a href="#">02 Comments</a>
+											</div>
+										</div>
+										<!-- .entry-meta -->
+									</div>
+									<!-- .entry-header -->
+								</div>
+								<!-- .blog-post-content-wrap -->
+							</div>
+							<!-- .blog-post-content -->
+						</div>
+						<!-- .col -->
+
+						<div class="col-12 col-lg-6 px-25">
+							<div class="blog-post-content">
+								<figure class="blog-post-thumbnail position-relative m-0">
+									<a href="#"><img
+										src="${pageContext.request.contextPath}/assets/images/movieDetail/b-6.jpg"
+										alt=""></a>
+
+									<div class="posted-date position-absolute">
+										<div class="day">23</div>
+										<div class="month">mar</div>
+									</div>
+								</figure>
+								<!-- .blog-post-thumbnail -->
+
+								<div class="blog-post-content-wrap">
+									<div class="entry-header">
+										<h2 class="entry-title">
+											<a href="#">Which investment project should my company
+												choose?</a>
+										</h2>
+
+										<div class="entry-meta flex flex-wrap align-items-center">
+											<div class="post-author">
+												<a href="#">Ms. Lara Croft </a>
+											</div>
+
+											<div class="post-comments">
+												<a href="#">02 Comments</a>
+											</div>
+										</div>
+										<!-- .entry-meta -->
+									</div>
+									<!-- .entry-header -->
+								</div>
+								<!-- .blog-post-content-wrap -->
+							</div>
+							<!-- .blog-post-content -->
 						</div>
 						<!-- .col -->
 					</div>
 					<!-- .row -->
 				</div>
-				<!-- .container -->
-			</div>
-			<!-- .page-header-overlay -->
-		</div>
-		<!-- .page-header -->
-
-		<div class="container">
-			<div class="row">
-				<div class="col-12 offset-lg-1 col-lg-10" style="width: 100%;">
-					<div class="featured-image">
-						<img src="${movieVO.mvPosterPath}" alt="" style="width: 100%;">
-						<!-- .posted-date -->
-					</div>
-					<!-- .featured-image -->
-				</div>
-				<!-- .col -->
-			</div>
-			<!-- .row -->
-
-			<div class="row">
-				<div class="col-12 offset-lg-1 col-lg-1"
-					style="font-size: 2.5em; text-align: right;">
-					<div class="post-share">
-						<h3>share</h3>
-
-						<ul class="flex flex-wrap align-items-center p-0 m-0">
-							<li><a href="#"><i class="xi-facebook-official""></i></a></li>
-							<li><a href="#"><i class="xi-twitter"></i></a></li>
-							<li><a href="#"><i class="xi-instagram"></i></a></li>
-							<li><a href="#"><i class="xi-youtube"></i></a></li>
-							<li><a href="#"><i class="xi-naver"></i></a></li>
-						</ul>
-					</div>
-					<!-- .post-share -->
-				</div>
-				<!-- .col -->
-
-				<div class="col-12 col-lg-8">
-					<div class="single-post-wrap">
-						<p>${movieVO.mvContent1}</p>
+				<!-- .related-course -->
 
 
-						<p>${movieVO.mvContent2}</p>
-
-
-						
-						${movieVO.mvTrailer}
-
-						<h3 class="mb-3">관람 포인트</h3>
-
-						<p>${movieVO.mvContent3}</p>
-
-						<p>${movieVO.mvContent4}</p>
-					</div>
-					<!-- .single-post-wrap -->
-
-					<div class="tags-links mt-4">
-						<ul class="d-flex flex-wrap align-items-center p-0 m-0">
-							<li><a href="#">action</a></li>
-							<li><a href="#">comic</a></li>
-							<li><a href="#">mavel</a></li>
-						</ul>
-					</div>
-					<!-- .tags-links -->
-
-					<div class="related-blog-posts">
-						<div
-							class="entry-heading flex flex-wrap justify-content-between align-items-center">
-							<h2 class="entry-title">같은 장르 영화 추천</h2>
-
-							<a href="${pageContext.request.contextPath}/movie/movieMenu">영화 전체 보러가기</a>
-						</div>
-						<!-- .entry-heading -->
-
-						<div class="row mx-m-25">
-							<div class="col-12 col-lg-6 px-25">
-								<div class="blog-post-content">
-									<figure class="blog-post-thumbnail position-relative m-0">
-										<a href="#"><img
-											src="${pageContext.request.contextPath}/assets/images/movieDetail/b-5.jpg"
-											alt=""></a>
-
-										<div class="posted-date position-absolute">
-											<div class="day">23</div>
-											<div class="month">mar</div>
-										</div>
-									</figure>
-									<!-- .blog-post-thumbnail -->
-
-									<div class="blog-post-content-wrap">
-										<div class="entry-header">
-											<h2 class="entry-title">
-												<a href="#">Which investment project should my company
-													choose?</a>
-											</h2>
-
-											<div class="entry-meta flex flex-wrap align-items-center">
-												<div class="post-author">
-													<a href="#">Ms. Lara Croft </a>
-												</div>
-
-												<div class="post-comments">
-													<a href="#">02 Comments</a>
-												</div>
-											</div>
-											<!-- .entry-meta -->
-										</div>
-										<!-- .entry-header -->
-									</div>
-									<!-- .blog-post-content-wrap -->
-								</div>
-								<!-- .blog-post-content -->
-							</div>
-							<!-- .col -->
-
-							<div class="col-12 col-lg-6 px-25">
-								<div class="blog-post-content">
-									<figure class="blog-post-thumbnail position-relative m-0">
-										<a href="#"><img
-											src="${pageContext.request.contextPath}/assets/images/movieDetail/b-6.jpg"
-											alt=""></a>
-
-										<div class="posted-date position-absolute">
-											<div class="day">23</div>
-											<div class="month">mar</div>
-										</div>
-									</figure>
-									<!-- .blog-post-thumbnail -->
-
-									<div class="blog-post-content-wrap">
-										<div class="entry-header">
-											<h2 class="entry-title">
-												<a href="#">Which investment project should my company
-													choose?</a>
-											</h2>
-
-											<div class="entry-meta flex flex-wrap align-items-center">
-												<div class="post-author">
-													<a href="#">Ms. Lara Croft </a>
-												</div>
-
-												<div class="post-comments">
-													<a href="#">02 Comments</a>
-												</div>
-											</div>
-											<!-- .entry-meta -->
-										</div>
-										<!-- .entry-header -->
-									</div>
-									<!-- .blog-post-content-wrap -->
-								</div>
-								<!-- .blog-post-content -->
-							</div>
-							<!-- .col -->
-						</div>
-						<!-- .row -->
-					</div>
-					<!-- .related-course -->
-
-
-					<div class="post-comments-wrap">
-						<div class="post-comments">
-							<h3 class="comments-title">
-								<span class="comments-number">02 Comments</span>
-							</h3>
-
-							<ol class="comment-list">
-								<li class="comment">
-									<article class="comment-body">
-										<figure class="comment-author-avatar">
-											<img
-												src="${pageContext.request.contextPath}/assets/images/movieDetail/c-1.png"
-												alt="">
-										</figure>
-										<!-- .comment-author-avatar -->
-
-										<div class="comment-wrap">
-											<div class="comment-author">
-												<span class="comment-meta d-block"> <a href="#">27
-														Aug 2018</a>
-												</span>
-												<!-- .comment-meta -->
-
-												<span class="fn"> <a href="#">Chris Hadfield</a>
-												</span>
-												<!-- .fn -->
-											</div>
-											<!-- .comment-author -->
-
-											<p>Neque porro quisquam est, qui dolorem ipsum quia dolor
-												sit amet, consectetur, adipisci velit, sed quia non numquam
-												eius modi</p>
-
-											<div class="reply">
-												<a href="#">좋아요</a> <a href="#">댓글 달기</a>
-											</div>
-											<!-- .reply -->
-										</div>
-										<!-- .comment-wrap -->
-
-										<div class="clearfix"></div>
-									</article> <!-- .comment-body -->
-
-									<ol class="children">
-										<li class="comment">
-											<article class="comment-body">
-												<figure class="comment-author-avatar">
-													<img
-														src="${pageContext.request.contextPath}/assets/images/movieDetail/c-2.png"
-														alt="">
-												</figure>
-												<!-- .comment-author-avatar -->
-
-												<div class="comment-wrap">
-													<div class="comment-author">
-														<span class="comment-meta d-block"> <a href="#">27
-																Aug 2018</a>
-														</span>
-														<!-- .comment-meta -->
-
-														<span class="fn"> <a href="#">Albert Einstein</a>
-														</span>
-														<!-- .fn -->
-													</div>
-													<!-- .comment-author -->
-
-													<p>Neque porro quisquam est, qui dolorem ipsum quia
-														dolor sit amet, consectetur, adipisci velit, sed quia non
-														numquam eius modi</p>
-
-													<div class="reply">
-														<a href="#">좋아요</a> <a href="#">댓글 달기</a>
-													</div>
-													<!-- .reply -->
-												</div>
-												<!-- .comment-wrap -->
-
-												<div class="clearfix"></div>
-											</article> <!-- .comment-body -->
-										</li>
-										<!-- .comment -->
-									</ol> <!-- .children -->
-								</li>
-								<!-- .comment -->
-
-								<li class="comment">
-									<article class="comment-body">
-										<figure class="comment-author-avatar">
-											<img
-												src="${pageContext.request.contextPath}/assets/images/movieDetail/c-3.png"
-												alt="">
-										</figure>
-										<!-- .comment-author-avatar -->
-
-										<div class="comment-wrap">
-											<div class="comment-author">
-												<span class="comment-meta d-block"> <a href="#">27
-														Aug 2018</a>
-												</span>
-												<!-- .comment-meta -->
-
-												<span class="fn"> <a href="#">Henry Ford</a>
-												</span>
-												<!-- .comment-autho -->
-											</div>
-											<!-- .comment-author -->
-
-											<p>Neque porro quisquam est, qui dolorem ipsum quia dolor
-												sit amet, consectetur, adipisci velit, sed quia non numquam
-												eius modi</p>
-
-											<div class="reply">
-												<a href="#">좋아요</a> <a href="#">댓글 달기</a>
-											</div>
-											<!-- .reply -->
-										</div>
-										<!-- .comment-wrap -->
-
-										<div class="clearfix"></div>
-									</article> <!-- .comment-body -->
-								</li>
-								<!-- .comment -->
-							</ol>
-							<!-- .comment-list -->
-						</div>
-						<!-- .post-comments -->
+				<div class="post-comments-wrap">
+					<div class="post-comments">
 
 						<div class="comments-form">
 							<div class="comment-respond">
 								<h3 class="comment-reply-title">댓글 남기기</h3>
 
 								<div class="comment-form">
-									<textarea class="rp-comment" rows="4" placeholder="하고 싶은말을 나눠보세요"></textarea>
+									<textarea class="rp-comment" rows="4"
+										placeholder="하고 싶은말을 나눠보세요"></textarea>
 									<input class="set-comment" type="submit" value="댓글 남기기">
 								</div>
 
@@ -419,17 +272,62 @@
 							</div>
 							<!-- .comment-respond -->
 						</div>
-						<!-- .comments-form -->
-					</div>
-					<!-- .post-comments-wrap -->
-				</div>
-				<!-- .col -->
-			</div>
-			<!-- .row -->
-		</div>
-		<!-- .container -->
 
-		<!-- 영화상세 페이지 영화파트 html 끝 -->
+
+
+						<!-- .comments-form -->
+						<ol class="comment-list">
+							<li class="comment">
+								<article class="comment-body">
+									<figure class="comment-author-avatar">
+										<img
+											src="${pageContext.request.contextPath}/assets/images/movieDetail/c-1.png"
+											alt="">
+									</figure>
+									<!-- .comment-author-avatar -->
+
+									<div class="comment-wrap">
+										<div class="comment-author">
+											<span class="comment-meta d-block"> <a href="#">27
+													Aug 2018</a>
+											</span>
+											<!-- .comment-meta -->
+
+											<span class="fn"> <a href="#">Chris Hadfield</a>
+											</span>
+											<!-- .fn -->
+										</div>
+										<!-- .comment-author -->
+
+										<p>Neque porro quisquam est, qui dolorem ipsum quia dolor
+											sit amet, consectetur, adipisci velit, sed quia non numquam
+											eius modi</p>
+
+										<div class="reply">
+											<a href="#">좋아요</a> <a href="#">댓글 달기</a>
+										</div>
+										<!-- .reply -->
+									</div>
+									<!-- .comment-wrap -->
+
+									<div class="clearfix"></div>
+								</article> <!-- .comment-body --> <!-- .comment -->
+						</ol>
+						<!-- .comment-list -->
+					</div>
+					<!-- .post-comments -->
+
+
+				</div>
+				<!-- .post-comments-wrap -->
+			</div>
+			<!-- .col -->
+		</div>
+		<!-- .row -->
+	</div>
+	<!-- .container -->
+
+	<!-- 영화상세 페이지 영화파트 html 끝 -->
 
 
 
@@ -776,9 +674,9 @@
 	</section>
 	<!-- .courses-wrap -->
 	<!-- 영화상세 페이지 굿즈파트 html 종료 -->
-	
-	
-	
+
+
+
 
 	<%@ include file="../include/footer.jsp"%>
 
@@ -804,7 +702,7 @@
 
 
 
- <script type="text/javascript">
+	<script type="text/javascript">
 		$(function(){
 			// 글 번호에 맞는 댓글 들고오기
 			$.ajax({
@@ -816,48 +714,137 @@
 					for(const item of data){
 						let usernum = ${sessionScope.account.userNum};
 						
-						const rpCommentList = document.querySelector(".comment-list");
+						const rpCommentList = document.querySelector(".comment-list"); //댓글 목록
 						const li = document.createElement("li");
-						const div = document.createElement("div");
-						const writername = document.createElement("h3");
-						const date = document.createElement("span");
-						const comment = document.createElement("p");
+						/* li.style="background-color:gray;"; */
+						rpCommentList.append(li);
+						//묶어주는 div생성
+						
+						//이름이랑 별점 묶어주기 끝
+						const top_info = document.createElement("div"); 
+						top_info.classList.add("top_info"); //class 부여
+						li.prepend(top_info);
+						top_info.style="display:flex;";
+						
+						const writername = document.createElement("span"); //이름 엘리먼트 생성
+						writername.classList.add("writername");
+						writername.innerText = item.rpWritername; //작성자 이름 주입
+						top_info.append(writername);
+						
+						const bar = document.createElement("span");
+						bar.classList.add("bar");
+						bar.innerText = " | ";
+						bar.style="margin: 0 10px;"
+						top_info.append(bar);
+						
+						const star_wrapper = document.createElement("div"); //별이랑 숫자 묶는 div
+						star_wrapper.classList.add("star_wrapper");
+						const star = document.createElement("span"); //별 그림
+						star.classList.add("xi-star"); //xi-con으로 클래스 부여해서 별 
+						star.style="color:orange;";
+						const rpStar = document.createElement("span");//별 카운트
+						rpStar.innerText=item.rpStar;//별 숫자 db에서 가져온 것 
+												
+						top_info.append(star_wrapper);
+						star_wrapper.append(star);//별 그림
+						star_wrapper.append(rpStar);//별 숫자
+						//이름이랑 별점 묶어주기 끝
+						
+						//댓글 내용
+						const review_info = document.createElement("div")
+						review_info.classList.add("review_info");
+						review_info.innerText = item.rpComment;
+						review_info.style="text-align:left; margin: 10px 0; font-size: 20px;";
+						li.append(review_info);
+						//댓글 내용 끝
 
-											
-						const like_button = document.createElement("button");
-						/* like_button.type="checkbox"; //하트를 누르고 취소하고 */
-						const heart = document.createElement("span");//하트 그림
+			
+						//좋아요, 날짜, 생성자(수정, 삭제 버튼) 묶어주기
+						const bottom_info = document.createElement("div")
+						bottom_info.classList.add("bottom_info");
+						bottom_info.style="display:flex; justify-content:space-between";
+						li.append(bottom_info);
 						
-						const star = document.createElement("span");
-						const rpStar = document.createElement("span");
+					
+						const date_like = document.createElement("div")//댓글, 좋아요 묶어주기
+						date_like.classList.add("date_like");//클래스 부여
+						date_like.style="display:flex";
+						bottom_info.append(date_like);
 						
-						writername.innerText = item.rpWritername;
-						comment.innerText = item.rpComment;
+						
+						const date = document.createElement("span"); //댓글 생성 날짜
 						date.innerText = item.rpDate;
-						like_button.innerText = item.rpLike;
-						heart.classList.add("xi-heart-o");
+						date.style="margin-right: 10px; font-size: 10px;";
+						date_like.append(date);
 						
+												
+						const like_button = document.createElement("div"); //좋아요 버튼
+						like_button.classList.add("like_button");
+						
+						
+						
+						/* const heart_form = document.createElement("form");
+						heart_form.setAttribute("id", heart);
+						heart_form.setAttribute("method", post);
+						heart_form.setAttribute("name", heart);
+						like_button.append(heart_form); */
+						
+						
+						
+						
+						
+						
+						like_button.innerText = item.rpLike;
+						const heart = document.createElement("span");//하트 그림
+						heart.classList.add("xi-heart-o");
 						like_button.prepend(heart);
 						
+						//like_button.type="checkbox"; //하트를 누르고 취소하고
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						date_like.append(like_button);
 						//xi-heart xi-heart-o
-						
 						//if.hear가 checked 되면 class name을 변경할 수 있는가? -> heart 색상 변경 QQQQQQQ 
-								//xi-heart-o 를 클릭하면 이건 display none이 되고 색 있는게 block 되고..
-								
-						rpStar.innerText=item.rpStar;//별 숫자
-						star.classList.add("xi-star"); //별 그림
-						/* star_rate.append(star); */
-												
-						li.prepend(comment);
-						li.prepend(writername);
-						li.prepend(date);
-						li.prepend(div);
-						li.prepend(like_button);
-						li.prepend(rpStar);
-						li.prepend(star);
+						//xi-heart-o 를 클릭하면 이건 display none이 되고 색 있는게 block 되고..
+						//li.prepend(writername); 
+									
+						
+    
+						const modify_delete = document.createElement("div"); //작성자가 본인일 경우 나타나게 하기
+						modify_delete.classList.add("modify_delete");
+						// 해당 유저가 쓴 댓글일 경우
+				 		if(usernum == item.rpWriternum){
+							//수정 버튼
+							const modify_button = document.createElement("button");
+							modify_button.innerText="수정";
+							modify_button.style="margin-right: 10px;background:none;";
+							//삭제 버튼
+							const delete_button = document.createElement("button");
+							delete_button.innerText="삭제";
+							delete_button.style="background:none;"
+							modify_delete.append(modify_button);
+							modify_delete.append(delete_button);
+						}
+				
+						bottom_info.append(modify_delete);
+						const hr = document.createElement("hr");
+						li.append(hr);
 						
 						
-						rpCommentList.append(li);
+						
+						
+						
+						
 					}
 				}
 			});
