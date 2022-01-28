@@ -68,36 +68,6 @@ public class adminController {
 		return "admin/board";
 	}
 	
-	@GetMapping("/aboutUsMain")
-	public String aboutUsMain(Model model) {
-		NoticeVO vo = new NoticeVO();
-		List<NoticeVO> noticeList = noticeService.noticeList(vo);
-
-		model.addAttribute("noticeList", noticeList);
-
-		return "/aboutUs/aboutUsMain";
-	}
-	
-	@GetMapping("/noticeView")
-	public String noticeView(@RequestParam("noticeNum") int noticeNum, Model model) {
-		
-		NoticeVO noticeDetail = noticeService.getNoticeContents(noticeNum);
-		model.addAttribute("notice", noticeDetail);
-		return "/aboutUs/noticeView";
-	}
-	
-	@GetMapping("/noticeWrite")
-	public String noticeWrite(Model model) {
-		model.addAttribute("testKey", "testVal");
-		return "/aboutUs/noticeWrite";
-	}
-	
-	@GetMapping("/faqMain")
-	public String faqMain(Model model) {
-		model.addAttribute("testKey", "testVal");
-		return "/faq/faqMain";
-	}
-	
 	
 
 	

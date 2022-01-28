@@ -79,7 +79,7 @@
 
 							<div class="rb-buttons" style="text-align: center; padding: 1em;">
 								<div class="btn-group btn-primary">
-									<a href="${pageContext.request.contextPath}/admin/aboutUsMain"
+									<a href="${pageContext.request.contextPath}/aboutUs/aboutUsMain"
 										class="btn btn-primary">목록으로</a>
 								</div>
 								<div class="btn-group btn-primary">

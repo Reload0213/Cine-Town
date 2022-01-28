@@ -58,7 +58,7 @@
 							href="${pageContext.request.contextPath}/goods/goodsMain">굿즈</a>
 						</li>
 						<li class="nav-item"><a class="nav-link"
-							href="${pageContext.request.contextPath}/admin/aboutUsMain">회사
+							href="${pageContext.request.contextPath}/aboutUs/aboutUsMain">회사
 								소개</a></li>
 						<li class="nav-item"><a class="nav-link"
 							href="${pageContext.request.contextPath}/preview/main">시사회 /

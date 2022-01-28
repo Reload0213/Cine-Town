@@ -153,13 +153,10 @@
 
 <!-- 공지사항 Start -->
 <div class="tableDiv">
-<table id="fantasyTable" class="display responsive no-wrap order-column">
-  <div class="text-center">
-  <h3>공지사항</h3>
-  <a href="${pageContext.request.contextPath}/admin/noticeWrite">글작성 확인용</a>
-  
-  
+<div class="text-center">
+	<h3>공지사항</h3>
 </div>
+<table id="fantasyTable" class="display responsive no-wrap order-column">
 <thead>
   <tr>
     <th>번호</th>
@@ -170,7 +167,7 @@
  <c:forEach var="notice" items="${noticeList }">
   <tr>
     <td>${notice.noticeNum }</td>
-    <td><a href="/TeamMovie/admin/noticeView?noticeNum=${notice.noticeNum }">${notice.noticeTitle }</a></td>
+    <td><a href="/TeamMovie/aboutUs/noticeView?noticeNum=${notice.noticeNum }">${notice.noticeTitle }</a></td>
     <td>${notice.noticeRegdate }</td>
   </tr>
   </c:forEach>
