@@ -24,8 +24,7 @@
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/assets/css/movieDetail/style.css">
 <style>
- #heart label {
-       
+ 	#heart label {
        color: transparent; /* 기존 이모지 컬러 제거 */
        text-shadow: 0 0 0 black; /* 새 이모지 색상 부여 */
      }
@@ -37,6 +36,41 @@
      #heart input[type="checkbox"]:checked+i {
        text-shadow: 0 0 0 red; /* 마우스 클릭 체크 */
      }
+     
+     .date_like span:first-child {
+		padding-top: 0.3em;
+	}
+	
+	/* 별점 */
+      #myform fieldset {
+        display: inline-block; /* 하위 별점 이미지들이 있는 영역만 자리를 차지함.*/
+        border: 0; /* 필드셋 테두리 제거 */
+      }
+      #myform input[type="radio"] {
+        display: none; /* 라디오박스 감춤 */
+      }
+      #myform label {
+        font-size: 3em; /* 이모지 크기 */
+        color: transparent; /* 기존 이모지 컬러 제거 */
+        text-shadow: 0 0 0 #f0f0f0; /* 새 이모지 색상 부여 */
+      }
+      #myform label:hover {
+        text-shadow: 0 0 0 #FEDD6A; /* 마우스 호버 */
+      }
+      #myform label:hover ~ label {
+        text-shadow: 0 0 0 #FEDD6A; /* 마우스 호버 뒤에오는 이모지들 */
+      }
+      #myform fieldset {
+        display: inline-block; /* 하위 별점 이미지들이 있는 영역만 자리를 차지함.*/
+        direction: rtl; /* 이모지 순서 반전 */
+        border: 0; /* 필드셋 테두리 제거 */
+      }
+      #myform fieldset legend {
+        text-align: left;
+      }
+      #myform input[type="radio"]:checked ~ label {
+        text-shadow: 0 0 0 #FEDD6A; /* 마우스 클릭 체크 */
+      }
      </style>
 <!-- 영화 상세 페이지 통합 css 파트 종료  -->
 
@@ -63,7 +97,7 @@
 								</div>
 
 								<div class="post-comments">
-									<a href="#">${movieVO.mvActor}</a>
+									<span style="color:white;">${movieVO.mvActor}</span>
 								</div>
 							</div>
 							<div
@@ -73,7 +107,17 @@
 								</div>
 
 								<div class="post-comments">
-									<a href="#">${movieVO.mvAge} 이용가</a>
+									<span style="color:white;">${movieVO.mvAge} 이용가</span>
+								</div>
+							</div>
+							<div
+								class="entry-meta flex justify-content-center align-items-center">
+								<div class="post-author" style="color: #FEDD6A;">
+									<span>평점</span>
+								</div>
+
+								<div class="post-comments">
+									<span class="xi-star checked" style="color:#FEDD6A"></span><span style="color:white;">${movieVO.mvAvgRate}점</span>
 								</div>
 							</div>
 							<div
@@ -83,7 +127,7 @@
 								</div>
 
 								<div class="post-comments">
-									<a href="#">${movieVO.mvGenre}</a>
+									<span style="color:white;">${movieVO.mvGenre}</span>
 								</div>
 							</div>
 							<div
@@ -93,7 +137,17 @@
 								</div>
 
 								<div class="post-comments">
-									<a href="#">${movieVO.mvRuntime} 분</a>
+									<span style="color:white;">${movieVO.mvRuntime} 분</span>
+								</div>
+							</div>
+							<div
+								class="entry-meta flex justify-content-center align-items-center">
+								<div class="post-author" style="color: #FEDD6A;">
+									<span>배급사</span>
+								</div>
+
+								<div class="post-comments">
+									<span style="color:white;">${movieVO.mvProducer}</span>
 								</div>
 							</div>
 							<!-- .entry-meta -->
@@ -116,9 +170,6 @@
 				<div class="featured-image">
 					<img src="${movieVO.mvPosterPath}" alt="" style="width: 100%;">
 
-					<div class="posted-date position-absolute">
-						<div class="day">⭐ ${movieVO.mvAvgRate}</div>
-					</div>
 					<!-- .posted-date -->
 				</div>
 				<!-- .featured-image -->
@@ -275,10 +326,24 @@
 						<div class="comments-form">
 							<div class="comment-respond">
 								<h3 class="comment-reply-title">댓글 남기기</h3>
+						<form name="myform" id="myform" method="post" action="./save">
+					        <fieldset>
+					            <input type="radio" name="rating" value="10" id="rate1"><label for="rate1">⭐</label>
+					            <input type="radio" name="rating" value="9" id="rate2"><label for="rate2">⭐</label>
+					            <input type="radio" name="rating" value="8" id="rate3"><label for="rate3">⭐</label>
+					            <input type="radio" name="rating" value="7" id="rate4"><label for="rate4">⭐</label>
+					            <input type="radio" name="rating" value="6" id="rate5"><label for="rate5">⭐</label>
+					            <input type="radio" name="rating" value="5" id="rate1"><label for="rate6">⭐</label>
+					            <input type="radio" name="rating" value="4" id="rate2"><label for="rate7">⭐</label>
+					            <input type="radio" name="rating" value="3" id="rate3"><label for="rate8">⭐</label>
+					            <input type="radio" name="rating" value="2" id="rate4"><label for="rate9">⭐</label>
+					            <input type="radio" name="rating" value="1" id="rate5"><label for="rate10">⭐</label>
+					        </fieldset>
+					    </form>
 
 								<div class="comment-form">
 									<textarea class="rp-comment" rows="4"
-										placeholder="하고 싶은말을 나눠보세요"></textarea>
+										placeholder="어떻게 보셨나요? 자유롭게 작성해주세요"></textarea>
 									<input class="set-comment" type="submit" value="댓글 남기기">
 								</div>
 
@@ -286,46 +351,16 @@
 							</div>
 							<!-- .comment-respond -->
 						</div>
-
-
+						<br/>
+						<br/>
+						<br/>
+						<div style="text-align: left;"><h5>000 건</h5></div>
+						<hr>
 
 						<!-- .comments-form -->
 						<ol class="comment-list">
 							<li class="comment">
-								<article class="comment-body">
-									<figure class="comment-author-avatar">
-										<img
-											src="${pageContext.request.contextPath}/assets/images/movieDetail/c-1.png"
-											alt="">
-									</figure>
-									<!-- .comment-author-avatar -->
-
-									<div class="comment-wrap">
-										<div class="comment-author">
-											<span class="comment-meta d-block"> <a href="#">27
-													Aug 2018</a>
-											</span>
-											<!-- .comment-meta -->
-
-											<span class="fn"> <a href="#">Chris Hadfield</a>
-											</span>
-											<!-- .fn -->
-										</div>
-										<!-- .comment-author -->
-
-										<p>Neque porro quisquam est, qui dolorem ipsum quia dolor
-											sit amet, consectetur, adipisci velit, sed quia non numquam
-											eius modi</p>
-
-										<div class="reply">
-											<a href="#">좋아요</a> <a href="#">댓글 달기</a>
-										</div>
-										<!-- .reply -->
-									</div>
-									<!-- .comment-wrap -->
-
-									<div class="clearfix"></div>
-								</article> <!-- .comment-body --> <!-- .comment -->
+								
 						</ol>
 						<!-- .comment-list -->
 					</div>
