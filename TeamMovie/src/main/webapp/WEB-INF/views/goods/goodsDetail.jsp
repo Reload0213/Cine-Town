@@ -28,6 +28,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400&display=swap" rel="stylesheet">
 
+<!-- xeicon 사용 -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
 
 
 
@@ -58,6 +60,36 @@
     .korean {
         font-family: 'Noto Sans KR', sans-serif;
     };
+    
+    
+    /* 별점 디자인  시작*/
+#myform fieldset{
+    display: inline-block; /* 하위 별점 이미지들이 있는 영역만 자리를 차지함.*/
+    direction: rtl; /* 이모지 순서 반전 */
+    border: 0; /* 필드셋 테두리 제거 */
+}
+#myform fieldset legend{
+    text-align: left;
+}
+#myform input[type=radio]{
+    display: none; /* 라디오박스 감춤 */
+}
+#myform label{
+    font-size: 3em; /* 이모지 크기 */
+    color: transparent; /* 기존 이모지 컬러 제거 */
+    text-shadow: 0 0 0 #f0f0f0; /* 새 이모지 색상 부여 */
+}
+#myform label:hover{
+    text-shadow: 0 0 0 rgb(250, 246, 21); /* 마우스 호버 */
+}
+#myform label:hover ~ label{
+    text-shadow: 0 0 0 rgb(250, 246, 21); /* 마우스 호버 뒤에오는 이모지들 */
+}
+#myform input[type=radio]:checked ~ label{
+    text-shadow: 0 0 0 rgb(250, 246, 21); /* 마우스 클릭 체크 */
+}
+
+/* 별점 디자인 종료 */    
   
 </style>
 
@@ -592,44 +624,56 @@
                                         </div>
                                         <div class="spr-content">
                                             <div class="spr-form clearfix">
-                                                <form method="post" action="#" id="new-review-form" class="new-review-form">
+                                              <%--   <form method="post" action="#" id="new-review-form" class="new-review-form"> --%>
+                                                <div id="new-review-form" class="new-review-form">
                                                     <h3 class="spr-form-title korean">리뷰 작성하기</h3>
-                                                    <fieldset class="spr-form-contact">
-                                                        <div class="spr-form-contact-name">
-                                                          <label class="spr-form-label korean" for="review_author_10508262282">이름</label>
-                                                          <input class="spr-form-input spr-form-input-text korean" id="review_author_10508262282" type="text" name="review[author]" value="" placeholder="이름을 입력해주세요">
-                                                        </div>
-                                                        <div class="spr-form-contact-email">
-                                                          <label class="spr-form-label korean" for="review_email_10508262282">이메일</label>
-                                                          <input class="spr-form-input spr-form-input-email korean" id="review_email_10508262282" type="email" name="review[email]" value="" placeholder="john.smith@example.com 형식으로 작성해주세요">
-                                                        </div>
-                                                    </fieldset>
+                                         
                                                     <fieldset class="spr-form-review">
-                                                      <div class="spr-form-review-rating">
-                                                        <label class="spr-form-label korean">별점</label>
-                                                        <div class="spr-form-input spr-starrating">
-                                                          <div class="product-review"><a class="reviewLink" href="#"><i class="fa fa-star-o"></i><i class="font-13 fa fa-star-o"></i><i class="font-13 fa fa-star-o"></i><i class="font-13 fa fa-star-o"></i><i class="font-13 fa fa-star-o"></i></a></div>
-                                                        </div>
+                                  
+                                                      <div class="spr-form-review-title" >
+                                                        <label class="spr-form-label korean" for="review_title_10508262282">별점 </label>
+                                                              <fieldset id="myform">
+                                                   
+       															 <!-- css고치면 value값 바꿔줘야함 -->
+     															   <input type="radio" name="rating" value="5" id="rate5" class="rate"><label for="rate5">⭐</label>
+     															    <input type="radio" name="rating" value="4" id="rate4" class="rate"><label for="rate4">⭐</label>
+                                                      				<input type="radio" name="rating" value="3" id="rate3" class="rate"><label for="rate3">⭐</label>
+                                                      	 			<input type="radio" name="rating" value="2" id="rate2" class="rate"><label for="rate2">⭐</label>
+                                                      	 			  <input type="radio" name="rating" value="1" id="rate1" class="rate"><label for="rate1">⭐</label>
+                                                      </fieldset>
                                                       </div>
+                                                      
+                                                      
+                                                      
+                                                      
+                                                      
+                                                      
                                                 
                                                       <div class="spr-form-review-title">
                                                         <label class="spr-form-label korean" for="review_title_10508262282">리뷰 제목</label>
-                                                        <input class="spr-form-input spr-form-input-text korean" id="review_title_10508262282" type="text" name="review[title]" value="" placeholder="리뷰 제목을 써주세요">
+                                                        <input class="spr-form-input spr-form-input-text korean" id="reviewTitle" type="text"  placeholder="리뷰 제목을 써주세요">
                                                       </div>
                                                 
                                                       <div class="spr-form-review-body">
                                                         <label class="spr-form-label korean" for="review_body_10508262282">리뷰 내용 <span class="spr-form-review-body-charactersremaining korean">(1500)자</span></label>
                                                         <div class="spr-form-input">
-                                                          <textarea class="spr-form-input spr-form-input-textarea korean id="review_body_10508262282" data-product-id="10508262282" name="review[body]" rows="10" placeholder="리뷰를 작성해주세요"></textarea>
+                                                          <textarea class="spr-form-input spr-form-input-textarea korean" id="reviewContent"  rows="10" placeholder="리뷰를 작성해주세요"></textarea>
                                                         </div>
                                                       </div>
                                                     </fieldset>
                                                     <fieldset class="spr-form-actions">
-                                                        <input type="submit" class="spr-button spr-button-primary button button-primary btn btn-primary korean" value="리뷰 작성하기">
+                                                   <!--      <input type="submit" class="spr-button spr-button-primary button button-primary btn btn-primary korean" value="리뷰 작성하기"> -->
+                                                        <button type="submit" class="spr-button spr-button-primary button button-primary btn btn-primary korean" id="reviewSubmit" >리뷰 작성하기</button>
                                                     </fieldset>
-                                                </form>
+                                                    </div>
+                                           
                                             </div>
+                                            
+                                            
+                                            
                                             <div class="spr-reviews">
+                                            
+                                            
                                                 <div class="spr-review">
                                                     <div class="spr-review-header">
                                                         <span class="product-review spr-starratings spr-review-header-starratings"><span class="reviewLink"><i class="fa fa-star"></i><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star"></i></span></span>
@@ -640,6 +684,8 @@
                                                         <p class="spr-review-content-body korean">해당 영역은 제품 리뷰 내용입니다. 한글 테스트입니다.</p>
                                                     </div>
                                                 </div>
+                                                
+                                                
                                                 <div class="spr-review">
                                                   <div class="spr-review-header">
                                                     <span class="product-review spr-starratings spr-review-header-starratings"><span class="reviewLink"><i class="fa fa-star"></i><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star"></i></span></span>
@@ -652,6 +698,8 @@
                                                     </p>
                                                   </div>
                                                 </div>
+                                                
+                                                
                                                 <div class="spr-review">
                                                   <div class="spr-review-header">
                                                     <span class="product-review spr-starratings spr-review-header-starratings"><span class="reviewLink"><i class="fa fa-star"></i><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star"></i></span></span>
@@ -664,7 +712,12 @@
                                                     <br>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                                                   </div>
                                                 </div>
+                                                
+                                                
                                             </div>
+                                            
+                                            
+                                            
                                         </div>
                                         </div>
                                     </div>
@@ -1683,6 +1736,7 @@
 
 
 
+
 	<%@ include file="../include/footer.jsp"%>
 
 
@@ -1778,7 +1832,60 @@
                 var lightBox = new PhotoSwipe($pswp, PhotoSwipeUI_Default, items, options);
                 lightBox.init();
             });
+            
+            
+            
+            /* ajax 굿즈리뷰 입력부분 */
+            
+         	$("#reviewSubmit").click(function(){
+        		let grComment = $("#reviewContent").val();
+        		let grTitle = $("#reviewTitle").val();
+        		let chkGrScore = document.getElementsByName('rating');
+        		let grScore;
+        		
+        		for(var i =0; i < chkGrScore.length; i++){
+        			if(chkGrScore[i].checked){
+        				grScore = chkGrScore[i].value;
+        			}
+        		}
+        	
+         	
+        		
+        		
+        		if(grComment.length > 0){
+        			let commentData = {grComment, grTitle, grScore, gdsNum: "${goods.gdsNum}"};
+        			console.log(commentData);
+        			
+        	 		$.ajax({
+        				url:"${pageContext.request.contextPath}/goodsReview/insertgrReview",
+        				type: "POST",
+        				data: JSON.stringify(commentData),
+        				contentType : "application/json; charset=utf-8",
+        				success: function(data){
+        					alert("입력 성공");
+        				}
+        			}) 
+        		}
+        	})
+            
+            
+            
+            
         });
+        /* -------------------------------------------------------------------------------------------------------- */
+ /*        $(function(){ 데이터 삽입
+        
+        	$("#reivewSubmit").click(function(){
+        		let grComment = $("#reviewContent").val();
+        		let grTitle = $("#reviewTitle").val();
+        		let grScore = $(".rate").val();
+        		
+        		if(grComment>0){
+        			let commentData = {grComment, grTitle, grScore, gdsNum: "${goods.gdsNum}"};
+        			console.log(commentData);
+        		}
+        	});
+        }); */
         </script>
         <!-- 해당 페이지의 이벤트 종료입니다 -->
     </div>

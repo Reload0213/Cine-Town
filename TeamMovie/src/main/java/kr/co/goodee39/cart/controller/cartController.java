@@ -57,20 +57,6 @@ public class cartController {
 		
 		return "redirect:/cart/showCartList";
 		
-		
-		
-		
-		
-		
-		
-		
-		
-//		System.out.println("uvo1확인:" + uvo1.getUserNum());
-//		vo.setUserNum(uvo1.getUserNum());
-//		cartService.insertCartItem(vo);
-//		System.out.println("굿즈번호 확인:(컨트롤러)" + vo.getGdsNum());
-//		System.out.println("굿즈수량 확인:(컨트롤러)" + vo.getCartAmount());
-//		return "redirect:/cart/showCartList"; // 경로를 메인 인덱스로 타도록 우선 지정해놓음
 	}
 
 //	goodsDetail페이지에서 담은 장바구니 목록을 cart페이지에 보여주는 컨트롤러
