@@ -99,6 +99,7 @@
 
 				<thead>
 					<tr>
+					    <th> </th>
 						<th>번호</th>
 						<th>아이디</th>
 						<th>비밀번호</th>
@@ -111,7 +112,7 @@
 				<tbody>
 					<c:forEach var="userVO" items="${list}">
 						<tr>
-
+                             <td><span class="updateBtn"><i class="xi-pen"></i></span></td>
 							<td class="userNum">${userVO.userNum}</td>
 							<td>${userVO.userId}</td>
 							<td>${userVO.userPw}</td>
@@ -284,7 +285,7 @@
 
 					<c:otherwise>
 						<a
-							href="${pageContext.request.contextPath}/admin/user?num=${minBlock-1}">▶</a>
+							href="${pageContext.request.contextPath}/admin/user?num=${num+1}">▶</a>
 					</c:otherwise>
 
 				</c:choose>

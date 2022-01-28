@@ -92,7 +92,7 @@
                           <td>${adminMailBoxVO.sendDate}</td>
                           <td>${adminMailBoxVO.mailNum}</td>
                             <td>${adminMailBoxVO.userId}</td>
-                          <td ><button  type="button" onclick="openPopup('${adminMailBoxVO.mailNum}')">${adminMailBoxVO.content}</button></td>
+                          <td ><span class="mailTitle" onclick="openPopup('${adminMailBoxVO.mailNum}')">${adminMailBoxVO.content}</span></td>
                           <td><button class="delete" data-num="${adminMailBoxVO.mailNum}">삭제하기</button></td>
                           
                       </tr>
@@ -187,7 +187,7 @@
 
 					<c:otherwise>
 						<a
-							href="${pageContext.request.contextPath}/admin/mail?num=${minBlock-1}">▶</a>
+							href="${pageContext.request.contextPath}/admin/mail?num=${num+1}">▶</a>
 					</c:otherwise>
 
 				</c:choose>

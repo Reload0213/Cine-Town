@@ -10,6 +10,7 @@
   select userNum,userId,userPw,userName,userPhone,userEmail,userRegdate,userAddr1,userAddr2,userIsdelete,verify
   from user
   where verify = '0' and userIsdelete = 'N'
+  order by userNum desc
   limit #{start},#{count}
   
   </select>
@@ -41,11 +42,12 @@
   
   <select id="selectAdminMail" parameterType="adminMailBoxVO" resultType="adminMailBoxVO" >
 
- select b.sendDate,b.mailNum,a.userId,b.content
+ select b.sendDate ,b.mailNum ,a.userId ,b.content
 FROM user a inner JOIN  adminmailbox b
 on a.userNum = b.userNum
-where isDelete="N"
-limit #{start},#{count}	
+where isDelete='N'
+order by sendDate desc
+limit #{start}, #{count}	
   	
 
   
