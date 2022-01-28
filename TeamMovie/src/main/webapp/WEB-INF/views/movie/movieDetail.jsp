@@ -7,7 +7,6 @@
 
 <!-- 이영주 영화 상세 페이지 통합 css 파트 시작  -->
 
-
 <!-- ElegantFonts CSS -->
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/assets/css/movieDetail/elegant-fonts.css">
@@ -333,11 +332,11 @@
 					            <input type="radio" name="rating" value="8" id="rate3"><label for="rate3">⭐</label>
 					            <input type="radio" name="rating" value="7" id="rate4"><label for="rate4">⭐</label>
 					            <input type="radio" name="rating" value="6" id="rate5"><label for="rate5">⭐</label>
-					            <input type="radio" name="rating" value="5" id="rate1"><label for="rate6">⭐</label>
-					            <input type="radio" name="rating" value="4" id="rate2"><label for="rate7">⭐</label>
-					            <input type="radio" name="rating" value="3" id="rate3"><label for="rate8">⭐</label>
-					            <input type="radio" name="rating" value="2" id="rate4"><label for="rate9">⭐</label>
-					            <input type="radio" name="rating" value="1" id="rate5"><label for="rate10">⭐</label>
+					            <input type="radio" name="rating" value="5" id="rate6"><label for="rate6">⭐</label>
+					            <input type="radio" name="rating" value="4" id="rate7"><label for="rate7">⭐</label>
+					            <input type="radio" name="rating" value="3" id="rate8"><label for="rate8">⭐</label>
+					            <input type="radio" name="rating" value="2" id="rate9"><label for="rate9">⭐</label>
+					            <input type="radio" name="rating" value="1" id="rate10"><label for="rate10">⭐</label>
 					        </fieldset>
 					    </form>
 
@@ -742,7 +741,7 @@
 	<script type='text/javascript'
 		src='${pageContext.request.contextPath}/assets/js/movieDetail/custom.js'></script>
 
-
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
 
 
 
@@ -846,7 +845,6 @@
 						heart_input.setAttribute("type", "checkbox");
 						heart_input.setAttribute("name","heart");
 						heart_input.setAttribute("id", "heart");
-						heart_input
 						heart_label.append(heart_input)
 						
 						//i
@@ -878,6 +876,7 @@
     
 						const modify_delete = document.createElement("div"); //작성자가 본인일 경우 나타나게 하기
 						modify_delete.classList.add("modify_delete");
+						
 						// 해당 유저가 쓴 댓글일 경우
 				 		if(usernum == item.rpWriternum){
 							//수정 버튼
@@ -908,10 +907,12 @@
 			//댓글 DB에 등록하기
 			$(".set-comment").click(function(){
 				let rpComment = $(".rp-comment").val();
+				let rpStar = $('input[name=rating]:checked').val();
+				let rpDate = moment(new Date).format('YYYY-MM-DD HH:mm:ss');
 					console.log(rpComment);
 				
 				if(rpComment.length > 0){
-					let comment_data = {rpComment, mvNum:"${movieVO.mvNum}"};
+					let comment_data = {rpComment, mvNum:"${movieVO.mvNum}", rpStar, rpDate};
 													
 						console.log(comment_data);
 					$.ajax({
@@ -923,40 +924,135 @@
 						success:function(data){
 							let usernum = data.rpWriternum;
 							
-							const rpCommentList = document.querySelector(".comment-list");
+							
+							
+							const rpCommentList = document.querySelector(".comment-list"); //댓글 목록
 							const li = document.createElement("li");
-							const div = document.createElement("div");
-							const h3 = document.createElement("h3");
-							h3.innerText = data.rpWritername;
-							const p = document.createElement("p");
-							p.innerText = data.rpComment;
-							// 삭제 버튼
-							const delete_button = document.createElement("button");
-							delete_button.innerText = "삭제";
-							const like_button = document.createElement("button");
-							like_button.innerText = "좋아요";
+							/* li.style="background-color:gray;"; */
+							rpCommentList.prepend(li);
+							//묶어주는 div생성
 							
-								
-							rpCommentList.append(li);
+							//이름이랑 별점 묶어주기 끝
+							const top_info = document.createElement("div"); 
+							top_info.classList.add("top_info"); //class 부여
+							li.prepend(top_info);
+							top_info.style="display:flex;";
 							
-							// 수정 버튼
-							const modify_button = document.createElement("button");
-							modify_button.innerText = "수정";
+							const writername = document.createElement("span"); //이름 엘리먼트 생성
+							writername.classList.add("writername");
+							writername.innerText = data.rpWritername; //작성자 이름 주입
+							top_info.append(writername);
+							
+							const bar = document.createElement("span");
+							bar.classList.add("bar");
+							bar.innerText = " | ";
+							bar.style="margin: 0 10px;"
+							top_info.append(bar);
+							
+							const star_wrapper = document.createElement("div"); //별이랑 숫자 묶는 div
+							star_wrapper.classList.add("star_wrapper");
+							const star = document.createElement("span"); //별 그림
+							star.classList.add("xi-star"); //xi-con으로 클래스 부여해서 별 
+							star.style="color:orange;";
+							const rpStar = document.createElement("span");//별 카운트
+							rpStar.innerText=data.rpStar;//별 숫자 db에서 가져온 것 
+													
+							top_info.append(star_wrapper);
+							star_wrapper.append(star);//별 그림
+							star_wrapper.append(rpStar);//별 숫자
+							//이름이랑 별점 묶어주기 끝
+							
+							//댓글 내용
+							const review_info = document.createElement("div")
+							review_info.classList.add("review_info");
+							review_info.innerText = data.rpComment;
+							review_info.style="text-align:left; margin: 10px 0; font-size: 20px;";
+							li.append(review_info);
+							//댓글 내용 끝
+
+				
+							//좋아요, 날짜, 생성자(수정, 삭제 버튼) 묶어주기
+							const bottom_info = document.createElement("div")
+							bottom_info.classList.add("bottom_info");
+							bottom_info.style="display:flex; justify-content:space-between";
+							li.append(bottom_info);
 							
 						
+							const date_like = document.createElement("div")//댓글, 좋아요 묶어주기
+							date_like.classList.add("date_like");//클래스 부여
+							date_like.style="display:flex";
+							bottom_info.append(date_like);
 							
-							div.append(modify_button);
-							div.append(delete_button);
-														
-							div.prepend(p);
-							div.prepend(h3);
-														
-							rpCommentList.append(div);
+							
+							const date = document.createElement("span"); //댓글 생성 날짜
+							date.innerText = data.rpDate;
+							date.style="margin-right: 10px; font-size: 10px;";
+							date_like.append(date);
+							
+													
+							const like_button = document.createElement("div"); //좋아요 버튼
+							like_button.classList.add("like_button");
+							
+							//form
+							const heart_form = document.createElement("form");
+							heart_form.setAttribute("id", "heart");
+							heart_form.setAttribute("method", "post");
+							heart_form.setAttribute("name", "heart");
+							like_button.append(heart_form);
+							
+							//label
+							const heart_label = document.createElement("label");
+							heart_form.append(heart_label);
+							
+							//input
+							const heart_input = document.createElement("input");
+							heart_input.setAttribute("type", "checkbox");
+							heart_input.setAttribute("name","heart");
+							heart_input.setAttribute("id", "heart");
+							heart_label.append(heart_input)
+							
+							//i
+							const xi_heart = document.createElement("i");
+							xi_heart.classList.add("xi-heart");
+							heart_label.append(xi_heart);
+							
+							const heart_score = document.createElement("span");
+							heart_score.innerText = data.rpLike;
+							heart_label.append(heart_score);
+							
+							
+							
+											
+							date_like.append(like_button);
+										
+						
+	    
+							const modify_delete = document.createElement("div"); //작성자가 본인일 경우 나타나게 하기
+							modify_delete.classList.add("modify_delete");
+							
+							// 해당 유저가 쓴 댓글일 경우
+					 		if(usernum == data.rpWriternum){
+								//수정 버튼
+								const modify_button = document.createElement("button");
+								modify_button.innerText="수정";
+								modify_button.style="margin-right: 10px;background:none;";
+								//삭제 버튼
+								const delete_button = document.createElement("button");
+								delete_button.innerText="삭제";
+								delete_button.style="background:none;"
+								modify_delete.append(modify_button);
+								modify_delete.append(delete_button);
+							}
+					
+							bottom_info.append(modify_delete);
+							const hr = document.createElement("hr");
+							li.append(hr);
 						}
 					});
 				}else{
 					alert("댓글을 입력해주세요");
 				}
+				document.querySelector('.rp-comment').value = ''; // 텍스트창 초기화
 			});
 		});
 	</script>

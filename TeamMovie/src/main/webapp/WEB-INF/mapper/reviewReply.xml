@@ -8,18 +8,13 @@
 		select rpNum, rpComment, rpWritername, rpWriternum, mvNum, rpDate, rpLike, rpStar
 		from reviewreply
 		where mvNum = #{mvNum}
-	</select>
-	
-	<select id="selectUserComment" parameterType="reviewReplyVO" resultType="reviewReplyVO">
-		select rpNum, rpComment, rpWritername, rpWriternum, mvNum, rpDate, rpLike, rpStar
-		from reviewreply
-		where rpWriternum = #{rpWriternum}
+		order by rpDate desc
 	</select>
 	
 	<insert id="insertComment" parameterType="reviewReplyVO"
 	useGeneratedKeys="true" keyProperty="rpNum">
 		insert into reviewreply(rpComment, rpWritername, rpWriternum, rpNum, rpDate, rpLike, mvNum, rpStar)
-		values(#{rpComment}, #{rpWritername}, #{rpWriternum}, #{rpNum}, now(), #{rpLike}, #{mvNum}, #{rpStar})
+		values(#{rpComment}, #{rpWritername}, #{rpWriternum}, #{rpNum}, #{rpDate}, #{rpLike}, #{mvNum}, #{rpStar})
 	</insert>
 	
 	<update id="updateComment" parameterType="reviewReplyVO">
