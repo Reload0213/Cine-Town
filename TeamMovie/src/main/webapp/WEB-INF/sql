@@ -18,7 +18,8 @@ CREATE TABLE IF NOT EXISTS `admin` (
   `adId` varchar(50) NOT NULL COMMENT 'code 0',
   `adPw` varchar(50) NOT NULL,
   `adName` varchar(50) NOT NULL,
-  `verify` int(2) DEFAULT 9
+  `verify` int(2) DEFAULT 9,
+  PRIMARY KEY (`adId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='관리자 데이터';
 
 -- 테이블 데이터 cgv.admin:~0 rows (대략적) 내보내기
