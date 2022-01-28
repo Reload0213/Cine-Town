@@ -36,12 +36,12 @@
 						<form:form modelAttribute="userVO" action="${pageContext.request.contextPath }/user/loginComplete">
 							<div class="input__item">
 								<!-- <input type="text" placeholder="아이디를 입력해주세요" required> -->
-								<form:input path="userId" type="text" placeholder="아이디를 입력해주세요" required="true" /> <span><i
+								<form:input path="userId" type="text" placeholder="아이디를 입력해주세요" required="true" value="aaa"/> <span><i
 									class="xi-user-o"></i></span>
 							</div>
 							<div class="input__item">
 						<!-- 		<input type="text" placeholder="비밀번호를 입력해주세요" required> -->
-								<form:input path="userPw" type="password" placeholder="비밀번호를 입력해주세요" required="true"/>
+								<form:input path="userPw" type="password" placeholder="비밀번호를 입력해주세요" required="true" value="111"/>
 								<span><i class="xi-lock-o"></i></span>
 							</div>
 							<a href="${pageContext.request.contextPath}/user/findUser" class="forget_pass"
@@ -60,19 +60,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="login__social">
-				<div class="row d-flex justify-content-center">
-					<div class="col-lg-6">
-						<div class="login__social__links">
-							<span>or</span>
-							<ul>
-								<li><a href="#" class="google">카카오톡으로 로그인</a></li>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
+		
 		</div>
 	</section>
 	<!-- Login Section End -->

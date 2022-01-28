@@ -24,27 +24,34 @@ public class UserService {
 
 	// 아이디 중복 검사
 	public int idCheck(String userId) {
-				
+
 		return sqlSessionTemplate.selectOne("user.idCheck", userId);
-		
+
 	}
 
 	// 로그인
-	public String goLogin(UserVO vo, HttpSession session) {
+	public String goLoginService(UserVO vo, HttpSession session) {
 		System.out.println("goLogin 실행");
 		UserVO vo1 = sqlSessionTemplate.selectOne("user.selectUser", vo);
-		System.out.println(vo1.getUserName());
 		String path = "";
-		if (vo1.getVerify() == 0) {
-			System.out.println("일반 유저 로그인");
-			session.setAttribute("account", vo1);
-			path = "redirect:/";
-		} else if (vo1.getVerify() == 9) {
-			System.out.println("admin 유저 로그인");
-			session.setAttribute("account", vo1);
-			path = "redirect:/";
+		//아이디가 있으면
+		if (vo1 != null) {
+			
+			System.out.println(vo1.getUserName());
+			session.setAttribute("account", vo1); //session에 로그인 정보 저장
+			
+			if (vo1.getVerify() == 0) {//일반유저
+				System.out.println("일반 유저 로그인");
+				path = "redirect:/"; //메인으로 redirect. 정보를 저장해서 새로고침안해도.... 
+			} else if (vo1.getVerify() == 9) {//관리자
+				System.out.println("admin 유저 로그인");
+				path = "redirect:/";
+			}
+		} else {
+			path = "/user/signin";
 		}
 		return path;
+
 	}
 
 }
