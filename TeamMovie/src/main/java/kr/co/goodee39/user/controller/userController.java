@@ -40,7 +40,7 @@ public class userController {
 	@PostMapping("/loginComplete")
 	public String loginComplete(@ModelAttribute("userVO") UserVO vo, HttpSession session) {
 		System.out.println("loginComplete실행");
-		return userService.goLogin(vo, session);
+		return userService.goLoginService(vo, session);
 
 	}
 
