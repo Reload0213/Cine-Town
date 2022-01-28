@@ -27,6 +27,7 @@ public class noticeService {
 	
 	// 공지사항 작성하기
 	public void noticeWrite(NoticeVO noticeVO) {
+		
 		sqlSessionTemplate.insert("notice.noticeWrite", noticeVO);
 	}
 }
