@@ -60,19 +60,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="login__social">
-				<div class="row d-flex justify-content-center">
-					<div class="col-lg-6">
-						<div class="login__social__links">
-							<span>or</span>
-							<ul>
-								<li><a href="#" class="google">카카오톡으로 로그인</a></li>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
+		
 		</div>
 	</section>
 	<!-- Login Section End -->
