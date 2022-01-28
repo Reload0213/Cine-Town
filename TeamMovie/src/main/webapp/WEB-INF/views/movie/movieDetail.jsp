@@ -23,7 +23,21 @@
 <!-- Styles -->
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/assets/css/movieDetail/style.css">
-
+<style>
+ #heart label {
+       
+       color: transparent; /* 기존 이모지 컬러 제거 */
+       text-shadow: 0 0 0 black; /* 새 이모지 색상 부여 */
+     }
+     #heart input[type="checkbox"] {
+       display: none; /* 라디오박스 감춤 */
+     }
+    
+   
+     #heart input[type="checkbox"]:checked+i {
+       text-shadow: 0 0 0 red; /* 마우스 클릭 체크 */
+     }
+     </style>
 <!-- 영화 상세 페이지 통합 css 파트 종료  -->
 
 </head>
@@ -781,37 +795,44 @@
 						const like_button = document.createElement("div"); //좋아요 버튼
 						like_button.classList.add("like_button");
 						
+						//form
+						const heart_form = document.createElement("form");
+						heart_form.setAttribute("id", "heart");
+						heart_form.setAttribute("method", "post");
+						heart_form.setAttribute("name", "heart");
+						like_button.append(heart_form);
+						
+						//label
+						const heart_label = document.createElement("label");
+						heart_form.append(heart_label);
+						
+						//input
+						const heart_input = document.createElement("input");
+						heart_input.setAttribute("type", "checkbox");
+						heart_input.setAttribute("name","heart");
+						heart_input.setAttribute("id", "heart");
+						heart_input
+						heart_label.append(heart_input)
+						
+						//i
+						const xi_heart = document.createElement("i");
+						xi_heart.classList.add("xi-heart");
+						heart_label.append(xi_heart);
+						
+						const heart_score = document.createElement("span");
+						heart_score.innerText = item.rpLike;
+						heart_label.append(heart_score);
 						
 						
-						/* const heart_form = document.createElement("form");
-						heart_form.setAttribute("id", heart);
-						heart_form.setAttribute("method", post);
-						heart_form.setAttribute("name", heart);
-						like_button.append(heart_form); */
 						
-						
-						
-						
-						
-						
-						like_button.innerText = item.rpLike;
-						const heart = document.createElement("span");//하트 그림
-						heart.classList.add("xi-heart-o");
-						like_button.prepend(heart);
+						//like_button.innerText = item.rpLike;
+						//const heart = document.createElement("span");//하트 그림
+						//heart.classList.add("xi-heart-o");
+						//like_button.prepend(heart);
 						
 						//like_button.type="checkbox"; //하트를 누르고 취소하고
 						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
+										
 						date_like.append(like_button);
 						//xi-heart xi-heart-o
 						//if.hear가 checked 되면 class name을 변경할 수 있는가? -> heart 색상 변경 QQQQQQQ 
@@ -899,7 +920,7 @@
 						}
 					});
 				}else{
-					alert("댓굴을 달아주세요");
+					alert("댓글을 입력해주세요");
 				}
 			});
 		});
