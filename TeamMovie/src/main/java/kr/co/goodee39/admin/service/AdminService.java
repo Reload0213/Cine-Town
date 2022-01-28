@@ -6,6 +6,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
 import kr.co.goodee39.adminmailbox.vo.AdminMailBoxVO;
 import kr.co.goodee39.user.vo.UserVO;
@@ -60,7 +61,21 @@ public void updateDeleteAdminMailBox(AdminMailBoxVO vo) {
 	
 	sqlSessionTemplate.update("admin.updateDeleteAdminMail",vo);
 }
+
+public void showAdminMailBoxOne(@ModelAttribute("ambVO") AdminMailBoxVO vo) {
+	AdminMailBoxVO vo1 = new AdminMailBoxVO();
 	
+	vo1=sqlSessionTemplate.selectOne("admin.selectOneAdminMail",vo);
+	System.out.println(vo1.getMailNum());
+	vo.setMailNum(vo1.getMailNum());
+	vo.setUserId(vo1.getUserId());
+	vo.setContent(vo1.getContent());
+	vo.setSendDate(vo1.getSendDate());
+	
+
+	
+	
+}
 	
 
 	

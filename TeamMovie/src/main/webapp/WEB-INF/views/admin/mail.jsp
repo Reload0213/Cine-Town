@@ -88,11 +88,11 @@
                     </thead>
                     <tbody>
                	<c:forEach var="adminMailBoxVO" items="${list}">
-                      <tr>
+                      <tr >
                           <td>${adminMailBoxVO.sendDate}</td>
                           <td>${adminMailBoxVO.mailNum}</td>
                             <td>${adminMailBoxVO.userId}</td>
-                          <td>${adminMailBoxVO.content}</td>
+                          <td ><button  type="button" onclick="openPopup('${adminMailBoxVO.mailNum}')">${adminMailBoxVO.content}</button></td>
                           <td><button class="delete" data-num="${adminMailBoxVO.mailNum}">삭제하기</button></td>
                           
                       </tr>
@@ -232,6 +232,8 @@
 <script>
 let deleteBtn = document.querySelectorAll(".delete");
 
+
+
 /* deleteBtn[i].addEventListener("click",function(){
 
 }) */
@@ -280,7 +282,23 @@ for(let i=0; i<deleteBtn.length; i++){
 	
 }
 
+
 });
+
+function openPopup(a){
+
+	 let width="500";
+	 let height="709";
+	 
+	 let left=Math.ceil((window.screen.width - width)/2);
+	 let top=Math.ceil((window.screen.height - height)/2);
+	 
+	 window.open("${pageContext.request.contextPath}/admin/mail/detail?mailNum="+a,"메일 상세보기",
+		"width="+width+", height="	+height+", left="+left+", top="+top);
+			 
+	
+};
+
 
 </script>
 

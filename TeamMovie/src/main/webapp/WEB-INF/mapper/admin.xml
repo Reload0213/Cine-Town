@@ -46,10 +46,25 @@ FROM user a inner JOIN  adminmailbox b
 on a.userNum = b.userNum
 where isDelete="N"
 limit #{start},#{count}	
-  
+  	
 
   
   </select>
+  
+   <select id="selectOneAdminMail" parameterType="adminMailBoxVO" resultType="adminMailBoxVO" >
+
+ select b.sendDate,b.mailNum,a.userId,b.content
+FROM user a inner JOIN  adminmailbox b
+on a.userNum = b.userNum
+where isDelete="N" and
+mailNum=#{mailNum}
+
+  	
+
+  
+  </select>
+  
+  
  
     <select id="selectAdminMailCount" parameterType="adminMailBoxVO" resultType="int">
 select count(*)
