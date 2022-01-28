@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import kr.co.goodee39.admin.service.AdminService;
 import kr.co.goodee39.admin.service.noticeService;
 import kr.co.goodee39.admin.vo.NoticeVO;
+import kr.co.goodee39.adminmailbox.vo.AdminMailBoxVO;
 import kr.co.goodee39.goods.vo.GoodsVO;
 import kr.co.goodee39.user.vo.UserVO;
 
@@ -53,6 +55,20 @@ public class adminController {
 	public String mail(Model model,@RequestParam(defaultValue = "1")int num) {
    service.showAdminMailBoxList(model,num);
 		return "admin/mail";
+	}
+	
+	
+	@GetMapping("/mail/detail")
+	public String mailDetail(@ModelAttribute("ambVO") AdminMailBoxVO vo) {
+		
+		/*
+		 * AdminMailBoxVO vo2 = new AdminMailBoxVO();
+		 * System.out.println(vo2.getMailNum());
+		 */
+		System.out.println(vo.getMailNum());
+        service.showAdminMailBoxOne(vo);
+       
+		return "admin/detail";
 	}
 	
 	
