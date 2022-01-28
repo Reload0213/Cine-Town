@@ -64,7 +64,7 @@
 							href="${pageContext.request.contextPath}/preview/main">시사회 /
 								이벤트</a></li>
 						<li class="nav-item"><a class="nav-link"
-							href="${pageContext.request.contextPath}/admin/faqMain">고객 센터</a></li>
+							href="${pageContext.request.contextPath}/aboutUs/faqMain">고객 센터</a></li>
 
 
 						<c:if test="${sessionScope.account.userId != null}">

@@ -76,7 +76,7 @@
             <div class="selCon">
                 <select name="" id="selBoard">
                     <option value="" selected>게시판을 선택해주세요.</option>
-                    <option value="1">FAQ 게시판</option>
+                    <option value="1">공지사항 게시판</option>
                     <option value="2">리뷰 게시판</option>
                 </select>
                 <button id="submitBoard">검색</button>
@@ -201,11 +201,10 @@
                   </tbody>
               </table>
 
-
-             
-
-        
-
+			<div class="container">
+             <button style="background-color:red; font-size:50px; float:right;" type="button" onclick="location.href='${pageContext.request.contextPath}/aboutUs/noticeWrite'">글쓰기</button>
+			</div>
+      
             </div>
 
 
