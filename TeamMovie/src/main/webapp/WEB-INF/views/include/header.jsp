@@ -65,45 +65,58 @@
 								이벤트</a></li>
 						<li class="nav-item"><a class="nav-link"
 							href="${pageContext.request.contextPath}/admin/faqMain">고객 센터</a></li>
-						
-						
+
+
 						<c:if test="${sessionScope.account.userId != null}">
 							<c:if test="${sessionScope.account.verify == 9}">
 								<li class="nav-item"><a class="nav-link"
-									href="${pageContext.request.contextPath}/admin/main">관리자 페이지</a></li>
+									href="${pageContext.request.contextPath}/admin/main">관리자
+										페이지</a></li>
 							</c:if>
 						</c:if>
 					</ul>
-					<div class="user_option">
-						<a href="${pageContext.request.contextPath}/productWishlist/productWishlist"
-							class="user_link" style="font-size: 1.7em;"> <i
-							class="xi-heart" aria-hidden="true"></i>
-						</a> <a href="${pageContext.request.contextPath}/cart/showCartList"
-							class="user_link" style="font-size: 1.7em;"> <i
-							class="xi-cart" aria-hidden="true"></i>
-						</a> <a href="${pageContext.request.contextPath}/user/signup"
-							class="user_link" style="font-size: 1.7em;"> <i
-							class="xi-user-plus" aria-hidden="true"></i>
-						</a>
-						<c:choose>
-							<c:when test="${sessionScope.account.userNum == null }">
-								<a href="${pageContext.request.contextPath}/user/signin"
-									class="order_online"
-									style="border: 1px solid #fff; background-color: #232830; padding: 5px 20px;">
-									로그인 </a>
-							</c:when>
-							<c:otherwise>
-								<a href="${pageContext.request.contextPath}/user/signout"
-									class="order_online"
-									style="border: 1px solid #fff; background-color: #232830; padding: 5px 20px;">
-									로그아웃 </a>
-							</c:otherwise>
-						</c:choose>
-						<%--  <a href="${pageContext.request.contextPath}/user/signin"
-							class="order_online"
-							style="border: 1px solid #fff; background-color: #232830; padding: 5px 20px;">
-							로그인 </a> --%>
-					</div>
+
+					<c:if test="${sessionScope.account.userId != null}">
+						<div class="username" style="color: white">
+							${sessionScope.account.userName}님</div>
+					</c:if>
+				</div>
+				<div class="user_option">
+					<c:choose>
+						<c:when test="${sessionScope.account.userNum == null }">
+
+							<a href="${pageContext.request.contextPath}/user/signin"
+								class="user_link" style="font-size: 1.7em;"> <i
+								class="xi-heart" aria-hidden="true"></i>
+							</a>
+							<a href="${pageContext.request.contextPath}/user/signin"
+								class="user_link" style="font-size: 1.7em;"> <i
+								class="xi-cart" aria-hidden="true"></i>
+							</a>
+							<a href="${pageContext.request.contextPath}/user/signup"
+								class="user_link" style="font-size: 1.7em;"> <i
+								class="xi-user-plus" aria-hidden="true"></i>
+							</a>
+							<a href="${pageContext.request.contextPath}/user/signin"
+								class="order_online"
+								style="border: 1px solid #fff; background-color: #232830; padding: 5px 20px;">
+								로그인 </a>
+						</c:when>
+						<c:otherwise>
+							<a href="${pageContext.request.contextPath}/productWishlist/productWishlist"
+								class="user_link" style="font-size: 1.7em;"> <i
+								class="xi-heart" aria-hidden="true"></i>
+							</a>
+							<a href="${pageContext.request.contextPath}/cart/showCartList"
+								class="user_link" style="font-size: 1.7em;"> <i
+								class="xi-cart" aria-hidden="true"></i>
+							</a>
+							<a href="${pageContext.request.contextPath}/user/signout"
+								class="order_online"
+								style="border: 1px solid #fff; background-color: #232830; padding: 5px 20px;">
+								로그아웃 </a>
+						</c:otherwise>
+					</c:choose>
 				</div>
 			</nav>
 		</div>
