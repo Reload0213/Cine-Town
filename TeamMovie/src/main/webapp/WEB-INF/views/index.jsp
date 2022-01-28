@@ -125,7 +125,7 @@
 				<div class="col-lg-4 col-md-6" style="margin-bottom: 1em;">
 				<a href="${pageContext.request.contextPath}/movie/movieDetail?mvNum=${item.mvNum}">
 					<div class="recent-game-item">
-						<div class="rgi-thumb set-bg" data-setbg="${item.mvPosterPath}">
+						<div class="rgi-thumb set-bg" data-setbg="${item.mvPosterPath}" style="height:500px;">
 							<div class="cata new">new</div>
 						</div>
 						<div class="rgi-content">

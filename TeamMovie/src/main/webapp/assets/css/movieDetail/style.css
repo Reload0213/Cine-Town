@@ -1038,7 +1038,7 @@ a.btn:hover {
 }
 
 .event-content .post-comments::before {
-    content: '/';
+    content: ' ';
     position: absolute;
     top: 0;
     left: 0;
@@ -2080,7 +2080,7 @@ ul.black-doted {
 }
 
 .blog-post-content-wrap .post-comments::before {
-    content: '/';
+    content: ' ';
     position: absolute;
     top: 0;
     left: 0;
@@ -2115,7 +2115,7 @@ ul.black-doted {
 }
 
 .single-blog-post .page-header .post-comments::before {
-    content: '/';
+    content: ' ';
     position: absolute;
     top: 0;
     left: 0;

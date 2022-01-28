@@ -48,7 +48,7 @@
 									</div>
 
 									<div class="post-comments">
-										<a href="#">${movieVO.mvActor}</a>
+										<span style="color:white">${movieVO.mvActor}</span>
 									</div>
 								</div>
 								<div
@@ -58,7 +58,27 @@
 									</div>
 
 									<div class="post-comments">
-										<a href="#">${movieVO.mvAge} 이용가</a>
+										<span style="color:white">${movieVO.mvAge} 이용가</span>
+									</div>
+								</div>
+								<div
+									class="entry-meta flex justify-content-center align-items-center">
+									<div class="post-author" style="color:#FEDD6A;">
+										<span>개봉일</span>
+									</div>
+
+									<div class="post-comments">
+										<span style="color:white">${movieVO.mvYear} 개봉</span>
+									</div>
+								</div>
+								<div
+									class="entry-meta flex justify-content-center align-items-center">
+									<div class="post-author" style="color:#FEDD6A;">
+										<span>평점</span>
+									</div>
+
+									<div class="post-comments">
+										<span style="color:#FEDD6A" class="xi-star checked"></span><span style="color:white">${movieVO.mvAvgRate}</span>
 									</div>
 								</div>
 								<div
@@ -68,7 +88,7 @@
 									</div>
 
 									<div class="post-comments">
-										<a href="#">${movieVO.mvGenre}</a>
+										<span style="color:white">${movieVO.mvGenre}</span>
 									</div>
 								</div>
 								<div
@@ -78,7 +98,17 @@
 									</div>
 
 									<div class="post-comments">
-										<a href="#">${movieVO.mvRuntime} 분</a>
+										<span style="color:white">${movieVO.mvRuntime} 분</span>
+									</div>
+								</div>
+								<div
+									class="entry-meta flex justify-content-center align-items-center">
+									<div class="post-author" style="color:#FEDD6A;">
+										<span>배급사</span>
+									</div>
+
+									<div class="post-comments">
+										<span style="color:white">${movieVO.mvProducer}</span>
 									</div>
 								</div>
 								<!-- .entry-meta -->
@@ -100,10 +130,6 @@
 				<div class="col-12 offset-lg-1 col-lg-10" style="width: 100%;">
 					<div class="featured-image">
 						<img src="${movieVO.mvPosterPath}" alt="" style="width: 100%;">
-
-						<div class="posted-date position-absolute">
-							<div class="day">⭐ ${movieVO.mvAvgRate}</div>
-						</div>
 						<!-- .posted-date -->
 					</div>
 					<!-- .featured-image -->
