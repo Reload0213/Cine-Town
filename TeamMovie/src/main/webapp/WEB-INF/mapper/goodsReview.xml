@@ -5,7 +5,7 @@
   <mapper namespace="goodsReview">
   <!-- 해당 상품에 대한 리뷰를 남기는 쿼리 -->
   <insert id="insertGoodsReview" parameterType="goodsReviewVO">
-  insert into goodsreview(grComment, userNum, userName, grNum, gdsNum, grTitle, grScore )
-  values (#{grComment},#{userNum},#{userName}, grNum, #{gdsNum}, #{grTitle}, #{grScore} )
+  insert into goodsreview(grComment, userNum, userName, grNum, gdsNum, grTitle, grScore, grDate )
+  values (#{grComment},#{userNum},#{userName}, grNum, #{gdsNum}, #{grTitle}, #{grScore}, #{grDate} )
   </insert>
   </mapper>

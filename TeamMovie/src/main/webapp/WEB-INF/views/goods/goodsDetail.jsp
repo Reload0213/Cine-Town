@@ -670,10 +670,10 @@
                                             </div>
                                             
                                             
-                                            
+                                            <!-- 여기부러 굿즈 리뷰 페이지 시작 -->
                                             <div class="spr-reviews">
                                             
-                                            
+                                            <!-- 댓글을 작성하면 해당 영역에 달림 -->
                                                 <div class="spr-review">
                                                     <div class="spr-review-header">
                                                         <span class="product-review spr-starratings spr-review-header-starratings"><span class="reviewLink"><i class="fa fa-star"></i><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star"></i></span></span>
@@ -684,34 +684,9 @@
                                                         <p class="spr-review-content-body korean">해당 영역은 제품 리뷰 내용입니다. 한글 테스트입니다.</p>
                                                     </div>
                                                 </div>
+                                                <!-- 해당 영역 종료 -->
                                                 
-                                                
-                                                <div class="spr-review">
-                                                  <div class="spr-review-header">
-                                                    <span class="product-review spr-starratings spr-review-header-starratings"><span class="reviewLink"><i class="fa fa-star"></i><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star"></i></span></span>
-                                                    <h3 class="spr-review-header-title">Lorem Ipsum is simply dummy text of the printing</h3>
-                                                    <span class="spr-review-header-byline"><strong>larrydude</strong> on <strong>Dec 30, 2018</strong></span>
-                                                  </div>
-                                            
-                                                  <div class="spr-review-content">
-                                                    <p class="spr-review-content-body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-                                                    </p>
-                                                  </div>
-                                                </div>
-                                                
-                                                
-                                                <div class="spr-review">
-                                                  <div class="spr-review-header">
-                                                    <span class="product-review spr-starratings spr-review-header-starratings"><span class="reviewLink"><i class="fa fa-star"></i><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star"></i></span></span>
-                                                    <h3 class="spr-review-header-title">Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</h3>
-                                                    <span class="spr-review-header-byline"><strong>quoctri1905</strong> on <strong>Dec 30, 2018</strong></span>
-                                                  </div>
-                                            
-                                                  <div class="spr-review-content">
-                                                    <p class="spr-review-content-body">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.<br>
-                                                    <br>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                                                  </div>
-                                                </div>
+                                      
                                                 
                                                 
                                             </div>
@@ -1789,6 +1764,7 @@
      <script src="${pageContext.request.contextPath }/assets/js/GoodsMainjs/vendor/photoswipe.min.js"></script>
      <script src="${pageContext.request.contextPath }/assets/js/GoodsMainjs/vendor/photoswipe-ui-default.min.js"></script>
      <!-- 제이쿼리, 자바스크립트 종료입니다 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
 
 
 
@@ -1842,6 +1818,8 @@
         		let grTitle = $("#reviewTitle").val();
         		let chkGrScore = document.getElementsByName('rating');
         		let grScore;
+        		let grDate = moment(new Date).format('YYYY년MM월DD일');
+;
         		
         		for(var i =0; i < chkGrScore.length; i++){
         			if(chkGrScore[i].checked){
@@ -1853,7 +1831,7 @@
         		
         		
         		if(grComment.length > 0){
-        			let commentData = {grComment, grTitle, grScore, gdsNum: "${goods.gdsNum}"};
+        			let commentData = {grComment, grTitle, grScore, grDate, gdsNum: "${goods.gdsNum}"};
         			console.log(commentData);
         			
         	 		$.ajax({
@@ -1861,10 +1839,33 @@
         				type: "POST",
         				data: JSON.stringify(commentData),
         				contentType : "application/json; charset=utf-8",
+        				dataType:"json",
         				success: function(data){
-        					alert("입력 성공");
+        					/* alert("입력 성공"); */
+        		/* 데이터를 담아줄 요소 생성 */
+        		const commentList = document.querySelector(".spr-reviews"); /* 리뷰를 담을 div 클래스 명 */
+        		const reviewDiv = document.createElement("div");
+        		
+        		let listHtml = ""; /* 요소 생성 및 초기화 */
+        		listHtml += " <div class='spr-review'>";
+        		listHtml += "  <div class='spr-review-header'>";
+        		listHtml += "<span class='product-review spr-starratings spr-review-header-starratings'><span class='reviewLink'><i class='fa fa-star'></i><i class='font-13 fa fa-star'></i><i class='font-13 fa fa-star'></i><i class='font-13 fa fa-star'></i><i class='font-13 fa fa-star'></i></span></span>";
+        		listHtml += "<h3 class='spr-review-header-title korean'>"+data.grTitle+"</h3>"; 
+        		listHtml += "<span class='spr-review-header-byline'><strong>"+data.userName+"</strong> 님이 <strong>"+data.grDate+"</strong>에 작성함</span>";
+        		listHtml += "</div>";
+        		listHtml += "<div class='spr-review-content'>";
+        		listHtml += "     <p class='spr-review-content-body korean'>"+data.grComment+"</p>";
+        		listHtml += "</div>";
+        		listHtml += "</div>"; 
+        		
+        		
+        
+        		
+        		reviewDiv.innerHTML=listHtml; 
+        		commentList.append(reviewDiv);
         				}
-        			}) 
+        			}) /*ajax 입력 종료  */
+        		
         		}
         	})
             
