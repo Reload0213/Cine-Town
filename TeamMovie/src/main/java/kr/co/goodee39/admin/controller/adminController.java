@@ -43,8 +43,10 @@ public class adminController {
 	
 	//게시판 출력컨트롤러
 	@GetMapping("/user")
-	public String user(Model model,@RequestParam(defaultValue = "1")int num) {
-	   service.showUserInfo(model, num);
+	public String user(Model model,@RequestParam(defaultValue = "1")int num,
+			                                        @RequestParam(defaultValue="")String userName
+			) {
+	   service.showUserInfo(model, num,userName);
 		return "admin/user";
 	}
 	

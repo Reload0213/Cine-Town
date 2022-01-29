@@ -10,11 +10,17 @@
   select userNum,userId,userPw,userName,userPhone,userEmail,userRegdate,userAddr1,userAddr2,userIsdelete,verify
   from user
   where verify = '0' and userIsdelete = 'N'
+  <choose>
+   <when test="userName != null">
+      and userName like #{userName}
+   </when>
+  </choose>
   order by userNum desc
   limit #{start},#{count}
   
   </select>
   
+ 
   <select id="selectUserCount" parameterType="userVO" resultType="int">
   select count(*)
   from user

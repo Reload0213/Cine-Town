@@ -342,9 +342,10 @@ td {
 
 .updateBtn>i{
 color:#141414;
+font-size:1.7rem;
 
 }
-.updateBtn:hover .updateBtn>i {
+.updateBtn:hover {
 	color:#dd2026;
 	transition:color 0.5s ease-in-out;
 }

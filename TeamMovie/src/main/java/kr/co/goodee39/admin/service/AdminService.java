@@ -19,10 +19,18 @@ public class AdminService {
 	
 	
 
-	public void  showUserInfo(Model model,int num){
+	public void  showUserInfo(Model model,int num,String userName){
 		
 	UserVO vo = new UserVO();
 	vo.setStart((num-1)*vo.getCount()); //인덱스시작
+	
+	if(userName != null) {
+	      
+		model.addAttribute("userName",userName);
+		
+	   vo.setUserName("%"+userName+"%");
+	   
+	}
    model.addAttribute("list",sqlSessionTemplate.selectList("admin.showUserInfoList",vo));
 	
    model.addAttribute("count",sqlSessionTemplate.selectOne("admin.selectUserCount",vo));

@@ -52,8 +52,8 @@
 	<div class="searchBox">
 
 		<div class="searchCon">
-			<span class="searchBtn"><i class="xi-search"></i></span><input
-				type="text" name="" id=""><span class="xbtn">&times;</span>
+			<span class="searchBtn"><i class="xi-search"></i></span>
+			<input type="text" name="searchBar" id="searchBar" placeholder="이름을 입력해주세요"><span class="xbtn">&times;</span>
 		</div>
 
 	</div>
@@ -232,6 +232,14 @@
 			pageContext.setAttribute("total", total);
 			pageContext.setAttribute("minBlock", minBlock);
 			pageContext.setAttribute("maxBlock", maxBlock);
+			
+			String query="";
+			String userName=(String)request.getAttribute("userName");
+			
+			if(userName != null){
+				query+="&userName="+userName;
+			}
+			pageContext.setAttribute("query", query);
 			%>
 
 
@@ -319,6 +327,8 @@
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<script
 		src="${pageContext.request.contextPath}/assets/js/adminMainPage/adminUserPage/adminUserPage.js"></script>
+	
+	
 	<script>
 		/*   let deleteBtn =document.querySelectorAll(".delete");
 		 let userNum = document.querySelectorAll(".userNum");
@@ -364,7 +374,22 @@
 		
 		 }); */
 		let deleteBtn = document.querySelectorAll(".delete");
-
+    
+		 document.querySelector("#searchBar").addEventListener("keyup",function(e){
+			  
+		      if(e.keyCode === 13){
+		    	  let userName = this.value;
+		      
+		    	  location.href="${pageContext.request.contextPath}/admin/user?userName="+userName;
+		      }
+		        	 	
+		       
+		 
+		    
+		  
+		       
+		       
+				});
 		$(function() {
 
 			for (let i = 0; i < deleteBtn.length; i++) {
@@ -401,8 +426,10 @@
 								});
 
 			}
-
+			
 		});
+			
+		
 	</script>
 
 </body>
