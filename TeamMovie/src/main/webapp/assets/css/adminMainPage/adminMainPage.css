@@ -492,7 +492,7 @@ font-size:1.7rem;
     text-align: center;
     font-weight: bold;
     width: 100%;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     padding: 0 0.5rem 0.2rem 0.5rem;
 }
 
@@ -522,6 +522,8 @@ font-size:1.7rem;
 
 .mailTitle{
 	
+	color:#141414;
+	font-size:1.5rem;
 cursor:pointer;
 	
 }

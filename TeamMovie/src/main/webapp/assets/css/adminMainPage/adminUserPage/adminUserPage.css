@@ -87,14 +87,15 @@ a.exitHideMenu{
     text-align: right;
 
 }
-.logoutBtnM{
-    font-size: 1.7rem;
+
+.logoutBtn{
+    font-size: 1.4rem;
     margin-left:0.5rem;
     border:1.5px solid #fff;
     border-radius: 2rem;
     padding:0.5rem 1rem;
+    color:#fff;
 }
-
 
 
 .mainCon {
@@ -169,8 +170,8 @@ nav .top .topCon {
     border:1.5px solid #fff;
     border-radius: 2rem;
     padding:0.5rem 1rem;
-    color:#fff;
 }
+
 .userForm .logoutBtn:hover{
     background-color: #dd2026;
     border:1.5px solid #dd2026;
@@ -330,18 +331,40 @@ tr{
 
 
 
+
 td {
     text-align: center;
     color:#141414;
     padding:0.9rem 0.8rem;
     font-size: 1.5rem;
 }
+
+
+.updateBtn>i{
+color:#141414;
+font-size:1.7rem;
+
+}
+.updateBtn:hover {
+	color:#dd2026;
+	transition:color 0.5s ease-in-out;
+}
+
+
 .delete{
     padding:0.5rem 0.7rem;
     background-color: #141414;
     border:none;
     color:#fff;
 }
+.delete:hover{
+	
+ background-color:#555;
+    transition: background-color 1s ease-in-out;
+ 
+	
+}
+
 
 .pagingBtnCon {
 
@@ -469,7 +492,7 @@ td {
     text-align: center;
     font-weight: bold;
     width: 100%;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     padding: 0 0.5rem 0.2rem 0.5rem;
 }
 
@@ -486,22 +509,35 @@ td {
     
     }
     
-    .quickView ,span{
+    .quickView span{
         
-        font-size:1.5rem;
+        font-size:1.3rem;
         color:#141414;
         margin:0.3rem;
     }
     .quickView a{
         color:blue;
+        font-size:1.2rem;
     }
 
+.mailTitle{
+	
+	color:#141414;
+	font-size:1.5rem;
+cursor:pointer;
+	
+}
 
+.mailTitle:hover{
+	
+	color:blue;
+	transition: color 0.5s linear; 
+}
 
 
 
 @media (max-width:1024px) {
-    * {
+    html {
         font-size: 58%;
     }
 
@@ -520,8 +556,8 @@ td {
 }
 
 @media (max-width:768px) {
-    * {
-        font-size: 52%;
+    html{
+        font-size: 48%;
     }
 
     .hideMenu>.adminMenus>li>a {
@@ -552,8 +588,8 @@ td {
 }
 
 @media (max-width:480px) {
-    * {
-        font-size: 48%;
+   html {
+        font-size: 35%;
     }
     
    

@@ -15,7 +15,7 @@
       and userName like #{userName}
    </when>
   </choose>
-  order by userNum desc
+  order by userNum 
   limit #{start},#{count}
   
   </select>
@@ -25,6 +25,11 @@
   select count(*)
   from user
   where verify = '0'
+   <choose>
+   <when test="userName != null">
+      and userName like #{userName}
+   </when>
+  </choose>
   </select>
   
   <select id="showGoodsItem" parameterType="goodsVO" resultType="goodsVO">
