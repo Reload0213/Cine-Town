@@ -889,6 +889,27 @@
 							delete_button.style="background:none;"
 							modify_delete.append(modify_button);
 							modify_delete.append(delete_button);
+							
+							delete_button.addEventListener("click", function(){
+								//alert("삭제성공");
+								let yn = confirm("삭제하시겠습니까?");
+								 if(yn){
+									let dComment_data = {rpNum:item.rpNum};
+									console.log(dComment_data);
+									
+									$.ajax({
+										url:"${pageContext.request.contextPath}/ReviewReply/delete",
+										type:"DELETE",
+										data:JSON.stringify(dComment_data),
+										contentType : "application/json; charset=utf-8",
+										dataType : "html",
+										success:function(data){
+											li.remove();
+										}
+									});
+								} 
+								
+					 			});
 						}
 				
 						bottom_info.append(modify_delete);
@@ -923,6 +944,8 @@
 						dataType : "json", //받는 형태
 						success:function(data){
 							let usernum = data.rpWriternum;
+							
+										
 							
 							
 							
@@ -1042,8 +1065,13 @@
 								delete_button.style="background:none;"
 								modify_delete.append(modify_button);
 								modify_delete.append(delete_button);
-							}
+							
 					
+								
+							};
+					 		
+					 		
+							
 							bottom_info.append(modify_delete);
 							const hr = document.createElement("hr");
 							li.append(hr);

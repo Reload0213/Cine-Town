@@ -68,7 +68,8 @@ public class ReviewReplyController {
 		reviewReplyService.deleteComment(vo);
 		
 		String str = "삭제되었습니다";
-		
+		// 삭제는 jsp로 가는 데이터가 없기 때문에 객체 혹은 list로 담아보내주지 않고
+		// 형식적인  str만 보내도 됨.
 		ResponseEntity<String> entity = new ResponseEntity<String>(str , HttpStatus.OK);
 		return entity;
 	}
