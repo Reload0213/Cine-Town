@@ -14,13 +14,24 @@
    <when test="userName != null">
       and userName like #{userName}
    </when>
-   <when test="userNum != null">
+<!--    <when test="userNum != null">
      and userNum =#{userNum}
-   </when>
+   </when> -->
   </choose>
   order by userNum 
   limit #{start},#{count}
   
+  </select>
+  
+    <select id="showUserInfoOne" parameterType="userVO"	resultType="userVO">
+  select userNum,userId,userPw,userName,userPhone,userEmail,userRegdate,userAddr1,userAddr2,userAddr3,userIsdelete,verify
+  from user
+  where verify = '0' and userIsdelete = 'N'
+  <choose>
+ <when test="userNum != null">
+     and userNum =#{userNum}
+   </when> 
+  </choose>
   </select>
   
  
@@ -41,6 +52,12 @@
   where gdsNum = #{gdsNum}
   </select>
   
+  <!-- 관리자 회원정보 수정 쿼리 -->
+  <update id="updateUser" parameterType="userVO">
+  update user
+  set 
+  
+  </update>
   
   
   <!-- 관리자에서 회원삭제 쿼리  -->

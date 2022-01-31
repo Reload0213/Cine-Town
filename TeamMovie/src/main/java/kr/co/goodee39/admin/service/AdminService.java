@@ -43,7 +43,7 @@ public class AdminService {
  public void selectUserOne(@ModelAttribute("userVO") UserVO vo) {
 		UserVO vo1 = new UserVO();
 	
-		vo1=sqlSessionTemplate.selectOne("admin.showUserInfoList", vo);
+		vo1=sqlSessionTemplate.selectOne("admin.showUserInfoOne", vo);
 		vo.setUserId(vo1.getUserId());
 		vo.setUserName(vo1.getUserName());
 		vo.setUserNum(vo1.getUserNum());

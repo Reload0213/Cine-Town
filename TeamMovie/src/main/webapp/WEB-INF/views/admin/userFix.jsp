@@ -18,8 +18,10 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap"
 	rel="stylesheet">
-
-
+	
+	
+	<!-- 다음 api link 첨부-->
+ <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <!--  관리자페이지 폰트추가 끝 -->
 <!-- 메인 css 추가 -->
 <link rel="stylesheet"
@@ -72,15 +74,18 @@
 
             </div>
             <div class="bottom">
-                <ul class="navmenus">
-                    <li><a href="#">홈</a></li>
-                    <li><a href="#">메일</a></li>
-                    <li><a href="#">회원</a></li>
-                    <li><a href="#">게시판</a></li>
-                    <li><a href="#">주문</a></li>
-                    <li><a href="#">상품</a></li>
+              	<ul class="navmenus">
+					<li><a href="${pageContext.request.contextPath}/admin/main">홈</a></li>
+					<li><a href="${pageContext.request.contextPath}/admin/mail">메일</a></li>
+					<li><a href="${pageContext.request.contextPath}/admin/user">회원</a></li>
+					<li><a href="${pageContext.request.contextPath}/admin/board">게시판</a></li>
+					<li><a href="${pageContext.request.contextPath}/admin/order">주문</a></li>
+					<li><a href="#">상품</a></li>
+					<li><a href="${pageContext.request.contextPath}/"><i
+							class="xi-home"></i></a></li>
 
-                </ul>
+
+				</ul>
             </div>
         </nav>
         <!-- <aside><input type="text" name="name" id="name" placeholder="이름을 검색해주세요"></aside> -->
@@ -153,20 +158,20 @@
                             <ul class="topUl row10">
                                 <li>우편번호</li>
                                 <li><input type="text" class="postCode" onclick="loadDaumApi()"
-                                        value="07080"></input></li>
+                                        value="${userVO.userAddr1}"></input></li>
 
 
                             </ul>
                             <ul class="topUl row11">
                                 <li>주소</li>
-                                <li><input type="text" class="addr" value="kikaio77@naver.com"></input></li>
+                                <li><input type="text" class="addr"  value="${userVO.userAddr2}"></input></li>
 
 
                             </ul>
 
                             <ul class="topUl row12">
                                 <li>상세주소</li>
-                                <li><input type="text" class="detailAddr" value="kikaio77@naver.com"></input><a href="#"
+                                <li><input type="text" class="detailAddr" value="${userVO.userAddr3}"></input><a href="#"
                                         class="emailSubmit">수정</a></li>
 
 
@@ -205,7 +210,7 @@
 
 
     </div>
-
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="assets/js/adminMainPage/adminUserPage/adminUserPage.js"></script>
     <script>
         let pw =  document.querySelector(".pw");
@@ -220,42 +225,61 @@
         let phone = document.querySelector(".phone");
         let phoneSubmit = document.querySelector(".phoneSubmit");
 
-        pwSubmit.addEventListener("click",function(e){
-
-            e.preventDefault();
-
-            if(pw.value == pw2.value){
-
-            location.href="${pageContext.request.contextPath}/";
-
-            }
-            else{
-                alert("비밀번호의 값이 다릅니다.");
-            }
-
-        });
-         
+       
 
         
-        emailSubmit.addEventListener("click",function(e){
-            e.preventDefault();
-            if(!(regxp.test(email.value.trim()))){
-                alert("이메일의 형식이 아닙니다.");
-            }
-            else{
+        $(function(){
+        	
+        	 pwSubmit.addEventListener("click",function(e){
 
-            }
+                 e.preventDefault();
 
+                 if(pw.value == pw2.value){
+
+               $.ajax({
+            	  
+            	   url:"${pageContext.request.contextPath}/"
+            	   
+            	   
+            	   
+            	   
+            	   
+               });
+               
+               
+
+                 }
+                 else{
+                     alert("비밀번호의 값이 다릅니다.");
+                 }
+
+             });
+              
+
+             
+             emailSubmit.addEventListener("click",function(e){
+                 e.preventDefault();
+                 if(!(regxp.test(email.value.trim()))){
+                     alert("이메일의 형식이 아닙니다.");
+                 }
+                 else{
+
+                 }
+
+             });
+
+             phoneSubmit.addEventListener("click",function(e){
+                 e.preventDefault();
+              if(!(regxp2.test(phone.value.trim()))){
+                  alert("-을 제외하고 입력해주세요.");
+              }
+
+             });
+        	
+        	
+        	
         });
-
-        phoneSubmit.addEventListener("click",function(e){
-            e.preventDefault();
-         if(!(regxp2.test(phone.value.trim()))){
-             alert("-을 제외하고 입력해주세요.");
-         }
-
-        });
-
+        
 
         function loadDaumApi() {
 
@@ -277,6 +301,9 @@
 
             }).open();
         }
+        
+        
+        
     </script>
 
 </body>
