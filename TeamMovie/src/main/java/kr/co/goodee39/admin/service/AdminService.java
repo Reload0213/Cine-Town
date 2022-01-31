@@ -40,6 +40,23 @@ public class AdminService {
 		
 	}
 	
+ public void selectUserOne(@ModelAttribute("userVO") UserVO vo) {
+		UserVO vo1 = new UserVO();
+	
+		vo1=sqlSessionTemplate.selectOne("admin.showUserInfoList", vo);
+		vo.setUserId(vo1.getUserId());
+		vo.setUserName(vo1.getUserName());
+		vo.setUserNum(vo1.getUserNum());
+		vo.setUserRegdate(vo1.getUserRegdate());
+		vo.setUserPw(vo1.getUserPw());
+		vo.setUserEmail(vo1.getUserEmail());
+		vo.setUserPhone(vo1.getUserPhone());
+		vo.setUserAddr1(vo1.getUserAddr1());
+		vo.setUserAddr2(vo1.getUserAddr2());
+		vo.setUserAddr3(vo1.getUserAddr3());
+	}
+
+	
 public List<UserVO> setUserList(UserVO vo){
 	
 	return sqlSessionTemplate.selectList("admin.showUserInfoList",vo);

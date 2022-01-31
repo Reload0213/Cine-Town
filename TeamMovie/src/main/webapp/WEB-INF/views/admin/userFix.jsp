@@ -85,7 +85,7 @@
         </nav>
         <!-- <aside><input type="text" name="name" id="name" placeholder="이름을 검색해주세요"></aside> -->
         <div class="resultTitle">
-            <h3>훼사한 초코보님의 회원 정보</h3>
+            <h3>${userVO.userName} 의 회원 정보</h3>
         </div>
         <div class="userInfoCon">
             <div class="topUserCon">
@@ -93,12 +93,12 @@
                 <div class="table">
                     <ul class="topUl row1">
                         <li>아이디</li>
-                        <li>44130472</li>
+                        <li>${userVO.userId}</li>
 
                     </ul>
                     <ul class="topUl row2">
                         <li>가입일자</li>
-                        <li>2022-01-30</li>
+                        <li>${userVO.userRegdate}</li>
 
                     </ul>
 
@@ -111,18 +111,18 @@
 
                     <ul class="topUl row4">
                         <li>성명</li>
-                        <li>임승혁</li>
+                        <li>${userVO.userName}</li>
 
 
                     </ul>
 
                     <ul class="topUl row5">
                         <li>비밀번호</span></li>
-                        <li><input type="password" class="pw" value="010-3489-1328"></input></li>
+                        <li><input type="password" class="pw" value="${userVO.userPw}"></input></li>
                         </ul>        
                         <ul class="topUl row6">
                             <li>확인</span></li>
-                            <li><input type="password" class="pw2" value="010-3489-1328"></input><a href="#"
+                            <li><input type="password" class="pw2" value="${userVO.userPw}"></input><a href="#"
                                     class="pwSubmit">수정</a></li>
 
                                 </ul> 
@@ -130,7 +130,7 @@
 
                         <ul class="topUl row7">
                             <li>연락처<span class="certification">인증완료</span></li>
-                            <li><input type="text" class="phone" value="010-3489-1328"></input><a href="#"
+                            <li><input type="text" class="phone" value="${userVO.userPhone}"></input><a href="#"
                                         class="phoneSubmit">수정</a></li>
 
 
@@ -138,7 +138,7 @@
 
                             <ul class="topUl row8">
                                 <li>이메일<span class="certification">인증완료</span></li>
-                                <li><input type="text" class="email" value="kikaio77@naver.com"></input><a href="#"
+                                <li><input type="text" class="email" value="${userVO.userEmail}"></input><a href="#"
                                         class="emailSubmit">수정</a></li>
 
 

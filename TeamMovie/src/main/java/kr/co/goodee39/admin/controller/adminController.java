@@ -87,7 +87,14 @@ public class adminController {
 	}
 	
 	@GetMapping("/userFix")
-   public String userFix() {	
+   public String userFix(@RequestParam int num,@ModelAttribute("userVO") UserVO vo) {
+		
+		
+		vo.setUserNum(num);
+		service.selectUserOne(vo);
+		
+		
+		
 		
 		return "admin/userFix";
 		

@@ -112,7 +112,7 @@
 				<tbody>
 					<c:forEach var="userVO" items="${list}">
 						<tr>
-                             <td><span class="updateBtn"><i class="xi-pen"></i></span></td>
+                             <td><span class="updateBtn" data-num="${userVO.userNum}"><i class="xi-pen"></i></span></td>
 							<td class="userNum">${userVO.userNum}</td>
 							<td>${userVO.userId}</td>
 							<td>${userVO.userPw}</td>
@@ -392,8 +392,10 @@
 		 
 		      for(let i=0; i<updateBtn.length; i++){
 		    	  updateBtn[i].addEventListener("click",function(){
+		    		  let updateBtnVal=parseInt(this.dataset.num);
 		    		  
-		    		  location.href="${pageContext.request.contextPath}/admin/userFix";
+		    		  
+		    		  location.href="${pageContext.request.contextPath}/admin/userFix?num="+updateBtnVal;
 		    	  });
 		    	  
 		     
