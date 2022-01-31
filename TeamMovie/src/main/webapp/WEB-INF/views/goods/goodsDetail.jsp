@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
     <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+    <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -676,7 +677,15 @@
                                             <!-- 댓글을 작성하면 해당 영역에 달림 -->
                                                 <div class="spr-review">
                                                     <div class="spr-review-header">
-                                                        <span class="product-review spr-starratings spr-review-header-starratings"><span class="reviewLink"><i class="fa fa-star"></i><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star"></i></span></span>
+                                                        <span class="product-review spr-starratings spr-review-header-starratings"><span class="reviewLink">
+                                                        <!-- 리뷰 별점 -->
+                                                     
+                                                        
+                                                        <i class="xi-star"></i>
+                                                      
+                                                        <i class="xi-star-o"></i>
+                                                        
+                                                        </span></span>
                                                         <h3 class="spr-review-header-title korean">제품 리뷰 한글 영역 테스트입니다. 하단 날짜는 영어로 갑니다</h3>
                                                         <span class="spr-review-header-byline"><strong>dsacc</strong> on <strong>Apr 09, 2019</strong></span>
                                                     </div>
@@ -1809,9 +1818,66 @@
                 lightBox.init();
             });
             
+            /* ajax 굿즈리뷰 뿌려주는 부분 시작 (selectList) */
+            $.ajax({
+            	url:"${pageContext.request.contextPath}/goodsReview/${goods.gdsNum}",
+            	type:"GET",
+            	dataType:"json",
+            	success : function(data){
+            	/* 각 요소 확인 */
+            	for(const i in data){
+            		let grNum = data[i].grNum;
+            		let grDate = data[i].grDate;
+            		let grComment = data[i].grComment;
+            		let grIsdelete = data[i].Isdelete;
+            		let grTitle = data[i].grTitle;
+            		let userNum = data[i].userNum;
+            		let userName =  data[i].userName;
+            		let grScore = data[i].grScore;
+            		
+            		
+            		
+            		const commentList = document.querySelector(".spr-reviews"); /* 리뷰를 담을 div 클래스 명 */
+            		const reviewDiv = document.createElement("div"); /* 리뷰가 생성될 div */
+            		
+            		
+            		
+            		
+            		let listHtml = ""; /* 요소 생성 및 초기화 */
+            		listHtml += " <div class='spr-review'>";
+            		listHtml += "  <div class='spr-review-header'>";
+            		listHtml += "<span class='product-review spr-starratings spr-review-header-starratings'>         <span class='reviewLink'> <c:forEach  begin= '1' end='${data.grScore}' var = 'i'><i class='xi-star'></i> </c:forEach></span></span>";
+            		listHtml += "<h3 class='spr-review-header-title korean'>"+grTitle+"</h3>"; 
+            		listHtml += "<span class='spr-review-header-byline'><strong>"+userName+"</strong> 님이 <strong>"+grDate+"</strong>에 작성함</span>";
+            		listHtml += "</div>";
+            		listHtml += "<div class='spr-review-content'>";
+            		listHtml += "     <p class='spr-review-content-body korean'>"+grComment+"</p>";
+            		listHtml += "</div>";
+            		listHtml += "</div>"; 
+            		
+            		
+            
+            		
+            		reviewDiv.innerHTML=listHtml; /* innerHTML로 생성될 댓글이 담긴 div를 넣어줌 */
+            		commentList.append(reviewDiv); /* 리뷰를 담을 div 클래스 뒤에 붙여줌 */
+            		
+            		
+            	}
+            	}
+            	
+            })
             
             
-            /* ajax 굿즈리뷰 입력부분 */
+            
+            
+            
+            
+            
+              /* ajax 굿즈리뷰 뿌려주는 부분 종료 (selectList) */
+            
+            
+            
+            /* ajax 굿즈리뷰 입력부분 시작*/
             
          	$("#reviewSubmit").click(function(){
         		let grComment = $("#reviewContent").val();
@@ -1832,7 +1898,7 @@
         		
         		if(grComment.length > 0){
         			let commentData = {grComment, grTitle, grScore, grDate, gdsNum: "${goods.gdsNum}"};
-        			console.log(commentData);
+        			/* console.log(commentData); */
         			
         	 		$.ajax({
         				url:"${pageContext.request.contextPath}/goodsReview/insertgrReview",
@@ -1844,12 +1910,17 @@
         					/* alert("입력 성공"); */
         		/* 데이터를 담아줄 요소 생성 */
         		const commentList = document.querySelector(".spr-reviews"); /* 리뷰를 담을 div 클래스 명 */
-        		const reviewDiv = document.createElement("div");
+        		const reviewDiv = document.createElement("div"); /* 리뷰가 생성될 div */
+        		console.log(data.grScore);
+        		console.log(typeof(data.grScore));
+        		
+        		
+        		
         		
         		let listHtml = ""; /* 요소 생성 및 초기화 */
         		listHtml += " <div class='spr-review'>";
         		listHtml += "  <div class='spr-review-header'>";
-        		listHtml += "<span class='product-review spr-starratings spr-review-header-starratings'><span class='reviewLink'><i class='fa fa-star'></i><i class='font-13 fa fa-star'></i><i class='font-13 fa fa-star'></i><i class='font-13 fa fa-star'></i><i class='font-13 fa fa-star'></i></span></span>";
+        		listHtml += "<span class='product-review spr-starratings spr-review-header-starratings'>         <span class='reviewLink'> <c:forEach  begin= '1' end='${data.grScore}' var = 'i'><i class='xi-star'></i> </c:forEach></span></span>";
         		listHtml += "<h3 class='spr-review-header-title korean'>"+data.grTitle+"</h3>"; 
         		listHtml += "<span class='spr-review-header-byline'><strong>"+data.userName+"</strong> 님이 <strong>"+data.grDate+"</strong>에 작성함</span>";
         		listHtml += "</div>";
@@ -1861,32 +1932,20 @@
         		
         
         		
-        		reviewDiv.innerHTML=listHtml; 
-        		commentList.append(reviewDiv);
+        		reviewDiv.innerHTML=listHtml; /* innerHTML로 생성될 댓글이 담긴 div를 넣어줌 */
+        		commentList.append(reviewDiv); /* 리뷰를 담을 div 클래스 뒤에 붙여줌 */
         				}
-        			}) /*ajax 입력 종료  */
+        			}) 
         		
         		}
         	})
+        	/* 굿즈 입력 종료 */
             
             
             
             
         });
-        /* -------------------------------------------------------------------------------------------------------- */
- /*        $(function(){ 데이터 삽입
-        
-        	$("#reivewSubmit").click(function(){
-        		let grComment = $("#reviewContent").val();
-        		let grTitle = $("#reviewTitle").val();
-        		let grScore = $(".rate").val();
-        		
-        		if(grComment>0){
-        			let commentData = {grComment, grTitle, grScore, gdsNum: "${goods.gdsNum}"};
-        			console.log(commentData);
-        		}
-        	});
-        }); */
+
         </script>
         <!-- 해당 페이지의 이벤트 종료입니다 -->
     </div>

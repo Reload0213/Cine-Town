@@ -1,13 +1,18 @@
 package kr.co.goodee39.goodsReview.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import kr.co.goodee39.goodsReview.service.goodsReviewService;
@@ -38,6 +43,20 @@ public class goodsReviewController {
 	 System.out.println("userName 내용 확인:"+vo.getUserName());
 	 System.out.println("-------------------------------insertgrReview 컨트롤러 메소드 종료-------------------------------");
 	 return entity;
+	 }
+	 
+	 @GetMapping("/{id}")
+	 public ResponseEntity<List<goodsReviewVO>> selectgoodsReviewList(@PathVariable int id){
+		 System.out.println("-------------------------------selectgoodsReviewList 컨트롤러 메소드 실행-------------------------------");
+		 System.out.println(id);
+		 System.out.println("-------------------------------selectgoodsReviewList 컨트롤러 메소드 종료-------------------------------");
+		 goodsReviewVO vo = new goodsReviewVO();
+		 vo.setGdsNum(id);
+		 List<goodsReviewVO> list = grService.selectGoodsReviewList(vo);
+		 ResponseEntity<List<goodsReviewVO>> entity = new ResponseEntity<List<goodsReviewVO>>(list, HttpStatus.OK);
+		 return entity;
+		 
+		 
 	 }
 	 
 

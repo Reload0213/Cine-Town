@@ -7,8 +7,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import kr.co.goodee39.cart.vo.CartVO;
 import kr.co.goodee39.goods.service.goodsService;
@@ -52,66 +54,18 @@ public class goodsController {
 	}
 	
 	//gdsNum = 1인 상품 상세 페이지 
-	@GetMapping("/1")
-	public String goGoods1(@RequestParam int id, Model model, GoodsVO vo , @ModelAttribute("cartVO") CartVO cvo, @ModelAttribute("productWishlistVO")productWishlistVO pvo) {
+	@GetMapping("/{id}")
+	public String goGoods1(@PathVariable int id, Model model, GoodsVO vo , @ModelAttribute("cartVO") CartVO cvo, @ModelAttribute("productWishlistVO")productWishlistVO pvo) {
 		System.out.println("goGoods1/id="+id+"실행");
 	    vo.setGdsNum(id);
 	    goodsService.showGoodsItem(vo);
-	    System.out.println("goGoods1 / vo잘 가져오는지 확인:"+vo.getGdsName());
+	    System.out.println("goGoods / vo잘 가져오는지 확인:"+vo.getGdsName());
 	    model.addAttribute("goods", vo);
 	
 		return "goods/goodsDetail";
 	}
 	
-	//gdsNum = 2인 상품 상세 페이지
-	@GetMapping("/2")
-	public String goGoods2(@RequestParam int id, Model model, GoodsVO vo , @ModelAttribute("cartVO") CartVO cvo, @ModelAttribute("productWishlistVO")productWishlistVO pvo) {
-		System.out.println("goGoods2/id="+id+"실행");
-	    vo.setGdsNum(id);
-	    goodsService.showGoodsItem(vo);
-	    System.out.println("goGoods2 / vo잘 가져오는지 확인:"+vo.getGdsName());
-	    model.addAttribute("goods", vo);
 	
-		return "goods/goodsDetail";
-	}
-	
-	//gdsNum = 3인 상품 상세 페이지
-	@GetMapping("/3")
-	public String goGoods3(@RequestParam int id, Model model, GoodsVO vo , @ModelAttribute("cartVO") CartVO cvo, @ModelAttribute("productWishlistVO")productWishlistVO pvo) {
-		System.out.println("goGoods3/id="+id+"실행");
-	    vo.setGdsNum(id);
-	    goodsService.showGoodsItem(vo);
-	    System.out.println("goGoods3 / vo잘 가져오는지 확인:"+vo.getGdsName());
-	    model.addAttribute("goods", vo);
-	    
-	
-		return "goods/goodsDetail";
-	}
-	
-	//gdsNum = 4인 상품 상세 페이지
-	@GetMapping("/4")
-	public String goGoods4(@RequestParam int id, Model model, GoodsVO vo , @ModelAttribute("cartVO") CartVO cvo, @ModelAttribute("productWishlistVO")productWishlistVO pvo) {
-		System.out.println("goGoods4/id="+id+"실행");
-	    vo.setGdsNum(id);
-	    goodsService.showGoodsItem(vo);
-	    System.out.println("goGoods4 / vo잘 가져오는지 확인:"+vo.getGdsName());
-	    model.addAttribute("goods", vo);
-	
-		return "goods/goodsDetail";
-	}
-	
-	//gdsNum = 5인 상품 상세 페이지
-	@GetMapping("/5")
-	public String goGoods5(@RequestParam int id, Model model, GoodsVO vo , @ModelAttribute("cartVO") CartVO cvo, @ModelAttribute("productWishlistVO")productWishlistVO pvo) {
-		System.out.println("goGoods5/id="+id+"실행");
-	    vo.setGdsNum(id);
-	    goodsService.showGoodsItem(vo);
-	    System.out.println("goGoods5 / vo잘 가져오는지 확인:"+vo.getGdsName());
-	    model.addAttribute("goods", vo);
-	
-		return "goods/goodsDetail";
-	}
-
 
 
 }

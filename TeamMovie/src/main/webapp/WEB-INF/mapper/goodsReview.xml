@@ -8,4 +8,11 @@
   insert into goodsreview(grComment, userNum, userName, grNum, gdsNum, grTitle, grScore, grDate )
   values (#{grComment},#{userNum},#{userName}, grNum, #{gdsNum}, #{grTitle}, #{grScore}, #{grDate} )
   </insert>
+  
+  <select id="selectGoodsReviewList" parameterType="goodsReviewVO" resultType="goodsReviewVO">
+  select grNum, grDate, grComment, grLike, grIsdelete, gdsNum, grTitle, userNum, userName, grScore
+  from goodsreview
+  where gdsNum = #{gdsNum}
+  and grIsdelete = 'n'
+  </select>
   </mapper>

@@ -1,5 +1,7 @@
 package kr.co.goodee39.goodsReview.service;
 
+import java.util.List;
+
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,5 +25,11 @@ public void insertGoodsReview(goodsReviewVO vo) {
 	System.out.println("grScore:"+vo.getGrScore());
 	System.out.println("------------------------------데이터 입력 확인 종료------------------------------");
 	sqlSessionTemplate.insert("goodsReview.insertGoodsReview", vo);
+}
+
+public List<goodsReviewVO> selectGoodsReviewList(goodsReviewVO vo){
+	System.out.println("selectGoodsReviewList 서비스 메소드 실행");
+	return sqlSessionTemplate.selectList("goodsReview.selectGoodsReviewList", vo);
+	
 }
 }
