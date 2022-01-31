@@ -374,6 +374,7 @@
 		
 		 }); */
 		let deleteBtn = document.querySelectorAll(".delete");
+		let updateBtn =  document.querySelectorAll(".updateBtn");
     
 		 document.querySelector("#searchBar").addEventListener("keyup",function(e){
 			  
@@ -383,13 +384,21 @@
 		    	  location.href="${pageContext.request.contextPath}/admin/user?userName="+userName;
 		      }
 		        	 	
-		       
-		 
 		    
-		  
 		       
 		       
 				});
+		 
+		 
+		      for(let i=0; i<updateBtn.length; i++){
+		    	  updateBtn[i].addEventListener("click",function(){
+		    		  
+		    		  location.href="${pageContext.request.contextPath}/admin/userFix";
+		    	  });
+		    	  
+		     
+		      }
+		     
 		$(function() {
 
 			for (let i = 0; i < deleteBtn.length; i++) {

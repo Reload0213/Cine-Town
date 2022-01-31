@@ -86,7 +86,12 @@ public class adminController {
 		return "admin/board";
 	}
 	
-	
+	@GetMapping("/userFix")
+   public String userFix() {	
+		
+		return "admin/userFix";
+		
+	}
 
 	
 	/*
