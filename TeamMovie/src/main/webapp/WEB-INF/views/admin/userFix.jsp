@@ -97,6 +97,7 @@
 
                 <div class="table">
                     <ul class="topUl row1">
+                        
                         <li>아이디</li>
                         <li>${userVO.userId}</li>
 
@@ -109,7 +110,7 @@
 
                     <!-- 구분선 -->
                     <ul class="topUl row3 divisionLine">
-                        <li></li>
+                        <li><input type="hidden" name="userNum" id="userNum" value="${userVO.userNum}" /></li>
                         <li></li>
 
                     </ul>
@@ -157,8 +158,7 @@
 
                             <ul class="topUl row10">
                                 <li>우편번호</li>
-                                <li><input type="text" class="postCode" onclick="loadDaumApi()"
-                                        value="${userVO.userAddr1}"></input></li>
+                                <li><input type="text" class="postCode" onclick="loadDaumApi();" value="${userVO.userAddr1}"/></li>
 
 
                             </ul>
@@ -171,9 +171,8 @@
 
                             <ul class="topUl row12">
                                 <li>상세주소</li>
-                                <li><input type="text" class="detailAddr" value="${userVO.userAddr3}"></input><a href="#"
-                                        class="emailSubmit">수정</a></li>
-
+                                <li><input type="text" class="detailAddr" value="${userVO.userAddr3}"></input>
+                                <a href="#" class="emailSubmit">수정</a></li>
 
                             </ul>
 
@@ -185,7 +184,7 @@
 
                            <ul class="btnCon">
                                <li><a href="#" class="formSubmit">수정</a></li>
-                               <li><a href="#" class="back">취소</a></li>
+                               <li><a href="javascript:history.back();" class="back">취소</a></li>
                            </ul>
 
                 </div>
@@ -213,40 +212,66 @@
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="assets/js/adminMainPage/adminUserPage/adminUserPage.js"></script>
     <script>
-        let pw =  document.querySelector(".pw");
-        let pw2 = document.querySelector(".pw2");
+        let password =  document.querySelector(".pw");
+        let password2 = document.querySelector(".pw2");
         let pwSubmit = document.querySelector(".pwSubmit");
         let regxp =RegExp(/^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/);
         let regxp2 =RegExp(/^[0-9][0-9]+$/);
         let email = document.querySelector(".email");
         let emailSubmit = document.querySelector(".emailSubmit");
-
-
+        let formSubmit = document.querySelector(".formSubmit");
+        let postCode = document.querySelector(".postCode");
+        let addr = document.querySelector(".addr");
+        let detailAddr = document.querySelector(".detailAddr");
         let phone = document.querySelector(".phone");
         let phoneSubmit = document.querySelector(".phoneSubmit");
-
+     
+        let hidden = document.querySelector("#userNum");
        
 
         
         $(function(){
         	
+        	formSubmit.addEventListener("click",function(e){
+        		e.preventDefault();
+        		
+        		console.log(hidden.value);
+        		if(password.value !== "" && password2.value !== ""  && email.value !== "" && phone.value !== "" && addr.value !== "" && postCode.value !== "" && detailAddr.value !== ""){
+        			
+        			location.href="${pageContext.request.contextPath}/admin/userFixComplete?userNum="+hidden.value+"&userPw="+password.value+"&userEmail="+email.value+"&userPhone="+phone.value+"&userAddr1="+postCode.value+"&userAddr2="+addr.value+"&userAddr3="+detailAddr.value;
+        		}
+        		
+        	});
+        	
         	 pwSubmit.addEventListener("click",function(e){
 
                  e.preventDefault();
 
-                 if(pw.value == pw2.value){
-
-               $.ajax({
+                 if(password.value == password2.value){
+	                let pw={userPw:parseInt(password.value),userNum:parseInt(hidden.value)};
+	                
+	                $.ajax({
             	  
-            	   url:"${pageContext.request.contextPath}/"
+            	   url:"${pageContext.request.contextPath}/admin/userFix",
+            	   type:"POST",
+            	   data:JSON.stringify(pw),
+            	   contentType:"application/json; charset=utf-8",
+            	   success:function(item){
+            		  
+            		  alert("패스워드 수정이 완료되었습니다.");
+            		   item.
+            		  
+            		   
+            	   }
             	   
             	   
             	   
             	   
             	   
-               });
+            	   
+               }); 
                
-               
+                alert(hidden.value);
 
                  }
                  else{
@@ -280,7 +305,7 @@
         	
         });
         
-
+        
         function loadDaumApi() {
 
             new daum.Postcode({
@@ -302,6 +327,9 @@
             }).open();
         }
         
+        
+
+     
         
         
     </script>

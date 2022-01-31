@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.net.ssl.SSLEngineResult.Status;
 
+import org.apache.ibatis.annotations.Update;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -46,10 +48,23 @@ public class adminController {
 	public String user(Model model,@RequestParam(defaultValue = "1")int num,
 			                                        @RequestParam(defaultValue="")String userName
 			) {
+	
+		
+		
 	   service.showUserInfo(model, num,userName);
+	
 		return "admin/user";
 	}
-	
+	@GetMapping("/userFixComplete")
+	public String userFixComplete(@ModelAttribute("userVO") UserVO vo,Model model,@RequestParam(defaultValue = "1")int num,
+            @RequestParam(defaultValue="")String userName) {
+		
+		System.out.println(vo.getUserNum());
+		service.updateUser(vo);
+		service.showUserInfo(model, num, userName);
+		return "admin/user";
+		
+	}
 
 	
 
@@ -87,10 +102,13 @@ public class adminController {
 	}
 	
 	@GetMapping("/userFix")
-   public String userFix(@RequestParam int num,@ModelAttribute("userVO") UserVO vo) {
+   public String userFix(@ModelAttribute("userVO") UserVO vo) {
 		
 		
-		vo.setUserNum(num);
+		System.out.println(vo.getUserNum());
+		
+		
+		
 		service.selectUserOne(vo);
 		
 		
@@ -100,6 +118,10 @@ public class adminController {
 		
 	}
 
+	
+
+	
+	
 	
 	/*
 	 * 컨트롤러 담당: 김용현 

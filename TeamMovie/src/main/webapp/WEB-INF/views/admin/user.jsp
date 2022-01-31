@@ -395,7 +395,7 @@
 		    		  let updateBtnVal=parseInt(this.dataset.num);
 		    		  
 		    		  
-		    		  location.href="${pageContext.request.contextPath}/admin/userFix?num="+updateBtnVal;
+		    		  location.href="${pageContext.request.contextPath}/admin/userFix?userNum="+updateBtnVal;
 		    	  });
 		    	  
 		     

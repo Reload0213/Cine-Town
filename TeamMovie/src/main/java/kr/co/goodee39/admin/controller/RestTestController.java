@@ -53,4 +53,20 @@ public class RestTestController {
 		
 }
 	
+	@PostMapping("/userPwUpdate")
+	public ResponseEntity<UserVO>userPwUpdate(@RequestBody UserVO vo){
+        UserVO vo1 = new UserVO();
+        
+		System.out.println(vo.getUserNum());
+		System.out.println(vo.getUserPw());
+		
+		service.updateUser(vo);
+		
+		vo1= service.selectUserOne(vo);
+		
+         ResponseEntity<UserVO> entity = new ResponseEntity<UserVO>(vo1,HttpStatus.OK);
+		return entity;
+		
+	}
+	
 }
