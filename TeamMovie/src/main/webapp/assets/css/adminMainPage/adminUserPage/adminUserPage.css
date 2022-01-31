@@ -582,14 +582,16 @@ cursor:pointer;
         display: block;
     }
 
-  
+  table{
+width:100%;
+}
 
 
 }
 
 @media (max-width:480px) {
    html {
-        font-size: 35%;
+        font-size: 30%;
     }
     
    
@@ -611,6 +613,10 @@ cursor:pointer;
         display: block;
     }
   
+table{
+width:100%;
+ overflow-x:auto;
+}
 
   
 
