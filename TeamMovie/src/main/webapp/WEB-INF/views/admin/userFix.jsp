@@ -250,28 +250,27 @@
                  if(password.value == password2.value){
 	                let pw={userPw:parseInt(password.value),userNum:parseInt(hidden.value)};
 	                
+	                console.log(pw);
 	                $.ajax({
             	  
-            	   url:"${pageContext.request.contextPath}/admin/userFix",
+            	   url:"${pageContext.request.contextPath}/admin/userPwUpdate",
             	   type:"POST",
             	   data:JSON.stringify(pw),
             	   contentType:"application/json; charset=utf-8",
             	   success:function(item){
             		  
             		  alert("패스워드 수정이 완료되었습니다.");
-            		   item.
-            		  
+            		   console.log("패스워드 "+item.userPw+"변경");
+            		   
+            		   
+            		   password.value=item.userPw;
             		   
             	   }
             	   
-            	   
-            	   
-            	   
-            	   
+
             	   
                }); 
-               
-                alert(hidden.value);
+            
 
                  }
                  else{
@@ -283,22 +282,75 @@
 
              
              emailSubmit.addEventListener("click",function(e){
+            	 
+            	 let emailResult={userNum:parseInt(hidden.value),userEmail:parseInt(email.value)};
                  e.preventDefault();
                  if(!(regxp.test(email.value.trim()))){
                      alert("이메일의 형식이 아닙니다.");
+                     
                  }
                  else{
+                	
+                	  $.ajax({
+                    	  
+                   	   url:"${pageContext.request.contextPath}/admin/userPwUpdate",
+                   	   type:"POST",
+                   	   data:JSON.stringify(emailResult),
+                   	   contentType:"application/json; charset=utf-8",
+                   	   success:function(item){
+                   		  
+                   		  alert("이메일 수정이 완료되었습니다.");
+                   		   console.log("이메일 "+item.userEmail+"변경");
+                   		   
+                   		   
+                   		   email.value=item.userEmail;
+                   		   
+                   	   }
+                   	   
 
+                   	   
+                      }); 
                  }
 
              });
 
              phoneSubmit.addEventListener("click",function(e){
+            	 let phoneResult={userNum:parseInt(hidden.value) ,userPhone:parseInt(phone.value)};
                  e.preventDefault();
               if(!(regxp2.test(phone.value.trim()))){
                   alert("-을 제외하고 입력해주세요.");
               }
+              else{
+            	  
+            		
+               	  $.ajax({
+                   	  
+                  	   url:"${pageContext.request.contextPath}/admin/userPwUpdate",
+                  	   type:"POST",
+                  	   data:JSON.stringify(phoneResult),
+                  	   contentType:"application/json; charset=utf-8",
+                  	   success:function(item){
+                  		  
+                  		  alert("전화번호 수정이 완료되었습니다.");
+                  		   console.log(" 전화번호"+item.userPhone+"변경");
+                  		   
+                  		   
+                  		   phone.value=item.userPhone;
+                  		   
+                  	   }
+                  	   
 
+                  	   
+                     });   
+            	  
+            	  
+            	  
+            	  
+            	  
+            	  
+            	  
+              }
+              
              });
         	
         	

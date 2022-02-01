@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -55,17 +56,21 @@ public class RestTestController {
 	
 	@PostMapping("/userPwUpdate")
 	public ResponseEntity<UserVO>userPwUpdate(@RequestBody UserVO vo){
-        UserVO vo1 = new UserVO();
+        
         
 		System.out.println(vo.getUserNum());
-		System.out.println(vo.getUserPw());
+
 		
-		service.updateUser(vo);
+		 service.updateUser(vo);
+		 
+			/*
+			 * service.selectUserOne(vo);
+			 */
 		
-		vo1= service.selectUserOne(vo);
+
+         ResponseEntity<UserVO> entity = new ResponseEntity<UserVO>(vo,HttpStatus.OK);
 		
-         ResponseEntity<UserVO> entity = new ResponseEntity<UserVO>(vo1,HttpStatus.OK);
-		return entity;
+         return entity;
 		
 	}
 	

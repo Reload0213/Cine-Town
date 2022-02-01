@@ -111,7 +111,7 @@ public class adminController {
 		
 		service.selectUserOne(vo);
 		
-		
+	
 		
 		
 		return "admin/userFix";
