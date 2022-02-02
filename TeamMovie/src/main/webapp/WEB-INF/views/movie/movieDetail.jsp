@@ -883,6 +883,61 @@
 							const modify_button = document.createElement("button");
 							modify_button.innerText="수정";
 							modify_button.style="margin-right: 10px;background:none;";
+							
+							
+							modify_button.addEventListener("click", function(){
+								const edit_div = document.createElement("div");
+								const edit_textarea = document.createElement("textarea");
+								edit_textarea.cols = "200";
+								edit_textarea.rows = "5";
+								
+								edit_textarea.value = review_info.innerText;
+								
+								const edit_modify = document.createElement("button");
+								edit_modify.innerText = "수정완료";
+								const edit_cancel = document.createElement("button");
+								edit_cancel.innerText = "취소";
+								
+								edit_div.append(edit_textarea);
+								edit_div.append(edit_modify);
+								edit_div.append(edit_cancel);
+								
+								li.after(edit_div);
+								li.style.display = "none";
+								
+								// 취소 버튼 클릭 시 이벤트
+								edit_cancel.addEventListener("click", function(){
+									li.style.display = "block";
+									edit_div.remove();
+								});
+								
+								// 수정완료 버튼 클릭 시 이벤트
+								edit_modify.addEventListener("click", function(){
+									//alert("수정완료 버튼 클릭");
+									if(confirm("수정하시겠습니까")){
+										let rpComment = edit_textarea.value;
+										
+										const modify_data = {rpComment, rpNum:item.rpNum};
+										
+										$.ajax({
+											url:"${pageContext.request.contextPath}/ReviewReply/update",
+											type:"PATCH",
+											data:JSON.stringify(modify_data),
+											contentType : "application/json; charset=utf-8",
+											dataType : "json",
+											success:function(data){
+												console.log(data);
+												review_info.innerText = data.rpComment;
+												li.style.display = "block";
+												edit_div.remove();
+											}
+										});
+									}
+								});
+							});
+							
+							
+							
 							//삭제 버튼
 							const delete_button = document.createElement("button");
 							delete_button.innerText="삭제";
@@ -891,7 +946,7 @@
 							modify_delete.append(delete_button);
 							
 							delete_button.addEventListener("click", function(){
-								//alert("삭제성공");
+								alert("삭제성공");
 								let yn = confirm("삭제하시겠습니까?");
 								 if(yn){
 									let dComment_data = {rpNum:item.rpNum};

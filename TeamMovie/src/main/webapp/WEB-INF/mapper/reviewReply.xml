@@ -18,8 +18,9 @@
 	</insert>
 	
 	<update id="updateComment" parameterType="reviewReplyVO">
-		update reviewreply set rpComment = #{rpComment}, rpStar = #{rpStar}
+		update reviewreply set rpComment = #{rpComment}
 		where rpNum = #{rpNum}
+		and rpWriternum = #{rpWriternum}
 	</update>
 	
 	<delete id="deleteComment" parameterType="reviewReplyVO">

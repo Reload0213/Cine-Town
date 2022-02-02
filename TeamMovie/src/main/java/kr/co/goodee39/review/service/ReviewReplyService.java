@@ -7,6 +7,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
 import kr.co.goodee39.review.vo.ReviewReplyVO;
 
 @Service
@@ -26,5 +27,11 @@ public class ReviewReplyService {
 	
 	public void deleteComment(ReviewReplyVO vo) {
 		sqlSessionTemplate.delete("reviewReply.deleteComment", vo);
+	}
+	
+	public void updateComment(ReviewReplyVO vo) {
+		
+		sqlSessionTemplate.update("reviewReply.updateComment", vo);
+
 	}
 }
