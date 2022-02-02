@@ -692,6 +692,8 @@
                                                     <div class="spr-review-content">
                                                         <p class="spr-review-content-body korean">해당 영역은 제품 리뷰 내용입니다. 한글 테스트입니다.</p>
                                                     </div>
+                                                    <button style="margin: 5px" class="spr-summary-actions-newreview btn korean">리뷰 수정하기</button>  
+                                                    <button style="margin: 5px" class="spr-summary-actions-newreview btn korean">리뷰 삭제하기</button>
                                                 </div>
                                                 <!-- 해당 영역 종료 -->
                                                 
@@ -1757,29 +1759,12 @@
 
 
     
-        <!-- 제이쿼리, 자바스크립트 시작입니다 -->
-     <!-- Including Jquery -->
-<%--      <script src="${pageContext.request.contextPath }/assets/js/GoodsMainjs/vendor/jquery-3.3.1.min.js"></script> --%>
-     <script src="${pageContext.request.contextPath }/assets/js/GoodsMainjs/vendor/jquery.cookie.js"></script>
-     <script src="${pageContext.request.contextPath }/assets/js/GoodsMainjs/vendor/modernizr-3.6.0.min.js"></script>
-     <script src="${pageContext.request.contextPath }/assets/js/GoodsMainjs/vendor/wow.min.js"></script>
-     <!-- Including Javascript -->
-   <%--   <script src="${pageContext.request.contextPath }/assets/js/GoodsMainjs/bootstrap.min.js"></script> --%>
-     <script src="${pageContext.request.contextPath }/assets/js/GoodsMainjs/plugins.js"></script>
-     <script src="${pageContext.request.contextPath }/assets/js/GoodsMainjs/popper.min.js"></script>
-     <script src="${pageContext.request.contextPath }/assets/js/GoodsMainjs/lazysizes.js"></script>
-     <script src="${pageContext.request.contextPath }/assets/js/GoodsMainjs/main.js"></script>
-     <!-- Photoswipe Gallery -->
-     <script src="${pageContext.request.contextPath }/assets/js/GoodsMainjs/vendor/photoswipe.min.js"></script>
-     <script src="${pageContext.request.contextPath }/assets/js/GoodsMainjs/vendor/photoswipe-ui-default.min.js"></script>
-     <!-- 제이쿼리, 자바스크립트 종료입니다 -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-
+    
 
 
      <!-- 해당 페이지의 이벤트입니다 -->
      <script>
-        $(function(){
+       $(function(){
             var $pswp = $('.pswp')[0],
                 image = [],
                 getItems = function() {
@@ -1826,7 +1811,7 @@
             	success : function(data){
             	/* 각 요소 확인 */
             	for(const i in data){
-            		let grNum = data[i].grNum;
+            		let grNum = data[i].grNum; 
             		let grDate = data[i].grDate;
             		let grComment = data[i].grComment;
             		let grIsdelete = data[i].Isdelete;
@@ -1834,6 +1819,8 @@
             		let userNum = data[i].userNum;
             		let userName =  data[i].userName;
             		let grScore = data[i].grScore;
+            		
+            		let accountNumber = ${sessionScope.account.userNum};
             		
             		
             		
@@ -1853,7 +1840,39 @@
             		listHtml += "<div class='spr-review-content'>";
             		listHtml += "     <p class='spr-review-content-body korean'>"+grComment+"</p>";
             		listHtml += "</div>";
+            		/* 리뷰 작성자가 일치할때만 수정, 삭제버튼이 나타난다 */
+            		if(userNum == accountNumber){
+            			
+            				listHtml += "   <input type='hidden' id='grNum' name='grNum' value="+grNum+">"; /* 댓글 pk grNum을 가져온다 */
+            			listHtml += "   <button style='margin: 5px' id='deleteBtn' class='spr-summary-actions-newreview btn korean deleteBtn' onclick='deleteReply("+grNum+")'>리뷰 삭제하기</button> ";
+            				listHtml += "   <button style='margin: 5px'  class='spr-summary-actions-newreview btn korean updateBtn'>리뷰 수정하기</button> ";
+            				
+            				
+            				
+            				/* 삭제 부분 작성 시작 */
+      
+            			var reviewDiv2 = document.querySelectorAll(".spr-review");
+            				
+            			const deleteBtn = document.getElementById("deleteBtn");
+            		/* 	for(var j = 0; j < reviewDiv2.length; j++){
+                			 reviewDiv2[j].querySelector('.spr-review-content').addEventListener('click', function(e){
+            			 		e.preventDefault();
+            			 		alert("찍히나?");
+            			 	});
+
+            			}; */
+            			/* function deleteReply(grNum){
+            				var value = grNum;
+            				console.log(grNum);
+            			} */
+            			
+            			
+            	
+            			
+            		}
             		listHtml += "</div>"; 
+            		
+            	
             		
             		
             
@@ -1941,10 +1960,20 @@
         	})
         	/* 굿즈 입력 종료 */
             
-            
+         	function deleteReply(grNum){
+        		var value = grNum;
+        		console.log(grNum);
+        	
+        	};
             
             
         });
+       
+  /*  	function deleteReply(grNum){
+		var value = grNum;
+		console.log(grNum);
+	
+	}; */
 
         </script>
         <!-- 해당 페이지의 이벤트 종료입니다 -->
@@ -1953,6 +1982,32 @@
 	<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
         	<div class="pswp__bg"></div>
             <div class="pswp__scroll-wrap"><div class="pswp__container"><div class="pswp__item"></div><div class="pswp__item"></div><div class="pswp__item"></div></div><div class="pswp__ui pswp__ui--hidden"><div class="pswp__top-bar"><div class="pswp__counter"></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button><button class="pswp__button pswp__button--share" title="Share"></button><button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button><button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class="pswp__preloader"><div class="pswp__preloader__icn"><div class="pswp__preloader__cut"><div class="pswp__preloader__donut"></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class="pswp__share-tooltip"></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button><button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class="pswp__caption"><div class="pswp__caption__center"></div></div></div></div></div>
+
+    <!-- 제이쿼리, 자바스크립트 시작입니다 -->
+     <!-- Including Jquery -->
+<%--      <script src="${pageContext.request.contextPath }/assets/js/GoodsMainjs/vendor/jquery-3.3.1.min.js"></script> --%>
+     <script src="${pageContext.request.contextPath }/assets/js/GoodsMainjs/vendor/jquery.cookie.js"></script>
+     <script src="${pageContext.request.contextPath }/assets/js/GoodsMainjs/vendor/modernizr-3.6.0.min.js"></script>
+     <script src="${pageContext.request.contextPath }/assets/js/GoodsMainjs/vendor/wow.min.js"></script>
+     <!-- Including Javascript -->
+   <%--   <script src="${pageContext.request.contextPath }/assets/js/GoodsMainjs/bootstrap.min.js"></script> --%>
+     <script src="${pageContext.request.contextPath }/assets/js/GoodsMainjs/plugins.js"></script>
+     <script src="${pageContext.request.contextPath }/assets/js/GoodsMainjs/popper.min.js"></script>
+     <script src="${pageContext.request.contextPath }/assets/js/GoodsMainjs/lazysizes.js"></script>
+     <script src="${pageContext.request.contextPath }/assets/js/GoodsMainjs/main.js"></script>
+     <!-- Photoswipe Gallery -->
+     <script src="${pageContext.request.contextPath }/assets/js/GoodsMainjs/vendor/photoswipe.min.js"></script>
+     <script src="${pageContext.request.contextPath }/assets/js/GoodsMainjs/vendor/photoswipe-ui-default.min.js"></script>
+     <!-- 제이쿼리, 자바스크립트 종료입니다 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+
+
+
+
+
+
+
+
 
 </body>
 

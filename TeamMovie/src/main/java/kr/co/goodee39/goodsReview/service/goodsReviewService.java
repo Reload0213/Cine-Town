@@ -12,7 +12,7 @@ import kr.co.goodee39.goodsReview.vo.goodsReviewVO;
 public class goodsReviewService {
 @Autowired
 SqlSessionTemplate sqlSessionTemplate;
-
+// 굿즈리뷰를 삽입시키는 서비스 메소드
 public void insertGoodsReview(goodsReviewVO vo) {
 	System.out.println("insertGoodsReview 서비스 메소드 실행");
 	System.out.println("------------------------------데이터 입력 확인------------------------------");
@@ -26,10 +26,19 @@ public void insertGoodsReview(goodsReviewVO vo) {
 	System.out.println("------------------------------데이터 입력 확인 종료------------------------------");
 	sqlSessionTemplate.insert("goodsReview.insertGoodsReview", vo);
 }
-
+// 굿즈 리뷰를 조회하는 서비스 메소드
 public List<goodsReviewVO> selectGoodsReviewList(goodsReviewVO vo){
 	System.out.println("selectGoodsReviewList 서비스 메소드 실행");
 	return sqlSessionTemplate.selectList("goodsReview.selectGoodsReviewList", vo);
 	
+}
+
+//굿즈 리뷰를 삭제하는 서비스 메소드
+public void deleteGoodsReview(goodsReviewVO vo) {
+	System.out.println("deleteGoodsReview 서비스 메소드 실행");
+	System.out.println("------------------------------데이터 입력 확인------------------------------");
+	System.out.println("grNum:"+vo.getGrNum());
+	System.out.println("------------------------------데이터 입력 확인 종료------------------------------");
+	sqlSessionTemplate.update("goodsReview.deleteGoodsReview", vo);
 }
 }

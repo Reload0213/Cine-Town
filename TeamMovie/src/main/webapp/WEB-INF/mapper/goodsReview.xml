@@ -9,10 +9,21 @@
   values (#{grComment},#{userNum},#{userName}, grNum, #{gdsNum}, #{grTitle}, #{grScore}, #{grDate} )
   </insert>
   
+  <!-- 해당 상품에 대한 리뷰를 보여주는 쿼리 -->
   <select id="selectGoodsReviewList" parameterType="goodsReviewVO" resultType="goodsReviewVO">
   select grNum, grDate, grComment, grLike, grIsdelete, gdsNum, grTitle, userNum, userName, grScore
   from goodsreview
   where gdsNum = #{gdsNum}
   and grIsdelete = 'n'
   </select>
+  
+  <!-- 해당 상품에 대한 리뷰를 삭제하는 쿼티 -->
+  <update id="deleteGoodsReview" parameterType="goodsReviewVO">
+  update goodsreview
+  set grIsdelete = 'y'
+  where grNum = #{grNum}
+  and userNum = ${userNum}
+  </update>
+  
+  
   </mapper>

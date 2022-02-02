@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -25,7 +26,7 @@ public class goodsReviewController {
 	@Autowired
 	goodsReviewService grService;
 
-	
+//	굿즈 리뷰 삽입 컨트롤러 메소드
 	 @PostMapping("/insertgrReview") public ResponseEntity<goodsReviewVO>
 	 insertgrReview(@RequestBody goodsReviewVO vo, HttpSession session){
 		 UserVO uvo = (UserVO)session.getAttribute("account");
@@ -45,6 +46,7 @@ public class goodsReviewController {
 	 return entity;
 	 }
 	 
+//	 굿즈 리뷰 조회 컨트롤러 메소드
 	 @GetMapping("/{id}")
 	 public ResponseEntity<List<goodsReviewVO>> selectgoodsReviewList(@PathVariable int id){
 		 System.out.println("-------------------------------selectgoodsReviewList 컨트롤러 메소드 실행-------------------------------");
@@ -57,6 +59,20 @@ public class goodsReviewController {
 		 return entity;
 		 
 		 
+	 }
+	 
+//	 굿즈 리뷰 삭제 컨트롤러 메소드 
+	 @DeleteMapping("/delete")
+	 public ResponseEntity<String> deletegrReview(@RequestBody goodsReviewVO vo, HttpSession session){
+		 System.out.println("-------------------------------deletegrReview 컨트롤러 메소드 실행-------------------------------");
+		 UserVO uvo = (UserVO)session.getAttribute("account");
+		 vo.setUserNum(uvo.getUserNum());
+		 grService.deleteGoodsReview(vo);
+		 String deleteContirm = vo.getUserName()+"님이 남긴 제목:"+vo.getGrTitle()+"("+vo.getGrNum()+"번 게시물)이 삭제되었습니다";
+		 
+		 System.out.println("-------------------------------deletegrReview 컨트롤러 메소드 종료-------------------------------");
+		 ResponseEntity<String> entity = new ResponseEntity<String>(deleteContirm, HttpStatus.OK);
+		 return entity;
 	 }
 	 
 
