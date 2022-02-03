@@ -1803,6 +1803,10 @@
                 lightBox.init();
             });
             
+            
+            
+            
+            
             /* ajax 굿즈리뷰 뿌려주는 부분 시작 (selectList) */
             $.ajax({
             	url:"${pageContext.request.contextPath}/goodsReview/${goods.gdsNum}",
@@ -1842,33 +1846,11 @@
             		listHtml += "</div>";
             		/* 리뷰 작성자가 일치할때만 수정, 삭제버튼이 나타난다 */
             		if(userNum == accountNumber){
-            			
+            				listHtml +="<div id = 'replyBtn'>";
             				listHtml += "   <input type='hidden' id='grNum' name='grNum' value="+grNum+">"; /* 댓글 pk grNum을 가져온다 */
-            			listHtml += "   <button style='margin: 5px' id='deleteBtn' class='spr-summary-actions-newreview btn korean deleteBtn' onclick='deleteReply("+grNum+")'>리뷰 삭제하기</button> ";
+            			listHtml += "   <button style='margin: 5px' id='deleteBtn"+grNum+"' class='spr-summary-actions-newreview btn korean deleteBtn' >리뷰 삭제하기</button> ";
             				listHtml += "   <button style='margin: 5px'  class='spr-summary-actions-newreview btn korean updateBtn'>리뷰 수정하기</button> ";
-            				
-            				
-            				
-            				/* 삭제 부분 작성 시작 */
-      
-            			var reviewDiv2 = document.querySelectorAll(".spr-review");
-            				
-            			const deleteBtn = document.getElementById("deleteBtn");
-            		/* 	for(var j = 0; j < reviewDiv2.length; j++){
-                			 reviewDiv2[j].querySelector('.spr-review-content').addEventListener('click', function(e){
-            			 		e.preventDefault();
-            			 		alert("찍히나?");
-            			 	});
-
-            			}; */
-            			/* function deleteReply(grNum){
-            				var value = grNum;
-            				console.log(grNum);
-            			} */
-            			
-            			
-            	
-            			
+            				listHtml +="</div>";
             		}
             		listHtml += "</div>"; 
             		
@@ -1881,7 +1863,40 @@
             		commentList.append(reviewDiv); /* 리뷰를 담을 div 클래스 뒤에 붙여줌 */
             		
             		
-            	}
+            	}/* for문 종료 */
+            	
+            	/* 삭제 ajax작성 시작 */
+            	$(".deleteBtn").click(function(){
+				var replyNo = $(this).parent().find("#grNum").val();
+				
+				console.log(replyNo);/* 지워줄 게시물의 번호를 확인 */
+				
+				let deleteConfirm = confirm("삭제하시겠습니까?");
+				let replyDiv = $(this).parent().parent(); /* 버튼을 클릭할때 지워질 요소를 선택 */
+				
+				if(deleteConfirm){ /* 삭제버튼을 클릭했을때 confirm의 yes를 클릭한다면 */
+					let deleteData = {grNum: replyNo};
+					
+					/* 삭제 ajax 시작 */
+					$.ajax({
+						url:"${pageContext.request.contextPath}/goodsReview/delete",
+						type: "DELETE",
+						data: JSON.stringify(deleteData),
+						contentType : "application/json; charset=utf-8",
+						dataType : "html",
+						success: function(data){
+							console.log("삭제 성공"); /* 삭제 성공시에 콘솔 찍힘 */
+							replyDiv.remove(); /* 댓글 전체 요소가 지워진다 */
+							
+						}
+					});
+						
+					
+					/* 삭제 ajax 종료 */
+				};
+				}); 
+            	/* 삭제 ajax작성종료 */
+            	
             	}
             	
             })
@@ -1946,7 +1961,17 @@
         		listHtml += "<div class='spr-review-content'>";
         		listHtml += "     <p class='spr-review-content-body korean'>"+data.grComment+"</p>";
         		listHtml += "</div>";
+        		
+        	
+    				listHtml +="<div id = 'replyBtn'>";
+    				listHtml += "   <input type='hidden' id='grNum' name='grNum' value="+grNum+">"; 
+    				listHtml += "   <button style='margin: 5px' id='deleteBtn"+grNum+"' class='spr-summary-actions-newreview btn korean deleteBtn' >리뷰 삭제하기</button> ";
+    				listHtml += "   <button style='margin: 5px'  class='spr-summary-actions-newreview btn korean updateBtn'>리뷰 수정하기</button> ";
+    				listHtml +="</div>";
+    		
+        		
         		listHtml += "</div>"; 
+        	
         		
         		
         
@@ -1960,20 +1985,11 @@
         	})
         	/* 굿즈 입력 종료 */
             
-         	function deleteReply(grNum){
-        		var value = grNum;
-        		console.log(grNum);
-        	
-        	};
+        
             
             
         });
-       
-  /*  	function deleteReply(grNum){
-		var value = grNum;
-		console.log(grNum);
-	
-	}; */
+
 
         </script>
         <!-- 해당 페이지의 이벤트 종료입니다 -->

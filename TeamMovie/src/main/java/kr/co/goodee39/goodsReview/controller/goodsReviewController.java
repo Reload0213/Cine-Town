@@ -67,9 +67,10 @@ public class goodsReviewController {
 		 System.out.println("-------------------------------deletegrReview 컨트롤러 메소드 실행-------------------------------");
 		 UserVO uvo = (UserVO)session.getAttribute("account");
 		 vo.setUserNum(uvo.getUserNum());
+		 vo.setUserName(uvo.getUserName());
 		 grService.deleteGoodsReview(vo);
 		 String deleteContirm = vo.getUserName()+"님이 남긴 제목:"+vo.getGrTitle()+"("+vo.getGrNum()+"번 게시물)이 삭제되었습니다";
-		 
+		 System.out.println(deleteContirm);
 		 System.out.println("-------------------------------deletegrReview 컨트롤러 메소드 종료-------------------------------");
 		 ResponseEntity<String> entity = new ResponseEntity<String>(deleteContirm, HttpStatus.OK);
 		 return entity;
