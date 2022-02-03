@@ -63,7 +63,7 @@
 	<%@ include file="include/header.jsp" %>
 	<main>
 	
-	<a href="${pageContext.request.contextPath}/admin/main">관리자 테스트로 이동</a>
+
 	<a href="${pageContext.request.contextPath}/user/myPage">유저 페이지로 이동</a>	
 	<a href="${pageContext.request.contextPath}/user/signin">유저 페이지로 이동</a>	
 	<a href="${pageContext.request.contextPath}/goods/goodsDetail">굿즈디테일페이지</a>

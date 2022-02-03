@@ -30,18 +30,17 @@
 
 </head>
 <body>
-   <!-- 임승혁 관리자페이지 메인시작 -->
-          <div class="hideMenu">
+  <div class="hideMenu">
             <ul class="adminMenus">
                 <li><a onclick="exitSideBar()" class="exitHideMenu"href="#">&times;</a></li>
                 <!-- <li id="switchingTheme"><i class="fas fa-exchange-alt"></i>테마 변경</a></li>-->
                
                    
-                <li><div class="userCon">
+                  <li><div class="userCon">
                       <i class="xi-profile"></i> <c:if test="${sessionScope.account.userId != null}"> <span class="username">${sessionScope.account.userId}님</span></div><span class="logoutBtnM">로그아웃</span>
                       </c:if>
                   </li>
-
+                  
               </ul> 
 
           </div>
@@ -59,26 +58,28 @@
                 <div class="topCon">
                     <span class="hambugerBtn" onclick="viewSideBar()"><i class="xi-bars"></i> </span>
                      <h3 class="panel">관리자 페이지</h3>
-                       <div class="rightCon"> <div class="userForm">
+                     <div class="rightCon"> <div class="userForm">
                     
                      <c:if test="${sessionScope.account.userId != null}">
                       <span class="userId">${sessionScope.account.userName}님</span>
                      <span class="logoutBtn">로그아웃</span>
                      </c:if>
-                    </div>
-                    </div>
-                    </div>
+                    
+                     
+                     </div>
+                  
+                     <span class="search"><i class="xi-search"></i></span></div></div>
+                    
                     </div>
             <div class="bottom">
                 <ul class="navmenus">
-                    <li><a href="${pageContext.request.contextPath}/admin/main">홈</a></li>
+                     <li><a href="${pageContext.request.contextPath}/admin/main">홈</a></li>
                     <li><a href="${pageContext.request.contextPath}/admin/mail">메일</a></li>
                     <li><a href="${pageContext.request.contextPath}/admin/user">회원</a></li>
                     <li><a href="${pageContext.request.contextPath}/admin/board">게시판</a></li>
                     <li><a href="${pageContext.request.contextPath}/admin/order">주문</a></li>
                     <li><a href="#">상품</a></li>
                     <li><a href="${pageContext.request.contextPath}/"><i class="xi-home"></i></a></li>
-                   
                 </ul>
             </div>
             </nav> 
@@ -357,7 +358,7 @@
             
          </div>
   <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <script src="assets/js/adminMainPage/adminUserPage/adminUserPage.js"></script>       
+<script src="${pageContext.request.contextPath}/assets/js/adminMainPage/adminUserPage/adminUserPage.js"></script>  
 <%-- <script src="${pageContext.request.contextPath}/assets/js/adminMainPage/adminBoardPage/adminBoardPage.js"></script> --%>
 
 
@@ -367,7 +368,6 @@ let submitBoard = document.querySelector("#submitBoard");
 
 let logoutBtn = document.querySelector(".logoutBtn");
 let logoutBtnM = document.querySelector(".logoutBtnM");
-
 
 logoutBtn.addEventListener("click",function(){
 	

@@ -35,65 +35,59 @@
 </style>
 </head>
 <body>
-
-	    <!-- 임승혁 관리자페이지 메인시작 -->
-    <div class="hideMenu">
-        <ul class="adminMenus">
-            <li><a onclick="exitSideBar()" class="exitHideMenu" href="#">&times;</a></li>
-            <!-- <li id="switchingTheme"><i class="fas fa-exchange-alt"></i>테마 변경</a></li>-->
-
-
-          <li><div class="userCon">
+  <div class="hideMenu">
+            <ul class="adminMenus">
+                <li><a onclick="exitSideBar()" class="exitHideMenu"href="#">&times;</a></li>
+                <!-- <li id="switchingTheme"><i class="fas fa-exchange-alt"></i>테마 변경</a></li>-->
+               
+                   
+                  <li><div class="userCon">
                       <i class="xi-profile"></i> <c:if test="${sessionScope.account.userId != null}"> <span class="username">${sessionScope.account.userId}님</span></div><span class="logoutBtnM">로그아웃</span>
                       </c:if>
                   </li>
+                  
+              </ul> 
 
+          </div>
 
-        </ul>
-
-    </div>
-
-    <div class="searchBox">
-
-        <div class="searchCon">
-            <span class="searchBtn"><i class="xi-search"></i></span><input type="text" name="" id=""><span
-                class="xbtn">&times;</span></div>
-
-    </div>
-
-    <div class="mainCon">
-        <nav>
+          <div class="searchBox">
+            
+            <div class="searchCon">
+                <span class="searchBtn"><i class="xi-search"></i></span><input type="text" name="" id=""><span class="xbtn">&times;</span></div>
+                
+          </div>
+  
+          <div class="mainCon">
+            <nav>
             <div class="top">
                 <div class="topCon">
                     <span class="hambugerBtn" onclick="viewSideBar()"><i class="xi-bars"></i> </span>
-                    <h3 class="panel">관리자 페이지</h3>
-                   <div class="rightCon"> <div class="userForm">
+                     <h3 class="panel">관리자 페이지</h3>
+                     <div class="rightCon"> <div class="userForm">
                     
                      <c:if test="${sessionScope.account.userId != null}">
                       <span class="userId">${sessionScope.account.userName}님</span>
                      <span class="logoutBtn">로그아웃</span>
                      </c:if>
                     
+                     
                      </div>
-                     </div>
-                </div>
-
-            </div>
+                  
+                     <span class="search"><i class="xi-search"></i></span></div></div>
+                    
+                    </div>
             <div class="bottom">
-              	<ul class="navmenus">
-					<li><a href="${pageContext.request.contextPath}/admin/main">홈</a></li>
-					<li><a href="${pageContext.request.contextPath}/admin/mail">메일</a></li>
-					<li><a href="${pageContext.request.contextPath}/admin/user">회원</a></li>
-					<li><a href="${pageContext.request.contextPath}/admin/board">게시판</a></li>
-					<li><a href="${pageContext.request.contextPath}/admin/order">주문</a></li>
-					<li><a href="#">상품</a></li>
-					<li><a href="${pageContext.request.contextPath}/"><i
-							class="xi-home"></i></a></li>
-
-
-				</ul>
+                <ul class="navmenus">
+                     <li><a href="${pageContext.request.contextPath}/admin/main">홈</a></li>
+                    <li><a href="${pageContext.request.contextPath}/admin/mail">메일</a></li>
+                    <li><a href="${pageContext.request.contextPath}/admin/user">회원</a></li>
+                    <li><a href="${pageContext.request.contextPath}/admin/board">게시판</a></li>
+                    <li><a href="${pageContext.request.contextPath}/admin/order">주문</a></li>
+                    <li><a href="#">상품</a></li>
+                    <li><a href="${pageContext.request.contextPath}/"><i class="xi-home"></i></a></li>
+                </ul>
             </div>
-        </nav>
+            </nav> 
         <!-- <aside><input type="text" name="name" id="name" placeholder="이름을 검색해주세요"></aside> -->
         <div class="resultTitle">
             <h3>${userVO.userName} 의 회원 정보</h3>
@@ -252,7 +246,6 @@
     		location.href="${pageContext.request.contextPath}/admin/logout";
     		
     	});
-    	
     	
     	
     	
