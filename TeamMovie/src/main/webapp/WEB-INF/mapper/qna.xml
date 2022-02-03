@@ -12,7 +12,7 @@
 		from qna
 		where
 		qnaIsdelete = 'N'
-        order by noticeNum 
+        order by qnaNum 
         limit #{start},#{count}
 	</select>
 	<select id="selectCountQna" parameterType="qnaVO" resultType="int">

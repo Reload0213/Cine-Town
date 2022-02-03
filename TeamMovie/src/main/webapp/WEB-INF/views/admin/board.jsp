@@ -21,7 +21,7 @@
 
 <!--  관리자페이지 폰트추가 끝 -->
 <!-- 메인 css 추가 -->
-<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/adminMainPage/adminBoardPage/adminBoardPage.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/adminMainPage/adminMainPage.css">
 <!-- 메인 css 끝 -->
 <!-- fontawesome LINK 추가 -->
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
@@ -363,7 +363,7 @@ if(selBoard.value==1){
 			
 		
 	}
-else if(seleBoard.value==2){
+else if(selBoard.value==2){
 	
 	location.href="${pageContext.request.contextPath}/admin/board/qna";
 }

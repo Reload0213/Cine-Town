@@ -88,11 +88,11 @@
                     </thead>
                     <tbody>
                	<c:forEach var="qnaVO" items="${list}">
-                      <tr >
+                      <tr>
                          <td>${qnaVO.qnaNum}</td>
-                        <td>${qnaVO.qnaCategory}</td>
-                           <td>${qnaVO.qnaTitle}</td>
-                           <td>${qnaVO.qnaComment}</td>
+                         <td>${qnaVO.qnaCategory}</td>
+                         <td>${qnaVO.qnaTitle}</td>
+                          <td>${qnaVO.qnaComment}</td>
                          <td>${qnaVO.qnaRegdate}</td>
                           
                       </tr>

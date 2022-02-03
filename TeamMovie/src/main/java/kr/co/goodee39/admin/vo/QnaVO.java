@@ -5,7 +5,7 @@ public class QnaVO {
 	private int qnaNum;
 	private String qnaCategory;
 	private String qnaTitle;
-	private String quaComment;
+	private String qnaComment;
 	private String qnaIsdelete;
 	private String qnaRegdate;
 	
@@ -40,12 +40,20 @@ public class QnaVO {
 	public void setQnaTitle(String qnaTitle) {
 		this.qnaTitle = qnaTitle;
 	}
-	public String getQuaComment() {
-		return quaComment;
+
+	
+	public String getQnaComment() {
+		return qnaComment;
 	}
-	public void setQuaComment(String quaComment) {
-		this.quaComment = quaComment;
+
+
+
+	public void setQnaComment(String qnaComment) {
+		this.qnaComment = qnaComment;
 	}
+
+
+
 	public String getQnaIsdelete() {
 		return qnaIsdelete;
 	}
