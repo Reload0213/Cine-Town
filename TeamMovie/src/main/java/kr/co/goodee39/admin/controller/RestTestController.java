@@ -59,7 +59,7 @@ public class RestTestController {
         
         
 		System.out.println(vo.getUserNum());
-
+		System.out.println(vo.getUserEmail());
 		
 		 service.updateUser(vo);
 		 

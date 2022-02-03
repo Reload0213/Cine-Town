@@ -172,7 +172,7 @@
                             <ul class="topUl row12">
                                 <li>상세주소</li>
                                 <li><input type="text" class="detailAddr" value="${userVO.userAddr3}"></input>
-                                <a href="#" class="emailSubmit">수정</a></li>
+                                <a href="#" class="addrSubmit">수정</a></li>
 
                             </ul>
 
@@ -222,6 +222,7 @@
         let formSubmit = document.querySelector(".formSubmit");
         let postCode = document.querySelector(".postCode");
         let addr = document.querySelector(".addr");
+        let addrSubmit = document.querySelector(".addrSubmit");
         let detailAddr = document.querySelector(".detailAddr");
         let phone = document.querySelector(".phone");
         let phoneSubmit = document.querySelector(".phoneSubmit");
@@ -248,7 +249,7 @@
                  e.preventDefault();
 
                  if(password.value == password2.value){
-	                let pw={userPw:parseInt(password.value),userNum:parseInt(hidden.value)};
+	                let pw={userPw:password.value,userNum:parseInt(hidden.value)};
 	                
 	                console.log(pw);
 	                $.ajax({
@@ -282,9 +283,11 @@
 
              
              emailSubmit.addEventListener("click",function(e){
-            	 
-            	 let emailResult={userNum:parseInt(hidden.value),userEmail:parseInt(email.value)};
-                 e.preventDefault();
+            	   e.preventDefault();
+            	   console.log(email.value);
+            	 let emailResult={userNum:parseInt(hidden.value),userEmail:email.value};
+            	 console.log(emailResult);
+              
                  if(!(regxp.test(email.value.trim()))){
                      alert("이메일의 형식이 아닙니다.");
                      
@@ -316,6 +319,7 @@
 
              phoneSubmit.addEventListener("click",function(e){
             	 let phoneResult={userNum:parseInt(hidden.value) ,userPhone:parseInt(phone.value)};
+            	
                  e.preventDefault();
               if(!(regxp2.test(phone.value.trim()))){
                   alert("-을 제외하고 입력해주세요.");
@@ -325,11 +329,11 @@
             		
                	  $.ajax({
                    	  
-                  	   url:"${pageContext.request.contextPath}/admin/userPwUpdate",
-                  	   type:"POST",
-                  	   data:JSON.stringify(phoneResult),
-                  	   contentType:"application/json; charset=utf-8",
-                  	   success:function(item){
+               	   url:"${pageContext.request.contextPath}/admin/userPwUpdate",
+               	   type:"POST",
+               	   data:JSON.stringify(phoneResult),
+               	   contentType:"application/json; charset=utf-8",
+               	   success:function(item){
                   		  
                   		  alert("전화번호 수정이 완료되었습니다.");
                   		   console.log(" 전화번호"+item.userPhone+"변경");
@@ -352,7 +356,49 @@
               }
               
              });
-        	
+        
+             
+            addrSubmit.addEventListener("click",function(e){
+            	 let addrResult={userNum:parseInt(hidden.value) ,userAddr1:postCode.value,userAddr2:addr.value,userAddr3:detailAddr.value};
+            	
+                 e.preventDefault();
+              if(postCode.value == "" && addr.value =="" && detailAddr.value ==""){
+                  alert("주소를 입력해주세요.");
+              }
+              else{
+            	  
+            		
+               	  $.ajax({
+                   	  
+               	   url:"${pageContext.request.contextPath}/admin/userPwUpdate",
+               	   type:"POST",
+               	   data:JSON.stringify(addrResult),
+               	   contentType:"application/json; charset=utf-8",
+               	   success:function(item){
+                  		  
+                  		  alert("주소 수정이 완료되었습니다.");
+                  		 
+                  		   
+                  		   postCode.value=item.userAddr1;
+                  		  addr.value=item.userAddr2;
+                  		   detailAddr.value=item.userAddr3;
+                  		   
+                  	   }
+                  	   
+
+                  	   
+                     });   
+            	  
+            	  
+            	  
+            	  
+            	  
+            	  
+            	  
+              }
+              
+             });
+             
         	
         	
         });
