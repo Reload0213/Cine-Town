@@ -623,7 +623,7 @@
                                     <div class="spr-container">
                                         <div class="spr-header clearfix">
                                             <div class="spr-summary">
-                                                <span class="product-review"><a class="reviewLink"><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star-o"></i><i class="font-13 fa fa-star-o"></i> </a><span class="spr-summary-actions-togglereviews korean"> <span>6</span> 개의 후기가 작성됨</span></span>
+                                                <span class="product-review"><a class="reviewLink"><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star-o"></i><i class="font-13 fa fa-star-o"></i> </a><span class="spr-summary-actions-togglereviews korean"> <span id="grCountDiv">6</span> 개의 후기가 작성됨</span></span>
                                                 <span class="spr-summary-actions">
                                                     <a href="#" class="spr-summary-actions-newreview btn korean">리뷰 작성하기</a>
                                                 </span>
@@ -1829,6 +1829,9 @@
             		let userNum = data[i].userNum;
             		let userName =  data[i].userName;
             		let grScore = data[i].grScore;
+            	/* 	let grCount = data[i].grCount; */
+            		
+            		
             		
             		let accountNumber = ${sessionScope.account.userNum};
             		
@@ -1836,6 +1839,8 @@
             		
             		const commentList = document.querySelector(".spr-reviews"); /* 리뷰를 담을 div 클래스 명 */
             		const reviewDiv = document.createElement("div"); /* 리뷰가 생성될 div */
+            		/* const grCountDiv = document.getElementById("grCountDiv"); */ /* 리뷰 개수가 표시될 부분 */
+            		
             		
             		
             		
@@ -1843,7 +1848,7 @@
             		let listHtml = ""; /* 요소 생성 및 초기화 */
             		listHtml += " <div class='spr-review'>";
             		listHtml += "  <div class='spr-review-header'>";
-            		listHtml += "<span class='product-review spr-starratings spr-review-header-starratings'>         <span class='reviewLink'> <c:forEach  begin= '1' end='${data.grScore}' var = 'i'><i class='xi-star'></i> </c:forEach></span></span>";
+            		listHtml += "<span class='product-review spr-starratings spr-review-header-starratings'>         <span class='reviewLink"+grNum+"'> <i class='xi-star'></i>"+grScore+"  </span></span>";
             		listHtml += "<h3 id='updateGrTitle"+grNum+"' class='spr-review-header-title korean grTite"+grNum+"'>"+grTitle+"</h3>"; 
             		listHtml += "<span class='spr-review-header-byline'><strong id='updateUserName"+grNum+"' class='userName"+grNum+"'>"+userName+"</strong> 님이 <strong id='updateGrDate"+grNum+"' class='grDate"+grNum+"'>"+grDate+"</strong>에 작성함</span>";
             		listHtml += "</div>";
@@ -1864,8 +1869,8 @@
             	
             		
             		
-            
             		
+            		/* grCountDiv.innerText = grCount; */
             		reviewDiv.innerHTML=listHtml; /* innerHTML로 생성될 댓글이 담긴 div를 넣어줌 */
             		commentList.append(reviewDiv); /* 리뷰를 담을 div 클래스 뒤에 붙여줌 */
             		
@@ -2018,19 +2023,26 @@
 									
 									
 									
-									/* let grTitleDiv = $(this).parent().parent().parent().parent().children(".spr-review-header").find("h3"); */
-									let grTitleDiv = $("#updateGrTitle"+grNum);
-									console.log("수정완료1");
+									 
+									 
+									let grTitleDiv = document.getElementById("updateGrTitle"+grNum);
+									let userNameDiv = document.getElementById("updateUserName"+grNum);
+									let grDateDiv = document.getElementById("updateGrDate"+grNum);
+									let grCommentDiv = document.getElementById("updateGrComment"+grNum); 
+									/* let grScoreDiv = document.getElementByClassName("reviewLink"+grNum); */
+									 
+									
 									
 								
 									
-								 	/* grTitleDiv.style.color = "red";  */
+								 	
 									
 									grTitleDiv.innerText = data.grTitle;
-								/* 	userNameDiv.innerText = data.userName;
+									userNameDiv.innerText = data.userName;
 									grDateDiv.innerText = data.grDate;
-									grCommentDiv.innerText = data.grComment; */
-									console.log("수정완료2");
+									grCommentDiv.innerText = data.grComment;
+									grScoreDiv.innerText = data.grScore;
+								
 									
 									
 								}
@@ -2111,7 +2123,7 @@
         		let listHtml = ""; /* 요소 생성 및 초기화 */
         		listHtml += " <div class='spr-review'>";
         		listHtml += "  <div class='spr-review-header'>";
-        		listHtml += "<span class='product-review spr-starratings spr-review-header-starratings'>         <span class='reviewLink'> <c:forEach  begin= '1' end='${data.grScore}' var = 'i'><i class='xi-star'></i> </c:forEach></span></span>";
+        		listHtml += "<span class='product-review spr-starratings spr-review-header-starratings'>         <span class='reviewLink'> <i class='xi-star'></i>"+data.grScore+" </span></span>";
         		listHtml += "<h3 class='spr-review-header-title korean'>"+data.grTitle+"</h3>"; 
         		listHtml += "<span class='spr-review-header-byline'><strong>"+data.userName+"</strong> 님이 <strong>"+data.grDate+"</strong>에 작성함</span>";
         		listHtml += "</div>";
