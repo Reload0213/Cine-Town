@@ -1,5 +1,7 @@
 package kr.co.goodee39.user.service;
 
+import java.util.HashMap;
+
 import javax.servlet.http.HttpSession;
 
 import org.mybatis.spring.SqlSessionTemplate;
@@ -29,6 +31,20 @@ public class UserService {
 
 	}
 
+	// 이름 중복 검사
+	public int nameCheck(String userName) {
+
+		return sqlSessionTemplate.selectOne("user.nameCheck", userName);
+
+	}
+
+	// 이메일 중복 검사
+	public int emailCheck(String userEmail) {
+
+		return sqlSessionTemplate.selectOne("user.emailCheck", userEmail);
+
+	}
+
 	// 로그인
 	public String goLoginService(UserVO vo, HttpSession session) {
 		System.out.println("goLogin 실행");
@@ -53,5 +69,22 @@ public class UserService {
 		return path;
 
 	}
-
+	
+	//비번찾기
+	// public 다음의 UserVO는 mapper의 resultType이랑 일치시켜
+	public UserVO findPw(UserVO vo) {
+		System.out.println("비번 찾기 service 진입");
+		System.out.println("service jsp id"+vo.getUserId());
+		System.out.println("service jsp name"+vo.getUserName());
+		return sqlSessionTemplate.selectOne("user.findPw", vo);
+	}
+	
+	//아이디 찾기
+	// public 다음의 UserVO는 mapper의 resultType이랑 일치시켜
+	public UserVO findId(UserVO vo) {
+		System.out.println("아이디 찾기 service 진입");
+		System.out.println("service jsp name"+vo.getUserName());
+		System.out.println("service jsp email"+vo.getUserEmail());
+		return sqlSessionTemplate.selectOne("user.findId", vo);
+	}
 }

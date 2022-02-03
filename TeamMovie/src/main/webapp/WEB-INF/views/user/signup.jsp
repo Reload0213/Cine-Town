@@ -290,8 +290,6 @@
 						});
 
 		//아이디 중복검사
-		//이벤트가 일어나는 시점?
-		//flag 값-동작이 완료되면 flag=true로 준다..
 		$('.id_input').focusout(
 			/* 	"propertychange change keyup paste input", */
 				function() {

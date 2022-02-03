@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+	<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html>
 <!-- 페이지 작성자 김정민 -->
@@ -30,24 +30,28 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6">
-				
+
 					<div class="login__form">
 						<h3>로그인</h3>
-						<form:form modelAttribute="userVO" action="${pageContext.request.contextPath }/user/loginComplete">
+						<form:form modelAttribute="userVO"
+							action="${pageContext.request.contextPath }/user/loginComplete">
 							<div class="input__item">
-								<!-- <input type="text" placeholder="아이디를 입력해주세요" required> -->
-								<form:input path="userId" type="text" placeholder="아이디를 입력해주세요" required="true" value="aaa"/> <span><i
-									class="xi-user-o"></i></span>
+
+								<form:input path="userId" type="text" placeholder="아이디를 입력해주세요"
+									required="true" value="aaa" />
+								<span><i class="xi-user-o"></i></span>
 							</div>
 							<div class="input__item">
-						<!-- 		<input type="text" placeholder="비밀번호를 입력해주세요" required> -->
-								<form:input path="userPw" type="password" placeholder="비밀번호를 입력해주세요" required="true" value="111"/>
+								<!-- 		<input type="text" placeholder="비밀번호를 입력해주세요" required> -->
+								<form:input path="userPw" type="password"
+									placeholder="비밀번호를 입력해주세요" required="true" value="111" />
 								<span><i class="xi-lock-o"></i></span>
 							</div>
-							<a href="${pageContext.request.contextPath}/user/findUser" class="forget_pass"
-								style="font-size: 1vh; font-style: italic;">아이디/비밀번호 찾기</a>
-								<form:button type="submit" class="site-btn">로그인</form:button>
-						<!-- 	<button type="submit" class="site-btn">로그인</button> -->
+							<a href="${pageContext.request.contextPath}/user/findUser"
+								class="forget_pass" style="font-size: 1vh; font-style: italic;">아이디/비밀번호
+								찾기</a>
+							<form:button type="submit" class="site-btn">로그인</form:button>
+							<!-- 	<button type="submit" class="site-btn">로그인</button> -->
 						</form:form>
 
 					</div>
@@ -60,7 +64,7 @@
 					</div>
 				</div>
 			</div>
-		
+
 		</div>
 	</section>
 	<!-- Login Section End -->
