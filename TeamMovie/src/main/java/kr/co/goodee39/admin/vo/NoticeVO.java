@@ -9,6 +9,15 @@ public class NoticeVO {
 	private String noticeIsdelete;
 	private String noticeRegdate;
 	
+	private int start;
+	private int count;
+	
+	
+	public NoticeVO() {
+	
+		this.start = 0;
+		this.count = 10;
+	}
 	public int getNoticeNum() {
 		return noticeNum;
 	}
@@ -45,4 +54,18 @@ public class NoticeVO {
 	public void setNoticeRegdate(String noticeRegdate) {
 		this.noticeRegdate = noticeRegdate;
 	}
+	public int getStart() {
+		return start;
+	}
+	public void setStart(int start) {
+		this.start = start;
+	}
+	public int getCount() {
+		return count;
+	}
+	public void setCount(int count) {
+		this.count = count;
+	}
+	
+	
 }

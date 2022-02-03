@@ -85,9 +85,10 @@
                 
                 <h3>검색결과</h3>
             </div>   
-            <div class="userTable item1">
+           <div class="userTable item1"> 
+            
                
-              <table >
+            <%--   <table >
               
                   <thead>
                       <tr>
@@ -322,7 +323,7 @@
   
   
                     </tbody>
-                </table>
+                </table> --%>
   
   
                
@@ -334,38 +335,6 @@
 
          
 
-                   <div class="pagingBtnCon">
-
-
-                     <div class="btns">
-
-                      <span class="highDown"><i class="xi-angle-left-min"></i><i class="xi-angle-left-min"></i></span> <i class="xi-angle-left-min"></i>
-
-                       
-                      <ul class="indexNum">
-                          <li><a href="#">1</a></li>
-                          <li><a href="#">2</a></li>
-                          <li><a href="#">3</a></li>
-                          <li><a href="#">4</a></li>
-                          <li><a href="#">5</a></li>
-                      </ul>
-
-                       <i class="xi-angle-right-min"></i> <span class="highUp"><i class="xi-angle-right-min"></i><i class="xi-angle-right-min"></i></span>
-                     
-                    </div>
-
-                
-               
-                
-
-
-
-
-
-            </div>
-               
-           
-              
           
 
 
@@ -377,11 +346,178 @@
 
             
          </div>
-         
-<script src="${pageContext.request.contextPath}/assets/js/adminMainPage/adminBoardPage/adminBoardPage.js"></script>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="assets/js/adminMainPage/adminUserPage/adminUserPage.js"></script>       
+<%-- <script src="${pageContext.request.contextPath}/assets/js/adminMainPage/adminBoardPage/adminBoardPage.js"></script> --%>
 
 
 <script>
+let selBoard = document.querySelector("#selBoard");
+let submitBoard = document.querySelector("#submitBoard");
+
+submitBoard.addEventListener("click",function(){
+if(selBoard.value==1){
+	
+	location.href="${pageContext.request.contextPath}/admin/board/notice";
+	
+			
+		
+	}
+else if(seleBoard.value==2){
+	
+	location.href="${pageContext.request.contextPath}/admin/qnaResult";
+}
+	
+	
+});
+
+
+/* let selBoard = document.querySelector("#selBoard");
+let submitBoard = document.querySelector("#submitBoard");
+
+$(function(){
+	
+
+
+submitBoard.addEventListener("click",function(){
+	
+
+
+if(selBoard.value==1){
+	
+	$.ajax({
+		   
+		   url:"${pageContext.request.contextPath}/admin/boardLoad",
+    	   type:"POST",
+    	   contentType:"application/json; charset=utf-8",
+    	   success:function(item){
+    		   
+    		   
+    	/* 	   let div = document.createElement("div");
+    		   div.classList.add("userTable");
+    		   
+    		   
+    		   let table = document.createElement("table");
+    		   let thead= document.createElement("thead");
+    		   let tr= document.createElement("tr");
+    		   
+    		   
+    		   let th1= document.createElement("th");
+    		   th1.innerHTML="번호";
+    		   let th2= document.createElement("th");
+    		   th2.innerHTML="카테고리";
+    		   let th3= document.createElement("th");
+    		   th3.innerHTML="제목";
+    		   let th4= document.createElement("th");
+    		   th4.innerHTML="내용";
+    		   let th5= document.createElement("th");
+    		   th1.innerHTML="일자";
+    		   
+    		   
+    		   
+    		   
+    		   tr.append(th1);
+    		   tr.append(th2);
+    		   tr.append(th3);
+    		   tr.append(th4);
+    		   tr.append(th5);
+    		   thead.append(tr);
+    		   
+    		   
+    		   let tbody = document.createElement("table");
+    		   
+    		   for(let i=0; i<item.)
+    		   let tr = document.createElement("tr"); */
+    		   
+    		   
+    	/* 	   let div = document.createElement("div");
+    		   div.classList.add("userTable"); */
+    		   
+    		   
+    /* 		   let table = document.createElement("table");
+    		   let thead= document.createElement("thead");
+    		   let tr= document.createElement("tr");
+    		   
+    		   
+    		   let th1= document.createElement("th");
+    		   th1.innerHTML="번호";
+    		   let th2= document.createElement("th");
+    		   th2.innerHTML="카테고리";
+    		   let th3= document.createElement("th");
+    		   th3.innerHTML="제목";
+    		   let th4= document.createElement("th");
+    		   th4.innerHTML="내용";
+    		   let th5= document.createElement("th");
+    		   th1.innerHTML="일자";
+    		   
+    		   
+    		   
+    		   
+    		   tr.append(th1);
+    		   tr.append(th2);
+    		   tr.append(th3);
+    		   tr.append(th4);
+    		   tr.append(th5);
+    		   thead.append(tr);
+    		   
+    		   
+    		   
+    		   let tbody = document.createElement("tbody");
+    		   
+    	
+    		   let html="";
+    		   
+    		   for(key in item){
+    			 
+    			  html+='<tr>';
+    			  html+='<td>'+item[key].noticeNum+'</td>';
+    			  html+='<td>'+item[key].noticeCategory+'</td>';
+    			  html+='<td>'+item[key].noticeTitle+'</td>';
+    			  html+='<td>'+item[key].noticeComment+'</td>';
+    			  html+='<td>'+item[key].noticeRegdate+'</td>';
+    			  html+='</tr>';
+    			   
+    			   
+    			   
+    		   }
+    		   tbody.append(html);
+    		   table.append(thead);
+    		   table.append(tbody);
+    		   
+    		   
+    		   $(".userTable").append(table);
+    		   
+    	   
+    		   
+    		   
+    	
+    		   
+    		   
+    		   
+    		   
+    		   
+    		   
+    		  
+    		   
+    	   }
+		
+		
+		
+		
+		
+	});
+	
+}
+else if (selBoard.value==2){
+	
+}
+
+
+
+});
+
+
+});  */
 
 
 

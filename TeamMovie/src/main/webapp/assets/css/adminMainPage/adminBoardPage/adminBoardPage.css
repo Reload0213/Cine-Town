@@ -285,7 +285,7 @@ aside input {
 }
 
 .userTable{
-   display: none;
+ 
     width: 100%;
     margin: 0 auto;
 
@@ -301,7 +301,7 @@ aside input {
 
 }
 
-table {
+/* table {
     overflow: hidden;
     white-space: nowrap;
     margin: 0 auto;
@@ -313,7 +313,7 @@ table {
     margin-bottom: 3rem;
     border-collapse: collapse;
   
-}
+} */
 
 
 

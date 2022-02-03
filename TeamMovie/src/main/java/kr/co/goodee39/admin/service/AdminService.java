@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
+import kr.co.goodee39.admin.vo.NoticeVO;
 import kr.co.goodee39.adminmailbox.vo.AdminMailBoxVO;
 import kr.co.goodee39.user.vo.UserVO;
 
@@ -131,7 +132,34 @@ public void showAdminMailBoxOne(AdminMailBoxVO vo) {
 public void updateUser(UserVO vo) {
 	sqlSessionTemplate.update("admin.updateUser",vo);
 }
+
+public void selectNoticeList(Model model ,int num) {
 	
+	NoticeVO vo = new NoticeVO();
+	vo.setStart((num-1)*vo.getCount());
+	
+	model.addAttribute("list",sqlSessionTemplate.selectList("notice.selectNoticeList",vo));
+	model.addAttribute("count",sqlSessionTemplate.selectOne("notice.selectCountNotice",vo));
+	model.addAttribute("num",num);
+	
+
+
+
+
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}
 
 	
 	

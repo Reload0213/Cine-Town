@@ -1,20 +1,3 @@
-document.getElementById("submitBoard").addEventListener("click",function(){
-
-    if(document.getElementById("selBoard").value==1){
-        document.querySelector(".item1").style.display="block";
-        document.querySelector(".item2").style.display="none";
-    }
-    else if(document.getElementById("selBoard").value==2){
-        document.querySelector(".item2").style.display="block";
-        document.querySelector(".item1").style.display="none";
-    }
-   else{
-    document.querySelector(".item2").style.display="none";
-        document.querySelector(".item1").style.display="none";
-   }
-
-   
-});
 
 
 let writerdeletes = document.querySelectorAll(".delete");

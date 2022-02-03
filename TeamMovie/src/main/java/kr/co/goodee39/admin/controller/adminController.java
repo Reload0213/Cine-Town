@@ -96,10 +96,27 @@ public class adminController {
 	}
 	
 	@GetMapping("/board")
-	public String board() {
-
+	public String board(Model model) {
+     
+	
+		
 		return "admin/board";
 	}
+	
+	
+	@GetMapping("/board/notice")
+	public String boardNotice(Model model,@RequestParam(defaultValue = "1") int num) {
+      
+		service.selectNoticeList(model,num);
+		
+	
+		
+		return "admin/notice";
+	}
+	
+	
+
+	
 	
 	@GetMapping("/userFix")
    public String userFix(@ModelAttribute("userVO") UserVO vo) {
