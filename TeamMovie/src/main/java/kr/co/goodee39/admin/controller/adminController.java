@@ -3,6 +3,7 @@ package kr.co.goodee39.admin.controller;
 import java.util.List;
 
 import javax.net.ssl.SSLEngineResult.Status;
+import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.annotations.Update;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,6 +41,15 @@ public class adminController {
 	public String main() {
 
 		return "admin/main";
+	}
+	
+	@GetMapping("/logout")
+	public String adminLogout(HttpSession session) {
+		
+		session.invalidate();
+		System.out.println("정상적으로 로그아웃했수다");
+		return "redirect:/";
+		
 	}
 	
 	

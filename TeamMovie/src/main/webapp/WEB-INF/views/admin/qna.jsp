@@ -32,7 +32,11 @@
                 <!-- <li id="switchingTheme"><i class="fas fa-exchange-alt"></i>테마 변경</a></li>-->
                
                    
-                  <li><div class="userCon"><i class="xi-profile"></i><span class="username">임승혁 님</span></div><span class="logoutBtnM">로그아웃</span></li>
+                 <li><div class="userCon">
+                      <i class="xi-profile"></i> <c:if test="${sessionScope.account.userId != null}"> <span class="username">${sessionScope.account.userId}님</span></div><span class="logoutBtnM">로그아웃</span>
+                      </c:if>
+                  </li>
+
                   
               </ul> 
 
@@ -51,7 +55,15 @@
                 <div class="topCon">
                     <span class="hambugerBtn" onclick="viewSideBar()"><i class="xi-bars"></i> </span>
                      <h3 class="panel">관리자 페이지</h3>
-                     <div class="rightCon"> <div class="userForm"><span class="userId">관리자 님</span><span class="logoutBtn">로그아웃</span></div><span class="search"><i class="xi-search"></i></span></div></div>
+                    <div class="rightCon"> <div class="userForm">
+                    
+                     <c:if test="${sessionScope.account.userId != null}">
+                      <span class="userId">${sessionScope.account.userName}님</span>
+                     <span class="logoutBtn">로그아웃</span>
+                     </c:if>
+                    
+                     
+                     </div></div><span class="search"><i class="xi-search"></i></span></div></div>
                     
                     </div>
             <div class="bottom">
@@ -231,6 +243,24 @@
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script>
 let deleteBtn = document.querySelectorAll(".delete");
+
+let logoutBtn = document.querySelector(".logoutBtn");
+let logoutBtnM = document.querySelector(".logoutBtnM");
+
+logoutBtn.addEventListener("click",function(){
+	
+	location.href="${pageContext.request.contextPath}/admin/logout";
+	
+});
+
+
+logoutBtnM.addEventListener("click",function(){
+	
+	location.href="${pageContext.request.contextPath}/admin/logout";
+	
+});
+
+
 
 
 

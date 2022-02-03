@@ -110,7 +110,7 @@
 <body>
 
   <div class="mainCon">
-        <nav><div class="navCon"><span class="icon"><i class="xi-mail-o"></i></span><span>관리자의 메일함</span></div><span class="exit">&times;</span></nav>
+        <nav><div class="navCon"><span class="icon"><i class="xi-mail-o"></i></span><span>${sessionScope.account.userId}의 메일함</span></div><span class="exit">&times;</span></nav>
         <div class="contentCon">
             <h2 class="top">${ambVO.userId}</h2>
             <div class="msgCon">

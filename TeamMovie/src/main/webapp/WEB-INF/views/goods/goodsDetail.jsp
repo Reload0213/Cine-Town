@@ -1974,15 +1974,17 @@
         	
         		
         		
+        		
         
         		
         		reviewDiv.innerHTML=listHtml; /* innerHTML로 생성될 댓글이 담긴 div를 넣어줌 */
         		commentList.append(reviewDiv); /* 리뷰를 담을 div 클래스 뒤에 붙여줌 */
+        		$("p").innerText=data.grComment;
         				}
-        			}) 
+        			});
         		
         		}
-        	})
+        	});
         	/* 굿즈 입력 종료 */
             
         
