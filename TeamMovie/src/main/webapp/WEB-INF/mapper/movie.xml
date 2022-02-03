@@ -7,17 +7,19 @@
 		  SELECT M.mvNum, M.mvTitle, M.mvActor, M.mvGenre, M.mvContent1, M.mvYear,
 		  M.mvAge, M.mvRuntime, M.mvProducer, M.mvIsdelete, M.mvPosterPath,
 		  R.mvAvgRate, R.mvRpCount
-		  from movie AS M LEFT OUTER JOIN (SELECT mvNum, AVG(rpStar) mvAvgRate, COUNT(*) mvRpCount FROM reviewreply GROUP BY mvNum) AS R
+		  from movie AS M LEFT OUTER JOIN (SELECT mvNum, ROUND(AVG(rpStar),1) mvAvgRate, COUNT(*) mvRpCount FROM reviewreply GROUP BY mvNum) AS R
 		  ON M.mvNum = R.mvNum
 		  where mvIsdelete = 'N'
 		  order by mvNum desc;
 	  </select>
 	  
 	  <select id="getMovieDetail" parameterType="movieVO" resultType="movieVO">
-		  select mvNum, mvTitle, mvActor, mvContent1, mvContent2, mvContent3, mvContent4, mvGenre, mvYear, mvAge, mvRuntime,
-		   mvProducer, mvAvgRate, mvIsdelete, mvPosterPath, mvBgPath, mvTrailer
-		 	 from movie
+		  select M.mvNum, M.mvTitle, M.mvActor, M.mvContent1, M.mvContent2, M.mvContent3, M.mvContent4, M.mvGenre, M.mvYear, M.mvAge, M.mvRuntime,
+		  M.mvProducer, M.mvIsdelete, M.mvPosterPath, M.mvBgPath, M.mvTrailer,
+		  R.mvAvgRate, R.mvRpCount
+		  from movie AS M LEFT OUTER JOIN (SELECT mvNum, ROUND(AVG(rpStar),1) mvAvgRate, COUNT(*) mvRpCount FROM reviewreply GROUP BY mvNum) AS R
+		  ON M.mvNum = R.mvNum
 		  where mvIsdelete = 'N'
-		  and mvNum=#{mvNum};
+		  and M.mvNum=#{mvNum};
 	  </select>
   </mapper>

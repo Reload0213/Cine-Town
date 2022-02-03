@@ -886,6 +886,10 @@
 							
 							
 							modify_button.addEventListener("click", function(){
+								const modify_title = document.createElement("h3");
+								modify_title.innerText="댓글 수정하기";
+								
+								
 								// 수정 star_form
 								const star_form = document.createElement("form");
 								star_form.setAttribute("id", "myform");
@@ -1021,6 +1025,7 @@
 								const edit_cancel = document.createElement("button");
 								edit_cancel.innerText = "취소";
 								
+								edit_div.append(modify_title);
 								edit_div.append(star_form);
 								edit_div.append(edit_textarea);
 								edit_div.append(edit_modify);
