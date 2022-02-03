@@ -25,5 +25,12 @@
   and userNum = ${userNum}
   </update>
   
+  <!-- 해당 상품에 대한 리뷰를 수정하는 쿼리 -->
+  <update id="updateGoodsReview" parameterType="goodsReviewVO">
+  update goodsreview 
+  set grTitle = #{grTitle}, grComment = #{grComment}, grDate = #{grDate}
+  where grNum = #{grNum}
+  and userNum = ${userNum}
+  </update>
   
   </mapper>
