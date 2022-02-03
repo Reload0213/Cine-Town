@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -73,6 +74,22 @@ public class goodsReviewController {
 		 System.out.println(deleteContirm);
 		 System.out.println("-------------------------------deletegrReview 컨트롤러 메소드 종료-------------------------------");
 		 ResponseEntity<String> entity = new ResponseEntity<String>(deleteContirm, HttpStatus.OK);
+		 return entity;
+	 }
+	 
+//	 굿즈 리뷰 수정 컨트롤러 메소드 
+	 @PatchMapping("/update")
+	 public ResponseEntity<goodsReviewVO> updategrReview(@RequestBody goodsReviewVO vo, HttpSession session){
+		 System.out.println("-------------------------------updategrReview 컨트롤러 메소드 실행-------------------------------");
+		 UserVO uvo = (UserVO)session.getAttribute("account");
+		 vo.setUserNum(uvo.getUserNum());
+		 vo.setUserName(uvo.getUserName());
+		 grService.updateGoodsReview(vo);
+		 
+		 String updateConfirm = vo.getUserName()+"님이 수정하신 내용은"+vo.getGrComment()+" 입니다";
+		 System.out.println(updateConfirm);
+		 System.out.println("-------------------------------updategrReview 컨트롤러 메소드 종료-------------------------------");
+		 ResponseEntity<goodsReviewVO> entity = new ResponseEntity<goodsReviewVO>(vo, HttpStatus.OK);
 		 return entity;
 	 }
 	 
