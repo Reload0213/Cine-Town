@@ -886,18 +886,142 @@
 							
 							
 							modify_button.addEventListener("click", function(){
+								// 수정 star_form
+								const star_form = document.createElement("form");
+								star_form.setAttribute("id", "myform");
+								star_form.setAttribute("method", "post");
+								star_form.setAttribute("name", "myform");
+								
+								// 수정 fieldset, star_input
+								const fieldset = document.createElement("fieldset");
+
+								const star_label1 = document.createElement("label");
+								star_label1.setAttribute("for", "mRate1");
+								star_label1.innerText = "⭐";
+								const star_input1 = document.createElement("input");
+								star_input1.setAttribute("type", "radio");
+								star_input1.setAttribute("id", "mRate1");
+								star_input1.setAttribute("value", "10");
+								star_input1.setAttribute("name", "mRating");
+								
+								const star_label2 = document.createElement("label");
+								star_label2.setAttribute("for", "mRate2");
+								star_label2.innerText = "⭐";
+								const star_input2 = document.createElement("input");
+								star_input2.setAttribute("type", "radio");
+								star_input2.setAttribute("id", "mRate2");
+								star_input2.setAttribute("value", "9");
+								star_input2.setAttribute("name", "mRating");
+								
+								const star_label3 = document.createElement("label");
+								star_label3.setAttribute("for", "mRate3");
+								star_label3.innerText = "⭐";
+								const star_input3 = document.createElement("input");
+								star_input3.setAttribute("type", "radio");
+								star_input3.setAttribute("id", "mRate3");
+								star_input3.setAttribute("value", "8");
+								star_input3.setAttribute("name", "mRating");
+								
+								const star_label4 = document.createElement("label");
+								star_label4.setAttribute("for", "mRate4");
+								star_label4.innerText = "⭐";
+								const star_input4 = document.createElement("input");
+								star_input4.setAttribute("type", "radio");
+								star_input4.setAttribute("id", "mRate4");
+								star_input4.setAttribute("value", "7");
+								star_input4.setAttribute("name", "mRating");
+								
+								const star_label5 = document.createElement("label");
+								star_label5.setAttribute("for", "mRate5");
+								star_label5.innerText = "⭐";
+								const star_input5 = document.createElement("input");
+								star_input5.setAttribute("type", "radio");
+								star_input5.setAttribute("id", "mRate5");
+								star_input5.setAttribute("value", "6");
+								star_input5.setAttribute("name", "mRating");
+								
+								const star_label6 = document.createElement("label");
+								star_label6.setAttribute("for", "mRate6");
+								star_label6.innerText = "⭐";
+								const star_input6 = document.createElement("input");
+								star_input6.setAttribute("type", "radio");
+								star_input6.setAttribute("id", "mRate6");
+								star_input6.setAttribute("value", "5");
+								star_input6.setAttribute("name", "mRating");
+								
+								const star_label7 = document.createElement("label");
+								star_label7.setAttribute("for", "mRate7");
+								star_label7.innerText = "⭐";
+								const star_input7 = document.createElement("input");
+								star_input7.setAttribute("type", "radio");
+								star_input7.setAttribute("id", "mRate7");
+								star_input7.setAttribute("value", "4");
+								star_input7.setAttribute("name", "mRating");
+								
+								const star_label8 = document.createElement("label");
+								star_label8.setAttribute("for", "mRate8");
+								star_label8.innerText = "⭐";
+								const star_input8 = document.createElement("input");
+								star_input8.setAttribute("type", "radio");
+								star_input8.setAttribute("id", "mRate8");
+								star_input8.setAttribute("value", "3");
+								star_input8.setAttribute("name", "mRating");
+								
+								const star_label9 = document.createElement("label");
+								star_label9.setAttribute("for", "mRate9");
+								star_label9.innerText = "⭐";
+								const star_input9 = document.createElement("input");
+								star_input9.setAttribute("type", "radio");
+								star_input9.setAttribute("id", "mRate9");
+								star_input9.setAttribute("value", "2");
+								star_input9.setAttribute("name", "mRating");
+								
+								const star_label10 = document.createElement("label");
+								star_label10.setAttribute("for", "mRate10");
+								star_label10.innerText = "⭐";
+								const star_input10 = document.createElement("input");
+								star_input10.setAttribute("type", "radio");
+								star_input10.setAttribute("id", "mRate10");
+								star_input10.setAttribute("value", "1");
+								star_input10.setAttribute("name", "mRating");
+								
+								star_form.append(fieldset);
+								fieldset.append(star_input1);
+								fieldset.append(star_label1);
+								fieldset.append(star_input2);
+								fieldset.append(star_label2);
+								fieldset.append(star_input3);
+								fieldset.append(star_label3);
+								fieldset.append(star_input4);
+								fieldset.append(star_label4);
+								fieldset.append(star_input5);
+								fieldset.append(star_label5);
+								fieldset.append(star_input6);
+								fieldset.append(star_label6);
+								fieldset.append(star_input7);
+								fieldset.append(star_label7);
+								fieldset.append(star_input8);
+								fieldset.append(star_label8);
+								fieldset.append(star_input9);
+								fieldset.append(star_label9);
+								fieldset.append(star_input10);
+								fieldset.append(star_label10);
+								
+								// 수정 textarea
 								const edit_div = document.createElement("div");
 								const edit_textarea = document.createElement("textarea");
-								edit_textarea.cols = "200";
+								edit_textarea.cols = "100";
 								edit_textarea.rows = "5";
 								
 								edit_textarea.value = review_info.innerText;
 								
+								// 수정 버튼
 								const edit_modify = document.createElement("button");
 								edit_modify.innerText = "수정완료";
 								const edit_cancel = document.createElement("button");
 								edit_cancel.innerText = "취소";
 								
+								edit_div.append(star_form);
 								edit_div.append(edit_textarea);
 								edit_div.append(edit_modify);
 								edit_div.append(edit_cancel);
@@ -915,9 +1039,10 @@
 								edit_modify.addEventListener("click", function(){
 									//alert("수정완료 버튼 클릭");
 									if(confirm("수정하시겠습니까")){
-										let rpComment = edit_textarea.value;
+										let modify_rpComment = edit_textarea.value;
+										let modify_rpStar = document.querySelector('input[name="mRating"]:checked').value;
 										
-										const modify_data = {rpComment, rpNum:item.rpNum};
+										const modify_data = {rpComment:modify_rpComment, rpNum:item.rpNum, rpStar:modify_rpStar};
 										
 										$.ajax({
 											url:"${pageContext.request.contextPath}/ReviewReply/update",
@@ -928,6 +1053,7 @@
 											success:function(data){
 												console.log(data);
 												review_info.innerText = data.rpComment;
+												rpStar.innerText = data.rpStar;
 												li.style.display = "block";
 												edit_div.remove();
 											}
@@ -946,7 +1072,6 @@
 							modify_delete.append(delete_button);
 							
 							delete_button.addEventListener("click", function(){
-								alert("삭제성공");
 								let yn = confirm("삭제하시겠습니까?");
 								 if(yn){
 									let dComment_data = {rpNum:item.rpNum};
@@ -1114,16 +1239,214 @@
 								const modify_button = document.createElement("button");
 								modify_button.innerText="수정";
 								modify_button.style="margin-right: 10px;background:none;";
+								
+								
+								modify_button.addEventListener("click", function(){
+									// 수정 star_form
+									const star_form = document.createElement("form");
+									star_form.setAttribute("id", "myform");
+									star_form.setAttribute("method", "post");
+									star_form.setAttribute("name", "myform");
+									
+									// 수정 fieldset, star_input
+									const fieldset = document.createElement("fieldset");
+
+									const star_label1 = document.createElement("label");
+									star_label1.setAttribute("for", "mRate1");
+									star_label1.innerText = "⭐";
+									const star_input1 = document.createElement("input");
+									star_input1.setAttribute("type", "radio");
+									star_input1.setAttribute("id", "mRate1");
+									star_input1.setAttribute("value", "10");
+									star_input1.setAttribute("name", "mRating");
+									
+									const star_label2 = document.createElement("label");
+									star_label2.setAttribute("for", "mRate2");
+									star_label2.innerText = "⭐";
+									const star_input2 = document.createElement("input");
+									star_input2.setAttribute("type", "radio");
+									star_input2.setAttribute("id", "mRate2");
+									star_input2.setAttribute("value", "9");
+									star_input2.setAttribute("name", "mRating");
+									
+									const star_label3 = document.createElement("label");
+									star_label3.setAttribute("for", "mRate3");
+									star_label3.innerText = "⭐";
+									const star_input3 = document.createElement("input");
+									star_input3.setAttribute("type", "radio");
+									star_input3.setAttribute("id", "mRate3");
+									star_input3.setAttribute("value", "8");
+									star_input3.setAttribute("name", "mRating");
+									
+									const star_label4 = document.createElement("label");
+									star_label4.setAttribute("for", "mRate4");
+									star_label4.innerText = "⭐";
+									const star_input4 = document.createElement("input");
+									star_input4.setAttribute("type", "radio");
+									star_input4.setAttribute("id", "mRate4");
+									star_input4.setAttribute("value", "7");
+									star_input4.setAttribute("name", "mRating");
+									
+									const star_label5 = document.createElement("label");
+									star_label5.setAttribute("for", "mRate5");
+									star_label5.innerText = "⭐";
+									const star_input5 = document.createElement("input");
+									star_input5.setAttribute("type", "radio");
+									star_input5.setAttribute("id", "mRate5");
+									star_input5.setAttribute("value", "6");
+									star_input5.setAttribute("name", "mRating");
+									
+									const star_label6 = document.createElement("label");
+									star_label6.setAttribute("for", "mRate6");
+									star_label6.innerText = "⭐";
+									const star_input6 = document.createElement("input");
+									star_input6.setAttribute("type", "radio");
+									star_input6.setAttribute("id", "mRate6");
+									star_input6.setAttribute("value", "5");
+									star_input6.setAttribute("name", "mRating");
+									
+									const star_label7 = document.createElement("label");
+									star_label7.setAttribute("for", "mRate7");
+									star_label7.innerText = "⭐";
+									const star_input7 = document.createElement("input");
+									star_input7.setAttribute("type", "radio");
+									star_input7.setAttribute("id", "mRate7");
+									star_input7.setAttribute("value", "4");
+									star_input7.setAttribute("name", "mRating");
+									
+									const star_label8 = document.createElement("label");
+									star_label8.setAttribute("for", "mRate8");
+									star_label8.innerText = "⭐";
+									const star_input8 = document.createElement("input");
+									star_input8.setAttribute("type", "radio");
+									star_input8.setAttribute("id", "mRate8");
+									star_input8.setAttribute("value", "3");
+									star_input8.setAttribute("name", "mRating");
+									
+									const star_label9 = document.createElement("label");
+									star_label9.setAttribute("for", "mRate9");
+									star_label9.innerText = "⭐";
+									const star_input9 = document.createElement("input");
+									star_input9.setAttribute("type", "radio");
+									star_input9.setAttribute("id", "mRate9");
+									star_input9.setAttribute("value", "2");
+									star_input9.setAttribute("name", "mRating");
+									
+									const star_label10 = document.createElement("label");
+									star_label10.setAttribute("for", "mRate10");
+									star_label10.innerText = "⭐";
+									const star_input10 = document.createElement("input");
+									star_input10.setAttribute("type", "radio");
+									star_input10.setAttribute("id", "mRate10");
+									star_input10.setAttribute("value", "1");
+									star_input10.setAttribute("name", "mRating");
+									
+									star_form.append(fieldset);
+									fieldset.append(star_input1);
+									fieldset.append(star_label1);
+									fieldset.append(star_input2);
+									fieldset.append(star_label2);
+									fieldset.append(star_input3);
+									fieldset.append(star_label3);
+									fieldset.append(star_input4);
+									fieldset.append(star_label4);
+									fieldset.append(star_input5);
+									fieldset.append(star_label5);
+									fieldset.append(star_input6);
+									fieldset.append(star_label6);
+									fieldset.append(star_input7);
+									fieldset.append(star_label7);
+									fieldset.append(star_input8);
+									fieldset.append(star_label8);
+									fieldset.append(star_input9);
+									fieldset.append(star_label9);
+									fieldset.append(star_input10);
+									fieldset.append(star_label10);
+									
+									// 수정 textarea
+									const edit_div = document.createElement("div");
+									const edit_textarea = document.createElement("textarea");
+									edit_textarea.cols = "100";
+									edit_textarea.rows = "5";
+									
+									edit_textarea.value = review_info.innerText;
+									
+									// 수정 버튼
+									const edit_modify = document.createElement("button");
+									edit_modify.innerText = "수정완료";
+									const edit_cancel = document.createElement("button");
+									edit_cancel.innerText = "취소";
+									
+									edit_div.append(star_form);
+									edit_div.append(edit_textarea);
+									edit_div.append(edit_modify);
+									edit_div.append(edit_cancel);
+									
+									li.after(edit_div);
+									li.style.display = "none";
+									
+									// 취소 버튼 클릭 시 이벤트
+									edit_cancel.addEventListener("click", function(){
+										li.style.display = "block";
+										edit_div.remove();
+									});
+									
+									// 수정완료 버튼 클릭 시 이벤트
+									edit_modify.addEventListener("click", function(){
+										//alert("수정완료 버튼 클릭");
+										if(confirm("수정하시겠습니까")){
+											let modify_rpComment = edit_textarea.value;
+											let modify_rpStar = document.querySelector('input[name="mRating"]:checked').value;
+											
+											const modify_data = {rpComment:modify_rpComment, rpNum:data.rpNum, rpStar:modify_rpStar};
+											
+											$.ajax({
+												url:"${pageContext.request.contextPath}/ReviewReply/update",
+												type:"PATCH",
+												data:JSON.stringify(modify_data),
+												contentType : "application/json; charset=utf-8",
+												dataType : "json",
+												success:function(data){
+													console.log(data);
+													review_info.innerText = data.rpComment;
+													rpStar.innerText = data.rpStar;
+													li.style.display = "block";
+													edit_div.remove();
+												}
+											});
+										}
+									});
+								});
+								
+								
+								
 								//삭제 버튼
 								const delete_button = document.createElement("button");
 								delete_button.innerText="삭제";
 								delete_button.style="background:none;"
 								modify_delete.append(modify_button);
 								modify_delete.append(delete_button);
-							
-					
 								
-							};
+								delete_button.addEventListener("click", function(){
+									let yn = confirm("삭제하시겠습니까?");
+									 if(yn){
+										let dComment_data = {rpNum:item.rpNum};
+										console.log(dComment_data);
+										
+										$.ajax({
+											url:"${pageContext.request.contextPath}/ReviewReply/delete",
+											type:"DELETE",
+											data:JSON.stringify(dComment_data),
+											contentType : "application/json; charset=utf-8",
+											dataType : "html",
+											success:function(data){
+												li.remove();
+											}
+										});
+									} 
+									
+						 			});
+							}
 					 		
 					 		
 							

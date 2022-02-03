@@ -79,8 +79,9 @@ public class ReviewReplyController {
 	@PatchMapping("/update")
 	public ResponseEntity<ReviewReplyVO> patchComment(@RequestBody ReviewReplyVO vo, HttpSession session){
 		
-		System.out.println(vo.getRpNum());
-		System.out.println(vo.getRpComment());
+		System.out.println("수정 컨트롤러 글번호체크 :"+vo.getRpNum());
+		System.out.println("수정 컨트롤러 텍스트체크 :"+vo.getRpComment());
+		System.out.println("수정 컨트롤러 별점체크 :"+vo.getRpStar());
 		
 		UserVO uvo = (UserVO)session.getAttribute("account");
 		vo.setRpWriternum(uvo.getUserNum());
