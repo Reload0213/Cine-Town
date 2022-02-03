@@ -41,4 +41,13 @@ public void deleteGoodsReview(goodsReviewVO vo) {
 	System.out.println("------------------------------데이터 입력 확인 종료------------------------------");
 	sqlSessionTemplate.update("goodsReview.deleteGoodsReview", vo);
 }
+
+//굿즈 리뷰를 수정하는 서비스 메소드 
+public void updateGoodsReview(goodsReviewVO vo) {
+	System.out.println("updateGoodsReview 서비스 메소드 실행");
+	System.out.println("------------------------------데이터 입력 확인------------------------------");
+	System.out.println("grNum:"+vo.getGrNum());
+	sqlSessionTemplate.update("goodsReview.updateGoodsReview", vo);
+	System.out.println("------------------------------데이터 입력 확인 종료------------------------------");
+}
 }

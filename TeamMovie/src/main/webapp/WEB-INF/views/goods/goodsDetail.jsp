@@ -86,11 +86,17 @@
 #myform label:hover ~ label{
     text-shadow: 0 0 0 rgb(250, 246, 21); /* 마우스 호버 뒤에오는 이모지들 */
 }
-#myform input[type=radio]:checked ~ label{
+#myform  input[type=radio]:checked ~ label{
     text-shadow: 0 0 0 rgb(250, 246, 21); /* 마우스 클릭 체크 */
 }
 
-/* 별점 디자인 종료 */    
+
+
+
+
+
+
+   
   
 </style>
 
@@ -625,7 +631,7 @@
                                         </div>
                                         <div class="spr-content">
                                             <div class="spr-form clearfix">
-                                              <%--   <form method="post" action="#" id="new-review-form" class="new-review-form"> --%>
+                                            
                                                 <div id="new-review-form" class="new-review-form">
                                                     <h3 class="spr-form-title korean">리뷰 작성하기</h3>
                                          
@@ -1838,11 +1844,11 @@
             		listHtml += " <div class='spr-review'>";
             		listHtml += "  <div class='spr-review-header'>";
             		listHtml += "<span class='product-review spr-starratings spr-review-header-starratings'>         <span class='reviewLink'> <c:forEach  begin= '1' end='${data.grScore}' var = 'i'><i class='xi-star'></i> </c:forEach></span></span>";
-            		listHtml += "<h3 class='spr-review-header-title korean'>"+grTitle+"</h3>"; 
-            		listHtml += "<span class='spr-review-header-byline'><strong>"+userName+"</strong> 님이 <strong>"+grDate+"</strong>에 작성함</span>";
+            		listHtml += "<h3 id='updateGrTitle"+grNum+"' class='spr-review-header-title korean grTite"+grNum+"'>"+grTitle+"</h3>"; 
+            		listHtml += "<span class='spr-review-header-byline'><strong id='updateUserName"+grNum+"' class='userName"+grNum+"'>"+userName+"</strong> 님이 <strong id='updateGrDate"+grNum+"' class='grDate"+grNum+"'>"+grDate+"</strong>에 작성함</span>";
             		listHtml += "</div>";
             		listHtml += "<div class='spr-review-content'>";
-            		listHtml += "     <p class='spr-review-content-body korean'>"+grComment+"</p>";
+            		listHtml += "     <p id='updateGrComment"+grNum+"' class='spr-review-content-body korean grComment"+grNum+"'>"+grComment+"</p>";
             		listHtml += "</div>";
             		/* 리뷰 작성자가 일치할때만 수정, 삭제버튼이 나타난다 */
             		if(userNum == accountNumber){
@@ -1852,6 +1858,7 @@
             				listHtml += "   <button style='margin: 5px'  class='spr-summary-actions-newreview btn korean updateBtn'>리뷰 수정하기</button> ";
             				listHtml +="</div>";
             		}
+            	
             		listHtml += "</div>"; 
             		
             	
@@ -1864,6 +1871,10 @@
             		
             		
             	}/* for문 종료 */
+            	
+            	
+            	
+            	
             	
             	/* 삭제 ajax작성 시작 */
             	$(".deleteBtn").click(function(){
@@ -1896,6 +1907,152 @@
 				};
 				}); 
             	/* 삭제 ajax작성종료 */
+            	
+            	
+            	/* 수정 ajax 작성 시작 */
+            	$(".updateBtn").click(function(){
+            		var replyNo = $(this).parent().find("#grNum").val();
+            		
+            		
+    				
+    				console.log(replyNo);/* 수정할 게시물의 번호를 확인 */
+    				let updateConfirm = "수정하시겠습니까?";
+    				const updateDiv =  document.createElement("div");
+    				const update = $(this).parent().parent();
+    				const updateBtn = $("#updateBtn");
+    				
+    				/* 수정 창 열기 */
+				    let updateHtml = "";
+				    updateHtml += ' <div id="new-review-form" class="new-review-form">';
+				    updateHtml += '<h3 class="spr-form-title korean">리뷰 수정하기</h3>';
+				    updateHtml += ' <fieldset class="spr-form-review">';
+				    updateHtml += '<div class="spr-form-review-title" >';
+				    updateHtml += '<label class="spr-form-label korean" for="review_title_10508262282">별점 </label>';
+				    updateHtml += '<fieldset id="myform">';
+				    /* 별점 클릭이 되도록 replyNo를 name끼리 일치하도록, id와 for가 일치하도록 작성한다 */
+				    updateHtml += ' <input type="radio" name="'+replyNo+'ratingUpdate" value="5" id="'+replyNo+'rateUpdate5" class="rate"><label for="'+replyNo+'rateUpdate5">⭐</label>';
+				    updateHtml += '<input type="radio" name="'+replyNo+'ratingUpdate" value="4" id="'+replyNo+'rateUpdate4" class="rate"><label for="'+replyNo+'rateUpdate4">⭐</label>';
+				    updateHtml += '<input type="radio" name="'+replyNo+'ratingUpdate" value="3" id="'+replyNo+'rateUpdate3" class="rate"><label for="'+replyNo+'rateUpdate3">⭐</label>';
+				    updateHtml += '<input type="radio" name="'+replyNo+'ratingUpdate" value="2" id="'+replyNo+'rateUpdate2" class="rate"><label for="'+replyNo+'rateUpdate2">⭐</label>';
+				    updateHtml += '<input type="radio" name="'+replyNo+'ratingUpdate" value="1" id="'+replyNo+'rateUpdate1" class="rate"><label for="'+replyNo+'rateUpdate1">⭐</label>';
+				    updateHtml += '</fieldset>';
+				    updateHtml += '  </div>';
+				    
+				    
+				    
+				    
+				    updateHtml += '<div class="spr-form-review-title">';
+				    updateHtml += ' <label class="spr-form-label korean" for="review_title_10508262282">리뷰 제목</label>';
+				    updateHtml += '<input class="spr-form-input spr-form-input-text korean" id="reviewTitle'+replyNo+'" type="text"  placeholder="리뷰 제목을 수정해주세요">';
+				    updateHtml += '  </div>';
+				    
+				    
+			        updateHtml += '<div class="spr-form-review-body">';
+				    updateHtml += '<label class="spr-form-label korean" for="review_body_10508262282">리뷰 내용 <span class="spr-form-review-body-charactersremaining korean">(1500)자</span></label>';
+				    updateHtml += '<div class="spr-form-input">';
+					updateHtml += '<textarea class="spr-form-input spr-form-input-textarea korean" id="reviewContent'+replyNo+'"  rows="10" placeholder="리뷰를 수정해주세요"></textarea>';
+					updateHtml += '</div>';
+					updateHtml += '</div>';
+					updateHtml += '</fieldset>';
+					
+					
+					updateHtml += '<fieldset class="spr-form-actions">';
+					updateHtml += '<button type="submit" class="spr-button spr-button-primary button button-primary btn btn-primary korean" id="reviewUpdate'+replyNo+'" >리뷰 수정하기</button>';
+					updateHtml += '</fieldset>';
+					updateHtml += '</div>';
+					/* updateHtml 종료 */
+					updateDiv.innerHTML=updateHtml;
+					update.append(updateDiv);
+					/* updateHtml 수정 창 종료  */
+					
+					/* 연달아 수정버튼을 클릭하지 않도록 제거 */
+					$(this).attr("disabled", true);
+					
+					
+					
+					/* 수정하기 버튼을 누르면 일어나는 이벤트 */
+					$("#reviewUpdate"+replyNo).click(function(){
+
+						/* 받아줘야할 데이터 변수 입력 */
+						let grComment = $("#reviewContent"+replyNo).val();
+		        		let grTitle = $("#reviewTitle"+replyNo).val();
+		        		let grDate = moment(new Date).format('YYYY년MM월DD일');
+		        		let chkGrScore = document.getElementsByName(replyNo+'ratingUpdate');
+		        		let grScore;
+		        		let grNum = replyNo;
+		        		
+		        		
+		        		for(var i =0; i < chkGrScore.length; i++){
+		        			if(chkGrScore[i].checked){
+		        				grScore = chkGrScore[i].value;
+		        			}
+		        		}
+		        		/* 변수 입력 확인 */
+		        		console.log(grScore);
+		        		console.log(grComment);
+		        		console.log(grTitle);
+		        		console.log(grDate);
+		        		console.log(grNum);
+		        		/* 변수 입력 완료 */
+		        		
+		        		if(grComment.length > 0){
+		        			let updateData = {grComment, grTitle, grScore, grDate, grNum};
+		        			/* 데이터 잘 받는지 확인 */
+		        			console.log(updateData);
+		        			
+		        			
+		        			/* 수정 ajax 실행 */
+		        			$.ajax({
+		        				url:"${pageContext.request.contextPath}/goodsReview/update",
+		        				type: "PATCH",
+		        				data: JSON.stringify(updateData),
+		        				contentType : "application/json; charset=utf-8",
+								dataType : "json",
+								success: function(data){
+									alert("수정 완료되었습니다");
+									updateDiv.remove();
+									console.log(data.grTitle);
+									/* 기능이 막혀있던 버튼의 기능을 다시 활성화 시킴 */
+									$(".updateBtn").attr("disabled", false);
+									
+									
+									
+									
+									/* let grTitleDiv = $(this).parent().parent().parent().parent().children(".spr-review-header").find("h3"); */
+									let grTitleDiv = $("#updateGrTitle"+grNum);
+									console.log("수정완료1");
+									
+								
+									
+								 	/* grTitleDiv.style.color = "red";  */
+									
+									grTitleDiv.innerText = data.grTitle;
+								/* 	userNameDiv.innerText = data.userName;
+									grDateDiv.innerText = data.grDate;
+									grCommentDiv.innerText = data.grComment; */
+									console.log("수정완료2");
+									
+									
+								}
+		        			});
+		        		};
+		        		
+					});
+					
+					
+					
+					
+					
+					
+	        		
+	        		
+					
+            	});
+            	
+            	
+            	
+            	
+            	
             	
             	}
             	
@@ -1969,8 +2126,8 @@
     				listHtml += "   <button style='margin: 5px'  class='spr-summary-actions-newreview btn korean updateBtn'>리뷰 수정하기</button> ";
     				listHtml +="</div>";
     		
-        		
-        		listHtml += "</div>"; 
+    			
+        		 	listHtml += "</div>"; 
         	
         		
         		
