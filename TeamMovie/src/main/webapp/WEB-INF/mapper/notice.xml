@@ -18,6 +18,8 @@
 	<select id="selectCountNotice" parameterType="noticeVO" resultType="int">
 	select count(*)
 	from notice
+	where 
+	noticeIsdelete = 'N'
 	</select>
 	
 	<!-- 공지사항 상세 페이지 불러오는 쿼리 -->

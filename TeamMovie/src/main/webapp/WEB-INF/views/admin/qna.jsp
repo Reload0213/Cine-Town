@@ -78,22 +78,22 @@
                     
                     <thead>
                         <tr>
-                        <th>보낸날짜</th>
                         <th>번호</th>
-                        <th>보낸사람</th>
+                        <th>카테고리</th>
+                        <th>제목</th>
                         <th>내용</th>
-                        <th>삭제</th>
+                        <th>작성일</th>
                         
                       </tr>
                     </thead>
                     <tbody>
-               	<c:forEach var="adminMailBoxVO" items="${list}">
+               	<c:forEach var="qnaVO" items="${list}">
                       <tr >
-                          <td>${adminMailBoxVO.sendDate}</td>
-                          <td>${adminMailBoxVO.mailNum}</td>
-                            <td>${adminMailBoxVO.userId}</td>
-                          <td ><span class="mailTitle" onclick="openPopup('${adminMailBoxVO.mailNum}')">${adminMailBoxVO.content}</span></td>
-                          <td><button class="delete" data-num="${adminMailBoxVO.mailNum}">삭제하기</button></td>
+                         <td>${qnaVO.qnaNum}</td>
+                        <td>${qnaVO.qnaCategory}</td>
+                           <td>${qnaVO.qnaTitle}</td>
+                           <td>${qnaVO.qnaComment}</td>
+                         <td>${qnaVO.qnaRegdate}</td>
                           
                       </tr>
                       
@@ -150,7 +150,7 @@
 
 					<c:otherwise>
 						<a
-							href="${pageContext.request.contextPath}/admin/mail?num=${minBlock-1}">◀◀</a>
+							href="${pageContext.request.contextPath}/admin/board/qna?num=${minBlock-1}">◀◀</a>
 					</c:otherwise>
 
 				</c:choose>
@@ -161,7 +161,7 @@
 					</c:when>
 					<c:otherwise>
 						<a
-							href="${pageContext.request.contextPath}/admin/mail?num=${num-1}">◀</a>
+							href="${pageContext.request.contextPath}/admin/board/qna?num=${num-1}">◀</a>
 					</c:otherwise>
 
 				</c:choose>
@@ -175,7 +175,7 @@
 							<span>${i}</span>
 						</c:when>
 						<c:otherwise>
-							<a href="${pageContext.request.contextPath}/admin/mail?num=${i}">${i}</a>
+							<a href="${pageContext.request.contextPath}/admin/board/qna?num=${i}">${i}</a>
 						</c:otherwise>
 					</c:choose>
 				</c:forEach>
@@ -187,7 +187,7 @@
 
 					<c:otherwise>
 						<a
-							href="${pageContext.request.contextPath}/admin/mail?num=${num+1}">▶</a>
+							href="${pageContext.request.contextPath}/admin/board/qna?num=${num+1}">▶</a>
 					</c:otherwise>
 
 				</c:choose>
@@ -199,7 +199,7 @@
 					</c:when>
 					<c:otherwise>
 						<a
-							href="${pageContext.request.contextPath}/admin/mail?num=${maxBlock+1}">▶▶</a>
+							href="${pageContext.request.contextPath}/admin/board/qna?num=${maxBlock+1}">▶▶</a>
 					</c:otherwise>
 
 				</c:choose>

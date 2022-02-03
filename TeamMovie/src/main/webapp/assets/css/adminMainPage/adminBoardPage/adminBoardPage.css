@@ -1,5 +1,3 @@
-@charset "UTF-8";
-
 /* 기본설정 초기화 */
 * {
 
@@ -89,14 +87,15 @@ a.exitHideMenu{
     text-align: right;
 
 }
-.logoutBtnM{
-    font-size: 1.7rem;
+
+.logoutBtn{
+    font-size: 1.4rem;
     margin-left:0.5rem;
     border:1.5px solid #fff;
     border-radius: 2rem;
     padding:0.5rem 1rem;
+    color:#fff;
 }
-
 
 
 .mainCon {
@@ -171,7 +170,6 @@ nav .top .topCon {
     border:1.5px solid #fff;
     border-radius: 2rem;
     padding:0.5rem 1rem;
-    color:#fff;
 }
 
 .userForm .logoutBtn:hover{
@@ -285,7 +283,7 @@ aside input {
 }
 
 .userTable{
- 
+   display:block;
     width: 100%;
     margin: 0 auto;
 
@@ -301,7 +299,7 @@ aside input {
 
 }
 
-/* table {
+table {
     overflow: hidden;
     white-space: nowrap;
     margin: 0 auto;
@@ -313,7 +311,7 @@ aside input {
     margin-bottom: 3rem;
     border-collapse: collapse;
   
-} */
+}
 
 
 
@@ -333,15 +331,40 @@ tr{
 
 
 
+
 td {
     text-align: center;
     color:#141414;
     padding:0.9rem 0.8rem;
     font-size: 1.5rem;
 }
-td>button{
-    color:#141414;
+
+
+.updateBtn>i{
+color:#141414;
+font-size:1.7rem;
+
 }
+.updateBtn:hover {
+	color:#dd2026;
+	transition:color 0.5s ease-in-out;
+}
+
+
+.delete{
+    padding:0.5rem 0.7rem;
+    background-color: #141414;
+    border:none;
+    color:#fff;
+}
+.delete:hover{
+	
+ background-color:#555;
+    transition: background-color 1s ease-in-out;
+ 
+	
+}
+
 
 .pagingBtnCon {
 
@@ -469,17 +492,52 @@ td>button{
     text-align: center;
     font-weight: bold;
     width: 100%;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     padding: 0 0.5rem 0.2rem 0.5rem;
+}
+
+.quickViewCon{
+
+    width:100%;
+    
+    display:flex;
+    
+    justify-content:center;
+    align-items:center;
+    
+    
+    
+    }
+    
+    .quickView span{
+        
+        font-size:1.3rem;
+        color:#141414;
+        margin:0.3rem;
+    }
+    .quickView a{
+        color:blue;
+        font-size:1.2rem;
+    }
+
+.mailTitle{
+	
+	color:#141414;
+	font-size:1.5rem;
+cursor:pointer;
+	
+}
+
+.mailTitle:hover{
+	
+	color:blue;
+	transition: color 0.5s linear; 
 }
 
 
 
-
-
-
 @media (max-width:1024px) {
-    * {
+    html {
         font-size: 58%;
     }
 
@@ -498,8 +556,8 @@ td>button{
 }
 
 @media (max-width:768px) {
-    * {
-        font-size: 52%;
+    html{
+        font-size: 48%;
     }
 
     .hideMenu>.adminMenus>li>a {
@@ -516,6 +574,9 @@ td>button{
         width: 100%;
       
     }
+    table{
+    overflow-x: auto;
+    }
     .userForm{
         display: none;
     }
@@ -523,30 +584,6 @@ td>button{
     span.hambugerBtn{
         display: block;
     }
-    .quickViewCon{
-
-width:100%;
-
-display:flex;
-
-justify-content:center;
-align-items:center;
-
-
-
-}
-
-.quickView ,span{
-	
-	font-size:1.5rem;
-	color:#141414;
-	margin:0.3rem;
-}
-.quickView a{
-	color:blue;
-}
-
-    
 
   
 
@@ -554,8 +591,8 @@ align-items:center;
 }
 
 @media (max-width:480px) {
-    * {
-        font-size: 48%;
+   html {
+        font-size: 40%;
     }
     
    

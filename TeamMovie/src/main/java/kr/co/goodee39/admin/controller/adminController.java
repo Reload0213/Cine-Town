@@ -115,6 +115,17 @@ public class adminController {
 	}
 	
 	
+	
+	@GetMapping("/board/qna")
+	public String qna(Model model,@RequestParam(defaultValue = "1") int num) {
+      
+		service.selectQnaList(model,num);
+		
+	
+		
+		return "admin/qna";
+	}
+	
 
 	
 	

@@ -365,7 +365,7 @@ if(selBoard.value==1){
 	}
 else if(seleBoard.value==2){
 	
-	location.href="${pageContext.request.contextPath}/admin/qnaResult";
+	location.href="${pageContext.request.contextPath}/admin/board/qna";
 }
 	
 	

@@ -17,7 +17,7 @@
 
 <!--  관리자페이지 폰트추가 끝 -->
 <!-- 메인 css 추가 -->
-<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/adminMainPage/adminMainPage.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/adminMainPage/adminBoardPage/adminBoardPage.css">
 <!-- 메인 css 끝 -->
 <!-- fontawesome LINK 추가 -->
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
@@ -79,7 +79,7 @@
                     <thead>
                         <tr>
                         <th>번호</th>
-                        <th>카테고리</th>
+               
                         <th>제목</th>
                         <th>내용</th>
                         <th>작성일</th>
@@ -90,7 +90,7 @@
                	<c:forEach var="noticeVO" items="${list}">
                       <tr >
                           <td>${noticeVO.noticeNum}</td>
-                          <td>${noticeVO.noticeCategory}</td>
+                    
                             <td>${noticeVO.noticeTitle}</td>
                           <td >${noticeVO.noticeComment}</td>
                           <td >${noticeVO.noticeRegdate}</td>

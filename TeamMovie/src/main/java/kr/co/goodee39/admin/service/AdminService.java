@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
 import kr.co.goodee39.admin.vo.NoticeVO;
+import kr.co.goodee39.admin.vo.QnaVO;
 import kr.co.goodee39.adminmailbox.vo.AdminMailBoxVO;
 import kr.co.goodee39.user.vo.UserVO;
 
@@ -161,8 +162,35 @@ public void selectNoticeList(Model model ,int num) {
 	
 }
 
+public void selectQnaList(Model model ,int num) {
+	
+	QnaVO vo = new QnaVO();
+	vo.setStart((num-1)*vo.getCount());
+	
+	model.addAttribute("list",sqlSessionTemplate.selectList("qna.selectQnaList",vo));
+	model.addAttribute("count",sqlSessionTemplate.selectOne("qna.selectCountQna",vo));
+	model.addAttribute("num",num);
+	
+}
+}
+
+
+
 	
 	
 	
 
-}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
