@@ -1,7 +1,10 @@
 package kr.co.goodee39.user.controller;
 
-import javax.servlet.http.HttpSession;
+import java.io.IOException;
+import java.io.PrintWriter;
 
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -69,54 +72,50 @@ public class userController {
 		return "user/findUser";
 	}
 
-
-
-	
 	// 아이디 중복 검사
 	@PostMapping("/memberIdChk")
 	@ResponseBody
 	public ResponseEntity<Integer> memberIdChkPOST(@RequestBody UserVO vo, HttpSession session) throws Exception {
-		
+
 		System.out.println(vo.getUserId());
-		
+
 		int result = userService.idCheck(vo.getUserId());
-		
+
 		System.out.println(result);
-	
-		ResponseEntity<Integer> entity = new ResponseEntity<Integer>(result, HttpStatus.OK);
-		return entity;
-	}
-	
-	// 이름 중복 검사
-	@PostMapping("/memberNameChk")
-	@ResponseBody
-	public ResponseEntity<Integer> memberNameChkPOST(@RequestBody UserVO vo, HttpSession session) throws Exception {
-		
-		System.out.println(vo.getUserName());
-		
-		int result = userService.nameCheck(vo.getUserName());
-		
-		System.out.println(result);
-	
-		ResponseEntity<Integer> entity = new ResponseEntity<Integer>(result, HttpStatus.OK);
-		return entity;
-	}
-	
-	// 이메일 중복 검사
-	@PostMapping("/memberEmailChk")
-	@ResponseBody
-	public ResponseEntity<Integer> memberEmailChkPOST(@RequestBody UserVO vo, HttpSession session) throws Exception {
-		
-		System.out.println(vo.getUserEmail());
-		
-		int result = userService.emailCheck(vo.getUserEmail());
-		
-		System.out.println(result);
-	
+
 		ResponseEntity<Integer> entity = new ResponseEntity<Integer>(result, HttpStatus.OK);
 		return entity;
 	}
 
+	// 이름 중복 검사
+	@PostMapping("/memberNameChk")
+	@ResponseBody
+	public ResponseEntity<Integer> memberNameChkPOST(@RequestBody UserVO vo, HttpSession session) throws Exception {
+
+		System.out.println(vo.getUserName());
+
+		int result = userService.nameCheck(vo.getUserName());
+
+		System.out.println(result);
+
+		ResponseEntity<Integer> entity = new ResponseEntity<Integer>(result, HttpStatus.OK);
+		return entity;
+	}
+
+	// 이메일 중복 검사
+	@PostMapping("/memberEmailChk")
+	@ResponseBody
+	public ResponseEntity<Integer> memberEmailChkPOST(@RequestBody UserVO vo, HttpSession session) throws Exception {
+
+		System.out.println(vo.getUserEmail());
+
+		int result = userService.emailCheck(vo.getUserEmail());
+
+		System.out.println(result);
+
+		ResponseEntity<Integer> entity = new ResponseEntity<Integer>(result, HttpStatus.OK);
+		return entity;
+	}
 
 	// 로그아웃 컨트롤러
 	@GetMapping("/signout")
@@ -125,31 +124,54 @@ public class userController {
 		session.invalidate();
 		return "redirect:/";
 	}
-	
-	//비번찾기
-	@PostMapping("/findPw")
-	public String findPw(@ModelAttribute("userVO") UserVO vo) {
-		UserVO vo1 = userService.findPw(vo);
-		vo.setUserPw(vo1.getUserPw());
-		
-		System.out.println("비번 찾기 controller 진입");
-		System.out.println("controller jsp id"+vo.getUserId());
-		System.out.println("controller jsp name"+vo.getUserName());
-		return "user/findPwSuccess";
-	}
-	
-	//아이디 찾기
-	@PostMapping("/findId")
-	public String findId(@ModelAttribute("userVO") UserVO vo) {
-		UserVO vo1 = userService.findId(vo);
-		vo.setUserId(vo1.getUserId());
-		
-		System.out.println("아이디 찾기 controller 진입");
-		System.out.println("controller jsp name"+vo.getUserName());
-		System.out.println("controller jsp email"+vo.getUserEmail());
-		return "user/findIdSuccess";
-	}
-	
 
+	// 비번찾기
+	@PostMapping("/findPw")
+	public String findPw(@ModelAttribute("userVO") UserVO vo,HttpServletResponse response) throws IOException {
+		UserVO vo1 = userService.findPw(vo);
+
+		String path = "";
+		if (vo1 == null) {
+			
+			PrintWriter out=response.getWriter();
+			response.setContentType("text/html; charset=utf-8");
+			out.println("<script language='javascript'>");
+			out.println("alert('일치하는 정보가 없습니다.'); history.go(-1);"); //영주님의 영혼이 깃든 곳
+			out.println("</script>");
+			out.flush();
+		
+		} else {
+			vo.setUserPw(vo1.getUserPw());
+			System.out.println("비번 찾기 controller 진입");
+			System.out.println("controller jsp id" + vo.getUserId());
+			System.out.println("controller jsp name" + vo.getUserName());
+			path = "user/findPwSuccess";
+		}
+		return path;
+	}
+
+	// 아이디 찾기
+	@PostMapping("/findId")
+	public String findId(@ModelAttribute("userVO") UserVO vo,HttpServletResponse response) throws IOException {
+		UserVO vo1 = userService.findId(vo);
+		
+		String path = "";
+		if (vo1 == null) {
+			PrintWriter out=response.getWriter();
+			response.setContentType("text/html; charset=utf-8");
+			out.println("<script language='javascript'>");
+			out.println("alert('일치하는 정보가 없습니다.'); history.go(-1);"); //영주님의 영혼이 깃든 곳
+			out.println("</script>");
+			out.flush();
+		} else {
+		vo.setUserId(vo1.getUserId());
+
+		System.out.println("아이디 찾기 controller 진입");
+		System.out.println("controller jsp name" + vo.getUserName());
+		System.out.println("controller jsp email" + vo.getUserEmail());
+		path= "user/findIdSuccess";
+		}
+		return path;
+	}
 
 }

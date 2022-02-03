@@ -247,7 +247,7 @@
 												if (nameCheck && emailCheck
 
 												) {
-
+							
 													$("#findId_form")
 															.attr("action",
 																	"${pageContext.request.contextPath}/user/findId");
