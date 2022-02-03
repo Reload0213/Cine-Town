@@ -760,7 +760,8 @@
 				success : function(data){
 					//console.log(data);
 					for(const item of data){
-						let usernum = ${sessionScope.account.userNum};
+						let usernum = "${sessionScope.account.userNum}";	
+						
 						
 						const rpCommentList = document.querySelector(".comment-list"); //댓글 목록
 						const li = document.createElement("li");
@@ -1112,358 +1113,362 @@
 			
 			//댓글 DB에 등록하기
 			$(".set-comment").click(function(){
-				let rpComment = $(".rp-comment").val();
-				let rpStar = $('input[name=rating]:checked').val();
-				let rpDate = moment(new Date).format('YYYY-MM-DD HH:mm:ss');
-					console.log(rpComment);
-				
-				if(rpComment.length > 0){
-					let comment_data = {rpComment, mvNum:"${movieVO.mvNum}", rpStar, rpDate};
-													
-						console.log(comment_data);
-					$.ajax({
-						url:"${pageContext.request.contextPath}/ReviewReply/set",
-						type:"POST",
-						data:JSON.stringify(comment_data), //보내는 형태
-						contentType : "application/json; charset=utf-8",
-						dataType : "json", //받는 형태
-						success:function(data){
-							let usernum = data.rpWriternum;
-							
-										
-							
-							
-							
-							const rpCommentList = document.querySelector(".comment-list"); //댓글 목록
-							const li = document.createElement("li");
-							/* li.style="background-color:gray;"; */
-							rpCommentList.prepend(li);
-							//묶어주는 div생성
-							
-							//이름이랑 별점 묶어주기 끝
-							const top_info = document.createElement("div"); 
-							top_info.classList.add("top_info"); //class 부여
-							li.prepend(top_info);
-							top_info.style="display:flex;";
-							
-							const writername = document.createElement("span"); //이름 엘리먼트 생성
-							writername.classList.add("writername");
-							writername.innerText = data.rpWritername; //작성자 이름 주입
-							top_info.append(writername);
-							
-							const bar = document.createElement("span");
-							bar.classList.add("bar");
-							bar.innerText = " | ";
-							bar.style="margin: 0 10px;"
-							top_info.append(bar);
-							
-							const star_wrapper = document.createElement("div"); //별이랑 숫자 묶는 div
-							star_wrapper.classList.add("star_wrapper");
-							const star = document.createElement("span"); //별 그림
-							star.classList.add("xi-star"); //xi-con으로 클래스 부여해서 별 
-							star.style="color:orange;";
-							const rpStar = document.createElement("span");//별 카운트
-							rpStar.innerText=data.rpStar;//별 숫자 db에서 가져온 것 
-													
-							top_info.append(star_wrapper);
-							star_wrapper.append(star);//별 그림
-							star_wrapper.append(rpStar);//별 숫자
-							//이름이랑 별점 묶어주기 끝
-							
-							//댓글 내용
-							const review_info = document.createElement("div")
-							review_info.classList.add("review_info");
-							review_info.innerText = data.rpComment;
-							review_info.style="text-align:left; margin: 10px 0; font-size: 20px;";
-							li.append(review_info);
-							//댓글 내용 끝
-
-				
-							//좋아요, 날짜, 생성자(수정, 삭제 버튼) 묶어주기
-							const bottom_info = document.createElement("div")
-							bottom_info.classList.add("bottom_info");
-							bottom_info.style="display:flex; justify-content:space-between";
-							li.append(bottom_info);
-							
-						
-							const date_like = document.createElement("div")//댓글, 좋아요 묶어주기
-							date_like.classList.add("date_like");//클래스 부여
-							date_like.style="display:flex";
-							bottom_info.append(date_like);
-							
-							
-							const date = document.createElement("span"); //댓글 생성 날짜
-							date.innerText = data.rpDate;
-							date.style="margin-right: 10px; font-size: 10px;";
-							date_like.append(date);
-							
-													
-							const like_button = document.createElement("div"); //좋아요 버튼
-							like_button.classList.add("like_button");
-							
-							//form
-							const heart_form = document.createElement("form");
-							heart_form.setAttribute("id", "heart");
-							heart_form.setAttribute("method", "post");
-							heart_form.setAttribute("name", "heart");
-							like_button.append(heart_form);
-							
-							//label
-							const heart_label = document.createElement("label");
-							heart_form.append(heart_label);
-							
-							//input
-							const heart_input = document.createElement("input");
-							heart_input.setAttribute("type", "checkbox");
-							heart_input.setAttribute("name","heart");
-							heart_input.setAttribute("id", "heart");
-							heart_label.append(heart_input)
-							
-							//i
-							const xi_heart = document.createElement("i");
-							xi_heart.classList.add("xi-heart");
-							heart_label.append(xi_heart);
-							
-							const heart_score = document.createElement("span");
-							heart_score.innerText = data.rpLike;
-							heart_label.append(heart_score);
-							
-							
-							
+				if(${not empty sessionScope.account}) {
+					let rpComment = $(".rp-comment").val();
+					let rpStar = $('input[name=rating]:checked').val();
+					let rpDate = moment(new Date).format('YYYY-MM-DD HH:mm:ss');
+						console.log(rpComment);
+					
+					if(rpComment.length > 0){
+						let comment_data = {rpComment, mvNum:"${movieVO.mvNum}", rpStar, rpDate};
+														
+							console.log(comment_data);
+						$.ajax({
+							url:"${pageContext.request.contextPath}/ReviewReply/set",
+							type:"POST",
+							data:JSON.stringify(comment_data), //보내는 형태
+							contentType : "application/json; charset=utf-8",
+							dataType : "json", //받는 형태
+							success:function(data){
+								let usernum = data.rpWriternum;
+								
 											
-							date_like.append(like_button);
-										
-						
-	    
-							const modify_delete = document.createElement("div"); //작성자가 본인일 경우 나타나게 하기
-							modify_delete.classList.add("modify_delete");
+								
+								
+								
+								const rpCommentList = document.querySelector(".comment-list"); //댓글 목록
+								const li = document.createElement("li");
+								/* li.style="background-color:gray;"; */
+								rpCommentList.prepend(li);
+								//묶어주는 div생성
+								
+								//이름이랑 별점 묶어주기 끝
+								const top_info = document.createElement("div"); 
+								top_info.classList.add("top_info"); //class 부여
+								li.prepend(top_info);
+								top_info.style="display:flex;";
+								
+								const writername = document.createElement("span"); //이름 엘리먼트 생성
+								writername.classList.add("writername");
+								writername.innerText = data.rpWritername; //작성자 이름 주입
+								top_info.append(writername);
+								
+								const bar = document.createElement("span");
+								bar.classList.add("bar");
+								bar.innerText = " | ";
+								bar.style="margin: 0 10px;"
+								top_info.append(bar);
+								
+								const star_wrapper = document.createElement("div"); //별이랑 숫자 묶는 div
+								star_wrapper.classList.add("star_wrapper");
+								const star = document.createElement("span"); //별 그림
+								star.classList.add("xi-star"); //xi-con으로 클래스 부여해서 별 
+								star.style="color:orange;";
+								const rpStar = document.createElement("span");//별 카운트
+								rpStar.innerText=data.rpStar;//별 숫자 db에서 가져온 것 
+														
+								top_info.append(star_wrapper);
+								star_wrapper.append(star);//별 그림
+								star_wrapper.append(rpStar);//별 숫자
+								//이름이랑 별점 묶어주기 끝
+								
+								//댓글 내용
+								const review_info = document.createElement("div")
+								review_info.classList.add("review_info");
+								review_info.innerText = data.rpComment;
+								review_info.style="text-align:left; margin: 10px 0; font-size: 20px;";
+								li.append(review_info);
+								//댓글 내용 끝
+	
+					
+								//좋아요, 날짜, 생성자(수정, 삭제 버튼) 묶어주기
+								const bottom_info = document.createElement("div")
+								bottom_info.classList.add("bottom_info");
+								bottom_info.style="display:flex; justify-content:space-between";
+								li.append(bottom_info);
+								
 							
-							// 해당 유저가 쓴 댓글일 경우
-					 		if(usernum == data.rpWriternum){
-								//수정 버튼
-								const modify_button = document.createElement("button");
-								modify_button.innerText="수정";
-								modify_button.style="margin-right: 10px;background:none;";
+								const date_like = document.createElement("div")//댓글, 좋아요 묶어주기
+								date_like.classList.add("date_like");//클래스 부여
+								date_like.style="display:flex";
+								bottom_info.append(date_like);
 								
 								
-								modify_button.addEventListener("click", function(){
-									// 수정 star_form
-									const star_form = document.createElement("form");
-									star_form.setAttribute("id", "myform");
-									star_form.setAttribute("method", "post");
-									star_form.setAttribute("name", "myform");
-									
-									// 수정 fieldset, star_input
-									const fieldset = document.createElement("fieldset");
-
-									const star_label1 = document.createElement("label");
-									star_label1.setAttribute("for", "mRate1");
-									star_label1.innerText = "⭐";
-									const star_input1 = document.createElement("input");
-									star_input1.setAttribute("type", "radio");
-									star_input1.setAttribute("id", "mRate1");
-									star_input1.setAttribute("value", "10");
-									star_input1.setAttribute("name", "mRating");
-									
-									const star_label2 = document.createElement("label");
-									star_label2.setAttribute("for", "mRate2");
-									star_label2.innerText = "⭐";
-									const star_input2 = document.createElement("input");
-									star_input2.setAttribute("type", "radio");
-									star_input2.setAttribute("id", "mRate2");
-									star_input2.setAttribute("value", "9");
-									star_input2.setAttribute("name", "mRating");
-									
-									const star_label3 = document.createElement("label");
-									star_label3.setAttribute("for", "mRate3");
-									star_label3.innerText = "⭐";
-									const star_input3 = document.createElement("input");
-									star_input3.setAttribute("type", "radio");
-									star_input3.setAttribute("id", "mRate3");
-									star_input3.setAttribute("value", "8");
-									star_input3.setAttribute("name", "mRating");
-									
-									const star_label4 = document.createElement("label");
-									star_label4.setAttribute("for", "mRate4");
-									star_label4.innerText = "⭐";
-									const star_input4 = document.createElement("input");
-									star_input4.setAttribute("type", "radio");
-									star_input4.setAttribute("id", "mRate4");
-									star_input4.setAttribute("value", "7");
-									star_input4.setAttribute("name", "mRating");
-									
-									const star_label5 = document.createElement("label");
-									star_label5.setAttribute("for", "mRate5");
-									star_label5.innerText = "⭐";
-									const star_input5 = document.createElement("input");
-									star_input5.setAttribute("type", "radio");
-									star_input5.setAttribute("id", "mRate5");
-									star_input5.setAttribute("value", "6");
-									star_input5.setAttribute("name", "mRating");
-									
-									const star_label6 = document.createElement("label");
-									star_label6.setAttribute("for", "mRate6");
-									star_label6.innerText = "⭐";
-									const star_input6 = document.createElement("input");
-									star_input6.setAttribute("type", "radio");
-									star_input6.setAttribute("id", "mRate6");
-									star_input6.setAttribute("value", "5");
-									star_input6.setAttribute("name", "mRating");
-									
-									const star_label7 = document.createElement("label");
-									star_label7.setAttribute("for", "mRate7");
-									star_label7.innerText = "⭐";
-									const star_input7 = document.createElement("input");
-									star_input7.setAttribute("type", "radio");
-									star_input7.setAttribute("id", "mRate7");
-									star_input7.setAttribute("value", "4");
-									star_input7.setAttribute("name", "mRating");
-									
-									const star_label8 = document.createElement("label");
-									star_label8.setAttribute("for", "mRate8");
-									star_label8.innerText = "⭐";
-									const star_input8 = document.createElement("input");
-									star_input8.setAttribute("type", "radio");
-									star_input8.setAttribute("id", "mRate8");
-									star_input8.setAttribute("value", "3");
-									star_input8.setAttribute("name", "mRating");
-									
-									const star_label9 = document.createElement("label");
-									star_label9.setAttribute("for", "mRate9");
-									star_label9.innerText = "⭐";
-									const star_input9 = document.createElement("input");
-									star_input9.setAttribute("type", "radio");
-									star_input9.setAttribute("id", "mRate9");
-									star_input9.setAttribute("value", "2");
-									star_input9.setAttribute("name", "mRating");
-									
-									const star_label10 = document.createElement("label");
-									star_label10.setAttribute("for", "mRate10");
-									star_label10.innerText = "⭐";
-									const star_input10 = document.createElement("input");
-									star_input10.setAttribute("type", "radio");
-									star_input10.setAttribute("id", "mRate10");
-									star_input10.setAttribute("value", "1");
-									star_input10.setAttribute("name", "mRating");
-									
-									star_form.append(fieldset);
-									fieldset.append(star_input1);
-									fieldset.append(star_label1);
-									fieldset.append(star_input2);
-									fieldset.append(star_label2);
-									fieldset.append(star_input3);
-									fieldset.append(star_label3);
-									fieldset.append(star_input4);
-									fieldset.append(star_label4);
-									fieldset.append(star_input5);
-									fieldset.append(star_label5);
-									fieldset.append(star_input6);
-									fieldset.append(star_label6);
-									fieldset.append(star_input7);
-									fieldset.append(star_label7);
-									fieldset.append(star_input8);
-									fieldset.append(star_label8);
-									fieldset.append(star_input9);
-									fieldset.append(star_label9);
-									fieldset.append(star_input10);
-									fieldset.append(star_label10);
-									
-									// 수정 textarea
-									const edit_div = document.createElement("div");
-									const edit_textarea = document.createElement("textarea");
-									edit_textarea.cols = "100";
-									edit_textarea.rows = "5";
-									
-									edit_textarea.value = review_info.innerText;
-									
-									// 수정 버튼
-									const edit_modify = document.createElement("button");
-									edit_modify.innerText = "수정완료";
-									const edit_cancel = document.createElement("button");
-									edit_cancel.innerText = "취소";
-									
-									edit_div.append(star_form);
-									edit_div.append(edit_textarea);
-									edit_div.append(edit_modify);
-									edit_div.append(edit_cancel);
-									
-									li.after(edit_div);
-									li.style.display = "none";
-									
-									// 취소 버튼 클릭 시 이벤트
-									edit_cancel.addEventListener("click", function(){
-										li.style.display = "block";
-										edit_div.remove();
-									});
-									
-									// 수정완료 버튼 클릭 시 이벤트
-									edit_modify.addEventListener("click", function(){
-										//alert("수정완료 버튼 클릭");
-										if(confirm("수정하시겠습니까")){
-											let modify_rpComment = edit_textarea.value;
-											let modify_rpStar = document.querySelector('input[name="mRating"]:checked').value;
+								const date = document.createElement("span"); //댓글 생성 날짜
+								date.innerText = data.rpDate;
+								date.style="margin-right: 10px; font-size: 10px;";
+								date_like.append(date);
+								
+														
+								const like_button = document.createElement("div"); //좋아요 버튼
+								like_button.classList.add("like_button");
+								
+								//form
+								const heart_form = document.createElement("form");
+								heart_form.setAttribute("id", "heart");
+								heart_form.setAttribute("method", "post");
+								heart_form.setAttribute("name", "heart");
+								like_button.append(heart_form);
+								
+								//label
+								const heart_label = document.createElement("label");
+								heart_form.append(heart_label);
+								
+								//input
+								const heart_input = document.createElement("input");
+								heart_input.setAttribute("type", "checkbox");
+								heart_input.setAttribute("name","heart");
+								heart_input.setAttribute("id", "heart");
+								heart_label.append(heart_input)
+								
+								//i
+								const xi_heart = document.createElement("i");
+								xi_heart.classList.add("xi-heart");
+								heart_label.append(xi_heart);
+								
+								const heart_score = document.createElement("span");
+								heart_score.innerText = data.rpLike;
+								heart_label.append(heart_score);
+								
+								
+								
+												
+								date_like.append(like_button);
 											
-											const modify_data = {rpComment:modify_rpComment, rpNum:data.rpNum, rpStar:modify_rpStar};
-											
-											$.ajax({
-												url:"${pageContext.request.contextPath}/ReviewReply/update",
-												type:"PATCH",
-												data:JSON.stringify(modify_data),
-												contentType : "application/json; charset=utf-8",
-												dataType : "json",
-												success:function(data){
-													console.log(data);
-													review_info.innerText = data.rpComment;
-													rpStar.innerText = data.rpStar;
-													li.style.display = "block";
-													edit_div.remove();
-												}
-											});
-										}
-									});
-								});
+							
+		    
+								const modify_delete = document.createElement("div"); //작성자가 본인일 경우 나타나게 하기
+								modify_delete.classList.add("modify_delete");
 								
-								
-								
-								//삭제 버튼
-								const delete_button = document.createElement("button");
-								delete_button.innerText="삭제";
-								delete_button.style="background:none;"
-								modify_delete.append(modify_button);
-								modify_delete.append(delete_button);
-								
-								delete_button.addEventListener("click", function(){
-									let yn = confirm("삭제하시겠습니까?");
-									 if(yn){
-										let dComment_data = {rpNum:item.rpNum};
-										console.log(dComment_data);
+								// 해당 유저가 쓴 댓글일 경우
+						 		if(usernum == data.rpWriternum){
+									//수정 버튼
+									const modify_button = document.createElement("button");
+									modify_button.innerText="수정";
+									modify_button.style="margin-right: 10px;background:none;";
+									
+									
+									modify_button.addEventListener("click", function(){
+										// 수정 star_form
+										const star_form = document.createElement("form");
+										star_form.setAttribute("id", "myform");
+										star_form.setAttribute("method", "post");
+										star_form.setAttribute("name", "myform");
 										
-										$.ajax({
-											url:"${pageContext.request.contextPath}/ReviewReply/delete",
-											type:"DELETE",
-											data:JSON.stringify(dComment_data),
-											contentType : "application/json; charset=utf-8",
-											dataType : "html",
-											success:function(data){
-												li.remove();
+										// 수정 fieldset, star_input
+										const fieldset = document.createElement("fieldset");
+	
+										const star_label1 = document.createElement("label");
+										star_label1.setAttribute("for", "mRate1");
+										star_label1.innerText = "⭐";
+										const star_input1 = document.createElement("input");
+										star_input1.setAttribute("type", "radio");
+										star_input1.setAttribute("id", "mRate1");
+										star_input1.setAttribute("value", "10");
+										star_input1.setAttribute("name", "mRating");
+										
+										const star_label2 = document.createElement("label");
+										star_label2.setAttribute("for", "mRate2");
+										star_label2.innerText = "⭐";
+										const star_input2 = document.createElement("input");
+										star_input2.setAttribute("type", "radio");
+										star_input2.setAttribute("id", "mRate2");
+										star_input2.setAttribute("value", "9");
+										star_input2.setAttribute("name", "mRating");
+										
+										const star_label3 = document.createElement("label");
+										star_label3.setAttribute("for", "mRate3");
+										star_label3.innerText = "⭐";
+										const star_input3 = document.createElement("input");
+										star_input3.setAttribute("type", "radio");
+										star_input3.setAttribute("id", "mRate3");
+										star_input3.setAttribute("value", "8");
+										star_input3.setAttribute("name", "mRating");
+										
+										const star_label4 = document.createElement("label");
+										star_label4.setAttribute("for", "mRate4");
+										star_label4.innerText = "⭐";
+										const star_input4 = document.createElement("input");
+										star_input4.setAttribute("type", "radio");
+										star_input4.setAttribute("id", "mRate4");
+										star_input4.setAttribute("value", "7");
+										star_input4.setAttribute("name", "mRating");
+										
+										const star_label5 = document.createElement("label");
+										star_label5.setAttribute("for", "mRate5");
+										star_label5.innerText = "⭐";
+										const star_input5 = document.createElement("input");
+										star_input5.setAttribute("type", "radio");
+										star_input5.setAttribute("id", "mRate5");
+										star_input5.setAttribute("value", "6");
+										star_input5.setAttribute("name", "mRating");
+										
+										const star_label6 = document.createElement("label");
+										star_label6.setAttribute("for", "mRate6");
+										star_label6.innerText = "⭐";
+										const star_input6 = document.createElement("input");
+										star_input6.setAttribute("type", "radio");
+										star_input6.setAttribute("id", "mRate6");
+										star_input6.setAttribute("value", "5");
+										star_input6.setAttribute("name", "mRating");
+										
+										const star_label7 = document.createElement("label");
+										star_label7.setAttribute("for", "mRate7");
+										star_label7.innerText = "⭐";
+										const star_input7 = document.createElement("input");
+										star_input7.setAttribute("type", "radio");
+										star_input7.setAttribute("id", "mRate7");
+										star_input7.setAttribute("value", "4");
+										star_input7.setAttribute("name", "mRating");
+										
+										const star_label8 = document.createElement("label");
+										star_label8.setAttribute("for", "mRate8");
+										star_label8.innerText = "⭐";
+										const star_input8 = document.createElement("input");
+										star_input8.setAttribute("type", "radio");
+										star_input8.setAttribute("id", "mRate8");
+										star_input8.setAttribute("value", "3");
+										star_input8.setAttribute("name", "mRating");
+										
+										const star_label9 = document.createElement("label");
+										star_label9.setAttribute("for", "mRate9");
+										star_label9.innerText = "⭐";
+										const star_input9 = document.createElement("input");
+										star_input9.setAttribute("type", "radio");
+										star_input9.setAttribute("id", "mRate9");
+										star_input9.setAttribute("value", "2");
+										star_input9.setAttribute("name", "mRating");
+										
+										const star_label10 = document.createElement("label");
+										star_label10.setAttribute("for", "mRate10");
+										star_label10.innerText = "⭐";
+										const star_input10 = document.createElement("input");
+										star_input10.setAttribute("type", "radio");
+										star_input10.setAttribute("id", "mRate10");
+										star_input10.setAttribute("value", "1");
+										star_input10.setAttribute("name", "mRating");
+										
+										star_form.append(fieldset);
+										fieldset.append(star_input1);
+										fieldset.append(star_label1);
+										fieldset.append(star_input2);
+										fieldset.append(star_label2);
+										fieldset.append(star_input3);
+										fieldset.append(star_label3);
+										fieldset.append(star_input4);
+										fieldset.append(star_label4);
+										fieldset.append(star_input5);
+										fieldset.append(star_label5);
+										fieldset.append(star_input6);
+										fieldset.append(star_label6);
+										fieldset.append(star_input7);
+										fieldset.append(star_label7);
+										fieldset.append(star_input8);
+										fieldset.append(star_label8);
+										fieldset.append(star_input9);
+										fieldset.append(star_label9);
+										fieldset.append(star_input10);
+										fieldset.append(star_label10);
+										
+										// 수정 textarea
+										const edit_div = document.createElement("div");
+										const edit_textarea = document.createElement("textarea");
+										edit_textarea.cols = "100";
+										edit_textarea.rows = "5";
+										
+										edit_textarea.value = review_info.innerText;
+										
+										// 수정 버튼
+										const edit_modify = document.createElement("button");
+										edit_modify.innerText = "수정완료";
+										const edit_cancel = document.createElement("button");
+										edit_cancel.innerText = "취소";
+										
+										edit_div.append(star_form);
+										edit_div.append(edit_textarea);
+										edit_div.append(edit_modify);
+										edit_div.append(edit_cancel);
+										
+										li.after(edit_div);
+										li.style.display = "none";
+										
+										// 취소 버튼 클릭 시 이벤트
+										edit_cancel.addEventListener("click", function(){
+											li.style.display = "block";
+											edit_div.remove();
+										});
+										
+										// 수정완료 버튼 클릭 시 이벤트
+										edit_modify.addEventListener("click", function(){
+											//alert("수정완료 버튼 클릭");
+											if(confirm("수정하시겠습니까")){
+												let modify_rpComment = edit_textarea.value;
+												let modify_rpStar = document.querySelector('input[name="mRating"]:checked').value;
+												
+												const modify_data = {rpComment:modify_rpComment, rpNum:data.rpNum, rpStar:modify_rpStar};
+												
+												$.ajax({
+													url:"${pageContext.request.contextPath}/ReviewReply/update",
+													type:"PATCH",
+													data:JSON.stringify(modify_data),
+													contentType : "application/json; charset=utf-8",
+													dataType : "json",
+													success:function(data){
+														console.log(data);
+														review_info.innerText = data.rpComment;
+														rpStar.innerText = data.rpStar;
+														li.style.display = "block";
+														edit_div.remove();
+													}
+												});
 											}
 										});
-									} 
+									});
 									
-						 			});
+									
+									
+									//삭제 버튼
+									const delete_button = document.createElement("button");
+									delete_button.innerText="삭제";
+									delete_button.style="background:none;"
+									modify_delete.append(modify_button);
+									modify_delete.append(delete_button);
+									
+									delete_button.addEventListener("click", function(){
+										let yn = confirm("삭제하시겠습니까?");
+										 if(yn){
+											let dComment_data = {rpNum:item.rpNum};
+											console.log(dComment_data);
+											
+											$.ajax({
+												url:"${pageContext.request.contextPath}/ReviewReply/delete",
+												type:"DELETE",
+												data:JSON.stringify(dComment_data),
+												contentType : "application/json; charset=utf-8",
+												dataType : "html",
+												success:function(data){
+													li.remove();
+												}
+											});
+										} 
+										
+							 			});
+								}
+						 		
+						 		
+								
+								bottom_info.append(modify_delete);
+								const hr = document.createElement("hr");
+								li.append(hr);
 							}
-					 		
-					 		
-							
-							bottom_info.append(modify_delete);
-							const hr = document.createElement("hr");
-							li.append(hr);
-						}
-					});
+						});
+					}else{
+						alert("댓글을 입력해주세요");
+					}
+					document.querySelector('.rp-comment').value = ''; // 텍스트창 초기화
 				}else{
-					alert("댓글을 입력해주세요");
-				}
-				document.querySelector('.rp-comment').value = ''; // 텍스트창 초기화
+					alert("로그인 후 이용해주세요!");
+				}	
 			});
 		});
 	</script>
