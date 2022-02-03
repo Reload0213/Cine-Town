@@ -353,7 +353,7 @@
 						<br/>
 						<br/>
 						<br/>
-						<div style="text-align: left;"><h5>000 건</h5></div>
+						<div style="text-align: left;"><h5>${movieVO.mvRpCount} 건</h5></div>
 						<hr>
 
 						<!-- .comments-form -->

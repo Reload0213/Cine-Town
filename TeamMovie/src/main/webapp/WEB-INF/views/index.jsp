@@ -131,7 +131,7 @@
 						<div class="rgi-content">
 							<h5>${item.mvTitle}</h5>
 							<p style="height:250px; text-overflow: ellipsis;">${item.mvContent1} </p>
-							<a href="#" class="comment">3 Comments</a>
+							<a href="#" class="comment">${item.mvRpCount} Comments</a>
 							<div class="rgi-extra" style="width:100px; height:3em; color: #fff; padding: 0 2em 3em 0">
 								<div class="rgi-star" style="text-align: center;"><i class="xi-star"></i>${item.mvAvgRate}</div>
 								<div class="rgi-heart"><img src="assets/images/index/gs_img/icons/heart.png" alt=""></div>

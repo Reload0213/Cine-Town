@@ -36,6 +36,7 @@ public class movieService {
 		vo.setMvPosterPath(mvo.getMvPosterPath());
 		vo.setMvBgPath(mvo.getMvBgPath());
 		vo.setMvTrailer(mvo.getMvTrailer());
+		vo.setMvRpCount(mvo.getMvRpCount());
 		
 		
 	}

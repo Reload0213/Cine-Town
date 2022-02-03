@@ -63,7 +63,7 @@
 								<p>${item.mvContent1}</p>
 							</a>
 							<div class="meta-bottom d-flex">
-								<a href="#"><i class="xi-message-o"></i>05 comment</a> <a
+								<a href="#"><i class="xi-message-o"></i>${item.mvRpCount} comment</a> <a
 									href="#"><i class="xi-heart"></i> 0 like</a>
 							</div>
 						</div>

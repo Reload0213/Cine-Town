@@ -19,6 +19,7 @@ public class MovieVO {
 	private String mvPosterPath;
 	private String mvBgPath;
 	private String mvTrailer;
+	private int mvRpCount;
 	
 	
 	public int getMvNum() {
@@ -122,6 +123,12 @@ public class MovieVO {
 	}
 	public void setMvTrailer(String mvTrailer) {
 		this.mvTrailer = mvTrailer;
+	}
+	public int getMvRpCount() {
+		return mvRpCount;
+	}
+	public void setMvRpCount(int mvRpCount) {
+		this.mvRpCount = mvRpCount;
 	}
 
 	
