@@ -37,10 +37,19 @@ public class adminController {
 	@Autowired
 	noticeService noticeService;
 	
+	
 	@GetMapping("/main")
-	public String main() {
-
-		return "admin/main";
+	
+	public String main(HttpSession session) {
+        String path="";
+        
+		if(session.getAttribute("account") != null) {
+          path="admin/main";
+        }
+		else {
+			 path="redirect:/";	
+		}
+		return path;
 	}
 	
 	@GetMapping("/logout")

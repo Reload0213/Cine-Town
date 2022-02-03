@@ -80,7 +80,7 @@
             </nav> 
             <!-- <aside><input type="text" name="name" id="name" placeholder="이름을 검색해주세요"></aside> -->
             <div class="resultTitle">
-                <h3>메일함</h3>
+                <h3>QNA 게시판</h3>
             </div>   
             <div class="userTable">
                

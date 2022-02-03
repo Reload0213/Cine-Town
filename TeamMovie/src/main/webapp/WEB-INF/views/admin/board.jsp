@@ -88,7 +88,7 @@
                 <select name="" id="selBoard">
                     <option value="" selected>게시판을 선택해주세요.</option>
                     <option value="1">공지사항 게시판</option>
-                    <option value="2">리뷰 게시판</option>
+                    <option value="2">QNA 게시판</option>
                 </select>
                 <button id="submitBoard">검색</button>
             </div>
