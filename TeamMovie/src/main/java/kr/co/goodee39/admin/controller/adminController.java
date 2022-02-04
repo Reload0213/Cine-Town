@@ -3,6 +3,7 @@ package kr.co.goodee39.admin.controller;
 import java.util.List;
 
 import javax.net.ssl.SSLEngineResult.Status;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.annotations.Update;
@@ -23,6 +24,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import kr.co.goodee39.admin.service.AdminService;
 import kr.co.goodee39.admin.service.noticeService;
 import kr.co.goodee39.admin.vo.NoticeVO;
+import kr.co.goodee39.admin.vo.QnaVO;
 import kr.co.goodee39.adminmailbox.vo.AdminMailBoxVO;
 import kr.co.goodee39.goods.vo.GoodsVO;
 import kr.co.goodee39.user.vo.UserVO;
@@ -133,6 +135,38 @@ public class adminController {
 		return "admin/notice";
 	}
 	
+	/**
+	 * 강혜수 AJAX로 게시판 화면 출력 TEST
+	 * @param vo
+	 * @param model
+	 * @param req
+	 * @return
+	 */
+	@PostMapping("/board/noticeBoard")
+	public String noticeBoard(@RequestBody NoticeVO vo, Model model, HttpServletRequest req) {
+		
+		String selBoard = "";
+		selBoard = vo.getSelBoard();
+		
+		List<NoticeVO> nlist = null;
+		List<QnaVO> qlist = null;
+		
+		//공지사항 게시판 선택시 해당 게시판 출력
+		if(selBoard.equals("1")) {
+			nlist = (List<NoticeVO>)noticeService.noticeList(vo);
+			
+		//QNA 게시판 선택시 게시판 출력
+		}else if(selBoard.equals("2")) {
+			//qlist = (List<QnaVO>)qnaService.qnaList(vo);
+			
+		}
+		
+		model.addAttribute("nList", nlist);
+		model.addAttribute("qList", qlist);
+		model.addAttribute("selBoard", selBoard);
+		
+		return "admin/noticeBoard";
+	}
 	
 	
 	@GetMapping("/board/qna")

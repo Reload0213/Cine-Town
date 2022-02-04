@@ -2,6 +2,8 @@ package kr.co.goodee39.admin.vo;
 
 public class NoticeVO {
 	
+	private String selBoard;
+	
 	private int noticeNum;
 	private String noticeCategory;
 	private String noticeTitle;
@@ -65,6 +67,12 @@ public class NoticeVO {
 	}
 	public void setCount(int count) {
 		this.count = count;
+	}
+	public String getSelBoard() {
+		return selBoard;
+	}
+	public void setSelBoard(String selBoard) {
+		this.selBoard = selBoard;
 	}
 	
 	
