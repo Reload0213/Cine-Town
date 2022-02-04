@@ -428,7 +428,7 @@
                                             <!-- 상품 별점 종료 -->
                                             
                                             <!-- 리뷰 개수 시작 -->
-                                            <span class="spr-badge-caption">6 reviews</span></a></div>
+                                            <span class="spr-badge-caption">${rvo2.grCount } reviews</span></a></div>
                                             <!-- 리뷰 개수 종료 -->
                                         </div>
                                         <p class="product-single__price product-single__price-product-template">
@@ -642,13 +642,16 @@
                                     <div class="spr-container">
                                         <div class="spr-header clearfix">
                                             <div class="spr-summary">
-                                                <span class="product-review"><a class="reviewLink"><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star-o"></i><i class="font-13 fa fa-star-o"></i> </a><span class="spr-summary-actions-togglereviews korean"> <span id="grCountDiv">6</span> 개의 후기가 작성됨</span></span>
+                                                <span class="product-review"><a class="reviewLink"><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star-o"></i><i class="font-13 fa fa-star-o"></i> </a><span class="spr-summary-actions-togglereviews korean"> <span id="grCountDiv">${rvo2.grCount }</span> 개의 후기가 작성됨</span></span>
                                                 <span class="spr-summary-actions">
                                                     <a href="#" class="spr-summary-actions-newreview btn korean">리뷰 작성하기</a>
                                                 </span>
                                             </div>
                                         </div>
                                         <div class="spr-content">
+                                        
+                                        <!-- 로그인하면 리뷰가 보이도록 함 영역 시작 -->
+                                        <c:if test="${sessionScope.account.userId != null}">
                                             <div class="spr-form clearfix">
                                             
                                                 <div id="new-review-form" class="new-review-form">
@@ -694,6 +697,8 @@
                                                     </div>
                                            
                                             </div>
+                                            </c:if>
+                                            <!-- 로그인하면 리뷰가 보이도록 함 영역 종료 -->
                                             
                                             
                                             <!-- 여기부러 굿즈 리뷰 페이지 시작 -->
@@ -1854,7 +1859,7 @@
             		console.log("평균평점:"+grCount);
             		
             		
-            		let accountNumber = ${sessionScope.account.userNum};
+            		let accountNumber = "${sessionScope.account.userNum}"; /* "~~~"로 큰 따옴표를 해주는 이유: 로그인이 안되어 있는 상태에서는 ; 에러가 발생해서 해당 코드 이하가 실행되지 않음 */
             		
             		
             		
@@ -1869,7 +1874,7 @@
             		let listHtml = ""; /* 요소 생성 및 초기화 */
             		listHtml += " <div class='spr-review'>";
             		listHtml += "  <div class='spr-review-header'>";
-            		listHtml += "<span class='product-review spr-starratings spr-review-header-starratings'>         <span class='reviewLink"+grNum+"'> <i class='xi-star'></i>"+grScore+"  </span></span>";
+            		listHtml += "<span class='product-review spr-starratings spr-review-header-starratings'>         <span style = 'color: rgb(255,149,0); font-size: 20px;' class='reviewLink"+grNum+"'> <i class='xi-star'></i>"+grScore+"  </span></span>";
             		listHtml += "<h3 id='updateGrTitle"+grNum+"' class='spr-review-header-title korean grTite"+grNum+"'>"+grTitle+"</h3>"; 
             		listHtml += "<span class='spr-review-header-byline'><strong id='updateUserName"+grNum+"' class='userName"+grNum+"'>"+userName+"</strong> 님이 <strong id='updateGrDate"+grNum+"' class='grDate"+grNum+"'>"+grDate+"</strong>에 작성함</span>";
             		listHtml += "</div>";
@@ -2152,7 +2157,7 @@
         		let listHtml = ""; /* 요소 생성 및 초기화 */
         		listHtml += " <div class='spr-review'>";
         		listHtml += "  <div class='spr-review-header'>";
-        		listHtml += "<span class='product-review spr-starratings spr-review-header-starratings'>         <span class='reviewLink'> <i class='xi-star'></i>"+data.grScore+" </span></span>";
+        		listHtml += "<span class='product-review spr-starratings spr-review-header-starratings'>         <span class='reviewLink' style = 'color: rgb(255,149,0); font-size: 20px;'> <i class='xi-star'></i>"+data.grScore+" </span></span>";
         		listHtml += "<h3 class='spr-review-header-title korean'>"+data.grTitle+"</h3>"; 
         		listHtml += "<span class='spr-review-header-byline'><strong>"+data.userName+"</strong> 님이 <strong>"+data.grDate+"</strong>에 작성함</span>";
         		listHtml += "</div>";

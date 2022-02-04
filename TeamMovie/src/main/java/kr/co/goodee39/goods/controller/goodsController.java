@@ -70,15 +70,19 @@ public class goodsController {
 		System.out.println("-------------------------------goGoods1 컨트롤러 메소드 실행-------------------------------");
 	    vo.setGdsNum(id);
 	    goodsService.showGoodsItem(vo);
-	    int grCount = goodsReviewService.showGrCount(id); //여기서 에러 발생
+	    int grCount = goodsReviewService.showGrCount(id); // 제품별 별점
+	    int grReviewCount = goodsReviewService.showGrNumCount(id); // 제품별 댓글 갯수
 	   
 	    goodsReviewVO rvo1 = new goodsReviewVO();
+	    goodsReviewVO rvo2 = new goodsReviewVO();
 	    rvo1.setGrCount(grCount);
-	    
+	    rvo2.setGrCount(grReviewCount);
 	    System.out.println("id:"+id);
 	    System.out.println("gdsNum:"+vo.getGdsName());
 	    System.out.println("grCount:"+grCount);
+	    System.out.println("gdsNum"+id+" / "+"count(grNum):"+rvo2.getGrCount());
 	    model.addAttribute("rvo", rvo1);
+	    model.addAttribute("rvo2", rvo2);
 	    model.addAttribute("goods", vo);
 	    System.out.println("-------------------------------goGoods1 컨트롤러 메소드 종료-------------------------------");
 		return "goods/goodsDetail";

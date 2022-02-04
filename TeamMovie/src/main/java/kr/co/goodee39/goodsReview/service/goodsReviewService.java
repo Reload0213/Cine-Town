@@ -82,6 +82,26 @@ public List<goodsReviewVO> showGrCountList(){
 }
 
 
+//굿즈 제품별 리뷰 갯수를 보여주기 위한 서비스 메소드 
+public int showGrNumCount(int gdsNum) {
+	System.out.println("showGrNumCount서비스 메소드 실행");
+	System.out.println("------------------------------데이터 입력 확인------------------------------");
+	System.out.println("gdsNum:"+gdsNum);
+	goodsReviewVO rvo = new goodsReviewVO();
+	int grCount;
+	rvo = sqlSessionTemplate.selectOne("goodsReview.showGrNumCount", gdsNum);
+	if(rvo == null) {
+		grCount = 0;
+	} else {
+		grCount = rvo.getGrCount();
+	}
+	System.out.println("grCount:"+grCount);
+	
+	System.out.println("------------------------------데이터 입력 확인 종료------------------------------");
+	return grCount;
+}
+
+
 
 
 

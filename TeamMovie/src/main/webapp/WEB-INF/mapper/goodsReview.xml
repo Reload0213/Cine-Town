@@ -49,5 +49,13 @@
   GROUP BY gdsNum
   </select>
   
+  <!-- 제품별 작성된 리뷰 갯수를 보여주는 쿼리 -->
+  <select id="showGrNumCount" parameterType="int" resultType="goodsReviewVO">
+  SELECT COUNT(grNum) AS grCount
+FROM goodsreview
+WHERE gdsNum = #{gdsNum}
+and grIsdelete = 'n'
+  </select>
+  
 
   </mapper>
