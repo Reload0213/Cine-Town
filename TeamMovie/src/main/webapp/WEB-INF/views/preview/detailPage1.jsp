@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-
-<%@ include file="../include2/header.jsp" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%-- <%@ include file="../include2/header.jsp" %> --%>
+	<%@ include file="../include/header.jsp"%>
 <head>
 
 <!--  스타일추가 -->
@@ -55,8 +56,21 @@
 </div>
  <div class="voteBtnCon"><a href="#" class="voteBtn">응모하기</a></div>
 
+<%@ include file="voteForm.jsp"%>
+
+
+<!-- <div class="commentCon">
+	<h5>총 0건의 COMMENT가 있습니다</h5>
+	<div class="commentBox">
+	   <textarea name="" id="comment" cols="10" rows="10" class="comment"></textarea>
+	   <button class="comSubmit">등록</button>
+	
+	</div>
+</div> -->
 
 </div>
+
+
 
 
 

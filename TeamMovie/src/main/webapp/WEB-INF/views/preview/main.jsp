@@ -57,7 +57,7 @@
 
 
 
-  <a href="${pageContext.request.contextPath}/preview/detail/page1" class="column romance">
+  <a href="${pageContext.request.contextPath}/preview/detail/page1?num=8" class="column romance">
     <div class="content">
       <div class="moviePosterCon item1"><img src="${pageContext.request.contextPath}/assets/images/premiereMain/movieposter/mannyunijinado.jpg" alt=""></div>
       <p class="movieName">만 년이 지나도 변하지 않는게 ... </p>
@@ -71,7 +71,7 @@
 
 
 
-  <a href="${pageContext.request.contextPath}/preview/detail/page2" class="column action">
+  <a href="${pageContext.request.contextPath}/preview/detail/page2?num=7" class="column action">
     <div class="content">
       <div class="moviePosterCon item1"><img src="${pageContext.request.contextPath}/assets/images/premiereMain/movieposter/imsinhannamuwa.jpg" alt=""></div>
       <p class="movieName">임신한 나무와 도깨비 </p>
