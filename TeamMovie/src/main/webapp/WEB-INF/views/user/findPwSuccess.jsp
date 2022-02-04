@@ -29,7 +29,7 @@
 		<div class="container">
 			<div class="row" >
 				<div class="col-lg-6" style="color: white; margin: 0 auto; text-align:center" >
-				<h3>고객님의 비밀번호는</h3>
+				<h3>${userVO.userName}님의 비밀번호는</h3>
 				<h6 style="margin: 50px 0;">${userVO.userPw} 입니다</h6>
 				
 				<!-- <button type="submit" class="site-btn">비밀번호 찾기</button> -->
