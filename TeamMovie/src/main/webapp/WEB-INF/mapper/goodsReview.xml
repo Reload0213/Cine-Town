@@ -6,12 +6,12 @@
   <!-- 해당 상품에 대한 리뷰를 남기는 쿼리 -->
   <insert id="insertGoodsReview" parameterType="goodsReviewVO">
   insert into goodsreview(grComment, userNum, userName, grNum, gdsNum, grTitle, grScore, grDate )
-  values (#{grComment},#{userNum},#{userName}, grNum, #{gdsNum}, #{grTitle}, #{grScore}, #{grDate} )
+  values (#{grComment},#{userNum},#{userName}, grNum, #{gdsNum}, #{grTitle}, #{grScore}, #{grDate}  )
   </insert>
   
   <!-- 해당 상품에 대한 리뷰를 보여주는 쿼리 -->
   <select id="selectGoodsReviewList" parameterType="goodsReviewVO" resultType="goodsReviewVO">
-  select grNum, grDate, grComment, grLike, grIsdelete, gdsNum, grTitle, userNum, userName, grScore
+  select grNum, grDate, grComment, grLike, grIsdelete, gdsNum, grTitle, userNum, userName, grScore, grCount 
   from goodsreview
   where gdsNum = #{gdsNum}
   and grIsdelete = 'n'
@@ -33,4 +33,21 @@
   and userNum = ${userNum}
   </update>
   
+  <!-- 해당상품의 리뷰 평점을 보여주는 쿼리 -->
+  <select id="showGrCount" parameterType="int" resultType="goodsReviewVO">
+  select  round(avg(grScore)) AS grCount
+  from goodsreview
+  where gdsNum = #{gdsNum}
+  and grIsdelete = 'n'
+  </select>
+  
+  <!-- 모든 상품의 리뷰 평점을 보여주는 쿼리 -->
+  <select id="showGrCountList" parameterType="goodsReviewVO" resultType="goodsReviewVO">
+    select  round(avg(grScore)) AS grCount
+  from goodsreview
+  where grIsdelete = 'n'
+  GROUP BY gdsNum
+  </select>
+  
+
   </mapper>

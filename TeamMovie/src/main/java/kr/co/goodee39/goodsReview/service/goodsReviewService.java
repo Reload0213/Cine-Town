@@ -29,6 +29,9 @@ public void insertGoodsReview(goodsReviewVO vo) {
 // 굿즈 리뷰를 조회하는 서비스 메소드
 public List<goodsReviewVO> selectGoodsReviewList(goodsReviewVO vo){
 	System.out.println("selectGoodsReviewList 서비스 메소드 실행");
+	System.out.println("------------------------------데이터 입력 확인------------------------------");
+	System.out.println("grCount:"+vo.getGrCount());
+	System.out.println("------------------------------데이터 입력 확인 종료------------------------------");
 	return sqlSessionTemplate.selectList("goodsReview.selectGoodsReviewList", vo);
 	
 }
@@ -50,4 +53,37 @@ public void updateGoodsReview(goodsReviewVO vo) {
 	sqlSessionTemplate.update("goodsReview.updateGoodsReview", vo);
 	System.out.println("------------------------------데이터 입력 확인 종료------------------------------");
 }
+
+//굿즈별 리뷰 별점 평점을 뿌려주기위한 서비스 메소드 
+public int showGrCount(int gdsNum) {
+	System.out.println("showGrCount 서비스 메소드 실행");
+	System.out.println("------------------------------데이터 입력 확인------------------------------");
+	goodsReviewVO rvo = new goodsReviewVO();
+	int goodsNum;
+	rvo = sqlSessionTemplate.selectOne("goodsReview.showGrCount", gdsNum);
+	if(rvo == null) {
+		goodsNum = 0;
+	} else {
+		goodsNum = rvo.getGrCount();
+	}
+	/* rvo.setGrCount(goodsNum); */
+	System.out.println("goodsNum:"+goodsNum);
+	
+	
+	System.out.println("goodsNum:"+goodsNum);
+	System.out.println("------------------------------데이터 입력 확인 종료------------------------------");
+	return goodsNum;
+}
+
+//굿즈 전체 리류 별점 평점을 뿌려주기 위한 서비스 메소드
+public List<goodsReviewVO> showGrCountList(){
+	System.out.println("showGrCountList 서비스 메소드 실행");
+	return sqlSessionTemplate.selectList("goodsReview.showGrCountList");
+}
+
+
+
+
+
+
 }

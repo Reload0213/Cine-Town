@@ -14,10 +14,17 @@ public class GoodsVO {
 	private String gdsBrand;
 	private String gdsImage1;
 	private String gdsImage2;
+	private int grScore;  //제품별 리뷰 점수에 따른 평점을 받아주는 컬럼 (= goodsReview의 grCount와 동일)
 	
 	
 	
 
+	public int getGrScore() {
+		return grScore;
+	}
+	public void setGrScore(int grScore) {
+		this.grScore = grScore;
+	}
 	public int getGdsUUID() {
 		return gdsUUID;
 	}

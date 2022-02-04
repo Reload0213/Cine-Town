@@ -417,7 +417,9 @@
                             
                             
                             <!-- 그리드 카드영역 시작 -->
+                          
                             <c:forEach var="goods" items="${goodsList }">
+                          
                                 <div class="col-6 col-sm-6 col-md-4 col-lg-3 item">
                                     <!-- start product image -->
                                     <div class="product-image">
@@ -495,21 +497,32 @@
                                         </div>
                                         <!-- End product price -->
                                         
+                                        <!-- 제품별 별점 출력 시작 -->
                                         <div class="product-review">
+                                         
+                                        <c:forEach begin="1" end="${goods.grScore}" step="1" var="i">
                                             <i class="font-13 fa xi-star"></i>
-                                            <i class="font-13 fa xi-star"></i>
+                                            </c:forEach>
+                                             <c:forEach begin="1" end="${5 - goods.grScore}" step="1" var="i">
+                                            <i class="font-13 fa xi-star-o"></i>
+                                            </c:forEach>
+                                            
+                                        
+                                           <!--  <i class="font-13 fa xi-star"></i>
                                             <i class="font-13 fa xi-star"></i>
                                             <i class="font-13 fa xi-star-o"></i>
-                                            <i class="font-13 fa xi-star-o"></i>
+                                            <i class="font-13 fa xi-star-o"></i> -->
                                         </div>
+                                        <!-- 제품별 별점 출력 종료 -->
                                         <!-- Variant -->
                                    
                                         <!-- End Variant -->
                                     </div>
                                     <!-- End product details -->
                                 </div>
+                                  
                                 </c:forEach>
-                                
+                               
                                 
                                 
                                 

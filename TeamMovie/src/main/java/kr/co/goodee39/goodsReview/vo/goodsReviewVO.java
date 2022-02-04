@@ -5,7 +5,7 @@ private int grNum;
 private int gdsNum;
 private int userNum;
 private int grScore;
-/* private int grCount; */
+ private int grCount; 
 private String userName;
 private String grDate;
 private String grComment;
@@ -14,10 +14,14 @@ private String grIsdelete;
 private String grTitle;
 
 
-/*
- * public int getGrCount() { return grCount; } public void setGrCount(int
- * grCount) { this.grCount = grCount; }
- */
+
+
+public int getGrCount() {
+	return grCount;
+}
+public void setGrCount(int grCount) {
+	this.grCount = grCount;
+}
 public int getGrScore() {
 	return grScore;
 }

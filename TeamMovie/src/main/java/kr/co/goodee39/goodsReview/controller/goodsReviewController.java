@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 import kr.co.goodee39.goodsReview.service.goodsReviewService;
 import kr.co.goodee39.goodsReview.vo.goodsReviewVO;
 import kr.co.goodee39.user.vo.UserVO;
-
+//비동기 컨트롤러 입니다
 @RestController
 @RequestMapping("/goodsReview")
 public class goodsReviewController {
@@ -34,6 +34,8 @@ public class goodsReviewController {
 		 vo.setUserNum(uvo.getUserNum());
 		 vo.setUserName(uvo.getUserName());
 		 grService.insertGoodsReview(vo);
+		 
+		
 		 ResponseEntity<goodsReviewVO> entity = new ResponseEntity<goodsReviewVO>(vo, HttpStatus.OK);
 		 
 	 System.out.println("-------------------------------insertgrReview 컨트롤러 메소드 실행-------------------------------");
@@ -43,6 +45,7 @@ public class goodsReviewController {
 	 System.out.println("gdsNum 내용 확인:"+vo.getGdsNum());
 	 System.out.println("userNum 내용 확인:"+vo.getUserNum());
 	 System.out.println("userName 내용 확인:"+vo.getUserName());
+	
 	 System.out.println("-------------------------------insertgrReview 컨트롤러 메소드 종료-------------------------------");
 	 return entity;
 	 }
@@ -50,12 +53,19 @@ public class goodsReviewController {
 //	 굿즈 리뷰 조회 컨트롤러 메소드
 	 @GetMapping("/{id}")
 	 public ResponseEntity<List<goodsReviewVO>> selectgoodsReviewList(@PathVariable int id){
+		 
+		 
 		 System.out.println("-------------------------------selectgoodsReviewList 컨트롤러 메소드 실행-------------------------------");
 		 System.out.println(id);
-		 System.out.println("-------------------------------selectgoodsReviewList 컨트롤러 메소드 종료-------------------------------");
+	
 		 goodsReviewVO vo = new goodsReviewVO();
+		 int num = grService.showGrCount(id);
+		 System.out.println("추가된 내용(grCount):"+num);
+		 vo.setGrCount(num);
+		 System.out.println("-------------------------------selectgoodsReviewList 컨트롤러 메소드 종료-------------------------------");
 		 vo.setGdsNum(id);
 		 List<goodsReviewVO> list = grService.selectGoodsReviewList(vo);
+		
 		 ResponseEntity<List<goodsReviewVO>> entity = new ResponseEntity<List<goodsReviewVO>>(list, HttpStatus.OK);
 		 return entity;
 		 
@@ -74,6 +84,7 @@ public class goodsReviewController {
 		 System.out.println(deleteContirm);
 		 System.out.println("-------------------------------deletegrReview 컨트롤러 메소드 종료-------------------------------");
 		 ResponseEntity<String> entity = new ResponseEntity<String>(deleteContirm, HttpStatus.OK);
+		 
 		 return entity;
 	 }
 	 
@@ -92,6 +103,8 @@ public class goodsReviewController {
 		 ResponseEntity<goodsReviewVO> entity = new ResponseEntity<goodsReviewVO>(vo, HttpStatus.OK);
 		 return entity;
 	 }
+	 
+	 
 	 
 
 }
