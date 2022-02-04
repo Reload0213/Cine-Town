@@ -353,7 +353,7 @@
 						<br/>
 						<br/>
 						<br/>
-						<div style="text-align: left;"><h5>${movieVO.mvRpCount} 건</h5></div>
+						<div style="text-align: left;"><h5><span id="totalCnt">${movieVO.mvRpCount}</span>건</h5></div>
 						<hr>
 
 						<!-- .comments-form -->
@@ -1082,6 +1082,7 @@
 								 if(yn){
 									let dComment_data = {rpNum:item.rpNum};
 									console.log(dComment_data);
+
 									
 									$.ajax({
 										url:"${pageContext.request.contextPath}/ReviewReply/delete",
@@ -1091,6 +1092,7 @@
 										dataType : "html",
 										success:function(data){
 											li.remove();
+											document.querySelector('#totalCnt').innerText -= 1;
 										}
 									});
 								} 
@@ -1132,8 +1134,9 @@
 							success:function(data){
 								let usernum = data.rpWriternum;
 								
+								let tCnt = parseInt(document.querySelector('#totalCnt').innerText);
+								document.querySelector('#totalCnt').innerText = tCnt+1;
 											
-								
 								
 								
 								const rpCommentList = document.querySelector(".comment-list"); //댓글 목록
@@ -1405,8 +1408,7 @@
 												let modify_rpComment = edit_textarea.value;
 												let modify_rpStar = document.querySelector('input[name="mRating"]:checked').value;
 												
-												const modify_data = {rpComment:modify_rpComment, rpNum:data.rpNum, rpStar:modify_rpStar};
-												
+												const modify_data = {rpComment:modify_rpComment, rpNum:data.rpNum, rpStar:modify_rpStar};								
 												$.ajax({
 													url:"${pageContext.request.contextPath}/ReviewReply/update",
 													type:"PATCH",
@@ -1437,7 +1439,7 @@
 									delete_button.addEventListener("click", function(){
 										let yn = confirm("삭제하시겠습니까?");
 										 if(yn){
-											let dComment_data = {rpNum:item.rpNum};
+											let dComment_data = {rpNum:data.rpNum};
 											console.log(dComment_data);
 											
 											$.ajax({
@@ -1448,6 +1450,7 @@
 												dataType : "html",
 												success:function(data){
 													li.remove();
+													document.querySelector('#totalCnt').innerText -= 1;
 												}
 											});
 										} 
