@@ -16,6 +16,9 @@ public class movieService {
 	public void getMovieList(Model model) {
 		model.addAttribute("list", sqlSessionTemplate.selectList("movie.getMovieList"));
 	}
+	public void getBestMvList(Model model) {
+		model.addAttribute("bestList", sqlSessionTemplate.selectList("movie.getBestMvList"));
+	}
 	
 	
 	public void getMovieDetail(Model model, MovieVO vo) {

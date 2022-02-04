@@ -22,4 +22,15 @@
 		  where mvIsdelete = 'N'
 		  and M.mvNum=#{mvNum};
 	  </select>
+	  
+	    <select id="getBestMvList" parameterType="movieVO" resultType="movieVO">
+		  SELECT M.mvNum, M.mvTitle, M.mvActor, M.mvGenre, M.mvContent1,M.mvContent4, M.mvYear,
+		  M.mvAge, M.mvRuntime, M.mvProducer, M.mvIsdelete, M.mvPosterPath, M.mvBgPath,
+		  R.mvAvgRate, R.mvRpCount
+		  from movie AS M LEFT OUTER JOIN (SELECT mvNum, ROUND(AVG(rpStar),1) mvAvgRate, COUNT(*) mvRpCount FROM reviewreply GROUP BY mvNum) AS R
+		  ON M.mvNum = R.mvNum
+		  where mvIsdelete = 'N'
+		  order by mvAvgRate desc
+		  limit 5;
+	  </select>
   </mapper>

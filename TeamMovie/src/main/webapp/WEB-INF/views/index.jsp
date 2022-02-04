@@ -74,33 +74,21 @@
 	<!-- 강혜수 바디 -->
 	<section class="hero-section">
 		<div class="hero-slider owl-carousel">
-			<div class="hs-item set-bg" data-setbg="assets/images/index/gs_img/movie-1.jpg">
-				<div class="hs-text">
-					<div class="container">
-						<h2>큰 힘에는 <span>큰 책임이</span> 따른다!</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada <br> lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. <br>Suspendisse cursus faucibus finibus.</p>
-						<a href="#" class="site-btn">Read More</a>
-					</div>
+			<c:forEach var="bestItem" items="${bestList}">
+				<div class="hs-item set-bg" data-setbg="${bestItem.mvBgPath}">
+					<a href="${pageContext.request.contextPath}/movie/movieDetail?mvNum=${bestItem.mvNum}">
+						<div class="hs-text">
+							<div class="container" style="text-shadow: 3px 5px 5px #000; line-height: 2em; font-size: 4em">
+								<h1 style="padding-bottom: 2em; color:#FFF;">회원님들의 좋은 평가를 받은 Top 5</h1>
+								<h2>${bestItem.mvTitle}</h2>
+								<p>${bestItem.mvContent1}</p>
+								<p>${bestItem.mvContent4}</p>
+								<a href="#" class="site-btn" style="padding: 0px; color:#FFF;">별점 : <span class="xi-star checked" style="color:#FEDD6A"></span>${bestItem.mvAvgRate}</a>
+							</div>
+						</div>
+					</a>
 				</div>
-			</div>
-			<div class="hs-item set-bg" data-setbg="assets/images/index/gs_img/movie-2.jpg">
-				<div class="hs-text">
-					<div class="container">
-						<h2>짜릿한 <span>범죄</span> 액션</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada <br> lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. <br>Suspendisse cursus faucibus finibus.</p>
-						<a href="#" class="site-btn">Read More</a>
-					</div>
-				</div>
-			</div>
-			<div class="hs-item set-bg" data-setbg="assets/images/index/gs_img/movie-3.jpg">
-				<div class="hs-text">
-					<div class="container">
-						<h2>매너가 <span>사람을</span> 만든다</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada <br> lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. <br>Suspendisse cursus faucibus finibus.</p>
-						<a href="#" class="site-btn">Read More</a>
-					</div>
-				</div>
-			</div>
+			</c:forEach>
 		</div>
 	</section>
 

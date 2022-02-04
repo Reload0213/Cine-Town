@@ -17,6 +17,7 @@ public class HomeController {
 	@RequestMapping(value="/", method = RequestMethod.GET)
 	public String home(Model model) {
 		mService.getMovieList(model);
+		mService.getBestMvList(model);
 		
 		return "index";
 	}

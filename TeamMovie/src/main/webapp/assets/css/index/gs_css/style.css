@@ -137,7 +137,6 @@ ol {
 	text-align: center;
 	font-size: 15px;
 	color: #131313;
-	padding: 16px 30px;
 	min-width: 153px;
 	border-radius: 50px;
 	font-weight: 500;
@@ -1492,7 +1491,6 @@ ol {
 		padding-left: 85px;
 	}
 	.site-btn {
-		padding: 11px 30px;
 		min-width: 145px;
 	}
 	.comment-list .comment .comment-avator {
