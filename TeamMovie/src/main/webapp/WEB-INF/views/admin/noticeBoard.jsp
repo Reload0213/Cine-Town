@@ -23,7 +23,7 @@
 					<tr>
 						<td>${list.noticeNum }</td>
 						<td>${list.noticeCategory }</td>
-						<td>${list.noticeTitle }</td>
+						<td><a style="color: #141414; font-size: 15px;" href="${pageContext.request.contextPath}/aboutUs/noticeView?noticeNum=${list.noticeNum }">${list.noticeTitle }</a></td>
 						<td>${list.noticeComment }</td>
 						<td>${list.noticeRegdate }</td>
 						<td>
@@ -64,7 +64,5 @@
 				</tr>
 			</c:if>
 		</c:if>
-		
-		
 	</tbody>
 </table>
