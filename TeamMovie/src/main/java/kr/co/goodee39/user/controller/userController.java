@@ -162,6 +162,28 @@ public class userController {
 
 	}
 	
+	@PostMapping("/userPwUpdate")
+	public ResponseEntity<UserVO>userPwUpdate(@RequestBody UserVO vo){
+        
+        
+		System.out.println(vo.getUserNum());
+		System.out.println(vo.getUserEmail());
+		
+		userService.updateUser(vo);
+		 
+			/*
+			 * service.selectUserOne(vo);
+			 */
+		
+
+         ResponseEntity<UserVO> entity = new ResponseEntity<UserVO>(vo,HttpStatus.OK);
+		
+         return entity;
+		
+	}
+	
+	
+	
 	// 정보 수정 데이터 넘기기
 	@GetMapping("/userFixComplete")
 	public String userFixComplete(@ModelAttribute("userVO") UserVO vo,Model model,@RequestParam(defaultValue = "1")int num,
@@ -173,5 +195,7 @@ public class userController {
 		return "admin/user";
 		
 	}
+	
+	
 
 }
