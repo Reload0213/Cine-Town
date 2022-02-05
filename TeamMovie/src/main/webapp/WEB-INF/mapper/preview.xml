@@ -5,15 +5,24 @@
  
  <mapper namespace="preview">
   
-  <select id="selectOnePw" parameterType="previewVO" resultType="previewVO">
- SELECT b.pwNum, b.subNum, b.userNum, a.userName, a.userEmail, a.userPhone
+  
+  
+  <select id="selectPwCount" parameterType="previewVO" resultType="int">
+<!--  SELECT b.pwNum, b.subNum, b.userNum, a.userName, a.userEmail, a.userPhone
  FROM user a JOIN preview b 
  ON a.userNum = b.userNum
  WHERE b.isDelete = 'N' 
                  AND
   a.userNum = #{userNum}
- 
- 
+                AND -->
+                
+     SELECT count(*) FROM preview
+     WHERE userNum=#{userNum}
+                     AND
+     pwNum=#{pwNum}                  
+      
+           
+  
 
   </select>
   
@@ -30,6 +39,8 @@
   
   
   </insert>
+  
+
     
   
   

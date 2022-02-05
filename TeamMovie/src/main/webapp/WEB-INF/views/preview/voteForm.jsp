@@ -303,11 +303,37 @@ document.querySelector("#submit").addEventListener("click",function(e){
 				+document.querySelector("#phoneBack").value+"이 맞습니까?");
 		
 		if(yn){
-			
-			location.href="${pageContext.request.contextPath}/preview/detail/submit/"+document.querySelector("#pwNum").value+"?subName="
-					+document.querySelector("#name").value+"&subEmail="
-					+document.querySelector("#email").value+"&subPhone="
-					+document.querySelector("#phoneFront").value+document.querySelector("#phoneBack").value;
+			     let checkVal = {pwNum:document.querySelector("#pwNum").value, userNum:${sessionScope.account.userNum}};
+			     console.log(checkVal);
+			     $.ajax({
+			    	  url:"${pageContext.request.contextPath}/preview/checkRedundant",
+			    	  type:"POST",
+			    	  data:JSON.stringify(checkVal),
+			    	  dataType:"json",
+			    	  contentType:"application/json; charset=utf-8",
+			    	  success:function(item){
+			    		  if(item>0){
+			    			  alert("이미 해당 영화의 시사회에 응모하셨습니다.");
+			    			  document.querySelector("#submit").disabled = true;
+			    			  
+			    		  }else{
+						      
+			    				location.href="${pageContext.request.contextPath}/preview/detail/submit/"+document.querySelector("#pwNum").value+"?subName="
+			    						+document.querySelector("#name").value+"&subEmail="
+			    						+document.querySelector("#email").value+"&subPhone="
+			    						+document.querySelector("#phoneFront").value+document.querySelector("#phoneBack").value;
+			    			  
+			    		  } 
+			    		  console.log("성공");
+			    		  
+			    	  }
+			    	  
+			    	  
+			    	  
+			    	  
+			      });
+			      
+
 			
 		}
 		

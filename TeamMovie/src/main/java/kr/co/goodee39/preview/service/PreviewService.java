@@ -51,9 +51,20 @@ public class PreviewService {
 		
       
 		
+
 		
+	}
+	public int checkMulReceipt(previewVO pwvo,HttpSession session) {
 		
-	
+		UserVO vo1 = new UserVO();
+		
+		vo1 = (UserVO)session.getAttribute("account");
+		
+		pwvo.setUserNum(vo1.getUserNum());
+		
+		int i =sqlSessionTemplate.selectOne("preview.selectPwCount",pwvo);
+		
+		return i;
 		
 	}
 	
