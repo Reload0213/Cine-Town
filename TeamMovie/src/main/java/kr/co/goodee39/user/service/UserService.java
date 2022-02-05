@@ -8,6 +8,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 
 import kr.co.goodee39.user.vo.UserVO;
 
@@ -73,18 +74,57 @@ public class UserService {
 	//비번찾기
 	// public 다음의 UserVO는 mapper의 resultType이랑 일치시켜
 	public UserVO findPw(UserVO vo) {
-		System.out.println("비번 찾기 service 진입");
-		System.out.println("service jsp id"+vo.getUserId());
-		System.out.println("service jsp name"+vo.getUserName());
 		return sqlSessionTemplate.selectOne("user.findPw", vo);
 	}
 	
 	//아이디 찾기
 	// public 다음의 UserVO는 mapper의 resultType이랑 일치시켜
 	public UserVO findId(UserVO vo) {
-		System.out.println("아이디 찾기 service 진입");
-		System.out.println("service jsp name"+vo.getUserName());
-		System.out.println("service jsp email"+vo.getUserEmail());
 		return sqlSessionTemplate.selectOne("user.findId", vo);
 	}
+	
+	//내 정보 수정 보여주기
+	 public UserVO selectUserOne(UserVO vo) {
+			UserVO vo1 = new UserVO();
+		
+			vo1=sqlSessionTemplate.selectOne("user.showUserInfoOne", vo);
+			vo.setUserId(vo1.getUserId());
+			vo.setUserName(vo1.getUserName());
+			vo.setUserNum(vo1.getUserNum());
+			vo.setUserRegdate(vo1.getUserRegdate());
+			vo.setUserPw(vo1.getUserPw());
+			vo.setUserEmail(vo1.getUserEmail());
+			vo.setUserPhone(vo1.getUserPhone());
+			vo.setUserAddr1(vo1.getUserAddr1());
+			vo.setUserAddr2(vo1.getUserAddr2());
+			vo.setUserAddr3(vo1.getUserAddr3());
+					
+		return vo;
+			
+		}
+	 
+	 public void  showUserInfo(Model model,int num,String userName){
+			
+			UserVO vo = new UserVO();
+			vo.setStart((num-1)*vo.getCount()); //인덱스시작
+			
+			if (!"".equals(userName)) {
+			      
+				model.addAttribute("userName",userName);
+				
+			   vo.setUserName(userName);
+			   
+			}
+		   model.addAttribute("list",sqlSessionTemplate.selectList("user.showUserInfoList",vo));
+			
+		   model.addAttribute("count",sqlSessionTemplate.selectOne("user.selectUserCount",vo));
+		   
+		   
+		   model.addAttribute("num",num);
+			
+		}
+	 
+	 public void updateUser(UserVO vo) {
+			sqlSessionTemplate.update("user.updateUser",vo);
+		}
 }

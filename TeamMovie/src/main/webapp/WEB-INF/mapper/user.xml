@@ -20,7 +20,7 @@
 	<select id="selectUser" parameterType="userVO"
 		resultType="userVO">
 		select userNum, userId, userPw, userName, userPhone, userEmail,
-		userRegdate, userAddr1, userAddr2, userIsdelete, verify
+		userRegdate, userAddr1, userAddr2, userAddr3, userIsdelete, verify
 		from user
 		<where>
 			<if test="userId != null">
@@ -61,25 +61,42 @@
 
 	<!-- 비번 찾기 -->
 	<select id="findPw" resultType="UserVO" parameterType="UserVO">
-		select userPw
-		from user 
+		select
+		userPw
+		from user
 		where userId = #{userId} and userName = #{userName}
 	</select>
-	
+
 	<!-- 아이디 찾기 -->
 	<select id="findId" resultType="UserVO" parameterType="UserVO">
-		select userId
-		from user 
+		select
+		userId
+		from user
 		where userName = #{userName} and userEmail = #{userEmail}
 	</select>
 
+	<!-- 회원 정보 수정 보여주기 여기도 영주님의 영혼-->
+	<select id="showUserInfoOne" parameterType="userVO"
+		resultType="userVO">
+		select *
+		from user
+		where userNum=#{userNum}
+	</select>
 
-	<!-- 비번 업데이트 -->
-	<update id="pwUpdate">
-		update user set userPw = #{userPw} 
-		where 
-		userId = #{userId}
+	<!-- 관리자 회원정보 수정 쿼리 -->
+	<update id="updateUser" parameterType="userVO">
+		UPDATE user
+		<set>
+			<if test="userPw != null">,userPw=#{userPw}</if>
+			<if test="userPhone != null">,userPhone=#{userPhone}</if>
+			<if test="userEmail != null">,userEmail=#{userEmail}</if>
+			<if test="userAddr1 != null">,userAddr1=#{userAddr1}</if>
+			<if test="userAddr2 != null">,userAddr2=#{userAddr2}</if>
+			<if test="userAddr3 != null">,userAddr3=#{userAddr3}</if>
+		</set>
+		WHERE userNum=#{userNum}
 	</update>
+
 
 
 

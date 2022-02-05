@@ -1,0 +1,174 @@
+nav {
+	background-color: none;
+}
+
+.resultTitle {
+	flex: 1 auto;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	padding: 1.5rem;
+}
+
+.resultTitle>h3 {
+	/* background-color: #dd2026; */
+	padding: 2rem 0rem;
+	width: 70%;
+	font-size: 2.5rem;
+	color: #141414;
+	border-bottom: 0.25rem solid #141414;
+}
+
+.userInfoCon {
+	width: 100%;
+	display: flex;
+	color: #141414;
+}
+
+.userInfoCon .topUserCon {
+	width: 70%;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+}
+
+.table {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.topUl {
+	width: 100%;
+	display: flex;
+}
+
+.topUl li {
+	padding: 1.2rem;
+	color: #141414;
+	overflow: hidden;
+	white-space: nowrap;
+	display: flex;
+	align-items: center;
+}
+
+.topUl li:nth-child(odd) {
+	font-size: 1.4rem;
+	width: 20%;
+	color: #555;
+	font-weight: 300;
+}
+
+.topUl li:nth-child(2n) {
+	font-size: 1.7rem;
+	width: 80%;
+	font-weight: bold;
+}
+
+.topUl.row2 li {
+	margin-bottom: 3rem;
+}
+
+.divisionLine {
+	width: 100%;
+}
+
+.divisionLine li {
+	border-bottom: 0.03rem solid rgb(224, 224, 224);
+}
+
+.topUl.row5 li {
+	margin-top: 3rem;
+}
+
+.topUl.row9 li {
+	margin-top: 3rem;
+}
+
+.topUl.row10 li {
+	margin-top: 3rem;
+}
+
+.topUl.row13 li {
+	margin-bottom: 3rem;
+}
+
+.certification {
+	font-size: 1.2rem;
+	color: #ff0000;
+	padding: 0 0.5rem;
+}
+
+.topUl li input {
+	width: 80%;
+	color: #141414;
+	font-size: 1.6rem;
+	padding: 0.66rem 0.7rem 0.66rem 1rem;
+	border: 1px solid rgb(224, 224, 224);
+}
+
+.topUl li a {
+	color: #141414;
+	padding: 0.88rem 1.5rem;
+	font-size: 1.3rem;
+	font-weight: 400;
+	border: 1px solid rgb(224, 224, 224);
+}
+
+.btnCon {
+	width: 100%;
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	list-style:none;
+}
+
+.btnCon li {
+	margin: 3rem 0;
+	
+}
+
+
+.btnCon li a {
+	color: #141414;
+	font-size: 1.5rem;
+	font-weight: bold;
+	padding: 1rem 4rem;
+}
+
+.btnCon li .formSubmit {
+	background-color: #ff0000;
+	color: #fff;
+	margin-right: 1rem;
+	
+}
+
+.btnCon li .back {
+	background-color: rgb(224, 224, 224);
+	color: #fff;
+}
+
+@media ( max-width :1024px) {
+	.userInfoCon {
+		font-size: 58%;
+	}
+}
+
+@media ( max-width :768px) {
+	.userInfoCon {
+		font-size: 52%;
+	}
+	.resultTitle>h3 {
+		width: 100%;
+	}
+	.userForm {
+		display: none;
+	}
+}
+
+@media ( max-width :480px) {
+	.userInfoCon {
+		font-size: 53.5%;
+	}
+}

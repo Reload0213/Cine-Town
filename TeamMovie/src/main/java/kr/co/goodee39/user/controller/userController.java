@@ -29,12 +29,6 @@ public class userController {
 	@Autowired
 	UserService userService;
 
-	@GetMapping("/myPage")
-	public String getTest() {
-
-		return "user/myPage";
-	}
-
 	// 로그인 페이지로 이동
 	@GetMapping("/signin")
 	public String getSingin(@ModelAttribute("userVO") UserVO vo) {
@@ -76,13 +70,7 @@ public class userController {
 	@PostMapping("/memberIdChk")
 	@ResponseBody
 	public ResponseEntity<Integer> memberIdChkPOST(@RequestBody UserVO vo, HttpSession session) throws Exception {
-
-		System.out.println(vo.getUserId());
-
 		int result = userService.idCheck(vo.getUserId());
-
-		System.out.println(result);
-
 		ResponseEntity<Integer> entity = new ResponseEntity<Integer>(result, HttpStatus.OK);
 		return entity;
 	}
@@ -92,12 +80,7 @@ public class userController {
 	@ResponseBody
 	public ResponseEntity<Integer> memberNameChkPOST(@RequestBody UserVO vo, HttpSession session) throws Exception {
 
-		System.out.println(vo.getUserName());
-
 		int result = userService.nameCheck(vo.getUserName());
-
-		System.out.println(result);
-
 		ResponseEntity<Integer> entity = new ResponseEntity<Integer>(result, HttpStatus.OK);
 		return entity;
 	}
@@ -106,13 +89,7 @@ public class userController {
 	@PostMapping("/memberEmailChk")
 	@ResponseBody
 	public ResponseEntity<Integer> memberEmailChkPOST(@RequestBody UserVO vo, HttpSession session) throws Exception {
-
-		System.out.println(vo.getUserEmail());
-
 		int result = userService.emailCheck(vo.getUserEmail());
-
-		System.out.println(result);
-
 		ResponseEntity<Integer> entity = new ResponseEntity<Integer>(result, HttpStatus.OK);
 		return entity;
 	}
@@ -127,19 +104,19 @@ public class userController {
 
 	// 비번찾기
 	@PostMapping("/findPw")
-	public String findPw(@ModelAttribute("userVO") UserVO vo,HttpServletResponse response) throws IOException {
+	public String findPw(@ModelAttribute("userVO") UserVO vo, HttpServletResponse response) throws IOException {
 		UserVO vo1 = userService.findPw(vo);
 
 		String path = "";
 		if (vo1 == null) {
-			
-			PrintWriter out=response.getWriter();
+
+			PrintWriter out = response.getWriter();
 			response.setContentType("text/html; charset=utf-8");
 			out.println("<script language='javascript'>");
-			out.println("alert('일치하는 정보가 없습니다.'); history.go(-1);"); //영주님의 영혼이 깃든 곳
+			out.println("alert('일치하는 정보가 없습니다.'); history.go(-1);"); // 영주님의 영혼이 깃든 곳
 			out.println("</script>");
 			out.flush();
-		
+
 		} else {
 			vo.setUserPw(vo1.getUserPw());
 			System.out.println("비번 찾기 controller 진입");
@@ -152,26 +129,49 @@ public class userController {
 
 	// 아이디 찾기
 	@PostMapping("/findId")
-	public String findId(@ModelAttribute("userVO") UserVO vo,HttpServletResponse response) throws IOException {
+	public String findId(@ModelAttribute("userVO") UserVO vo, HttpServletResponse response) throws IOException {
 		UserVO vo1 = userService.findId(vo);
-		
+
 		String path = "";
 		if (vo1 == null) {
-			PrintWriter out=response.getWriter();
+			PrintWriter out = response.getWriter();
 			response.setContentType("text/html; charset=utf-8");
 			out.println("<script language='javascript'>");
-			out.println("alert('일치하는 정보가 없습니다.'); history.go(-1);"); //영주님의 영혼이 깃든 곳
+			out.println("alert('일치하는 정보가 없습니다.'); history.go(-1);"); // 영주님의 영혼이 깃든 곳
 			out.println("</script>");
 			out.flush();
 		} else {
-		vo.setUserId(vo1.getUserId());
-
-		System.out.println("아이디 찾기 controller 진입");
-		System.out.println("controller jsp name" + vo.getUserName());
-		System.out.println("controller jsp email" + vo.getUserEmail());
-		path= "user/findIdSuccess";
+			vo.setUserId(vo1.getUserId());
+			path = "user/findIdSuccess";
 		}
 		return path;
+	}
+
+	// myPage로 이동
+	@GetMapping("/myPage")
+	public String getMyPage(UserVO vo) {
+
+		return "user/myPage";
+	}
+
+	// 정보 수정 보여주기
+	@GetMapping("/userFix")
+	public String userFix(UserVO vo) {
+		userService.selectUserOne(vo);
+		return "user/userFix";
+
+	}
+	
+	// 정보 수정 데이터 넘기기
+	@GetMapping("/userFixComplete")
+	public String userFixComplete(@ModelAttribute("userVO") UserVO vo,Model model,@RequestParam(defaultValue = "1")int num,
+            @RequestParam(defaultValue="")String userName) {
+		
+		System.out.println(vo.getUserNum());
+		userService.updateUser(vo);
+		userService.showUserInfo(model, num, userName);
+		return "admin/user";
+		
 	}
 
 }
