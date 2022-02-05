@@ -433,7 +433,7 @@
                                         </div>
                                         <p class="product-single__price product-single__price-product-template">
                                             <span class="visually-hidden">Regular price</span>
-                                            <s id="ComparePrice-product-template"><span class="money korean">600.00원</span></s>
+                                          <!--   <s id="ComparePrice-product-template"><span class="money korean">600.00원</span></s> -->
                                             <span class="product-price__price product-price__price-product-template product-price__sale product-price__sale--single">
                                                 <span id="ProductPrice-product-template"><span class="money korean">${goods.gdsPrice }원</span></span>
                                             </span>
@@ -925,7 +925,7 @@
                                     <!-- End product name -->
                                     <!-- product price -->
                                     <div class="product-price">
-                                        <span class="old-price">$500.00</span>
+                                        <!-- <span class="old-price">$500.00</span> -->
                                         <span class="price">${goods.gdsPrice }원</span>
                                     </div>
                                     <!-- End product price -->

@@ -492,7 +492,7 @@
                                         <!-- End product name -->
                                         <!-- product price -->
                                         <div class="product-price">
-                                            <span class="old-price">$500.00</span>
+                                           <!--  <span class="old-price">$500.00</span> -->
                                             <span class="price">${goods.gdsPrice}원</span>
                                         </div>
                                         <!-- End product price -->
@@ -550,8 +550,10 @@
             	<div class="col-12 col-sm-12 col-md-3 col-lg-3 sidebar filterbar">
                 	<div class="closeFilter d-block d-md-none d-lg-none"><i class="icon icon anm anm-times-l"></i></div>
                 	<div class="sidebar_tags">
+                	
+                	
                     	<!--Categories-->
-                    	<div class="sidebar_widget categories filter-widget">
+                <!--     	<div class="sidebar_widget categories filter-widget">
                             <div class="widget-title"><h2 class="korean">종류</h2></div>
                             <div class="widget-content">
                                 <ul class="sidebar_categories">
@@ -578,10 +580,12 @@
                                     <li class="lvl-1"><a href="#;" class="site-nav">Page</a></li>
                                 </ul>
                             </div>
-                        </div>
+                        </div> -->
                         <!--Categories-->
+                        
+                        
                         <!--Price Filter-->
-                        <div class="sidebar_widget filterBox filter-widget">
+           <%--              <div class="sidebar_widget filterBox filter-widget">
                             <div class="widget-title">
                             	<h2 class="korean">가격</h2>
                             </div>
@@ -600,15 +604,18 @@
                                     </div>
                                 </div>
                             </form>
-                        </div>
+                        </div> --%>
                         <!--End Price Filter-->
+                        
+                        
+                        
                         <!--Size Swatches-->
                         <div class="sidebar_widget filterBox filter-widget size-swacthes">
                          
  
                      
                         <!--Brand-->
-                        <div class="sidebar_widget filterBox filter-widget">
+                 <!--        <div class="sidebar_widget filterBox filter-widget">
                             <div class="widget-title"><h2 class="korean">브랜드</h2></div>
                             <ul>
                                 <li>
@@ -632,10 +639,14 @@
                                   <label for="check6"><span><span></span></span>Monark</label>
                                 </li>
                             </ul>
-                        </div>
+                        </div> -->
                         <!--End Brand-->
+                        
+                        
+                        
+                        
                         <!--Popular Products-->
-						<div class="sidebar_widget">
+				<%-- 		<div class="sidebar_widget">
                         	<div class="widget-title"><h2 class="korean">인기상품</h2></div>
 							<div class="widget-content">
                                 <div class="list list-sidebar-products">
@@ -679,21 +690,29 @@
                                   </div>
                                 </div>
                           	</div>
-						</div>
+						</div> --%>
                         <!--End Popular Products-->
+                        
+                        
+                        
+                        
+                        
                         <!--Banner-->
-                        <div class="sidebar_widget static-banner">
+                       <%--  <div class="sidebar_widget static-banner">
                         	<img src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/side-banner-2.jpg" alt="" />
-                        </div>
+                        </div> --%>
                         <!--Banner-->
+                        
+                        
+                        
                         <!--Information-->
-                        <div class="sidebar_widget">
+                       <!--  <div class="sidebar_widget">
                             <div class="widget-title"><h2>행사안내</h2></div>
                             <div class="widget-content"><p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p></div>
-                        </div>
+                        </div> -->
                         <!--end Information-->
                         <!--Product Tags-->
-                        <div class="sidebar_widget">
+                   <!--      <div class="sidebar_widget">
                           <div class="widget-title">
                             <h2>상품 태그</h2>
                           </div>
@@ -728,8 +747,12 @@
                               <li><a href="#" title="Show products matching tag Oxymat">Oxymat</a></li>
                             </ul>
                             <span class="btn btn--small btnview">View all</span> </div>
-                        </div>
+                        </div> -->
                         <!--end Product Tags-->
+                        
+                        
+                        
+                        
                     </div>
                 </div>
                 <!--End Sidebar-->

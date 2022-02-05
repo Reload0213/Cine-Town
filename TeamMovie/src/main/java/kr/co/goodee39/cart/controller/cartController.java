@@ -18,7 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 import kr.co.goodee39.cart.service.cartService;
 import kr.co.goodee39.cart.vo.CartVO;
 import kr.co.goodee39.user.vo.UserVO;
-
+//담당: 김용현
 @Controller
 @RequestMapping("/cart")
 public class cartController {
@@ -42,11 +42,11 @@ public class cartController {
 //	goodsDetail페이지에서 장바구니로 담는 컨트롤러
 	@PostMapping("/insertCartItem")
 	public String insertCartItem(@ModelAttribute("cartVO") CartVO vo, HttpSession session, UserVO uvo) {
-		System.out.println("insertCartItem 장바구니 삽입 컨트롤러 메소드 실행");
+		System.out.println("insertCartItem 장바구니 삽입 컨트롤러 메소드 실행--------------------------------------------------");
 		UserVO uvo1 = (UserVO) session.getAttribute("account");
 		int userNum = uvo1.getUserNum();
 		int count = cartService.countCartItem(userNum, vo.getGdsNum());
-		System.out.println("count값 확인:"+count+"--------------------------------------------------");
+		System.out.println("count값 확인:"+count);
 		System.out.println("gdsNum값 확인:"+vo.getGdsNum());
 		
 		if(count == 0) {
@@ -54,7 +54,7 @@ public class cartController {
 		} else {
 			cartService.sumAmountCartItem(vo);
 		}
-		
+		System.out.println("insertCartItem 장바구니 삽입 컨트롤러 메소드 종료--------------------------------------------------");
 		return "redirect:/cart/showCartList";
 		
 	}
@@ -63,6 +63,7 @@ public class cartController {
 	@GetMapping("/showCartList")
 	public ModelAndView showCartList(UserVO uvo, HttpSession session, ModelAndView mav,
 			@ModelAttribute("cartVO") CartVO vo) {
+		System.out.println("showCartList 컨트롤러 메소드 실행--------------------------------------------------");
 		UserVO uvo1 = (UserVO) session.getAttribute("account");
 		int userNum = uvo1.getUserNum();
 		List<CartVO> list = cartService.showCartList(userNum);
@@ -76,8 +77,9 @@ public class cartController {
 		map.put("count", list.size()); // 장바구니 품목이 없으면 비어있음을 표시하기 위해 사용
 		mav.setViewName("cart/cart");
 		mav.addObject("map", map);
-		System.out.println("showCartList 장바구니 조회 컨트롤러 메소드 실행");
+	
 		System.out.println("showCartList 장바구니 조회 컨트롤러 메소드 사이즈:" + list.size());
+		System.out.println("showCartList 컨트롤러 메소드 종료--------------------------------------------------");
 		return mav;
 
 	}
@@ -92,26 +94,29 @@ public class cartController {
 
 	@GetMapping("/deleteCartItem")
 	public String deleteCartItem(@RequestParam int cartNum) {
-		System.out.println("deleteCartItem 컨트롤러 메소드 실행 / vo.cartNum:"+cartNum);
+		System.out.println("deleteCartItem 컨트롤러 메소드 실행--------------------------------------------------");
+		System.out.println("vo.cartNum:"+cartNum);
 		cartService.deleteCartItem(cartNum);
+		System.out.println("deleteCartItem 컨트롤러 메소드 종료--------------------------------------------------");
 		return "redirect:/cart/showCartList";
 	}
 	
 	@PostMapping("/updateCartItem")
 	public String updateCartItem(@ModelAttribute("cartVO")CartVO vo, HttpSession session, @RequestParam int[] cartAmount, @RequestParam int[] cartNum) {
-		System.out.println("updateCartItem 컨트롤러 메소드 실행");
+	
+		System.out.println("updateCartItem 컨트롤러 메소드 실행--------------------------------------------------");
 		UserVO uvo = (UserVO)session.getAttribute("account");
 		for(int i = 0; i < cartAmount.length; i++) {
 			CartVO cvo = new CartVO();
 			cvo.setCartNum(cartNum[i]);
 			cvo.setCartAmount(cartAmount[i]);
 			cartService.updateCartItem(cvo);
-			System.out.println("updateCartItem--------------------------------------------------------");
+
 			System.out.println("업데이트하는 장바구니 번호:"+cartNum[i]);
 			System.out.println("업데이트하는 장바구니 수량:"+cartAmount[i]);
-			System.out.println(cartNum[i]+"번째 장바구니 수정 완료---------------------------------------------------");
+			System.out.println(cartNum[i]+"번째 장바구니 수정 완료");
 		}
-		
+		System.out.println("updateCartItem 컨트롤러 메소드 종료--------------------------------------------------");
 		return "redirect:/cart/showCartList";
 	}
 

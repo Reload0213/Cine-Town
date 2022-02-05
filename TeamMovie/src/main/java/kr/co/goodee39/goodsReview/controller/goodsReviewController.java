@@ -1,6 +1,7 @@
 package kr.co.goodee39.goodsReview.controller;
-
+//담당: 김용현
 import java.util.List;
+
 
 import javax.servlet.http.HttpSession;
 
@@ -30,6 +31,7 @@ public class goodsReviewController {
 //	굿즈 리뷰 삽입 컨트롤러 메소드
 	 @PostMapping("/insertgrReview") public ResponseEntity<goodsReviewVO>
 	 insertgrReview(@RequestBody goodsReviewVO vo, HttpSession session){
+		 System.out.println("insertgrReview 컨트롤러 메소드 실행--------------------------------------------------");
 		 UserVO uvo = (UserVO)session.getAttribute("account");
 		 vo.setUserNum(uvo.getUserNum());
 		 vo.setUserName(uvo.getUserName());
@@ -38,7 +40,7 @@ public class goodsReviewController {
 		
 		 ResponseEntity<goodsReviewVO> entity = new ResponseEntity<goodsReviewVO>(vo, HttpStatus.OK);
 		 
-	 System.out.println("-------------------------------insertgrReview 컨트롤러 메소드 실행-------------------------------");
+	
 	 System.out.println("grComment 내용 확인:"+vo.getGrComment());
 	 System.out.println("grTitle 내용 확인:"+vo.getGrTitle());
 	 System.out.println("grScore 내용 확인:"+vo.getGrScore());
@@ -46,7 +48,7 @@ public class goodsReviewController {
 	 System.out.println("userNum 내용 확인:"+vo.getUserNum());
 	 System.out.println("userName 내용 확인:"+vo.getUserName());
 	
-	 System.out.println("-------------------------------insertgrReview 컨트롤러 메소드 종료-------------------------------");
+	 System.out.println("insertgrReview 컨트롤러 메소드 종료--------------------------------------------------");
 	 return entity;
 	 }
 	 
@@ -54,19 +56,20 @@ public class goodsReviewController {
 	 @GetMapping("/{id}")
 	 public ResponseEntity<List<goodsReviewVO>> selectgoodsReviewList(@PathVariable int id){
 		 
-		 
-		 System.out.println("-------------------------------selectgoodsReviewList 컨트롤러 메소드 실행-------------------------------");
-		 System.out.println(id);
+		 System.out.println("selectgoodsReviewList 컨트롤러 메소드 실행--------------------------------------------------");
+
+		 System.out.println("id:"+id);
 	
 		 goodsReviewVO vo = new goodsReviewVO();
 		 int num = grService.showGrCount(id);
 		 System.out.println("추가된 내용(grCount):"+num);
 		 vo.setGrCount(num);
-		 System.out.println("-------------------------------selectgoodsReviewList 컨트롤러 메소드 종료-------------------------------");
+	
 		 vo.setGdsNum(id);
 		 List<goodsReviewVO> list = grService.selectGoodsReviewList(vo);
 		
 		 ResponseEntity<List<goodsReviewVO>> entity = new ResponseEntity<List<goodsReviewVO>>(list, HttpStatus.OK);
+		 System.out.println("selectgoodsReviewList 컨트롤러 메소드 종료--------------------------------------------------");
 		 return entity;
 		 
 		 
@@ -75,23 +78,25 @@ public class goodsReviewController {
 //	 굿즈 리뷰 삭제 컨트롤러 메소드 
 	 @DeleteMapping("/delete")
 	 public ResponseEntity<String> deletegrReview(@RequestBody goodsReviewVO vo, HttpSession session){
-		 System.out.println("-------------------------------deletegrReview 컨트롤러 메소드 실행-------------------------------");
+		 System.out.println("deletegrReview 컨트롤러 메소드 실행--------------------------------------------------");
+		
 		 UserVO uvo = (UserVO)session.getAttribute("account");
 		 vo.setUserNum(uvo.getUserNum());
 		 vo.setUserName(uvo.getUserName());
 		 grService.deleteGoodsReview(vo);
 		 String deleteContirm = vo.getUserName()+"님이 남긴 제목:"+vo.getGrTitle()+"("+vo.getGrNum()+"번 게시물)이 삭제되었습니다";
 		 System.out.println(deleteContirm);
-		 System.out.println("-------------------------------deletegrReview 컨트롤러 메소드 종료-------------------------------");
+		
 		 ResponseEntity<String> entity = new ResponseEntity<String>(deleteContirm, HttpStatus.OK);
-		 
+		 System.out.println("deletegrReview 컨트롤러 메소드 종료--------------------------------------------------");
 		 return entity;
 	 }
 	 
 //	 굿즈 리뷰 수정 컨트롤러 메소드 
 	 @PatchMapping("/update")
 	 public ResponseEntity<goodsReviewVO> updategrReview(@RequestBody goodsReviewVO vo, HttpSession session){
-		 System.out.println("-------------------------------updategrReview 컨트롤러 메소드 실행-------------------------------");
+		 System.out.println("updategrReview 컨트롤러 메소드 실행--------------------------------------------------");
+	
 		 UserVO uvo = (UserVO)session.getAttribute("account");
 		 vo.setUserNum(uvo.getUserNum());
 		 vo.setUserName(uvo.getUserName());
@@ -99,8 +104,9 @@ public class goodsReviewController {
 		 
 		 String updateConfirm = vo.getUserName()+"님이 수정하신 내용은"+vo.getGrComment()+" 입니다";
 		 System.out.println(updateConfirm);
-		 System.out.println("-------------------------------updategrReview 컨트롤러 메소드 종료-------------------------------");
+	
 		 ResponseEntity<goodsReviewVO> entity = new ResponseEntity<goodsReviewVO>(vo, HttpStatus.OK);
+		 System.out.println("updategrReview 컨트롤러 메소드 종료--------------------------------------------------");
 		 return entity;
 	 }
 	 

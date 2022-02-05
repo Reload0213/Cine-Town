@@ -1,5 +1,5 @@
 package kr.co.goodee39.cart.vo;
-
+//담당: 김용현
 public class CartVO {
 	
 	private int cartNum;

@@ -36,38 +36,39 @@ public class goodsController {
 	//goodsDetail페이지로 이동
 	@GetMapping("/goodsDetail")
 	public String goDetail() {
-		System.out.println("goodsDetail 페이지로 이동"); // 해당 컨트롤러를 타는지 확인
+		System.out.println("goodsDetail 컨트롤러 메소드 실행--------------------------------------------------");
+		System.out.println("goodsDetail 컨트롤러 메소드 종료--------------------------------------------------");// 해당 컨트롤러를 타는지 확인
 		return "goods/goodsDetail"; // 폴더명/페이지명으로 경로를 탄다
 	}
 	
 	//goodsMain페이지로 이동
 	@GetMapping("/goodsMain")
 	public String goMain(Model model, @ModelAttribute("cartVO")CartVO vo, @ModelAttribute("productWishlistVO")productWishlistVO pvo) {
-		System.out.println("goodsMain 페이지로 이동");
+		System.out.println("goMain 컨트롤러 메소드 실행--------------------------------------------------");
 		List<GoodsVO> goodsList = goodsService.showGoodsList();
 		model.addAttribute("goodsList", goodsList);
-
+		System.out.println("goMain 컨트롤러 메소드 종료--------------------------------------------------");
 		return "goods/goodsMain";
 	}
 	
 	//goodsManu페이지로 이동
 	@GetMapping("/goodsMenu")
 	public String goMenu(Model model, @ModelAttribute("cartVO")CartVO vo, @ModelAttribute("productWishlistVO")productWishlistVO pvo, @ModelAttribute("goodsReviewVO")goodsReviewVO rvo) {
-		System.out.println("-------------------------------goMenu 컨트롤러 메소드 실행-------------------------------");
+		System.out.println("goMenu 컨트롤러 메소드 실행--------------------------------------------------");
 		List<GoodsVO> goodsList = goodsService.showGoodsList();
 		model.addAttribute("goodsList", goodsList);
-		System.out.println("goodsMenu 페이지로 이동");
+	
 		List<goodsReviewVO> grList = goodsReviewService.showGrCountList();
 		model.addAttribute("grList", grList);
 	
-		System.out.println("-------------------------------goMenu 컨트롤러 메소드 종료-------------------------------");
+		System.out.println("goMenu 컨트롤러 메소드 종료--------------------------------------------------");
 		return "goods/goodsMenu";
 	}
 	
 	//gdsNum = 1인 상품 상세 페이지 
 	@GetMapping("/{id}")
 	public String goGoods1(@PathVariable int id, Model model, GoodsVO vo , @ModelAttribute("cartVO") CartVO cvo, @ModelAttribute("productWishlistVO")productWishlistVO pvo, @ModelAttribute("goodsReviewVO")goodsReviewVO rvo) {
-		System.out.println("-------------------------------goGoods1 컨트롤러 메소드 실행-------------------------------");
+		System.out.println("goGoods1 컨트롤러 메소드 실행--------------------------------------------------");
 	    vo.setGdsNum(id);
 	    goodsService.showGoodsItem(vo);
 	    int grCount = goodsReviewService.showGrCount(id); // 제품별 별점
@@ -93,7 +94,7 @@ public class goodsController {
 //		List<goodsReviewVO> grList = goodsReviewService.showGrCountList();
 //		model.addAttribute("grList", grList);
 	    
-	    System.out.println("-------------------------------goGoods1 컨트롤러 메소드 종료-------------------------------");
+		System.out.println("goGoods1 컨트롤러 메소드 종료--------------------------------------------------");
 		return "goods/goodsDetail";
 	}
 	

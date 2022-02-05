@@ -366,9 +366,9 @@
                         <div class="slideshow__text-wrap slideshow__overlay classic bottom">
                             <div class="slideshow__text-content bottom">
                                 <div class="wrap-caption center">
-                                        <h2 class="h1 mega-title slideshow__title korean">Goods shop 메인 슬라이드 영역</h2>
-                                        <span class="mega-subtitle slideshow__subtitle">클릭시 GoodsMenu로 이동</span>
-                                        <span class="btn">Shop now</span>
+                                        <h2 class="h1 mega-title slideshow__title korean">CineTown Goods</h2>
+                                        <span class="mega-subtitle slideshow__subtitle"> GoodsMenu로 이동</span>
+                                        <span class="btn">쇼핑하기</span>
                                     </div>
                             </div>
                         </div>
@@ -380,9 +380,9 @@
                         <div class="slideshow__text-wrap slideshow__overlay classic bottom">
                             <div class="slideshow__text-content bottom">
                                 <div class="wrap-caption center">
-                                    <h2 class="h1 mega-title slideshow__title korean">Goods shop 메인 슬라이드 영역</h2>
-                                    <span class="mega-subtitle slideshow__subtitle">클릭시 GoodsMenu로 이동</span>
-                                    <span class="btn">Shop now</span>
+                                    <h2 class="h1 mega-title slideshow__title korean">CINETOWN GOODS</h2>
+                                    <span class="mega-subtitle slideshow__subtitle">GOODSMENU로 이동</span>
+                                    <span class="btn">쇼핑하기</span>
                                 </div>
                             </div>
                         </div>
@@ -1143,7 +1143,7 @@
         <!--Collection Tab slider-->
         
         <!--Collection Box slider-->
-        <div class="collection-box section">
+      <%--   <div class="collection-box section">
         	<div class="container-fluid">
 				<div class="collection-grid">
                         <div class="collection-grid-item">
@@ -1196,11 +1196,14 @@
                         </div>
                     </div>
             </div>
-        </div>
+        </div> --%>
         <!--End Collection Box slider-->
         
+        
+        
+        
         <!--Logo Slider-->
-        <div class="section logo-section">
+    <%--     <div class="section logo-section">
         	<div class="container">
             	<div class="row">
                 	<div class="col-12 col-sm-12 col-md-12 col-lg-12">
@@ -1227,7 +1230,7 @@
                 	</div>
                 </div>
             </div>
-        </div>
+        </div> --%>
         <!--End Logo Slider-->
         
         <!--Featured Product-->
@@ -1356,7 +1359,7 @@
         <!--End Featured Product-->
         
         <!--Latest Blog-->
-        <div class="latest-blog section pt-0">
+       <%--  <div class="latest-blog section pt-0">
         	<div class="container">
             	<div class="row">
                 	<div class="col-12 col-sm-12 col-md-12 col-lg-12">
@@ -1410,7 +1413,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --%>
         <!--End Latest Blog-->
         
         <!--Store Feature-->
@@ -1421,23 +1424,23 @@
                     	<ul class="display-table store-info">
                         	<li class="display-table-cell">
                             	<i class="xi-truck" style="font-size: 60px;"></i>
-                            	<h5>Free Shipping &amp; Return</h5>
-                            	<span class="sub-text">Free shipping on all US orders</span>
+                            	<h5>무료 배송 &amp; 반품</h5>
+                            	<span class="sub-text">배송 완료일 기준 7일 이내에 가능합니다.</span>
                             </li>
                           	<li class="display-table-cell">
                             	<i class="xi-dollar" style="font-size: 60px;"></i>
-                                <h5>Money Guarantee</h5>
-                                <span class="sub-text">30 days money back guarantee</span>
+                                <h5>교환/환불 보증</h5>
+                                <span class="sub-text">30일의 보증 기간이 있습니다.</span>
                           	</li>
                           	<li class="display-table-cell">
                             	<i class="xi-speech-o" style="font-size: 60px;"></i>
-                                <h5>Online Support</h5>
-                                <span class="sub-text">We support online 24/7 on day</span>
+                                <h5>온라인 상담</h5>
+                                <span class="sub-text">온라인 상담 주7일 24시간 가능합니다.</span>
                             </li>
                           	<li class="display-table-cell">
                             	<i class="xi-credit-card" style="font-size: 60px;"></i>
-                                <h5>Secure Payments</h5>
-                                <span class="sub-text">All payment are Secured and trusted.</span>
+                                <h5>안전 결제</h5>
+                                <span class="sub-text">모든 결제수단은 안전하게 보호됩니다.</span>
                         	</li>
                         </ul>
                     </div>
@@ -1457,13 +1460,13 @@
                             <div class="display-table">
                                 <div class="display-table-cell footer-newsletter">
                                     <div class="section-header text-center">
-                                        <label class="h2"><span>sign up for </span>newsletter</label>
+                                        <label class="h2"><span>Cine Town </span>알림 설정 / 구독하기</label>
                                     </div>
                                     <form action="#" method="post">
                                         <div class="input-group">
                                             <input type="email" class="input-group__field newsletter__input" name="EMAIL" value="" placeholder="Email address" required="">
                                             <span class="input-group__btn">
-                                                <button type="submit" class="btn newsletter__submit" name="commit" id="Subscribe"><span class="newsletter__submit-text--large">Subscribe</span></button>
+                                                <button type="submit" class="btn newsletter__submit" name="commit" id="Subscribe"><span class="newsletter__submit-text--large">구독하기</span></button>
                                             </span>
                                         </div>
                                     </form>
