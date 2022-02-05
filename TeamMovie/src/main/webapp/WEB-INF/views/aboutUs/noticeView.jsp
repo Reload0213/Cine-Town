@@ -84,7 +84,7 @@
 								</div>
 								<div class="btn-group btn-primary">
 									<a href="/TeamMovie/aboutUs/noticeUpdate?noticeNum=${notice.noticeNum }" class="btn btn-secondary">수정</a>
-									<a href="" class="btn btn-danger">삭제</a>
+									<a href="/TeamMovie/aboutUs/deleteNotice?noticeNum=${notice.noticeNum }" class="btn btn-danger">삭제</a>
 								</div>
 							</div>
 						</div>

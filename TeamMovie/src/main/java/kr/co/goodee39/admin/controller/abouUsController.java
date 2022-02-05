@@ -1,8 +1,6 @@
 package kr.co.goodee39.admin.controller;
 
 import java.util.List;
-
-import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -63,6 +61,7 @@ public class abouUsController {
 	 */
 	@GetMapping("/noticeWrite")
 	public String noticeWrite(@ModelAttribute("noticeVO") NoticeVO noticeVO, HttpSession session) {
+		
 		// 세션 유저 정보
 		UserVO userVO = (UserVO) session.getAttribute("account");
 		// 세션 유저 아이디
@@ -87,7 +86,6 @@ public class abouUsController {
 		noticeService.noticeWrite(noticeVO);
 
 		return "redirect:/aboutUs/aboutUsMain";
-		
 	}
 	
 	/**
@@ -126,7 +124,19 @@ public class abouUsController {
 		return "redirect:/aboutUs/aboutUsMain";
 	}
 	
-	
+	/**
+	 * 공지사항 삭제하는 컨트롤러
+	 * @param noticeNum
+	 * @param model
+	 * @return
+	 */
+	@GetMapping("/deleteNotice")
+	public String deleteNotice(@RequestParam("noticeNum") int noticeNum, Model model) {
+		
+		noticeService.deleteNotice(noticeNum);
+		
+		return "redirect:/aboutUs/aboutUsMain";
+	}
 	
 	
 	

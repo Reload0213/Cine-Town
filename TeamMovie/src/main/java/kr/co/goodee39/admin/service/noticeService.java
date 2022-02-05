@@ -36,4 +36,15 @@ public class noticeService {
 		
 		sqlSessionTemplate.update("notice.updateNotice", noticeVO);
 	}
+	
+	
+	/**
+	 * 공지사항 삭제하는 서비스
+	 * @param noticeNum
+	 */
+	public void deleteNotice(int noticeNum) {
+		
+		sqlSessionTemplate.delete("notice.deleteNotice", noticeNum);
+	}
+	
 }
