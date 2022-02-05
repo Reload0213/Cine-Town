@@ -151,7 +151,7 @@ public class userController {
 	@GetMapping("/myPage")
 	public String getMyPage(UserVO vo) {
 
-		return "user/myPage";
+		return "user/myPage"; 
 	}
 
 	// 정보 수정 보여주기

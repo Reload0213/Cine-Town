@@ -360,7 +360,7 @@
 
 		});
 
-		function loadDaumApi() {
+		function loadDaumApi() { 
 
 			new daum.Postcode({
 				oncomplete : function(data) {

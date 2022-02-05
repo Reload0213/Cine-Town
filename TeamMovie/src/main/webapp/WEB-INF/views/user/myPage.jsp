@@ -8,7 +8,7 @@
 <body>
 	<%@ include file="../include/header.jsp"%>
 	<div class="container">
-		<div class="resultTitle">
+		<div class="resultTitle"> 
 			<h3>${sessionScope.account.userName}님의정보</h3>
 
 		</div>

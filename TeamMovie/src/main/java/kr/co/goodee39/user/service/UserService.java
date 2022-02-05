@@ -104,7 +104,7 @@ public class UserService {
 		}
 	 
 	 public void  showUserInfo(Model model,int num,String userName){
-			
+			 
 			UserVO vo = new UserVO();
 			vo.setStart((num-1)*vo.getCount()); //인덱스시작
 			
