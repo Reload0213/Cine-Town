@@ -15,10 +15,51 @@ public class GoodsVO {
 	private String gdsImage1;
 	private String gdsImage2;
 	private int grScore;  //제품별 리뷰 점수에 따른 평점을 받아주는 컬럼 (= goodsReview의 grCount와 동일)
-	
+	private String gdsDetail2;
+	private String gdsDetail3;
+	private String gdsDetail4;
+	private String gdsDetail5;
+	private String gdsDetail6;
+	private String gdsDetail7;
 	
 	
 
+	public String getGdsDetail2() {
+		return gdsDetail2;
+	}
+	public void setGdsDetail2(String gdsDetail2) {
+		this.gdsDetail2 = gdsDetail2;
+	}
+	public String getGdsDetail3() {
+		return gdsDetail3;
+	}
+	public void setGdsDetail3(String gdsDetail3) {
+		this.gdsDetail3 = gdsDetail3;
+	}
+	public String getGdsDetail4() {
+		return gdsDetail4;
+	}
+	public void setGdsDetail4(String gdsDetail4) {
+		this.gdsDetail4 = gdsDetail4;
+	}
+	public String getGdsDetail5() {
+		return gdsDetail5;
+	}
+	public void setGdsDetail5(String gdsDetail5) {
+		this.gdsDetail5 = gdsDetail5;
+	}
+	public String getGdsDetail6() {
+		return gdsDetail6;
+	}
+	public void setGdsDetail6(String gdsDetail6) {
+		this.gdsDetail6 = gdsDetail6;
+	}
+	public String getGdsDetail7() {
+		return gdsDetail7;
+	}
+	public void setGdsDetail7(String gdsDetail7) {
+		this.gdsDetail7 = gdsDetail7;
+	}
 	public int getGrScore() {
 		return grScore;
 	}

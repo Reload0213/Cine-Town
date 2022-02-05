@@ -25,19 +25,34 @@ public class productWishlistController {
 	@Autowired
 	productWishlistService productWishService;
 	@PostMapping("/insertProductWishlist")
-	public String insertProductWishlist(@ModelAttribute("productWishlistVO")productWishlistVO vo) {
+	public String insertProductWishlist(@ModelAttribute("productWishlistVO")productWishlistVO vo, @ModelAttribute("userVO") UserVO uvo) {
+//		uvo를 추가해주는 이유는 로그인을 하지 않은 상태에서는 장바구니가 아닌 로그인 경로를 타기 위함
 		System.out.println("insertProductWishlist 컨트롤러 메소드 실행 / gdsNum, userNum:"+vo.getGdsNum()+","+vo.getUserNum());
 		
 		int count = productWishService.countProductWishlist(vo.getUserNum(), vo.getGdsNum());
 		System.out.println("count값 확인:"+count+"--------------------------------------------------");
-		if(count == 0) { //확인 결과 조회된 위시리스트가 없다면
-			productWishService.insertProductWishlist(vo); //해당 물건을 위시리스트에 삽입
-		} 
-		else { //확인 결과 조회된 위시리스트가 있다면
-			productWishService.showProductWishlist(vo.getUserNum()); //위시리스트에 담긴 물건을 체이지에 뿌려줌
+		String confirmLogin; // 로그인 유무에 따라서 경로를 다르게 태워줌
+		if(vo.getUserNum() == 0) {
+			confirmLogin = "user/signin";
+		}else {
+			
+			if(count == 0) { //확인 결과 조회된 위시리스트가 없다면
+				productWishService.insertProductWishlist(vo); //해당 물건을 위시리스트에 삽입
+			} 
+			else { //확인 결과 조회된 위시리스트가 있다면
+				productWishService.showProductWishlist(vo.getUserNum()); //위시리스트에 담긴 물건을 체이지에 뿌려줌
+			}
+			confirmLogin = "redirect:/productWishlist/productWishlist";
 		}
+		/*
+		 * if(count == 0) { //확인 결과 조회된 위시리스트가 없다면
+		 * productWishService.insertProductWishlist(vo); //해당 물건을 위시리스트에 삽입 } else {
+		 * //확인 결과 조회된 위시리스트가 있다면
+		 * productWishService.showProductWishlist(vo.getUserNum()); //위시리스트에 담긴 물건을 체이지에
+		 * 뿌려줌 }
+		 */
 
-		return "redirect:/productWishlist/productWishlist";
+		return confirmLogin;
 	}
 	
 	@GetMapping("/productWishlist")

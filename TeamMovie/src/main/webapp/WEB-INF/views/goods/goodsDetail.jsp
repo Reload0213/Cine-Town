@@ -451,11 +451,11 @@
                                     <div class="product-single__description rte">
                                         <ul>
                                             <li>${goods.gdsDetail }</li>
-                                            <li>Sed ut perspiciatis unde omnis iste natus error sit</li>
-                                            <li>Neque porro quisquam est qui dolorem ipsum quia dolor</li>
-                                            <li>Lorem Ipsum is not simply random text.</li>
+                                            <li>${goods.gdsDetail2 }</li>
+                                            <li>${goods.gdsDetail3 }</li>
+                                            <li>${goods.gdsDetail4 }</li>
                                         </ul>
-                                        <p>2. 상품 상세 설명입니다</p>
+                                        <!-- <p>재고</p> -->
                                     </div>
                                     <div id="quantity_message">서두르세요! 재고가  <span class="items">${goods.gdsStock }</span>  개 남았습니다.</div>
                                     
@@ -467,7 +467,8 @@
                                     <form:hidden path="userNum" value="${sessionScope.account.userNum }"/>
                                     <form:hidden path="gdsNum" value="${goods.gdsNum }"/>
                                         <div class="swatch clearfix swatch-0 option1" data-option-index="0">
-                                            <div class="product-form__item">
+                                        <!-- 컬러 폼 시작-->
+                                    <!--         <div class="product-form__item">
                                               <label class="header">Color: <span class="slVariant">Red</span></label>
                                               <div data-value="Black" class="swatch-element color black available">
                                                 <input class="swatchInput" id="swatch-0-black" type="radio" name="option-0" value="Black"><label class="swatchLbl color small" for="swatch-0-black" style="background-color:black;" title="Black"></label>
@@ -481,10 +482,12 @@
                                               <div data-value="Dark Green" class="swatch-element color dark-green available">
                                                 <input class="swatchInput" id="swatch-0-dark-green" type="radio" name="option-0" value="Dark Green"><label class="swatchLbl color small" for="swatch-0-dark-green" style="background-color:darkgreen;" title="Dark Green"></label>
                                               </div>
-                                            </div>
+                                            </div> -->
+                                            <!-- 컬러 폼 종료  -->
                                         </div>
                                         <div class="swatch clearfix swatch-1 option2" data-option-index="1">
-                                            <div class="product-form__item">
+                                        <!-- 사이즈 폼 시작 -->
+                                     <!--        <div class="product-form__item">
                                               <label class="header">Size: <span class="slVariant">XS</span></label>
                                               <div data-value="XS" class="swatch-element xs available">
                                                 <input class="swatchInput" id="swatch-1-xs" type="radio" name="option-1" value="XS">
@@ -502,7 +505,8 @@
                                                 <input class="swatchInput" id="swatch-1-l" type="radio" name="option-1" value="L">
                                                 <label class="swatchLbl medium rectangle" for="swatch-1-l" title="L">L</label>
                                               </div>
-                                            </div>
+                                            </div> -->
+                                            <!-- 사이즈 폼 종료 -->
                                         </div>
                                         <p class="infolinks"><a href="#sizechart" class="sizelink btn"> 사이즈 표</a> <a href="#productInquiry" class="emaillink btn"> 상품 문의하기</a></p>
                                         <!-- Product Action -->
@@ -565,9 +569,9 @@
                                             </div>
                                         </div>
                                         
-                                    <p id="freeShipMsg" class="freeShipMsg" data-price="199"><i class="fa fa-truck" aria-hidden="true"></i> GETTING CLOSER! ONLY <b class="freeShip"><span class="money" data-currency-usd="$199.00" data-currency="USD">$199.00</span></b> AWAY FROM <b>FREE SHIPPING!</b></p>
-                                    <p class="shippingMsg"><i class="fa fa-clock-o" aria-hidden="true"></i> ESTIMATED DELIVERY BETWEEN <b id="fromDate">Wed. May 1</b> and <b id="toDate">Tue. May 7</b>.</p>
-                                    <div class="userViewMsg" data-user="20" data-time="11000"><i class="fa fa-users" aria-hidden="true"></i> <strong class="uersView">14</strong> PEOPLE ARE LOOKING FOR THIS PRODUCT</div>
+                                    <p id="freeShipMsg" class="freeShipMsg" data-price="199"><i class="fa fa-truck" aria-hidden="true"></i> 10만원 이상 구매시 <!-- <b class="freeShip"><span class="money" data-currency-usd="$199.00" data-currency="USD">$199.00</span></b>  AWAY FROM--> <b>베송비 무료</b></p>
+                                    <p class="shippingMsg"><i class="fa fa-clock-o" aria-hidden="true"></i> 배송은 평균 <b id="fromDate">2~3일</b> 정도 소요됩니다. <!-- <b id="toDate">Tue. May 7</b>. --></p>
+                                    <div class="userViewMsg" data-user="20" data-time="11000"><i class="fa fa-users" aria-hidden="true"></i> <!-- <strong class="uersView">14</strong> --> 지역에 따라 배송에 차이가 있을 수 있습니다.</div>
                                 </div>
                                 <!-- 상품 주문영역 종료 -->
                                 
@@ -611,29 +615,29 @@
                         <div class="tab-container">
                             <div id="tab1" class="tab-content">
                                 <div class="product-description rte">
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                                    <p>CineTown은 영화 리뷰와 더불어 영화와 관련된 다양한 굿즈 상품들을 제공합니다. 교환, 환불은 배송 완료일 기준 7일 이내로만 유효합니다. 모든 상품은 제품안전 기준법을 통과한 안전성을 갖춘 제품입니다. 제품에 문제가 있을 경우 02-0000-0000으로 문의 또는 CineTown@gmail.com으로 연락주세요. 24시간 내로 답변 드리겠습니다. 감사합니다.</p>
                                     <ul>
-                                      <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-                                      <li>Sed ut perspiciatis unde omnis iste natus error sit</li>
-                                      <li>Neque porro quisquam est qui dolorem ipsum quia dolor</li>
-                                      <li>Lorem Ipsum is not simply random text.</li>
-                                      <li>Free theme updates</li>
+                                      <li>${goods.gdsDetail }</li>
+                                      <li>${goods.gdsDetail2 }</li>
+                                      <li>${goods.gdsDetail3 }</li>
+                                      <li>${goods.gdsDetail4 }</li>
+                                      <li>${goods.gdsDetail5 }</li>
                                     </ul>
-                                    <h3>Sed ut perspiciatis unde omnis iste natus error sit voluptatem</h3>
-                                    <p>You can change the position of any sections such as slider, banner, products, collection and so on by just dragging and dropping.&nbsp;</p>
-                                    <h3>Lorem Ipsum is not simply random text.</h3>
-<p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness.</p>
-                                    <p>Change colors, fonts, banners, megamenus and more. Preview changes are live before saving them.</p>
-                                    <h3>1914 translation by H. Rackham</h3>
-                                    <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness.</p>
-                                    <h3>Section 1.10.33 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC</h3>
-                                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
-                                    <h3>The standard Lorem Ipsum passage, used since the 1500s</h3>
-                                    <p>You can use variant style from colors, images or variant images. Also available differnt type of design styles and size.</p>
-                                    <h3>Lorem Ipsum is not simply random text.</h3>
-<p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness.</p>
-                                    <h3>Proin ut lacus eget elit molestie posuere.</h3>
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.</p>
+                                    <h3>${goods.gdsDetail }</h3>
+                                    <p>해당 제품은 쿠폰 적용이 불가한 상품입니다. 쿠폰이 발급되면 문자로 도착한 알림을 확인해주세요. &nbsp;</p>
+                                    <h3>${goods.gdsDetail2 }</h3>
+									<p>주의사항: 영유아의 손에 닿지 않는 곳에 보관해주세요. / 해당 상품은 식품이 아닙니다. 입에 넣을수 없습니다. / 제품을 직사광선이 없는 서늘한 곳에 보관해주세요. 변색의 우려가 있습니다. / 제품에 열을 가하지 말아주세요.</p>
+                                    <p>위 주의사항을 지키지 않았을시 일어나는 파손, 피해는 CineTown에서 보상해주지 않습니다. </p>
+                                    <h3>${goods.gdsDetail3 }</h3>
+                                    <p>해당 제품은 산업안전법을 준수하여 만들어진 제품입니다. 제품 기준치를 통과한 제품으로 화학 변이로부터 안전한 제품입니다.</p>
+                                    <h3>${goods.gdsDetail4 }</h3>
+                                    <p>요청사항을 최대한 구체적으로 적어주세요. 제품 번호, 색상, 사이즈에 따른 요청사항을 적어주셔야 합니다. 이를 따르지 않았을 경우 요청사항은 무시됩니다.</p>
+                                    <h3>${goods.gdsDetail5 }</h3>
+                                    <p>해당 이벤트는 1인 1회 참여 가능합니다. 중복참여는 불가능합니다.</p>
+                                    <h3>${goods.gdsDetail6 }</h3>
+									<p>모든 이벤트는 마감기한 이후로 참여한 경우 인정되지 않습니다. </p>
+                                    <h3>${goods.gdsDetail7 }</h3>
+                                    <p>도서/산간 지역의 경우 15만원 이상 구매시 배송비가 무료입니다. </p>
                                 </div>
                             </div>
                             
@@ -842,9 +846,9 @@
                             <div id="tab4" class="tab-content">
                                 <h4 class="korean">교환/환불 정책</h4>
                                 <p class="korean">교환/환불정책 페이지입니다.</p>
-                                <p class="korean">Interdum et malesuada fames ac ante ipsum primis in faucibus. In blandit nunc enim, sit amet pharetra erat aliquet ac.</p>
+                                <p class="korean">교환/환불은 배송 완료일 기준 7일 이내로만 가능합니다. 해당 기준일이 지났을 경우 교환/환불은 불가능합니다.</p>
                                 <h4 class="korean">배송</h4>
-                                <p class="korean">배송관련 내용입니다</p>
+                                <p class="korean">배송은 평균 2~3일 정도 소요됩니다. 도서/산간 지역의 경우 15만원 이상 구매시 배송비가 무료입니다. 배송 중 발생한 파손은 교환 / 환불이 가능합니다.</p>
                             </div>
                         </div>
                     </div>
@@ -853,20 +857,27 @@
                     <!--Related Product Slider-->
                     <div class="related-product grid-products">
                         <header class="section-header">
-                            <h2 class="section-header__title text-center h2"><span class="korean">연관 상품들</span></h2>
-                            <p class="sub-heading korean">다양한 영화의 굿즈를 만나보세요</p>
+                            <h2 class="section-header__title text-center h2"><span style="color:white;" class="korean">연관 상품들</span></h2>
+                            <p style="color:white;" class="sub-heading korean">다양한 영화의 굿즈를 만나보세요</p>
                         </header>
+                        
+                        
+                        <!-- 연관 상품들 슬라이드 영역 시작 -->
+                         
                         <div class="productPageSlider">
+                         
+                         <!-- 카드영역(추정) 시작-->
+                          <c:forEach var="goods" items="${goodsList }">
                             <div class="col-12 item">
                                 <!-- start product image -->
                                 <div class="product-image">
                                     <!-- start product image -->
                                     <a href="#">
                                         <!-- image -->
-                                        <img class="primary blur-up lazyload" data-src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image1.jpg" src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image1.jpg" alt="image" title="product">
+                                        <img class="primary blur-up lazyload" data-src="${goods.gdsImage1 }" src="${goods.gdsImage1 }" alt="image" title="product">
                                         <!-- End image -->
                                         <!-- Hover image -->
-                                        <img class="hover blur-up lazyload" data-src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image1-1.jpg" src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image1-1.jpg" alt="image" title="product">
+                                        <img class="hover blur-up lazyload" data-src="${goods.gdsImage2 }" src="${goods.gdsImage2 }" alt="image" title="product">
                                         <!-- End hover image -->
                                         <!-- product label -->
                                         <div class="product-labels rectangular"><span class="lbl on-sale">-16%</span> <span class="lbl pr-label1">new</span></div>
@@ -876,17 +887,31 @@
         
                                     <!-- Start product button -->
                                     <form class="variants add" action="#" onclick="window.location.href='cart.html'"method="post">
-                                        <button class="btn btn-addto-cart" type="button" tabindex="0">Select Options</button>
+                                       <!--  <button class="btn btn-addto-cart" type="button" tabindex="0">Select Options</button> -->
+                                        <a href="${pageContext.request.contextPath }/goods/${goods.gdsNum}?id=${goods.gdsNum}" style="background-color: white; color: black;" class="btn btn-addto-cart" >Move to Page </a>
                                     </form>
                                     <div class="button-set">
-                                        <a href="#" title="Quick View" class="quick-view" tabindex="0">
+                                        <a href="${pageContext.request.contextPath }/goods/${goods.gdsNum}?id=${goods.gdsNum}" title="Quick View" class="quick-view" tabindex="0">
                                             <i class="xi-zoom-in"></i>
                                         </a>
-                                        <div class="wishlist-btn">
+                                        
+                                        
+                                     <!--    <div class="wishlist-btn">
                                             <a class="wishlist add-to-wishlist" href="wishlist.html">
                                                 <i class="xi-heart-o"></i>
                                             </a>
-                                        </div>
+                                        </div> -->
+                                        
+                                        
+                                         <form:form  modelAttribute="productWishlistVO" action="${pageContext.request.contextPath }/productWishlist/insertProductWishlist" >
+                                         <div style="border : none;" class="wishlist-btn">
+                                         <form:hidden path="userNum" value="${sessionScope.account.userNum }"/>
+                                         <form:hidden path="gdsNum" value="${goods.gdsNum }"/>
+                                         <form:button style="border : none;" class="wishlist add-to-wishlist" type="submit">
+                                         <i style="color:rgb(236,46,74); font-size: 24px; " class="xi-heart"></i>
+                                         </form:button>
+                                         </div>
+                                         </form:form>
                                     </div>
                                     <!-- end product button -->
                                 </div>
@@ -895,37 +920,32 @@
                                 <div class="product-details text-center">
                                     <!-- product name -->
                                     <div class="product-name">
-                                        <a href="#">Edna Dress</a>
+                                        <a href="#">${goods.gdsName }</a>
                                     </div>
                                     <!-- End product name -->
                                     <!-- product price -->
                                     <div class="product-price">
                                         <span class="old-price">$500.00</span>
-                                        <span class="price">$600.00</span>
+                                        <span class="price">${goods.gdsPrice }원</span>
                                     </div>
                                     <!-- End product price -->
                                     
                                     <div class="product-review">
-                                        <i class="font-13 fa fa-star"></i>
-                                        <i class="font-13 fa fa-star"></i>
-                                        <i class="font-13 fa fa-star"></i>
-                                        <i class="font-13 fa fa-star-o"></i>
-                                        <i class="font-13 fa fa-star-o"></i>
+                                      <c:forEach begin="1" end="${goods.grScore}" step="1" var="i">
+                                        <i style="color:rgb(255,149,0);" class="font-13 xi-star"></i>
+                                       </c:forEach>
+                                         <c:forEach begin="1" end="${5 - goods.grScore}" step="1" var="i">
+                                        <i style="color:rgb(255,149,0);" class="font-13 xi-star-o"></i>
+                                        </c:forEach>
                                     </div>
-                                    <!-- Variant -->
-                                    <ul class="swatches">
-                                        <li class="swatch medium rounded"><img src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/variant1.jpg" alt="image" /></li>
-                                        <li class="swatch medium rounded"><img src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/variant2.jpg" alt="image" /></li>
-                                        <li class="swatch medium rounded"><img src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/variant3.jpg" alt="image" /></li>
-                                        <li class="swatch medium rounded"><img src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/variant4.jpg" alt="image" /></li>
-                                        <li class="swatch medium rounded"><img src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/variant5.jpg" alt="image" /></li>
-                                        <li class="swatch medium rounded"><img src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/variant6.jpg" alt="image" /></li>
-                                    </ul>
-                                    <!-- End Variant -->
+                                   
                                 </div>
                                 <!-- End product details -->
                             </div>
-                            <div class="col-12 item">
+                            <!-- 카드영역 추정 종료 -->
+                            
+                            
+                           <%--  <div class="col-12 item">
                                 <!-- start product image -->
                                 <div class="product-image">
                                     <!-- start product image -->
@@ -987,6 +1007,13 @@
                                 </div>
                                 <!-- End product details -->
                             </div>
+                            
+                            
+                            
+                            
+                            
+                            
+                            
                             <div class="col-12 item">
                                 <!-- start product image -->
                                 <div class="product-image">
@@ -1053,6 +1080,13 @@
                                 </div>
                                 <!-- End product details -->
                             </div>
+                            
+                            
+                            
+                            
+                            
+                            
+                            
                             <div class="col-12 item">
                                 <!-- start product image -->
                                 <div class="product-image">
@@ -1120,6 +1154,15 @@
                                 </div>
                                 <!-- End product details -->
                             </div>
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
                             <div class="col-12 item">
                                 <!-- start product image -->
                                 <div class="product-image">
@@ -1186,6 +1229,14 @@
                                 </div>
                                 <!-- End product details -->
                             </div>
+
+
+
+
+
+
+
+
                             <div class="col-12 item">
                                                 <!-- start product image -->
                                                 <div class="product-image">
@@ -1244,6 +1295,14 @@
                                                 </div>
                                                 <!-- End product details -->
                                             </div>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
                             <div class="col-12 item">
                                                 <!-- start product image -->
                                                 <div class="product-image">
@@ -1297,16 +1356,27 @@
                                                     </div>
                                                 </div>
                                                 <!-- End product details -->
-                                            </div>
+                                            </div> --%>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                           </c:forEach>                  
                         </div>
+                       
+                        <!-- 연관 상품들 슬라이드 영역 종료 -->
+                        
                         </div>
                     <!--End Related Product Slider-->
                     
                     <!--Recently Product Slider-->
                     <div class="related-product grid-products">
                             <header class="section-header">
-                                <h2 class="section-header__title text-center h2"><span class="korean">최근 본 상품들</span></h2>
-                                <p class="sub-heading korean">You can manage this section from store admin as describe in above section</p>
+                                <h2 class="section-header__title text-center h2"><span style="color:white;" class="korean">최근 본 상품들</span></h2>
+                                <p style="color:white;" class="sub-heading korean">기억에 남는 상품을 골라보세요</p>
                             </header>
                             <div class="productPageSlider">
                                 <div class="col-12 item">

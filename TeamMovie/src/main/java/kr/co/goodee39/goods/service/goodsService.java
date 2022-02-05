@@ -36,6 +36,13 @@ public class goodsService {
 		vo.setGdsImage1(vo1.getGdsImage1());
 		vo.setGdsImage2(vo1.getGdsImage2());
 		vo.setGrScore(vo1.getGrScore());
+		
+		vo.setGdsDetail2(vo1.getGdsDetail2());
+		vo.setGdsDetail3(vo1.getGdsDetail3());
+		vo.setGdsDetail4(vo1.getGdsDetail4());
+		vo.setGdsDetail5(vo1.getGdsDetail5());
+		vo.setGdsDetail6(vo1.getGdsDetail6());
+		vo.setGdsDetail7(vo1.getGdsDetail7());
 	}
 
 }

@@ -84,6 +84,15 @@ public class goodsController {
 	    model.addAttribute("rvo", rvo1);
 	    model.addAttribute("rvo2", rvo2);
 	    model.addAttribute("goods", vo);
+	    
+//	    연관 상품들, 최근 본 상품들을 뿌려주기 위해 사용
+		List<GoodsVO> goodsList = goodsService.showGoodsList();
+		model.addAttribute("goodsList", goodsList);
+		
+//		연관 상품의 별점을 뿌려주기 위해 사용 
+//		List<goodsReviewVO> grList = goodsReviewService.showGrCountList();
+//		model.addAttribute("grList", grList);
+	    
 	    System.out.println("-------------------------------goGoods1 컨트롤러 메소드 종료-------------------------------");
 		return "goods/goodsDetail";
 	}

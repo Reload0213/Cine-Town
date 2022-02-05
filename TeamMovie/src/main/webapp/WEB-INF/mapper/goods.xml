@@ -17,7 +17,7 @@
  GROUP BY r.gdsnum 
   </select> -->
    <select id="showGoodsList" parameterType="goodsVO" resultType="goodsVO">
- SELECT g.gdsNum as gdsNum, gdsPrice, gdsStock, gdsViewcnt, gdsUUID, gdsName, gdsDetail, gdsRegdate, gdsIsdelete, gdsBrand, gdsImage1, gdsImage2, round(avg(r.grScore)) AS grScore
+ SELECT g.gdsNum as gdsNum, gdsPrice, gdsStock, gdsViewcnt, gdsUUID, gdsName, gdsDetail, gdsDetail2, gdsDetail3, gdsDetail4, gdsDetail5, gdsDetail6, gdsDetail7, gdsRegdate, gdsIsdelete, gdsBrand, gdsImage1, gdsImage2, round(avg(r.grScore)) AS grScore
   from goods g LEFT OUTER JOIN goodsreview r ON g.gdsNum = r.gdsNum
   where gdsIsdelete = 'N'
  GROUP BY r.gdsnum 
@@ -31,7 +31,7 @@
   </select> -->
   
     <select id="showGoodsItem" parameterType="goodsVO" resultType="goodsVO">
-   SELECT g.gdsNum AS gdsNum, gdsPrice, gdsStock, gdsViewcnt, gdsUUID, gdsName, gdsDetail, gdsRegdate, gdsIsdelete, gdsBrand, gdsImage1, gdsImage2, round(avg(r.grScore)) AS grScore
+   SELECT g.gdsNum AS gdsNum, gdsPrice, gdsStock, gdsViewcnt, gdsUUID, gdsName, gdsDetail,  gdsDetail2, gdsDetail3, gdsDetail4, gdsDetail5, gdsDetail6, gdsDetail7, gdsRegdate, gdsIsdelete, gdsBrand, gdsImage1, gdsImage2, round(avg(r.grScore)) AS grScore
   from goods g, goodsreview r
   WHERE g.gdsNum = #{gdsNum}
   </select>
