@@ -62,7 +62,7 @@
 
 
 
-
+<%@ include file="voteForm.jsp"%>
 
 
 <!-- 임승혁 게시판 디테일 영화해적 바디끝 -->

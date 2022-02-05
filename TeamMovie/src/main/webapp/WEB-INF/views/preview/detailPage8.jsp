@@ -69,7 +69,7 @@
 
 
 
-
+<%@ include file="voteForm.jsp"%>
 <!-- 임승혁 바디끝  -->
 
 

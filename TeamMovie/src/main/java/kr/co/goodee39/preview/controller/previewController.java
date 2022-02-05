@@ -1,12 +1,26 @@
 package kr.co.goodee39.preview.controller;
 
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import kr.co.goodee39.preview.service.PreviewService;
+import kr.co.goodee39.preview.vo.previewVO;
+import kr.co.goodee39.user.vo.UserVO;
 
 @Controller           
 @RequestMapping("/preview")
 public class previewController {
+	
+	@Autowired
+	PreviewService previewService;
 	
 		@GetMapping("/main")
 		public String main() {
@@ -14,58 +28,34 @@ public class previewController {
 			return "preview/main";
 		}
 		
-		@GetMapping("/detail/page1")
-		public String detailPage1() {
-
-			return "preview/detailPage1";
+		@GetMapping("/detail/page/{num}")
+		public String detailPage(@PathVariable int num, @ModelAttribute("userVO") UserVO vo,HttpSession session,Model model) {
+           
+			previewService.selectOneUser(num,vo, session,model);
+            
+			return "preview/detailPage"+num;
+			
+			
 		}
+		
+		@GetMapping("/detail/submit/{pwNum}")
+		public String detailPage(@PathVariable int pwNum,@ModelAttribute("pwVO") previewVO pwvo,UserVO vo,HttpSession session) {
+			System.out.println("이동완료");
+			
+		    pwvo.setPwNum(pwNum);
+            
+			previewService.insertPw(vo,pwvo,session);
+			
+			return "preview/detailPage"+pwNum;
+			
+		}
+		
+	  
+		
+		
 		
 	
 		
-		@GetMapping("/detail/page2")
-		public String detailPage2() {
-
-			return "preview/detailPage2";
-		}
-		
-		@GetMapping("/detail/page3")
-		public String detailPage3() {
-
-			return "preview/detailPage3";
-		}
-		
-		@GetMapping("/detail/page4")
-		public String detailPage4() {
-
-			return "preview/detailPage4";
-		}
-		
-		@GetMapping("/detail/page5")
-		public String detailPage5() {
-
-			return "preview/detailPage5";
-		}
-		
-		@GetMapping("/detail/page6")
-		public String detailPage6() {
-
-			return "preview/detailPage6";
-		}
-		
-		@GetMapping("/detail/page7")
-		public String detailPage7() {
-
-			return "preview/detailPage7";
-		}
-		
-		@GetMapping("/detail/page8")
-		public String detailPage8() {
-
-			return "preview/detailPage8";
-		}
 		
 		
-		
-
-
 }

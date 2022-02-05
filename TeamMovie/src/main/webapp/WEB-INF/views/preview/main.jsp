@@ -57,7 +57,7 @@
 
 
 
-  <a href="${pageContext.request.contextPath}/preview/detail/page1?num=8" class="column romance">
+  <a href="${pageContext.request.contextPath}/preview/detail/page/1" class="column romance">
     <div class="content">
       <div class="moviePosterCon item1"><img src="${pageContext.request.contextPath}/assets/images/premiereMain/movieposter/mannyunijinado.jpg" alt=""></div>
       <p class="movieName">만 년이 지나도 변하지 않는게 ... </p>
@@ -71,7 +71,7 @@
 
 
 
-  <a href="${pageContext.request.contextPath}/preview/detail/page2?num=7" class="column action">
+  <a href="${pageContext.request.contextPath}/preview/detail/page/2" class="column action">
     <div class="content">
       <div class="moviePosterCon item1"><img src="${pageContext.request.contextPath}/assets/images/premiereMain/movieposter/imsinhannamuwa.jpg" alt=""></div>
       <p class="movieName">임신한 나무와 도깨비 </p>
@@ -86,7 +86,7 @@
 
  
 
-  <a href="${pageContext.request.contextPath}/preview/detail/page3" class="column action">
+  <a href="${pageContext.request.contextPath}/preview/detail/page/3" class="column action">
     <div class="content">
       <div class="moviePosterCon item1"><img src="${pageContext.request.contextPath}/assets/images/premiereMain/movieposter/haejuk.jpg" alt=""></div>
       <p class="movieName">해적:도깨비 깃발 </p>
@@ -101,7 +101,7 @@
 
 
 
-  <a href="${pageContext.request.contextPath}/preview/detail/page4" class="column drama">
+  <a href="${pageContext.request.contextPath}/preview/detail/page/4" class="column drama">
     <div class="content">
       <div class="moviePosterCon item1"><img src="${pageContext.request.contextPath}/assets/images/premiereMain/movieposter/kingmaker.jpg" alt=""></div>
       <p class="movieName">킹메이커 </p>
@@ -117,7 +117,7 @@
   
 
   
-  <a href="${pageContext.request.contextPath}/preview/detail/page5" class="column drama">
+  <a href="${pageContext.request.contextPath}/preview/detail/page/5" class="column drama">
     <div class="content">
       <div class="moviePosterCon item1"><img src="${pageContext.request.contextPath}/assets/images/premiereMain/movieposter/france.jpg" alt=""></div>
       <p class="movieName">프랑스 </p>
@@ -129,7 +129,7 @@
  
   </a>
 
-  <a href="${pageContext.request.contextPath}/preview/detail/page6" class="column action">
+  <a href="${pageContext.request.contextPath}/preview/detail/page/6" class="column action">
     <div class="content">
       <div class="moviePosterCon item1"><img src="${pageContext.request.contextPath}/assets/images/premiereMain/movieposter/kingsman.jpg" alt=""></div>
       <p class="movieName">킹스맨:퍼스트 에이전트 </p>
@@ -140,7 +140,7 @@
 
 
 
-  <a href="${pageContext.request.contextPath}/preview/detail/page7" class="column romance">
+  <a href="${pageContext.request.contextPath}/preview/detail/page/7" class="column romance">
     <div class="content">
       <div class="moviePosterCon item1"><img src="${pageContext.request.contextPath}/assets/images/premiereMain/movieposter/chungchoonjukni.jpg" alt=""></div>
       <p class="movieName">청춘적니 </p>
@@ -155,7 +155,7 @@
   
 
 
-  <a href="${pageContext.request.contextPath}/preview/detail/page8" class="column romance">
+  <a href="${pageContext.request.contextPath}/preview/detail/page/8" class="column romance">
     <div class="content">
       <div class="moviePosterCon item1"><img src="${pageContext.request.contextPath}/assets/images/premiereMain/movieposter/sil.jpg" alt=""></div>
       <p class="movieName">실:인연의 시작 </p>

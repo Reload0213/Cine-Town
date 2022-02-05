@@ -51,7 +51,7 @@
 </div>
 
 
-
+<%@ include file="voteForm.jsp"%>
 
 
 

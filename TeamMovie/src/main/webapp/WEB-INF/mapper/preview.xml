@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ <mapper namespace="preview">
+  
+  <select id="selectOnePw" parameterType="previewVO" resultType="previewVO">
+ SELECT b.pwNum, b.subNum, b.userNum, a.userName, a.userEmail, a.userPhone
+ FROM user a JOIN preview b 
+ ON a.userNum = b.userNum
+ WHERE b.isDelete = 'N' 
+                 AND
+  a.userNum = #{userNum}
+ 
+ 
+
+  </select>
+  
+  <insert id="insertPw" parameterType="previewVO">
+  INSERT INTO preview(pwNum,userNum,subDate,subName,subEmail,subPhone)
+  VALUES(#{pwNum},#{userNum},NOW(),#{subName},#{subEmail},#{subPhone})
+  
+  
+  
+ 
+  
+  
+  
+  
+  
+  </insert>
+    
+  
+  
+  
+  </mapper>
+  
+  
+  
