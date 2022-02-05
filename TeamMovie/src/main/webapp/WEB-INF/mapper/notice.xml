@@ -50,4 +50,11 @@
 		update notice set noticeTitle = #{noticeTitle}, noticeComment = #{noticeComment}
 	</update>
 	
+	<!-- 공지사항 삭제하는 쿼리 -->
+	<delete id="deleteNotice" parameterType="int">
+		delete
+		from notice
+		where noticeNum = #{value}
+	</delete>
+	
 </mapper>
