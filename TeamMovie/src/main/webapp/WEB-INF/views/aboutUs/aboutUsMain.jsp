@@ -38,6 +38,8 @@
 <link rel='stylesheet' href='https://cdn.datatables.net/responsive/2.1.0/css/responsive.dataTables.min.css'>
 <link rel='stylesheet' href='https://code.getmdl.io/1.3.0/material.blue-light_blue.min.css'>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/aboutUs/table_style.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <%@ include file="/WEB-INF/views/include/header.jsp" %>
 
 </head>
@@ -152,16 +154,16 @@
 
 
 <!-- 공지사항 Start -->
-<div class="tableDiv">
+<div class="container mt-3">
 <div class="text-center">
-	<h3>공지사항</h3>
+	<h3 style="font-size: 2.5rem; margin-bottom: 1rem;">공지사항</h3>
 </div>
-<table id="fantasyTable" class="display responsive no-wrap order-column">
-<thead>
+<table class="table table-hover" style="text-align: center">
+<thead class="table-dark">
   <tr>
-    <th>번호</th>
-    <th>제목</th>
-    <th>작성일</th>
+    <th style="text-align: center">번호</th>
+    <th style="text-align: center">제목</th>
+    <th style="text-align: center">작성일</th>
   </tr>
  </thead>
  <c:forEach var="notice" items="${noticeList }">
@@ -172,7 +174,10 @@
   </tr>
   </c:forEach>
 </table>
+<!-- 로그인한 사용자만 글쓰기 버튼을 활성화 -->
+<c:if test="${sessionScope.account.userId != null}"><button type="button" style="color: white; border: 1px solid black; font-size: 1rem; padding: 0.5rem 0.7rem; background-color: black; border-radius: 10px; float:right;" onclick="location.href='${pageContext.request.contextPath}/aboutUs/noticeWrite';">글쓰기</button></c:if>
 </div>
+<div><br /></div>
 <!-- 공지사항 End -->
 
 <!-- contents End -->

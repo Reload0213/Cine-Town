@@ -56,10 +56,16 @@ public class abouUsController {
 	
 	/**
 	 * 공지사항 작성 페이지 불러오기
+	 * @param noticeVO
+	 * @param session
 	 * @return
 	 */
 	@GetMapping("/noticeWrite")
-	public String noticeWrite(@ModelAttribute("noticeVO") NoticeVO noticeVO) {
+	public String noticeWrite(@ModelAttribute("noticeVO") NoticeVO noticeVO, HttpSession session) {
+		// 세션 유저 정보
+		UserVO userVO = (UserVO) session.getAttribute("account");
+		// 세션 유저 아이디
+		String userId = userVO.getUserId();
 		
 		return "/aboutUs/noticeWrite";
 	}
@@ -83,9 +89,10 @@ public class abouUsController {
 		
 	}
 
+	// 질문게시판 리스트 불러오기
 	@GetMapping("/faqMain")
-	public String faqMain(Model model) {
-		model.addAttribute("testKey", "testVal");
+	public String faqMain() {
+		
 		return "/faq/faqMain";
 	}
 

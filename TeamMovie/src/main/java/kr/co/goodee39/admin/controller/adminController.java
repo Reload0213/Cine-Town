@@ -1,5 +1,6 @@
 package kr.co.goodee39.admin.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.net.ssl.SSLEngineResult.Status;
@@ -148,15 +149,15 @@ public class adminController {
 		String selBoard = "";
 		selBoard = vo.getSelBoard();
 		
-		List<NoticeVO> nlist = null;
-		List<QnaVO> qlist = null;
+		List<NoticeVO> nlist = new ArrayList<>();
+		List<QnaVO> qlist = new ArrayList<>();
 		
 		//공지사항 게시판 선택시 해당 게시판 출력
 		if(selBoard.equals("1")) {
-			nlist = (List<NoticeVO>)noticeService.noticeList(vo);
+			nlist = noticeService.noticeList(vo);
 			
 		//QNA 게시판 선택시 게시판 출력
-		}else if(selBoard.equals("2")) {
+		} else if(selBoard.equals("2")) {
 			//qlist = (List<QnaVO>)qnaService.qnaList(vo);
 			
 		}

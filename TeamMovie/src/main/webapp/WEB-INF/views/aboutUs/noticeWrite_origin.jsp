@@ -36,7 +36,8 @@
 </head>
 
 <main>
-	<h1>게시판작성페이지</h1>
+	<h1 style="text-align: center; margin: 50px;">공지사항 작성페이지</h1>
+	<br />
 
 	<div class="container">
 
@@ -47,21 +48,7 @@
 				<section class="rb-bbs rb-bbs-write">
 
 					<form class="form-horizontal" enctype="multipart/form-data">
-						<div class="form-group rb-category">
-							<label for="" class="col-sm-2 control-label">카테고리</label>
-							<div class="col-sm-10">
-								<span class="rb-category"> <select class="selectpicker"
-									title='선택하세요'>
-										<option data-subtext="(1)">카테고리1</option>
-										<option data-subtext="(23)">카테고리2</option>
-										<option data-subtext="(21)">카테고리3</option>
-										<option data-subtext="(11)">카테고리4</option>
-										<option data-subtext="(3)">카테고리5</option>
-										<option data-subtext="(2)">카테고리6</option>
-								</select> <a href="" class="btn btn-link btn-sm"> 추가 </a>
-								</span>
-							</div>
-						</div>
+					
 						<div class="form-group">
 							<label for="" class="col-sm-2 control-label">제목</label>
 							<div class="col-sm-10">
