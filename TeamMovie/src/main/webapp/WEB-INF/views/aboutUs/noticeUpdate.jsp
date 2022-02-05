@@ -28,6 +28,7 @@
 				style="border: 1px solid #5555; padding: 0;">
 
 				<!-- 게시판 상세 시작 -->
+				<form id="modifyForm" action="${pageContext.request.contextPath}/aboutUs/noticeUpdate" method="POST">
 				<section class="rb-bbs rb-bbs-view">
 
 					<div class="rb-bbs-heading">
@@ -83,14 +84,14 @@
 										class="btn btn-primary">목록으로</a>
 								</div>
 								<div class="btn-group btn-primary">
-									<a href="/TeamMovie/aboutUs/noticeUpdate?noticeNum=${notice.noticeNum }" class="btn btn-secondary">수정</a>
-									<a href="" class="btn btn-danger">삭제</a>
+									<a class="btn btn-secondary" id="modify_btn">수정완료</a> 
 								</div>
 							</div>
 						</div>
 
 					</div>
 				</section>
+				</form>
 				<!-- 게시판 상세 끝 -->
 
 
@@ -153,8 +154,15 @@
 <script type="text/javascript">
 	$(document)
 			.ready(
-					function() {
-
+					/*수정 버튼 클릭시 이벤트*/
+						$(function() {
+							var form = $("#modifyForm")
+							$("#modify_btn").on("click", function(e){
+								form.submit();
+							});
+							
+						
+						
 						$(function() {
 							$(".rb-bbs-body img").each(function() {
 								var a = $('<a/>').attr('href', this.src);

@@ -137,7 +137,7 @@ public class adminController {
 	}
 	
 	/**
-	 * 강혜수 AJAX로 게시판 화면 출력 TEST
+	 * 강혜수 AJAX로 게시판 화면 출력
 	 * @param vo
 	 * @param model
 	 * @param req

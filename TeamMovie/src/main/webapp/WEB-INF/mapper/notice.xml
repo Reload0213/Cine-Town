@@ -45,4 +45,9 @@
 		values ('공지사항', #{noticeTitle}, #{noticeComment}, 'n', #{noticeRegdate})
 	</insert>
 	
+	<!-- 공지사항 수정하는 쿼리 -->
+	<update id="updateNotice" parameterType="noticeVO">
+		update notice set noticeTitle = #{noticeTitle}, noticeComment = #{noticeComment}
+	</update>
+	
 </mapper>

@@ -2,6 +2,7 @@ package kr.co.goodee39.admin.controller;
 
 import java.util.List;
 
+import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -88,6 +89,48 @@ public class abouUsController {
 		return "redirect:/aboutUs/aboutUsMain";
 		
 	}
+	
+	/**
+	 * 공지사항 수정페이지 불러오는 컨트롤러
+	 * @param noticeNum
+	 * @param model
+	 * @return
+	 */
+	@GetMapping("/noticeUpdate")
+	public String noticeUpdate(@RequestParam("noticeNum") int noticeNum, Model model) {
+		
+		// 공지사항 상세 정보
+		NoticeVO noticeDetail = noticeService.getNoticeContents(noticeNum);
+		
+		model.addAttribute("notice", noticeDetail);
+		
+		return "/aboutUs/noticeUpdate";
+	}
+	
+	/**
+	 * 공지사항 수정하는 컨트롤러
+	 * @param noticeVO
+	 * @param session
+	 * @return
+	 */
+	@PostMapping("/updateNotice")
+	public String updateNotice(@ModelAttribute("noticeVO") NoticeVO noticeVO, HttpSession session) {
+		
+		// 세션 유저 정보
+		UserVO userVO = (UserVO) session.getAttribute("account");
+		// 세션 유저 아이디
+		String userId = userVO.getUserId();
+		
+		noticeService.updateNotice(noticeVO);
+		
+		return "redirect:/aboutUs/aboutUsMain";
+	}
+	
+	
+	
+	
+	
+	
 
 	// 질문게시판 리스트 불러오기
 	@GetMapping("/faqMain")
