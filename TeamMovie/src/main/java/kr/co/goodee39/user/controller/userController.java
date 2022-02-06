@@ -1,6 +1,7 @@
 package kr.co.goodee39.user.controller;
 
 import java.io.IOException;
+
 import java.io.PrintWriter;
 
 import javax.servlet.http.HttpServletResponse;
@@ -11,6 +12,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -151,7 +153,7 @@ public class userController {
 	@GetMapping("/myPage")
 	public String getMyPage(UserVO vo) {
 
-		return "user/myPage"; 
+		return "user/myPage";
 	}
 
 	// 정보 수정 보여주기
@@ -161,41 +163,30 @@ public class userController {
 		return "user/userFix";
 
 	}
-	
-	@PostMapping("/userPwUpdate")
-	public ResponseEntity<UserVO>userPwUpdate(@RequestBody UserVO vo){
-        
-        
-		System.out.println(vo.getUserNum());
-		System.out.println(vo.getUserEmail());
-		
-		userService.updateUser(vo);
-		 
-			/*
-			 * service.selectUserOne(vo);
-			 */
-		
 
-         ResponseEntity<UserVO> entity = new ResponseEntity<UserVO>(vo,HttpStatus.OK);
-		
-         return entity;
-		
+	@PostMapping("/userPwUpdate")
+	public ResponseEntity<UserVO> userPwUpdate(@RequestBody UserVO vo) {
+
+		System.out.println("controller getuserNum" + vo.getUserNum());
+		System.out.println("controller get useremail" + vo.getUserEmail());
+		userService.updateUser(vo);
+
+		ResponseEntity<UserVO> entity = new ResponseEntity<UserVO>(vo, HttpStatus.OK);
+
+		return entity;
+
 	}
-	
-	
-	
+
 	// 정보 수정 데이터 넘기기
 	@GetMapping("/userFixComplete")
-	public String userFixComplete(@ModelAttribute("userVO") UserVO vo,Model model,@RequestParam(defaultValue = "1")int num,
-            @RequestParam(defaultValue="")String userName) {
-		
-		System.out.println(vo.getUserNum());
+	public String userFixComplete(UserVO vo, Model model, @RequestParam(defaultValue = "") String userName) {
 		userService.updateUser(vo);
-		userService.showUserInfo(model, num, userName);
-		return "admin/user";
-		
+		return "user/myPage";
+
 	}
 	
+	//회원 탈퇴
+
 	
 
 }

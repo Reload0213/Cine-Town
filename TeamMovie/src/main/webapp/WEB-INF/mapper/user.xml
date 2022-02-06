@@ -7,9 +7,10 @@
 
 
 	<!-- 회원 가입 -->
-	<insert id="insertUser" parameterType="userVO"> 
+	<insert id="insertUser" parameterType="userVO">
 		insert into user(userId,
-		userPw, userRegdate, userName, userEmail, userPhone, userAddr1,
+		userPw, userRegdate, userName, userEmail, userPhone,
+		userAddr1,
 		userAddr2, userAddr3)
 		values(#{userId}, #{userPw}, curdate(),
 		#{userName}, #{userEmail}, #{userPhone}, #{userAddr1}, #{userAddr2},
@@ -72,10 +73,11 @@
 		select
 		userId
 		from user
-		where userName = #{userName} and userEmail = #{userEmail}
+		where userName = #{userName} and userEmail =
+		#{userEmail}
 	</select>
 
-	<!-- 회원 정보 수정 보여주기 여기도 영주님의 영혼-->
+	<!-- 회원 정보 수정 보여주기 -->
 	<select id="showUserInfoOne" parameterType="userVO"
 		resultType="userVO">
 		select *
@@ -83,7 +85,7 @@
 		where userNum=#{userNum}
 	</select>
 
-	<!-- 관리자 회원정보 수정 쿼리 -->
+	<!-- 회원정보 수정 -->
 	<update id="updateUser" parameterType="userVO">
 		UPDATE user
 		<set>
@@ -97,7 +99,14 @@
 		WHERE userNum=#{userNum}
 	</update>
 
+	<!-- 회원삭제 -->
+	<update id="updateDeleteUser" parameterType="userVO">
+		update user
+		set
+		userIsdelete='Y'
+		where userNum=#{userNum}
 
+	</update>
 
 
 

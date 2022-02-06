@@ -10,15 +10,18 @@
 <!-- 메인 css 추가 -->
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/assets/css/user/myPage.css">
+<style>
+</style>
 <!-- 메인 css 끝 -->
 
 </head>
 <body>
 	<%@ include file="../include/header.jsp"%>
+
 	<div class="resultTitle">
-		<h3>${userVO.userName}님의 회원 정보</h3>
+		<h3>${userVO.userName}님의회원정보</h3>
 	</div>
-	
+
 	<div class="userInfoCon">
 		<div class="topUserCon">
 
@@ -36,6 +39,7 @@
 				</ul>
 
 				<!-- 구분선 -->
+
 				<ul class="topUl row3 divisionLine">
 					<li><input type="hidden" name="userNum" id="userNum"
 						value="${userVO.userNum}" /></li>
@@ -118,9 +122,13 @@
 				<ul class="btnCon">
 					<li><a href="#" class="formSubmit">수정</a></li>
 					<li><a href="javascript:history.back();" class="back">취소</a></li>
+
+
 				</ul>
 
+
 			</div>
+
 		</div>
 
 	</div>
@@ -147,30 +155,33 @@
 
 		let hidden = document.querySelector("#userNum");
 
-	/* 	let logoutBtn = document.querySelector(".logoutBtn");
-		let logoutBtnM = document.querySelector(".logoutBtnM");
+		/* 	let logoutBtn = document.querySelector(".logoutBtn");
+			let logoutBtnM = document.querySelector(".logoutBtnM");
 
-		logoutBtn.addEventListener("click", function() {
+			logoutBtn.addEventListener("click", function() {
 
-			location.href = "${pageContext.request.contextPath}/admin/logout";
+				location.href = "${pageContext.request.contextPath}/admin/logout";
 
-		});
+			});
 
-		logoutBtnM.addEventListener("click", function() {
+			logoutBtnM.addEventListener("click", function() {
 
-			location.href = "${pageContext.request.contextPath}/admin/logout";
+				location.href = "${pageContext.request.contextPath}/admin/logout";
 
-		}); */
+			}); */
 
 		$(function() {
 
+			//전체 수정
 			formSubmit
 					.addEventListener(
 							"click",
 							function(e) {
 								e.preventDefault();
 
-								console.log(hidden.value);
+								console
+										.log("jsp hidden.value: "
+												+ hidden.value);
 								if (password.value !== ""
 										&& password2.value !== ""
 										&& email.value !== ""
@@ -179,6 +190,7 @@
 										&& postCode.value !== ""
 										&& detailAddr.value !== "") {
 
+									alert("${userVO.userId}님의 정보가 수정 되었습니다");
 									location.href = "${pageContext.request.contextPath}/user/userFixComplete?userNum="
 											+ hidden.value
 											+ "&userPw="
@@ -193,10 +205,14 @@
 											+ addr.value
 											+ "&userAddr3="
 											+ detailAddr.value;
+								} else {
+									alert("수정 실패");
+
 								}
 
 							});
 
+			//비밀번호 정보 수정
 			pwSubmit
 					.addEventListener(
 							"click",
@@ -210,7 +226,6 @@
 										userNum : parseInt(hidden.value)
 									};
 
-									console.log(pw);
 									$
 											.ajax({
 
@@ -237,6 +252,7 @@
 
 							});
 
+			//이메일 정보 수정
 			emailSubmit
 					.addEventListener(
 							"click",
@@ -278,6 +294,7 @@
 
 							});
 
+			//핸드폰 정보 수정
 			phoneSubmit
 					.addEventListener(
 							"click",
@@ -317,6 +334,7 @@
 
 							});
 
+			// 주소 정보 수정
 			addrSubmit
 					.addEventListener(
 							"click",
@@ -331,7 +349,7 @@
 								e.preventDefault();
 								if (postCode.value == "" && addr.value == ""
 										&& detailAddr.value == "") {
-									alert("주소를 입력해주세요.");
+									alert("주소를 정확히 입력해주세요.");
 								} else {
 
 									$
@@ -360,7 +378,8 @@
 
 		});
 
-		function loadDaumApi() { 
+		//지도 api
+		function loadDaumApi() {
 
 			new daum.Postcode({
 				oncomplete : function(data) {
