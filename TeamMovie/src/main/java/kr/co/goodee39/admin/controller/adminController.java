@@ -1,7 +1,9 @@
 package kr.co.goodee39.admin.controller;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.net.ssl.SSLEngineResult.Status;
 import javax.servlet.http.HttpServletRequest;
@@ -21,6 +23,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import kr.co.goodee39.admin.service.AdminService;
 import kr.co.goodee39.admin.service.noticeService;
@@ -169,6 +172,28 @@ public class adminController {
 		return "admin/noticeBoard";
 	}
 	
+	/**
+	 * 공지사항 삭제하는 컨트롤러
+	 * @param noticeNum
+	 * @param model
+	 * @return
+	 */
+	@ResponseBody
+	@PostMapping("/board/deleteNotice")
+	public Map<String, String> deleteNotice(@RequestBody NoticeVO vo) {
+		
+		Map<String, String> map = new HashMap<String, String>();
+		
+		map.put("resultCode", "0000"); // 0000: 성공
+		
+		try {
+			noticeService.deleteNotice(vo.getNoticeNum());
+		} catch (Exception e) {
+			map.put("resultCode", "9999"); // 9999: 실패
+		}
+		
+		return map;
+	}
 	
 	@GetMapping("/board/qna")
 	public String qna(Model model,@RequestParam(defaultValue = "1") int num) {
@@ -221,5 +246,7 @@ public class adminController {
 			System.out.println("adminShopCRUDPage 여기로 타나 ------------------------");
 			return "admin/adminShopCRUDPage";
 		}
+		
+		
 }
 	

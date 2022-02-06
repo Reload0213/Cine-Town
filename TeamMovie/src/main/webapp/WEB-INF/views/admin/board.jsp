@@ -53,12 +53,13 @@ color:black;
 
 <script type="text/javascript">
 
-function searchbrd(board_sel){
-	//게시판 유형 선택하면 ajax
-	if(board_sel != ''){
+//게시판 유형 선택하면 ajax
+function searchbrd(boardNum){
+	
+	if(boardNum != ''){
 		
 	   var params = {
-			selBoard : board_sel
+			selBoard : boardNum
 	   }
 		
 		$.ajax({
@@ -80,14 +81,47 @@ function searchbrd(board_sel){
 
 }
 
-function deleteNotice(idx, board_sel) {
 	
-	// 삭제 ajax 
+
+function deleteNotice(noticeNum, boardNum) {
+	// alert(noticeNum + "/" + boardNum);
 	
-	// 삭제 성공 -> 리스트 호출 ajax
-	
-	// 호출 성공 -> 화면에 호출한 데이터 표시
-	//$('.item1').html(data);
+ 	// 삭제 ajax 
+ 	var params = {
+		noticeNum : noticeNum
+	};
+ 	
+ 	$.ajax({
+ 		url: "${pageContext.request.contextPath}/admin/board/deleteNotice",
+		type: "POST",
+		data: JSON.stringify(params),
+		contentType : "application/json; charset=utf-8",
+		dataType : "json",
+		success: function(result) {
+			if (result.resultCode == '0000') { // call list
+				var params = {
+					selBoard : boardNum
+				}
+					
+				$.ajax({
+					url:"${pageContext.request.contextPath}/admin/board/noticeBoard",
+					type: "POST",
+					data: JSON.stringify(params),
+					contentType : "application/json; charset=utf-8",
+			       	dataType: 'html',
+					success: function(data){
+						$('.item1').html(data);
+						$(".item1").show();
+						alert("삭제가 완료되었습니다.");
+					}
+				});
+			} else if(result.resultCode == '9999') {
+				alert("삭제가 되지 않았습니다.");
+				
+				return false;
+			};
+		}
+ 	});
 	
 }
 

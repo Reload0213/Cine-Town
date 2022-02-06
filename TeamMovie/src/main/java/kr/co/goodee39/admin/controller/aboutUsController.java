@@ -121,19 +121,7 @@ public class aboutUsController {
 		return "redirect:/aboutUs/aboutUsMain";
 	}
 	
-	/**
-	 * 공지사항 삭제하는 컨트롤러
-	 * @param noticeNum
-	 * @param model
-	 * @return
-	 */
-	@GetMapping("/deleteNotice")
-	public String deleteNotice(@RequestParam("noticeNum") int noticeNum, Model model) {
-		
-		noticeService.deleteNotice(noticeNum);
-		
-		return "redirect:/aboutUs/aboutUsMain";
-	}
+	
 	
 	
 	
