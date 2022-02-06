@@ -38,13 +38,13 @@
 							<div class="input__item">
 
 								<form:input path="userId" type="text" placeholder="아이디를 입력해주세요"
-									required="true" value="aaa" />
+									required="true"/>
 								<span><i class="xi-user-o"></i></span>
 							</div>
 							<div class="input__item">
 								<!-- 		<input type="text" placeholder="비밀번호를 입력해주세요" required> -->
 								<form:input path="userPw" type="password"
-									placeholder="비밀번호를 입력해주세요" required="true" value="111" />
+									placeholder="비밀번호를 입력해주세요" required="true" />
 								<span><i class="xi-lock-o"></i></span>
 							</div>
 							<a href="${pageContext.request.contextPath}/user/findUser"
