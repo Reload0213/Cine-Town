@@ -175,7 +175,9 @@
   </c:forEach>
 </table>
 <!-- 로그인한 사용자만 글쓰기 버튼을 활성화 -->
-<c:if test="${sessionScope.account.userId != null}"><button type="button" style="color: white; border: 1px solid black; font-size: 1rem; padding: 0.5rem 0.7rem; background-color: black; border-radius: 10px; float:right;" onclick="location.href='${pageContext.request.contextPath}/aboutUs/noticeWrite';">글쓰기</button></c:if>
+<c:if test="${sessionScope.account.verify eq '9'}">
+	<button type="button" style="color: white; border: 1px solid black; font-size: 1rem; padding: 0.5rem 0.7rem; background-color: black; border-radius: 10px; float:right;" onclick="location.href='${pageContext.request.contextPath}/aboutUs/noticeWrite';">글쓰기</button>
+</c:if>
 </div>
 <div><br /></div>
 <!-- 공지사항 End -->

@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-
 <!-- 관리자페이지 게시판에서 AJAX로 보여줄 화면 -->
 <table>
 	<thead>
@@ -27,7 +26,7 @@
 						<td>${list.noticeComment }</td>
 						<td>${list.noticeRegdate }</td>
 						<td>
-							<button class="delete">삭제하기</button>
+							<button class="delete" onclick="deleteNotice(${list.noticeNum }, ${selBoard})">삭제하기</button>
 						</td>
 					</tr>
 				</c:forEach>

@@ -79,6 +79,23 @@ function searchbrd(board_sel){
 	}
 
 }
+
+function deleteNotice(idx, board_sel) {
+	
+	// 삭제 ajax 
+	
+	// 삭제 성공 -> 리스트 호출 ajax
+	
+	// 호출 성공 -> 화면에 호출한 데이터 표시
+	//$('.item1').html(data);
+	
+}
+
+// 페이지 기동 후 실행
+$(function() {
+	
+});
+
 </script>
 </head>
 <body>
@@ -189,8 +206,6 @@ function searchbrd(board_sel){
 
 
 <script>
-
-
 
 
 </script>

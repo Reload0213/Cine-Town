@@ -10,6 +10,7 @@ public class NoticeVO {
 	private String noticeComment;
 	private String noticeIsdelete;
 	private String noticeRegdate;
+	private String adId;
 	
 	private int start;
 	private int count;
@@ -74,6 +75,11 @@ public class NoticeVO {
 	public void setSelBoard(String selBoard) {
 		this.selBoard = selBoard;
 	}
-	
+	public String getAdId() {
+		return adId;
+	}
+	public void setAdId(String adId) {
+		this.adId = adId;
+	}
 	
 }

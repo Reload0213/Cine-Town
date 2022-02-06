@@ -16,7 +16,7 @@ import kr.co.goodee39.user.vo.UserVO;
 
 @Controller
 @RequestMapping("/aboutUs")
-public class abouUsController {
+public class aboutUsController {
 
 	@Autowired
 	noticeService noticeService;
@@ -60,12 +60,7 @@ public class abouUsController {
 	 * @return
 	 */
 	@GetMapping("/noticeWrite")
-	public String noticeWrite(@ModelAttribute("noticeVO") NoticeVO noticeVO, HttpSession session) {
-		
-		// 세션 유저 정보
-		UserVO userVO = (UserVO) session.getAttribute("account");
-		// 세션 유저 아이디
-		String userId = userVO.getUserId();
+	public String noticeWrite(@ModelAttribute("noticeVO") NoticeVO noticeVO) {
 		
 		return "/aboutUs/noticeWrite";
 	}
@@ -82,6 +77,8 @@ public class abouUsController {
 		UserVO userVO = (UserVO) session.getAttribute("account");
 		// 세션 유저 아이디
 		String userId = userVO.getUserId();
+		
+		noticeVO.setAdId(userId);
 		
 		noticeService.noticeWrite(noticeVO);
 
