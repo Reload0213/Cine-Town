@@ -61,10 +61,9 @@
 	</update>
 	
 	<!-- 공지사항 삭제하는 쿼리 -->
-	<delete id="deleteNotice" parameterType="int">
-		delete
-		from notice
+	<update id="deleteNotice" parameterType="int">
+		update notice
+		set noticeIsdelete = 'Y'
 		where noticeNum = #{value}
-	</delete>
-	
+	</update>
 </mapper>
