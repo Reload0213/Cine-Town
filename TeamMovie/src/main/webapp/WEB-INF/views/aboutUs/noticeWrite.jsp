@@ -14,12 +14,6 @@
  	<form:form modelAttribute="noticeVO" action="${pageContext.request.contextPath}/aboutUs/writeNotice" method="POST">
 		<table>
 			<tr>
-				<td>작성일</td>
-				<td>
-					<form:input path="noticeRegdate"/>
-				</td>
-			</tr>
-			<tr>
 				<td>내용</td>
 				<td>
 					<form:input path="noticeComment"/>

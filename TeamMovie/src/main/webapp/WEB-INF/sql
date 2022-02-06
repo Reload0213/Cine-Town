@@ -174,26 +174,26 @@ DELETE FROM `moviewishlist`;
 DROP TABLE IF EXISTS `notice`;
 CREATE TABLE IF NOT EXISTS `notice` (
   `noticeNum` int(11) NOT NULL AUTO_INCREMENT,
-  `noticeCategory` varchar(50) NOT NULL,
-  `noticeTitle` varchar(50) NOT NULL,
-  `noticeComment` varchar(50) NOT NULL,
-  `noticeIsdelete` varchar(50) NOT NULL,
-  `noticeRegdate` varchar(50) NOT NULL DEFAULT 'n',
+  `noticeCategory` varchar(50) DEFAULT NULL,
+  `noticeTitle` varchar(50) DEFAULT NULL,
+  `noticeComment` varchar(50) DEFAULT NULL,
+  `noticeIsdelete` varchar(50) DEFAULT 'N',
+  `noticeRegdate` varchar(50) DEFAULT current_timestamp(),
   `adId` varchar(50) NOT NULL,
   PRIMARY KEY (`noticeNum`),
   KEY `FK_adId` (`adId`),
   CONSTRAINT `FK_adId` FOREIGN KEY (`adId`) REFERENCES `admin` (`adId`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3 COMMENT='공지사항 게시판';
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb3 COMMENT='공지사항 게시판';
 
 -- 테이블 데이터 cgv.notice:~5 rows (대략적) 내보내기
 DELETE FROM `notice`;
 /*!40000 ALTER TABLE `notice` DISABLE KEYS */;
 INSERT INTO `notice` (`noticeNum`, `noticeCategory`, `noticeTitle`, `noticeComment`, `noticeIsdelete`, `noticeRegdate`, `adId`) VALUES
-	(1, '공지사항', 'Cine Town 오픈 이벤트', '안녕하세요, Cine Town 관리자입니다.', 'n', '2022-01-24', 'aaa'),
-	(2, '공지사항', 'Cine Town 오픈 이벤트', '안녕하세요, Cine Town 관리자입니다.', 'n', '2022-01-24', 'aaa'),
-	(3, '공지사항', 'Cine Town 설 연휴 배송 관련 공지사항', '안녕하세요, Cine Town 관리자입니다.', 'n', '2022-01-24', 'aaa'),
-	(4, '공지사항', 'Cine Town 베스트 리뷰 이벤트', '안녕하세요, Cine Town 관리자입니다.', 'n', '2022-01-24', 'aaa'),
-	(5, '공지사항', 'Cine Town 로고 공모전 이벤트', '안녕하세요, Cine Town 관리자입니다.', 'n', '2022-01-24', 'aaa');
+	(1, '공지사항', 'Cine Town 오픈 이벤트', '안녕하세요, Cine Town 관리자입니다. Cine Town 오픈 이벤트가 열립니다!', 'N', '2022-01-24', 'aaa'),
+	(2, '공지사항', 'Cine Town 공지사항', '안녕하세요, Cine Town 관리자입니다.', 'N', '2022-01-24', 'aaa'),
+	(3, '공지사항', 'Cine Town 설 연휴 배송 관련 공지사항', '안녕하세요, Cine Town 관리자입니다.', 'N', '2022-01-24', 'aaa'),
+	(4, '공지사항', 'Cine Town 베스트 리뷰 이벤트', '안녕하세요, Cine Town 관리자입니다.', 'N', '2022-01-24', 'aaa'),
+	(5, '공지사항', 'Cine Town 로고 공모전 이벤트', '안녕하세요, Cine Town 관리자입니다.', 'N', '2022-01-24', 'aaa');
 /*!40000 ALTER TABLE `notice` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
