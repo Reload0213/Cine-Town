@@ -20,18 +20,16 @@ a {
 }
 
 .detailVoteCon {
-	visibility: hidden;
-	opacity: 0;
+	display:none;
 	transition: all 2s linear;
-	width: 65%;
+	width: 60%;
 	margin: 2.0rem auto;
 	padding: 3.0rem;
 	background-color: #f7f7f7;
 }
 
 .detailVoteCon.on {
-	visibility: visible;
-	opacity: 1;
+	display:block;
 	transition: all 2s linear;
 }
 

@@ -57,7 +57,7 @@
 
 <%@ include file="voteForm.jsp"%>
 
-
+<%@ include file="comment.jsp"%>
 <!-- <div class="commentCon">
 	<h5>총 0건의 COMMENT가 있습니다</h5>
 	<div class="commentBox">
