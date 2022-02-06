@@ -14,13 +14,14 @@
   }
   .commentCon{
       width:60%;
-      margin:0 auto;
+      margin:2rem auto;
+      
   }
-  .cntCmt{ 
+ /*  .cntCmt{ 
       font-size: 1.3rem;
       padding:0.5rem 0;
       font-weight: 500;
-  }
+  } */
  .comment{
      width:100%;
      margin:0 auto;
@@ -74,6 +75,105 @@
     background-color: #141414;
 }
 
+.cntCmt{
+padding:0.2rem;
+border-bottom:0.1rem solid #ebe8e8;
+margin:0 auto;
+width:60%;
+}
+.cntCmt>.cmtNum{
+font-weight: 300;
+font-size:1.4rem;
+}
+
+.cmtListCon{
+    width:60%;
+    margin:0 auto;
+    display: flex;
+    flex-direction: column;
+   
+}
+.cmtList{
+    width:100%;
+    padding:0.7rem;
+    border-top:0.05rem solid #d4d3d3;
+    border-bottom:0.1rem solid #d4d3d3;
+    margin:0 auto;
+     border-collapse:collapse;
+    
+}
+.cmtList ul{
+    width:100%;
+}
+.cmtList ul li{
+    margin:0.2rem;
+    width:100%;
+}
+.cmtList ul li:nth-child(2){
+    padding:0.5rem;
+}
+.cmtList ul li:nth-child(3){
+    padding:0.4rem;
+    display: flex;
+    justify-content: flex-end;
+}
+.cmtList ul li:nth-child(3) button{
+    padding:0.4rem 0.9rem;
+    background-color: transparent;
+    border: 0.1px solid #d4d3d3;
+    border-radius: 0.3rem;
+    margin-right:0.2rem;
+    color:#666;
+    cursor:pointer;
+    outline:none;
+}
+.cmtList ul li:nth-child(3) .cmtEditBtn:hover{
+
+    transition: all 0.8s ease-in-out;
+    background-color:#2964e0;
+    border:none;
+    color:#f1f1f1;
+    
+}
+
+.cmtList ul li:nth-child(3) .cmtDeleteBtn:hover{
+
+transition: all 0.8s ease-in-out;
+background-color:#dd2026;
+border:none;
+color:#f1f1f1;
+}
+
+
+.topTitle .cmtUserId{
+    font-size: 1.1rem;
+    color:#666;
+    margin-right:0.7rem;
+}
+.topTitle .cmtWriteTime {
+color: #919191;
+font-size: 1.2rem;
+}
+
+.cmtListComment{
+    font-size: 1.3rem;
+}
+
+
+@media(max-width:768px) {
+    html{
+        font-size:50%;
+    }
+    .comment{
+        padding:1.2rem;
+    }
+    .contentBox .textAreaBox{
+        width:80%;
+    }
+    .submit{
+        width:20%;
+    }
+}
 @media(max-width:768px) {
     html{
         font-size:50%;
@@ -96,7 +196,7 @@
 
 
 <div class="commentCon">
-<h5 class="cntCmt">총 1000건의 COMMENT가 있습니다.</h5>
+<!-- <h5 class="cntCmt">총 1000건의 COMMENT가 있습니다.</h5> -->
 <div class="comment">
 <div class="contentBox">
 <div class="textAreaBox">
@@ -104,7 +204,7 @@
     <span class="cntText"><strong class="nowCnt">0</strong>/100자 (한글 100자 / 영문 100자)</span>
 </div>
 
-<div class="submit"><button>등록</button></div>
+<div class="submit"><button id="subBtn" type="button">등록</button></div>
 </div>
 </div>
 
@@ -112,8 +212,10 @@
 
 
 </div>
+<h3 class="cntCmt">댓글 <strong class="cmtNum">(125)</strong></h3>
+<div class="cmtListCon"></div>
 
-
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script>
 
 document.getElementById("textarea").addEventListener("keydown",function(){
@@ -125,8 +227,243 @@ document.getElementById("textarea").addEventListener("keydown",function(){
 	}
 
 
+
 	});
 
+
+
+$(function(){
+	
+	$.ajax({
+		
+		url:"${pageContext.request.contextPath}/preview/detail/cmt/load/"+	document.querySelector("#pwNum").value,
+		type:"GET",
+		dataType:"json",
+		contentType:"application/json; charset=utf-8",
+		success:function(data){
+			
+			for(const item of data){
+				
+				let userNum = ${sessionScope.account.userNum};
+				
+				let cmtList = document.querySelector(".cmtListCon");
+				
+				const div =document.createElement("div");
+				  div.classList.add("cmtList");
+				  
+				  
+				 const ul = document.createElement("ul");
+				 
+				 
+			
+				 const li1 = document.createElement("li");
+				 const div2= document.createElement("div");
+				 div2.classList.add("topTitle");
+				 
+				 
+				 const span = document.createElement("span");
+				 span.classList.add("cmtUserId");
+				 span.innerText = item.writerName;
+				 const span2 = document.createElement("span");
+				 span2.classList.add("cmtWriteTime");
+				 span2.innerText = item.writeTime;
+				 div2.append(span);
+				 div2.append(span2);
+				 li1.append(div2);
+				 
+				 ul.append(li1);
+				
+				 const li2 = document.createElement("li");
+				 li2.classList.add("cmtListComment");
+				 li2.innerText=item.comment;
+		         ul.append(li2);
+		        
+				 const li3 = document.createElement("li");
+				 console.log(userNum,item.writerNum);
+				 if(userNum == item.writerNum){
+					 
+					 
+				 const button = document.createElement("button");
+				 button.classList.add("cmtEditBtn");
+				 button.innerText ="수정";
+				 
+		
+				 
+				 const button2 = document.createElement("button");
+			     button2.classList.add("cmtDeleteBtn");
+			     button2.innerText ="삭제";
+			     
+			     button2.addEventListener("click",function(){
+			    	 
+			    	 let yn = confirm("삭제하시겠습니까?");
+			    	 
+			    	 if(yn){
+			    		 let cmtData = {pnum:item.pnum, pwNum:item.pwNum};
+			    		 
+			    	
+			    		 $.ajax({
+			    			 url:"${pageContext.request.contextPath}/preview/detail/cmt/delete/",
+			    			 type:"DELETE",
+			    			 data:JSON.stringify(cmtData),
+			    			 contentType:"application/json; charset=utf-8",
+			    			 dataType:"json",
+			    			 success:function(data){
+			    				  div.remove();
+			    			 }
+			    			
+			    		 });
+			    	 }
+			     });
+			     
+			     li3.append(button);
+			     li3.append(button2);
+			     ul.append(li3);
+			     div.append(ul);
+			     
+				 }
+				 
+		           ul.append(li3);
+				 
+				 
+			     div.append(ul); 
+			     document.querySelector(".cmtListCon").append(div);
+			     
+			}
+			
+			
+		}
+		
+		
+		
+		
+		
+		
+		
+	});
+	
+
+	 
+	 
+	 
+ });
+ 
+ 
+document.querySelector("#subBtn").addEventListener("click",function(){
+	let comment = document.querySelector("#textarea").value;
+	 
+	 if(comment.length>0){
+		 
+		 let commentData ={comment, pwNum:	document.querySelector("#pwNum").value};
+		 
+		 console.log(commentData);
+		 
+		 $.ajax({
+			
+			 url:"${pageContext.request.contextPath}/preview/detail/cmt/add",
+			 type:"POST",
+			 data:JSON.stringify(commentData),
+			 dataType:"json",
+			 contentType:"application/json; charset=utf-8",
+			 success:function(data){
+				 console.log(item);
+					for(const item of data){
+						
+						let userNum = ${sessionScope.account.userNum};
+						
+						let cmtList = document.querySelector(".cmtListCon");
+						
+						const div =document.createElement("div");
+						  div.classList.add("cmtList");
+						  
+						  
+						 const ul = document.createElement("ul");
+						 
+						 
+					
+						 const li1 = document.createElement("li");
+						 const div2= document.createElement("div");
+						 div2.classList.add("topTitle");
+						 
+						 
+						 const span = document.createElement("span");
+						 span.classList.add("cmtUserId");
+						 span.innerText = item.writerName;
+						 const span2 = document.createElement("span");
+						 span2.classList.add("cmtWriteTime");
+						 span2.innerText = item.writeTime;
+						 div2.append(span);
+						 div2.append(span2);
+						 li1.append(div2);
+						 
+						 ul.append(li1);
+						
+						 const li2 = document.createElement("li");
+						 li2.classList.add("cmtListComment");
+						 li2.innerText=item.comment;
+				         ul.append(li2);
+				        
+						 const li3 = document.createElement("li");
+						 console.log(userNum,item.writerNum);
+						 if(userNum == item.writerNum){
+							 
+							 
+						 const button = document.createElement("button");
+						 button.classList.add("cmtEditBtn");
+						 button.innerText ="수정";
+						 
+				
+						 
+						 const button2 = document.createElement("button");
+					     button2.classList.add("cmtDeleteBtn");
+					     button2.innerText ="삭제";
+					     
+					     button2.addEventListener("click",function(){
+					    	 
+					    	 let yn = confirm("삭제하시겠습니까?");
+					    	 
+					    	 if(yn){
+					    		 let cmtData = {pnum:item.pnum, pwNum:item.pwNum};
+					    		 
+					    	
+					    		 $.ajax({
+					    			 url:"${pageContext.request.contextPath}/preview/detail/cmt/delete/",
+					    			 type:"DELETE",
+					    			 data:JSON.stringify(cmtData),
+					    			 contentType:"application/json; charset=utf-8",
+					    			 dataType:"json",
+					    			 success:function(data){
+					    				  div.remove();
+					    			 }
+					    			
+					    		 });
+					    	 }
+					     });
+					     
+					     li3.append(button);
+					     li3.append(button2);
+					     ul.append(li3);
+					     div.append(ul);
+					     
+						 }
+						 
+				           ul.append(li3);
+						 
+						 
+					     div.append(ul); 
+					     document.querySelector(".cmtListCon").append(div);
+					     
+					}
+					
+			 }
+		 });
+		 
+	 }
+	 
+ 
+	
+	});
+	
+
 
 
 

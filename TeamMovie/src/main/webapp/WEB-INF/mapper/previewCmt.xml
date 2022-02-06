@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ <mapper namespace="pwCmt">
+  
+ <select id="selectPwCmt" resultType="pwCmtVO" parameterType="pwCmtVO">
+ SELECT writerName,comment,writeTime,pnum,pwNum,writerNum
+FROM previewcmt
+WHERE pwNum = #{pwNum}
+ORDER BY  pnum DESC
+ 
+ 
+ 
+ </select>
+ 
+ <delete id="deletePwCmt" parameterType="pwCmtVO">
+ DELETE FROM previewcmt
+ WHERE pnum =#{pnum}
+ AND pwNum =#{pwNum}
+ </delete>
+  
+  <insert id="insertPwCmt" parameterType="pwCmtVO">
+  INSERT INTO previewcmt
+  (pwNum,writerNum,writerName,comment,writeTime)
+  VALUES 
+  (#{pwNum},#{writerNum},#{writerName},#{comment},NOW())
+  
+  
+  </insert>
+  
+  </mapper>
+  
+  
+  
