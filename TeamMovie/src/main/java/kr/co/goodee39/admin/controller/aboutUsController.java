@@ -85,22 +85,7 @@ public class aboutUsController {
 		return "redirect:/aboutUs/aboutUsMain";
 	}
 	
-	/**
-	 * 공지사항 수정페이지 불러오는 컨트롤러
-	 * @param noticeNum
-	 * @param model
-	 * @return
-	 */
-	@GetMapping("/noticeUpdate")
-	public String noticeUpdate(@RequestParam("noticeNum") int noticeNum, Model model) {
-		
-		// 공지사항 상세 정보
-		NoticeVO noticeDetail = noticeService.getNoticeContents(noticeNum);
-		
-		model.addAttribute("notice", noticeDetail);
-		
-		return "/aboutUs/noticeUpdate";
-	}
+
 	
 	/**
 	 * 공지사항 수정하는 컨트롤러

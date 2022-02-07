@@ -172,10 +172,10 @@ public class adminController {
 		return "admin/noticeBoard";
 	}
 	
+	
 	/**
 	 * 공지사항 삭제하는 컨트롤러
-	 * @param noticeNum
-	 * @param model
+	 * @param vo
 	 * @return
 	 */
 	@ResponseBody
@@ -194,6 +194,31 @@ public class adminController {
 		
 		return map;
 	}
+	
+	
+	
+	/**
+	 * 공지사항 수정페이지 불러오는 컨트롤러
+	 * @param noticeNum
+	 * @param model
+	 * @return
+	 */
+	@GetMapping("/noticeUpdate")
+	public String noticeUpdate(@RequestParam("noticeNum") int noticeNum, Model model) {
+		
+		// 공지사항 상세 정보
+		NoticeVO noticeDetail = noticeService.getNoticeContents(noticeNum);
+		
+		model.addAttribute("notice", noticeDetail);
+		
+		return "/admin/noticeFix";
+	}
+	
+	
+	
+	
+	
+	
 	
 	@GetMapping("/board/qna")
 	public String qna(Model model,@RequestParam(defaultValue = "1") int num) {
