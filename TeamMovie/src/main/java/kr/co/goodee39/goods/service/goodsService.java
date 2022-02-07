@@ -57,10 +57,20 @@ public class goodsService {
 	}
 	
 	public List<GoodsVO> showTop4GoodsList(){
-		System.out.println("showTop4GoodsList 서비스 메소드 실행");
-		System.out.println("showTop4GoodsList 서비스 메소드 종료");
+		System.out.println("showTop4GoodsList 서비스 메소드 실행--------------------------------------------------");
+		System.out.println("showTop4GoodsList 서비스 메소드 종료--------------------------------------------------");
 		return sqlSessionTemplate.selectList("goods.showTop4GoodsList");
 		
+	}
+	
+	public List<GoodsVO> relateGoodsList(String mvTitle){
+		System.out.println("relateGoodsList 서비스 메소드 실행--------------------------------------------------");
+		System.out.println("mvTitle:"+mvTitle);
+		/*
+		 * GoodsVO vo = new GoodsVO(); vo.setMvTitle(mvTitle);
+		 */
+		System.out.println("relateGoodsList 서비스 메소드 종료--------------------------------------------------");
+		return sqlSessionTemplate.selectList("goods.relateGoodsList", mvTitle);
 	}
 
 }

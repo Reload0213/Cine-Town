@@ -350,11 +350,11 @@
                           <img class="img-fluid w-100 h-100" src="${item.gdsImage1 }" style="object-fit: auto;">
                           <div class="overlay">
                               <div class="mb-2">
-                                  <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                                      href="">Business</a>
-                                  <a class="text-white" href=""><small>Jan 01, 2045</small></a>
+                                  <a style="background-color: rgb(240,18,25);" class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                      href="${pageContext.request.contextPath }/goods/${item.gdsNum}?id=${item.gdsNum}">Top 4 Goods!</a>
+                                 <!--  <a class="text-white" href=""><small>Jan 01, 2045</small></a> -->
                               </div>
-                              <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">${item.gdsName }</a>
+                              <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="${pageContext.request.contextPath }/goods/${item.gdsNum}?id=${item.gdsNum}">${item.gdsName }</a>
                           </div>
                       </div>
                   </div>
