@@ -106,7 +106,7 @@
                         <li></li>
                         <li></li>
                     </ul>
-                    
+                    <form action="">
                     <ul class="topUl row2">
                         <li>내용</li>
                         <li><input type="text" value="${notice.noticeComment }"/></li>
@@ -122,6 +122,7 @@
                         <li><a href="#" class="formSubmit">수정</a></li>
                         <li><a href="javascript:history.back();" class="back">취소</a></li>
                     </ul>
+                    </form>
                 </div>
             </div>
         </div>

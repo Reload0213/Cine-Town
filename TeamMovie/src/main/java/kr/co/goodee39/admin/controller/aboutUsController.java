@@ -87,31 +87,6 @@ public class aboutUsController {
 	
 
 	
-	/**
-	 * 공지사항 수정하는 컨트롤러
-	 * @param noticeVO
-	 * @param session
-	 * @return
-	 */
-	@PostMapping("/updateNotice")
-	public String updateNotice(@ModelAttribute("noticeVO") NoticeVO noticeVO, HttpSession session) {
-		
-		// 세션 유저 정보
-		UserVO userVO = (UserVO) session.getAttribute("account");
-		// 세션 유저 아이디
-		String userId = userVO.getUserId();
-		
-		noticeService.updateNotice(noticeVO);
-		
-		return "redirect:/aboutUs/aboutUsMain";
-	}
-	
-	
-	
-	
-	
-	
-
 	// 질문게시판 리스트 불러오기
 	@GetMapping("/faqMain")
 	public String faqMain() {

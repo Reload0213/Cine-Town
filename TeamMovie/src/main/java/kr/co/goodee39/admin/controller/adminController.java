@@ -80,6 +80,18 @@ public class adminController {
 	
 		return "admin/user";
 	}
+	
+	
+	@GetMapping("/userFix")
+	   public String userFix(@ModelAttribute("userVO") UserVO vo) {
+			
+			System.out.println(vo.getUserNum());
+			service.selectUserOne(vo);
+			
+			return "admin/userFix";
+		}
+	
+	
 	@GetMapping("/userFixComplete")
 	public String userFixComplete(@ModelAttribute("userVO") UserVO vo,Model model,@RequestParam(defaultValue = "1")int num,
             @RequestParam(defaultValue="")String userName) {
@@ -215,6 +227,26 @@ public class adminController {
 	}
 	
 	
+	/**
+	 * 공지사항 수정하는 컨트롤러
+	 * @param noticeVO
+	 * @param session
+	 * @return
+	 */
+	@PostMapping("/updateNotice")
+	public String updateNotice(@ModelAttribute("noticeVO") NoticeVO noticeVO, HttpSession session) {
+		
+		// 세션 유저 정보
+		UserVO userVO = (UserVO) session.getAttribute("account");
+		// 세션 유저 아이디
+		String userId = userVO.getUserId();
+		
+		noticeService.updateNotice(noticeVO);
+		
+		return "/admin/board";
+	}
+	
+	
 	
 	
 	
@@ -233,22 +265,7 @@ public class adminController {
 
 	
 	
-	@GetMapping("/userFix")
-   public String userFix(@ModelAttribute("userVO") UserVO vo) {
-		
-		
-		System.out.println(vo.getUserNum());
-		
-		
-		
-		service.selectUserOne(vo);
-		
-	
-		
-		
-		return "admin/userFix";
-		
-	}
+
 
 	
 
