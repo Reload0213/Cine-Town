@@ -1,19 +1,20 @@
 /* 기본설정 초기화 */
-* {
+.textsize{
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-	font-family: 'Noto Sans KR', 'Roboto', sans-serif;
+	font-family: 'Noto Sans KR', 'Roboto', sans-serif; 
 	font-size: 62.5%;
 	letter-spacing: 1%;
-	/* 폰트 초기화 */
+	background-color:yellow;
 }
 
-body {
+/* body {
 	width: 100%;
 	background-color: #fff;
 	
-}
+} */
+
 
 ul, li, ol {
 	list-style: none;
@@ -53,6 +54,7 @@ a {
 	width: 100%;
 	display: flex;
 	color: #141414;
+	 
 }
 
 .userInfoCon .topUserCon {
@@ -86,14 +88,14 @@ a {
 }
 
 .topUl li:nth-child(odd) {
-	font-size: 1.4rem;
+	font-size: 1.1rem;
 	width: 20%;
 	color: #555;
 	font-weight: 300;
 }
 
 .topUl li:nth-child(2n) {
-	font-size: 1.7rem;
+	font-size: 1.3rem;
 	width: 80%;
 	font-weight: bold;
 }
@@ -135,7 +137,7 @@ a {
 .topUl li input {
 	width: 80%;
 	color: #141414;
-	font-size: 1.6rem;
+	font-size: 1.3rem;
 	padding: 0.66rem 0.7rem 0.66rem 1rem;
 	border: 1px solid rgb(224, 224, 224);
 }
@@ -143,7 +145,7 @@ a {
 .topUl li a {
 	color: #141414;
 	padding: 0.88rem 1.5rem;
-	font-size: 1.3rem;
+	font-size: 1.1rem;
 	font-weight: 400;
 	border: 1px solid rgb(224, 224, 224);
 }
@@ -161,7 +163,7 @@ a {
 
 .btnCon li a {
 	color: #141414;
-	font-size: 1.5rem;
+	font-size: 1.2rem;
 	font-weight: bold;
 	padding: 1rem 4rem;
 }
@@ -179,7 +181,7 @@ a {
 
 @media ( max-width :1024px) {
 	html {
-		font-size: 58%;
+		/* font-size: 58%; */
 	}
 }
 
@@ -194,6 +196,6 @@ a {
 
 @media ( max-width :480px) {
 	html {
-		font-size: 53.5%;
+		/* font-size: 53.5%; */
 	}
 }

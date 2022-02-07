@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/assets/css/user/myPage.css">
+<%-- <link rel="stylesheet"
+	href="${pageContext.request.contextPath}/assets/css/user/myPage.css"> --%>
 <style>
 .infomation {
 	height: 60vh;
+	font-size: 16px;
 }
 
 form {
@@ -27,14 +28,54 @@ form {
 button:hover {
 	font-style: italic;
 }
+
+.resultTitle {
+	text-align: center;
+	margin: 50px auto;
+	width: 400px;
+}
+
+.line {
+	border-bottom: 3px solid black;
+	margin: 0 auto;
+}
+
+.cartlink {
+	text-align: center;
+	margin: 0 auto;
+	font-size: 20px;
+}
+
+.cartlink a {
+	color: black;
+}
+
+.cartlink:hover {
+	color: black;
+	font-style: italic;
+	text-align: center;
+	margin: 0 auto;
+	font-size: 20px;
+}
+
+.cartlink:active {
+	border: none;
+}
+
+.cartcenter {
+	display: flex;
+	justify-content: center;
+	margin: 0 auto;
+}
 </style>
 </head>
 <body>
 	<%@ include file="../include/header.jsp"%>
 
-	<div class="container infomation ">
+	<div class="infomation ">
 		<div class="resultTitle">
-			<h3>${sessionScope.account.userName}님</h3>
+			<h3>${sessionScope.account.userName}님의마이페이지입니다</h3>
+			<div class="line"></div>
 		</div>
 
 		<!-- sessionScope에 담겨있는 num을 hidden으로 주고 form의 name userNum에 저장해서 mapper에서 userNum으로 찾을 수 있게 함 -->
@@ -45,11 +86,22 @@ button:hover {
 
 		</form>
 		<br />
+
+		<button
+			onClick="location.href='${pageContext.request.contextPath}/cart/showCartList'"
+			class="mainformSubmit cartcenter">굿즈 장바구니</button>
+		<br />
 		<form id="user_delete">
 			<input type="hidden" value="${sessionScope.account.userNum}"
 				name="userNum" />
 			<button type="submit" class="mainformSubmit user_deleteBtn">회원탈퇴</button>
-
+		</form>
+		<br />
+		<form id="user_comment">
+			<input type="hidden" value="${sessionScope.account.userNum}"
+				name="userNum" />
+			<button type="submit" class="mainformSubmit user_commentList">영화
+				댓글 작성 목록</button>
 		</form>
 
 
@@ -60,22 +112,33 @@ button:hover {
 
 	<%@ include file="../include/footer.jsp"%>
 	<script>
-	$(document).ready(function(){
-		$(".user_deleteBtn").click(function(){
-			let yn = confirm("시네타운을 탈퇴하시겠습니까?");
-			
-			if(yn){
-				let finalmsg = confirm("탈퇴하시면 모든 정보가 삭제 됩니다. 그래도 탈퇴하시겠습니까?");
-				$("#user_delete").attr(
-						"action",
-						"${pageContext.request.contextPath}/user/delete");
-				$("#user_delete").submit();
-				alert("삭제가 완료 되었습니다");
-			}else{
-				console.log("취소")
-			}
-		})
-	})
+		$(document)
+				.ready(
+						function() {
+							$(".user_deleteBtn")
+									.click(
+											function() {
+												let yn = confirm("시네타운을 탈퇴하시겠습니까?");
+
+												if (yn) {
+													let finalmsg = confirm("탈퇴하시면 모든 정보가 삭제 됩니다. 그래도 탈퇴하시겠습니까?");
+													if (finalmsg) {
+
+														$("#user_delete")
+																.attr("action",
+																		"${pageContext.request.contextPath}/user/delete");
+														$("#user_delete")
+																.submit();
+														alert("삭제가 완료 되었습니다");
+													}else{
+														alert("탈퇴가 취소되었습니다");
+													}
+												} else {
+													alert("탈퇴가 취소되었습니다");
+													console.log("취소")
+												}
+											})
+						});
 	</script>
 
 </body>
