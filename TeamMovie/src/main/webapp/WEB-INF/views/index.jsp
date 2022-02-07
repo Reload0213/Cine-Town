@@ -76,7 +76,7 @@
 		<div class="hero-slider owl-carousel">
 			<c:forEach var="bestItem" items="${bestList}">
 				<div class="hs-item set-bg" data-setbg="${bestItem.mvBgPath}">
-					<a href="${pageContext.request.contextPath}/movie/movieDetail?mvNum=${bestItem.mvNum}">
+					<a href="${pageContext.request.contextPath}/movie/movieDetail?mvNum=${bestItem.mvNum}&mvGenre=${bestItem.mvGenre}">
 						<div class="hs-text">
 							<div class="container" style="text-shadow: 3px 5px 5px #000; line-height: 2em; font-size: 4em">
 								<h1 style="padding-bottom: 2em; color:#FFF;">회원님들의 좋은 평가를 받은 Top 5</h1>
@@ -111,7 +111,7 @@
 			<div class="row">
 			<c:forEach var="item" items="${list}" begin="0" end="5">
 				<div class="col-lg-4 col-md-6" style="margin-bottom: 1em;">
-				<a href="${pageContext.request.contextPath}/movie/movieDetail?mvNum=${item.mvNum}">
+				<a href="${pageContext.request.contextPath}/movie/movieDetail?mvNum=${item.mvNum}&mvGenre=${item.mvGenre}">
 					<div class="recent-game-item">
 						<div class="rgi-thumb set-bg" data-setbg="${item.mvPosterPath}" style="height:500px;">
 							<div class="cata new">new</div>
