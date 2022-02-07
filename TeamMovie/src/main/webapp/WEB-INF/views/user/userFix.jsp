@@ -11,15 +11,18 @@
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/assets/css/user/myPage.css">
 <style>
+.table{
+font-size: 62.5%;
+}
 </style>
 <!-- 메인 css 끝 -->
 
 </head>
 <body>
 	<%@ include file="../include/header.jsp"%>
-
+<div class="textsize"></div>
 	<div class="resultTitle">
-		<h3>${userVO.userName}님의회원정보</h3>
+		<h3>${userVO.userName} 님의 회원정보 수정</h3>
 	</div>
 
 	<div class="userInfoCon">

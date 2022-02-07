@@ -8,6 +8,7 @@
 
 
 
+
   <!-- 관리자페이지 폰트 추가 -->
     <!-- 영어는 ROBOTO -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,6 +27,7 @@
 <!-- fontawesome LINK 추가 -->
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
 <!-- fontawesome 끝 -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
 
 <!-- select box option 배경과 같은 흰색이라서 검은색으로 바꿈 -->
 <style type="text/css">

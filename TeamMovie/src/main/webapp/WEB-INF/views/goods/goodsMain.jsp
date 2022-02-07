@@ -423,7 +423,7 @@
                                                     <img class="hover blur-up lazyload" data-src="${goods.gdsImage2 }" src="${goods.gdsImage2 }" alt="image" title="product">
                                                     <!-- End hover image -->
                                                     <!-- product label -->
-                                                    <div class="product-labels rectangular"><span class="lbl on-sale">-16%</span> <span class="lbl pr-label1">new</span></div>
+                                                  <!--   <div class="product-labels rectangular"><span class="lbl on-sale">-16%</span> <span class="lbl pr-label1">new</span></div> -->
                                                     <!-- End product label -->
                                                 </a>
                                                 <!-- end product image -->
@@ -440,8 +440,9 @@
                                         <form:hidden path="gdsNum" value="${goods.gdsNum }"/>
                                           <form:hidden path="cartAmount" value="1"/>
                                             <form:hidden path="userNum" value="${sessionScope.account.userNum }"/>
+                                             <c:if  test="${sessionScope.account.userId != null}">
                                             <form:button class="btn btn-addto-cart" type="submit">Add To Cart</form:button>
-                                          
+                                          </c:if>
                                         </form:form>
                                                 <div class="button-set">
                                                     <a href="javascript:void(0)" title="Quick View" class="quick-view-popup quick-view" data-toggle="modal" data-target="#content_quickview">
@@ -537,7 +538,7 @@
                                                     <img class="hover blur-up lazyload" data-src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image6-1.jpg" src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image6-1.jpg" alt="image" title="product">
                                                     <!-- End hover image -->
                                                     <!-- product label -->
-                                                    <div class="product-labels rectangular"><span class="lbl on-sale">-16%</span> <span class="lbl pr-label1">new</span></div>
+                                                    <!-- <div class="product-labels rectangular"><span class="lbl on-sale">-16%</span> <span class="lbl pr-label1">new</span></div> -->
                                                     <!-- End product label -->
                                                 </a>
                                                 <!-- end product image -->
@@ -1259,7 +1260,7 @@
                                     <img class="grid-view-item__image hover blur-up lazyload" data-src="${goods.gdsImage2 }" src="${goods.gdsImage2 }" alt="image" title="product">
                                     <!-- End hover image -->
                                     <!-- product label -->
-                                    <div class="product-labels rectangular"><span class="lbl on-sale">-16%</span> <span class="lbl pr-label1">new</span></div>
+                                   <!--  <div class="product-labels rectangular"><span class="lbl on-sale">-16%</span> <span class="lbl pr-label1">new</span></div> -->
                                     <!-- End product label -->
                                 </a>
                                 <!-- end product image -->

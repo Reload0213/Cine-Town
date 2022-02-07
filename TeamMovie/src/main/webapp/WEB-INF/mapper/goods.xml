@@ -3,19 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   <mapper namespace="goods">
- <!--  <select id="showGoodsList" parameterType="goodsVO" resultType="goodsVO">
-  select gdsNum, gdsPrice, gdsStock, gdsViewcnt, gdsUUID, gdsName, gdsDetail, gdsRegdate, gdsIsdelete, gdsBrand, gdsImage1, gdsImage2
-  from goods
-  where gdsIsdelete = 'N'
-  </select> -->
-  
-<!--     <select id="showGoodsList" parameterType="goodsVO" resultType="goodsVO">
- SELECT g.gdsNum, gdsPrice, gdsStock, gdsViewcnt, gdsUUID, gdsName, gdsDetail, gdsRegdate, gdsIsdelete, gdsBrand, gdsImage1, gdsImage2, round(avg(r.grScore)) AS grScore
-  from goods g, goodsreview r
-  where gdsIsdelete = 'N'
-  AND r.gdsNum = g.gdsNum
- GROUP BY r.gdsnum 
-  </select> -->
+<!-- 상품 전체 리스트를 보여주는 쿼리 -->
    <select id="showGoodsList" parameterType="goodsVO" resultType="goodsVO">
  SELECT g.gdsNum as gdsNum, gdsPrice, gdsStock, gdsViewcnt, gdsUUID, gdsName, gdsDetail, gdsDetail2, gdsDetail3, gdsDetail4, gdsDetail5, gdsDetail6, gdsDetail7, gdsRegdate, gdsIsdelete, gdsBrand, gdsImage1, gdsImage2, round(avg(r.grScore)) AS grScore
   from goods g LEFT OUTER JOIN goodsreview r ON g.gdsNum = r.gdsNum
@@ -24,15 +12,37 @@
   ORDER BY g.gdsNum
   </select> 
   
-<!--   <select id="showGoodsItem" parameterType="goodsVO" resultType="goodsVO">
-  select gdsNum, gdsPrice, gdsStock, gdsViewcnt, gdsUUID, gdsName, gdsDetail, gdsRegdate, gdsIsdelete, gdsBrand, gdsImage1, gdsImage2
-  from goods
-  where gdsNum = #{gdsNum}
-  </select> -->
-  
+
+  <!-- 특정 상품을 뿌려주는 쿼리 -->
     <select id="showGoodsItem" parameterType="goodsVO" resultType="goodsVO">
    SELECT g.gdsNum AS gdsNum, gdsPrice, gdsStock, gdsViewcnt, gdsUUID, gdsName, gdsDetail,  gdsDetail2, gdsDetail3, gdsDetail4, gdsDetail5, gdsDetail6, gdsDetail7, gdsRegdate, gdsIsdelete, gdsBrand, gdsImage1, gdsImage2, round(avg(r.grScore)) AS grScore
   from goods g, goodsreview r
   WHERE g.gdsNum = #{gdsNum}
+  </select>
+  
+  <!-- 상품 개수를 보여주는 쿼리 -->
+  <select id="showGoodsCount" resultType="int">
+  SELECT COUNT(gdsNum)
+FROM goods
+WHERE gdsIsdelete = 'n'
+  </select>
+  
+  <!-- 인덱스 페이지에 보여줄 제일 평점이 높은 4개의 상품을 내림차순으로 정렬 -->
+  <select id="showTop4GoodsList" parameterType="goodsVO" resultType="goodsVO">
+  SELECT  g.gdsNum as gdsNum, gdsPrice, gdsStock, gdsViewcnt, gdsUUID, gdsName, gdsDetail, gdsDetail2, gdsDetail3, gdsDetail4, gdsDetail5, gdsDetail6, gdsDetail7, gdsRegdate, gdsIsdelete, gdsBrand, gdsImage1, gdsImage2, round(avg(r.grScore)) AS grScore
+  from goods g LEFT OUTER JOIN goodsreview r ON g.gdsNum = r.gdsNum
+  where gdsIsdelete = 'N'
+  GROUP BY g.gdsnum 
+  ORDER BY grScore DESC
+  LIMIT 4
+  </select>
+  
+  <!-- 영화에 대한 연관 상품을 보여주는 쿼리 -->
+  <select id="relateGoodsList" parameterType="String" resultType="goodsVO">
+     SELECT g.gdsNum AS gdsNum, gdsPrice, gdsStock, gdsViewcnt, gdsUUID, gdsName, gdsDetail,  gdsDetail2, gdsDetail3, gdsDetail4, gdsDetail5, gdsDetail6, gdsDetail7, gdsRegdate, gdsIsdelete, gdsBrand, gdsImage1, gdsImage2, round(avg(r.grScore)) AS grScore
+  from goods g LEFT OUTER JOIN goodsreview r ON g.gdsNum = r.gdsNum
+  WHERE g.mvTitle = #{mvTitle}
+  AND gdsIsdelete = 'N'
+  GROUP BY g.gdsNum
   </select>
   </mapper>

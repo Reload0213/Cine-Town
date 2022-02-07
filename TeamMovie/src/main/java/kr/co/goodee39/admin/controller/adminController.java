@@ -80,6 +80,18 @@ public class adminController {
 	
 		return "admin/user";
 	}
+	
+	
+	@GetMapping("/userFix")
+	   public String userFix(@ModelAttribute("userVO") UserVO vo) {
+			
+			System.out.println(vo.getUserNum());
+			service.selectUserOne(vo);
+			
+			return "admin/userFix";
+		}
+	
+	
 	@GetMapping("/userFixComplete")
 	public String userFixComplete(@ModelAttribute("userVO") UserVO vo,Model model,@RequestParam(defaultValue = "1")int num,
             @RequestParam(defaultValue="")String userName) {
@@ -140,7 +152,7 @@ public class adminController {
 	}
 	
 	/**
-	 * 강혜수 AJAX로 게시판 화면 출력
+	 * 게시판 선택 시 리스트 출력하는 컨트롤러(공지사항, QNA)
 	 * @param vo
 	 * @param model
 	 * @param req
@@ -174,8 +186,7 @@ public class adminController {
 	
 	/**
 	 * 공지사항 삭제하는 컨트롤러
-	 * @param noticeNum
-	 * @param model
+	 * @param vo
 	 * @return
 	 */
 	@ResponseBody
@@ -195,6 +206,38 @@ public class adminController {
 		return map;
 	}
 	
+	/**
+	 * 공지사항 수정페이지 불러오는 컨트롤러
+	 * @param noticeNum
+	 * @param model
+	 * @param noticeVO
+	 * @return
+	 */
+	@GetMapping("/noticeUpdate")
+	public String noticeUpdate(@RequestParam("noticeNum") int noticeNum, Model model, @ModelAttribute("noticeVO") NoticeVO noticeVO) {
+		
+		// 공지사항 상세 정보
+		NoticeVO noticeDetail = noticeService.getNoticeContents(noticeNum);
+		
+		model.addAttribute("notice", noticeDetail);
+		
+		return "/admin/noticeFix";
+	}
+	
+	/**
+	 * 공지사항 수정하는 컨트롤러
+	 * @param noticeVO
+	 * @return
+	 */
+	@GetMapping("/updateNotice")
+	public String updateNotice(@ModelAttribute("noticeVO") NoticeVO noticeVO) {
+	
+		noticeService.updateNotice(noticeVO);
+
+		return "/admin/board";
+	}
+	
+	
 	@GetMapping("/board/qna")
 	public String qna(Model model,@RequestParam(defaultValue = "1") int num) {
       
@@ -206,30 +249,6 @@ public class adminController {
 	}
 	
 
-	
-	
-	@GetMapping("/userFix")
-   public String userFix(@ModelAttribute("userVO") UserVO vo) {
-		
-		
-		System.out.println(vo.getUserNum());
-		
-		
-		
-		service.selectUserOne(vo);
-		
-	
-		
-		
-		return "admin/userFix";
-		
-	}
-
-	
-
-	
-	
-	
 	/*
 	 * 컨트롤러 담당: 김용현 
 	 * a링크로 컨트롤러를 타는지 확인 / 페이지 디자인 안 깨지도록 확인하기 위해 만든 컨트롤러 입니다

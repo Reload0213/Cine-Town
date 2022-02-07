@@ -5,6 +5,7 @@
 <table>
 	<thead>
 		<tr>
+			<th> </th>
 			<th>번호</th>
 			<th>카테고리</th>
 			<th>제목</th>
@@ -20,6 +21,7 @@
 			<c:if test="${fn:length(nList) > 0}">
 				<c:forEach var="list" items="${nList }">
 					<tr>
+					<td><a href="${pageContext.request.contextPath}/admin/noticeUpdate?noticeNum=${list.noticeNum }"><i class="xi-pen" style="color: black; font-size: 1.8rem;"></i></a></td>
 						<td>${list.noticeNum }</td>
 						<td>${list.noticeCategory }</td>
 						<td><a style="color: #141414; font-size: 15px;" href="${pageContext.request.contextPath}/aboutUs/noticeView?noticeNum=${list.noticeNum }">${list.noticeTitle }</a></td>

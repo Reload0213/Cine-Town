@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
-<%@ include file="../include2/header.jsp" %>
+<%@ include file="../include2/header.jsp" %> 
 <head>
 
 <!--  스타일추가 -->
@@ -71,7 +71,7 @@
 
 <%@ include file="voteForm.jsp"%>
 <!-- 임승혁 바디끝  -->
-
+<%@ include file="comment.jsp"%>
 
 
 

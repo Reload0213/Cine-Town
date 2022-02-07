@@ -437,13 +437,13 @@
                                             <span class="product-price__price product-price__price-product-template product-price__sale product-price__sale--single">
                                                 <span id="ProductPrice-product-template"><span class="money korean">${goods.gdsPrice }원</span></span>
                                             </span>
-                                            <span class="discount-badge"> <span class="devider">|</span>&nbsp;
+                                      <!--       <span class="discount-badge"> <span class="devider">|</span>&nbsp;
                                                 <span class="korean">할인</span>
                                                 <span id="SaveAmount-product-template" class="product-single__save-amount">
                                                 <span class="money">$100.00</span>
                                                 </span>
                                                 <span class="off">(<span>16</span>%)</span>
-                                            </span>  
+                                            </span>   -->
                                         </p>
                                         <div class="orderMsg" data-user="23" data-time="24">
                                             <img src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/order-icon.jpg" alt="" /> <strong class="items">5</strong> sold in last <strong class="time">26</strong> hours</div>
@@ -523,15 +523,19 @@
                                             </div>                                
                                             <div class="product-form__item--submit">
                                              <!--    <button type="button" name="add" class="btn product-form__cart-submit"> -->
+                                             <c:if  test="${sessionScope.account.userId != null}">
                                                 <form:button type="submit" name="add" class="btn product-form__cart-submit">
                                                     <span>장바구니에 담기</span>
                                                     </form:button>
+                                                    </c:if>
                                         <!--         </button> -->
                                             </div>
+                                                <c:if  test="${sessionScope.account.userId != null}">
                                             <div class="shopify-payment-button" data-shopify="payment-button">
                                                <!--  <button type="button" class="shopify-payment-button__button shopify-payment-button__button--unbranded">바로 구매하기</button> -->
                                                 <form:button type="submit" class="shopify-payment-button__button shopify-payment-button__button--unbranded">바로 구매하기</form:button>
                                             </div>
+                                            </c:if>
                                         </div>
                                         <!-- End Product Action -->
                                         </form:form>

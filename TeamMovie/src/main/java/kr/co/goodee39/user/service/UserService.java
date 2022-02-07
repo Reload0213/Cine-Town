@@ -1,7 +1,10 @@
 package kr.co.goodee39.user.service;
 
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.HashMap;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.mybatis.spring.SqlSessionTemplate;
@@ -47,7 +50,7 @@ public class UserService {
 	}
 
 	// 로그인
-	public String goLoginService(UserVO vo, HttpSession session) {
+	public String goLoginService(UserVO vo, HttpSession session, HttpServletResponse response) throws IOException {
 		System.out.println("goLogin 실행");
 		UserVO vo1 = sqlSessionTemplate.selectOne("user.selectUser", vo);
 		String path = "";
@@ -65,6 +68,13 @@ public class UserService {
 				path = "redirect:/";
 			}
 		} else {
+			PrintWriter out = response.getWriter();
+			response.setContentType("text/html; charset=utf-8");
+			out.println("<script language='javascript'>");
+			out.println("alert('일치하는 정보가 없습니다.'); history.go(-1);"); // 영주님의 영혼이 깃든 곳
+			out.println("</script>");
+			out.flush();
+
 			path = "/user/signin";
 		}
 		return path;
@@ -108,27 +118,30 @@ public class UserService {
 		sqlSessionTemplate.update("user.updateUser", vo);
 	}
 
-	/*
-	 * public void showUserInfo(Model model,int num,String userName){
-	 * 
-	 * UserVO vo = new UserVO(); vo.setStart((num-1)*vo.getCount()); //인덱스시작
-	 * 
-	 * if (!"".equals(userName)) {
-	 * 
-	 * model.addAttribute("userName",userName);
-	 * 
-	 * vo.setUserName(userName);
-	 * 
-	 * } model.addAttribute("list",sqlSessionTemplate.selectList(
-	 * "user.showUserInfoList",vo));
-	 * 
-	 * model.addAttribute("count",sqlSessionTemplate.selectOne(
-	 * "user.selectUserCount",vo));
-	 * 
-	 * 
-	 * model.addAttribute("num",num);
-	 * 
-	 * }
-	 */
+	// 회원 탈퇴
+	public void deleteUser(UserVO vo) {
+
+		sqlSessionTemplate.selectOne("user.deleteUser", vo);
+
+	}
+
+	// 내가 작성한 댓글 목록
+	public UserVO selectCommentList(UserVO vo) {
+		UserVO vo1 = new UserVO();
+
+		vo1 = sqlSessionTemplate.selectOne("user.showUserInfoOne", vo);
+		vo.setUserId(vo1.getUserId());
+		vo.setUserName(vo1.getUserName());
+		vo.setUserNum(vo1.getUserNum());
+		vo.setUserRegdate(vo1.getUserRegdate());
+		vo.setUserPw(vo1.getUserPw());
+		vo.setUserEmail(vo1.getUserEmail());
+		vo.setUserPhone(vo1.getUserPhone());
+		vo.setUserAddr1(vo1.getUserAddr1());
+		vo.setUserAddr2(vo1.getUserAddr2());
+		vo.setUserAddr3(vo1.getUserAddr3());
+
+		return vo;
+	}
 
 }

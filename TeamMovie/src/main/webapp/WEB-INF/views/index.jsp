@@ -64,13 +64,13 @@
 	<main>
 	
 
-	<a href="${pageContext.request.contextPath}/user/myPage">유저 페이지로 이동</a>	
+<%-- 	<a href="${pageContext.request.contextPath}/user/myPage">유저 페이지로 이동</a>	
 	<a href="${pageContext.request.contextPath}/user/signin">유저 페이지로 이동</a>	
 	<a href="${pageContext.request.contextPath}/goods/goodsDetail">굿즈디테일페이지</a>
 	<a href="${pageContext.request.contextPath}/goods/goodsMain">굿즈메인페이지</a>
 	<a href="${pageContext.request.contextPath}/goods/goodsMenu">굿즈메뉴페이지</a>
 	<a href="${pageContext.request.contextPath}/admin/adminShopCreatePage">관리자 상품생성 페이지</a>
-	<a href="${pageContext.request.contextPath}/admin/adminShopCRUDPage">관리자 상품CRUD 페이지</a>
+	<a href="${pageContext.request.contextPath}/admin/adminShopCRUDPage">관리자 상품CRUD 페이지</a> --%>
 	<!-- 강혜수 바디 -->
 	<section class="hero-section">
 		<div class="hero-slider owl-carousel">
@@ -339,21 +339,29 @@
               </div>
           </div>
           <div class="col-lg-5 px-0">
+          
+          
               <div class="row mx-0">
+              
+              <!-- 별점 순위 top4개의 상품을 뿌려주는 영역 시작 -->
+              <c:forEach var="item" items="${top4GoodsList }">
                   <div class="col-md-6 px-0">
                       <div class="position-relative overflow-hidden" style="height: 250px;">
-                          <img class="img-fluid w-100 h-100" src="assets/images/index/footer_img/news-700x435-1.jpg" style="object-fit: cover;">
+                          <img class="img-fluid w-100 h-100" src="${item.gdsImage1 }" style="object-fit: auto;">
                           <div class="overlay">
                               <div class="mb-2">
-                                  <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                                      href="">Business</a>
-                                  <a class="text-white" href=""><small>Jan 01, 2045</small></a>
+                                  <a style="background-color: rgb(240,18,25);" class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                      href="${pageContext.request.contextPath }/goods/${item.gdsNum}?id=${item.gdsNum}">Top 4 Goods!</a>
+                                 <!--  <a class="text-white" href=""><small>Jan 01, 2045</small></a> -->
                               </div>
-                              <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">Lorem ipsum dolor sit amet elit...</a>
+                              <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="${pageContext.request.contextPath }/goods/${item.gdsNum}?id=${item.gdsNum}">${item.gdsName }</a>
                           </div>
                       </div>
                   </div>
-                  <div class="col-md-6 px-0">
+                  </c:forEach>
+                     <!-- 별점 순위 top4개의 상품을 뿌려주는 영역 종료 -->
+                  
+                <!--   <div class="col-md-6 px-0">
                       <div class="position-relative overflow-hidden" style="height: 250px;">
                           <img class="img-fluid w-100 h-100" src="assets/images/index/footer_img/news-700x435-2.jpg" style="object-fit: cover;">
                           <div class="overlay">
@@ -366,6 +374,8 @@
                           </div>
                       </div>
                   </div>
+                  
+                  
                   <div class="col-md-6 px-0">
                       <div class="position-relative overflow-hidden" style="height: 250px;">
                           <img class="img-fluid w-100 h-100" src="assets/images/index/footer_img/news-700x435-3.jpg" style="object-fit: cover;">
@@ -379,6 +389,8 @@
                           </div>
                       </div>
                   </div>
+                  
+                  
                   <div class="col-md-6 px-0">
                       <div class="position-relative overflow-hidden" style="height: 250px;">
                           <img class="img-fluid w-100 h-100" src="assets/images/index/footer_img/news-700x435-4.jpg" style="object-fit: cover;">
@@ -391,8 +403,14 @@
                               <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">Lorem ipsum dolor sit amet elit...</a>
                           </div>
                       </div>
-                  </div>
+                  </div> -->
+                  
+                  
+                  
               </div>
+              
+              
+              
           </div>
       </div>
   </div>

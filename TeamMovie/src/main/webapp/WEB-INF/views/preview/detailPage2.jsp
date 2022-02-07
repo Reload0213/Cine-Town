@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
-<%@ include file="../include2/header.jsp" %>
+<%@ include file="../include2/header.jsp" %> 
 <head>
 
 <!--  스타일추가 -->
@@ -68,6 +68,7 @@
 <%@ include file="voteForm.jsp"%>
 
 
+<%@ include file="comment.jsp"%>
 <!-- 임승혁 게시판 디테일 영화해적 바디끝 -->
 
 

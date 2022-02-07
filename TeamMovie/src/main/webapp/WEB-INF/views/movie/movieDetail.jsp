@@ -371,11 +371,13 @@
 				</div>
 				<!-- .col -->
 
+
+<c:forEach var="item" items="${relateGoodsList }">
 				<div class="col-12 col-md-6 col-lg-4 px-25">
 					<div class="course-content">
 						<figure class="course-thumbnail">
-							<a href="#"><img
-								src="${pageContext.request.contextPath}/assets/images/movieDetail/1.jpg"
+							<a href="${pageContext.request.contextPath }/goods/${item.gdsNum}?id=${item.gdsNum}"><img
+								src="${item.gdsImage1 }"
 								alt=""></a>
 						</figure>
 						<!-- .course-thumbnail -->
@@ -383,16 +385,16 @@
 						<div class="course-content-wrap">
 							<div class="entry-header">
 								<h2 class="entry-title">
-									<a href="#">The Complete Android Developer Course</a>
+									<a href="${pageContext.request.contextPath }/goods/${item.gdsNum}?id=${item.gdsNum}">${item.gdsName }</a>
 								</h2>
 
-								<div class="entry-meta flex align-items-center">
+						<!-- 		<div class="entry-meta flex align-items-center">
 									<div class="course-author">
 										<a href="#">Ms. Lara Croft </a>
 									</div>
 
 									<div class="course-date">July 21, 2018</div>
-								</div>
+								</div> -->
 								<!-- .course-date -->
 							</div>
 							<!-- .entry-header -->
@@ -400,17 +402,22 @@
 							<footer
 								class="entry-footer flex justify-content-between align-items-center">
 								<div class="course-cost">
-									$45 <span class="price-drop">$68</span>
+									${item.gdsPrice }원<!--  <span class="price-drop">$68</span> -->
 								</div>
 								<!-- .course-cost -->
 
 								<div
 									class="course-ratings flex justify-content-end align-items-center">
-									<span class="xi-star checked"></span> <span
-										class="xi-star checked"></span> <span class="xi-star checked"></span>
-									<span class="xi-star checked"></span> <span class="xi-star-o"></span>
-
-									<span class="course-ratings-count">(4 votes)</span>
+									<c:forEach begin="1" end="${item.grScore }" var="i">
+									<span class="xi-star checked"></span>
+									</c:forEach>
+									<!--  <span class="xi-star checked"></span> 
+									 <span class="xi-star checked"></span>
+									<span class="xi-star checked"></span>  -->
+									<c:forEach begin="1" end="${5 - item.grScore }" var="i">
+									<span class="xi-star-o"></span>
+									</c:forEach>
+									<!-- <span class="course-ratings-count">(4 votes)</span> -->
 								</div>
 								<!-- .course-ratings -->
 							</footer>
@@ -421,8 +428,15 @@
 					<!-- .course-content -->
 				</div>
 				<!-- .col -->
+				</c:forEach>
+				
+				
+				
+				
+				
+				
 
-				<div class="col-12 col-md-6 col-lg-4 px-25">
+				<%-- <div class="col-12 col-md-6 col-lg-4 px-25">
 					<div class="course-content">
 						<figure class="course-thumbnail">
 							<a href="#"><img
@@ -473,6 +487,14 @@
 					<!-- .course-content -->
 				</div>
 				<!-- .col -->
+				
+				
+				
+				
+				
+				
+				
+				
 
 				<div class="col-12 col-md-6 col-lg-4 px-25">
 					<div class="course-content">
@@ -524,6 +546,15 @@
 					<!-- .course-content -->
 				</div>
 				<!-- .col -->
+				
+				
+				
+				
+				
+				
+				
+				
+				
 
 				<div class="col-12 col-md-6 col-lg-4 px-25">
 					<div class="course-content">
@@ -575,6 +606,13 @@
 					<!-- .course-content -->
 				</div>
 				<!-- .col -->
+				
+				
+				
+				
+				
+				
+				
 
 				<div class="col-12 col-md-6 col-lg-4 px-25">
 					<div class="course-content">
@@ -626,6 +664,13 @@
 					<!-- .course-content -->
 				</div>
 				<!-- .col -->
+				
+				
+				
+				
+				
+				
+				
 
 				<div class="col-12 col-md-6 col-lg-4 px-25">
 					<div class="course-content">
@@ -676,10 +721,17 @@
 					</div>
 					<!-- .course-content -->
 				</div>
-				<!-- .col -->
+				<!-- .col --> --%>
+				
+				
+				
+				
+				
+				
+				
 
 				<div class="col-12 px-25 flex justify-content-center">
-					<a class="btn" href="#">전체 굿즈 상품 보러가기</a>
+					<a class="btn" href="${pageContext.request.contextPath}/goods/goodsMenu">전체 굿즈 상품 보러가기</a>
 				</div>
 				<!-- .col -->
 			</div>

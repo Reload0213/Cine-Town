@@ -40,11 +40,16 @@ public class userController {
 
 	// 로그인 post
 	@PostMapping("/loginComplete")
-	public String loginComplete(@ModelAttribute("userVO") UserVO vo, HttpSession session) {
+	public String loginComplete(@ModelAttribute("userVO") UserVO vo, HttpSession session, HttpServletResponse response) throws IOException {
 		System.out.println("loginComplete실행");
-		return userService.goLoginService(vo, session);
+		
+		return userService.goLoginService(vo, session, response);
 
 	}
+	
+	
+	
+	
 
 	// 회원가입 페이지로 이동
 	@GetMapping("/signup")
@@ -164,6 +169,7 @@ public class userController {
 
 	}
 
+	// 개별 정보 수정
 	@PostMapping("/userPwUpdate")
 	public ResponseEntity<UserVO> userPwUpdate(@RequestBody UserVO vo) {
 
@@ -177,16 +183,31 @@ public class userController {
 
 	}
 
-	// 정보 수정 데이터 넘기기
+	// 정보 수정 폼 데이터 넘기기
 	@GetMapping("/userFixComplete")
 	public String userFixComplete(UserVO vo, Model model, @RequestParam(defaultValue = "") String userName) {
 		userService.updateUser(vo);
 		return "user/myPage";
 
 	}
-	
-	//회원 탈퇴
 
+	// 회원 탈퇴
+	@GetMapping("/delete")
+	public String updateDeleteUser(UserVO vo, HttpSession session) {
+
+		userService.deleteUser(vo);
+
+		session.invalidate();
+		return "redirect:/";
+
+	}
 	
+	//댓글 목록 보기
+	@GetMapping("/commentList")
+	public String getCommentList(UserVO vo) {
+		
+	
+		return "user/commentList";
+	}
 
 }

@@ -100,13 +100,11 @@
 	</update>
 
 	<!-- 회원삭제 -->
-	<update id="updateDeleteUser" parameterType="userVO">
-		update user
-		set
-		userIsdelete='Y'
+	<delete id="deleteUser" parameterType="userVO">
+		delete from user
 		where userNum=#{userNum}
 
-	</update>
+	</delete>
 
 
 
