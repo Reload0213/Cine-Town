@@ -4,12 +4,29 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="qna">
 
-	<!-- 공지사항 리스트 불러오는 쿼리 -->
+   <!-- 질문게시판 리스트 불러오는 쿼리 -->
+   <select id="qnaList" parameterType="qnaVO" resultType="qnaVO">
+      select qnaNum,
+      		 qnaCategory,
+      		 qnaTitle,
+      		 qnaComment,
+      	     qnaIsdelete,
+      	     date_format(qnaRegdate,'%Y-%m-%d') qnaRegdate
+      from qna
+      where
+      qnaIsdelete = 'N'
+   </select>
+   
+	<!-- 질문게시판 리스트 불러오는 쿼리 -->
 	<select id="selectQnaList" parameterType="qnaVO" resultType="qnaVO">
-		select qnaNum, qnaCategory, qnaTitle, qnaComment, qnaRegdate
+		select qnaNum,
+			   qnaCategory,
+			   qnaTitle,
+		       qnaComment,
+		       qnaIsdelete,
+		       date_format(qnaRegdate,'%Y-%m-%d') qnaRegdate
 		from qna
-		where
-		qnaIsdelete = 'N'
+		where qnaIsdelete = 'N'
         order by qnaNum 
         limit #{start},#{count}
 	</select>
@@ -17,20 +34,37 @@
 	<select id="selectCountQna" parameterType="qnaVO" resultType="int">
 	select count(*)
 	from qna
-	where qnaIsdelete = 'N'
+	where 
+	qnaIsdelete = 'N'
 	</select>
 	
-	<!-- 공지사항 상세 페이지 불러오는 쿼리 -->
+	<!-- 질문게시판 상세 페이지 불러오는 쿼리 -->
 	<select id="getQnaContents" parameterType="int" resultType="qnaVO">
 		select *
 		from qna
 		where qnaNum = #{value}
 	</select>
 	
-	<!-- 공지사항 등록하는 쿼리 -->
+	<!-- 질문게시판 등록하는 쿼리 -->
 	<insert id="qnaWrite" parameterType="qnaVO">
-		insert into qna (qnaCategory, qnaTitle, qnaComment, qnaIsdelete, qnaRegdate)
-		values ('QnA', #{qnaTitle}, #{qnaComment}, 'n', #{qnaRegdate})
+		insert into qna (qnaCategory, qnaTitle, qnaComment, qnaIsdelete, adId)
+		values ('QNA', #{qnaTitle}, #{qnaComment}, 'N', #{adId})
 	</insert>
 	
+	<!-- 질문게시판 수정하는 쿼리 -->
+	<update id="updateQna" parameterType="qnaVO">
+		update qna 
+		set 
+			qnaTitle = #{qnaTitle}, 
+			qnaComment = #{qnaComment}
+		where qnaNum = #{qnaNum}
+	</update>
+	
+	<!-- 질문게시판 삭제하는 쿼리 -->
+	<update id="deleteQna" parameterType="int">
+		update qna
+		set qnaIsdelete = 'Y'
+		where qnaNum = #{value}
+	</update>
+		
 </mapper>
