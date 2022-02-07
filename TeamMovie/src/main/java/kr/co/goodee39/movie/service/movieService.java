@@ -29,15 +29,17 @@ public class movieService {
 	}
 	
 	public void getGenreMvList(Model model, MovieVO vo) {
-		System.out.println(vo.getMvNum());
-		System.out.println(vo.getMvGenre());
+		System.out.println("서비스단 mvnum확인"+vo.getMvNum());
+		System.out.println("서비스단 MvGenre확인"+vo.getMvGenre());
 		List<MovieVO> mvGvo = sqlSessionTemplate.selectList("movie.getGenreMovie", vo);
 		model.addAttribute("genreList", mvGvo);
+		
+//		MovieVO gmvo = new MovieVO();
 		
 //		model.addAttribute("genreList", sqlSessionTemplate.selectList("movie.getGenreMovie", vo));
 //		MovieVO gmvo = new MovieVO();
 //		vo.setMvNum(gmvo.getMvNum());
-//		vo.setMvTitle(gmvo.getMvTitle());
+//		vo.setMvTitle(gmvo2.getMvTitle());
 //		vo.setMvActor(gmvo.getMvActor());
 //		vo.setMvContent1(gmvo.getMvContent1());
 //		vo.setMvContent2(gmvo.getMvContent2());
@@ -54,11 +56,5 @@ public class movieService {
 //		vo.setMvTrailer(gmvo.getMvTrailer());
 //		vo.setMvRpCount(gmvo.getMvRpCount());	
 	}
-	
-//	public List<MovieVO> getGenreMvList(Model model, MovieVO vo) {
-//	
-//		
-//		return sqlSessionTemplate.selectList("movie.getGenreMovie");
-//	}
 	
 }

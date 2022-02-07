@@ -31,7 +31,6 @@
 		  ON M.mvNum = R.mvNum
 		  where mvIsdelete = 'N'
 		  and M.mvGenre = #{mvGenre}
-		  and M.mvNum != #{mvNum}
 		  limit 2;
 	  </select>
 	  

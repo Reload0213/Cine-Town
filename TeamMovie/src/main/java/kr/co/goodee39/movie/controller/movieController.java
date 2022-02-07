@@ -32,12 +32,17 @@ public class movieController {
 		
 		@GetMapping("/movieDetail")
 		public String goMovieDetail(MovieVO vo, Model model) {
-			mService.getMovieDetail(model, vo);
-			List<GoodsVO> relateGoodsList = goodsService.relateGoodsList(vo.getMvTitle());
-			model.addAttribute("relateGoodsList", relateGoodsList);
-			System.out.println("movieDetail 종료");
-			
-			
+			 mService.getMovieDetail(model, vo);
+	         MovieVO mvo =  (MovieVO)model.getAttribute("mvDetail");
+	         String mvTitle = mvo.getMvTitle();
+	         System.out.println(mvTitle);
+	         List<GoodsVO> relateGoodsList = goodsService.relateGoodsList(mvTitle); 
+	         
+	           
+	         model.addAttribute("relateGoodsList", relateGoodsList );
+	          
+	         System.out.println("movieDetail 종료");
+
 			
 			
 			mService.getGenreMvList(model, vo);

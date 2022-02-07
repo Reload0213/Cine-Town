@@ -49,7 +49,7 @@
 				<div class="col-md-6 col-lg-4">
 					<div class="single-category">
 						<div class="thumb">
-						<a href="${pageContext.request.contextPath}/movie/movieDetail?mvNum=${item.mvNum}">
+						<a href="${pageContext.request.contextPath}/movie/movieDetail?mvNum=${item.mvNum}&mvGenre=${item.mvGenre}">
 							<img class="img-fluid"
 								src="${item.mvPosterPath}"
 								alt="">
