@@ -77,8 +77,8 @@
 					</ul>
 
 					<c:if test="${sessionScope.account.userId != null}">
-						<div class="username" style="color: white">
-							<a href="${pageContext.request.contextPath}/user/myPage" class="myPagecss">${sessionScope.account.userName}님</a></div>
+						<div class="username">
+							<a href="${pageContext.request.contextPath}/user/myPage" class="myPagecss" style="color:white">${sessionScope.account.userName}님</a></div>
 					</c:if>
 				</div>
 				<div class="user_option">
