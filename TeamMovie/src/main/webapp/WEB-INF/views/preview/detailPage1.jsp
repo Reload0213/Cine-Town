@@ -2,8 +2,8 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%-- <%@ include file="../include2/header.jsp" %> --%>
-	<%@ include file="../include/header.jsp"%>
+<%@ include file="../include2/header.jsp" %> 
+
 <head>
 
 <!--  스타일추가 -->

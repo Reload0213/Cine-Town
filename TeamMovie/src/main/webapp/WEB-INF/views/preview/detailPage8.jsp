@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
-<%@ include file="../include2/header.jsp" %>
+<%@ include file="../include2/header.jsp" %> 
 <head>
 
 <!--  스타일추가 -->
