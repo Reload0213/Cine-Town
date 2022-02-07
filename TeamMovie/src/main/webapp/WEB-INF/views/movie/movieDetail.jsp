@@ -1,3 +1,5 @@
+<%@page import="kr.co.goodee39.movie.vo.MovieVO"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -81,13 +83,13 @@
 
 
 		<div class="page-header-overlay"
-			style="height: 1000px; background-image: url('${movieVO.mvBgPath}');">
+			style="height: 1000px; background-image: url('${mvDetail.mvBgPath}');">
 			<div class="container">
 				<div class="row">
 					<div class="col-12">
 						<div class="entry-header"
 							style="text-shadow: 3px 5px 5px #000; line-height: 2em; font-size: 2em">
-							<h1 class="entry-title">${movieVO.mvTitle}</h1>
+							<h1 class="entry-title">${mvDetail.mvTitle}</h1>
 
 							<div
 								class="entry-meta flex justify-content-center align-items-center">
@@ -96,7 +98,7 @@
 								</div>
 
 								<div class="post-comments">
-									<span style="color:white;">${movieVO.mvActor}</span>
+									<span style="color:white;">${mvDetail.mvActor}</span>
 								</div>
 							</div>
 							<div
@@ -106,7 +108,7 @@
 								</div>
 
 								<div class="post-comments">
-									<span style="color:white;">${movieVO.mvAge} 이용가</span>
+									<span style="color:white;">${mvDetail.mvAge} 이용가</span>
 								</div>
 							</div>
 							<div
@@ -116,7 +118,7 @@
 								</div>
 
 								<div class="post-comments">
-									<span class="xi-star checked" style="color:#FEDD6A"></span><span style="color:white;">${movieVO.mvAvgRate}점</span>
+									<span class="xi-star checked" style="color:#FEDD6A"></span><span style="color:white;">${mvDetail.mvAvgRate}점</span>
 								</div>
 							</div>
 							<div
@@ -126,7 +128,7 @@
 								</div>
 
 								<div class="post-comments">
-									<span style="color:white;">${movieVO.mvGenre}</span>
+									<span style="color:white;">${mvDetail.mvGenre}</span>
 								</div>
 							</div>
 							<div
@@ -136,7 +138,7 @@
 								</div>
 
 								<div class="post-comments">
-									<span style="color:white;">${movieVO.mvRuntime} 분</span>
+									<span style="color:white;">${mvDetail.mvRuntime} 분</span>
 								</div>
 							</div>
 							<div
@@ -146,7 +148,7 @@
 								</div>
 
 								<div class="post-comments">
-									<span style="color:white;">${movieVO.mvProducer}</span>
+									<span style="color:white;">${mvDetail.mvProducer}</span>
 								</div>
 							</div>
 							<!-- .entry-meta -->
@@ -167,7 +169,7 @@
 		<div class="row">
 			<div class="col-12 offset-lg-1 col-lg-10" style="width: 100%;">
 				<div class="featured-image">
-					<img src="${movieVO.mvPosterPath}" alt="" style="width: 100%;">
+					<img src="${mvDetail.mvPosterPath}" alt="" style="width: 100%;">
 
 					<!-- .posted-date -->
 				</div>
@@ -197,20 +199,20 @@
 
 			<div class="col-12 col-lg-8">
 				<div class="single-post-wrap">
-					<p>${movieVO.mvContent1}</p>
+					<p>${mvDetail.mvContent1}</p>
 
 
-					<p>${movieVO.mvContent2}</p>
+					<p>${mvDetail.mvContent2}</p>
 
 
 
-					${movieVO.mvTrailer}
+					${mvDetail.mvTrailer}
 
 					<h3 class="mb-3">관람 포인트</h3>
 
-					<p>${movieVO.mvContent3}</p>
+					<p>${mvDetail.mvContent3}</p>
 
-					<p>${movieVO.mvContent4}</p>
+					<p>${mvDetail.mvContent4}</p>
 				</div>
 				<!-- .single-post-wrap -->
 
@@ -233,7 +235,13 @@
 					</div>
 					<!-- .entry-heading -->
 
+				<% 
+					List<MovieVO> list  = (List<MovieVO>)request.getAttribute("genreList");
+					System.out.println(list);
+				%>
+
 					<div class="row mx-m-25">
+						<c:forEach var="item" items="${genreList}">
 						<div class="col-12 col-lg-6 px-25">
 							<div class="blog-post-content">
 								<figure class="blog-post-thumbnail position-relative m-0">
@@ -242,8 +250,7 @@
 										alt=""></a>
 
 									<div class="posted-date position-absolute">
-										<div class="day">23</div>
-										<div class="month">mar</div>
+										<div class="day">${item.mvAvgRate}</div>
 									</div>
 								</figure>
 								<!-- .blog-post-thumbnail -->
@@ -251,8 +258,7 @@
 								<div class="blog-post-content-wrap">
 									<div class="entry-header">
 										<h2 class="entry-title">
-											<a href="#">Which investment project should my company
-												choose?</a>
+											<a href="#">${item.mvTitle}</a>
 										</h2>
 
 										<div class="entry-meta flex flex-wrap align-items-center">
@@ -273,46 +279,7 @@
 							<!-- .blog-post-content -->
 						</div>
 						<!-- .col -->
-
-						<div class="col-12 col-lg-6 px-25">
-							<div class="blog-post-content">
-								<figure class="blog-post-thumbnail position-relative m-0">
-									<a href="#"><img
-										src="${pageContext.request.contextPath}/assets/images/movieDetail/b-6.jpg"
-										alt=""></a>
-
-									<div class="posted-date position-absolute">
-										<div class="day">23</div>
-										<div class="month">mar</div>
-									</div>
-								</figure>
-								<!-- .blog-post-thumbnail -->
-
-								<div class="blog-post-content-wrap">
-									<div class="entry-header">
-										<h2 class="entry-title">
-											<a href="#">Which investment project should my company
-												choose?</a>
-										</h2>
-
-										<div class="entry-meta flex flex-wrap align-items-center">
-											<div class="post-author">
-												<a href="#">Ms. Lara Croft </a>
-											</div>
-
-											<div class="post-comments">
-												<a href="#">02 Comments</a>
-											</div>
-										</div>
-										<!-- .entry-meta -->
-									</div>
-									<!-- .entry-header -->
-								</div>
-								<!-- .blog-post-content-wrap -->
-							</div>
-							<!-- .blog-post-content -->
-						</div>
-						<!-- .col -->
+					</c:forEach>
 					</div>
 					<!-- .row -->
 				</div>
@@ -325,7 +292,7 @@
 						<div class="comments-form">
 							<div class="comment-respond">
 								<h3 class="comment-reply-title">댓글 남기기</h3>
-						<form name="myform" id="myform" method="post" action="./save">
+						<form name="myform" id="myform" method="post">
 					        <fieldset>
 					            <input type="radio" name="rating" value="10" id="rate1"><label for="rate1">⭐</label>
 					            <input type="radio" name="rating" value="9" id="rate2"><label for="rate2">⭐</label>
@@ -353,7 +320,7 @@
 						<br/>
 						<br/>
 						<br/>
-						<div style="text-align: left;"><h5><span id="totalCnt">${movieVO.mvRpCount}</span>건</h5></div>
+						<div style="text-align: left;"><h5><span id="totalCnt">${mvDetail.mvRpCount}</span>건</h5></div>
 						<hr>
 
 						<!-- .comments-form -->
@@ -754,7 +721,7 @@
 		$(function(){
 			// 글 번호에 맞는 댓글 들고오기
 			$.ajax({
-				url:"${pageContext.request.contextPath}/ReviewReply/get/${movieVO.mvNum}",
+				url:"${pageContext.request.contextPath}/ReviewReply/get/${mvDetail.mvNum}",
 				type:"GET",
 				dataType : "json",
 				success : function(data){
@@ -1122,7 +1089,7 @@
 						console.log(rpComment);
 					
 					if(rpComment.length > 0){
-						let comment_data = {rpComment, mvNum:"${movieVO.mvNum}", rpStar, rpDate};
+						let comment_data = {rpComment, mvNum:"${mvDetail.mvNum}", rpStar, rpDate};
 														
 							console.log(comment_data);
 						$.ajax({
@@ -1450,7 +1417,7 @@
 												dataType : "html",
 												success:function(data){
 													li.remove();
-													document.querySelector('#totalCnt').innerText -= 1;
+													document.querySelector('#totalCnt').innerText -= 1;	
 												}
 											});
 										} 

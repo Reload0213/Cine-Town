@@ -23,6 +23,18 @@
 		  and M.mvNum=#{mvNum};
 	  </select>
 	  
+	  <select id="getGenreMovie" parameterType="movieVO" resultType="movieVO">
+		  select M.mvNum, M.mvTitle, M.mvActor, M.mvContent1, M.mvContent2, M.mvContent3, M.mvContent4, M.mvGenre, M.mvYear, M.mvAge, M.mvRuntime,
+		  M.mvProducer, M.mvIsdelete, M.mvPosterPath, M.mvBgPath, M.mvTrailer,
+		  R.mvAvgRate, R.mvRpCount
+		  from movie AS M LEFT OUTER JOIN (SELECT mvNum, ROUND(AVG(rpStar),1) mvAvgRate, COUNT(*) mvRpCount FROM reviewreply GROUP BY mvNum) AS R
+		  ON M.mvNum = R.mvNum
+		  where mvIsdelete = 'N'
+		  and M.mvGenre = #{mvGenre}
+		  and M.mvNum != #{mvNum}
+		  limit 2;
+	  </select>
+	  
 	    <select id="getBestMvList" parameterType="movieVO" resultType="movieVO">
 		  SELECT M.mvNum, M.mvTitle, M.mvActor, M.mvGenre, M.mvContent1,M.mvContent4, M.mvYear,
 		  M.mvAge, M.mvRuntime, M.mvProducer, M.mvIsdelete, M.mvPosterPath, M.mvBgPath,

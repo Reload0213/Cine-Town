@@ -27,6 +27,10 @@ public class movieController {
 		public String goMovieDetail(MovieVO vo, Model model) {
 			mService.getMovieDetail(model, vo);
 			
+			
+			mService.getGenreMvList(model, vo);
+			
+			
 			return "movie/movieDetail";
 		}
 }
