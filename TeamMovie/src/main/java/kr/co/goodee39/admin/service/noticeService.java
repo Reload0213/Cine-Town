@@ -34,7 +34,6 @@ public class noticeService {
 	// 공지사항 수정하는 서비스
 	public void updateNotice(NoticeVO noticeVO) {
 		
-		
 		sqlSessionTemplate.update("notice.updateNotice", noticeVO);
 	}
 	

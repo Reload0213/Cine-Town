@@ -11,7 +11,7 @@
 </head>
 <body>
 
- 	<form:form modelAttribute="noticeVO" action="${pageContext.request.contextPath}/aboutUs/writeNotice" method="POST">
+ 	<form:form modelAttribute="noticeVO" action="${pageContext.request.contextPath}/aboutUs/writeNotice" method="GET">
 		<table>
 			<tr>
 				<td>내용</td>

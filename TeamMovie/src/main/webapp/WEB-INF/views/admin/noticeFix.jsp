@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -96,9 +98,12 @@
         <div class="userInfoCon">
             <div class="topUserCon">
                 <div class="table">
+                <form:form modelAttribute="noticeVO" action="${pageContext.request.contextPath}/admin/updateNotice" method="GET">
                     <ul class="topUl row1">
                         <li>제목</li>
-                        <li><input type="text" value="${notice.noticeTitle }"/></li>
+                        <li><form:input path="noticeTitle" value="${notice.noticeTitle }"/></li>
+                        <li>번호</li>
+                        <li><form:input path="noticeNum" readonly="true" value="${notice.noticeNum }"/></li>
                     </ul>
                     
 					<!-- 구분선 -->
@@ -106,10 +111,10 @@
                         <li></li>
                         <li></li>
                     </ul>
-                    <form action="">
+    
                     <ul class="topUl row2">
                         <li>내용</li>
-                        <li><input type="text" value="${notice.noticeComment }"/></li>
+                        <li><form:input path="noticeComment" value="${notice.noticeComment }"/></li>
                     </ul>
 
                     <!-- 구분선 -->
@@ -119,10 +124,10 @@
                     </ul>
 
                     <ul class="btnCon">
-                        <li><a href="#" class="formSubmit">수정</a></li>
-                        <li><a href="javascript:history.back();" class="back">취소</a></li>
+                        <li><button class="formsubmit" type="submit" style="background-color: red; font-size: 15px; padding: 10px 30px; margin-right: 30px">수정</button></li>
+                        <li><button style="background-color: light-grey; font-size: 15px; padding: 10px 30px;" type="button" onclick="javascript:history.back()">취소</button></li>
                     </ul>
-                    </form>
+                    </form:form>
                 </div>
             </div>
         </div>
