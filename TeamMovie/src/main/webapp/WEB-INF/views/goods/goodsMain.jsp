@@ -368,7 +368,7 @@
                                 <div class="wrap-caption center">
                                         <h2 class="h1 mega-title slideshow__title korean">CineTown Goods</h2>
                                         <span class="mega-subtitle slideshow__subtitle"> GoodsMenu로 이동</span>
-                                        <span class="btn">쇼핑하기</span>
+                                        <span class="btn"><a style="color: white; font-size: 13px;" href="${pageContext.request.contextPath}/goods/goodsMenu">쇼핑하기</a> </span>
                                     </div>
                             </div>
                         </div>
@@ -382,7 +382,7 @@
                                 <div class="wrap-caption center">
                                     <h2 class="h1 mega-title slideshow__title korean">CINETOWN GOODS</h2>
                                     <span class="mega-subtitle slideshow__subtitle">GOODSMENU로 이동</span>
-                                    <span class="btn">쇼핑하기</span>
+                                    <span class="btn"><a style="color: white; font-size: 13px;" href="${pageContext.request.contextPath}/goods/goodsMenu">쇼핑하기</a></span>
                                 </div>
                             </div>
                         </div>
