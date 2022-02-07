@@ -124,8 +124,8 @@
                     </ul>
 
                     <ul class="btnCon">
-                        <li><button class="formsubmit" type="submit" style="background-color: red; font-size: 15px; padding: 10px 30px; margin-right: 30px">수정</button></li>
-                        <li><button style="background-color: light-grey; font-size: 15px; padding: 10px 30px;" type="button" onclick="javascript:history.back()">취소</button></li>
+                        <li><button class="formsubmit" type="submit" style="border: none; background-color: #ff0000; font-size: 15px; padding: 10px 30px; margin-right: 30px">수정</button></li>
+                        <li><button style="border: none; background-color: #e0e0e0; font-size: 15px; padding: 10px 30px;" type="button" onclick="javascript:history.back()">취소</button></li>
                     </ul>
                     </form:form>
                 </div>

@@ -70,15 +70,17 @@ public class aboutUsController {
 	 * @param noticeVO
 	 * @return
 	 */
-	@PostMapping("/writeNotice")
+	@GetMapping("/writeNotice")
 	public String writeNotice(@ModelAttribute("noticeVO") NoticeVO noticeVO, HttpSession session) {
 		
 		// 세션 유저 정보
 		UserVO userVO = (UserVO) session.getAttribute("account");
 		// 세션 유저 아이디
 		String userId = userVO.getUserId();
-		
 		noticeVO.setAdId(userId);
+		
+		System.out.println(noticeVO.getNoticeComment());
+		System.out.println(noticeVO.getNoticeTitle());
 		
 		noticeService.noticeWrite(noticeVO);
 
