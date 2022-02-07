@@ -152,7 +152,7 @@ public class adminController {
 	}
 	
 	/**
-	 * 강혜수 AJAX로 게시판 화면 출력
+	 * 게시판 선택 시 리스트 출력하는 컨트롤러(공지사항, QNA)
 	 * @param vo
 	 * @param model
 	 * @param req
@@ -184,7 +184,6 @@ public class adminController {
 		return "admin/noticeBoard";
 	}
 	
-	
 	/**
 	 * 공지사항 삭제하는 컨트롤러
 	 * @param vo
@@ -207,16 +206,15 @@ public class adminController {
 		return map;
 	}
 	
-	
-	
 	/**
 	 * 공지사항 수정페이지 불러오는 컨트롤러
 	 * @param noticeNum
 	 * @param model
+	 * @param noticeVO
 	 * @return
 	 */
 	@GetMapping("/noticeUpdate")
-	public String noticeUpdate(@RequestParam("noticeNum") int noticeNum, Model model) {
+	public String noticeUpdate(@RequestParam("noticeNum") int noticeNum, Model model, @ModelAttribute("noticeVO") NoticeVO noticeVO) {
 		
 		// 공지사항 상세 정보
 		NoticeVO noticeDetail = noticeService.getNoticeContents(noticeNum);
@@ -226,30 +224,18 @@ public class adminController {
 		return "/admin/noticeFix";
 	}
 	
-	
 	/**
 	 * 공지사항 수정하는 컨트롤러
 	 * @param noticeVO
-	 * @param session
 	 * @return
 	 */
-	@PostMapping("/updateNotice")
-	public String updateNotice(@ModelAttribute("noticeVO") NoticeVO noticeVO, HttpSession session) {
-		
-		// 세션 유저 정보
-		UserVO userVO = (UserVO) session.getAttribute("account");
-		// 세션 유저 아이디
-		String userId = userVO.getUserId();
-		
+	@GetMapping("/updateNotice")
+	public String updateNotice(@ModelAttribute("noticeVO") NoticeVO noticeVO) {
+	
 		noticeService.updateNotice(noticeVO);
-		
+
 		return "/admin/board";
 	}
-	
-	
-	
-	
-	
 	
 	
 	@GetMapping("/board/qna")
@@ -263,15 +249,6 @@ public class adminController {
 	}
 	
 
-	
-	
-
-
-	
-
-	
-	
-	
 	/*
 	 * 컨트롤러 담당: 김용현 
 	 * a링크로 컨트롤러를 타는지 확인 / 페이지 디자인 안 깨지도록 확인하기 위해 만든 컨트롤러 입니다

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html>
 
@@ -46,14 +47,15 @@
 
 				<!-- 템플릿 시작 -->
 				<section class="rb-bbs rb-bbs-write">
-
-					<form class="form-horizontal" enctype="multipart/form-data">
-					
+					<form:form class="form-horizontal" enctype="multipart/form-data"
+						modelAttribute="noticeVO"
+						action="${pageContext.request.contextPath}/aboutUs/writeNotice"
+						method="GET">
 						<div class="form-group">
 							<label for="" class="col-sm-2 control-label">제목</label>
 							<div class="col-sm-10">
-								<input type="text" class="form-control" id=""
-									placeholder="제목을 입력하세요.">
+								<form:input path="noticeTitle" type="text" class="form-control"
+									id="" placeholder="제목을 입력하세요." />
 							</div>
 						</div>
 						<div class="form-group">
@@ -153,7 +155,8 @@
 										</div>
 									</div>
 									<div class="rb-editor-body">
-										<textarea class="form-control" rows="15"></textarea>
+										<form:textarea path="noticeComment" class="form-control"
+											rows="15"></form:textarea>
 									</div>
 
 									<div class="panel-body rb-fileinput">
@@ -249,10 +252,12 @@
 			<div class="form-group">
 				<div>
 					<button type="button" class="btn btn-default">취소</button>
-					<button type="submit" class="btn btn-primary">확인</button>
+					<button type="submit" class="btn btn-primary">등록등록</button>
 				</div>
 			</div>
-			</form>
+
+			</form:form>
+
 			</section>
 			<!-- 템플릿 끝 -->
 

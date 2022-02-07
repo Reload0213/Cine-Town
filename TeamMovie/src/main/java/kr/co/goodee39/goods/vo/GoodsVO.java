@@ -21,9 +21,16 @@ public class GoodsVO {
 	private String gdsDetail5;
 	private String gdsDetail6;
 	private String gdsDetail7;
+	private String mvTitle; //영화별 관련 굿즈를 뿌려주기 위한 컬럼
 	
 	
 
+	public String getMvTitle() {
+		return mvTitle;
+	}
+	public void setMvTitle(String mvTitle) {
+		this.mvTitle = mvTitle;
+	}
 	public String getGdsDetail2() {
 		return gdsDetail2;
 	}

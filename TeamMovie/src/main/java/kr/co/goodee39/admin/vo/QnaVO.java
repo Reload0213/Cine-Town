@@ -2,6 +2,8 @@ package kr.co.goodee39.admin.vo;
 
 public class QnaVO {
 	
+	private String selBoard;
+	
 	private int qnaNum;
 	private String qnaCategory;
 	private String qnaTitle;
@@ -78,6 +80,19 @@ public class QnaVO {
 	public void setCount(int count) {
 		this.count = count;
 	}
+
+
+
+	public String getSelBoard() {
+		return selBoard;
+	}
+
+
+
+	public void setSelBoard(String selBoard) {
+		this.selBoard = selBoard;
+	}
+
 	
 	
 }

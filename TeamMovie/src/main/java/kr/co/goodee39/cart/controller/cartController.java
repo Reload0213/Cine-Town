@@ -44,10 +44,13 @@ public class cartController {
 	public String insertCartItem(@ModelAttribute("cartVO") CartVO vo, HttpSession session, UserVO uvo) {
 		System.out.println("insertCartItem 장바구니 삽입 컨트롤러 메소드 실행--------------------------------------------------");
 		UserVO uvo1 = (UserVO) session.getAttribute("account");
+		
 		int userNum = uvo1.getUserNum();
 		int count = cartService.countCartItem(userNum, vo.getGdsNum());
 		System.out.println("count값 확인:"+count);
 		System.out.println("gdsNum값 확인:"+vo.getGdsNum());
+		
+		
 		
 		if(count == 0) {
 			cartService.insertCartItem(vo);

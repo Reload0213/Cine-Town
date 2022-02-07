@@ -440,8 +440,9 @@
                                         <form:hidden path="gdsNum" value="${goods.gdsNum }"/>
                                           <form:hidden path="cartAmount" value="1"/>
                                             <form:hidden path="userNum" value="${sessionScope.account.userNum }"/>
+                                             <c:if  test="${sessionScope.account.userId != null}">
                                             <form:button class="btn btn-addto-cart" type="submit">Add To Cart</form:button>
-                                          
+                                          </c:if>
                                         </form:form>
                                                 <div class="button-set">
                                                     <a href="javascript:void(0)" title="Quick View" class="quick-view-popup quick-view" data-toggle="modal" data-target="#content_quickview">
