@@ -1,6 +1,8 @@
 package kr.co.goodee39.preview.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -46,12 +48,16 @@ public class RestpreviewCmtController {
 	}
 	
 	@DeleteMapping("/delete")
-	public ResponseEntity<String> deleteComment(@RequestBody PreviewCmtVO cmtvo){
+	public 	ResponseEntity<Map<String , String>> deleteComment(@RequestBody PreviewCmtVO cmtvo){
 		
-		String msg ="삭제완료";
+		Map<String,String> map = new HashMap<String ,String>();
+		
+		map.put("msg","삭제완료");
+		
+		
 		previewCmtService.deletePwCmt(cmtvo);
 		
-		ResponseEntity<String> entity = new ResponseEntity<String>(msg,HttpStatus.OK);
+		ResponseEntity<Map<String , String>> entity = new 	ResponseEntity<Map<String , String>>(map,HttpStatus.OK);
 		return entity;
 		
 		

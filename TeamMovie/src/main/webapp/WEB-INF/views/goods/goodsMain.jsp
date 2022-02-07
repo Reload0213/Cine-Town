@@ -423,7 +423,7 @@
                                                     <img class="hover blur-up lazyload" data-src="${goods.gdsImage2 }" src="${goods.gdsImage2 }" alt="image" title="product">
                                                     <!-- End hover image -->
                                                     <!-- product label -->
-                                                    <div class="product-labels rectangular"><span class="lbl on-sale">-16%</span> <span class="lbl pr-label1">new</span></div>
+                                                  <!--   <div class="product-labels rectangular"><span class="lbl on-sale">-16%</span> <span class="lbl pr-label1">new</span></div> -->
                                                     <!-- End product label -->
                                                 </a>
                                                 <!-- end product image -->
@@ -537,7 +537,7 @@
                                                     <img class="hover blur-up lazyload" data-src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image6-1.jpg" src="${pageContext.request.contextPath }/assets/images/GoodsMainimages/product-images/product-image6-1.jpg" alt="image" title="product">
                                                     <!-- End hover image -->
                                                     <!-- product label -->
-                                                    <div class="product-labels rectangular"><span class="lbl on-sale">-16%</span> <span class="lbl pr-label1">new</span></div>
+                                                    <!-- <div class="product-labels rectangular"><span class="lbl on-sale">-16%</span> <span class="lbl pr-label1">new</span></div> -->
                                                     <!-- End product label -->
                                                 </a>
                                                 <!-- end product image -->
@@ -1259,7 +1259,7 @@
                                     <img class="grid-view-item__image hover blur-up lazyload" data-src="${goods.gdsImage2 }" src="${goods.gdsImage2 }" alt="image" title="product">
                                     <!-- End hover image -->
                                     <!-- product label -->
-                                    <div class="product-labels rectangular"><span class="lbl on-sale">-16%</span> <span class="lbl pr-label1">new</span></div>
+                                   <!--  <div class="product-labels rectangular"><span class="lbl on-sale">-16%</span> <span class="lbl pr-label1">new</span></div> -->
                                     <!-- End product label -->
                                 </a>
                                 <!-- end product image -->

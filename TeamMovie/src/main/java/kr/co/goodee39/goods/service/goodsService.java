@@ -47,5 +47,20 @@ public class goodsService {
 		vo.setGdsDetail7(vo1.getGdsDetail7());
 		System.out.println("showGoodsItem 서비스 메소드 종료--------------------------------------------------");
 	}
+	
+	public int showGoodsCount() {
+		System.out.println("showGoodsCount 서비스 메소드 실행--------------------------------------------------");
+		int countItem = sqlSessionTemplate.selectOne("goods.showGoodsCount");
+		System.out.println("상품갯수(countItem):"+countItem);
+		System.out.println("showGoodsCount 서비스 메소드 종료--------------------------------------------------");
+		return countItem;
+	}
+	
+	public List<GoodsVO> showTop4GoodsList(){
+		System.out.println("showTop4GoodsList 서비스 메소드 실행");
+		System.out.println("showTop4GoodsList 서비스 메소드 종료");
+		return sqlSessionTemplate.selectList("goods.showTop4GoodsList");
+		
+	}
 
 }

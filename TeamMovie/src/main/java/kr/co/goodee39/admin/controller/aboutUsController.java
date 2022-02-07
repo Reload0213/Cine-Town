@@ -15,7 +15,7 @@ import kr.co.goodee39.admin.vo.NoticeVO;
 import kr.co.goodee39.user.vo.UserVO;
 
 @Controller
-@RequestMapping("/aboutUs")
+@RequestMapping("/aboutUs") 
 public class aboutUsController {
 
 	@Autowired

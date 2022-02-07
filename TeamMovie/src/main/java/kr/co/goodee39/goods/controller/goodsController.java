@@ -60,6 +60,11 @@ public class goodsController {
 	
 		List<goodsReviewVO> grList = goodsReviewService.showGrCountList();
 		model.addAttribute("grList", grList);
+		
+		int countGoods = goodsService.showGoodsCount(); //굿즈 상품의 갯수를 담아주는 부분
+		System.out.println("countGoods:"+countGoods);
+		
+		model.addAttribute("countGoods", countGoods);
 	
 		System.out.println("goMenu 컨트롤러 메소드 종료--------------------------------------------------");
 		return "goods/goodsMenu";
@@ -90,9 +95,7 @@ public class goodsController {
 		List<GoodsVO> goodsList = goodsService.showGoodsList();
 		model.addAttribute("goodsList", goodsList);
 		
-//		연관 상품의 별점을 뿌려주기 위해 사용 
-//		List<goodsReviewVO> grList = goodsReviewService.showGrCountList();
-//		model.addAttribute("grList", grList);
+
 	    
 		System.out.println("goGoods1 컨트롤러 메소드 종료--------------------------------------------------");
 		return "goods/goodsDetail";
