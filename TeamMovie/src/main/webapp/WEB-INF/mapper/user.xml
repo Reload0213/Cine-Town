@@ -5,7 +5,6 @@
 
 <mapper namespace="user">
 
-
 	<!-- 회원 가입 -->
 	<insert id="insertUser" parameterType="userVO">
 		insert into user(userId,
@@ -35,10 +34,8 @@
 
 	<!-- 아이디 중복검사 -->
 	<select id="idCheck" resultType="int">
-
 		select count(*) from user where
 		userId = #{userId}
-
 	</select>
 
 	<!-- 이름 중복검사 -->
@@ -56,9 +53,6 @@
 		where userEmail=#{userEmail}
 
 	</select>
-
-
-
 
 	<!-- 비번 찾기 -->
 	<select id="findPw" resultType="UserVO" parameterType="UserVO">
@@ -102,11 +96,26 @@
 	<!-- 회원삭제 -->
 	<delete id="deleteUser" parameterType="userVO">
 		delete from user
-		where userNum=#{userNum}
-
+		where
+		userNum=#{userNum}
 	</delete>
 
+	<!-- 작성 댓글 목록 -->
+	<select id="selectCommentList" parameterType="int"
+		resultType="reviewReplyVO">
+		select mvNum, rpDate, rpComment, rpStar, rpNum
+		from reviewreply
+		where
+		rpWriternum = #{rpWriternum}
+	</select>
 
+	<!-- 작성 댓글 삭제 -->
+	<delete id="deleteComment" parameterType="reviewReplyVO">
+		delete from reviewreply
+		where
+		rpNum=#{rpNum}
+
+	</delete>
 
 </mapper>
 

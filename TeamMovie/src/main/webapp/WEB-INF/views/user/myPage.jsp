@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -83,7 +85,6 @@ button:hover {
 			<input type="hidden" value="${sessionScope.account.userNum}"
 				name="userNum" />
 			<button type="submit" class="mainformSubmit">내 정보 수정</button>
-
 		</form>
 		<br />
 
@@ -91,18 +92,24 @@ button:hover {
 			onClick="location.href='${pageContext.request.contextPath}/cart/showCartList'"
 			class="mainformSubmit cartcenter">굿즈 장바구니</button>
 		<br />
+
+		<form:form modelAttribute="reviewReplyVO" action="${pageContext.request.contextPath}/user/commentList">
+			<form:input path="rpWriternum" type="hidden"
+				value="${sessionScope.account.userNum}" />
+				
+			<form:button type="submit" class="mainformSubmit">영화 작성 목록</form:button>
+
+		</form:form>
+		<br />
+
 		<form id="user_delete">
 			<input type="hidden" value="${sessionScope.account.userNum}"
 				name="userNum" />
 			<button type="submit" class="mainformSubmit user_deleteBtn">회원탈퇴</button>
 		</form>
 		<br />
-		<form id="user_comment">
-			<input type="hidden" value="${sessionScope.account.userNum}"
-				name="userNum" />
-			<button type="submit" class="mainformSubmit user_commentList">영화
-				댓글 작성 목록</button>
-		</form>
+
+
 
 
 	</div>
@@ -115,6 +122,7 @@ button:hover {
 		$(document)
 				.ready(
 						function() {
+							//회원 삭제 버튼
 							$(".user_deleteBtn")
 									.click(
 											function() {
@@ -130,7 +138,7 @@ button:hover {
 														$("#user_delete")
 																.submit();
 														alert("삭제가 완료 되었습니다");
-													}else{
+													} else {
 														alert("탈퇴가 취소되었습니다");
 													}
 												} else {
@@ -138,7 +146,9 @@ button:hover {
 													console.log("취소")
 												}
 											})
-						});
+						}
+
+				);
 	</script>
 
 </body>

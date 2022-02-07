@@ -3,7 +3,10 @@ package kr.co.goodee39.user.controller;
 import java.io.IOException;
 
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
@@ -21,6 +24,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import kr.co.goodee39.admin.vo.NoticeVO;
+import kr.co.goodee39.admin.vo.QnaVO;
+import kr.co.goodee39.goodsReview.vo.goodsReviewVO;
+import kr.co.goodee39.review.vo.ReviewReplyVO;
 import kr.co.goodee39.user.service.UserService;
 import kr.co.goodee39.user.vo.UserVO;
 
@@ -40,16 +47,13 @@ public class userController {
 
 	// 로그인 post
 	@PostMapping("/loginComplete")
-	public String loginComplete(@ModelAttribute("userVO") UserVO vo, HttpSession session, HttpServletResponse response) throws IOException {
+	public String loginComplete(@ModelAttribute("userVO") UserVO vo, HttpSession session, HttpServletResponse response)
+			throws IOException {
 		System.out.println("loginComplete실행");
-		
+
 		return userService.goLoginService(vo, session, response);
 
 	}
-	
-	
-	
-	
 
 	// 회원가입 페이지로 이동
 	@GetMapping("/signup")
@@ -155,8 +159,9 @@ public class userController {
 	}
 
 	// myPage로 이동
+
 	@GetMapping("/myPage")
-	public String getMyPage(UserVO vo) {
+	public String getMyPage(@ModelAttribute("reviewReplyVO") ReviewReplyVO rvo, UserVO vo) {
 
 		return "user/myPage";
 	}
@@ -201,13 +206,37 @@ public class userController {
 		return "redirect:/";
 
 	}
-	
-	//댓글 목록 보기
-	@GetMapping("/commentList")
-	public String getCommentList(UserVO vo) {
-		
-	
+
+	// 내가 쓴 댓글 목록
+	@PostMapping("/commentList")
+	public String commentList(@ModelAttribute("reviewReplyVO") ReviewReplyVO vo, Model model) {
+
+		List<UserVO> nlist = userService.commentList(vo);
+		model.addAttribute("nList", nlist);
+
 		return "user/commentList";
+	}
+
+	@DeleteMapping("/commentDelete")
+	@ResponseBody
+	public ResponseEntity<String> updateDeleteUser(@RequestBody ReviewReplyVO vo) {
+		userService.deleteComment(vo);
+
+		String str = "삭제되었습니다.";
+
+		ResponseEntity<String> entity = new ResponseEntity<String>(str, HttpStatus.OK);
+
+		return entity;
+
+	}
+
+	// 내가 쓴 댓글 수정하러 상세보기
+	@GetMapping("/commentDetail")
+	public String commentDetail(ReviewReplyVO vo) {
+
+		//userService.selectUserOne(vo);
+
+		return "user/commentModify";
 	}
 
 }

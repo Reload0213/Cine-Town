@@ -23,7 +23,6 @@
 		<typeAlias type="kr.co.goodee39.movie.vo.MovieVO" alias="movieVO"/>
 		<typeAlias type="kr.co.goodee39.admin.vo.QnaVO" alias="qnaVO"/>
 		<typeAlias type="kr.co.goodee39.review.vo.ReviewReplyVO" alias="reviewReplyVO"/>
-		<typeAlias type="kr.co.goodee39.review.vo.ReviewReplyVO" alias="reviewReplyVO"/>
 		 <typeAlias type="kr.co.goodee39.adminmailbox.vo.AdminMailBoxVO" alias="adminMailBoxVO"/>
 		  <typeAlias type="kr.co.goodee39.preview.vo.previewVO" alias="previewVO"/>
 		  <typeAlias type="kr.co.goodee39.preview.vo.PreviewCmtVO" alias="pwCmtVO"/>

@@ -3,6 +3,7 @@ package kr.co.goodee39.user.service;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.HashMap;
+import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -13,6 +14,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
+import kr.co.goodee39.admin.vo.NoticeVO;
+import kr.co.goodee39.review.vo.ReviewReplyVO;
 import kr.co.goodee39.user.vo.UserVO;
 
 @Service
@@ -125,23 +128,17 @@ public class UserService {
 
 	}
 
-	// 내가 작성한 댓글 목록
-	public UserVO selectCommentList(UserVO vo) {
-		UserVO vo1 = new UserVO();
+	// 내가 쓴 댓글 보여주기
+	public List<UserVO> commentList(ReviewReplyVO vo) {
+		return sqlSessionTemplate.selectList("user.selectCommentList", vo);
 
-		vo1 = sqlSessionTemplate.selectOne("user.showUserInfoOne", vo);
-		vo.setUserId(vo1.getUserId());
-		vo.setUserName(vo1.getUserName());
-		vo.setUserNum(vo1.getUserNum());
-		vo.setUserRegdate(vo1.getUserRegdate());
-		vo.setUserPw(vo1.getUserPw());
-		vo.setUserEmail(vo1.getUserEmail());
-		vo.setUserPhone(vo1.getUserPhone());
-		vo.setUserAddr1(vo1.getUserAddr1());
-		vo.setUserAddr2(vo1.getUserAddr2());
-		vo.setUserAddr3(vo1.getUserAddr3());
-
-		return vo;
 	}
 
+	// 내가 쓴 댓글 삭제하기
+	// 지우지않고 업데이트로 isdelete를 바꿈
+	public void deleteComment(ReviewReplyVO vo) {
+
+		sqlSessionTemplate.selectOne("user.deleteComment", vo);
+
+	}
 }
