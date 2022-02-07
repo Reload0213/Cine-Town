@@ -108,7 +108,7 @@ public class aboutUsController {
 
 		model.addAttribute("qnaList", qnaList);
 
-		return "/aboutUs/faqMain";
+		return "/faq/faqMain";
 	}
 
 	/**
@@ -117,15 +117,15 @@ public class aboutUsController {
 	 * @param model
 	 * @return
 	 */
-	@GetMapping("/faqView")
-	public String faqView(@RequestParam("qnaNum") int qnaNum, Model model) {
+	@GetMapping("/qnaView")
+	public String qnaView(@RequestParam("qnaNum") int qnaNum, Model model) {
 		
 		// 질문게시판 상세 정보
 		QnaVO qnaDetail = QnaService.getQnaContents(qnaNum);
 		
 		model.addAttribute("qna", qnaDetail);
 		
-		return "/aboutUs/faqView";
+		return "/faq/qnaView";
 	}
 	
 	/**
@@ -136,7 +136,7 @@ public class aboutUsController {
 	@GetMapping("/qnaWrite")
 	public String qnaWrite(@ModelAttribute("qnaVO") QnaVO qnaVO) {
 		
-		return "/aboutUs/qnaWrite";
+		return "/faq/qnaWrite";
 	}
 
 	/**
@@ -146,16 +146,7 @@ public class aboutUsController {
 	 * @return
 	 */
 	@GetMapping("/writeQna")
-	public String writeQna(@ModelAttribute("qnaVO") QnaVO qnaVO, HttpSession session) {
-		
-		// 세션 유저 정보
-		UserVO userVO = (UserVO) session.getAttribute("account");
-		// 세션 유저 아이디
-		String userId = userVO.getUserId();
-		qnaVO.setAdId(userId);
-		
-		System.out.println(qnaVO.getQnaComment());
-		System.out.println(qnaVO.getQnaTitle());
+	public String writeQna(@ModelAttribute("qnaVO") QnaVO qnaVO) {
 		
 		QnaService.qnaWrite(qnaVO);
 

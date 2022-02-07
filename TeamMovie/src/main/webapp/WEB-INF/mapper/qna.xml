@@ -47,8 +47,8 @@
 	
 	<!-- 질문게시판 등록하는 쿼리 -->
 	<insert id="qnaWrite" parameterType="qnaVO">
-		insert into qna (qnaCategory, qnaTitle, qnaComment, qnaIsdelete, adId)
-		values ('QNA', #{qnaTitle}, #{qnaComment}, 'N', #{adId})
+		insert into qna (qnaCategory, qnaTitle, qnaComment, qnaIsdelete)
+		values ('QNA', #{qnaTitle}, #{qnaComment}, 'N')
 	</insert>
 	
 	<!-- 질문게시판 수정하는 쿼리 -->

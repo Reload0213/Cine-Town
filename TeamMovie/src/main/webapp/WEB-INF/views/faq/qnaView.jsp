@@ -19,7 +19,7 @@
 </head>
 
 <main>
-	<h1 style="text-align: center; margin: 2em 2em 1em 0;">Cine Town 공지사항</h1>
+	<h1 style="text-align: center; margin: 2em 2em 1em 0;">Cine Town 질문게시판</h1>
 
 	<div class="container">
 
@@ -34,12 +34,12 @@
 						<div class="media">
 							<div class="media-body"
 								style="border: 1px solid #5555; padding: 2em;">
-								<h4 class="media-heading" style="margin-bottom: 1em; font-size: 1.8em;">${notice.noticeTitle }</h4>
+								<h4 class="media-heading" style="margin-bottom: 1em; font-size: 1.8em;">${qna.qnaTitle }</h4>
 								<div class="rb-meta">
 									<ul class="list-inline" style="text-align: right;">
-										<li>작성자 : 관리자</li>
+										<li>작성자 : 관리자여기는변경해야함</li>
 										<li class="rb-divider"></li>
-										<li>등록일 : ${notice.noticeRegdate }</li>
+										<li>등록일 : ${qna.qnaRegdate }</li>
 										<li class="rb-divider"></li>
 										<!-- <li>조회 0</li> -->
 									</ul>
@@ -52,7 +52,7 @@
 
 					<div class="rb-bbs-body"
 						style="border: 1px solid #5555; padding: 2em;">
-						<p style="font-size: 1.5em;">${notice.noticeComment }</p>
+						<p style="font-size: 1.5em;">${qna.qnaComment }</p>
 
 
 					</div>
@@ -79,7 +79,7 @@
 
 							<div class="rb-buttons" style="text-align: center; padding: 1em;">
 								<div class="btn-group btn-primary">
-									<a href="${pageContext.request.contextPath}/aboutUs/aboutUsMain"
+									<a href="${pageContext.request.contextPath}/aboutUs/faqMain"
 										class="btn btn-primary">목록으로</a>
 								</div>
 								<%-- <div class="btn-group btn-primary">

@@ -11,18 +11,18 @@
 </head>
 <body>
 
- 	<form:form modelAttribute="noticeVO" action="${pageContext.request.contextPath}/aboutUs/writeNotice" method="GET">
+ 	<form:form modelAttribute="qnaVO" action="${pageContext.request.contextPath}/aboutUs/writeQna" method="GET">
 		<table>
 			<tr>
 				<td>내용</td>
 				<td>
-					<form:input path="noticeComment"/>
+					<form:input path="qnaComment"/>
 				</td>
 			</tr>
 			<tr>
 				<td>제목</td>
 				<td>
-					<form:input path="noticeTitle"/>
+					<form:input path="qnaTitle"/>
 				</td>
 			</tr>
 			<tr>

@@ -154,21 +154,23 @@
     <th style="text-align: center">번호</th>
     <th style="text-align: center">제목</th>
     <th style="text-align: center">작성일</th>
-    <th style="text-align: center">작성자</th>
   </tr>
  </thead>
- <c:forEach var="notice" items="${noticeList }">
+ <c:forEach var="qna" items="${qnaList }">
   <tr>
-    <td>${notice.noticeNum }</td>
-    <td><a href="/TeamMovie/aboutUs/noticeView?noticeNum=${notice.noticeNum }">${notice.noticeTitle }</a></td>
-    <td>${notice.noticeRegdate }</td>
+    <td>${qna.qnaNum }</td>
+    <td><a href="/TeamMovie/aboutUs/qnaView?qnaNum=${qna.qnaNum }">${qna.qnaTitle }</a></td>
+    <td>${qna.qnaRegdate }</td>
   </tr>
   </c:forEach>
 </table>
+<button type="button" style="color: white; border: 1px solid black; font-size: 1rem; padding: 0.5rem 0.7rem; background-color: black; border-radius: 10px; float:right;" onclick="location.href='${pageContext.request.contextPath}/aboutUs/qnaWrite';">질문하기</button>
 <!-- 로그인한 사용자만 글쓰기 버튼을 활성화 -->
-<c:if test="${sessionScope.account.verify != 'null'}">
+<%-- <c:if test="${sessionScope.account.verify != 'null'}">
 	<button type="button" style="color: white; border: 1px solid black; font-size: 1rem; padding: 0.5rem 0.7rem; background-color: black; border-radius: 10px; float:right;" onclick="location.href='${pageContext.request.contextPath}/aboutUs/noticeWrite';">질문하기</button>
-</c:if>
+</c:if> --%>
+
+
 </div>
 <div><br /></div>
 <div><br /></div>

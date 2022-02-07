@@ -10,7 +10,6 @@ public class QnaVO {
 	private String qnaComment;
 	private String qnaIsdelete;
 	private String qnaRegdate;
-	private String adId;
 	
 	private int start;
 	private int count;
@@ -94,17 +93,6 @@ public class QnaVO {
 		this.selBoard = selBoard;
 	}
 
-
-
-	public String getAdId() {
-		return adId;
-	}
-
-
-
-	public void setAdId(String adId) {
-		this.adId = adId;
-	}
 	
 	
 }
