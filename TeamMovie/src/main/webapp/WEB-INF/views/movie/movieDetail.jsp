@@ -225,20 +225,16 @@
 				</div>
 				<!-- .tags-links -->
 
+	
 				<div class="related-blog-posts">
 					<div
 						class="entry-heading flex flex-wrap justify-content-between align-items-center">
-						<h2 class="entry-title">같은 장르 영화 추천</h2>
+						<h2 class="entry-title">같은 장르 영화 추천(${mvDetail.mvGenre})</h2>
 
 						<a href="${pageContext.request.contextPath}/movie/movieMenu">영화
 							전체 보러가기</a>
 					</div>
 					<!-- .entry-heading -->
-
-				<% 
-					List<MovieVO> list  = (List<MovieVO>)request.getAttribute("genreList");
-					System.out.println(list);
-				%>
 
 					<div class="row mx-m-25">
 						<c:forEach var="item" items="${genreList}">
@@ -246,11 +242,11 @@
 							<div class="blog-post-content">
 								<figure class="blog-post-thumbnail position-relative m-0">
 									<a href="#"><img
-										src="${pageContext.request.contextPath}/assets/images/movieDetail/b-5.jpg"
+										src="${item.mvPosterPath}"
 										alt=""></a>
 
 									<div class="posted-date position-absolute">
-										<div class="day">${item.mvAvgRate}</div>
+										<span class="xi-star checked" style="color:#FEDD6A"><div style="color:#fff" class="day">${item.mvAvgRate}</div>
 									</div>
 								</figure>
 								<!-- .blog-post-thumbnail -->
@@ -261,13 +257,13 @@
 											<a href="#">${item.mvTitle}</a>
 										</h2>
 
-										<div class="entry-meta flex flex-wrap align-items-center">
+										<div style="margin-left: 4em;" class="entry-meta flex flex-wrap align-items-center">
 											<div class="post-author">
-												<a href="#">Ms. Lara Croft </a>
+												<a href="#">주연 </a>
 											</div>
 
 											<div class="post-comments">
-												<a href="#">02 Comments</a>
+												<a href="#">${item.mvActor}</a>
 											</div>
 										</div>
 										<!-- .entry-meta -->
@@ -429,303 +425,6 @@
 				</div>
 				<!-- .col -->
 				</c:forEach>
-				
-				
-				
-				
-				
-				
-
-				<%-- <div class="col-12 col-md-6 col-lg-4 px-25">
-					<div class="course-content">
-						<figure class="course-thumbnail">
-							<a href="#"><img
-								src="${pageContext.request.contextPath}/assets/images/movieDetail/2.jpg"
-								alt=""></a>
-						</figure>
-						<!-- .course-thumbnail -->
-
-						<div class="course-content-wrap">
-							<div class="entry-header">
-								<h2 class="entry-title">
-									<a href="#">The Ultimate Drawing Course Beginner to
-										Advanced</a>
-								</h2>
-
-								<div class="entry-meta flex align-items-center">
-									<div class="course-author">
-										<a href="#">Michelle Golden</a>
-									</div>
-
-									<div class="course-date">Mar 14, 2018</div>
-								</div>
-								<!-- .course-date -->
-							</div>
-							<!-- .entry-header -->
-
-							<footer
-								class="entry-footer flex justify-content-between align-items-center">
-								<div class="course-cost">
-									<span class="free-cost">Free</span>
-								</div>
-								<!-- .price-drop -->
-
-								<div
-									class="course-ratings flex justify-content-end align-items-center">
-									<span class="xi-star checked"></span> <span
-										class="xi-star checked"></span> <span class="xi-star checked"></span>
-									<span class="xi-star checked"></span> <span class="xi-star-o"></span>
-
-									<span class="course-ratings-count">(4 votes)</span>
-								</div>
-								<!-- .course-ratings -->
-							</footer>
-							<!-- .entry-footer -->
-						</div>
-						<!-- .course-content-wrap -->
-					</div>
-					<!-- .course-content -->
-				</div>
-				<!-- .col -->
-				
-				
-				
-				
-				
-				
-				
-				
-
-				<div class="col-12 col-md-6 col-lg-4 px-25">
-					<div class="course-content">
-						<figure class="course-thumbnail">
-							<a href="#"><img
-								src="${pageContext.request.contextPath}/assets/images/movieDetail/3.jpg"
-								alt=""></a>
-						</figure>
-						<!-- .course-thumbnail -->
-
-						<div class="course-content-wrap">
-							<div class="entry-header">
-								<h2 class="entry-title">
-									<a href="#">The Complete Digital Marketing Course</a>
-								</h2>
-
-								<div class="entry-meta flex align-items-center">
-									<div class="course-author">
-										<a href="#">Ms. Lucius</a>
-									</div>
-
-									<div class="course-date">Dec 18, 2018</div>
-								</div>
-								<!-- .course-date -->
-							</div>
-							<!-- .entry-header -->
-
-							<footer
-								class="entry-footer flex justify-content-between align-items-center">
-								<div class="course-cost">
-									$55 <span class="price-drop">$78</span>
-								</div>
-								<!-- .course-cost -->
-
-								<div
-									class="course-ratings flex justify-content-end align-items-center">
-									<span class="xi-star checked"></span> <span
-										class="xi-star checked"></span> <span class="xi-star checked"></span>
-									<span class="xi-star checked"></span> <span class="xi-star-o"></span>
-
-									<span class="course-ratings-count">(4 votes)</span>
-								</div>
-								<!-- .course-ratings -->
-							</footer>
-							<!-- .entry-footer -->
-						</div>
-						<!-- .course-content-wrap -->
-					</div>
-					<!-- .course-content -->
-				</div>
-				<!-- .col -->
-				
-				
-				
-				
-				
-				
-				
-				
-				
-
-				<div class="col-12 col-md-6 col-lg-4 px-25">
-					<div class="course-content">
-						<figure class="course-thumbnail">
-							<a href="#"><img
-								src="${pageContext.request.contextPath}/assets/images/movieDetail/4.jpg"
-								alt=""></a>
-						</figure>
-						<!-- .course-thumbnail -->
-
-						<div class="course-content-wrap">
-							<div class="entry-header">
-								<h2 class="entry-title">
-									<a href="#">The Unreal Engine Developer Course</a>
-								</h2>
-
-								<div class="entry-meta flex align-items-center">
-									<div class="course-author">
-										<a href="#">Mr. John Wick</a>
-									</div>
-
-									<div class="course-date">Otc 17, 2018</div>
-								</div>
-								<!-- .course-date -->
-							</div>
-							<!-- .entry-header -->
-
-							<footer
-								class="entry-footer flex justify-content-between align-items-center">
-								<div class="course-cost">
-									<span class="free-cost">Free</span>
-								</div>
-								<!-- .course-cost -->
-
-								<div
-									class="course-ratings flex justify-content-end align-items-center">
-									<span class="xi-star checked"></span> <span
-										class="xi-star checked"></span> <span class="xi-star checked"></span>
-									<span class="xi-star checked"></span> <span class="xi-star-o"></span>
-
-									<span class="course-ratings-count">(4 votes)</span>
-								</div>
-								<!-- .course-ratings -->
-							</footer>
-							<!-- .entry-footer -->
-						</div>
-						<!-- .course-content-wrap -->
-					</div>
-					<!-- .course-content -->
-				</div>
-				<!-- .col -->
-				
-				
-				
-				
-				
-				
-				
-
-				<div class="col-12 col-md-6 col-lg-4 px-25">
-					<div class="course-content">
-						<figure class="course-thumbnail">
-							<a href="#"><img
-								src="${pageContext.request.contextPath}/assets/images/movieDetail//5.jpg"
-								alt=""></a>
-						</figure>
-						<!-- .course-thumbnail -->
-
-						<div class="course-content-wrap">
-							<div class="entry-header">
-								<h2 class="entry-title">
-									<a href="#">Progressive Web Apps (PWA) - The Complete Guide</a>
-								</h2>
-
-								<div class="entry-meta flex align-items-center">
-									<div class="course-author">
-										<a href="#">Mr. Tom Redder</a>
-									</div>
-
-									<div class="course-date">Sep 14, 2018</div>
-								</div>
-								<!-- .course-date -->
-							</div>
-							<!-- .entry-header -->
-
-							<footer
-								class="entry-footer flex justify-content-between align-items-center">
-								<div class="course-cost">
-									$38 <span class="price-drop">$48</span>
-								</div>
-								<!-- .course-cost -->
-
-								<div
-									class="course-ratings flex justify-content-end align-items-center">
-									<span class="xi-star checked"></span> <span
-										class="xi-star checked"></span> <span class="xi-star checked"></span>
-									<span class="xi-star checked"></span> <span class="xi-star-o"></span>
-
-									<span class="course-ratings-count">(4 votes)</span>
-								</div>
-								<!-- .course-ratings -->
-							</footer>
-							<!-- .entry-footer -->
-						</div>
-						<!-- .course-content-wrap -->
-					</div>
-					<!-- .course-content -->
-				</div>
-				<!-- .col -->
-				
-				
-				
-				
-				
-				
-				
-
-				<div class="col-12 col-md-6 col-lg-4 px-25">
-					<div class="course-content">
-						<figure class="course-thumbnail">
-							<a href="#"><img
-								src="${pageContext.request.contextPath}/assets/images/movieDetail/6.jpg"
-								alt=""></a>
-						</figure>
-						<!-- .course-thumbnail -->
-
-						<div class="course-content-wrap">
-							<div class="entry-header">
-								<h2 class="entry-title">
-									<a href="#">Cryptocurrency Investment Course 2018</a>
-								</h2>
-
-								<div class="entry-meta flex align-items-center">
-									<div class="course-author">
-										<a href="#">Russell Stephens</a>
-									</div>
-
-									<div class="course-date">Nov 06, 2018</div>
-								</div>
-								<!-- .course-date -->
-							</div>
-							<!-- .entry-header -->
-
-							<footer
-								class="entry-footer flex justify-content-between align-items-center">
-								<div class="course-cost">
-									<span class="free-cost">Free</span>
-								</div>
-								<!-- .course-cost -->
-
-								<div
-									class="course-ratings flex justify-content-end align-items-center">
-									<span class="xi-star checked"></span> <span
-										class="xi-star checked"></span> <span class="xi-star checked"></span>
-									<span class="xi-star checked"></span> <span class="xi-star-o"></span>
-
-									<span class="course-ratings-count">(4 votes)</span>
-								</div>
-								<!-- .course-ratings -->
-							</footer>
-							<!-- .entry-footer -->
-						</div>
-						<!-- .course-content-wrap -->
-					</div>
-					<!-- .course-content -->
-				</div>
-				<!-- .col --> --%>
-				
-				
-				
-				
 				
 				
 				

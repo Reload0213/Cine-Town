@@ -81,8 +81,8 @@
 							<div class="container" style="text-shadow: 3px 5px 5px #000; line-height: 2em; font-size: 4em">
 								<h1 style="padding-bottom: 2em; color:#FFF;">회원님들의 좋은 평가를 받은 Top 5</h1>
 								<h2>${bestItem.mvTitle}</h2>
-								<p>${bestItem.mvContent1}</p>
-								<p>${bestItem.mvContent4}</p>
+								<p style="font-size: 15px;">${bestItem.mvContent1}</p>
+								<p style="font-size: 15px;">${bestItem.mvContent4}</p>
 								<a href="#" class="site-btn" style="padding: 0px; color:#FFF;">별점 : <span class="xi-star checked" style="color:#FEDD6A"></span>${bestItem.mvAvgRate}</a>
 							</div>
 						</div>

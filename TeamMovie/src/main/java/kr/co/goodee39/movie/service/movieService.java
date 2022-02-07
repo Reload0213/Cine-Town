@@ -33,28 +33,6 @@ public class movieService {
 		System.out.println("서비스단 MvGenre확인"+vo.getMvGenre());
 		List<MovieVO> mvGvo = sqlSessionTemplate.selectList("movie.getGenreMovie", vo);
 		model.addAttribute("genreList", mvGvo);
-		
-//		MovieVO gmvo = new MovieVO();
-		
-//		model.addAttribute("genreList", sqlSessionTemplate.selectList("movie.getGenreMovie", vo));
-//		MovieVO gmvo = new MovieVO();
-//		vo.setMvNum(gmvo.getMvNum());
-//		vo.setMvTitle(gmvo2.getMvTitle());
-//		vo.setMvActor(gmvo.getMvActor());
-//		vo.setMvContent1(gmvo.getMvContent1());
-//		vo.setMvContent2(gmvo.getMvContent2());
-//		vo.setMvContent3(gmvo.getMvContent3());
-//		vo.setMvContent4(gmvo.getMvContent4());
-//		vo.setMvGenre(gmvo.getMvGenre());
-//		vo.setMvYear(gmvo.getMvYear());
-//		vo.setMvAge(gmvo.getMvAge());
-//		vo.setMvRuntime(gmvo.getMvRuntime());
-//		vo.setMvProducer(gmvo.getMvProducer());
-//		vo.setMvAvgRate(gmvo.getMvAvgRate());
-//		vo.setMvPosterPath(gmvo.getMvPosterPath());
-//		vo.setMvBgPath(gmvo.getMvBgPath());
-//		vo.setMvTrailer(gmvo.getMvTrailer());
-//		vo.setMvRpCount(gmvo.getMvRpCount());	
 	}
 	
 }
