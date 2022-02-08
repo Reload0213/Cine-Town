@@ -53,7 +53,7 @@
 						<td>${list.qnaComment }</td>
 						<td>${list.qnaRegdate }</td>
 						<td>
-							<button class="delete">삭제하기</button>
+							<button class="delete" onclick="deleteQna(${list.qnaNum }, ${selBoard})">삭제하기</button>
 						</td>
 					</tr>
 				</c:forEach>

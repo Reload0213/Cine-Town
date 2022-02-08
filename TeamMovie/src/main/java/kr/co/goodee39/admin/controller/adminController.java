@@ -247,9 +247,31 @@ public class adminController {
       
 		service.selectQnaList(model,num);
 		
-	
-		
 		return "admin/qna";
+	}
+	
+	
+	
+	/**
+	 * Q&A 삭제하는 컨트롤러
+	 * @param vo
+	 * @return
+	 */
+	@ResponseBody
+	@PostMapping("/board/deleteQna")
+	public Map<String, String> deleteQna(@RequestBody QnaVO vo) {
+		
+		Map<String, String> map = new HashMap<String, String>();
+		
+		map.put("resultCode", "0000"); // 0000: 성공
+		
+		try {
+			QnaService.deleteQna(vo.getQnaNum());
+		} catch (Exception e) {
+			map.put("resultCode", "9999"); // 9999: 실패
+		}
+		
+		return map;
 	}
 	
 

@@ -136,7 +136,7 @@ function deleteQna(qnaNum, boardNum) {
 	};
  	
  	$.ajax({
- 		url: "${pageContext.request.contextPath}/admin/board/deleteNotice",
+ 		url: "${pageContext.request.contextPath}/admin/board/deleteQna",
 		type: "POST",
 		data: JSON.stringify(params),
 		contentType : "application/json; charset=utf-8",
