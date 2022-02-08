@@ -44,21 +44,37 @@ public class cartController {
 	public String insertCartItem(@ModelAttribute("cartVO") CartVO vo, HttpSession session, UserVO uvo) {
 		System.out.println("insertCartItem 장바구니 삽입 컨트롤러 메소드 실행--------------------------------------------------");
 		UserVO uvo1 = (UserVO) session.getAttribute("account");
+		int userNum;
+		int count;
+		String path;
 		
-		int userNum = uvo1.getUserNum();
-		int count = cartService.countCartItem(userNum, vo.getGdsNum());
-		System.out.println("count값 확인:"+count);
-		System.out.println("gdsNum값 확인:"+vo.getGdsNum());
-		
-		
-		
-		if(count == 0) {
-			cartService.insertCartItem(vo);
-		} else {
-			cartService.sumAmountCartItem(vo);
+		if(uvo1 == null) { //로그인을 하지 않았을 경우 uvo1이 null => 로그인 페이지로 이동한다
+			path = "user/signin";
 		}
+		else { //로그인이 되었을 경우 장바구니에 담는 로직이 실행된다
+			 userNum = uvo1.getUserNum();
+			 count = cartService.countCartItem(userNum, vo.getGdsNum());
+			System.out.println("count값 확인:"+count);
+			System.out.println("gdsNum값 확인:"+vo.getGdsNum());
+			if(count == 0) {
+				cartService.insertCartItem(vo);
+				path = "redirect:/cart/showCartList";
+			} else {
+				cartService.sumAmountCartItem(vo);
+				path = "redirect:/cart/showCartList";
+			}
+			
+		}
+		
+		
+		
+		
+		
+		
+		
+	
 		System.out.println("insertCartItem 장바구니 삽입 컨트롤러 메소드 종료--------------------------------------------------");
-		return "redirect:/cart/showCartList";
+		return path;
 		
 	}
 
@@ -87,13 +103,7 @@ public class cartController {
 
 	}
 
-//	장바구니 아이템 삭제 컨트롤러 메소드
-	/*
-	 * @GetMapping("/deleteCartItem") public String
-	 * deleteCartItem(@ModelAttribute("cartVO")CartVO vo) {
-	 * System.out.println("deleteCartItem 컨트롤러 메소드 실행 / vo.cartNum:"+vo.getCartNum()
-	 * ); // cartService.deleteCartItem(0); return "redirect:/cart/showCartList"; }
-	 */
+
 
 	@GetMapping("/deleteCartItem")
 	public String deleteCartItem(@RequestParam int cartNum) {

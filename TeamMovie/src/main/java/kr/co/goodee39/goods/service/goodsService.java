@@ -14,6 +14,7 @@ public class goodsService {
 	@Autowired
 	SqlSessionTemplate sqlSessionTemplate;
 	
+//	상품 리스트를 뿌려주는 서비스 메소드
 	public List<GoodsVO> showGoodsList(){
 		System.out.println("showGoodsList 서비스 메소드 실행--------------------------------------------------");
 		System.out.println("showGoodsList 서비스 메소드 종료--------------------------------------------------");
@@ -21,7 +22,7 @@ public class goodsService {
  	return sqlSessionTemplate.selectList("goods.showGoodsList");
 	}
 	
-	
+//	특정 굿즈 아이템을 보여주는 서비스 메소드 
 	public void showGoodsItem(GoodsVO vo) {
 		System.out.println("showGoodsItem 서비스 메소드 실행--------------------------------------------------");
 		GoodsVO vo1 = sqlSessionTemplate.selectOne("goods.showGoodsItem", vo);
@@ -48,6 +49,7 @@ public class goodsService {
 		System.out.println("showGoodsItem 서비스 메소드 종료--------------------------------------------------");
 	}
 	
+//	굿즈 메뉴페이지에 상품 갯수를 뿌려줄 서비스 메소드
 	public int showGoodsCount() {
 		System.out.println("showGoodsCount 서비스 메소드 실행--------------------------------------------------");
 		int countItem = sqlSessionTemplate.selectOne("goods.showGoodsCount");
@@ -56,6 +58,7 @@ public class goodsService {
 		return countItem;
 	}
 	
+//	index페이지에 top4(별점 기준)으로 상위 4개의 굿즈만 출력
 	public List<GoodsVO> showTop4GoodsList(){
 		System.out.println("showTop4GoodsList 서비스 메소드 실행--------------------------------------------------");
 		System.out.println("showTop4GoodsList 서비스 메소드 종료--------------------------------------------------");
@@ -66,9 +69,6 @@ public class goodsService {
 	public List<GoodsVO> relateGoodsList(String mvTitle){
 		System.out.println("relateGoodsList 서비스 메소드 실행--------------------------------------------------");
 		System.out.println("mvTitle:"+mvTitle);
-		/*
-		 * GoodsVO vo = new GoodsVO(); vo.setMvTitle(mvTitle);
-		 */
 		System.out.println("relateGoodsList 서비스 메소드 종료--------------------------------------------------");
 		return sqlSessionTemplate.selectList("goods.relateGoodsList", mvTitle);
 	}

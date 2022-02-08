@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import kr.co.goodee39.productWishlist.service.productWishlistService;
 import kr.co.goodee39.productWishlist.vo.productWishlistVO;
 import kr.co.goodee39.user.vo.UserVO;
-
+//담당: 김용현
 @Controller
 @RequestMapping("/productWishlist")
 public class productWishlistController {
@@ -44,17 +44,12 @@ public class productWishlistController {
 			}
 			confirmLogin = "redirect:/productWishlist/productWishlist";
 		}
-		/*
-		 * if(count == 0) { //확인 결과 조회된 위시리스트가 없다면
-		 * productWishService.insertProductWishlist(vo); //해당 물건을 위시리스트에 삽입 } else {
-		 * //확인 결과 조회된 위시리스트가 있다면
-		 * productWishService.showProductWishlist(vo.getUserNum()); //위시리스트에 담긴 물건을 체이지에
-		 * 뿌려줌 }
-		 */
+	
 
 		return confirmLogin;
 	}
 	
+//	위시리스트페이지에 뿌려줄 위시리스트 컨트롤러 메소드
 	@GetMapping("/productWishlist")
 	public String productWishlist(@ModelAttribute("productWishlistVO")productWishlistVO vo, UserVO uvo, HttpSession session, Model model) {
 		System.out.println("productWishlist 컨트롤러 메소드 실행");
@@ -69,6 +64,7 @@ public class productWishlistController {
 		return "productWishlist/wishlist";
 	}
 	
+//	위시리스트에 들어있는 요소를 삭제하는 컨트롤러 메소드
 	@GetMapping("/deleteProductWishlistItem")
 	public String deleteProductWishlistItem(@RequestParam int pwishNum) {
 		System.out.println("deleteProductWishlistItem 컨트롤러 메소드 실행 / pwishNum :"+pwishNum);
