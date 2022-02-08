@@ -2,15 +2,13 @@ package kr.co.goodee39.admin.vo;
 
 public class QnaVO {
 	
-	private String selBoard;
-	
 	private int qnaNum;
 	private String qnaCategory;
 	private String qnaTitle;
 	private String qnaComment;
 	private String qnaIsdelete;
 	private String qnaRegdate;
-	
+
 	private int start;
 	private int count;
 	
@@ -21,8 +19,6 @@ public class QnaVO {
 		this.start = 0;
 		this.count = 10;
 	}
-	
-	
 	
 	public int getQnaNum() {
 		return qnaNum;
@@ -43,18 +39,13 @@ public class QnaVO {
 		this.qnaTitle = qnaTitle;
 	}
 
-	
 	public String getQnaComment() {
 		return qnaComment;
 	}
 
-
-
 	public void setQnaComment(String qnaComment) {
 		this.qnaComment = qnaComment;
 	}
-
-
 
 	public String getQnaIsdelete() {
 		return qnaIsdelete;
@@ -80,19 +71,5 @@ public class QnaVO {
 	public void setCount(int count) {
 		this.count = count;
 	}
-
-
-
-	public String getSelBoard() {
-		return selBoard;
-	}
-
-
-
-	public void setSelBoard(String selBoard) {
-		this.selBoard = selBoard;
-	}
-
-	
-	
+		
 }

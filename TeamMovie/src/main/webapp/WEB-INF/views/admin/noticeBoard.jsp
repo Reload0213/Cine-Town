@@ -47,6 +47,7 @@
 			<c:if test="${fn:length(qList) > 0}">
 				<c:forEach var="list" items="${qList }">
 					<tr>
+						<td><a href="${pageContext.request.contextPath}/admin/qnaUpdate?qnaNum=${list.qnaNum }"><i class="xi-pen" style="color: black; font-size: 1.8rem;"></i></a></td>
 						<td>${list.qnaNum }</td>
 						<td>${list.qnaCategory }</td>
 						<td>${list.qnaTitle }</td>

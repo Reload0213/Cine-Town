@@ -274,6 +274,40 @@ public class adminController {
 		return map;
 	}
 	
+	/**
+	 * Q&A 수정페이지 불러오는 컨트롤러
+	 * @param qnaNum
+	 * @param model
+	 * @param qnaVO
+	 * @return
+	 */
+	@GetMapping("/qnaUpdate")
+	public String qnaUpdate(@RequestParam("qnaNum") int qnaNum, Model model, @ModelAttribute("qnaVO") QnaVO qnaVO) {
+		
+		// 공지사항 상세 정보
+		QnaVO qnaDetail = QnaService.getQnaContents(qnaNum);
+		
+		model.addAttribute("qna", qnaDetail);
+		
+		return "/admin/qnaFix";
+	}
+	
+	
+	/**
+	 * Q&A 수정하는 컨트롤러
+	 * @param qnaVO
+	 * @return
+	 */
+	@PostMapping("/updateQna")
+	public String updateQna(@ModelAttribute("qnaVO") QnaVO qnaVO) {
+	
+		QnaService.updateQna(qnaVO);
+		
+		return "/admin/board";
+	}
+	
+
+	
 
 	/*
 	 * 컨트롤러 담당: 김용현 
