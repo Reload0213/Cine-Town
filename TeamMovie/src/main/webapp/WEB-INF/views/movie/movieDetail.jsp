@@ -114,6 +114,16 @@
 							<div
 								class="entry-meta flex justify-content-center align-items-center">
 								<div class="post-author" style="color: #FEDD6A;">
+									<span>감독</span>
+								</div>
+
+								<div class="post-comments">
+									<span style="color:white;">${mvDetail.mvDirector}</span>
+								</div>
+							</div>
+							<div
+								class="entry-meta flex justify-content-center align-items-center">
+								<div class="post-author" style="color: #FEDD6A;">
 									<span>평점</span>
 								</div>
 

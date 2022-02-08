@@ -5,6 +5,7 @@ public class MovieVO {
 	private int mvNum;
 	private String mvTitle;
 	private String mvActor;
+	private String mvDirector;
 	private String mvContent1;
 	private String mvContent2;
 	private String mvContent3;
@@ -39,6 +40,12 @@ public class MovieVO {
 	}
 	public void setMvActor(String mvActor) {
 		this.mvActor = mvActor;
+	}
+	public String getMvDirector() {
+		return mvDirector;
+	}
+	public void setMvDirector(String mvDirector) {
+		this.mvDirector = mvDirector;
 	}
 	public String getMvContent1() {
 		return mvContent1;
