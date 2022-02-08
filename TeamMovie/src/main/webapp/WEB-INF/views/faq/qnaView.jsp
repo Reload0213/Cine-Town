@@ -37,7 +37,7 @@
 								<h4 class="media-heading" style="margin-bottom: 1em; font-size: 1.8em;">${qna.qnaTitle }</h4>
 								<div class="rb-meta">
 									<ul class="list-inline" style="text-align: right;">
-										<li>작성자 : 관리자여기는변경해야함</li>
+										<!-- <li>작성자 : 관리자여기는변경해야함</li> -->
 										<li class="rb-divider"></li>
 										<li>등록일 : ${qna.qnaRegdate }</li>
 										<li class="rb-divider"></li>
