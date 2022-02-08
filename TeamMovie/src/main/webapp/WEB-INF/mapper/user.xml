@@ -103,10 +103,14 @@
 	<!-- 작성 댓글 목록 -->
 	<select id="selectCommentList" parameterType="int"
 		resultType="reviewReplyVO">
-		select mvNum, rpDate, rpComment, rpStar, rpNum
-		from reviewreply
+		SELECT r.mvNum AS mvNum, rpDate, rpComment, rpStar, rpNum,
+		m.mvTitle AS mvTitle
+		from
+		reviewreply r, movie m
 		where
 		rpWriternum = #{rpWriternum}
+		AND r.mvNum = m.mvNum
+
 	</select>
 
 	<!-- 작성 댓글 삭제 -->
@@ -114,8 +118,15 @@
 		delete from reviewreply
 		where
 		rpNum=#{rpNum}
-
 	</delete>
+
+	<!-- 내가 쓴 댓글 수정하러 보여주기 -->
+	<select id="commentDetail" parameterType="reviewReplyVO"
+		resultType="reviewReplyVO">
+		select *
+		from reviewreply
+		where rpNum=#{rpNum}
+	</select>
 
 </mapper>
 

@@ -10,8 +10,17 @@ public class ReviewReplyVO {
 	private int mvNum;
 	private int rpLike;
 	private int rpStar;
+	private String mvTitle;
 	
 	
+
+	public String getMvTitle() {
+		return mvTitle;
+	}
+
+	public void setMvTitle(String mvTitle) {
+		this.mvTitle = mvTitle;
+	}
 
 	public int getRpStar() {
 		return rpStar;

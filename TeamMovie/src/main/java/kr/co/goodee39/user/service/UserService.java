@@ -135,10 +135,29 @@ public class UserService {
 	}
 
 	// 내가 쓴 댓글 삭제하기
-	// 지우지않고 업데이트로 isdelete를 바꿈
 	public void deleteComment(ReviewReplyVO vo) {
 
 		sqlSessionTemplate.selectOne("user.deleteComment", vo);
 
 	}
+	
+	//내가 쓴 댓글 수정하러 보여주기
+	public ReviewReplyVO selectcommentDetail(ReviewReplyVO vo) {
+		ReviewReplyVO vo1 = new ReviewReplyVO();
+
+		vo1 = sqlSessionTemplate.selectOne("user.commentDetail", vo);
+		System.out.println("vo1.getRpComment()"+vo1.getRpComment());
+		vo.setMvNum(vo1.getMvNum());
+		vo.setRpComment(vo1.getRpComment());
+		vo.setRpDate(vo1.getRpDate());
+		vo.setRpLike(vo1.getRpLike());
+		vo.setRpStar(vo1.getRpStar());
+		vo.setRpWriternum(vo1.getRpWriternum());
+		vo.setRpWritername(vo1.getRpWritername());
+		vo.setMvTitle(vo1.getMvTitle());
+		
+		return vo;
+
+	}
+	
 }

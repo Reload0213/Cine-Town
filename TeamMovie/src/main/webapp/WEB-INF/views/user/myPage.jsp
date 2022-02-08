@@ -92,12 +92,17 @@ button:hover {
 			onClick="location.href='${pageContext.request.contextPath}/cart/showCartList'"
 			class="mainformSubmit cartcenter">굿즈 장바구니</button>
 		<br />
+		
+		<button
+			onClick="location.href='${pageContext.request.contextPath}/productWishlist/productWishlist'"
+			class="mainformSubmit cartcenter">굿즈 찜 목록</button>
+		<br />
 
 		<form:form modelAttribute="reviewReplyVO" action="${pageContext.request.contextPath}/user/commentList">
 			<form:input path="rpWriternum" type="hidden"
 				value="${sessionScope.account.userNum}" />
 				
-			<form:button type="submit" class="mainformSubmit">영화 작성 목록</form:button>
+			<form:button type="submit" class="mainformSubmit">영화 댓글 작성 내역</form:button>
 
 		</form:form>
 		<br />

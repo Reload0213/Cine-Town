@@ -178,8 +178,6 @@ public class userController {
 	@PostMapping("/userPwUpdate")
 	public ResponseEntity<UserVO> userPwUpdate(@RequestBody UserVO vo) {
 
-		System.out.println("controller getuserNum" + vo.getUserNum());
-		System.out.println("controller get useremail" + vo.getUserEmail());
 		userService.updateUser(vo);
 
 		ResponseEntity<UserVO> entity = new ResponseEntity<UserVO>(vo, HttpStatus.OK);
@@ -231,12 +229,18 @@ public class userController {
 	}
 
 	// 내가 쓴 댓글 수정하러 상세보기
-	@GetMapping("/commentDetail")
+	@PostMapping("/commentDetail")
 	public String commentDetail(ReviewReplyVO vo) {
-
-		//userService.selectUserOne(vo);
-
-		return "user/commentModify";
+		System.out.println("컨트롤러 입성");
+		userService.selectcommentDetail(vo);
+		System.out.println("서비스 갔다 옴");
+		System.out.println(vo.getRpComment());
+		System.out.println("타이틀"+vo.getMvTitle());
+		return "user/commentDetail";
 	}
+	
+	
+	
+
 
 }

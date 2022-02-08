@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html>
 <!-- 페이지 작성자 김정민 -->
@@ -79,16 +80,27 @@ th, td {
 
 				<c:forEach var="comments" items="${nList}">
 					<tr>
+
+
+
 						<td><a
-							href="${pageContext.request.contextPath}/movie/movieDetail?mvNum=${comments.mvNum}">${comments.mvNum}</a></td>
+							href="${pageContext.request.contextPath}/movie/movieDetail?mvNum=${comments.mvNum}&mvGenre=${bestItem.mvGenre}">${comments.mvTitle}</a></td>
+
+			
 						<td><span class="xi-star"></span>${comments.rpStar}</td>
 						<td>${comments.rpComment}</td>
 						<td>${comments.rpDate}</td>
-						<td><a class="comment_modifyBtn" data-num="${comments.rpNum}"><i
-								class="xi-pen" style="color: black; font-size: 1.8rem;"></i></a></td>
+						<td><form:form modelAttribute="reviewReplyVO"
+								action="${pageContext.request.contextPath}/user/commentDetail">
+								<form:input type="hidden" value="${comments.rpNum}" path="rpNum" />
+								<form:button type="submit" class="xi-pen"></form:button>
+							</form:form></td>
 						<td><a class="comment_deleteBtn" data-num="${comments.rpNum}"><i
 								class="xi-close " style="color: black; font-size: 1.8rem;"></i></a></td>
+
 					</tr>
+
+
 
 
 				</c:forEach>
@@ -146,7 +158,7 @@ th, td {
 		});
 		
 		//댓글 상세 내역으로 가기
-	    for(let i=0; i<updateBtn.length; i++){
+	    /* for(let i=0; i<updateBtn.length; i++){
 		    	  updateBtn[i].addEventListener("click",function(){
 		    		  let updateBtnVal=parseInt(this.dataset.num);
 		    		  
@@ -155,7 +167,7 @@ th, td {
 		    	  });
 		    	  
 		     
-		      }
+		      } */
 	</script>
 	<!--현 페이지 스크립트-->
 </body>
