@@ -40,5 +40,17 @@ public class PreviewCmtService {
 		sqlSessionTemplate.insert("pwCmt.insertPwCmt",cmtvo);
 		
 	}
+	public int selectPwCmtCnt(PreviewCmtVO cmtvo) {
+		
+		int i = sqlSessionTemplate.selectOne("pwCmt.selectPwCmtCount",cmtvo);
+		
+		return i;
+		
+	}
+	public void updatePwCmt(PreviewCmtVO cmtvo) {
+		
+		sqlSessionTemplate.update("pwCmt.updatePwCmt",cmtvo);
+		
+	}
 	
 }

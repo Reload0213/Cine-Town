@@ -159,6 +159,63 @@ font-size: 1.2rem;
     font-size: 1.3rem;
 }
 
+.editContentBox{
+    width:100%;
+    display:flex;
+   margin: 0 AUTO;
+}
+.editTextAreaBox{
+    width:90%;
+    display: flex;
+    flex-direction: column;
+    border:0.1rem solid #ebe8e8;
+    font-weight: 400;
+}
+.editTextAreaBox .editTextarea
+{
+width:100%;
+    border: none;
+    padding:1.4rem 1.2rem 0 1.2rem;
+    outline: none;
+    resize: none;
+    font-size: 1.1rem;
+    overflow-y: auto;
+}
+
+
+.editCntText{
+    display: flex;
+    justify-content: flex-end;
+    background-color: #ffffff;
+    padding:0.2rem; 
+    
+}
+.editNowCnt{
+    font-weight: bold;
+    color:#555;
+} 
+.editSubmit{
+    width:10%;
+    border:0.01rem solid #555;;
+    flex-direction: column;
+    border-collapse: collapse;
+}
+.editSubmit>button{
+    border:none;
+    width:100%;
+    height:50%;
+    border-collapse: collapse;
+   
+    background-color: #2964e0;
+    color:#ffffff;
+    font-size: 1.2rem;
+    font-family: 'Noto Sans KR',sans-serif;
+}
+.editSubmit>button:hover{
+    transition: background-color 0.8s ease-in-out ;
+    background-color: #141414;
+}
+
 
 @media(max-width:768px) {
     html{
@@ -212,7 +269,7 @@ font-size: 1.2rem;
 
 
 </div>
-<h3 class="cntCmt">댓글 <strong class="cmtNum">(125)</strong></h3>
+<h3 class="cntCmt">댓글 <strong class="cmtNum"></strong></h3>
 <div class="cmtListCon"></div>
 
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
@@ -229,10 +286,43 @@ document.getElementById("textarea").addEventListener("keydown",function(){
 
 
 	});
+	
+	
+
+
 
 
 
 $(function(){
+	
+	let pwNum = {pwNum: +document.querySelector("#pwNum").value};
+	
+	$.ajax({
+		url:"${pageContext.request.contextPath}/preview/detail/cmt/count",
+		type:"POST",
+		data:JSON.stringify(pwNum),
+		dataType:"json",
+		contentType:"application/json; charset=utf-8",
+		success:function(result){
+			
+		document.querySelector(".cmtNum").innerText="("+result+")";
+			console.log(result);
+			
+		}
+		
+		
+		
+		
+		
+		
+		
+	});
+	
+	
+	
+	
+	
+	
 	
 	$.ajax({
 		
@@ -245,6 +335,7 @@ $(function(){
 			for(const item of data){
 				
 				let userNum = ${sessionScope.account.userNum};
+				
 				
 				let cmtList = document.querySelector(".cmtListCon");
 				
@@ -279,13 +370,131 @@ $(function(){
 		         ul.append(li2);
 		        
 				 const li3 = document.createElement("li");
-				 console.log(userNum,item.writerNum);
+				
 				 if(userNum == item.writerNum){
 					 
 					 
 				 const button = document.createElement("button");
 				 button.classList.add("cmtEditBtn");
 				 button.innerText ="수정";
+				 
+				 button.addEventListener("click",function(){
+					 
+					 li2.innerText="";
+					 li3.style.display="none";
+					 
+					const editDiv = document.createElement("div");
+					editDiv.classList.add("editContentBox");
+		
+					
+					
+					const editDiv2 = document.createElement("div");
+					editDiv2.classList.add("editTextAreaBox");
+					
+					
+				
+					const editTextArea = document.createElement("textarea");
+					editTextArea.cols="10";
+					editTextArea.rows="1.5";
+					editTextArea.placeholder="댓글을 입력해주세요.";
+					editTextArea.classList.add("editTextarea");
+					editTextArea.value=item.comment;
+					
+					const editSpan = document.createElement("span");
+					editSpan.classList.add("editCntText");
+					
+					const editStrong = document.createElement("strong");
+					editStrong.innerHTML="0";
+					editStrong.classList.add("editNowCnt");
+					
+					const editSpan2 = document.createElement("span");
+					editSpan.classList.add("editCntMsg");
+					
+					const editDiv3 = document.createElement("div");
+					editDiv3.classList.add("editSubmit");
+					const editButton = document.createElement("button");
+					editButton.innerText="수정";
+					const editButton2 = document.createElement("button");
+					editButton2.innerText="취소";
+					
+				   editDiv.append(editDiv2);
+				   
+				   editDiv2.append(editTextArea);
+				   editSpan2.innerText = "/100자 (한글 100자 / 영문 100자)";
+				   editSpan.append(editStrong);
+				   editSpan.append(editSpan2);
+				
+				  
+				   editDiv2.append(editSpan);
+				  
+				   
+				   
+				   editDiv.append(editDiv3);
+				   editDiv3.append(editButton);
+				   editDiv3.append(editButton2);
+				   
+				        editTextArea.addEventListener("keydown",function(){
+						  editStrong.innerHTML=this.value.length;
+
+						if(this.value.length>100){
+						 this.value=this.value.substring(0,100);
+						  editStrong.innerHTML="100";
+						}
+
+
+						});
+				   
+				   document.querySelector(".cmtListComment").append(editDiv);
+				
+
+				   
+				   editButton2.addEventListener("click",function(){
+					   editDiv.style.display="none";
+					   li2.innerText=item.comment;
+						li3.style.display="flex";
+						
+				   });
+				   editButton.addEventListener("click",function(){
+					  
+					   let comment = editTextArea.value;
+					   
+					   const editData = {comment ,pwNum:item.pwNum, pnum:item.pnum};
+					   
+					   console.log(editData);
+					   
+					   $.ajax({
+						   
+						   url:"${pageContext.request.contextPath}/preview/detail/cmt/update",
+						   type:"PATCH",
+						   data:JSON.stringify(editData),
+						   dataType:"json",
+						   contentType:"application/json; charset=utf-8",
+						   success:function(result){
+							   li2.style.display="block";
+							   li2.innerHTML=result.comment;
+							 
+							   li3.style.display="flex";
+							   editDiv.remove();
+							  
+						   }
+						   
+						   
+					   });
+					   
+					   
+				   });
+				   
+				   
+				 
+				   
+				   
+				   
+				   
+				   
+					
+					 
+				 });
+				 
 				 
 		
 				 
@@ -308,9 +517,9 @@ $(function(){
 			    			 contentType:"application/json; charset=utf-8",
 			    			 dataType:"json",
 			    			 success:function(data){
-			    			 div.remove(); 
-			    			console.log(data);
-			    			/* div.style.backgroundColor="red"; */
+			    		     div.remove(); 
+			    			/* console.log(data);
+			    			div.style.backgroundColor="red"; */
 			    			 }
 			    			
 			    		 });
@@ -355,9 +564,8 @@ document.querySelector("#subBtn").addEventListener("click",function(){
 	 
 	 if(comment.length>0){
 		 
-		 let commentData ={comment, pwNum:	document.querySelector("#pwNum").value};
+		 let commentData ={comment, pwNum:	document.querySelector("#pwNum").value,writeTime:getTime()};
 		 
-		 console.log(commentData);
 		 
 		 $.ajax({
 			
@@ -367,12 +575,10 @@ document.querySelector("#subBtn").addEventListener("click",function(){
 			 dataType:"json",
 			 contentType:"application/json; charset=utf-8",
 			 success:function(data){
-				 console.log(item);
-					for(const item of data){
-						
-						let userNum = ${sessionScope.account.userNum};
-						
-						let cmtList = document.querySelector(".cmtListCon");
+				 let userNum = data.writerNum;
+				
+		   console.log(data.writeTime);
+				let cmtList = document.querySelector(".cmtListCon");
 						
 						const div =document.createElement("div");
 						  div.classList.add("cmtList");
@@ -389,10 +595,10 @@ document.querySelector("#subBtn").addEventListener("click",function(){
 						 
 						 const span = document.createElement("span");
 						 span.classList.add("cmtUserId");
-						 span.innerText = item.writerName;
+						 span.innerText = data.writerName;
 						 const span2 = document.createElement("span");
 						 span2.classList.add("cmtWriteTime");
-						 span2.innerText = item.writeTime;
+						 span2.innerText = data.writeTime;
 						 div2.append(span);
 						 div2.append(span2);
 						 li1.append(div2);
@@ -401,19 +607,158 @@ document.querySelector("#subBtn").addEventListener("click",function(){
 						
 						 const li2 = document.createElement("li");
 						 li2.classList.add("cmtListComment");
-						 li2.innerText=item.comment;
+						 li2.innerText=data.comment;
 				         ul.append(li2);
 				        
 						 const li3 = document.createElement("li");
-						 console.log(userNum,item.writerNum);
-						 if(userNum == item.writerNum){
+						 
+						 
+						 if(userNum == data.writerNum){
 							 
 							 
 						 const button = document.createElement("button");
 						 button.classList.add("cmtEditBtn");
 						 button.innerText ="수정";
 						 
+			
+						 button.addEventListener("click",function(){
+							 
+							 li2.innerText="";
+							 li3.style.display="none";
+							 
+							const editDiv = document.createElement("div");
+							editDiv.classList.add("editContentBox");
 				
+							
+							
+							const editDiv2 = document.createElement("div");
+							editDiv2.classList.add("editTextAreaBox");
+							
+							
+						
+							const editTextArea = document.createElement("textarea");
+							editTextArea.cols="10";
+							editTextArea.rows="1.5";
+							editTextArea.placeholder="댓글을 입력해주세요.";
+							editTextArea.classList.add("editTextarea");
+							editTextArea.value=data.comment;
+							
+							const editSpan = document.createElement("span");
+							editSpan.classList.add("editCntText");
+							
+							const editStrong = document.createElement("strong");
+							editStrong.innerHTML="0";
+							editStrong.classList.add("editNowCnt");
+							
+							const editSpan2 = document.createElement("span");
+							editSpan.classList.add("editCntMsg");
+							
+							const editDiv3 = document.createElement("div");
+							editDiv3.classList.add("editSubmit");
+							const editButton = document.createElement("button");
+							editButton.innerText="수정";
+							const editButton2 = document.createElement("button");
+							editButton2.innerText="취소";
+							
+						   editDiv.append(editDiv2);
+						   
+						   editDiv2.append(editTextArea);
+						   editSpan2.innerText = "/100자 (한글 100자 / 영문 100자)";
+						   editSpan.append(editStrong);
+						   editSpan.append(editSpan2);
+						
+						  
+						   editDiv2.append(editSpan);
+						  
+						   
+						   
+						   editDiv.append(editDiv3);
+						   editDiv3.append(editButton);
+						   editDiv3.append(editButton2);
+						   
+						        editTextArea.addEventListener("keydown",function(){
+								  editStrong.innerHTML=this.value.length;
+
+								if(this.value.length>100){
+								 this.value=this.value.substring(0,100);
+								  editStrong.innerHTML="100";
+								}
+
+
+								});
+						   
+						   document.querySelector(".cmtListComment").append(editDiv);
+						
+
+						   
+						   editButton2.addEventListener("click",function(){
+							   editDiv.style.display="none";
+							   li2.innerText=data.comment;
+								li3.style.display="flex";
+								
+						   });
+						   editButton.addEventListener("click",function(){
+							  
+							   let comment = editTextArea.value;
+							   
+							   const editData = {comment ,pwNum:data.pwNum, pnum:data.pnum};
+							   
+							   console.log(editData);
+							   
+							   $.ajax({
+								   
+								   url:"${pageContext.request.contextPath}/preview/detail/cmt/update",
+								   type:"PATCH",
+								   data:JSON.stringify(editData),
+								   dataType:"json",
+								   contentType:"application/json; charset=utf-8",
+								   success:function(result){
+									   li2.style.display="block";
+									   li2.innerHTML=result.comment;
+									 
+									   li3.style.display="flex";
+									   editDiv.remove();
+									  
+								   }
+								   
+								   
+							   });
+							   
+							   
+						   });
+						   
+						   
+						 
+						   
+						   
+						   
+						   
+						   
+							
+							 
+						 });
+						 
+						 
+						 
+						 
+						 
+						 
+						 
+						 
+						 
+						 
+						 
+						 
+						 
+						 
+						 
+						 
+						 
+						 
+						 
+						 
+						 
+						 
 						 
 						 const button2 = document.createElement("button");
 					     button2.classList.add("cmtDeleteBtn");
@@ -424,7 +769,7 @@ document.querySelector("#subBtn").addEventListener("click",function(){
 					    	 let yn = confirm("삭제하시겠습니까?");
 					    	 
 					    	 if(yn){
-					    		 let cmtData = {pnum:item.pnum, pwNum:item.pwNum};
+					    		 let cmtData = {pnum:data.pnum, pwNum:data.pwNum};
 					    		 
 					    	
 					    		 $.ajax({
@@ -452,20 +797,44 @@ document.querySelector("#subBtn").addEventListener("click",function(){
 						 
 						 
 					     div.append(ul); 
-					     document.querySelector(".cmtListCon").append(div);
+					     cmtList.append(div);
 					     
-					}
+					
 					
 			 }
 		 });
 		 
 	 }
-	 
- 
+	  
 	
 	});
 	
-
+function getTime(){
+	let date = new Date();
+	let year = date.getFullYear().toString();
+	
+	let month = date.getMonth()+1;
+	month=month <10 ? "0"+month.toString() : month.toString();
+	
+	let day = date.getDate();
+	day = day<10 ? '0'+day.toString() : dat.toString();
+	
+	let hour = date.getHours();
+	hour = hour <10 ? '0'+hour.toString() : hour.toString();
+	
+	let minutes = date.getMinutes();
+	minutes =minutes <10?'0'+minutes.toString() : minutes.toString();
+	
+	let seconds = date.getSeconds();
+	seconds =seconds<10 ? '0'+seconds.toString() : seconds.toString();
+	
+	return year+"-"+month+"-"+day+" "+hour+":"+minutes+":"+seconds;
+	
+	
+	
+	
+}
+
 
 
 

@@ -15,13 +15,23 @@ ORDER BY  pnum DESC
  
  </select>
  
+ <select id="selectPwCmtCount" resultType="int" parameterType="pwCmtVO">
+  SELECT count(*)
+  FROM previewcmt
+  WHERE pwNum=#{pwNum}
+  
+  
+ </select>
+ 
  <delete id="deletePwCmt" parameterType="pwCmtVO">
  DELETE FROM previewcmt
  WHERE pnum =#{pnum}
  AND pwNum =#{pwNum}
  </delete>
   
-  <insert id="insertPwCmt" parameterType="pwCmtVO">
+  <insert id="insertPwCmt" parameterType="pwCmtVO"
+  useGeneratedKeys="true" keyProperty="pnum">
+  
   INSERT INTO previewcmt
   (pwNum,writerNum,writerName,comment,writeTime)
   VALUES 
@@ -29,6 +39,21 @@ ORDER BY  pnum DESC
   
   
   </insert>
+  
+<update id="updatePwCmt" parameterType="pwCmtVO">
+  
+  UPDATE previewcmt
+  set comment=#{comment}
+  WHERE
+  pwNum=#{pwNum} AND
+  pnum=#{pnum}
+  
+  
+
+</update>
+
+  
+
   
   </mapper>
   

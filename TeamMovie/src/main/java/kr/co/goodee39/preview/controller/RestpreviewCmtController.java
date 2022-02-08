@@ -13,6 +13,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -72,12 +73,37 @@ public class RestpreviewCmtController {
 		
 		cmtvo.setWriterName(vo1.getUserName());
 		cmtvo.setWriterNum(vo1.getUserNum());
+	
 		
 		previewCmtService.insertPwCmt(cmtvo);
 		
 		ResponseEntity<PreviewCmtVO> entity = new ResponseEntity<PreviewCmtVO>(cmtvo,HttpStatus.OK);
 		
 		return entity;
+		
+	}
+	
+	@PostMapping("/count")
+	public ResponseEntity<Integer> countComment (@RequestBody PreviewCmtVO cmtvo){
+		
+		ResponseEntity<Integer> entity = new ResponseEntity<Integer>(previewCmtService.selectPwCmtCnt(cmtvo),HttpStatus.OK);
+		
+		return entity;
+		
+		
+		
+		
+	}
+	
+	@PatchMapping("/update")
+	public ResponseEntity<PreviewCmtVO> editComment (@RequestBody PreviewCmtVO cmtvo){
+		previewCmtService.updatePwCmt(cmtvo);
+		
+		ResponseEntity<PreviewCmtVO> entity = new ResponseEntity<PreviewCmtVO>(cmtvo,HttpStatus.OK);
+		
+		return entity;
+		
+		
 		
 	}
 	

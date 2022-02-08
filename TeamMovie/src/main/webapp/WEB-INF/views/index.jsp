@@ -304,36 +304,36 @@
           <div class="col-lg-7 px-0">
               <div class="owl-carousel main-carousel position-relative">
                   <div class="position-relative overflow-hidden" style="height: 500px;">
-                      <img class="img-fluid h-100" src="assets/images/index/footer_img/news-800x500-1.jpg" style="object-fit: cover;">
+                      <img class="img-fluid h-100" src="assets\images\index\previewImgList\preview1\man1.jpg" style="object-fit: cover;">
                       <div class="overlay">
                           <div class="mb-2">
                               <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                                  href="">Business</a>
-                              <a class="text-white" href="">Jan 01, 2045</a>
+                                  href="">시사회 소식</a>
+                              <a class="text-white" href="${pageContext.request.contextPath}/preview/detail/page/1">2022년 2월 01일~</a>
                           </div>
-                          <a class="h2 m-0 text-white text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit. Proin vitae porta diam...</a>
+                          <a class="h2 m-0 text-white text-uppercase font-weight-bold"  style="text-shadow: 3px 5px 5px #000;" href="${pageContext.request.contextPath}/preview/detail/page/1">부천국제영화제 개막작 <br>만년이 지나도 변하지 않는게 있어 </a>
                       </div>
                   </div>
                   <div class="position-relative overflow-hidden" style="height: 500px;">
-                      <img class="img-fluid h-100" src="assets/images/index/footer_img/news-800x500-2.jpg" style="object-fit: cover;">
+                      <img class="img-fluid h-100" src="assets\images\index\previewImgList\preview2.jpg" style="object-fit: cover;">
                       <div class="overlay">
                           <div class="mb-2">
                               <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                                  href="">Business</a>
-                              <a class="text-white" href="">Jan 01, 2045</a>
+                                 href="${pageContext.request.contextPath}/preview/detail/page/3">시사회 소식</a>
+                              <a class="text-white" href="">2022년 1월 25일~</a>
                           </div>
-                          <a class="h2 m-0 text-white text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit. Proin vitae porta diam...</a>
+                          <a class="h2 m-0 text-white text-uppercase font-weight-bold"   style="text-shadow: 3px 5px 5px #000;" href="${pageContext.request.contextPath}/preview/detail/page/3">해적:도깨비 깃발 <br> 가자! 보물 찾으러!</a>
                       </div>
                   </div>
                   <div class="position-relative overflow-hidden" style="height: 500px;">
-                      <img class="img-fluid h-100" src="assets/images/index/footer_img/news-800x500-3.jpg" style="object-fit: cover;">
+                      <img class="img-fluid h-100" src="assets\images\index\previewImgList\preview3.jpg" style="object-fit: cover;">
                       <div class="overlay">
                           <div class="mb-2">
                               <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                                  href="">Business</a>
-                              <a class="text-white" href="">Jan 01, 2045</a>
+                                 href="${pageContext.request.contextPath}/preview/detail/page/4">시사회 소식</a>
+                              <a class="text-white" href="">2022년 1월 10일~</a>
                           </div>
-                          <a class="h2 m-0 text-white text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit. Proin vitae porta diam...</a>
+                          <a class="h2 m-0 text-white text-uppercase font-weight-bold" href="${pageContext.request.contextPath}/preview/detail/page/4"  style="text-shadow: 3px 5px 5px #000;">킹메이커-<br>세상 바뀌는 꼴 좀 보고 싶습니다</a>
                       </div>
                   </div>
               </div>
@@ -423,11 +423,11 @@
           <div class="row align-items-center bg-dark">
               <div class="col-12">
                   <div class="d-flex justify-content-between">
-                      <div class="bg-primary text-dark text-center font-weight-medium py-2" style="width: 170px;">Breaking News</div>
+                      <div class="bg-primary text-dark text-center font-weight-medium py-2" style="width: 170px;">최신 소식</div>
                       <div class="owl-carousel tranding-carousel position-relative d-inline-flex align-items-center ml-3"
                           style="width: calc(100% - 170px); padding-right: 90px;">
-                          <div class="text-truncate"><a class="text-white text-uppercase font-weight-semi-bold" href="">Lorem ipsum dolor sit amet elit. Proin interdum lacus eget ante tincidunt, sed faucibus nisl sodales</a></div>
-                          <div class="text-truncate"><a class="text-white text-uppercase font-weight-semi-bold" href="">Lorem ipsum dolor sit amet elit. Proin interdum lacus eget ante tincidunt, sed faucibus nisl sodales</a></div>
+                          <div class="text-truncate"><a class="text-white text-uppercase font-weight-semi-bold"  style="text-align:center;"href="">스파이더맨 개봉기념 굿즈 3종 출시</a></div>
+                          <div class="text-truncate"><a class="text-white text-uppercase font-weight-semi-bold" href="">씨네타운 2021년 올해를 빛낸 브랜드 대상 수상</a></div>
                       </div>
                   </div>
               </div>
