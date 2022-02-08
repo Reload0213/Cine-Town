@@ -127,6 +127,48 @@ function deleteNotice(noticeNum, boardNum) {
 	
 }
 
+function deleteQna(qnaNum, boardNum) {
+	// alert(noticeNum + "/" + boardNum);
+	
+ 	// 삭제 ajax 
+ 	var params = {
+ 		qnaNum : qnaNum
+	};
+ 	
+ 	$.ajax({
+ 		url: "${pageContext.request.contextPath}/admin/board/deleteNotice",
+		type: "POST",
+		data: JSON.stringify(params),
+		contentType : "application/json; charset=utf-8",
+		dataType : "json",
+		success: function(result) {
+			if (result.resultCode == '0000') { // call list
+				var params = {
+					selBoard : boardNum
+				}
+					
+				$.ajax({
+					url:"${pageContext.request.contextPath}/admin/board/noticeBoard",
+					type: "POST",
+					data: JSON.stringify(params),
+					contentType : "application/json; charset=utf-8",
+			       	dataType: 'html',
+					success: function(data){
+						$('.item1').html(data);
+						$(".item1").show();
+						alert("삭제가 완료되었습니다.");
+					}
+				});
+			} else if(result.resultCode == '9999') {
+				alert("삭제가 되지 않았습니다.");
+				
+				return false;
+			};
+		}
+ 	});
+	
+}
+
 // 페이지 기동 후 실행
 $(function() {
 	

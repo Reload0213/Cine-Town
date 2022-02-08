@@ -27,6 +27,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import kr.co.goodee39.admin.service.AdminService;
 import kr.co.goodee39.admin.service.noticeService;
+import kr.co.goodee39.admin.service.QnaService;
 import kr.co.goodee39.admin.vo.NoticeVO;
 import kr.co.goodee39.admin.vo.QnaVO;
 import kr.co.goodee39.adminmailbox.vo.AdminMailBoxVO;
@@ -42,6 +43,9 @@ public class adminController {
 	
 	@Autowired
 	noticeService noticeService;
+	
+	@Autowired
+	QnaService QnaService;
 	
 	
 	@GetMapping("/main")
@@ -133,9 +137,8 @@ public class adminController {
 	}
 	
 	@GetMapping("/board")
-	public String board(Model model) {
-     
-	
+	public String board(@RequestParam(defaultValue = "1",name = "boardNum") String boardNum, Model model) {
+
 		
 		return "admin/board";
 	}
@@ -173,7 +176,8 @@ public class adminController {
 			
 		//QNA 게시판 선택시 게시판 출력
 		} else if(selBoard.equals("2")) {
-			//qlist = (List<QnaVO>)qnaService.qnaList(vo);
+			QnaVO qnaVO = new QnaVO();
+			qlist = QnaService.qnaList(qnaVO);
 			
 		}
 		
@@ -229,11 +233,11 @@ public class adminController {
 	 * @param noticeVO
 	 * @return
 	 */
-	@GetMapping("/updateNotice")
+	@PostMapping("/updateNotice")
 	public String updateNotice(@ModelAttribute("noticeVO") NoticeVO noticeVO) {
 	
 		noticeService.updateNotice(noticeVO);
-
+		
 		return "/admin/board";
 	}
 	
