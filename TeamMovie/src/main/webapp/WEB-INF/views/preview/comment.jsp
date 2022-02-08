@@ -404,7 +404,7 @@ $(function(){
 					editSpan.classList.add("editCntText");
 					
 					const editStrong = document.createElement("strong");
-					editStrong.innerHTML="0";
+					editStrong.innerHTML=editTextArea.value.length;
 					editStrong.classList.add("editNowCnt");
 					
 					const editSpan2 = document.createElement("span");
@@ -518,6 +518,29 @@ $(function(){
 			    			 dataType:"json",
 			    			 success:function(data){
 			    		     div.remove(); 
+			    		     
+			    		     let pwNum = {pwNum: +document.querySelector("#pwNum").value};
+			    		 	
+			    		 	$.ajax({
+			    		 		url:"${pageContext.request.contextPath}/preview/detail/cmt/count",
+			    		 		type:"POST",
+			    		 		data:JSON.stringify(pwNum),
+			    		 		dataType:"json",
+			    		 		contentType:"application/json; charset=utf-8",
+			    		 		success:function(result){
+			    		 			
+			    		 		document.querySelector(".cmtNum").innerText="("+result+")";
+			    		 			console.log(result);
+			    		 			
+			    		 		}
+			    		 		
+			    		 		
+			    		 		
+			    		 		
+			    		 		
+			    		 		
+			    		 		
+			    		 	});
 			    			/* console.log(data);
 			    			div.style.backgroundColor="red"; */
 			    			 }
@@ -575,6 +598,29 @@ document.querySelector("#subBtn").addEventListener("click",function(){
 			 dataType:"json",
 			 contentType:"application/json; charset=utf-8",
 			 success:function(data){
+				 
+				 let pwNum = {pwNum: +document.querySelector("#pwNum").value};
+					
+					$.ajax({
+						url:"${pageContext.request.contextPath}/preview/detail/cmt/count",
+						type:"POST",
+						data:JSON.stringify(pwNum),
+						dataType:"json",
+						contentType:"application/json; charset=utf-8",
+						success:function(result){
+							
+						document.querySelector(".cmtNum").innerText="("+result+")";
+							console.log(result);
+							
+						}
+						
+						
+						
+						
+						
+						
+						
+					});
 				 let userNum = data.writerNum;
 				
 		   console.log(data.writeTime);
@@ -639,6 +685,7 @@ document.querySelector("#subBtn").addEventListener("click",function(){
 							const editTextArea = document.createElement("textarea");
 							editTextArea.cols="10";
 							editTextArea.rows="1.5";
+							
 							editTextArea.placeholder="댓글을 입력해주세요.";
 							editTextArea.classList.add("editTextarea");
 							editTextArea.value=data.comment;
@@ -647,7 +694,7 @@ document.querySelector("#subBtn").addEventListener("click",function(){
 							editSpan.classList.add("editCntText");
 							
 							const editStrong = document.createElement("strong");
-							editStrong.innerHTML="0";
+							editStrong.innerHTML=editTextArea.value.length;
 							editStrong.classList.add("editNowCnt");
 							
 							const editSpan2 = document.createElement("span");
@@ -780,6 +827,29 @@ document.querySelector("#subBtn").addEventListener("click",function(){
 					    			 dataType:"json",
 					    			 success:function(data){
 					    				  div.remove();
+					    				  
+					    				  let pwNum = {pwNum: +document.querySelector("#pwNum").value};
+					    					
+					    					$.ajax({
+					    						url:"${pageContext.request.contextPath}/preview/detail/cmt/count",
+					    						type:"POST",
+					    						data:JSON.stringify(pwNum),
+					    						dataType:"json",
+					    						contentType:"application/json; charset=utf-8",
+					    						success:function(result){
+					    							
+					    						document.querySelector(".cmtNum").innerText="("+result+")";
+					    							console.log(result);
+					    							
+					    						}
+					    						
+					    						
+					    						
+					    						
+					    						
+					    						
+					    						
+					    					});
 					    			 }
 					    			
 					    		 });
