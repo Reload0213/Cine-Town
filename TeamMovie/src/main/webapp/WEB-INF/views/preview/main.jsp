@@ -57,7 +57,8 @@
 
 
 
-  <a href="${pageContext.request.contextPath}/preview/detail/page/1" class="column romance">
+  <a href="${pageContext.request.contextPath}/preview/detail/page/1" class="onAir column romance">
+   <span class="deadlineNotice"></span>
     <div class="content">
       <div class="moviePosterCon item1"><img src="${pageContext.request.contextPath}/assets/images/premiereMain/movieposter/mannyunijinado.jpg" alt=""></div>
       <p class="movieName">만 년이 지나도 변하지 않는게 ... </p>
@@ -71,7 +72,8 @@
 
 
 
-  <a href="${pageContext.request.contextPath}/preview/detail/page/2" class="column action">
+  <a href="${pageContext.request.contextPath}/preview/detail/page/2" class="onAir column action">
+   <span class="deadlineNotice"></span>
     <div class="content">
       <div class="moviePosterCon item1"><img src="${pageContext.request.contextPath}/assets/images/premiereMain/movieposter/imsinhannamuwa.jpg" alt=""></div>
       <p class="movieName">임신한 나무와 도깨비 </p>
@@ -86,7 +88,8 @@
 
  
 
-  <a href="${pageContext.request.contextPath}/preview/detail/page/3" class="column action">
+  <a href="${pageContext.request.contextPath}/preview/detail/page/3" class="onAir column action">
+  
     <div class="content">
       <div class="moviePosterCon item1"><img src="${pageContext.request.contextPath}/assets/images/premiereMain/movieposter/haejuk.jpg" alt=""></div>
       <p class="movieName">해적:도깨비 깃발 </p>
@@ -101,9 +104,11 @@
 
 
 
-  <a href="${pageContext.request.contextPath}/preview/detail/page/4" class="column drama">
+  <a href="${pageContext.request.contextPath}/preview/detail/page/4" class="onAir column drama">
     <div class="content">
-      <div class="moviePosterCon item1"><img src="${pageContext.request.contextPath}/assets/images/premiereMain/movieposter/kingmaker.jpg" alt=""></div>
+      <div class="moviePosterCon item1">
+          <span class="deadLineNotice"></span>
+      <img src="${pageContext.request.contextPath}/assets/images/premiereMain/movieposter/kingmaker.jpg" alt=""></div>
       <p class="movieName">킹메이커 </p>
       <p class="hashtags">#2021 #드라마 #한국</p>
 
@@ -118,8 +123,11 @@
 
   
   <a href="${pageContext.request.contextPath}/preview/detail/page/5" class="column drama">
+
     <div class="content">
-      <div class="moviePosterCon item1"><img src="${pageContext.request.contextPath}/assets/images/premiereMain/movieposter/france.jpg" alt=""></div>
+      <div class="moviePosterCon item2" style="position:relative; opacity: 0.8; display:flex; justify-content: center; align-items: center;">
+      <span class="deadLineNotice" style=" width:21rem; height:21rem; background-color:black; opacity: 0.9; position:absolute; border-radius: 50%; text-align:center; display:flex; justify-content: center; align-items: center;"><strong style="font-weight:300; font-size: 1.7rem; color:#f1f1f1;">마감했어요</strong></span>
+      <img src="${pageContext.request.contextPath}/assets/images/premiereMain/movieposter/france.jpg" alt=""></div>
       <p class="movieName">프랑스 </p>
       <p class="hashtags">#2021 #코미디 #드라마 #프랑스</p>
 
@@ -130,8 +138,11 @@
   </a>
 
   <a href="${pageContext.request.contextPath}/preview/detail/page/6" class="column action">
+ 
     <div class="content">
-      <div class="moviePosterCon item1"><img src="${pageContext.request.contextPath}/assets/images/premiereMain/movieposter/kingsman.jpg" alt=""></div>
+      <div class="moviePosterCon item2"  style="position:relative; opacity: 0.8; display:flex; justify-content: center; align-items: center;">
+       <span class="deadLineNotice" style=" width:21rem; height:21rem; background-color:black; opacity: 0.9; position:absolute; border-radius: 50%; text-align:center; display:flex; justify-content: center; align-items: center;"><strong style="font-weight:300; font-size: 1.7rem; color:#f1f1f1;">마감했어요</strong></span>
+      <img src="${pageContext.request.contextPath}/assets/images/premiereMain/movieposter/kingsman.jpg" alt=""></div>
       <p class="movieName">킹스맨:퍼스트 에이전트 </p>
       <p class="hashtags">#2021 #액션 #모험 #코미디 #영국 #미국</p>
     </div>
@@ -141,8 +152,11 @@
 
 
   <a href="${pageContext.request.contextPath}/preview/detail/page/7" class="column romance">
+   
     <div class="content">
-      <div class="moviePosterCon item1"><img src="${pageContext.request.contextPath}/assets/images/premiereMain/movieposter/chungchoonjukni.jpg" alt=""></div>
+      <div class="moviePosterCon item2"  style="position:relative; opacity: 0.8; display:flex; justify-content: center; align-items: center;">
+       <span class="deadLineNotice"style=" width:21rem; height:21rem; background-color:black; opacity: 0.9; position:absolute; border-radius: 50%; text-align:center; display:flex; justify-content: center; align-items: center;"><strong style="font-weight:300; font-size: 1.7rem; color:#f1f1f1;">마감했어요</strong></span>
+       <img src="${pageContext.request.contextPath}/assets/images/premiereMain/movieposter/chungchoonjukni.jpg" alt=""></div>
       <p class="movieName">청춘적니 </p>
       <p class="hashtags">#2021 #로맨스 #드라마 #중국</p>
 
@@ -156,8 +170,11 @@
 
 
   <a href="${pageContext.request.contextPath}/preview/detail/page/8" class="column romance">
+  
     <div class="content">
-      <div class="moviePosterCon item1"><img src="${pageContext.request.contextPath}/assets/images/premiereMain/movieposter/sil.jpg" alt=""></div>
+      <div class="moviePosterCon item2"  style="position:relative; opacity: 0.8; display:flex; justify-content: center; align-items: center;">
+       <span class="deadLineNotice" style=" width:21rem; height:21rem; background-color:black; opacity: 0.9; position:absolute; border-radius: 50%; text-align:center; display:flex; justify-content: center; align-items: center;"><strong style="font-weight:300; font-size: 1.7rem; color:#f1f1f1;">마감했어요</strong></span>
+      <img src="${pageContext.request.contextPath}/assets/images/premiereMain/movieposter/sil.jpg" alt=""></div>
       <p class="movieName">실:인연의 시작 </p>
       <p class="hashtags">#2020 #드라마 #로맨스 #일본</p>
 
