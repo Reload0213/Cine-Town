@@ -30,17 +30,30 @@ textarea {
 }
 
 .textAreaBox {
-	width: 90%;
+	width: 70%;
 	display: flex;
 	flex-direction: column;
 	border: 0.1rem solid #ebe8e8;
 	font-weight: 400;
 	margin: 0 auto;
 }
-.cntText{
-    text-align: right;
-    background-color: #ffffff;
-    padding: 0.2rem;}
+
+.cntText {
+	text-align: right;
+	background-color: #ffffff;
+	padding: 0.2rem;
+}
+
+.starInput {
+	padding: 0px !important;
+	text-align: center;
+	border: none;
+}
+
+input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button
+	{
+	opacity: 1 !important;
+}
 </style>
 </head>
 
@@ -49,27 +62,31 @@ textarea {
 
 	<div class="usercommentWrapper">
 
-		<span style="font-size: 2rem; margin-right: 30px; font-weight: bold">${reviewReplyVO.mvNum}</span>
-		<span class="xi-star" style="color: orange; font-size: 1.2rem"></span>${reviewReplyVO.rpStar}
-		<span style="margin-right: 10px;"></span> <span class="xi-heart"
-			style="color: red; font-size: 1.2rem"></span>${reviewReplyVO.rpLike}
-		<span style="margin-right: 30px;"></span> <span
-			style="font-style: italic">${reviewReplyVO.rpDate}</span> <br /> <br />
-		<br />
+		<span style="font-size: 2rem; font-weight: bold">${reviewReplyVO.mvTitle}</span>
+		<br /> <br /> <span style="font-style: italic">${reviewReplyVO.rpDate}</span>
+		<br /> <br /> <span class="xi-star"
+			style="color: orange; font-size: 1.2rem; margin-right: 5px"></span> <input
+			class="starInput" type="number" value="${reviewReplyVO.rpStar}"
+			min="1" max="10" /> <span style="margin-right: 20px;"></span> <span
+			class="xi-heart"
+			style="color: red; font-size: 1.2rem; margin-right: 5px"></span>${reviewReplyVO.rpLike}
+		<br /> <br /> <br />
 		<div class="textAreaBox">
 			<textarea name="" id="textarea" cols="10" rows="2"
 				placeholder="댓글을 입력해주세요.">${reviewReplyVO.rpComment}</textarea>
-			<span class="cntText"><strong class="nowCnt">0</strong>/100자
-				(한글 100자 / 영문 100자)</span>
+			<span class="cntText"><strong class="nowCnt">0</strong>/100자</span>
 		</div>
-		<div class="submit">
-			<button id="subBtn" type="button">등록</button>
-		</div>
+		<br /> <br />
+
+		<button id="subBtn" type="button">댓글 수정</button>
+
 
 	</div>
 
 
 	<script>
+	
+		//적은 숫자 카운팅
 		document
 				.getElementById("textarea")
 				.addEventListener(
@@ -83,6 +100,15 @@ textarea {
 							}
 
 						});
+		
+		// 수정 보내기
+		let formSubmit = document.querySelector(".formSubmit");
+		let star = document.querySelector("starInput").value;
+		
+		let comment = document.querySelector("#textarea").value;
+		
+		$()
+		
 	</script>
 
 	<%@ include file="../include/footer.jsp"%>

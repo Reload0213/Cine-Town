@@ -123,9 +123,16 @@
 	<!-- 내가 쓴 댓글 수정하러 보여주기 -->
 	<select id="commentDetail" parameterType="reviewReplyVO"
 		resultType="reviewReplyVO">
-		select *
+		<!-- select *
 		from reviewreply
-		where rpNum=#{rpNum}
+		where rpNum=#{rpNum} -->
+		SELECT r.mvNum AS mvNum, rpDate, rpComment, rpStar, rpNum,
+		m.mvTitle AS mvTitle
+		from
+		reviewreply r, movie m
+		where
+		rpNum = #{rpNum}
+		AND r.mvNum = m.mvNum
 	</select>
 
 </mapper>

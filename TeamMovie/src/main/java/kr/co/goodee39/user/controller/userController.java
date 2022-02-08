@@ -230,7 +230,7 @@ public class userController {
 
 	// 내가 쓴 댓글 수정하러 상세보기
 	@PostMapping("/commentDetail")
-	public String commentDetail(ReviewReplyVO vo) {
+	public String commentDetail(@ModelAttribute("reviewReplyVO") ReviewReplyVO vo) {
 		System.out.println("컨트롤러 입성");
 		userService.selectcommentDetail(vo);
 		System.out.println("서비스 갔다 옴");

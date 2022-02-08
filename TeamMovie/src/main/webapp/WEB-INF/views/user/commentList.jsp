@@ -56,6 +56,16 @@ th, td {
 		width: 95%;
 	}
 }
+
+.editbtn {
+	background: none;
+	border: none;
+	font-size: 1.5rem;
+}
+
+.editbtn:active {
+	border: none;
+}
 </style>
 </head>
 
@@ -80,24 +90,20 @@ th, td {
 
 				<c:forEach var="comments" items="${nList}">
 					<tr>
-
-
-
 						<td><a
 							href="${pageContext.request.contextPath}/movie/movieDetail?mvNum=${comments.mvNum}&mvGenre=${bestItem.mvGenre}">${comments.mvTitle}</a></td>
 
-			
+
 						<td><span class="xi-star"></span>${comments.rpStar}</td>
 						<td>${comments.rpComment}</td>
 						<td>${comments.rpDate}</td>
 						<td><form:form modelAttribute="reviewReplyVO"
 								action="${pageContext.request.contextPath}/user/commentDetail">
 								<form:input type="hidden" value="${comments.rpNum}" path="rpNum" />
-								<form:button type="submit" class="xi-pen"></form:button>
+								<form:button type="submit" class="xi-pen editbtn"></form:button>
 							</form:form></td>
 						<td><a class="comment_deleteBtn" data-num="${comments.rpNum}"><i
 								class="xi-close " style="color: black; font-size: 1.8rem;"></i></a></td>
-
 					</tr>
 
 
