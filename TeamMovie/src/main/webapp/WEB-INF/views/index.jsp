@@ -426,7 +426,7 @@
                       <div class="bg-primary text-dark text-center font-weight-medium py-2" style="width: 170px;">최신 소식</div>
                       <div class="owl-carousel tranding-carousel position-relative d-inline-flex align-items-center ml-3"
                           style="width: calc(100% - 170px); padding-right: 90px;">
-                          <div class="text-truncate"><a class="text-white text-uppercase font-weight-semi-bold"  style="text-align:center;"href="">스파이더맨 개봉기념 굿즈 3종 출시</a></div>
+                          <div class="text-truncate"><a class="text-white text-uppercase font-weight-semi-bold"  href="">스파이더맨 개봉기념 굿즈 3종 출시</a></div>
                           <div class="text-truncate"><a class="text-white text-uppercase font-weight-semi-bold" href="">씨네타운 2021년 올해를 빛낸 브랜드 대상 수상</a></div>
                       </div>
                   </div>

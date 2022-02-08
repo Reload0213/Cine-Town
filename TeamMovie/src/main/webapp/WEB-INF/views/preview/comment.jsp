@@ -444,7 +444,7 @@ $(function(){
 
 						});
 				   
-				   document.querySelector(".cmtListComment").append(editDiv);
+				   li2.append(editDiv);
 				
 
 				   
@@ -537,7 +537,7 @@ $(function(){
 				 
 				 
 			     div.append(ul); 
-			     document.querySelector(".cmtListCon").append(div);
+			     document.querySelector(".cmtListCon").prepend(div);
 			     
 			}
 			
@@ -687,7 +687,7 @@ document.querySelector("#subBtn").addEventListener("click",function(){
 
 								});
 						   
-						   document.querySelector(".cmtListComment").append(editDiv);
+						  li2.append(editDiv);
 						
 
 						   
@@ -797,7 +797,7 @@ document.querySelector("#subBtn").addEventListener("click",function(){
 						 
 						 
 					     div.append(ul); 
-					     cmtList.append(div);
+					     cmtList.prepend(div);
 					     
 					
 					
