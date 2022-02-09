@@ -541,6 +541,11 @@ border: 1px solid rgb(224, 224, 224);
 
 
     }
+    
+    .certification {
+	display:none;
+	
+}
 
     .resultTitle>h3 {
         width: 100%;
