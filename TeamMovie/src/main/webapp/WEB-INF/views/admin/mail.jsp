@@ -273,7 +273,7 @@ for(let i=0; i<deleteBtn.length; i++){
 	
 	deleteBtn[i].addEventListener("click",function(){
 
-		alert("야");	
+		
 	 	let mailNum=parseInt(this.dataset.num);
 		let data={mailNum};
 		let thisDelBtn= this;
