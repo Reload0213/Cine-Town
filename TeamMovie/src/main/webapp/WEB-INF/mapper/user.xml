@@ -17,8 +17,7 @@
 	</insert>
 
 	<!-- 로그인 -->
-	<select id="selectUser" parameterType="userVO"
-		resultType="userVO">
+	<select id="selectUser" parameterType="userVO" resultType="userVO">
 		select userNum, userId, userPw, userName, userPhone, userEmail,
 		userRegdate, userAddr1, userAddr2, userAddr3, userIsdelete, verify
 		from user
@@ -40,7 +39,6 @@
 
 	<!-- 이름 중복검사 -->
 	<select id="nameCheck" resultType="int">
-
 		select count(*) from user
 		where
 		userName = #{userName}
@@ -72,8 +70,7 @@
 	</select>
 
 	<!-- 회원 정보 수정 보여주기 -->
-	<select id="showUserInfoOne" parameterType="userVO"
-		resultType="userVO">
+	<select id="showUserInfoOne" parameterType="userVO" resultType="userVO">
 		select *
 		from user
 		where userNum=#{userNum}
@@ -101,8 +98,7 @@
 	</delete>
 
 	<!-- 작성 댓글 목록 -->
-	<select id="selectCommentList" parameterType="int"
-		resultType="reviewReplyVO">
+	<select id="selectCommentList" parameterType="int" resultType="reviewReplyVO">
 		SELECT r.mvNum AS mvNum, rpDate, rpComment, rpStar, rpNum,
 		m.mvTitle AS mvTitle
 		from
@@ -121,8 +117,7 @@
 	</delete>
 
 	<!-- 내가 쓴 댓글 수정하러 보여주기 -->
-	<select id="commentDetail" parameterType="reviewReplyVO"
-		resultType="reviewReplyVO">
+	<select id="commentDetail" parameterType="reviewReplyVO" resultType="reviewReplyVO">
 		<!-- select *
 		from reviewreply
 		where rpNum=#{rpNum} -->

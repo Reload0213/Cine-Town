@@ -63,13 +63,13 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
 	<div class="usercommentWrapper">
 
 		<span style="font-size: 2rem; font-weight: bold">${reviewReplyVO.mvTitle}</span>
-		<br /> <br /> <span style="font-style: italic">${reviewReplyVO.rpDate}</span>
-		<br /> <br /> <span class="xi-star"
-			style="color: orange; font-size: 1.2rem; margin-right: 5px"></span> <input
-			class="starInput" type="number" value="${reviewReplyVO.rpStar}"
-			min="1" max="10" /> <span style="margin-right: 20px;"></span> <span
-			class="xi-heart"
-			style="color: red; font-size: 1.2rem; margin-right: 5px"></span>${reviewReplyVO.rpLike}
+		<br /> <br /> 
+		<span style="font-style: italic">${reviewReplyVO.rpDate}</span>
+		<br /> <br /> 
+		<span class="xi-star" style="color: orange; font-size: 1.2rem; margin-right: 5px"></span>
+			<input class="starInput" type="number" value="${reviewReplyVO.rpStar}" min="1" max="10" />
+		<span style="margin-right: 20px;"></span>
+		<span class="xi-heart" style="color: red; font-size: 1.2rem; margin-right: 5px"></span>${reviewReplyVO.rpLike}
 		<br /> <br /> <br />
 		<div class="textAreaBox">
 			<textarea name="" id="textarea" cols="10" rows="2"
@@ -77,17 +77,16 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
 			<span class="cntText"><strong class="nowCnt">0</strong>/100자</span>
 		</div>
 		<br /> <br />
-
-		<button id="subBtn" type="button">댓글 수정</button>
-
-
+		<button id="formSubmit" type="button">댓글 수정</button>
+		
 	</div>
 
-
+<input type="hidden" name="rpNum" id="rpNum"
+						value="${reviewReplyVO.rpNum}" />
 	<script>
 	
 		//적은 숫자 카운팅
-		document
+	/* 	document
 				.getElementById("textarea")
 				.addEventListener(
 						"keydown",
@@ -99,15 +98,28 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
 								document.querySelector(".nowCnt").innerHTML = "100";
 							}
 
-						});
+						}); */
 		
 		// 수정 보내기
-		let formSubmit = document.querySelector(".formSubmit");
-		let star = document.querySelector("starInput").value;
+	
 		
-		let comment = document.querySelector("#textarea").value;
-		
-		$()
+		$(document)
+			.ready(function(){
+				$("#formSubmit")
+					.click(function(){
+						let star = $(".starInput").val();
+						let comment = $("#textarea").val();
+						let userNum = $("#userNum").val();
+						
+						if(star!=="" && comment!=""){
+							alert("댓글이 수정되었습니다");
+						}
+						else{
+							alert("실패")
+						}
+					})
+				})
+	
 		
 	</script>
 

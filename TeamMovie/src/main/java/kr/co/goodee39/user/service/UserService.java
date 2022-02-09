@@ -54,6 +54,7 @@ public class UserService {
 
 	// 로그인
 	public String goLoginService(UserVO vo, HttpSession session, HttpServletResponse response) throws IOException {
+		
 		System.out.println("goLogin 실행");
 		UserVO vo1 = sqlSessionTemplate.selectOne("user.selectUser", vo);
 		String path = "";
@@ -85,22 +86,27 @@ public class UserService {
 	}
 
 	// 비번찾기
-	// public 다음의 UserVO는 mapper의 resultType이랑 일치시켜
+	// public 다음의 UserVO는 mapper의 resultType이랑 일치시키기
+	
 	public UserVO findPw(UserVO vo) {
+		
 		return sqlSessionTemplate.selectOne("user.findPw", vo);
 	}
 
 	// 아이디 찾기
-	// public 다음의 UserVO는 mapper의 resultType이랑 일치시켜
+	// public 다음의 UserVO는 mapper의 resultType이랑 일치시키기
 	public UserVO findId(UserVO vo) {
+		
 		return sqlSessionTemplate.selectOne("user.findId", vo);
 	}
 
 	// 내 정보 수정 보여주기
 	public UserVO selectUserOne(UserVO vo) {
+		
 		UserVO vo1 = new UserVO();
 
 		vo1 = sqlSessionTemplate.selectOne("user.showUserInfoOne", vo);
+		
 		vo.setUserId(vo1.getUserId());
 		vo.setUserName(vo1.getUserName());
 		vo.setUserNum(vo1.getUserNum());
@@ -118,6 +124,7 @@ public class UserService {
 
 	// 내 정보 수정
 	public void updateUser(UserVO vo) {
+		
 		sqlSessionTemplate.update("user.updateUser", vo);
 	}
 
@@ -130,6 +137,7 @@ public class UserService {
 
 	// 내가 쓴 댓글 보여주기
 	public List<UserVO> commentList(ReviewReplyVO vo) {
+		
 		return sqlSessionTemplate.selectList("user.selectCommentList", vo);
 
 	}
@@ -143,10 +151,11 @@ public class UserService {
 	
 	//내가 쓴 댓글 수정하러 보여주기
 	public ReviewReplyVO selectcommentDetail(ReviewReplyVO vo) {
+		
 		ReviewReplyVO vo1 = new ReviewReplyVO();
 
 		vo1 = sqlSessionTemplate.selectOne("user.commentDetail", vo);
-		System.out.println("vo1.getRpComment()"+vo1.getRpComment());
+		
 		vo.setMvNum(vo1.getMvNum());
 		vo.setRpComment(vo1.getRpComment());
 		vo.setRpDate(vo1.getRpDate());

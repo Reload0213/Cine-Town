@@ -2,9 +2,6 @@ package kr.co.goodee39.user.vo;
 
 public class UserVO {
 
-	// userRegdate는 String형으로 변환함.
-	// pk, 일반 컬럼만 작성함.
-
 	private int userNum;
 	private String userId;
 	private String userPw;
