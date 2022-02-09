@@ -587,8 +587,9 @@ document.querySelector("#subBtn").addEventListener("click",function(){
 	 
 	 if(comment.length>0){
 		 
-		 let commentData ={comment, pwNum:	document.querySelector("#pwNum").value,writeTime:getTime()};
+		 let commentData ={comment, pwNum:	document.querySelector("#pwNum").value,writeTime:getCurrentDate()};
 		 
+		 console.log(commentData);
 		 
 		 $.ajax({
 			
@@ -879,31 +880,30 @@ document.querySelector("#subBtn").addEventListener("click",function(){
 	
 	});
 	
-function getTime(){
-	let date = new Date();
-	let year = date.getFullYear().toString();
-	
-	let month = date.getMonth()+1;
-	month=month <10 ? "0"+month.toString() : month.toString();
-	
-	let day = date.getDate();
-	day = day<10 ? '0'+day.toString() : dat.toString();
-	
-	let hour = date.getHours();
-	hour = hour <10 ? '0'+hour.toString() : hour.toString();
-	
-	let minutes = date.getMinutes();
-	minutes =minutes <10?'0'+minutes.toString() : minutes.toString();
-	
-	let seconds = date.getSeconds();
-	seconds =seconds<10 ? '0'+seconds.toString() : seconds.toString();
-	
-	return year+"-"+month+"-"+day+" "+hour+":"+minutes+":"+seconds;
-	
-	
-	
-	
+
+function getCurrentDate()
+{
+    var date = new Date();
+    var year = date.getFullYear().toString();
+
+    var month = date.getMonth() + 1;
+    month = month < 10 ? '0' + month.toString() : month.toString();
+
+    var day = date.getDate();
+    day = day < 10 ? '0' + day.toString() : day.toString();
+
+    var hour = date.getHours();
+    hour = hour < 10 ? '0' + hour.toString() : hour.toString();
+
+    var minites = date.getMinutes();
+    minites = minites < 10 ? '0' + minites.toString() : minites.toString();
+
+    var seconds = date.getSeconds();
+    seconds = seconds < 10 ? '0' + seconds.toString() : seconds.toString();
+
+    return year+"-"+month+"-"+ day +" "+ hour +":"+ minites +":"+seconds;
 }
+
 
 
 
