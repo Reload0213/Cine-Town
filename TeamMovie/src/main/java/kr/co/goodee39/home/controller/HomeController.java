@@ -24,7 +24,7 @@ public class HomeController {
 	@RequestMapping(value="/", method = RequestMethod.GET)
 	public String home(Model model) {
 		System.out.println("home 컨트롤러 메소드 실행--------------------------------------------------");
-		mService.getMovieList(model);
+		mService.recentMovieList(model);
 		mService.getBestMvList(model);
 		
 		List<GoodsVO> top4GoodsList = goodsService.showTop4GoodsList();

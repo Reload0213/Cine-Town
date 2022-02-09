@@ -199,7 +199,7 @@ public class userController {
 	public String userFixComplete(UserVO vo, Model model, @RequestParam(defaultValue = "") String userName) {
 		
 		userService.updateUser(vo);
-		return "user/myPage";
+		return "redirect:/user/myPage";
 
 	}
 

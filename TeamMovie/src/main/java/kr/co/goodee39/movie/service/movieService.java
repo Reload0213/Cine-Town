@@ -15,7 +15,7 @@ public class movieService {
 	@Autowired
 	SqlSessionTemplate sqlSessionTemplate;
 	
-	public void getMovieList(Model model) {
+	public void recentMovieList(Model model) {
 		model.addAttribute("list", sqlSessionTemplate.selectList("movie.getMovieList"));
 	}
 	public void getBestMvList(Model model) {
