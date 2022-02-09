@@ -25,7 +25,7 @@
 <!--  관리자페이지 폰트추가 끝 -->
 <!-- 메인 css 추가 -->
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/assets/css/adminMainPage/adminUserFixPage/adminUserFixPage.css">
+	href="${pageContext.request.contextPath}/assets/css/adminMainPage/adminUserFixPage/adminUserFixPage.css?ver=1">
 <!-- 메인 css 끝 -->
 <!-- fontawesome LINK 추가 -->
 <link rel="stylesheet"
@@ -341,7 +341,7 @@
              });
 
              phoneSubmit.addEventListener("click",function(e){
-            	 let phoneResult={userNum:parseInt(hidden.value) ,userPhone:parseInt(phone.value)};
+            	 let phoneResult={userNum:parseInt(hidden.value) ,userPhone:phone.value};
             	
                  e.preventDefault();
               if(!(regxp2.test(phone.value.trim()))){

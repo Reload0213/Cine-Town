@@ -568,6 +568,11 @@ border: 1px solid rgb(224, 224, 224);
     html {
         font-size: 53.5%;
     }
+    
+.certification {
+	display:none;
+	
+}
 
 
 
