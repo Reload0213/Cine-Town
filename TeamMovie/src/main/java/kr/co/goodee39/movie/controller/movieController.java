@@ -25,7 +25,7 @@ public class movieController {
 	
 		@GetMapping("/movieMenu")
 		public String goMovieMenu(Model model) {
-			mService.getMovieList(model);
+			mService.recentMovieList(model);
 			
 			return "movie/movieMenu";
 		}

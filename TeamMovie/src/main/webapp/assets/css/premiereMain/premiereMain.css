@@ -127,18 +127,18 @@ align-items: center;
 }
  */
 
-.onAir{
+.column{
     display: none;
     width:20%;
     margin:2rem;
     transition: background-color 0.5s linear ;
 }
-.onAir:hover{
+.column:hover{
     background-color:#ec4b40 ;
     transition: background-color 0.5s linear ;
     
 }
-.onAir:hover .movieName,.onAir :hover .hashtags{
+.column:hover .movieName,.onAir :hover .hashtags{
     color:#f1f1f1;
     transition: background-color 0.5s linear ;
     

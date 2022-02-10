@@ -11,7 +11,7 @@
 
 <%@ include file="../include2/header.jsp" %>
 <head>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/premiereMain/premiereMain.css"/>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/premiereMain/premiereMain.css?ver=1"/>
 
 </head>
 <main>

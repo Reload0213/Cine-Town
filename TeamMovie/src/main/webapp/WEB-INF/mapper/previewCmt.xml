@@ -35,7 +35,7 @@ ORDER BY  pnum DESC
   INSERT INTO previewcmt
   (pwNum,writerNum,writerName,comment,writeTime)
   VALUES 
-  (#{pwNum},#{writerNum},#{writerName},#{comment},NOW())
+  (#{pwNum},#{writerNum},#{writerName},#{comment},#{writeTime})
   
   
   </insert>
