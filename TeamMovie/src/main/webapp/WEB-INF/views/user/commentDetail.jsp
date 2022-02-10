@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <!DOCTYPE html>
 <html>
@@ -61,32 +63,40 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
 	<%@ include file="../include/header.jsp"%>
 
 	<div class="usercommentWrapper">
-
-		<span style="font-size: 2rem; font-weight: bold">${reviewReplyVO.mvTitle}</span>
-		<br /> <br /> 
-		<span style="font-style: italic">${reviewReplyVO.rpDate}</span>
-		<br /> <br /> 
-		<span class="xi-star" style="color: orange; font-size: 1.2rem; margin-right: 5px"></span>
-			<input class="starInput" type="number" value="${reviewReplyVO.rpStar}" min="1" max="10" />
-		<span style="margin-right: 20px;"></span>
-		<span class="xi-heart" style="color: red; font-size: 1.2rem; margin-right: 5px"></span>${reviewReplyVO.rpLike}
-		<br /> <br /> <br />
-		<div class="textAreaBox">
-			<textarea name="" id="textarea" cols="10" rows="2"
-				placeholder="댓글을 입력해주세요.">${reviewReplyVO.rpComment}</textarea>
-			<span class="cntText"><strong class="nowCnt">0</strong>/100자</span>
-		</div>
-		<br /> <br />
-		<button id="formSubmit" type="button">댓글 수정</button>
-		
+		<form:form modelAttribute="reviewReplyVO" id="modify_comment">
+			<span style="font-size: 2rem; font-weight: bold">${reviewReplyVO.mvTitle}</span>
+			<br />
+			<br />
+			<span style="font-style: italic">${reviewReplyVO.rpDate}</span>
+			<br />
+			<br />
+			<span class="xi-star"
+				style="color: orange; font-size: 1.2rem; margin-right: 5px"></span>
+			<form:input class="starInput" type="number" path="rpStar"
+				value="${reviewReplyVO.rpStar}" min="1" max="10" />
+			<span style="margin-right: 20px;"></span>
+			<span class="xi-heart"
+				style="color: red; font-size: 1.2rem; margin-right: 5px"></span>${reviewReplyVO.rpLike}
+		<br />
+			<br />
+			<br />
+			<div class="textAreaBox">
+				<form:textarea path="rpComment" id="textarea" cols="10" rows="2"
+					placeholder="댓글을 입력해주세요." value="${reviewReplyVO.rpComment}"></form:textarea>
+				<span class="cntText"><strong class="nowCnt">0</strong>/100자</span>
+			</div>
+			<br />
+			<br />
+			<form:button id="formSubmit" type="button">댓글 수정</form:button>
+			<form:input type="hidden" path="rpNum" id="rpNum"
+				value="${reviewReplyVO.rpNum}" />
+		</form:form>
 	</div>
 
-<input type="hidden" name="rpNum" id="rpNum"
-						value="${reviewReplyVO.rpNum}" />
+
 	<script>
-	
 		//적은 숫자 카운팅
-	/* 	document
+		document
 				.getElementById("textarea")
 				.addEventListener(
 						"keydown",
@@ -98,29 +108,14 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
 								document.querySelector(".nowCnt").innerHTML = "100";
 							}
 
-						}); */
+						});
 		
-		// 수정 보내기
+		document.getElementById("formSubmit").addEventListener("click", function(){
+			alert("수정되었습니다.");
+		
+		})
+
 	
-		
-		$(document)
-			.ready(function(){
-				$("#formSubmit")
-					.click(function(){
-						let star = $(".starInput").val();
-						let comment = $("#textarea").val();
-						let userNum = $("#userNum").val();
-						
-						if(star!=="" && comment!=""){
-							alert("댓글이 수정되었습니다");
-						}
-						else{
-							alert("실패")
-						}
-					})
-				})
-	
-		
 	</script>
 
 	<%@ include file="../include/footer.jsp"%>
@@ -128,6 +123,7 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
 
 	<!--현 페이지 스크립트-->
 	<script type="text/javascript">
+	${pageContext.request.contextPath}/user/modify_commentFinish"
 		
 	</script>
 	<!--현 페이지 스크립트-->

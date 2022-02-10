@@ -64,7 +64,8 @@
 							href="${pageContext.request.contextPath}/preview/main">시사회 /
 								이벤트</a></li>
 						<li class="nav-item"><a class="nav-link"
-							href="${pageContext.request.contextPath}/aboutUs/faqMain">고객 센터</a></li>
+							href="${pageContext.request.contextPath}/aboutUs/faqMain">고객
+								센터</a></li>
 
 
 						<c:if test="${sessionScope.account.userId != null}">
@@ -78,10 +79,13 @@
 
 					<c:if test="${sessionScope.account.userId != null}">
 						<div class="username">
-							<a href="${pageContext.request.contextPath}/user/myPage" class="myPagecss" style="color:white">${sessionScope.account.userName}님</a></div>
+							<a href="${pageContext.request.contextPath}/user/myPage"
+								class="myPagecss"
+								style="color: white; display: flex; justify-content: center;">${sessionScope.account.userName}님</a>
+						</div>
 					</c:if>
 				</div>
-				<div class="user_option">
+				<div class="user_option" style="margin: 0 auto;">
 					<c:choose>
 						<c:when test="${sessionScope.account.userNum == null }">
 
@@ -103,7 +107,8 @@
 								로그인 </a>
 						</c:when>
 						<c:otherwise>
-							<a href="${pageContext.request.contextPath}/productWishlist/productWishlist"
+							<a
+								href="${pageContext.request.contextPath}/productWishlist/productWishlist"
 								class="user_link" style="font-size: 1.7em;"> <i
 								class="xi-heart" aria-hidden="true"></i>
 							</a>

@@ -99,11 +99,8 @@ button:hover {
 		<br />
 
 		<form:form modelAttribute="reviewReplyVO" action="${pageContext.request.contextPath}/user/commentList">
-			<form:input path="rpWriternum" type="hidden"
-				value="${sessionScope.account.userNum}" />
-				
+			<form:input path="rpWriternum" type="hidden" value="${sessionScope.account.userNum}" />
 			<form:button type="submit" class="mainformSubmit">영화 댓글 작성 내역</form:button>
-
 		</form:form>
 		<br />
 

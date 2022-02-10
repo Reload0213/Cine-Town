@@ -199,7 +199,7 @@ public class userController {
 	public String userFixComplete(UserVO vo, Model model, @RequestParam(defaultValue = "") String userName) {
 		
 		userService.updateUser(vo);
-		return "user/myPage";
+		return "redirect:/user/myPage";
 
 	}
 
@@ -224,6 +224,7 @@ public class userController {
 		return "user/commentList";
 	}
 
+	//내가 쓴 댓글 삭제
 	@DeleteMapping("/commentDelete")
 	@ResponseBody
 	public ResponseEntity<String> updateDeleteUser(@RequestBody ReviewReplyVO vo) {
@@ -252,9 +253,14 @@ public class userController {
 	
 	@GetMapping("/commentFix")
 	public String commentFix() {
+		
 		return "user/myPage";
 	}
-	
+	@GetMapping("/modify_commentFinish")
+	public String modifyComment(ReviewReplyVO vo) {
+		
+		return "user/myPage";
+	}
 	
 	
 
